@@ -4,7 +4,8 @@ import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
 import { B2BCaseStudies } from "@/components/B2BCaseStudies";
-import { MessageSquare, Bot, Wand2, Shield, Award, FileCheck } from "lucide-react";
+import { WhyUsSection } from "@/components/WhyUsSection";
+import { MessageSquare, Bot, Wand2 } from "lucide-react";
 
 const Index = () => {
   return (
@@ -172,47 +173,8 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Why Talent Innovation - Humble Authority */}
-          <section id="why" aria-labelledby="why-heading" className="py-20 md:py-28 relative">
-            <div className="container px-4">
-              <div className="text-center mb-16">
-                <h2 id="why-heading" className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
-                  PROČ TALENT INNOVATION?
-                </h2>
-              </div>
-
-              <div className="max-w-4xl mx-auto">
-                <div className="glass-card p-8 md:p-12">
-                  <p className="text-base md:text-lg text-[#C5C6C7] leading-relaxed normal-case tracking-normal mb-8 text-center">
-                    Nejsme jen AI agentura. Rozumíme ISO normám, ADR přepravě i MDR regulacím. 
-                    Naše procesy jsou certifikovány metodikou <span className="text-primary font-semibold">Swim In AI</span> (Jan Bouda), 
-                    což zaručuje bezpečnost a auditovatelnost každého řešení.
-                  </p>
-
-                  <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <Shield className="h-5 w-5 text-primary" />
-                      </div>
-                      <span className="text-sm font-medium text-foreground">ISO Compliance</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <FileCheck className="h-5 w-5 text-primary" />
-                      </div>
-                      <span className="text-sm font-medium text-foreground">ADR & MDR Ready</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <Award className="h-5 w-5 text-primary" />
-                      </div>
-                      <span className="text-sm font-medium text-foreground">Swim In AI Certified</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* Why Talent Innovation - Bento Box */}
+          <WhyUsSection />
 
         </main>
 
