@@ -18,38 +18,42 @@ const Index = () => {
         
         <main className="flex-1">
           {/* Hero Section */}
-          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24">
+          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-[120px] md:pt-[140px] pb-12 md:pb-16">
             <div className="container px-4 text-center">
-              <div className="max-w-5xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/5 border border-primary/30 mb-8">
+              <div className="max-w-[1000px] mx-auto">
+                {/* Eyebrow Badge */}
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/40 mb-10 shadow-[0_0_20px_rgba(102,252,241,0.15)]">
                   <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-primary uppercase">
                     Strategický partner pro průmysl a technologie
                   </span>
                 </div>
                 
-                <h1 id="hero-heading" className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-6 leading-tight tracking-[0.15em] uppercase">
-                  <span className="gradient-text">TRANSFORMUJEME KOMPLEXITU</span>
-                  <br />
-                  <span className="gradient-text">V EFEKTIVITU</span>
+                {/* Main H1 with gradient and pulse */}
+                <h1 
+                  id="hero-heading" 
+                  className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-8 leading-tight tracking-[0.15em] uppercase gradient-text-animated animate-pulse-subtle"
+                >
+                  TRANSFORMUJEME KOMPLEXITU V SYSTÉMOVOU AUTONOMII
                 </h1>
                 
-                <p className="text-base md:text-lg text-[#C5C6C7] max-w-3xl mx-auto mb-12 normal-case tracking-normal leading-relaxed">
-                  Respekt k vaší provozní realitě a regulacím je základem každé naší implementace. 
-                  Provázíme lídry trhu bezpečnou cestou k AI automatizaci a kreativě.
+                {/* Subheadline */}
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-14 normal-case tracking-normal leading-relaxed">
+                  Implementujeme AI řešení s nekompromisním respektem k bezpečnosti, vašim standardům a měřitelné návratnosti (ROI). Provázíme lídry trhu bezpečnou cestou k automatizaci procesů.
                 </p>
                 
+                {/* CTAs */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="#b2b"
-                    aria-label="Pro firmy: Productivity, Automation & Agents"
-                    className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 text-[10px] md:text-xs font-semibold tracking-[0.12em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                    aria-label="Pro firmy: Productivity & Agents"
+                    className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 text-[10px] md:text-xs font-semibold tracking-[0.12em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_24px_rgba(102,252,241,0.5)] hover:shadow-[0_0_40px_rgba(102,252,241,0.7)] hover:scale-105 transition-all duration-300"
                   >
                     Pro firmy: Productivity & Agents
                   </a>
                   <a
                     href="#b2c"
                     aria-label="Pro vás: AI Creativity"
-                    className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 text-[10px] md:text-xs font-semibold tracking-[0.12em] uppercase rounded-lg border border-accent text-accent bg-transparent shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)] hover:bg-accent/10 transition-all duration-300"
+                    className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 text-[10px] md:text-xs font-semibold tracking-[0.12em] uppercase rounded-lg border border-accent text-accent bg-transparent shadow-[0_0_16px_rgba(189,0,255,0.3)] hover:shadow-[0_0_30px_rgba(189,0,255,0.5)] hover:bg-accent/10 transition-all duration-300"
                   >
                     Pro vás: AI Creativity
                   </a>
@@ -58,7 +62,7 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Auto-scrolling Logo Ribbon - Wall of Trust */}
+          {/* Wall of Trust - Logo Ribbon */}
           <LogoRibbon />
 
           {/* B2B Section - Productivity, Automation & Agents */}
