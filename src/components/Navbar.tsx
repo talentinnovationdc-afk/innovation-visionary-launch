@@ -22,9 +22,9 @@ export const Navbar = () => {
             <img 
               src={logoIcon} 
               alt="Talent Innovation logo" 
-              className="h-8 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(102,252,241,0.6)]"
+              className="h-8 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(102,252,241,0.7)]"
             />
-            <span className="hidden md:block text-base font-medium tracking-[0.2em] text-[#EDEEEE]">
+            <span className="hidden md:block text-base font-semibold tracking-widest text-[#EDEEEE]">
               TALENT INNOVATION
             </span>
           </Link>
@@ -45,9 +45,9 @@ export const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link to="/checkout">
-              <Button variant="gradient" size="default">
-                AI Audit zdarma
-              </Button>
+              <button className="px-5 py-2 text-sm font-semibold rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
+                AI Audit
+              </button>
             </Link>
           </div>
 
@@ -76,9 +76,9 @@ export const Navbar = () => {
                 </a>
               ))}
               <Link to="/checkout" onClick={() => setIsOpen(false)}>
-                <Button variant="gradient" size="default" className="mt-2 w-full">
-                  AI Audit zdarma
-                </Button>
+                <button className="mt-2 w-full px-5 py-2 text-sm font-semibold rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
+                  AI Audit
+                </button>
               </Link>
             </div>
           </div>
