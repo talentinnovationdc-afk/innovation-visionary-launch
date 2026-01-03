@@ -21,11 +21,11 @@ export const NeuralNetworkBackground = () => {
         events: {
           onHover: {
             enable: true,
-            mode: "grab",
+            mode: ["grab", "attract"],
             parallax: {
               enable: true,
-              force: 40,
-              smooth: 10,
+              force: 20,
+              smooth: 20,
             },
           },
           resize: true,
@@ -34,9 +34,17 @@ export const NeuralNetworkBackground = () => {
           grab: {
             distance: 200,
             links: {
-              opacity: 0.6,
+              opacity: 0.4,
               color: "#66FCF1",
             },
+          },
+          attract: {
+            distance: 200,
+            duration: 0.4,
+            easing: "ease-out-quad",
+            factor: 1,
+            maxSpeed: 0.2,
+            speed: 0.2,
           },
         },
       },
@@ -46,39 +54,58 @@ export const NeuralNetworkBackground = () => {
         },
         links: {
           color: "#66FCF1",
-          distance: 150,
+          distance: 200,
           enable: true,
-          opacity: 0.25,
+          opacity: 0.3,
           width: 1,
+          warp: true,
         },
         move: {
           direction: "none" as const,
           enable: true,
           outModes: {
-            default: "bounce" as const,
+            default: "out" as const,
           },
           random: true,
-          speed: 0.8,
+          speed: 0.6,
           straight: false,
+          warp: true,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200,
+          },
         },
         number: {
           density: {
             enable: true,
-            area: 1200,
+            area: 1000,
           },
-          value: 80,
+          value: 60,
         },
         opacity: {
-          value: 0.7,
+          value: 0.6,
+          animation: {
+            enable: true,
+            speed: 0.8,
+            minimumValue: 0.15,
+            sync: false,
+          },
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1.5, max: 2.5 },
+          value: { min: 1.5, max: 3 },
+          animation: {
+            enable: true,
+            speed: 1,
+            minimumValue: 1,
+            sync: false,
+          },
         },
         shadow: {
-          blur: 8,
+          blur: 6,
           color: {
             value: "#66FCF1",
           },
@@ -86,6 +113,24 @@ export const NeuralNetworkBackground = () => {
           offset: {
             x: 0,
             y: 0,
+          },
+        },
+        twinkle: {
+          particles: {
+            enable: true,
+            frequency: 0.03,
+            opacity: 0.8,
+            color: {
+              value: "#66FCF1",
+            },
+          },
+          lines: {
+            enable: true,
+            frequency: 0.01,
+            opacity: 0.5,
+            color: {
+              value: "#66FCF1",
+            },
           },
         },
       },
@@ -100,7 +145,7 @@ export const NeuralNetworkBackground = () => {
       id="neural-network"
       init={particlesInit}
       options={options}
-      className="fixed inset-0 z-0"
+      className="fixed inset-0 z-0 pointer-events-auto"
     />
   );
 };
