@@ -33,11 +33,11 @@ const cards: WhyUsCard[] = [
   {
     icon: Award,
     title: "CERTIFIKOVANÉ WORKFLOW",
-    text: "Procesy auditované metodikou Swim In AI (Jan Bouda) pro maximální bezpečnost.",
+    text: "Procesy auditované metodikou swimin.ai (Jan Bouda) pro maximální bezpečnost.",
     accent: "purple",
     link: {
-      url: "https://www.swiminai.cz",
-      label: "Swim In AI",
+      url: "https://www.swimin.ai",
+      label: "swimin.ai",
     },
   },
 ];
