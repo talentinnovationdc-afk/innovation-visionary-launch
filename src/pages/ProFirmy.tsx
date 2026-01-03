@@ -248,7 +248,7 @@ const ProFirmy = () => {
                   
                   <div className="text-center md:text-left">
                     <h3 className="text-lg font-semibold tracking-[0.15em] text-foreground uppercase mb-3">
-                      82–100% FINANCOVÁNÍ Z GRANTŮ
+                      FINANCOVÁNÍ Z GRANTŮ
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
                       <span className="text-primary font-semibold">Daniel Červený</span> zajišťuje kompletní administraci 
