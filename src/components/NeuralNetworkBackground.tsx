@@ -3,7 +3,7 @@ import Particles from "react-tsparticles";
 import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 
-const NeuralNetworkBackgroundComponent = () => {
+const OrbitalBackgroundComponent = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -30,18 +30,22 @@ const NeuralNetworkBackgroundComponent = () => {
         events: {
           onHover: {
             enable: true,
-            mode: "attract",
+            mode: ["attract", "slow"],
           },
           resize: true,
         },
         modes: {
           attract: {
-            distance: 150,
-            duration: 0.4,
-            easing: "ease-out-quad",
-            factor: 0.5,
-            maxSpeed: 0.3,
-            speed: 0.1,
+            distance: 200,
+            duration: 0.8,
+            easing: "ease-out-cubic",
+            factor: 3,
+            maxSpeed: 1,
+            speed: 0.5,
+          },
+          slow: {
+            factor: 2,
+            radius: 150,
           },
         },
       },
@@ -51,44 +55,79 @@ const NeuralNetworkBackgroundComponent = () => {
         },
         links: {
           color: "#66FCF1",
-          distance: 150,
+          distance: 120,
           enable: true,
-          opacity: 0.15,
+          opacity: 0.2,
           width: 0.5,
-          triangles: {
-            enable: false,
-          },
-          consent: false,
-          frequency: 1,
-        },
-        collisions: {
-          enable: false,
         },
         move: {
-          direction: "none" as const,
           enable: true,
+          speed: 0.6,
+          direction: "none" as const,
           outModes: {
             default: "out" as const,
           },
-          random: true,
-          speed: 0.4,
-          straight: false,
+          path: {
+            enable: true,
+            delay: {
+              value: 0,
+            },
+            options: {
+              radius: 150,
+              speed: 0.003,
+            },
+          },
+          attract: {
+            enable: true,
+            rotate: {
+              x: 3000,
+              y: 3000,
+            },
+          },
+          spin: {
+            enable: true,
+            position: {
+              x: 50,
+              y: 50,
+            },
+            acceleration: 0,
+          },
+          trail: {
+            enable: false,
+          },
         },
         number: {
           density: {
             enable: false,
           },
-          value: isMobile ? 20 : 50,
-          limit: isMobile ? 25 : 60,
+          value: isMobile ? 25 : 45,
+          limit: isMobile ? 30 : 50,
         },
         opacity: {
-          value: 0.7,
+          value: { min: 0.4, max: 0.8 },
+          animation: {
+            enable: true,
+            speed: 0.5,
+            minimumValue: 0.3,
+            sync: false,
+          },
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: 1.5,
+          value: { min: 1, max: 2.5 },
+        },
+        shadow: {
+          blur: 8,
+          color: {
+            value: "#66FCF1",
+          },
+          enable: true,
+          offset: {
+            x: 0,
+            y: 0,
+          },
         },
       },
       detectRetina: true,
@@ -99,7 +138,7 @@ const NeuralNetworkBackgroundComponent = () => {
 
   return (
     <Particles
-      id="neural-network"
+      id="orbital-particles"
       init={particlesInit}
       options={options}
       className="fixed inset-0 z-0 pointer-events-none"
@@ -107,4 +146,4 @@ const NeuralNetworkBackgroundComponent = () => {
   );
 };
 
-export const NeuralNetworkBackground = memo(NeuralNetworkBackgroundComponent);
+export const NeuralNetworkBackground = memo(OrbitalBackgroundComponent);
