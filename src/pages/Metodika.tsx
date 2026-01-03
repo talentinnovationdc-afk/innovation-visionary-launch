@@ -16,8 +16,8 @@ const teamMembers = [
   },
   {
     name: "Jan Bouda",
-    role: "Swim In AI Metodika",
-    description: "Autor certifikované metodiky Swim In AI pro bezpečnou implementaci umělé inteligence.",
+    role: "swimin.ai Metodika",
+    description: "Autor certifikované metodiky swimin.ai pro bezpečnou implementaci umělé inteligence.",
     linkedin: "https://www.linkedin.com/in/jan-bouda-7151b7167/",
     image: janBouda,
   },
@@ -39,9 +39,9 @@ const methodologySteps = [
   {
     number: "03",
     title: "IMPLEMENTACE",
-    description: "Nasazení AI-native workflow auditovaného metodikou Swim In AI.",
+    description: "Nasazení AI-native workflow auditovaného metodikou swimin.ai.",
     icon: Cog,
-    link: { url: "https://www.swimin.ai/", text: "Swim In AI" },
+    link: { url: "https://www.swimin.ai/", text: "swimin.ai" },
   },
   {
     number: "04",
@@ -84,8 +84,8 @@ const dnaCards = [
   {
     icon: Award,
     title: "CERTIFIKOVANÉ WORKFLOW",
-    subtitle: "SWIM IN AI",
-    description: "Procesy auditované metodikou Swim In AI pro maximální bezpečnost.",
+    subtitle: "SWIMIN.AI",
+    description: "Procesy auditované metodikou swimin.ai pro maximální bezpečnost.",
     accent: "purple",
     link: { url: "https://www.swimin.ai/", text: "swimin.ai" },
   },

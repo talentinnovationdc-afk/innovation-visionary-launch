@@ -34,8 +34,8 @@ const steps: Step[] = [
     description: "Nasazení AI-native workflow auditovaného metodikou",
     accent: "cyan",
     link: {
-      text: "Swim In AI",
-      url: "https://www.swiminai.cz",
+      text: "swimin.ai",
+      url: "https://www.swimin.ai",
     },
   },
   {
