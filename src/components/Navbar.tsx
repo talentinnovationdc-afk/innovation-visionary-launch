@@ -6,6 +6,7 @@ import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
   { label: "PRO FIRMY", href: "/profirmy", isRoute: true },
+  { label: "ONLINE", href: "/online", isRoute: true },
   { label: "METODIKA", href: "/metodika", isRoute: true },
   { label: "O NÁS", href: "/o-nas", isRoute: true },
 ];

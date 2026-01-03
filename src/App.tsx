@@ -9,6 +9,7 @@ import Dekujeme from "./pages/Dekujeme";
 import Metodika from "./pages/Metodika";
 import ONas from "./pages/ONas";
 import ProFirmy from "./pages/ProFirmy";
+import Online from "./pages/Online";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/metodika" element={<Metodika />} />
           <Route path="/o-nas" element={<ONas />} />
           <Route path="/profirmy" element={<ProFirmy />} />
+          <Route path="/online" element={<Online />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
