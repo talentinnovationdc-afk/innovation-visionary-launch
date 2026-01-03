@@ -21,21 +21,20 @@ const Index = () => {
           <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24">
             <div className="container px-4 text-center">
               <div className="max-w-5xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/5 border border-primary/30 mb-8">
-                  <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-primary uppercase">
-                    Strategický partner pro průmysl a technologie
+                <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-10 leading-[1.1] tracking-[0.2em] uppercase">
+                  <span className="block bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent">
+                    TRANSFORMUJEME
                   </span>
-                </div>
-                
-                <h1 id="hero-heading" className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-6 leading-tight tracking-[0.15em] uppercase">
-                  <span className="gradient-text">TRANSFORMUJEME KOMPLEXITU</span>
-                  <br />
-                  <span className="gradient-text">V EFEKTIVITU</span>
+                  <span className="block bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent">
+                    KOMPLEXITU V
+                  </span>
+                  <span className="block bg-gradient-to-r from-[#BD00FF] to-[#ff00ff] bg-clip-text text-transparent">
+                    SYSTÉMOVOU AUTONOMII
+                  </span>
                 </h1>
                 
-                <p className="text-base md:text-lg text-[#C5C6C7] max-w-3xl mx-auto mb-12 normal-case tracking-normal leading-relaxed">
-                  Respekt k vaší provozní realitě a regulacím je základem každé naší implementace. 
-                  Provázíme lídry trhu bezpečnou cestou k AI automatizaci a kreativě.
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[900px] mx-auto mb-12 normal-case tracking-normal leading-[1.8]">
+                  Strategický partner pro průmysl a regulovaná odvětví. Implementujeme bezpečná AI řešení s nekompromisním respektem k vašim standardům a důrazem na měřitelnou návratnost.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
