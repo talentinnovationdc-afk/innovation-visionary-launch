@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 // Client logos with URLs
 import bircher from "@/assets/clients/bircher.png";
 import findigo from "@/assets/clients/findigo.png";
-import gynem from "@/assets/clients/gynem.jpg";
+import gynem from "@/assets/clients/gynem.png";
 import hirschmann from "@/assets/clients/hirschmann.png";
 import iveco from "@/assets/clients/iveco.png";
 import fcc from "@/assets/clients/fcc.png";
