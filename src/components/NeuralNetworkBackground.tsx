@@ -30,17 +30,18 @@ const OrbitalBackgroundComponent = () => {
         events: {
           onHover: {
             enable: true,
-            mode: "grab",
+            mode: "attract",
           },
           resize: true,
         },
         modes: {
-          grab: {
-            distance: 180,
-            links: {
-              opacity: 0.4,
-              color: "#66FCF1",
-            },
+          attract: {
+            distance: 150,
+            duration: 0.8,
+            easing: "ease-out-cubic",
+            factor: 2,
+            maxSpeed: 0.5,
+            speed: 0.2,
           },
         },
       },
@@ -50,30 +51,48 @@ const OrbitalBackgroundComponent = () => {
         },
         links: {
           color: "#66FCF1",
-          distance: 200,
+          distance: 150,
           enable: true,
-          opacity: 0.15,
+          opacity: 0.2,
           width: 1,
+          triangles: {
+            enable: false,
+          },
         },
         move: {
           enable: true,
-          speed: 0.8,
+          speed: 0.3,
           direction: "none" as const,
           outModes: {
             default: "bounce" as const,
           },
           random: false,
           straight: false,
+          attract: {
+            enable: true,
+            rotate: {
+              x: 3000,
+              y: 3000,
+            },
+          },
+          spin: {
+            enable: true,
+            position: {
+              x: 50,
+              y: 50,
+            },
+            acceleration: 0,
+          },
         },
         number: {
           density: {
             enable: true,
-            area: 900,
+            area: 1200,
           },
-          value: isMobile ? 40 : 80,
+          value: isMobile ? 35 : 70,
         },
         opacity: {
-          value: 0.6,
+          value: { min: 0.3, max: 0.7 },
         },
         shape: {
           type: "circle",
