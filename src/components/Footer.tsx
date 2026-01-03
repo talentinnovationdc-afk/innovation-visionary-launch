@@ -1,5 +1,6 @@
-import { Sparkles, Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoIcon from "@/assets/logo-icon.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,7 @@ export const Footer = () => {
           {/* Logo & Copyright */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
-                <Sparkles className="h-4 w-4 text-primary-foreground" />
-              </div>
+              <img src={logoIcon} alt="Talent Innovation logo" className="h-8 w-8 object-contain" />
               <span className="text-base font-bold tracking-tight text-foreground">
                 Talent<span className="gradient-text">Innovation</span>
               </span>
