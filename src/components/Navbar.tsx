@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -17,12 +18,14 @@ export const Navbar = () => {
       <nav className="glass mx-4 mt-4 rounded-2xl md:mx-8">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
-              <Sparkles className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="text-lg font-bold tracking-tight text-foreground">
-              Talent<span className="gradient-text">Innovation</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img 
+              src={logoIcon} 
+              alt="Talent Innovation logo" 
+              className="h-9 w-auto"
+            />
+            <span className="hidden md:block text-lg font-bold tracking-tight text-[#EDEEEE]">
+              TALENT INNOVATION
             </span>
           </Link>
 
