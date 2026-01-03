@@ -3,14 +3,14 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
-import { Search, Bot, Users, GraduationCap, Banknote } from "lucide-react";
+import { Search, Bot, Users, GraduationCap, Banknote, ClipboardCheck, Shield, Scale, FileCode } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
   {
     icon: Search,
-    title: "AI AUDIT",
-    subtitle: "Diagnostika & Plánování",
+    title: "DISCOVERY",
+    subtitle: "AI Audit",
     description: "Identifikace úzkých hrdel ve vašich procesech a návrh ROI roadmapy pro AI transformaci.",
     features: ["Bottleneck Identification", "ROI Roadmap", "Risk Assessment"],
     price: "18 000 – 25 000 Kč",
@@ -19,7 +19,7 @@ const services = [
   },
   {
     icon: Bot,
-    title: "IMPLEMENTACE",
+    title: "IMPLEMENTATION",
     subtitle: "Autonomní Systémy",
     description: "Nasazení autonomních AI agentů s využitím Few-shot Prompting pro maximální přesnost a spolehlivost.",
     features: ["Autonomous Agents", "Few-shot Prompting", "Custom Workflows"],
@@ -29,7 +29,7 @@ const services = [
   },
   {
     icon: Users,
-    title: "STRATEGICKÁ SESSION",
+    title: "STRATEGY",
     subtitle: "Executive Advisory",
     description: "Board-level strategie pro AI Act compliance a dlouhodobou digitální transformaci.",
     features: ["AI Act Compliance", "Board-level Strategy", "Digital Roadmap"],
@@ -39,13 +39,36 @@ const services = [
   },
   {
     icon: GraduationCap,
-    title: "AKADEMIE",
+    title: "ACADEMY",
     subtitle: "Know-how Transfer",
     description: "Přenos znalostí vašim týmům pro zvýšení produktivity a samostatnosti v práci s AI.",
     features: ["Know-how Transfer", "Productivity Boost", "Team Enablement"],
-    price: "8 500 – 12 500 Kč / os.",
+    price: "od 8 500 Kč / os.",
     accent: "purple",
     highlighted: false,
+  },
+];
+
+const diagnostikaPoints = [
+  {
+    icon: ClipboardCheck,
+    title: "PROCESNÍ ANALÝZA",
+    description: "Mapování vašich workflow a identifikace automatizačního potenciálu.",
+  },
+  {
+    icon: Shield,
+    title: "DATOVÁ BEZPEČNOST",
+    description: "Audit datových toků a zabezpečení pro AI-ready infrastrukturu.",
+  },
+  {
+    icon: Scale,
+    title: "AI ACT READINESS",
+    description: "Posouzení připravenosti na regulace EU AI Act a compliance strategie.",
+  },
+  {
+    icon: FileCode,
+    title: "TECHNICKÝ BLUEPRINT",
+    description: "Detailní plán implementace s architekturou a milníky.",
   },
 ];
 
@@ -54,7 +77,7 @@ const ProFirmy = () => {
     <>
       <SEO 
         title="Pro firmy | Služby a ceník | Talent Innovation"
-        description="Transformujeme komplexitu v systémovou autonomii. AI audit, implementace, strategické poradenství a akademie pro průmyslové lídry."
+        description="Architekti digitální autonomie. AI audit, implementace, strategické poradenství a akademie pro průmyslové lídry."
         path="/profirmy"
       />
       
@@ -68,19 +91,17 @@ const ProFirmy = () => {
           <section className="pt-44 md:pt-52 pb-16 relative">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
-                <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[0.2em] mb-8 leading-[1.1] uppercase">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-[0.2em] mb-8 leading-[1.1] uppercase">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    TRANSFORMUJEME KOMPLEXITU V
+                    ARCHITEKTI DIGITÁLNÍ
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    SYSTÉMOVOU AUTONOMII
+                    AUTONOMIE
                   </span>
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[900px] mx-auto leading-[1.8]">
-                  Strategický partner pro průmysl a regulovaná odvětví. Jan Bouda navrhuje architekturu, 
-                  Daniel Červený zajišťuje financování a strategii — společně garantujeme bezpečnou AI transformaci 
-                  s měřitelnou návratností.
+                  Strategický partner pro průmysl a regulovaná odvětví. <span className="text-foreground font-semibold">Jan Bouda</span> navrhuje architekturu, <span className="text-foreground font-semibold">Daniel Červený</span> zajišťuje financování a strategii — společně garantujeme bezpečnou AI transformaci s měřitelnou návratností.
                 </p>
               </div>
             </div>
@@ -176,24 +197,63 @@ const ProFirmy = () => {
             </div>
           </section>
 
+          {/* Diagnostika Section */}
+          <section className="py-20 bg-card/20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
+                DIAGNOSTIKA AI PŘIPRAVENOSTI
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Komplexní analýza vaší organizace před zahájením AI transformace.
+              </p>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                {diagnostikaPoints.map((point) => {
+                  const Icon = point.icon;
+                  
+                  return (
+                    <div
+                      key={point.title}
+                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]"
+                    >
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      
+                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-2">
+                        {point.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {point.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            
+            {/* Bottom divider */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          </section>
+
           {/* Financing Section */}
-          <section className="py-12">
+          <section className="py-16">
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto bg-gradient-to-r from-card/60 via-card/80 to-card/60 backdrop-blur-xl border border-primary/20 rounded-2xl p-8 md:p-10">
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                  <div className="w-16 h-16 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                    <Banknote className="w-8 h-8 text-primary" />
+                  <div className="w-20 h-20 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Banknote className="w-10 h-10 text-primary" />
                   </div>
                   
                   <div className="text-center md:text-left">
                     <h3 className="text-lg font-semibold tracking-[0.15em] text-foreground uppercase mb-3">
-                      OPTIMALIZACE FINANCOVÁNÍ
+                      82–100% FINANCOVÁNÍ Z GRANTŮ
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      <span className="text-primary font-semibold">Daniel Červený</span> specializuje na optimalizaci 
-                      financování a administraci grantů pro AI projekty. Pomůžeme vám identifikovat vhodné dotační 
-                      programy a zajistíme kompletní administraci od žádosti po vyúčtování — vy se soustředíte 
-                      na transformaci, my na financování.
+                      <span className="text-primary font-semibold">Daniel Červený</span> zajišťuje kompletní administraci 
+                      dotačních programů pro AI projekty. Od identifikace vhodných grantů přes přípravu žádosti až po 
+                      finální vyúčtování — vy se soustředíte na transformaci, my garantujeme maximální čerpání dostupných zdrojů.
                     </p>
                   </div>
                 </div>
@@ -202,13 +262,13 @@ const ProFirmy = () => {
           </section>
 
           {/* Primary CTA */}
-          <section className="py-16">
+          <section className="py-12">
             <div className="container mx-auto px-4 text-center">
               <Link
                 to="/checkout"
                 className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
               >
-                DIAGNOSTIKA AI PŘIPRAVENOSTI A RIZIK
+                OBJEDNAT EXPERTNÍ DIAGNOSTIKU
               </Link>
             </div>
           </section>
