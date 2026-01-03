@@ -94,9 +94,9 @@ const OrbitalBackgroundComponent = () => {
         number: {
           density: {
             enable: true,
-            area: 800,
+            area: 1000,
           },
-          value: isMobile ? 22 : 45,
+          value: isMobile ? 18 : 35,
         },
         opacity: {
           value: { min: 0.3, max: 0.7 },
@@ -106,6 +106,25 @@ const OrbitalBackgroundComponent = () => {
         },
         size: {
           value: { min: 2, max: 4 },
+        },
+      },
+      emitters: {
+        position: {
+          x: 50,
+          y: 45,
+        },
+        rate: {
+          delay: 0.8,
+          quantity: 1,
+        },
+        size: {
+          width: 25,
+          height: 25,
+        },
+        life: {
+          count: 0,
+          duration: 0,
+          delay: 0,
         },
       },
       detectRetina: true,
