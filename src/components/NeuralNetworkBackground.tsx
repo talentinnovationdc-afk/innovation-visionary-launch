@@ -27,21 +27,28 @@ const OrbitalBackgroundComponent = () => {
       },
       fpsLimit: 60,
       interactivity: {
+        detectsOn: "window" as const,
         events: {
           onHover: {
             enable: true,
-            mode: "attract",
+            mode: ["grab", "connect"],
           },
           resize: true,
         },
         modes: {
-          attract: {
-            distance: 150,
-            duration: 0.8,
-            easing: "ease-out-cubic",
-            factor: 2,
-            maxSpeed: 0.5,
-            speed: 0.2,
+          grab: {
+            distance: 180,
+            links: {
+              opacity: 0.35,
+              color: "#66FCF1",
+            },
+          },
+          connect: {
+            distance: 130,
+            links: {
+              opacity: 0.18,
+            },
+            radius: 140,
           },
         },
       },
