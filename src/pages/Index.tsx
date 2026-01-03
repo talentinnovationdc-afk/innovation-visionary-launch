@@ -2,6 +2,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
+import { LogoRibbon } from "@/components/LogoRibbon";
+import { ExpertiseSection } from "@/components/ExpertiseSection";
 import { Factory, Fuel, Truck, MessageSquare, Bot, Wand2, Shield, Award, FileCheck } from "lucide-react";
 
 const Index = () => {
@@ -54,24 +56,8 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Social Proof - Logo Wall */}
-          <section className="py-12 md:py-16">
-            <div className="container px-4">
-              <p className="text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-8">
-                Důvěřují nám lídři průmyslu
-              </p>
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50 hover:opacity-70 transition-opacity duration-500">
-                {["IVECO", "PUBLICIS", "MESSER", "PATOK", "MEDI-GLOBE", "HIRSCHMANN", "FCC", "BIRCHER"].map((logo) => (
-                  <span 
-                    key={logo} 
-                    className="text-sm md:text-base font-semibold tracking-[0.1em] text-muted-foreground hover:text-primary transition-colors duration-300 cursor-default"
-                  >
-                    {logo}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </section>
+          {/* Auto-scrolling Logo Ribbon - Wall of Trust */}
+          <LogoRibbon />
 
           {/* B2B Section - Productivity, Automation & Agents */}
           <section id="b2b" aria-labelledby="b2b-heading" className="py-20 md:py-28 relative overflow-hidden">
@@ -283,6 +269,9 @@ const Index = () => {
               </div>
             </div>
           </section>
+
+          {/* Expertise Section - Clients by Sector */}
+          <ExpertiseSection />
         </main>
 
         <Footer />
