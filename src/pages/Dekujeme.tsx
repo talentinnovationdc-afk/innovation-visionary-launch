@@ -64,20 +64,20 @@ const Dekujeme = () => {
                 Vaše objednávka byla úspěšně zpracována. Přístupové údaje obdržíte v e-mailu.
               </p>
 
-              <div className="pt-6 flex flex-col gap-4">
-                <a href={ACADEMY_URL} target="_blank" rel="noopener noreferrer">
+              <nav className="pt-6 flex flex-col gap-4" aria-label="Akce po nákupu">
+                <a href={ACADEMY_URL} target="_blank" rel="noopener noreferrer" aria-label="Vstoupit do akademie na learning.t-i.cz">
                   <button className="w-full px-6 py-4 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2">
-                    <GraduationCap className="h-5 w-5" />
+                    <GraduationCap className="h-5 w-5" aria-hidden="true" />
                     VSTOUPIT DO AKADEMIE
                   </button>
                 </a>
-                <Link to="/">
+                <Link to="/" aria-label="Zpět na hlavní stránku">
                   <button className="w-full px-6 py-3 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-border bg-transparent text-foreground hover:bg-secondary transition-all duration-300 inline-flex items-center justify-center gap-2">
-                    <ArrowLeft className="h-4 w-4" />
+                    <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                     ZPĚT DOMŮ
                   </button>
                 </Link>
-              </div>
+              </nav>
 
               {!isProduction && sessionId && (
                 <p className="text-xs text-muted-foreground/60 mt-4 normal-case tracking-normal">
