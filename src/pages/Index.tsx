@@ -65,18 +65,14 @@ const Index = () => {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,_hsl(176,96%,69%,0.08)_0%,_transparent_70%)] pointer-events-none" />
             
             <div className="container px-4 relative z-10">
-              {/* Bridge Text */}
-              <p className="text-center text-[#C5C6C7] text-sm md:text-base max-w-2xl mx-auto mb-12 normal-case tracking-normal leading-relaxed italic">
-                Věříme, že skutečná inovace začíná u pevných základů a autonomních systémů.
-              </p>
-
               <div className="text-center mb-16">
-                <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">První krok</span>
+                <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">Systémová autonomie</span>
                 <h2 id="b2b-heading" className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
                   MASTER OF AI PRODUCTIVITY, AUTOMATION & AGENTS
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal">
-                  Od strategického poradenství po autonomní systémy. Tři pilíře moderní firemní AI.
+                <p className="text-muted-foreground max-w-3xl mx-auto normal-case tracking-normal leading-relaxed">
+                  Stavíme autonomní systémy tam, kde je nulový prostor pro chybu. 
+                  Naše metodiky řeší komplexitu v regulovaných odvětvích.
                 </p>
               </div>
 
@@ -100,18 +96,14 @@ const Index = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_center,_hsl(284,100%,50%,0.06)_0%,_transparent_60%)] pointer-events-none" />
             
             <div className="container px-4 relative z-10">
-              {/* Bridge Text */}
-              <p className="text-center text-[#C5C6C7] text-sm md:text-base max-w-2xl mx-auto mb-12 normal-case tracking-normal leading-relaxed italic">
-                Efektivní systémy jsou jen polovinou úspěchu. Tou druhou jsou lidé, kteří v nich tvoří.
-              </p>
-
               <div className="text-center mb-16">
-                <span className="inline-block text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">Druhý krok</span>
+                <span className="inline-block text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">Individuální mistrovství</span>
                 <h2 id="b2c-heading" className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
                   MASTER OF AI CREATIVITY
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal">
-                  Metodiky prověřené praxí u globálních značek. Online kurzy ihned k dispozici.
+                <p className="text-muted-foreground max-w-3xl mx-auto normal-case tracking-normal leading-relaxed">
+                  Přenášíme korporátní efektivitu do rukou jednotlivců. 
+                  Metodiky z našich průmyslových projektů transformované do praktických kurzů.
                 </p>
               </div>
 
