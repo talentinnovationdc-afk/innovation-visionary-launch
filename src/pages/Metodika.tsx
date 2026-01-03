@@ -135,14 +135,19 @@ const Metodika = () => {
         
         <main className="pb-20">
           {/* Hero Section with increased padding */}
-          <section className="pt-40 md:pt-48 pb-20 relative">
+          <section className="pt-44 md:pt-48 pb-20 relative">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[0.15em] md:tracking-[0.2em] text-foreground mb-8 leading-tight">
-                  AI IMPLEMENTACE S GARANCÍ ROI A BEZPEČNOSTI
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[0.2em] mb-8 leading-[1.1] uppercase">
+                  <span className="block text-foreground">
+                    PRŮMYSLOVÝ STANDARD PRO
+                  </span>
+                  <span className="block bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    AI IMPLEMENTACE
+                  </span>
                 </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Stavíme autonomní systémy, které pracují za vás. Jan Bouda navrhuje architekturu, Daniel Červený zajišťuje financování a strategii.
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[900px] mx-auto leading-[1.8]">
+                  Strategický partner pro průmysl a regulovaná odvětví. Implementujeme bezpečná AI řešení s nekompromisním respektem k vašim standardům a důrazem na měřitelnou návratnost.
                 </p>
               </div>
             </div>

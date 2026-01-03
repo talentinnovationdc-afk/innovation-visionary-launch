@@ -17,19 +17,22 @@ const Index = () => {
         <Navbar />
         
         <main className="flex-1">
-          {/* Hero Section */}
-          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24">
+        {/* Hero Section */}
+          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-48 pb-16 md:pt-52 md:pb-24">
             <div className="container px-4 text-center">
               <div className="max-w-5xl mx-auto">
                 <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-10 leading-[1.1] tracking-[0.2em] uppercase">
-                  <span className="block bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                     TRANSFORMUJEME
                   </span>
-                  <span className="block bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                     KOMPLEXITU V
                   </span>
-                  <span className="block bg-gradient-to-r from-[#BD00FF] to-[#ff00ff] bg-clip-text text-transparent">
-                    SYSTÉMOVOU AUTONOMII
+                  <span className="block bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    SYSTÉMOVOU
+                  </span>
+                  <span className="block bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    AUTONOMII
                   </span>
                 </h1>
                 
