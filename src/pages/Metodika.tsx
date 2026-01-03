@@ -139,10 +139,11 @@ const Metodika = () => {
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[0.2em] mb-8 leading-[1.1] uppercase">
-                  <span className="block text-foreground">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                     PRŮMYSLOVÝ STANDARD PRO
                   </span>
-                  <span className="block bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                  <br />
+                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                     AI IMPLEMENTACE
                   </span>
                 </h1>
