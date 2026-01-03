@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,8 +8,12 @@ import { Link } from "react-router-dom";
 const Dekujeme = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Děkujeme | Talent Innovation" 
+        description="Děkujeme za váš zájem o AI audit. Brzy vás budeme kontaktovat."
+        path="/dekujeme"
+      />
       <Navbar />
-      
       <main className="flex-1 flex items-center justify-center pt-32 pb-16">
         <div className="container px-4">
           <div className="max-w-lg mx-auto text-center">

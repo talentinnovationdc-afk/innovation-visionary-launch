@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,7 +19,6 @@ const Checkout = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would handle form submission
     navigate("/dekujeme");
   };
 
@@ -28,6 +28,11 @@ const Checkout = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="AI Audit | Talent Innovation" 
+        description="Objednejte si AI audit od Talent Innovation na t-i.cz. Zjistěte, jak AI může transformovat vaše podnikání."
+        path="/checkout"
+      />
       <Navbar />
       
       <main className="flex-1 flex items-center justify-center pt-32 pb-16">
