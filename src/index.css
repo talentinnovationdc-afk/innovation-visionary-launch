@@ -109,32 +109,6 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 
-  .gradient-text-animated {
-    background: linear-gradient(135deg, #00f2fe 0%, #BD00FF 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-
-  .hero-gradient-text {
-    background: linear-gradient(135deg, #00f2fe 0%, #BD00FF 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    animation: pulse-scale 6s ease-in-out infinite;
-  }
-
-  @keyframes pulse-scale {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.01); }
-  }
-
-  .animate-pulse-subtle {
-    animation: pulse-scale 6s ease-in-out infinite;
-  }
-
   .input-glow:focus {
     box-shadow: 0 0 0 2px hsl(176, 96%, 69%, 0.3), 0 0 20px hsl(176, 96%, 69%, 0.2);
     border-color: hsl(176, 96%, 69%);

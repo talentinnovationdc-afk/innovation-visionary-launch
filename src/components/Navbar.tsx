@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
-  { label: "SLUŽBY", href: "#b2b" },
+  { label: "SLUŽBY", href: "#services" },
   { label: "METODIKA", href: "/metodika", isRoute: true },
-  { label: "O NÁS", href: "/o-nas", isRoute: true },
+  { label: "O NÁS", href: "#about" },
+  { label: "CENÍK", href: "#pricing" },
 ];
 
 export const Navbar = () => {
