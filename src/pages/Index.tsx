@@ -17,35 +17,37 @@ const Index = () => {
           <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-32 pb-20 md:pt-40 md:pb-28">
             <div className="container px-4 text-center">
               <div className="max-w-5xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
-                  <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
-                  <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Nová éra AI vzdělávání</span>
+                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/5 border border-primary/30 mb-8">
+                  <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-primary uppercase">
+                    Strategický partner pro průmysl a technologie
+                  </span>
                 </div>
                 
-                <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-[0.1em]">
-                  <span className="gradient-text">OVLÁDNĚTE AI KREATIVITU</span>
+                <h1 id="hero-heading" className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-6 leading-tight tracking-[0.15em] uppercase">
+                  <span className="gradient-text">TRANSFORMUJEME KOMPLEXITU</span>
                   <br />
-                  <span className="text-foreground">PRO VÁŠ BYZNYS</span>
+                  <span className="gradient-text">V EFEKTIVITU</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 normal-case tracking-normal">
-                  Komplexní vzdělávání, implementace a analýza pro moderní firmy.
+                <p className="text-base md:text-lg text-[#C5C6C7] max-w-3xl mx-auto mb-12 normal-case tracking-normal leading-relaxed">
+                  Respekt k vaší provozní realitě a regulacím je základem každé naší implementace. 
+                  Provázíme lídry trhu bezpečnou cestou k AI automatizaci a kreativě.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="https://buy.stripe.com/test_XYZ"
-                    aria-label="Začít AI transformaci - přejít na platbu"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                    href="#b2b"
+                    aria-label="Pro firmy: Productivity & Automation"
+                    className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 text-[10px] md:text-xs font-semibold tracking-[0.12em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   >
-                    ZAČÍT TRANSFORMACI
+                    Pro firmy: Productivity & Automation
                   </a>
                   <a
-                    href="#b2b"
-                    aria-label="Zjistit více o našich službách"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-border bg-transparent text-foreground hover:bg-secondary transition-all duration-300"
+                    href="#b2c"
+                    aria-label="Pro vás: AI Creativity"
+                    className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 text-[10px] md:text-xs font-semibold tracking-[0.12em] uppercase rounded-lg border border-accent text-accent bg-transparent shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)] hover:bg-accent/10 transition-all duration-300"
                   >
-                    ZJISTIT VÍCE
+                    Pro vás: AI Creativity
                   </a>
                 </div>
               </div>
