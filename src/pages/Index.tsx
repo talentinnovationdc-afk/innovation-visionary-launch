@@ -22,17 +22,12 @@ const Index = () => {
             <div className="container px-4 text-center">
               <div className="max-w-5xl mx-auto">
                 <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-10 leading-[1.1] tracking-[0.2em] uppercase">
-                  <span className="block bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    TRANSFORMUJEME
+                  <span className="bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    TRANSFORMUJEME KOMPLEXITU V
                   </span>
-                  <span className="block bg-gradient-to-r from-[#00f2fe] to-[#00c6ff] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    KOMPLEXITU V
-                  </span>
-                  <span className="block bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    SYSTÉMOVOU
-                  </span>
-                  <span className="block bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    AUTONOMII
+                  <br />
+                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    SYSTÉMOVOU AUTONOMII
                   </span>
                 </h1>
                 
