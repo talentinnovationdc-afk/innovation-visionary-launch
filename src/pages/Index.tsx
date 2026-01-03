@@ -5,6 +5,7 @@ import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
 import { B2BCaseStudies } from "@/components/B2BCaseStudies";
 import { WhyUsSection } from "@/components/WhyUsSection";
+import { MethodologySection } from "@/components/MethodologySection";
 import { MessageSquare, Bot, Wand2 } from "lucide-react";
 
 const Index = () => {
@@ -172,6 +173,9 @@ const Index = () => {
               </div>
             </div>
           </section>
+
+          {/* Methodology - Step by Step */}
+          <MethodologySection />
 
           {/* Why Talent Innovation - Bento Box */}
           <WhyUsSection />
