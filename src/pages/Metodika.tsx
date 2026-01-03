@@ -100,12 +100,9 @@ const Metodika = () => {
         path="/metodika"
       />
       
-      {/* Background with reduced opacity */}
-      <div className="fixed inset-0 opacity-15 -z-10">
-        <NeuralNetworkBackground />
-      </div>
+      <NeuralNetworkBackground />
       
-      <div className="min-h-screen bg-background/95">
+      <div className="min-h-screen bg-background/80">
         <Navbar />
         
         <main className="pt-24 pb-20">
