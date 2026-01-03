@@ -1,37 +1,47 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowLeft, GraduationCap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { CheckCircle, GraduationCap, ArrowLeft } from "lucide-react";
+import { Link, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 
 const PRODUCTION_DOMAIN = "t-i.cz";
 const ACADEMY_URL = "https://learning.t-i.cz";
 
 const Dekujeme = () => {
+  const [searchParams] = useSearchParams();
+  const sessionId = searchParams.get("session_id");
   const isProduction = typeof window !== "undefined" && window.location.hostname === PRODUCTION_DOMAIN;
 
   useEffect(() => {
-    // Fire GTM purchase event on production
-    if (isProduction && typeof window !== "undefined") {
+    // Fire GTM purchase event when session_id is present (Stripe redirect)
+    if (sessionId && typeof window !== "undefined") {
       const dataLayer = (window as Window & { dataLayer?: Record<string, unknown>[] }).dataLayer;
       if (dataLayer) {
+        // Push purchase event for GTM
         dataLayer.push({
           event: "purchase",
+          transaction_id: sessionId,
           origin: PRODUCTION_DOMAIN,
           page: "/dekujeme",
           timestamp: new Date().toISOString(),
         });
+
+        // Push history change event for SPA tracking
+        dataLayer.push({
+          event: "historyChange",
+          page_path: "/dekujeme",
+          page_title: "Děkujeme | Talent Innovation",
+        });
       }
     }
-  }, [isProduction]);
+  }, [sessionId]);
 
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Děkujeme | Talent Innovation" 
-        description="Děkujeme za váš zájem o AI audit. Brzy vás budeme kontaktovat."
+        description="Děkujeme za váš nákup. Vaše objednávka byla úspěšně zpracována. Přístupové údaje obdržíte e-mailem."
         path="/dekujeme"
       />
       <Navbar />
@@ -46,32 +56,32 @@ const Dekujeme = () => {
                 </div>
               </div>
 
-              <h1 className="text-3xl md:text-4xl font-bold">
-                <span className="gradient-text">Děkujeme!</span>
+              <h1 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground">
+                DĚKUJEME ZA NÁKUP!
               </h1>
               
-              <p className="text-muted-foreground text-lg">
-                Vaše objednávka byla úspěšně přijata. Brzy vás budeme kontaktovat.
+              <p className="text-muted-foreground text-base leading-relaxed normal-case tracking-normal">
+                Vaše objednávka byla úspěšně zpracována. Přístupové údaje obdržíte v e-mailu.
               </p>
 
-              <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="pt-6 flex flex-col gap-4">
                 <a href={ACADEMY_URL} target="_blank" rel="noopener noreferrer">
-                  <Button variant="gradient" size="lg" className="w-full sm:w-auto">
+                  <button className="w-full px-6 py-4 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2">
                     <GraduationCap className="h-5 w-5" />
-                    Vstoupit do akademie
-                  </Button>
+                    VSTOUPIT DO AKADEMIE
+                  </button>
                 </a>
                 <Link to="/">
-                  <Button variant="glass" size="lg" className="w-full sm:w-auto">
-                    <ArrowLeft className="h-5 w-5" />
-                    Zpět domů
-                  </Button>
+                  <button className="w-full px-6 py-3 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-border bg-transparent text-foreground hover:bg-secondary transition-all duration-300 inline-flex items-center justify-center gap-2">
+                    <ArrowLeft className="h-4 w-4" />
+                    ZPĚT DOMŮ
+                  </button>
                 </Link>
               </div>
 
-              {!isProduction && (
-                <p className="text-xs text-muted-foreground/60 mt-4">
-                  Dev mode: GTM events only fire on {PRODUCTION_DOMAIN}
+              {!isProduction && sessionId && (
+                <p className="text-xs text-muted-foreground/60 mt-4 normal-case tracking-normal">
+                  Dev mode: session_id detected ({sessionId.slice(0, 12)}...)
                 </p>
               )}
             </div>
