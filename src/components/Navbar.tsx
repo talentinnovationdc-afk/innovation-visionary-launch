@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
-  { label: "Služby", href: "#services" },
-  { label: "O nás", href: "#about" },
-  { label: "Ceník", href: "#pricing" },
+  { label: "SLUŽBY", href: "#services" },
+  { label: "O NÁS", href: "#about" },
+  { label: "CENÍK", href: "#pricing" },
 ];
 
 export const Navbar = () => {
@@ -19,14 +19,12 @@ export const Navbar = () => {
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-4 group">
-            <div className="p-1 rounded-full border border-white/10 drop-shadow-[0_0_8px_rgba(255,255,255,0.15)] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]">
-              <img 
-                src={logoIcon} 
-                alt="Talent Innovation logo" 
-                className="h-8 w-auto transition-all duration-300 group-hover:brightness-110"
-              />
-            </div>
-            <span className="hidden md:block text-base font-semibold tracking-[0.15em] text-[#EDEEEE] relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 group-hover:after:scale-x-100">
+            <img 
+              src={logoIcon} 
+              alt="Talent Innovation logo" 
+              className="h-8 w-auto transition-all duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.25)] group-hover:brightness-110"
+            />
+            <span className="hidden md:block text-base font-semibold tracking-[0.2em] text-[#EDEEEE] uppercase">
               TALENT INNOVATION
             </span>
           </Link>
@@ -37,7 +35,7 @@ export const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-xs font-semibold tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
               </a>
@@ -47,8 +45,8 @@ export const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link to="/checkout">
-              <button className="px-5 py-2 text-sm font-semibold rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
-                AI Audit
+              <button className="px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
+                AI AUDIT
               </button>
             </Link>
           </div>
@@ -71,15 +69,15 @@ export const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary py-2"
+                  className="text-xs font-semibold tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
               <Link to="/checkout" onClick={() => setIsOpen(false)}>
-                <button className="mt-2 w-full px-5 py-2 text-sm font-semibold rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
-                  AI Audit
+                <button className="mt-2 w-full px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
+                  AI AUDIT
                 </button>
               </Link>
             </div>
