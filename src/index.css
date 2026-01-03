@@ -4,52 +4,52 @@
 
 @layer base {
   :root {
-    /* Dark mode as default - Talent Innovation */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    /* Softened Dark Mode 2025 */
+    --background: 220 21% 5%;          /* #0B0C10 Obsidian Void */
+    --foreground: 180 3% 93%;          /* #EDEEEE Soft White */
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 210 24% 16%;               /* #1F2833 Gunmetal Deep */
+    --card-foreground: 180 3% 93%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 210 24% 16%;
+    --popover-foreground: 180 3% 93%;
 
-    /* Violet primary */
-    --primary: 263 84% 58%;
-    --primary-foreground: 0 0% 100%;
+    /* Neon Cyan primary */
+    --primary: 176 96% 69%;            /* #66FCF1 Neon Cyan */
+    --primary-foreground: 220 21% 5%;
 
-    /* Cyan accent */
-    --accent: 188 94% 43%;
-    --accent-foreground: 0 0% 100%;
+    /* Electric Purple accent */
+    --accent: 284 100% 50%;            /* #BD00FF Electric Purple */
+    --accent-foreground: 180 3% 93%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 20% 22%;
+    --secondary-foreground: 180 3% 93%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 210 20% 25%;
+    --muted-foreground: 210 1% 78%;    /* #C5C6C7 Silver Mist */
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 180 3% 93%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 263 84% 58%;
+    --border: 210 20% 25%;
+    --input: 210 24% 20%;
+    --ring: 176 96% 69%;
 
     --radius: 0.75rem;
 
     /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(263, 84%, 58%) 0%, hsl(188, 94%, 43%) 100%);
-    --gradient-primary-hover: linear-gradient(135deg, hsl(263, 84%, 65%) 0%, hsl(188, 94%, 50%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(263, 84%, 58%, 0.15) 0%, transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(176, 96%, 69%) 0%, hsl(284, 100%, 50%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(176, 96%, 69%, 0.15) 0%, transparent 70%);
 
     /* Glass effect tokens */
-    --glass-bg: hsla(0, 0%, 100%, 0.05);
-    --glass-border: hsla(0, 0%, 100%, 0.1);
-    --glass-blur: 16px;
+    --glass-bg: hsla(210, 24%, 16%, 0.8);
+    --glass-border: hsla(180, 3%, 93%, 0.1);
+    --glass-blur: 12px;
 
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(263, 84%, 58%, 0.3);
-    --shadow-card: 0 4px 24px hsla(0, 0%, 0%, 0.4);
+    --shadow-glow-cyan: 0 0 20px hsl(176, 96%, 69%, 0.4);
+    --shadow-glow-purple: 0 0 20px hsl(284, 100%, 50%, 0.4);
+    --shadow-card: 0 4px 24px hsla(0, 0%, 0%, 0.5);
   }
 }
 
@@ -59,7 +59,12 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-muted-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground font-semibold;
   }
 
   html {
@@ -69,19 +74,35 @@
 
 @layer components {
   .glass {
-    @apply bg-[hsla(0,0%,100%,0.05)] backdrop-blur-xl border border-[hsla(0,0%,100%,0.1)];
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
   }
 
   .glass-card {
-    @apply bg-[hsla(0,0%,100%,0.03)] backdrop-blur-xl border border-[hsla(0,0%,100%,0.08)] rounded-xl;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    @apply rounded-xl;
   }
 
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 
-  .gradient-border {
-    @apply relative before:absolute before:inset-0 before:rounded-[inherit] before:p-[1px] before:bg-gradient-to-r before:from-primary before:to-accent before:-z-10;
+  .input-glow:focus {
+    box-shadow: 0 0 0 2px hsl(176, 96%, 69%, 0.3), 0 0 20px hsl(176, 96%, 69%, 0.2);
+    border-color: hsl(176, 96%, 69%);
+  }
+
+  .glow-cyan {
+    box-shadow: var(--shadow-glow-cyan);
+  }
+
+  .glow-purple {
+    box-shadow: var(--shadow-glow-purple);
   }
 }
 
