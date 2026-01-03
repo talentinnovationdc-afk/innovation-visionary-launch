@@ -1,8 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { Sparkles, Target, Users, Code, RefreshCw } from "lucide-react";
-
 const services = [
   {
     icon: Target,
@@ -30,7 +30,8 @@ const Index = () => {
   return (
     <>
       <SEO path="/" />
-      <div className="min-h-screen flex flex-col">
+      <NeuralNetworkBackground />
+      <div className="min-h-screen flex flex-col relative z-10">
         <Navbar />
         
         <main className="flex-1">
