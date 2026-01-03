@@ -30,22 +30,18 @@ const OrbitalBackgroundComponent = () => {
         events: {
           onHover: {
             enable: true,
-            mode: ["attract", "slow"],
+            mode: "attract",
           },
           resize: true,
         },
         modes: {
           attract: {
-            distance: 200,
-            duration: 0.8,
-            easing: "ease-out-cubic",
-            factor: 3,
-            maxSpeed: 1,
-            speed: 0.5,
-          },
-          slow: {
-            factor: 2,
-            radius: 150,
+            distance: 120,
+            duration: 0.6,
+            easing: "ease-out-quad",
+            factor: 1.5,
+            maxSpeed: 0.8,
+            speed: 0.3,
           },
         },
       },
@@ -55,33 +51,24 @@ const OrbitalBackgroundComponent = () => {
         },
         links: {
           color: "#66FCF1",
-          distance: 120,
+          distance: 80,
           enable: true,
-          opacity: 0.2,
-          width: 0.5,
+          opacity: 0.1,
+          width: 0.3,
+          frequency: 0.8,
         },
         move: {
           enable: true,
-          speed: 0.6,
+          speed: 0.4,
           direction: "none" as const,
           outModes: {
-            default: "out" as const,
-          },
-          path: {
-            enable: true,
-            delay: {
-              value: 0,
-            },
-            options: {
-              radius: 150,
-              speed: 0.003,
-            },
+            default: "bounce" as const,
           },
           attract: {
             enable: true,
             rotate: {
-              x: 3000,
-              y: 3000,
+              x: 2000,
+              y: 2000,
             },
           },
           spin: {
@@ -92,23 +79,21 @@ const OrbitalBackgroundComponent = () => {
             },
             acceleration: 0,
           },
-          trail: {
-            enable: false,
-          },
         },
         number: {
           density: {
-            enable: false,
+            enable: true,
+            area: 600,
           },
-          value: isMobile ? 25 : 45,
-          limit: isMobile ? 30 : 50,
+          value: isMobile ? 30 : 60,
+          limit: isMobile ? 35 : 65,
         },
         opacity: {
-          value: { min: 0.4, max: 0.8 },
+          value: { min: 0.3, max: 0.7 },
           animation: {
             enable: true,
-            speed: 0.5,
-            minimumValue: 0.3,
+            speed: 0.3,
+            minimumValue: 0.2,
             sync: false,
           },
         },
@@ -116,10 +101,10 @@ const OrbitalBackgroundComponent = () => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 2.5 },
+          value: { min: 0.8, max: 2 },
         },
         shadow: {
-          blur: 8,
+          blur: 6,
           color: {
             value: "#66FCF1",
           },
@@ -132,6 +117,25 @@ const OrbitalBackgroundComponent = () => {
       },
       detectRetina: true,
       smooth: true,
+      emitters: {
+        position: {
+          x: 50,
+          y: 50,
+        },
+        rate: {
+          delay: 0.5,
+          quantity: 1,
+        },
+        size: {
+          width: 30,
+          height: 30,
+        },
+        life: {
+          count: 0,
+          duration: 0,
+          delay: 0,
+        },
+      },
     }),
     [isMobile]
   );
