@@ -18,7 +18,7 @@ export const Footer = () => {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Talent Innovation. Všechna práva vyhrazena.
+              © 2026 Talent Innovation. Všechna práva vyhrazena.
             </p>
           </div>
 

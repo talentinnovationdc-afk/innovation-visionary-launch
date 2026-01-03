@@ -3,8 +3,8 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
-import { ExpertiseSection } from "@/components/ExpertiseSection";
-import { Factory, Fuel, Truck, MessageSquare, Bot, Wand2, Shield, Award, FileCheck } from "lucide-react";
+import { B2BCaseStudies } from "@/components/B2BCaseStudies";
+import { MessageSquare, Bot, Wand2, Shield, Award, FileCheck } from "lucide-react";
 
 const Index = () => {
   return (
@@ -80,58 +80,10 @@ const Index = () => {
                 </p>
               </div>
 
-              {/* Use Case Cards - Blind Cases */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-                {/* Manufacturing */}
-                <article className="glass-card p-8 group cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                    <Factory className="h-7 w-7 text-primary" />
-                  </div>
-                  <span className="inline-block text-[10px] font-semibold tracking-[0.2em] text-primary uppercase mb-3">
-                    Manufacturing
-                  </span>
-                  <h3 className="text-base font-semibold tracking-[0.12em] text-foreground mb-4 uppercase">
-                    Autonomní kontrola kvality
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                    Autonomní kontrola kvality a vizualizace R&D pro Tier 1 dodavatele v automobilovém průmyslu.
-                  </p>
-                </article>
+              {/* Industry Case Studies with Logo Groups */}
+              <B2BCaseStudies />
 
-                {/* Infrastructure */}
-                <article className="glass-card p-8 group cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                    <Fuel className="h-7 w-7 text-primary" />
-                  </div>
-                  <span className="inline-block text-[10px] font-semibold tracking-[0.2em] text-primary uppercase mb-3">
-                    Infrastructure
-                  </span>
-                  <h3 className="text-base font-semibold tracking-[0.12em] text-foreground mb-4 uppercase">
-                    AI agenti pro krizový management
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                    AI agenti pro krizovou komunikaci a real-time dispečink v petrochemickém průmyslu.
-                  </p>
-                </article>
-
-                {/* Logistics */}
-                <article className="glass-card p-8 group cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                    <Truck className="h-7 w-7 text-primary" />
-                  </div>
-                  <span className="inline-block text-[10px] font-semibold tracking-[0.2em] text-primary uppercase mb-3">
-                    Logistics
-                  </span>
-                  <h3 className="text-base font-semibold tracking-[0.12em] text-foreground mb-4 uppercase">
-                    Automatizovaná content factory
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                    Automatizovaná content factory a analytické modely pro globální distribuční sítě.
-                  </p>
-                </article>
-              </div>
-
-              <div className="text-center">
+              <div className="text-center mt-12">
                 <a
                   href="/checkout"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.25)] hover:shadow-[0_0_24px_rgba(102,252,241,0.4)] hover:bg-primary/10 transition-all duration-300"
@@ -270,8 +222,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Expertise Section - Clients by Sector */}
-          <ExpertiseSection />
         </main>
 
         <Footer />
