@@ -19,12 +19,14 @@ export const Navbar = () => {
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-4 group">
-            <img 
-              src={logoIcon} 
-              alt="Talent Innovation logo" 
-              className="h-8 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(102,252,241,0.7)]"
-            />
-            <span className="hidden md:block text-base font-semibold tracking-widest text-[#EDEEEE]">
+            <div className="p-1 rounded-full border border-white/10 drop-shadow-[0_0_8px_rgba(255,255,255,0.15)] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]">
+              <img 
+                src={logoIcon} 
+                alt="Talent Innovation logo" 
+                className="h-8 w-auto transition-all duration-300 group-hover:brightness-110"
+              />
+            </div>
+            <span className="hidden md:block text-base font-semibold tracking-[0.15em] text-[#EDEEEE] relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 group-hover:after:scale-x-100">
               TALENT INNOVATION
             </span>
           </Link>
