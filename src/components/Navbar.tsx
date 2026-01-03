@@ -7,8 +7,8 @@ import logoIcon from "@/assets/logo-icon.png";
 const navLinks = [
   { label: "SLUŽBY", href: "#services" },
   { label: "METODIKA", href: "/metodika", isRoute: true },
-  { label: "O NÁS", href: "#about" },
-  { label: "CENÍK", href: "#pricing" },
+  { label: "O NÁS", href: "/o-nas", isRoute: true },
+  { label: "CENÍK", href: "/checkout", isRoute: true },
 ];
 
 export const Navbar = () => {
