@@ -11,8 +11,8 @@ import mediGlobe from "@/assets/clients/medi-globe.png";
 import maxmechanik from "@/assets/clients/maxmechanik.png";
 import megatech from "@/assets/clients/megatech.png";
 import messer from "@/assets/clients/messer.png";
-import patok from "@/assets/clients/patok.jpg";
-import publicis from "@/assets/clients/publicis.jpg";
+import patok from "@/assets/clients/patok.png";
+import publicis from "@/assets/clients/publicis.png";
 import techinkubace from "@/assets/clients/techinkubace.png";
 
 interface ClientLogo {
