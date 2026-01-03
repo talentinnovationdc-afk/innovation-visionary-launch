@@ -87,9 +87,9 @@ const OrbitalBackgroundComponent = () => {
         number: {
           density: {
             enable: true,
-            area: 2000,
+            area: 800,
           },
-          value: isMobile ? 25 : 50,
+          value: isMobile ? 45 : 90,
         },
         opacity: {
           value: { min: 0.3, max: 0.7 },
