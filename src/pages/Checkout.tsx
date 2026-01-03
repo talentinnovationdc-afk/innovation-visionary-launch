@@ -40,20 +40,20 @@ const Checkout = () => {
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-8">
               <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                Get Your <span className="gradient-text">AI Audit</span>
+                Získejte svůj <span className="gradient-text">AI Audit</span>
               </h1>
               <p className="text-muted-foreground">
-                Fill in your details and we'll get back to you within 24 hours.
+                Vyplňte své údaje a ozveme se vám do 24 hodin.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-foreground">Full Name</Label>
+                <Label htmlFor="name" className="text-foreground">Celé jméno</Label>
                 <Input
                   id="name"
                   name="name"
-                  placeholder="John Doe"
+                  placeholder="Jan Novák"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -61,12 +61,12 @@ const Checkout = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-foreground">Email Address</Label>
+                <Label htmlFor="email" className="text-foreground">E-mailová adresa</Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="john@company.com"
+                  placeholder="jan@firma.cz"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -74,11 +74,11 @@ const Checkout = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="company" className="text-foreground">Company Name</Label>
+                <Label htmlFor="company" className="text-foreground">Název společnosti</Label>
                 <Input
                   id="company"
                   name="company"
-                  placeholder="Acme Inc."
+                  placeholder="Moje firma s.r.o."
                   value={formData.company}
                   onChange={handleChange}
                   required
@@ -86,19 +86,19 @@ const Checkout = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-foreground">Phone Number</Label>
+                <Label htmlFor="phone" className="text-foreground">Telefonní číslo</Label>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+420 123 456 789"
                   value={formData.phone}
                   onChange={handleChange}
                 />
               </div>
 
               <Button type="submit" variant="gradient" size="lg" className="w-full">
-                Request AI Audit
+                Požádat o AI Audit
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </form>

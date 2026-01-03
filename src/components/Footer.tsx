@@ -19,23 +19,23 @@ export const Footer = () => {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Talent Innovation. All rights reserved.
+              © {currentYear} Talent Innovation. Všechna práva vyhrazena.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
-              Services
+              Služby
             </a>
             <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-              About
+              O nás
             </a>
             <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">
-              Pricing
+              Ceník
             </a>
             <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
-              Contact
+              Kontakt
             </a>
           </div>
 

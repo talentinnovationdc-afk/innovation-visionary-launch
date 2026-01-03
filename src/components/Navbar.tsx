@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Služby", href: "#services" },
+  { label: "O nás", href: "#about" },
+  { label: "Ceník", href: "#pricing" },
 ];
 
 export const Navbar = () => {
@@ -46,7 +46,7 @@ export const Navbar = () => {
           <div className="hidden md:block">
             <Link to="/checkout">
               <Button variant="gradient" size="default">
-                Get AI Audit
+                AI Audit zdarma
               </Button>
             </Link>
           </div>
@@ -77,7 +77,7 @@ export const Navbar = () => {
               ))}
               <Link to="/checkout" onClick={() => setIsOpen(false)}>
                 <Button variant="gradient" size="default" className="mt-2 w-full">
-                  Get AI Audit
+                  AI Audit zdarma
                 </Button>
               </Link>
             </div>
