@@ -81,7 +81,7 @@ export const LogoRibbon = () => {
     <section className="py-12 md:py-16 overflow-hidden">
       <div className="container px-4">
         <p className="text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-10">
-          Důvěřují nám lídři průmyslu a technologií
+          Důvěřují nám lídři v průmyslu a technologiích
         </p>
       </div>
       
