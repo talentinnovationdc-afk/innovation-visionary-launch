@@ -1,9 +1,18 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, memo, useState, useEffect } from "react";
 import Particles from "react-tsparticles";
 import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 
-export const NeuralNetworkBackground = () => {
+const NeuralNetworkBackgroundComponent = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
@@ -16,35 +25,23 @@ export const NeuralNetworkBackground = () => {
           value: "transparent",
         },
       },
-      fpsLimit: 60,
+      fpsLimit: 30,
       interactivity: {
         events: {
           onHover: {
             enable: true,
-            mode: ["grab", "attract"],
-            parallax: {
-              enable: true,
-              force: 20,
-              smooth: 20,
-            },
+            mode: "attract",
           },
           resize: true,
         },
         modes: {
-          grab: {
-            distance: 200,
-            links: {
-              opacity: 0.4,
-              color: "#66FCF1",
-            },
-          },
           attract: {
-            distance: 200,
+            distance: 150,
             duration: 0.4,
             easing: "ease-out-quad",
-            factor: 1,
-            maxSpeed: 0.2,
-            speed: 0.2,
+            factor: 0.5,
+            maxSpeed: 0.3,
+            speed: 0.1,
           },
         },
       },
@@ -54,11 +51,18 @@ export const NeuralNetworkBackground = () => {
         },
         links: {
           color: "#66FCF1",
-          distance: 200,
+          distance: 150,
           enable: true,
-          opacity: 0.3,
-          width: 1,
-          warp: true,
+          opacity: 0.15,
+          width: 0.5,
+          triangles: {
+            enable: false,
+          },
+          consent: false,
+          frequency: 1,
+        },
+        collisions: {
+          enable: false,
         },
         move: {
           direction: "none" as const,
@@ -67,77 +71,30 @@ export const NeuralNetworkBackground = () => {
             default: "out" as const,
           },
           random: true,
-          speed: 0.6,
+          speed: 0.4,
           straight: false,
-          warp: true,
-          attract: {
-            enable: true,
-            rotateX: 600,
-            rotateY: 1200,
-          },
         },
         number: {
           density: {
-            enable: true,
-            area: 1000,
+            enable: false,
           },
-          value: 60,
+          value: isMobile ? 20 : 50,
+          limit: isMobile ? 25 : 60,
         },
         opacity: {
-          value: 0.6,
-          animation: {
-            enable: true,
-            speed: 0.8,
-            minimumValue: 0.15,
-            sync: false,
-          },
+          value: 0.7,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1.5, max: 3 },
-          animation: {
-            enable: true,
-            speed: 1,
-            minimumValue: 1,
-            sync: false,
-          },
-        },
-        shadow: {
-          blur: 6,
-          color: {
-            value: "#66FCF1",
-          },
-          enable: true,
-          offset: {
-            x: 0,
-            y: 0,
-          },
-        },
-        twinkle: {
-          particles: {
-            enable: true,
-            frequency: 0.03,
-            opacity: 0.8,
-            color: {
-              value: "#66FCF1",
-            },
-          },
-          lines: {
-            enable: true,
-            frequency: 0.01,
-            opacity: 0.5,
-            color: {
-              value: "#66FCF1",
-            },
-          },
+          value: 1.5,
         },
       },
       detectRetina: true,
       smooth: true,
     }),
-    []
+    [isMobile]
   );
 
   return (
@@ -145,7 +102,9 @@ export const NeuralNetworkBackground = () => {
       id="neural-network"
       init={particlesInit}
       options={options}
-      className="fixed inset-0 z-0 pointer-events-auto"
+      className="fixed inset-0 z-0 pointer-events-none"
     />
   );
 };
+
+export const NeuralNetworkBackground = memo(NeuralNetworkBackgroundComponent);
