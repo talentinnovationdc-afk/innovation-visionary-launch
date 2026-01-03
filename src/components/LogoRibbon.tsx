@@ -11,6 +11,9 @@ import mediGlobe from "@/assets/clients/medi-globe.png";
 import maxmechanik from "@/assets/clients/maxmechanik.png";
 import megatech from "@/assets/clients/megatech.png";
 import messer from "@/assets/clients/messer.png";
+import patok from "@/assets/clients/patok.jpg";
+import publicis from "@/assets/clients/publicis.jpg";
+import techinkubace from "@/assets/clients/techinkubace.png";
 
 interface ClientLogo {
   name: string;
@@ -20,14 +23,14 @@ interface ClientLogo {
 
 const clients: ClientLogo[] = [
   { name: "Iveco Group", logo: iveco, url: "https://www.ivecogroup.com" },
-  { name: "Publicis Groupe", logo: "", url: "https://www.publicisgroupe.cz/cs/" },
+  { name: "Publicis Groupe", logo: publicis, url: "https://www.publicisgroupe.cz/cs/" },
   { name: "Messer Technogas", logo: messer, url: "https://www.messer.cz" },
-  { name: "Patok", logo: "", url: "https://www.patok.cz" },
+  { name: "Patok", logo: patok, url: "https://www.patok.cz" },
   { name: "Hirschmann Automotive", logo: hirschmann, url: "https://www.hirschmann-automotive.com/en/" },
   { name: "Medi-globe", logo: mediGlobe, url: "https://www.medi-globe.cz" },
   { name: "FCC Environment", logo: fcc, url: "https://www.fccps.cz" },
   { name: "Bircher", logo: bircher, url: "https://www.bircher.com" },
-  { name: "Technologická inkubace", logo: "", url: "https://technologickainkubace.org" },
+  { name: "Technologická inkubace", logo: techinkubace, url: "https://technologickainkubace.org" },
   { name: "Megatech Industries", logo: megatech, url: "https://megatech-industries.com" },
   { name: "Gynem", logo: gynem, url: "https://gynem.cz" },
   { name: "MaxMechanik", logo: maxmechanik, url: "https://maxmechanik.eu" },

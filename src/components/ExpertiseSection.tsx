@@ -11,6 +11,9 @@ import mediGlobe from "@/assets/clients/medi-globe.png";
 import maxmechanik from "@/assets/clients/maxmechanik.png";
 import megatech from "@/assets/clients/megatech.png";
 import messer from "@/assets/clients/messer.png";
+import patok from "@/assets/clients/patok.jpg";
+import publicis from "@/assets/clients/publicis.jpg";
+import techinkubace from "@/assets/clients/techinkubace.png";
 
 interface SectorClient {
   name: string;
@@ -34,7 +37,7 @@ const sectors: Sector[] = [
     icon: Leaf,
     clients: [
       { name: "Messer Technogas", logo: messer, url: "https://www.messer.cz" },
-      { name: "Patok", logo: "", url: "https://www.patok.cz" },
+      { name: "Patok", logo: patok, url: "https://www.patok.cz" },
       { name: "FCC Environment", logo: fcc, url: "https://www.fccps.cz" },
     ],
   },
@@ -67,8 +70,8 @@ const sectors: Sector[] = [
     subtitle: "Komunikační strategie a inovace",
     icon: Lightbulb,
     clients: [
-      { name: "Publicis Groupe", logo: "", url: "https://www.publicisgroupe.cz/cs/" },
-      { name: "Technologická inkubace", logo: "", url: "https://technologickainkubace.org" },
+      { name: "Publicis Groupe", logo: publicis, url: "https://www.publicisgroupe.cz/cs/" },
+      { name: "Technologická inkubace", logo: techinkubace, url: "https://technologickainkubace.org" },
       { name: "Findigo", logo: findigo, url: "https://findigofki.cz" },
     ],
   },
