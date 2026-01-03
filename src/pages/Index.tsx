@@ -14,13 +14,13 @@ const deliverables = [
   {
     icon: FileText,
     title: "ADMINISTRATIVNÍ AUTONOMIE",
-    description: "Protokoly z jednání (Minutes of Meeting), které se automaticky propisují do vašeho CRM.",
+    description: "Automatizované zápisy z jednání (MoM) s integrací do vašich systémů.",
     accent: "cyan",
   },
   {
     icon: BarChart3,
     title: "PRŮMYSLOVÁ ANALYTIKA",
-    description: "AI agenti pro optimalizaci logistických tras a výrobní simulace.",
+    description: "AI agenti pro optimalizaci logistiky a výrobní simulace.",
     accent: "cyan",
   },
   {
@@ -32,7 +32,7 @@ const deliverables = [
   {
     icon: Database,
     title: "PRIVÁTNÍ KNOWLEDGE BASE",
-    description: "Firemní modely využívající Few-Shot Prompting pro nulovou chybovost výstupů.",
+    description: "Firemní modely s nulovou chybovostí díky metodice Few-Shot Prompting.",
     accent: "purple",
   },
 ];
@@ -64,34 +64,34 @@ const Index = () => {
         
         <main className="flex-1">
           {/* Hero Section */}
-          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-[200px] md:pt-[220px] pb-20 md:pb-24">
+          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-[180px] md:pt-[200px] pb-20 md:pb-24">
             <div className="container px-4 text-center">
               <div className="max-w-[950px] mx-auto">
                 {/* Eyebrow Badge */}
-                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/40 mb-14 shadow-[0_0_20px_rgba(102,252,241,0.15)]">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/40 mb-12 shadow-[0_0_20px_rgba(102,252,241,0.15)]">
                   <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-primary uppercase">
-                    Strategický partner pro průmysl a technologie
+                    Strategický partner pro průmysl a regulovaná odvětví
                   </span>
                 </div>
                 
                 {/* Main H1 - Split headline */}
                 <h1 
                   id="hero-heading" 
-                  className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-12 leading-tight tracking-[0.18em] uppercase"
+                  className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-10 leading-tight tracking-[0.18em] uppercase"
                 >
-                  <span className="block text-foreground/80 drop-shadow-[0_0_30px_rgba(102,252,241,0.15)]">
+                  <span className="block text-white drop-shadow-[0_0_30px_rgba(102,252,241,0.12)]">
                     TRANSFORMUJEME KOMPLEXITU
                   </span>
                   <span 
-                    className="block mt-2 hero-gradient-text drop-shadow-[0_0_40px_rgba(102,252,241,0.25)]"
+                    className="block mt-2 hero-gradient-text drop-shadow-[0_0_40px_rgba(102,252,241,0.2)]"
                   >
                     V SYSTÉMOVOU AUTONOMII
                   </span>
                 </h1>
                 
-                {/* Subheadline */}
-                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-16 normal-case tracking-normal leading-relaxed">
-                  Implementujeme bezpečná AI řešení, která respektují vaše data a obchodní cíle. Jan Bouda navrhuje architekturu, Daniel Červený zajišťuje strategii a 82–100% financování vaší transformace.
+                {/* Subheadline - The Professional Hook */}
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[850px] mx-auto mb-14 normal-case tracking-normal leading-relaxed">
+                  Implementujeme AI řešení s nekompromisním respektem k bezpečnosti a vašim standardům, s důrazem na měřitelnou návratnost (ROI). Jan Bouda navrhuje architekturu systému, Daniel Červený vede strategii a administrativní proces k 82–100% dotačnímu financování.
                 </p>
                 
                 {/* CTAs */}
