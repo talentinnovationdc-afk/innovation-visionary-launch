@@ -3,6 +3,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { Shield, Scale, Lock, Award, Search, FileText, Cog, GraduationCap, TrendingUp, Linkedin } from "lucide-react";
+import danielCerveny from "@/assets/team/daniel-cerveny.png";
+import janBouda from "@/assets/team/jan-bouda.png";
 
 const teamMembers = [
   {
@@ -10,14 +12,14 @@ const teamMembers = [
     role: "Zakladatel & AI Stratég",
     description: "Specialista na průmyslovou digitalizaci a AI transformaci s důrazem na compliance a bezpečnost.",
     linkedin: "https://www.linkedin.com/in/daniel-%C4%8Derven%C3%BD-a8479629/",
-    image: null, // Placeholder - will be replaced with uploaded photo
+    image: danielCerveny,
   },
   {
     name: "Jan Bouda",
     role: "Swim In AI Metodika",
     description: "Autor certifikované metodiky Swim In AI pro bezpečnou implementaci umělé inteligence.",
     linkedin: "https://www.linkedin.com/in/jan-bouda-7151b7167/",
-    image: null, // Placeholder - will be replaced with uploaded photo
+    image: janBouda,
   },
 ];
 
@@ -132,11 +134,19 @@ const Metodika = () => {
                   className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-2xl p-8 transition-all duration-500 hover:border-primary/40 hover:shadow-[0_0_40px_rgba(102,252,241,0.15)] hover:-translate-y-1"
                 >
                   <div className="flex flex-col items-center text-center">
-                    {/* Avatar placeholder */}
+                    {/* Avatar */}
                     <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border-2 border-primary/30 mb-6 flex items-center justify-center overflow-hidden">
-                      <span className="text-4xl font-semibold text-primary/60">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                      {member.image ? (
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-4xl font-semibold text-primary/60">
+                          {member.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      )}
                     </div>
                     
                     <h3 className="text-xl font-semibold tracking-[0.1em] text-foreground mb-1">
