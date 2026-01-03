@@ -110,24 +110,21 @@
   }
 
   .gradient-text-animated {
-    @apply bg-clip-text text-transparent;
-    background: linear-gradient(135deg, hsl(176, 96%, 69%) 0%, hsl(284, 100%, 50%) 50%, hsl(176, 96%, 69%) 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease-in-out infinite;
+    background: linear-gradient(135deg, #00f2fe 0%, #BD00FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: pulse-scale 6s ease-in-out infinite;
   }
 
-  @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  @keyframes pulse-subtle {
+  @keyframes pulse-scale {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+    50% { transform: scale(1.01); }
   }
 
   .animate-pulse-subtle {
-    animation: pulse-subtle 4s ease-in-out infinite;
+    animation: pulse-scale 6s ease-in-out infinite;
   }
 
   .input-glow:focus {

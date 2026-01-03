@@ -64,11 +64,11 @@ const Index = () => {
         
         <main className="flex-1">
           {/* Hero Section */}
-          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-[120px] md:pt-[140px] pb-12 md:pb-16">
+          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-[180px] md:pt-[200px] pb-16 md:pb-20">
             <div className="container px-4 text-center">
-              <div className="max-w-[1000px] mx-auto">
+              <div className="max-w-[950px] mx-auto">
                 {/* Eyebrow Badge */}
-                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/40 mb-10 shadow-[0_0_20px_rgba(102,252,241,0.15)]">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/40 mb-12 shadow-[0_0_20px_rgba(102,252,241,0.15)]">
                   <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-primary uppercase">
                     Strategický partner pro průmysl a technologie
                   </span>
@@ -77,7 +77,7 @@ const Index = () => {
                 {/* Main H1 with gradient and pulse */}
                 <h1 
                   id="hero-heading" 
-                  className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-8 leading-tight tracking-[0.15em] uppercase gradient-text-animated animate-pulse-subtle"
+                  className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-10 leading-tight tracking-[0.15em] uppercase gradient-text-animated"
                 >
                   TRANSFORMUJEME KOMPLEXITU V SYSTÉMOVOU AUTONOMII
                 </h1>
