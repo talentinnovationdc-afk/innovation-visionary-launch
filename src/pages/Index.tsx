@@ -1,10 +1,12 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Sparkles } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO path="/" />
       <Navbar />
       
       {/* Hero Section */}
