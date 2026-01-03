@@ -18,13 +18,13 @@ export const Navbar = () => {
       <nav className="glass mx-4 mt-4 rounded-2xl md:mx-8">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-4 group">
             <img 
               src={logoIcon} 
               alt="Talent Innovation logo" 
-              className="h-9 w-auto"
+              className="h-8 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(102,252,241,0.6)]"
             />
-            <span className="hidden md:block text-lg font-bold tracking-tight text-[#EDEEEE]">
+            <span className="hidden md:block text-base font-medium tracking-[0.2em] text-[#EDEEEE]">
               TALENT INNOVATION
             </span>
           </Link>
