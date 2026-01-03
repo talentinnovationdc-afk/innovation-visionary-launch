@@ -14,10 +14,10 @@ const Index = () => {
               <span className="gradient-text">Talent Innovation</span>
             </h1>
             <p className="text-muted-foreground text-lg">
-              AI Education Agency — Landing page structure initialized.
+              AI Education Agency — Softened Dark Mode 2025
             </p>
             <p className="text-sm text-muted-foreground mt-4">
-              Navigation and Footer are ready. Body content coming next.
+              Obsidian Void background with Neon Cyan & Electric Purple accents.
             </p>
           </div>
         </div>

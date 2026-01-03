@@ -1,4 +1,5 @@
 import { Sparkles, Linkedin, Twitter, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,14 +10,14 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="flex flex-col items-center md:items-start gap-4">
-            <a href="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
-                <Sparkles className="h-4 w-4 text-white" />
+                <Sparkles className="h-4 w-4 text-primary-foreground" />
               </div>
-              <span className="text-base font-bold tracking-tight">
+              <span className="text-base font-bold tracking-tight text-foreground">
                 Talent<span className="gradient-text">Innovation</span>
               </span>
-            </a>
+            </Link>
             <p className="text-sm text-muted-foreground">
               © {currentYear} Talent Innovation. All rights reserved.
             </p>
@@ -24,16 +25,16 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
               Services
             </a>
-            <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
               About
             </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">
               Pricing
             </a>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
               Contact
             </a>
           </div>
@@ -42,21 +43,21 @@ export const Footer = () => {
           <div className="flex items-center gap-4">
             <a
               href="#"
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:glow-cyan"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="#"
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:glow-cyan"
               aria-label="Twitter"
             >
               <Twitter className="h-5 w-5" />
             </a>
             <a
               href="#"
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:glow-cyan"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
