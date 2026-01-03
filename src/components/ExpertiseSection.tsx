@@ -127,11 +127,11 @@ export const ExpertiseSection = () => {
                       title={client.name}
                     >
                       {client.logo ? (
-                        <div className="h-7 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(102,252,241,0.3)]">
+                        <div className="h-7 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(102,252,241,0.3)]">
                           <img
                             src={client.logo}
                             alt={client.name}
-                            className="h-full w-auto object-contain max-w-[80px]"
+                            className="h-full w-auto object-contain max-w-[80px] mix-blend-luminosity hover:mix-blend-normal transition-all duration-300"
                           />
                         </div>
                       ) : (

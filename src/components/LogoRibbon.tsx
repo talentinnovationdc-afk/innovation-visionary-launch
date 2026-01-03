@@ -99,11 +99,11 @@ export const LogoRibbon = () => {
             className="flex-shrink-0 group"
           >
             {client.logo ? (
-              <div className="h-10 md:h-12 w-auto px-4 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.4)]">
+              <div className="h-10 md:h-12 w-auto px-4 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.4)]">
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="h-full w-auto object-contain max-w-[140px]"
+                  className="h-full w-auto object-contain max-w-[140px] mix-blend-luminosity hover:mix-blend-normal transition-all duration-300"
                 />
               </div>
             ) : (
