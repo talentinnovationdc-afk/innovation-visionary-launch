@@ -25,23 +25,22 @@ const OrbitalBackgroundComponent = () => {
           value: "transparent",
         },
       },
-      fpsLimit: 30,
+      fpsLimit: 60,
       interactivity: {
         events: {
           onHover: {
             enable: true,
-            mode: "attract",
+            mode: "grab",
           },
           resize: true,
         },
         modes: {
-          attract: {
-            distance: 120,
-            duration: 0.6,
-            easing: "ease-out-quad",
-            factor: 1.5,
-            maxSpeed: 0.8,
-            speed: 0.3,
+          grab: {
+            distance: 180,
+            links: {
+              opacity: 0.4,
+              color: "#66FCF1",
+            },
           },
         },
       },
@@ -51,91 +50,39 @@ const OrbitalBackgroundComponent = () => {
         },
         links: {
           color: "#66FCF1",
-          distance: 80,
+          distance: 200,
           enable: true,
-          opacity: 0.1,
-          width: 0.3,
-          frequency: 0.8,
+          opacity: 0.15,
+          width: 1,
         },
         move: {
           enable: true,
-          speed: 0.4,
+          speed: 0.8,
           direction: "none" as const,
           outModes: {
             default: "bounce" as const,
           },
-          attract: {
-            enable: true,
-            rotate: {
-              x: 2000,
-              y: 2000,
-            },
-          },
-          spin: {
-            enable: true,
-            position: {
-              x: 50,
-              y: 50,
-            },
-            acceleration: 0,
-          },
+          random: false,
+          straight: false,
         },
         number: {
           density: {
             enable: true,
-            area: 600,
+            area: 900,
           },
-          value: isMobile ? 30 : 60,
-          limit: isMobile ? 35 : 65,
+          value: isMobile ? 40 : 80,
         },
         opacity: {
-          value: { min: 0.3, max: 0.7 },
-          animation: {
-            enable: true,
-            speed: 0.3,
-            minimumValue: 0.2,
-            sync: false,
-          },
+          value: 0.6,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 0.8, max: 2 },
-        },
-        shadow: {
-          blur: 6,
-          color: {
-            value: "#66FCF1",
-          },
-          enable: true,
-          offset: {
-            x: 0,
-            y: 0,
-          },
+          value: { min: 2, max: 4 },
         },
       },
       detectRetina: true,
-      smooth: true,
-      emitters: {
-        position: {
-          x: 50,
-          y: 50,
-        },
-        rate: {
-          delay: 0.5,
-          quantity: 1,
-        },
-        size: {
-          width: 30,
-          height: 30,
-        },
-        life: {
-          count: 0,
-          duration: 0,
-          delay: 0,
-        },
-      },
     }),
     [isMobile]
   );
