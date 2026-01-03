@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
-  { label: "SLUŽBY", href: "/profirmy", isRoute: true },
+  { label: "PRO FIRMY", href: "/profirmy", isRoute: true },
   { label: "METODIKA", href: "/metodika", isRoute: true },
   { label: "O NÁS", href: "/o-nas", isRoute: true },
-  { label: "CENÍK", href: "/profirmy", isRoute: true },
 ];
 
 export const Navbar = () => {
