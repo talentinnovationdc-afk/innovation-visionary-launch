@@ -659,114 +659,181 @@ const ProFirmy = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
           </section>
 
-          {/* FAQ Section - Bento Grid */}
-          <section className="py-20 bg-card/20 relative overflow-hidden">
-            {/* Decorative background elements */}
-            <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+          {/* FAQ Section - WOW Accordion */}
+          <section className="py-24 bg-card/20 relative overflow-hidden">
+            {/* Animated background orbs */}
+            <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse" />
+            <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-primary/3 via-transparent to-accent/3 rounded-full blur-[80px]" />
             
             <div className="container mx-auto px-4 relative z-10">
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 mb-6">
-                  <HelpCircle className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-semibold tracking-[0.15em] text-primary uppercase">
-                    FAQ
+              {/* Header */}
+              <div className="text-center mb-20">
+                <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 via-background to-accent/10 border border-primary/20 mb-8 backdrop-blur-xl">
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <span className="text-sm font-bold tracking-[0.2em] uppercase bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Časté dotazy
                   </span>
+                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse" style={{ animationDelay: '0.5s' }} />
                 </div>
-                <h2 className="text-2xl md:text-4xl font-bold tracking-[0.15em] uppercase mb-4">
+                
+                <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6">
+                  <span className="block text-muted-foreground/60 text-lg md:text-xl font-medium tracking-[0.3em] uppercase mb-4">
+                    Odpovědi pro
+                  </span>
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    ČASTÉ
+                    HR & VEDENÍ
                   </span>
                   {" "}
-                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                    DOTAZY
-                  </span>
+                  <span className="text-foreground">FIREM</span>
                 </h2>
-                <p className="text-muted-foreground max-w-xl mx-auto">
-                  Odpovědi na nejčastější otázky od HR a vedení firem
-                </p>
               </div>
               
-              {/* Bento Grid Layout */}
-              <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {faqItems.map((item, index) => {
-                  const isFeatured = item.size === "featured";
-                  const isEven = index % 2 === 0;
-                  
-                  return (
-                    <div 
-                      key={index}
-                      className={`group relative rounded-2xl transition-all duration-500 hover:scale-[1.02] ${
-                        isFeatured ? 'lg:col-span-2' : ''
-                      }`}
-                    >
-                      {/* Glow effect on hover */}
-                      <div className={`absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm ${
-                        isEven ? 'bg-gradient-to-r from-primary/40 to-primary/20' : 'bg-gradient-to-r from-accent/40 to-accent/20'
-                      }`} />
-                      
-                      <div className={`relative h-full glass-card rounded-2xl border transition-all duration-300 overflow-hidden ${
-                        isEven ? 'border-primary/20 hover:border-primary/40' : 'border-accent/20 hover:border-accent/40'
-                      }`}>
-                        {/* Top accent line */}
-                        <div className={`absolute top-0 left-0 right-0 h-1 ${
-                          isEven 
-                            ? 'bg-gradient-to-r from-transparent via-primary/60 to-transparent' 
-                            : 'bg-gradient-to-r from-transparent via-accent/60 to-transparent'
-                        }`} />
-                        
-                        <div className="p-6">
-                          {/* Header with icon and highlight */}
-                          <div className="flex items-start justify-between gap-4 mb-4">
-                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+              {/* Accordion Container */}
+              <div className="max-w-4xl mx-auto">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {faqItems.map((item, index) => {
+                    const isEven = index % 2 === 0;
+                    
+                    return (
+                      <AccordionItem 
+                        key={index} 
+                        value={`item-${index}`}
+                        className="group border-0"
+                      >
+                        {/* Card wrapper with glow */}
+                        <div className="relative">
+                          {/* Animated glow on hover/open */}
+                          <div className={`absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-100 group-data-[state=open]:opacity-100 transition-all duration-700 blur-md ${
+                            isEven 
+                              ? 'bg-gradient-to-r from-primary/50 via-primary/30 to-primary/50' 
+                              : 'bg-gradient-to-r from-accent/50 via-accent/30 to-accent/50'
+                          }`} />
+                          
+                          <div className={`relative rounded-2xl backdrop-blur-xl border transition-all duration-500 overflow-hidden ${
+                            isEven 
+                              ? 'bg-gradient-to-br from-[#0B0C10]/90 via-card/80 to-[#0B0C10]/90 border-primary/20 group-hover:border-primary/50 group-data-[state=open]:border-primary/60' 
+                              : 'bg-gradient-to-br from-[#0B0C10]/90 via-card/80 to-[#0B0C10]/90 border-accent/20 group-hover:border-accent/50 group-data-[state=open]:border-accent/60'
+                          }`}>
+                            
+                            {/* Top gradient line */}
+                            <div className={`absolute top-0 left-0 right-0 h-px ${
                               isEven 
-                                ? 'bg-primary/10 border border-primary/20 group-hover:shadow-[0_0_20px_rgba(102,252,241,0.3)]' 
-                                : 'bg-accent/10 border border-accent/20 group-hover:shadow-[0_0_20px_rgba(189,0,255,0.3)]'
+                                ? 'bg-gradient-to-r from-transparent via-primary/60 to-transparent' 
+                                : 'bg-gradient-to-r from-transparent via-accent/60 to-transparent'
+                            }`} />
+                            
+                            {/* Number badge - floating */}
+                            <div className={`absolute -left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black transition-all duration-500 ${
+                              isEven 
+                                ? 'bg-primary text-background shadow-[0_0_20px_rgba(102,252,241,0.5)] group-hover:shadow-[0_0_30px_rgba(102,252,241,0.8)] group-hover:scale-110' 
+                                : 'bg-accent text-background shadow-[0_0_20px_rgba(189,0,255,0.5)] group-hover:shadow-[0_0_30px_rgba(189,0,255,0.8)] group-hover:scale-110'
                             }`}>
-                              <item.icon className={`w-6 h-6 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                              {String(index + 1).padStart(2, '0')}
                             </div>
-                            <span className={`text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full ${
+                            
+                            <AccordionTrigger className="px-8 py-6 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
+                              <div className="flex items-center gap-5 w-full">
+                                {/* Icon container with pulse effect */}
+                                <div className={`relative w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
+                                  isEven 
+                                    ? 'bg-primary/10 border border-primary/30 group-hover:bg-primary/20 group-data-[state=open]:bg-primary/30' 
+                                    : 'bg-accent/10 border border-accent/30 group-hover:bg-accent/20 group-data-[state=open]:bg-accent/30'
+                                }`}>
+                                  {/* Pulse ring */}
+                                  <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity ${
+                                    isEven ? 'animate-ping bg-primary/20' : 'animate-ping bg-accent/20'
+                                  }`} style={{ animationDuration: '2s' }} />
+                                  <item.icon className={`w-6 h-6 relative z-10 transition-transform duration-300 group-hover:scale-110 ${
+                                    isEven ? 'text-primary' : 'text-accent'
+                                  }`} />
+                                </div>
+                                
+                                <div className="flex-1 text-left">
+                                  {/* Highlight tag */}
+                                  <span className={`inline-block text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full mb-2 ${
+                                    isEven 
+                                      ? 'bg-primary/10 text-primary' 
+                                      : 'bg-accent/10 text-accent'
+                                  }`}>
+                                    {item.highlight}
+                                  </span>
+                                  {/* Question */}
+                                  <h3 className="text-lg md:text-xl font-semibold text-foreground group-hover:text-white transition-colors pr-8">
+                                    {item.question}
+                                  </h3>
+                                </div>
+                                
+                                {/* Custom chevron */}
+                                <div className={`chevron w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
+                                  isEven 
+                                    ? 'bg-primary/10 border border-primary/30 group-hover:bg-primary/20 group-data-[state=open]:bg-primary group-data-[state=open]:shadow-[0_0_20px_rgba(102,252,241,0.5)]' 
+                                    : 'bg-accent/10 border border-accent/30 group-hover:bg-accent/20 group-data-[state=open]:bg-accent group-data-[state=open]:shadow-[0_0_20px_rgba(189,0,255,0.5)]'
+                                }`}>
+                                  <ChevronDown className={`w-5 h-5 transition-colors ${
+                                    isEven 
+                                      ? 'text-primary group-data-[state=open]:text-background' 
+                                      : 'text-accent group-data-[state=open]:text-background'
+                                  }`} />
+                                </div>
+                              </div>
+                            </AccordionTrigger>
+                            
+                            <AccordionContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                              <div className="px-8 pb-6">
+                                <div className={`ml-[4.75rem] pl-6 border-l-2 ${
+                                  isEven ? 'border-primary/30' : 'border-accent/30'
+                                }`}>
+                                  <p className="text-muted-foreground leading-relaxed text-base">
+                                    {item.answer}
+                                  </p>
+                                  
+                                  {/* Mini CTA */}
+                                  <Link 
+                                    to="/checkout"
+                                    className={`inline-flex items-center gap-2 mt-4 text-sm font-semibold transition-all duration-300 group/link ${
+                                      isEven 
+                                        ? 'text-primary hover:text-primary/80' 
+                                        : 'text-accent hover:text-accent/80'
+                                    }`}
+                                  >
+                                    <span>Domluvit konzultaci</span>
+                                    <ChevronDown className="w-4 h-4 -rotate-90 transition-transform group-hover/link:translate-x-1" />
+                                  </Link>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                            
+                            {/* Bottom gradient line */}
+                            <div className={`absolute bottom-0 left-0 right-0 h-px ${
                               isEven 
-                                ? 'bg-primary/10 text-primary border border-primary/20' 
-                                : 'bg-accent/10 text-accent border border-accent/20'
-                            }`}>
-                              {item.highlight}
-                            </span>
+                                ? 'bg-gradient-to-r from-transparent via-primary/30 to-transparent' 
+                                : 'bg-gradient-to-r from-transparent via-accent/30 to-transparent'
+                            }`} />
                           </div>
-                          
-                          {/* Question */}
-                          <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                            {item.question}
-                          </h3>
-                          
-                          {/* Answer */}
-                          <p className="text-sm text-muted-foreground leading-relaxed">
-                            {item.answer}
-                          </p>
                         </div>
-                        
-                        {/* Bottom decorative element */}
-                        <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-px ${
-                          isEven 
-                            ? 'bg-gradient-to-r from-transparent via-primary/30 to-transparent' 
-                            : 'bg-gradient-to-r from-transparent via-accent/30 to-transparent'
-                        }`} />
-                      </div>
-                    </div>
-                  );
-                })}
+                      </AccordionItem>
+                    );
+                  })}
+                </Accordion>
               </div>
               
-              {/* Additional question CTA */}
-              <div className="mt-12 text-center">
-                <p className="text-muted-foreground mb-4">Nenašli jste odpověď?</p>
-                <Link
-                  to="/checkout"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-xl border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  Zeptejte se nás
-                </Link>
+              {/* Bottom CTA */}
+              <div className="mt-16 text-center">
+                <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 rounded-2xl bg-gradient-to-r from-primary/5 via-background to-accent/5 border border-border/50 backdrop-blur-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                      <MessageSquare className="w-5 h-5 text-background" />
+                    </div>
+                    <span className="text-muted-foreground">Nenašli jste odpověď?</span>
+                  </div>
+                  <Link
+                    to="/checkout"
+                    className="px-6 py-3 text-sm font-bold tracking-wider uppercase rounded-xl bg-gradient-to-r from-primary to-primary/80 text-background shadow-[0_0_20px_rgba(102,252,241,0.3)] hover:shadow-[0_0_30px_rgba(102,252,241,0.5)] hover:scale-105 transition-all duration-300"
+                  >
+                    Zeptejte se přímo
+                  </Link>
+                </div>
               </div>
             </div>
             
