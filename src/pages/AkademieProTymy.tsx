@@ -64,7 +64,7 @@ const pricingPlans = [
     pricePerLicense: 2490,
     recommended: false,
     features: [
-      "Přístup k vybraným akademiím ze záznamu",
+      "Přístup k vybraným akademiím",
       "Certifikát & LinkedIn odznak",
       "HR reporting dokončení"
     ],
@@ -76,7 +76,7 @@ const pricingPlans = [
     pricePerLicense: 1990,
     recommended: true,
     features: [
-      "Přístup k vybraným akademiím ze záznamu",
+      "Přístup k vybraným akademiím",
       "Certifikát & LinkedIn odznak",
       "HR reporting dokončení"
     ],
@@ -90,7 +90,7 @@ const pricingPlans = [
     pricePerLicense: 1490,
     recommended: false,
     features: [
-      "Přístup k vybraným akademiím ze záznamu",
+      "Přístup k vybraným akademiím",
       "Certifikát & LinkedIn odznak",
       "HR reporting dokončení"
     ],
@@ -141,11 +141,11 @@ const hrFaqItems = [
   },
   {
     question: "Je možné koupit program pro onboarding nováčků?",
-    answer: "Rozhodně. Akademie ze záznamu jsou ideální pro onboarding – nováčci studují vlastním tempem a mají jasný standard dovedností od prvního dne."
+    answer: "Rozhodně. Online akademie jsou ideální pro onboarding – nováčci studují vlastním tempem a mají jasný standard dovedností od prvního dne."
   },
   {
     question: "Jaké jsou podmínky licencí a přístupu?",
-    answer: "Licence jsou platné 12 měsíců od aktivace. Přístup je jmenný (1 licence = 1 osoba). Aktualizace obsahu jsou po celou dobu zdarma."
+    answer: "Licence jsou platné 12 měsíců od aktivace. Přístup je jmenný (1 licence = 1 osoba). Dlouhodobý přístup k obsahu."
   }
 ];
 
@@ -154,8 +154,17 @@ const academyCards = [
     id: "chatgpt",
     title: "ChatGPT Akademie",
     icon: MessageSquare,
-    description: "Standard pro práci s GPT od základů po pokročilé workflow.",
-    outputs: ["Šablony promptů", "Automatizace dokumentů", "E-mailové workflow"],
+    description: "Standard pro práci s GPT v administrativě, HR, obchodě i podpoře — rychlejší psaní, analýza a šablony.",
+    outputs: [
+      "Šablony promptů pro každodenní agendu",
+      "Automatizace dokumentů a textů (rychleji, konzistentně)",
+      "E-mailové workflow a odpovědi v jednotném tónu"
+    ],
+    contentPreview: [
+      "Jak zadávat úkoly tak, aby to vyšlo na první dobrou",
+      "Rewriting, sumarizace, tabulky a rozhodování",
+      "Firemní šablony: maily, nabídky, reporty"
+    ],
     roles: ["administrativa", "obchod", "project management", "support"],
     link: "/online/chatgptakademie",
     color: "primary"
@@ -164,8 +173,17 @@ const academyCards = [
     id: "copilot",
     title: "Copilot Akademie",
     icon: Wand2,
-    description: "Produktivita a automatizace v M365 pro každodenní práci.",
-    outputs: ["Word & Excel šablony", "Outlook automatizace", "PowerPoint asistent"],
+    description: "Produktivita v Microsoft 365: Word, Excel, Outlook, PowerPoint — méně rutiny, víc výsledků.",
+    outputs: [
+      "Word & Excel šablony pro opakované výstupy",
+      "Outlook automatizace a lepší organizace práce",
+      "PowerPoint asistence: rychlejší tvorba prezentací"
+    ],
+    contentPreview: [
+      "Copilot v dokumentech a šablonách",
+      "Excel: analýza, souhrny, reporty",
+      "Outlook/Teams: rutina pryč"
+    ],
     roles: ["office role", "manažeři", "back-office", "HR"],
     link: "/online/copilotakademie",
     color: "primary"
@@ -174,18 +192,36 @@ const academyCards = [
     id: "agenti",
     title: "Agenti & Automatizace",
     icon: Bot,
-    description: "Pokročilé workflow a orchestrace pro týmy, které chtějí automatizovat.",
-    outputs: ["Custom AI agenti", "Workflow automatizace", "Integrace nástrojů"],
+    description: "Pro power users a inovátory: automatizace workflow a integrace nástrojů.",
+    outputs: [
+      "Custom AI agenti pro opakující se procesy",
+      "Workflow automatizace napříč nástroji",
+      "Integrace: data → akce → výstup"
+    ],
+    contentPreview: [
+      "Návrh workflow (od problému k automatizaci)",
+      "Orchestrace a napojení nástrojů",
+      "Bezpečné nasazení v týmu"
+    ],
     roles: ["inovace", "ops", "BI/analytici", "power users"],
     link: "/online/agentiautomatizace",
     color: "accent"
   },
   {
     id: "master",
-    title: "Kompletní program",
+    title: "Kompletní program (3 akademie)",
     icon: Crown,
-    description: "Nejrychlejší cesta ke společnému standardu napříč firmou.",
-    outputs: ["Jednotná metodika", "Certifikace", "Sdílené šablony"],
+    description: "Nejrychlejší cesta k jednotnému AI standardu napříč firmou — pro management a klíčové role.",
+    outputs: [
+      "Jednotná metodika a společný jazyk v týmu",
+      "Certifikace + sdílené šablony napříč rolemi",
+      "Rychlejší onboarding nových kolegů"
+    ],
+    contentPreview: [
+      "Základní standard (ChatGPT) → produktivita (Copilot) → pokročilé workflow (Agenti)",
+      "Role-based použití napříč firmou",
+      "Praktické šablony pro každodenní práci"
+    ],
     roles: ["management", "klíčové role", "train-the-trainer"],
     link: "/online/master-of-ai-creativity",
     color: "accent",
@@ -304,35 +340,35 @@ const AkademieProTymy = () => {
               
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Online akademie pro týmy
+                  Online akademie pro týmy:
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  — měřitelná produktivita rolí
+                  jednotný standard práce s AI
                 </span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-                Zaměstnanci studují ze záznamu vlastním tempem. Vy dostanete standardizovaný skillset, certifikaci a přehled o dokončení.
+                Zaměstnanci studují vlastním tempem. Vy získáte měřitelný posun dovedností, certifikaci a přehled o dokončení — napříč rolí i týmem.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#licence">
+                <a href="#akademie">
                   <Button 
                     size="lg" 
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                   >
-                    Vybrat balíček licencí
+                    <FileText className="w-5 h-5 mr-2" />
+                    Zobrazit obsah akademií
                   </Button>
                 </a>
-                <a href="#akademie">
+                <a href="#licence">
                   <Button 
                     variant="outline" 
                     size="lg" 
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
                   >
-                    <FileText className="w-5 h-5 mr-2" />
-                    Zobrazit obsah akademií
+                    Vybrat balíček licencí
                   </Button>
                 </a>
               </div>
@@ -350,12 +386,12 @@ const AkademieProTymy = () => {
                   Co vaše týmy získají
                 </span>
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                3 akademie. Konkrétní výstupy. Jednotný standard napříč firmou.
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                3 akademie. Konkrétní workflow výstupy. Jednotný standard napříč firmou — včetně certifikace a sdílených šablon.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {academyCards.map((academy) => {
                 const Icon = academy.icon;
                 const isAccent = academy.color === "accent";
@@ -365,48 +401,87 @@ const AkademieProTymy = () => {
                     to={academy.link}
                     className={`glass-card p-6 rounded-2xl border ${
                       isAccent 
-                        ? 'border-accent/30 hover:border-accent/60' 
-                        : 'border-primary/30 hover:border-primary/60'
-                    } transition-all duration-300 group cursor-pointer hover:shadow-[0_0_30px_${isAccent ? 'rgba(189,0,255,0.2)' : 'rgba(102,252,241,0.2)'}] block relative`}
+                        ? 'border-accent/30 hover:border-accent/60 hover:shadow-[0_0_40px_rgba(189,0,255,0.25)]' 
+                        : 'border-primary/30 hover:border-primary/60 hover:shadow-[0_0_40px_rgba(102,252,241,0.25)]'
+                    } transition-all duration-300 group cursor-pointer block relative`}
                   >
+                    {/* Badge for program */}
                     {academy.isProgram && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase">
+                      <div className="absolute -top-3 right-4 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase shadow-[0_0_15px_rgba(189,0,255,0.4)]">
                         Nejlepší hodnota
                       </div>
                     )}
                     
-                    <div className={`w-12 h-12 rounded-xl ${
-                      isAccent ? 'bg-accent/10 border-accent/20' : 'bg-primary/10 border-primary/20'
-                    } border flex items-center justify-center mb-4`}>
-                      <Icon className={`w-6 h-6 ${isAccent ? 'text-accent' : 'text-primary'}`} />
+                    {/* Detail badge */}
+                    <div className={`absolute -top-3 left-4 px-3 py-1 ${
+                      isAccent ? 'bg-accent/20 border-accent/40 text-accent' : 'bg-primary/20 border-primary/40 text-primary'
+                    } border text-[10px] font-bold tracking-wider rounded-full uppercase`}>
+                      Klikni pro osnovu
                     </div>
                     
-                    <h3 className="text-base font-semibold tracking-wider text-foreground uppercase mb-2">
-                      {academy.title}
-                    </h3>
+                    <div className="flex items-start gap-4 mb-4 mt-2">
+                      <div className={`w-14 h-14 rounded-xl ${
+                        isAccent ? 'bg-accent/10 border-accent/20' : 'bg-primary/10 border-primary/20'
+                      } border flex items-center justify-center flex-shrink-0`}>
+                        <Icon className={`w-7 h-7 ${isAccent ? 'text-accent' : 'text-primary'}`} />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-1">
+                          {academy.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">{academy.description}</p>
+                      </div>
+                    </div>
                     
-                    <p className="text-sm text-muted-foreground mb-4">{academy.description}</p>
+                    {/* Outputs */}
+                    <div className="mb-4">
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2 font-semibold">Výstupy pro tým:</p>
+                      <ul className="space-y-1.5">
+                        {academy.outputs.map((output, idx) => (
+                          <li key={idx} className={`flex items-start gap-2 text-sm ${isAccent ? 'text-accent' : 'text-primary'}`}>
+                            <Check className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                            <span>{output}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                     
-                    <ul className="space-y-1 mb-4">
-                      {academy.outputs.map((output, idx) => (
-                        <li key={idx} className={`flex items-center gap-2 text-xs ${isAccent ? 'text-accent' : 'text-primary'}`}>
-                          <Check className="w-3 h-3" />
-                          {output}
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Content Preview */}
+                    <div className={`mb-4 p-3 rounded-lg ${isAccent ? 'bg-accent/5 border-accent/20' : 'bg-primary/5 border-primary/20'} border`}>
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2 font-semibold">Ukázka obsahu:</p>
+                      <ul className="space-y-1">
+                        {academy.contentPreview.map((item, idx) => (
+                          <li key={idx} className="text-xs text-muted-foreground flex items-start gap-2">
+                            <span className={`${isAccent ? 'text-accent' : 'text-primary'}`}>•</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                     
+                    {/* Roles */}
                     <div className="flex flex-wrap gap-1 mb-4">
                       {academy.roles.map((role, idx) => (
-                        <span key={idx} className="px-2 py-0.5 text-[9px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">
+                        <span key={idx} className="px-2 py-0.5 text-[10px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">
                           {role}
                         </span>
                       ))}
                     </div>
                     
-                    <div className={`flex items-center gap-1 text-xs font-medium ${isAccent ? 'text-accent' : 'text-primary'} group-hover:gap-2 transition-all duration-200`}>
-                      Zobrazit detail <ArrowRight className="w-3 h-3" />
-                    </div>
+                    {/* CTA Button */}
+                    <Button 
+                      variant="outline"
+                      size="sm"
+                      className={`w-full ${
+                        isAccent 
+                          ? 'border-accent/50 text-accent hover:bg-accent/10 hover:border-accent' 
+                          : 'border-primary/50 text-primary hover:bg-primary/10 hover:border-primary'
+                      } group-hover:shadow-[0_0_15px_${isAccent ? 'rgba(189,0,255,0.3)' : 'rgba(102,252,241,0.3)'}] transition-all`}
+                    >
+                      <BookOpen className="w-4 h-4 mr-2" />
+                      Zobrazit osnovu (ukázka)
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
                   </Link>
                 );
               })}
