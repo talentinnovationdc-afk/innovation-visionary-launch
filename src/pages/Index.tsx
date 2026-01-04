@@ -30,13 +30,13 @@ const Index = () => {
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    — ve firmách i pro jednotlivce
+                    pro firmy i váš profesní růst
                   </span>
                 </h1>
                 
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-10 normal-case tracking-normal leading-[1.8]">
                   Pro firmy: zrychlení rolí a procesů s měřitelným dopadem.<br />
-                  Pro vás: online akademie s certifikací a LinkedIn odznakem.
+                  Pro vás: profesní upgrade potvrzený certifikátem a LinkedIn odznakem — viditelné uznání dovedností v AI.
                 </p>
                 
                 {/* Two CTAs */}
@@ -56,14 +56,14 @@ const Index = () => {
                       size="lg" 
                       className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
                     >
-                      <GraduationCap className="w-5 h-5 mr-2" />
-                      Online akademie
+                      <BadgeCheck className="w-5 h-5 mr-2" />
+                      Získat AI certifikaci a odznak
                     </Button>
                   </Link>
                 </div>
 
                 {/* Trust Metrics */}
-                <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+                <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-4">
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-primary" />
                     <span className="text-sm font-medium text-foreground">1250+ absolventů</span>
@@ -77,19 +77,15 @@ const Index = () => {
                     <span className="text-sm font-medium text-foreground">95 % doporučuje</span>
                   </div>
                 </div>
+                <p className="text-xs text-muted-foreground/70 max-w-md mx-auto">
+                  Nejde o teorii. Učíme workflow, které lidé používají hned druhý den.
+                </p>
               </div>
             </div>
           </section>
 
           {/* Logo Ribbon - Trust Bar */}
-          <section className="py-8">
-            <div className="container px-4">
-              <p className="text-center text-xs text-muted-foreground/70 uppercase tracking-[0.2em] mb-6">
-                Těmto týmům a lidem jsme pomohli
-              </p>
-            </div>
-            <LogoRibbon />
-          </section>
+          <LogoRibbon />
 
           {/* Choose Your Path - Two Big Cards */}
           <section className="py-20 relative">
@@ -97,7 +93,7 @@ const Index = () => {
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    Vyberte svou cestu
+                    Vyberte si, co chcete zlepšit
                   </span>
                 </h2>
               </div>
@@ -113,26 +109,26 @@ const Index = () => {
                       <Building className="w-7 h-7 text-primary" />
                     </div>
                     <div>
-                      <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Pro firmy / HR</span>
+                      <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Pro firmy a HR</span>
                     </div>
                   </div>
                   
                   <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
-                    Produktivita rolí ve vašem týmu
+                    Rychlé úspory času napříč rolemi — bezpečně a měřitelně
                   </h3>
                   
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-center gap-3 text-muted-foreground">
                       <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span>Rychlé úspory času</span>
+                      <span>Rychlé úspory času v rolích a procesech</span>
                     </li>
                     <li className="flex items-center gap-3 text-muted-foreground">
                       <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span>Bezpečné workflow</span>
+                      <span>Bezpečné workflow a pravidla použití</span>
                     </li>
                     <li className="flex items-center gap-3 text-muted-foreground">
                       <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span>Dopad měříme</span>
+                      <span>Dopad měříme (čas, kvalita, chybovost)</span>
                     </li>
                   </ul>
                   
@@ -141,41 +137,41 @@ const Index = () => {
                   </div>
                 </Link>
 
-                {/* Card B - Online akademie */}
+                {/* Card B - Pro profesionály */}
                 <Link 
                   to="/online"
                   className="glass-card p-8 rounded-2xl border border-accent/30 hover:border-accent/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(189,0,255,0.2)] block"
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300">
-                      <GraduationCap className="w-7 h-7 text-accent" />
+                      <BadgeCheck className="w-7 h-7 text-accent" />
                     </div>
                     <div>
-                      <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">Pro jednotlivce</span>
+                      <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">Pro profesionály</span>
                     </div>
                   </div>
                   
                   <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
-                    Studujte vlastním tempem
+                    Získejte uznání dovedností v AI, které je vidět
                   </h3>
                   
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-center gap-3 text-muted-foreground">
                       <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>Flexibilní online studium</span>
+                      <span>Certifikát + LinkedIn odznak po dokončení</span>
                     </li>
                     <li className="flex items-center gap-3 text-muted-foreground">
                       <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>Certifikát + LinkedIn odznak</span>
+                      <span>Praktické workflow pro vaši profesi</span>
                     </li>
                     <li className="flex items-center gap-3 text-muted-foreground">
                       <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>Dlouhodobý přístup k obsahu</span>
+                      <span>Dlouhodobý přístup k obsahu a studium vlastním tempem</span>
                     </li>
                   </ul>
                   
                   <div className="flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all duration-200">
-                    Zobrazit online akademie <ArrowRight className="w-5 h-5" />
+                    Získat certifikaci a odznak <ArrowRight className="w-5 h-5" />
                   </div>
                 </Link>
               </div>
@@ -189,7 +185,7 @@ const Index = () => {
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                   <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                    Co přinášíme
+                    Co vám to přinese
                   </span>
                 </h2>
               </div>
@@ -197,23 +193,23 @@ const Index = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <TrendingUp className="w-10 h-10 text-primary mx-auto mb-4" />
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Měřitelné výsledky</h3>
-                  <p className="text-xs text-muted-foreground">Produktivita, kterou uvidíte v číslech</p>
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Měřitelný posun</h3>
+                  <p className="text-xs text-muted-foreground">Produktivitu uvidíte v číslech (čas, kvalita, chybovost).</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Bezpečné workflow</h3>
-                  <p className="text-xs text-muted-foreground">Respektujeme vaše standardy</p>
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Bezpečné použití AI</h3>
+                  <p className="text-xs text-muted-foreground">Jasná pravidla a workflow v souladu s vašimi standardy.</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Award className="w-10 h-10 text-accent mx-auto mb-4" />
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Certifikace</h3>
-                  <p className="text-xs text-muted-foreground">LinkedIn odznak po dokončení</p>
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Uznání dovedností</h3>
+                  <p className="text-xs text-muted-foreground">Certifikát a LinkedIn odznak, který je vidět.</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Clock className="w-10 h-10 text-accent mx-auto mb-4" />
                   <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Vlastní tempo</h3>
-                  <p className="text-xs text-muted-foreground">Studujte kdy a kde chcete</p>
+                  <p className="text-xs text-muted-foreground">Studium kdykoli a odkudkoli — bez tlaku na termín.</p>
                 </div>
               </div>
             </div>
@@ -227,24 +223,23 @@ const Index = () => {
             <div className="container px-4">
               <div className="max-w-4xl mx-auto text-center glass-card p-10 md:p-12 rounded-2xl border border-primary/30 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
-                  Připraveni začít?
+                  Vyberte si další krok:
                 </h2>
-                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Vyberte cestu, která vám sedí — pomůžeme vám s produktivitou i vzděláváním.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                   <Link to="/profirmy">
                     <Button size="lg" className="px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
-                      Pro firmy
+                      <Building className="w-5 h-5 mr-2" />
+                      Rychlá diagnostika pro firmy
                     </Button>
                   </Link>
                   <Link to="/online">
                     <Button 
                       variant="outline"
                       size="lg" 
-                      className="px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
+                      className="px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
                     >
-                      Online akademie
+                      <BadgeCheck className="w-5 h-5 mr-2" />
+                      Získat certifikaci a LinkedIn odznak
                     </Button>
                   </Link>
                 </div>
