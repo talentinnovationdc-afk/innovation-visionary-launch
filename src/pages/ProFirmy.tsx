@@ -7,7 +7,7 @@ import {
   Search, Bot, Users, GraduationCap, Banknote, 
   ClipboardCheck, Shield, Scale, FileCode,
   UserCheck, FileText, ShoppingCart, ChevronDown,
-  FileBarChart, Route, LayoutGrid, Award
+  FileBarChart, Route, LayoutGrid, Award, Rocket, RefreshCw
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -93,36 +93,44 @@ const targetAudience = [
 const journeySteps = [
   {
     number: 1,
+    icon: Search,
     title: "AUDIT",
-    tag: "AUDIT",
     description: "Kde mizí čas a kde AI přinese nejrychlejší úspory (80/20).",
+    accent: "cyan" as const,
   },
   {
     number: 2,
+    icon: FileText,
     title: "BLUEPRINT",
-    tag: "BLUEPRINT",
     description: "Plán nasazení: procesy, data, role, pravidla a rizika.",
     note: "Volitelně pro regulované týmy: ISO / ADR / MDR / AI Act readiness.",
+    accent: "cyan" as const,
   },
   {
     number: 3,
+    icon: Rocket,
     title: "IMPLEMENTACE",
-    tag: "IMPLEMENTACE",
     description: "Nasazení AI-native workflow + měření dopadu.",
-    methodologyNote: "Auditovatelný standard nasazení pro spolehlivost a bezpečnost.",
-    methodologyLink: "https://www.swimin.ai",
+    accent: "cyan" as const,
+    link: {
+      text: "swimin.ai",
+      url: "https://www.swimin.ai",
+      note: "Auditovatelný standard nasazení pro spolehlivost a bezpečnost.",
+    },
   },
   {
     number: 4,
+    icon: GraduationCap,
     title: "TRANSFER",
-    tag: "TRANSFER",
     description: "Akademie pro týmy: e-learning, šablony, certifikace a LinkedIn odznaky.",
+    accent: "purple" as const,
   },
   {
     number: 5,
+    icon: RefreshCw,
     title: "EVOLUCE",
-    tag: "EVOLUCE",
     description: "Dlouhodobé zlepšování: nové automatizace, upgrade standardů a obsahu.",
+    accent: "purple" as const,
   },
 ];
 
@@ -324,64 +332,146 @@ const ProFirmy = () => {
           </section>
 
           {/* Cesta k digitální autonomii */}
-          <section className="py-20">
-            <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                CESTA K DIGITÁLNÍ AUTONOMII
-              </h2>
-              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Od prvotní analýzy po dlouhodobou evoluci. Provázíme vás každým krokem.
-              </p>
-              
-              <div className="max-w-4xl mx-auto">
-                <div className="relative">
-                  {/* Vertical line */}
-                  <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-transparent hidden md:block" />
-                  
-                  <div className="space-y-6">
-                    {journeySteps.map((step) => (
-                      <div key={step.number} className="relative flex gap-6 items-start">
-                        {/* Step number */}
-                        <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 z-10">
-                          <span className="text-primary font-semibold">{step.number}</span>
-                        </div>
-                        
-                        {/* Content */}
-                        <div className="flex-1 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-5 hover:border-primary/40 transition-all duration-300">
-                          <div className="flex flex-wrap items-center gap-3 mb-2">
-                            <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground">
+          <section className="py-20 md:py-28 relative overflow-hidden">
+            {/* Subtle gradient background */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(176,96%,69%,0.03)_0%,_transparent_50%)] pointer-events-none" />
+            
+            <div className="container mx-auto px-4 relative z-10">
+              <div className="text-center mb-16">
+                <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
+                  Náš proces
+                </span>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
+                  CESTA K DIGITÁLNÍ AUTONOMII
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal leading-relaxed">
+                  Od prvotní analýzy po dlouhodobou evoluci. Provázíme vás každým krokem.
+                </p>
+              </div>
+
+              {/* Timeline */}
+              <div className="max-w-4xl mx-auto relative">
+                {/* Vertical line */}
+                <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-accent/50 md:-translate-x-px" />
+
+                {journeySteps.map((step, index) => {
+                  const Icon = step.icon;
+                  const isCyan = step.accent === "cyan";
+                  const isEven = index % 2 === 0;
+
+                  return (
+                    <div
+                      key={step.number}
+                      className={`relative flex items-start gap-6 md:gap-0 mb-12 last:mb-0 ${
+                        isEven ? "md:flex-row" : "md:flex-row-reverse"
+                      }`}
+                    >
+                      {/* Content Card */}
+                      <div className={`flex-1 md:w-1/2 ${isEven ? "md:pr-12" : "md:pl-12"}`}>
+                        <div
+                          className={`
+                            group relative p-6 rounded-xl
+                            bg-gradient-to-b from-[#1F2833]/80 to-[#0B0C10]/90
+                            border border-white/5
+                            transition-all duration-300 ease-out
+                            hover:-translate-y-1
+                            ${isCyan 
+                              ? "hover:border-primary/30 hover:shadow-[0_0_30px_rgba(102,252,241,0.12)]" 
+                              : "hover:border-accent/30 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)]"
+                            }
+                          `}
+                        >
+                          {/* Glow overlay */}
+                          <div 
+                            className={`
+                              absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 
+                              transition-opacity duration-300 pointer-events-none
+                              ${isCyan 
+                                ? "bg-[radial-gradient(ellipse_at_top,_hsl(176,96%,69%,0.05)_0%,_transparent_70%)]"
+                                : "bg-[radial-gradient(ellipse_at_top,_hsl(284,100%,50%,0.05)_0%,_transparent_70%)]"
+                              }
+                            `}
+                          />
+
+                          <div className="relative z-10">
+                            {/* Icon */}
+                            <div 
+                              className={`
+                                w-10 h-10 rounded-lg flex items-center justify-center mb-4
+                                transition-all duration-300
+                                ${isCyan 
+                                  ? "bg-primary/10 border border-primary/20 group-hover:bg-primary/20" 
+                                  : "bg-accent/10 border border-accent/20 group-hover:bg-accent/20"
+                                }
+                              `}
+                            >
+                              <Icon className={`h-5 w-5 ${isCyan ? "text-primary" : "text-accent"}`} />
+                            </div>
+
+                            {/* Title */}
+                            <h3 className="text-sm font-semibold tracking-[0.2em] text-foreground mb-2 uppercase">
                               {step.title}
                             </h3>
-                            <span className="px-2 py-0.5 text-[10px] font-semibold tracking-[0.1em] uppercase rounded-full bg-primary/10 text-primary border border-primary/20">
-                              {step.tag}
-                            </span>
+
+                            {/* Description */}
+                            <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
+                              {step.description}
+                              {step.link && (
+                                <>
+                                  {" "}
+                                  <a
+                                    href={step.link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`
+                                      font-semibold underline underline-offset-2 decoration-1
+                                      transition-colors duration-200
+                                      ${isCyan 
+                                        ? "text-primary hover:text-primary/80" 
+                                        : "text-accent hover:text-accent/80"
+                                      }
+                                    `}
+                                  >
+                                    {step.link.text}
+                                  </a>
+                                  {step.link.note && (
+                                    <span className="text-muted-foreground/70"> — {step.link.note}</span>
+                                  )}
+                                </>
+                              )}
+                            </p>
+                            
+                            {step.note && (
+                              <p className="text-xs text-muted-foreground/70 mt-3 italic">
+                                {step.note}
+                              </p>
+                            )}
                           </div>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
-                            {step.description}
-                          </p>
-                          {step.note && (
-                            <p className="text-xs text-muted-foreground/70 mt-3">
-                              {step.note}
-                            </p>
-                          )}
-                          {step.methodologyNote && (
-                            <p className="text-xs text-primary/80 mt-3">
-                              <a 
-                                href={step.methodologyLink} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="hover:text-primary hover:underline transition-colors"
-                              >
-                                swimin.ai
-                              </a>
-                              {" — "}{step.methodologyNote}
-                            </p>
-                          )}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </div>
+
+                      {/* Timeline Node */}
+                      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
+                        <div 
+                          className={`
+                            w-12 h-12 rounded-full flex items-center justify-center
+                            text-sm font-bold tracking-wider
+                            transition-all duration-300
+                            ${isCyan 
+                              ? "bg-primary/20 border-2 border-primary text-primary shadow-[0_0_20px_rgba(102,252,241,0.3)]" 
+                              : "bg-accent/20 border-2 border-accent text-accent shadow-[0_0_20px_rgba(189,0,255,0.3)]"
+                            }
+                          `}
+                        >
+                          {step.number}
+                        </div>
+                      </div>
+
+                      {/* Spacer for opposite side */}
+                      <div className="hidden md:block flex-1 md:w-1/2" />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
