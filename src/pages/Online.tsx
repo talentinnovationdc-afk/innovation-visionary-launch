@@ -95,8 +95,8 @@ const faqItems = [
   { 
     icon: Clock, 
     question: "Jak dlouho mám přístup ke kurzu?", 
-    answer: "Přístup je doživotní. Všechny budoucí aktualizace obsahu jsou zdarma.",
-    highlight: "Doživotní přístup"
+    answer: "Máte dlouhodobý přístup k obsahu a studujete vlastním tempem. Obsah průběžně udržujeme aktuální.",
+    highlight: "Dlouhodobý přístup"
   },
   { 
     icon: Users, 
