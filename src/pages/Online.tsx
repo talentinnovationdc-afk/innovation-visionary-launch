@@ -381,13 +381,12 @@ const Online = () => {
                   <div className="glass-card p-8 rounded-2xl border border-muted/30 relative overflow-hidden flex flex-col">
                     <div className="absolute inset-0 bg-gradient-to-br from-muted/10 to-transparent" />
                     <div className="relative z-10 flex-1 flex flex-col">
-                      <p className="text-sm text-muted-foreground mb-2 line-through">Online školení živě s lektorem</p>
+                      <p className="text-sm text-muted-foreground mb-2">Online školení živě s lektorem</p>
                       <div className="mb-4">
-                        <span className="text-3xl font-bold text-muted-foreground/60">18 700 Kč</span>
-                        <span className="text-xs text-muted-foreground/50 ml-2">vč. DPH</span>
+                        <span className="text-3xl font-bold text-muted-foreground/60 line-through">18 700 Kč vč. DPH</span>
                       </div>
                       
-                      <ul className="space-y-2 text-left mb-4 flex-1">
+                      <ul className="space-y-2 text-left flex-1">
                         <li className="flex items-start gap-2 text-xs text-muted-foreground">
                           <span className="text-muted-foreground/50 mt-0.5">•</span>
                           Fixní termín (musíte se přizpůsobit)
@@ -402,39 +401,9 @@ const Online = () => {
                         </li>
                         <li className="flex items-start gap-2 text-xs text-muted-foreground">
                           <span className="text-muted-foreground/50 mt-0.5">•</span>
-                          <span className="flex items-center gap-1">
-                            Striktní podmínky
-                            <span className="group/tooltip relative cursor-help">
-                              <Info className="w-3 h-3 text-muted-foreground/50" />
-                              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-card border border-border rounded text-[9px] whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none z-50 max-w-[200px] text-center">
-                                Živé školení probíhá v konkrétním čase, s pravidly pro účast a kapacitou skupiny.
-                              </span>
-                            </span>
-                          </span>
+                          Povinná účast min. 80 %
                         </li>
                       </ul>
-                      
-                      <p className="text-[10px] text-muted-foreground/60 mb-6 italic">
-                        Živé školení platíte za čas lektora a synchronní účast týmu v konkrétním termínu.
-                      </p>
-                      
-                      <div className="space-y-2 mt-auto">
-                        <Link to="/profirmy#kontakt">
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            className="w-full text-xs border-muted/30 text-muted-foreground hover:bg-muted/10"
-                          >
-                            Chci živé online školení
-                          </Button>
-                        </Link>
-                        <Link 
-                          to="/online#varianty" 
-                          className="block text-center text-[10px] text-primary hover:text-primary/80 transition-colors"
-                        >
-                          Raději studovat ze záznamu →
-                        </Link>
-                      </div>
                     </div>
                   </div>
                   
