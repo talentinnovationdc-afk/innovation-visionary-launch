@@ -7,7 +7,8 @@ import {
   Search, Bot, Users, GraduationCap, Banknote, 
   ClipboardCheck, Shield, Scale, FileCode,
   UserCheck, FileText, ShoppingCart, ChevronDown,
-  FileBarChart, Route, LayoutGrid, Award, Rocket, RefreshCw
+  FileBarChart, Route, LayoutGrid, Award, Rocket, RefreshCw,
+  Clock, MessageSquare, Lock, Zap, BookOpen, BarChart3, HelpCircle
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -186,28 +187,46 @@ const deliverables = [
 
 const faqItems = [
   {
+    icon: Clock,
     question: "Kolik času to zabere?",
     answer: "Rychlá diagnostika trvá 15 minut. Kompletní AI audit s roadmapou připravíme do 2 týdnů. Implementace závisí na rozsahu – od 1 týdne pro pilotní projekt až po 2–3 měsíce pro celofiremní nasazení.",
+    highlight: "15 min diagnostika",
+    size: "normal" as const,
   },
   {
+    icon: MessageSquare,
     question: "Co potřebujete od nás?",
     answer: "Na začátku stačí 15minutový hovor, abychom pochopili vaše procesy. Pro audit pak potřebujeme přístup k relevantním lidem z týmu (HR, backoffice, obchod) a přehled používaných nástrojů.",
+    highlight: "Jen 15min call",
+    size: "normal" as const,
   },
   {
+    icon: Lock,
     question: "Jak chráníte data?",
     answer: "Pracujeme s enterprise verzemi AI nástrojů (Azure OpenAI, Microsoft Copilot), které nepoužívají vaše data k trénování modelů. Všechna řešení navrhujeme s ohledem na GDPR a AI Act.",
+    highlight: "GDPR & AI Act ready",
+    size: "featured" as const,
   },
   {
+    icon: Zap,
     question: "Co když nemáme Copilot?",
     answer: "Žádný problém. Pracujeme s různými nástroji – od ChatGPT Plus přes Claude až po open-source řešení. Doporučíme to nejlepší pro vaši situaci a rozpočet.",
+    highlight: "Flexibilní nástroje",
+    size: "normal" as const,
   },
   {
+    icon: BookOpen,
     question: "Jak fungují firemní licence?",
     answer: "Akademie nabízíme jako firemní licence s neomezeným počtem přístupů. Cena závisí na počtu uživatelů a rozsahu kurzů. Součástí je reporting a certifikace pro každého absolventa.",
+    highlight: "Neomezené přístupy",
+    size: "normal" as const,
   },
   {
+    icon: BarChart3,
     question: "Jak měříte dopad?",
     answer: "Před zahájením definujeme konkrétní KPIs (ušetřený čas, počet automatizací, adoption rate). Po 3 měsících vyhodnocujeme a optimalizujeme. Dodáváme měsíční reporty pro management.",
+    highlight: "Měsíční reporty",
+    size: "featured" as const,
   },
 ];
 
@@ -640,33 +659,114 @@ const ProFirmy = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
           </section>
 
-          {/* FAQ Section */}
-          <section className="py-20 bg-card/20 relative">
-            <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                ČASTÉ DOTAZY
-              </h2>
-              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Odpovědi na nejčastější otázky od HR a vedení firem.
-              </p>
+          {/* FAQ Section - Bento Grid */}
+          <section className="py-20 bg-card/20 relative overflow-hidden">
+            {/* Decorative background elements */}
+            <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+            
+            <div className="container mx-auto px-4 relative z-10">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 mb-6">
+                  <HelpCircle className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-semibold tracking-[0.15em] text-primary uppercase">
+                    FAQ
+                  </span>
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold tracking-[0.15em] uppercase mb-4">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    ČASTÉ
+                  </span>
+                  {" "}
+                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
+                    DOTAZY
+                  </span>
+                </h2>
+                <p className="text-muted-foreground max-w-xl mx-auto">
+                  Odpovědi na nejčastější otázky od HR a vedení firem
+                </p>
+              </div>
               
-              <div className="max-w-3xl mx-auto">
-                <Accordion type="single" collapsible className="space-y-4">
-                  {faqItems.map((item, index) => (
-                    <AccordionItem 
-                      key={index} 
-                      value={`item-${index}`}
-                      className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl px-6 overflow-hidden"
+              {/* Bento Grid Layout */}
+              <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {faqItems.map((item, index) => {
+                  const isFeatured = item.size === "featured";
+                  const isEven = index % 2 === 0;
+                  
+                  return (
+                    <div 
+                      key={index}
+                      className={`group relative rounded-2xl transition-all duration-500 hover:scale-[1.02] ${
+                        isFeatured ? 'lg:col-span-2' : ''
+                      }`}
                     >
-                      <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-5">
-                        {item.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground pb-5">
-                        {item.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
+                      {/* Glow effect on hover */}
+                      <div className={`absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm ${
+                        isEven ? 'bg-gradient-to-r from-primary/40 to-primary/20' : 'bg-gradient-to-r from-accent/40 to-accent/20'
+                      }`} />
+                      
+                      <div className={`relative h-full glass-card rounded-2xl border transition-all duration-300 overflow-hidden ${
+                        isEven ? 'border-primary/20 hover:border-primary/40' : 'border-accent/20 hover:border-accent/40'
+                      }`}>
+                        {/* Top accent line */}
+                        <div className={`absolute top-0 left-0 right-0 h-1 ${
+                          isEven 
+                            ? 'bg-gradient-to-r from-transparent via-primary/60 to-transparent' 
+                            : 'bg-gradient-to-r from-transparent via-accent/60 to-transparent'
+                        }`} />
+                        
+                        <div className="p-6">
+                          {/* Header with icon and highlight */}
+                          <div className="flex items-start justify-between gap-4 mb-4">
+                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                              isEven 
+                                ? 'bg-primary/10 border border-primary/20 group-hover:shadow-[0_0_20px_rgba(102,252,241,0.3)]' 
+                                : 'bg-accent/10 border border-accent/20 group-hover:shadow-[0_0_20px_rgba(189,0,255,0.3)]'
+                            }`}>
+                              <item.icon className={`w-6 h-6 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                            </div>
+                            <span className={`text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full ${
+                              isEven 
+                                ? 'bg-primary/10 text-primary border border-primary/20' 
+                                : 'bg-accent/10 text-accent border border-accent/20'
+                            }`}>
+                              {item.highlight}
+                            </span>
+                          </div>
+                          
+                          {/* Question */}
+                          <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                            {item.question}
+                          </h3>
+                          
+                          {/* Answer */}
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </div>
+                        
+                        {/* Bottom decorative element */}
+                        <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-px ${
+                          isEven 
+                            ? 'bg-gradient-to-r from-transparent via-primary/30 to-transparent' 
+                            : 'bg-gradient-to-r from-transparent via-accent/30 to-transparent'
+                        }`} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              
+              {/* Additional question CTA */}
+              <div className="mt-12 text-center">
+                <p className="text-muted-foreground mb-4">Nenašli jste odpověď?</p>
+                <Link
+                  to="/checkout"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-xl border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Zeptejte se nás
+                </Link>
               </div>
             </div>
             
