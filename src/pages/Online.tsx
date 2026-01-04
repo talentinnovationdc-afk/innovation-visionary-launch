@@ -6,7 +6,7 @@ import { LogoRibbon } from "@/components/LogoRibbon";
 import { 
   MessageSquare, Wand2, Bot, Check, Award, Clock, RefreshCw, Users, Star, 
   ThumbsUp, ChevronLeft, ChevronRight, Building, Crown, Sparkles, X,
-  FileText, Zap, Target, Lightbulb, Layers, Workflow, Download
+  FileText, Zap, Target, Lightbulb, Layers, Workflow, Download, Info
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -338,28 +338,112 @@ const Online = () => {
           {/* Anchor Pricing */}
           <section className="py-16 bg-card/20 relative">
             <div className="container px-4">
-              <div className="max-w-4xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className="glass-card p-8 rounded-2xl border border-muted/30 text-center relative overflow-hidden">
+              <div className="max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8 items-stretch">
+                  {/* Left - Live Online Training (more expensive) */}
+                  <div className="glass-card p-8 rounded-2xl border border-muted/30 relative overflow-hidden flex flex-col">
                     <div className="absolute inset-0 bg-gradient-to-br from-muted/10 to-transparent" />
-                    <div className="relative z-10">
-                      <p className="text-sm text-muted-foreground mb-2 line-through">Prezenční školení</p>
-                      <p className="text-3xl font-bold text-muted-foreground/60 mb-2">18 500 Kč</p>
-                      <p className="text-xs text-muted-foreground">+ čas na cestování + termín</p>
+                    <div className="relative z-10 flex-1 flex flex-col">
+                      <p className="text-sm text-muted-foreground mb-2 line-through">Online školení živě s lektorem</p>
+                      <div className="mb-4">
+                        <span className="text-3xl font-bold text-muted-foreground/60">18 700 Kč</span>
+                        <span className="text-xs text-muted-foreground/50 ml-2">vč. DPH</span>
+                      </div>
+                      
+                      <ul className="space-y-2 text-left mb-4 flex-1">
+                        <li className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <span className="text-muted-foreground/50 mt-0.5">•</span>
+                          Fixní termín (musíte se přizpůsobit)
+                        </li>
+                        <li className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <span className="text-muted-foreground/50 mt-0.5">•</span>
+                          Omezená kapacita skupiny
+                        </li>
+                        <li className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <span className="text-muted-foreground/50 mt-0.5">•</span>
+                          Nutná účast v reálném čase
+                        </li>
+                        <li className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <span className="text-muted-foreground/50 mt-0.5">•</span>
+                          <span className="flex items-center gap-1">
+                            Striktní podmínky
+                            <span className="group/tooltip relative cursor-help">
+                              <Info className="w-3 h-3 text-muted-foreground/50" />
+                              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-card border border-border rounded text-[9px] whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none z-50 max-w-[200px] text-center">
+                                Živé školení probíhá v konkrétním čase, s pravidly pro účast a kapacitou skupiny.
+                              </span>
+                            </span>
+                          </span>
+                        </li>
+                      </ul>
+                      
+                      <p className="text-[10px] text-muted-foreground/60 mb-6 italic">
+                        Živé školení platíte za čas lektora a synchronní účast týmu v konkrétním termínu.
+                      </p>
+                      
+                      <div className="space-y-2 mt-auto">
+                        <Link to="/profirmy#kontakt">
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="w-full text-xs border-muted/30 text-muted-foreground hover:bg-muted/10"
+                          >
+                            Chci živé online školení
+                          </Button>
+                        </Link>
+                        <Link 
+                          to="/online#varianty" 
+                          className="block text-center text-[10px] text-primary hover:text-primary/80 transition-colors"
+                        >
+                          Raději studovat ze záznamu →
+                        </Link>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="glass-card p-8 rounded-2xl border border-primary/40 text-center relative overflow-hidden shadow-[0_0_30px_rgba(102,252,241,0.15)]">
+                  {/* Right - Online Academy (cheaper, highlighted) */}
+                  <div className="glass-card p-8 rounded-2xl border border-primary/40 relative overflow-hidden shadow-[0_0_30px_rgba(102,252,241,0.15)] flex flex-col">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-                    <div className="relative z-10">
-                      <p className="text-sm text-primary mb-2 font-semibold">Online akademie</p>
-                      <p className="text-3xl font-bold text-foreground mb-2">od 4 470 Kč</p>
-                      <div className="flex flex-wrap justify-center gap-2 mt-4">
-                        <span className="px-2 py-1 text-[10px] uppercase font-semibold rounded-full bg-primary/10 text-primary border border-primary/20">Certifikát</span>
-                        <span className="px-2 py-1 text-[10px] uppercase font-semibold rounded-full bg-primary/10 text-primary border border-primary/20">LinkedIn odznak</span>
-                        <span className="px-2 py-1 text-[10px] uppercase font-semibold rounded-full bg-primary/10 text-primary border border-primary/20">Šablony & prompty</span>
+                    <div className="relative z-10 flex-1 flex flex-col">
+                      <p className="text-sm text-primary mb-2 font-semibold">Online akademie ze záznamu</p>
+                      <div className="mb-4">
+                        <span className="text-3xl font-bold text-foreground">od 4 470 Kč</span>
+                        <span className="text-xs text-muted-foreground/70 ml-2">vč. DPH</span>
                       </div>
-                      <p className="text-xs text-muted-foreground mt-4">Studium ze záznamu, kdykoliv a vlastním tempem.</p>
+                      
+                      <ul className="space-y-2 text-left mb-4 flex-1">
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          Studium kdykoliv (bez termínu)
+                        </li>
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          Vlastní tempo
+                        </li>
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          Certifikát + LinkedIn odznak
+                        </li>
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          Šablony & prompty
+                        </li>
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          Okamžitý start po nákupu
+                        </li>
+                      </ul>
+                      
+                      <div className="mt-auto">
+                        <a href="#varianty">
+                          <Button 
+                            size="sm" 
+                            className="w-full text-xs shadow-[0_0_15px_rgba(102,252,241,0.3)]"
+                          >
+                            Vybrat akademii
+                          </Button>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
