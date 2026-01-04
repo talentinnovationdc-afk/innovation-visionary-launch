@@ -3,47 +3,56 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
-import { MessageSquare, Wand2, Bot, Image, Check, Award, Clock, RefreshCw, Users, Star, ThumbsUp, ChevronLeft, ChevronRight, Building } from "lucide-react";
+import { MessageSquare, Wand2, Bot, Check, Award, Clock, RefreshCw, Users, Star, ThumbsUp, ChevronLeft, ChevronRight, Building, Crown, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const courses = [
   {
+    id: 0,
+    title: "MASTER OF AI CREATIVITY",
+    subtitle: "Kompletní program (3 akademie)",
+    focus: "Cesta k digitální autonomii.",
+    description: "Všechny 3 akademie v jedné cestě k digitální autonomii.",
+    price: "12 900 Kč",
+    icon: Crown,
+    link: "https://t-i.cz/online/masterofaicreativity",
+    isProgram: true,
+    tags: ["3 akademie", "Certifikát", "Hlavní LinkedIn odznak"]
+  },
+  {
     id: 1,
     title: "CHATGPT AKADEMIE",
-    focus: "Mastery in prompting and time-saving.",
+    subtitle: "Samostatná akademie",
+    focus: "Práce s GPT od základů po pokročilé workflow.",
     description: "Ovládněte umění promptingu a ušetřete hodiny práce každý týden.",
     price: "4 470 Kč",
     icon: MessageSquare,
-    link: "https://t-i.cz/online/chatgptakademie"
+    link: "https://t-i.cz/online/chatgptakademie",
+    isProgram: false
   },
   {
     id: 2,
     title: "MICROSOFT COPILOT AKADEMIE",
-    focus: "AI inside Word, Excel, Outlook.",
+    subtitle: "Samostatná akademie",
+    focus: "Produktivita a automatizace v Microsoft 365.",
     description: "Integrujte AI přímo do svých kancelářských aplikací Microsoft 365.",
     price: "4 470 Kč",
     icon: Wand2,
-    link: "https://t-i.cz/online/copilotakademie"
+    link: "https://t-i.cz/online/copilotakademie",
+    isProgram: false
   },
   {
     id: 3,
     title: "AGENTI & AUTOMATIZACE",
-    focus: "Building custom AI workflows.",
+    subtitle: "Samostatná akademie",
+    focus: "Pokročilé agentické workflow a orchestrace.",
     description: "Naučte se stavět vlastní AI agenty pro automatizaci procesů.",
     price: "4 970 Kč",
     icon: Bot,
-    link: "https://t-i.cz/online/agentiautomatizace"
-  },
-  {
-    id: 4,
-    title: "MULTIMÉDIA AKADEMIE",
-    focus: "AI for images, video, and voice.",
-    description: "Tvořte profesionální vizuální obsah pomocí generativní AI.",
-    price: "4 470 Kč",
-    icon: Image,
-    link: "https://t-i.cz/online/multimediaakademie"
+    link: "https://t-i.cz/online/agentiautomatizace",
+    isProgram: false
   }
 ];
 
@@ -195,6 +204,54 @@ const Online = () => {
             </div>
           </section>
 
+          {/* How It Works Section */}
+          <section className="py-16 relative">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-10">
+                  <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                    Jak to u nás funguje
+                  </h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    Máte na výběr jednu akademii, nebo kompletní program Master of AI Creativity.
+                  </p>
+                </div>
+                
+                <div className="glass-card p-6 md:p-8 rounded-2xl border border-primary/20">
+                  <ul className="space-y-4 mb-6">
+                    <li className="flex items-start gap-3">
+                      <MessageSquare className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-muted-foreground">
+                        <strong className="text-foreground">ChatGPT Akademie</strong> — práce s GPT od základů po pokročilé workflow
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Wand2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-muted-foreground">
+                        <strong className="text-foreground">Copilot Akademie</strong> — produktivita a automatizace v Microsoft 365
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Bot className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-muted-foreground">
+                        <strong className="text-foreground">Agenti & Automatizace</strong> — pokročilé agentické workflow a orchestrace
+                      </span>
+                    </li>
+                  </ul>
+                  
+                  <div className="p-4 rounded-xl bg-gradient-to-r from-accent/10 via-card to-primary/10 border border-accent/30">
+                    <div className="flex items-center gap-3">
+                      <Crown className="w-6 h-6 text-accent flex-shrink-0" />
+                      <p className="text-foreground font-medium">
+                        <span className="text-accent">Master of AI Creativity</span> (kompletní program) = všechny 3 akademie + finální certifikát a hlavní LinkedIn odznak.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Course Catalog */}
           <section className="py-16 md:py-24 relative overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,_hsl(284,100%,50%,0.06)_0%,_transparent_70%)] pointer-events-none" />
@@ -202,10 +259,10 @@ const Online = () => {
             <div className="container px-4 relative z-10">
               <div className="text-center mb-12">
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  KATALOG KURZŮ
+                  KATALOG AKADEMIÍ
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal">
-                  Vyberte si akademii, která odpovídá vašim potřebám
+                  Vyberte si jednu akademii, nebo kompletní program
                 </p>
               </div>
 
@@ -215,22 +272,52 @@ const Online = () => {
                   return (
                     <div 
                       key={course.id}
-                      className="glass-card p-6 group transition-all duration-300 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)] flex flex-col"
+                      className={`glass-card p-6 group transition-all duration-300 hover:-translate-y-2 flex flex-col relative ${
+                        course.isProgram 
+                          ? 'border-accent/40 shadow-[0_0_30px_rgba(189,0,255,0.15)] hover:shadow-[0_0_40px_rgba(189,0,255,0.25)]' 
+                          : 'hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)]'
+                      }`}
                     >
-                      <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors duration-300">
+                      {course.isProgram && (
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase">
+                          Nejlepší hodnota
+                        </div>
+                      )}
+                      
+                      <div className={`w-12 h-12 rounded-lg border flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors duration-300 ${
+                        course.isProgram ? 'bg-accent/20 border-accent/40' : 'bg-accent/10 border-accent/20'
+                      }`}>
                         <Icon className="h-6 w-6 text-accent" />
                       </div>
-                      <h3 className="text-sm font-semibold tracking-[0.12em] text-foreground mb-2 uppercase">
+                      
+                      <h3 className="text-sm font-semibold tracking-[0.12em] text-foreground mb-1 uppercase">
                         {course.title}
                       </h3>
+                      
+                      <p className={`text-xs mb-2 ${course.isProgram ? 'text-accent font-medium' : 'text-muted-foreground/70'}`}>
+                        {course.subtitle}
+                      </p>
+                      
                       <p className="text-xs text-primary mb-2 italic">
                         {course.focus}
                       </p>
+                      
                       <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal mb-4 flex-1">
                         {course.description}
                       </p>
+                      
+                      {course.tags && (
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                          {course.tags.map((tag, idx) => (
+                            <span key={idx} className="px-2 py-0.5 text-[10px] font-semibold uppercase rounded-full bg-accent/10 text-accent border border-accent/20">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      
                       <div className="mt-auto">
-                        <div className="text-xl font-bold text-foreground mb-4">
+                        <div className={`text-xl font-bold mb-4 ${course.isProgram ? 'text-accent' : 'text-foreground'}`}>
                           {course.price}
                         </div>
                         <a 
@@ -244,7 +331,7 @@ const Online = () => {
                             size="sm" 
                             className="w-full text-xs tracking-[0.1em] uppercase"
                           >
-                            Koupit kurz
+                            {course.isProgram ? 'Koupit program' : 'Koupit akademii'}
                           </Button>
                         </a>
                       </div>

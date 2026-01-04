@@ -44,10 +44,10 @@ import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 
 const academyOptions = [
-  { id: "chatgpt", title: "ChatGPT Akademie", icon: MessageSquare },
-  { id: "copilot", title: "Copilot Akademie", icon: Wand2 },
-  { id: "agenti", title: "Agenti & Automatizace", icon: Bot },
-  { id: "master", title: "Master of AI Creativity", icon: Crown, isBundle: true, bundleNote: "bundle 3 akademií" }
+  { id: "master", title: "Kompletní program (3 akademie)", icon: Crown, isProgram: true, note: "Master of AI Creativity" },
+  { id: "chatgpt", title: "ChatGPT Akademie", icon: MessageSquare, isProgram: false },
+  { id: "copilot", title: "Copilot Akademie", icon: Wand2, isProgram: false },
+  { id: "agenti", title: "Agenti & Automatizace", icon: Bot, isProgram: false }
 ];
 
 const pricingPlans = [
@@ -291,7 +291,7 @@ const AkademieProTymy = () => {
                       onClick={() => toggleAcademy(academy.id)}
                       className={`
                         relative flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300
-                        ${academy.isBundle 
+                        ${academy.isProgram 
                           ? isSelected
                             ? 'bg-gradient-to-r from-accent to-accent/80 text-background border-2 border-accent shadow-[0_0_20px_rgba(189,0,255,0.4)]'
                             : 'bg-accent/10 text-accent border-2 border-accent/30 hover:border-accent/60'
@@ -303,7 +303,7 @@ const AkademieProTymy = () => {
                     >
                       <Icon className="w-4 h-4" />
                       <span>{academy.title}</span>
-                      {academy.isBundle && (
+                      {academy.isProgram && (
                         <span className={`ml-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${
                           isSelected ? 'bg-background/20 text-background' : 'bg-accent/20 text-accent'
                         }`}>
@@ -315,7 +315,7 @@ const AkademieProTymy = () => {
                 })}
               </div>
               <p className="text-xs text-muted-foreground text-center">
-                Balík (3 akademie) doporučujeme pro management a klíčové role.
+                Kompletní program doporučujeme pro management a klíčové role.
               </p>
             </div>
             
@@ -669,6 +669,9 @@ const AkademieProTymy = () => {
 
                 <div className="space-y-3">
                   <Label>Preferované akademie</Label>
+                  <p className="text-xs text-muted-foreground mb-2">
+                    Pro týmy můžete licencovat jednu akademii, nebo kompletní program Master of AI Creativity (3 akademie).
+                  </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {academyOptions.map((academy) => {
                       const Icon = academy.icon;
@@ -677,7 +680,7 @@ const AkademieProTymy = () => {
                           key={academy.id}
                           className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors cursor-pointer ${
                             formData.academies.includes(academy.title)
-                              ? academy.isBundle
+                              ? academy.isProgram
                                 ? 'bg-accent/10 border-accent/40'
                                 : 'bg-primary/10 border-primary/40'
                               : 'bg-card/50 border-border/30 hover:border-primary/30'
@@ -698,10 +701,10 @@ const AkademieProTymy = () => {
                               setFormData({...formData, academies: newAcademies});
                             }}
                           />
-                          <Icon className={`w-4 h-4 ${academy.isBundle ? 'text-accent' : 'text-primary'}`} />
+                          <Icon className={`w-4 h-4 ${academy.isProgram ? 'text-accent' : 'text-primary'}`} />
                           <span className="text-sm text-muted-foreground">{academy.title}</span>
-                          {academy.isBundle && (
-                            <span className="text-[10px] text-accent font-medium">(bundle)</span>
+                          {academy.isProgram && (
+                            <span className="text-[10px] text-accent font-medium">(kompletní program)</span>
                           )}
                         </div>
                       );
