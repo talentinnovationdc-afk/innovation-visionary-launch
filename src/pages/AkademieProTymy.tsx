@@ -27,98 +27,91 @@ import {
   MessageSquare,
   Wand2,
   Bot,
-  Image,
-  ChevronDown
+  ChevronDown,
+  Building,
+  Users,
+  Headphones,
+  Cpu,
+  Crown
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 
-const academies = [
-  {
-    icon: MessageSquare,
-    title: "ChatGPT Akademie",
-    description: "Mastery in prompting: e-maily, dokumenty, analýzy, automatizace."
-  },
-  {
-    icon: Wand2,
-    title: "Microsoft Copilot Akademie",
-    description: "AI přímo ve Wordu, Excelu, Outlooku a dalších M365 aplikacích."
-  },
-  {
-    icon: Bot,
-    title: "Agenti & Automatizace",
-    description: "Stavba vlastních AI agentů pro automatizaci procesů."
-  }
+const academyOptions = [
+  { id: "chatgpt", title: "ChatGPT Akademie", icon: MessageSquare },
+  { id: "copilot", title: "Copilot Akademie", icon: Wand2 },
+  { id: "agenti", title: "Agenti & Automatizace", icon: Bot },
+  { id: "master", title: "Master of AI Creativity", icon: Crown, isBundle: true, bundleNote: "bundle 3 akademií" }
 ];
 
 const pricingPlans = [
   {
     name: "Starter",
-    licenses: "10 licencí",
+    licenses: 10,
+    pricePerLicense: 2490,
     recommended: false,
     features: [
-      "Přístup k vybraným akademiím",
-      "Pravidelné aktualizace obsahu",
-      "Certifikace + LinkedIn odznak",
-      "Admin reporting",
-      "1× onboarding session"
-    ]
+      "Přístup k vybraným akademiím ze záznamu",
+      "Certifikát & LinkedIn odznak",
+      "HR reporting dokončení"
+    ],
+    extraFeatures: []
   },
   {
     name: "Team",
-    licenses: "25 licencí",
+    licenses: 25,
+    pricePerLicense: 1990,
     recommended: true,
     features: [
-      "Přístup ke všem akademiím",
-      "Pravidelné aktualizace obsahu",
-      "Certifikace + LinkedIn odznak",
-      "Admin reporting",
-      "2× onboarding session",
-      "Interní šablony & prompty"
+      "Přístup k vybraným akademiím ze záznamu",
+      "Certifikát & LinkedIn odznak",
+      "HR reporting dokončení"
+    ],
+    extraFeatures: [
+      "Onboarding pro tým (60 min)"
     ]
   },
   {
     name: "Company",
-    licenses: "50+ licencí",
+    licenses: 50,
+    pricePerLicense: 1490,
     recommended: false,
     features: [
-      "Přístup ke všem akademiím",
-      "Pravidelné aktualizace obsahu",
-      "Certifikace + LinkedIn odznak",
-      "Rozšířený admin reporting",
-      "Neomezené onboarding sessions",
-      "Interní šablony & prompty",
-      "Prioritní podpora"
+      "Přístup k vybraným akademiím ze záznamu",
+      "Certifikát & LinkedIn odznak",
+      "HR reporting dokončení"
+    ],
+    extraFeatures: [
+      "Onboarding pro tým (60 min)",
+      "Quarterly review (30 min) / optimalizace programu"
     ]
   }
 ];
 
-const processSteps = [
+const roleRecommendations = [
   {
-    number: "1",
-    title: "Výběr cílů a akademií",
-    duration: "15–30 min",
-    icon: Target
+    icon: Users,
+    role: "Administrativa & Backoffice",
+    recommendation: "Copilot nebo ChatGPT"
   },
   {
-    number: "2",
-    title: "Nastavení licencí a přístupů",
-    duration: "1–2 dny",
-    icon: Settings
+    icon: Headphones,
+    role: "Obchod & podpora",
+    recommendation: "ChatGPT"
   },
   {
-    number: "3",
-    title: "Onboarding + první quick wins",
-    duration: "1–2 týdny",
-    icon: Rocket
-  },
-  {
-    number: "4",
-    title: "Reporting + rozvoj",
-    duration: "měsíčně",
-    icon: BarChart3
+    icon: Cpu,
+    role: "Automatizace & IT",
+    recommendation: "Agenti & Automatizace"
   }
+];
+
+const processSteps = [
+  { number: "1", title: "Výběr cílů a akademií", duration: "15–30 min", icon: Target },
+  { number: "2", title: "Nastavení licencí a přístupů", duration: "1–2 dny", icon: Settings },
+  { number: "3", title: "Onboarding + první quick wins", duration: "1–2 týdny", icon: Rocket },
+  { number: "4", title: "Reporting + rozvoj", duration: "měsíčně", icon: BarChart3 }
 ];
 
 const faqItems = [
@@ -128,7 +121,7 @@ const faqItems = [
   },
   {
     question: "Co když nemáme Microsoft Copilot?",
-    answer: "Žádný problém. Akademie ChatGPT, Agenti & Automatizace i Multimédia fungují nezávisle na Microsoft 365. Obsah přizpůsobíme nástrojům, které ve firmě používáte."
+    answer: "Žádný problém. Akademie ChatGPT, Agenti & Automatizace fungují nezávisle na Microsoft 365. Obsah přizpůsobíme nástrojům, které ve firmě používáte."
   },
   {
     question: "Jak chráníte naše data?",
@@ -150,12 +143,15 @@ const faqItems = [
 
 const AkademieProTymy = () => {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
+  const [selectedAcademies, setSelectedAcademies] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     email: "",
     licenses: "",
     academies: [] as string[],
+    roles: "",
     note: ""
   });
 
@@ -165,16 +161,30 @@ const AkademieProTymy = () => {
       title: "Poptávka odeslána",
       description: "Ozveme se vám do 24 hodin s nabídkou.",
     });
-    setFormData({ name: "", company: "", email: "", licenses: "", academies: [], note: "" });
+    setFormData({ name: "", company: "", email: "", licenses: "", academies: [], roles: "", note: "" });
+    setSelectedAcademies([]);
   };
 
-  const toggleAcademy = (academy: string) => {
+  const toggleAcademy = (academyId: string) => {
+    setSelectedAcademies(prev => 
+      prev.includes(academyId)
+        ? prev.filter(a => a !== academyId)
+        : [...prev, academyId]
+    );
+  };
+
+  const scrollToForm = (licenses: string, academies: string[]) => {
     setFormData(prev => ({
       ...prev,
-      academies: prev.academies.includes(academy)
-        ? prev.academies.filter(a => a !== academy)
-        : [...prev.academies, academy]
+      licenses,
+      academies
     }));
+    setSelectedAcademies(academies.map(a => academyOptions.find(opt => opt.title === a)?.id || ""));
+    document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('cs-CZ').format(price);
   };
 
   return (
@@ -215,12 +225,12 @@ const AkademieProTymy = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#form">
+                <a href="#pricing">
                   <Button 
                     size="lg" 
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                   >
-                    Získat nabídku licencí
+                    Zobrazit balíčky licencí
                   </Button>
                 </a>
                 <Button 
@@ -236,90 +246,120 @@ const AkademieProTymy = () => {
           </div>
         </section>
 
-        {/* Academies Section */}
-        <section className="py-20 relative">
+        {/* Pricing Section */}
+        <section id="pricing" className="py-20 bg-card/20 relative">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  Jaké akademie lze licencovat
-                </span>
-              </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                Vyberte akademie podle potřeb vašeho týmu
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {academies.map((academy, index) => (
-                <div 
-                  key={index}
-                  className="glass-card p-6 rounded-2xl border border-accent/20 hover:border-accent/40 transition-all duration-300 group hover:-translate-y-1"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300">
-                    <academy.icon className="w-7 h-7 text-accent" />
-                  </div>
-                  <h3 className="text-base font-semibold tracking-wider text-foreground uppercase mb-2">
-                    {academy.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {academy.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Section */}
-        <section className="py-20 bg-card/20 relative">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
                   Balíčky licencí
                 </span>
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                Vyberte počet licencí podle velikosti vašeho týmu
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Vyberte počet licencí podle velikosti týmu a zvolte akademie, které chcete licencovat.
+              </p>
+            </div>
+
+            {/* Academy Selector */}
+            <div className="max-w-4xl mx-auto mb-12">
+              <Label className="text-sm font-semibold text-foreground mb-4 block text-center">Vybrané akademie</Label>
+              <div className="flex flex-wrap justify-center gap-3 mb-4">
+                {academyOptions.map((academy) => {
+                  const isSelected = selectedAcademies.includes(academy.id);
+                  const Icon = academy.icon;
+                  return (
+                    <button
+                      key={academy.id}
+                      onClick={() => toggleAcademy(academy.id)}
+                      className={`
+                        relative flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300
+                        ${academy.isBundle 
+                          ? isSelected
+                            ? 'bg-gradient-to-r from-accent to-accent/80 text-background border-2 border-accent shadow-[0_0_20px_rgba(189,0,255,0.4)]'
+                            : 'bg-accent/10 text-accent border-2 border-accent/30 hover:border-accent/60'
+                          : isSelected
+                            ? 'bg-primary text-background border-2 border-primary shadow-[0_0_15px_rgba(102,252,241,0.3)]'
+                            : 'bg-card/60 text-muted-foreground border-2 border-border/40 hover:border-primary/50'
+                        }
+                      `}
+                    >
+                      <Icon className="w-4 h-4" />
+                      <span>{academy.title}</span>
+                      {academy.isBundle && (
+                        <span className={`ml-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${
+                          isSelected ? 'bg-background/20 text-background' : 'bg-accent/20 text-accent'
+                        }`}>
+                          Nejlepší hodnota
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+              <p className="text-xs text-muted-foreground text-center">
+                Balík (3 akademie) doporučujeme pro management a klíčové role.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {pricingPlans.map((plan, index) => (
-                <div 
-                  key={index}
-                  className={`glass-card p-6 rounded-2xl border transition-all duration-300 relative ${
-                    plan.recommended 
-                      ? 'border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)]' 
-                      : 'border-border/30 hover:border-primary/30'
-                  }`}
-                >
-                  {plan.recommended && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-background text-xs font-semibold tracking-wider rounded-full uppercase">
-                      Doporučeno
+            {/* Pricing Cards */}
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+              {pricingPlans.map((plan, index) => {
+                const totalPrice = plan.licenses * plan.pricePerLicense;
+                const selectedAcademyTitles = selectedAcademies.map(id => 
+                  academyOptions.find(a => a.id === id)?.title || ""
+                ).filter(Boolean);
+                
+                return (
+                  <div 
+                    key={index}
+                    className={`glass-card p-6 rounded-2xl border transition-all duration-300 relative flex flex-col ${
+                      plan.recommended 
+                        ? 'border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)] scale-[1.02]' 
+                        : 'border-border/30 hover:border-primary/30'
+                    }`}
+                  >
+                    {plan.recommended && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-background text-xs font-semibold tracking-wider rounded-full uppercase">
+                        Doporučeno
+                      </div>
+                    )}
+                    
+                    <div className="text-center mb-6 pt-2">
+                      <h3 className="text-xl font-bold tracking-wider text-foreground uppercase mb-1">
+                        {plan.name}
+                      </h3>
+                      <p className="text-primary font-semibold text-lg">{plan.licenses} licencí</p>
                     </div>
-                  )}
-                  
-                  <div className="text-center mb-6 pt-2">
-                    <h3 className="text-xl font-bold tracking-wider text-foreground uppercase mb-1">
-                      {plan.name}
-                    </h3>
-                    <p className="text-primary font-semibold">{plan.licenses}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-6">
-                    {plan.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="flex items-center gap-3 text-sm text-muted-foreground">
-                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <a href="#form">
+
+                    {/* Price */}
+                    <div className="text-center mb-6 pb-6 border-b border-border/30">
+                      <div className="text-3xl font-bold text-foreground mb-1">
+                        {formatPrice(plan.pricePerLicense)} Kč
+                        <span className="text-sm font-normal text-muted-foreground"> / licence</span>
+                      </div>
+                      <div className="text-sm text-primary font-medium">
+                        Celkem: {formatPrice(totalPrice)} Kč
+                      </div>
+                    </div>
+                    
+                    <ul className="space-y-3 mb-6 flex-grow">
+                      {plan.features.map((feature, fIndex) => (
+                        <li key={fIndex} className="flex items-start gap-3 text-sm text-muted-foreground">
+                          <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                      {plan.extraFeatures.map((feature, fIndex) => (
+                        <li key={`extra-${fIndex}`} className="flex items-start gap-3 text-sm text-foreground font-medium">
+                          <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
                     <Button 
+                      onClick={() => scrollToForm(String(plan.licenses), selectedAcademyTitles)}
                       className={`w-full ${
                         plan.recommended 
                           ? 'shadow-[0_0_15px_rgba(102,252,241,0.3)]' 
@@ -327,12 +367,73 @@ const AkademieProTymy = () => {
                       }`}
                       variant={plan.recommended ? "default" : "outline"}
                     >
-                      Získat nabídku
+                      Poptat {plan.name}
                     </Button>
-                  </a>
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
+
+            {/* Enterprise Block */}
+            <div className="max-w-3xl mx-auto mb-12">
+              <div className="bg-gradient-to-br from-accent/10 via-card/80 to-primary/10 backdrop-blur-xl border border-accent/30 rounded-2xl p-6 md:p-8">
+                <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                  <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
+                    <Building className="w-7 h-7 text-accent" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-1">
+                      100+ licencí?
+                    </h3>
+                    <p className="text-muted-foreground">
+                      Připravíme nabídku na míru.
+                    </p>
+                  </div>
+                  <Button 
+                    onClick={() => scrollToForm("100+", [])}
+                    variant="outline"
+                    className="border-accent/50 text-accent hover:bg-accent/10"
+                  >
+                    Kontaktovat pro Enterprise
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Role Recommendations */}
+            <div className="max-w-4xl mx-auto mb-8">
+              <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase text-center mb-6">
+                Doporučení podle rolí
+              </h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {roleRecommendations.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div 
+                      key={index}
+                      className="glass-card p-5 rounded-xl border border-border/30 hover:border-primary/30 transition-all duration-300"
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <span className="text-sm font-semibold text-foreground">{item.role}</span>
+                      </div>
+                      <p className="text-sm text-primary font-medium">→ {item.recommendation}</p>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-4">
+                Pro management doporučujeme <span className="text-accent font-medium">Master of AI Creativity</span> (bundle).
+              </p>
+            </div>
+
+            {/* Microtext */}
+            <p className="text-xs text-muted-foreground/70 text-center max-w-2xl mx-auto">
+              Firemní licence jsou určené pro onboarding a měření rozvoje týmů (zahrnují reporting a administraci). 
+              Individuální nákup je ideální pro osobní rozvoj.
+            </p>
           </div>
         </section>
 
@@ -349,7 +450,6 @@ const AkademieProTymy = () => {
             
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-                {/* Connection line - desktop only */}
                 <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50" />
                 
                 {processSteps.map((step, index) => (
@@ -441,7 +541,7 @@ const AkademieProTymy = () => {
                 </p>
               </div>
               
-              <form onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl border border-primary/20 space-y-6" data-event="b2b_lead_submit">
+              <form ref={formRef} onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl border border-primary/20 space-y-6" data-event="b2b_lead_submit">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Jméno *</Label>
@@ -489,8 +589,8 @@ const AkademieProTymy = () => {
                     <SelectContent>
                       <SelectItem value="10">10 licencí (Starter)</SelectItem>
                       <SelectItem value="25">25 licencí (Team)</SelectItem>
-                      <SelectItem value="50">50+ licencí (Company)</SelectItem>
-                      <SelectItem value="other">Jiný počet</SelectItem>
+                      <SelectItem value="50">50 licencí (Company)</SelectItem>
+                      <SelectItem value="100+">100+ licencí (Enterprise)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -498,20 +598,59 @@ const AkademieProTymy = () => {
                 <div className="space-y-3">
                   <Label>Preferované akademie</Label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {academies.map((academy) => (
-                      <div 
-                        key={academy.title}
-                        className="flex items-center space-x-3 p-3 rounded-lg bg-card/50 border border-border/30 hover:border-primary/30 transition-colors cursor-pointer"
-                        onClick={() => toggleAcademy(academy.title)}
-                      >
-                        <Checkbox 
-                          checked={formData.academies.includes(academy.title)}
-                          onCheckedChange={() => toggleAcademy(academy.title)}
-                        />
-                        <span className="text-sm text-muted-foreground">{academy.title}</span>
-                      </div>
-                    ))}
+                    {academyOptions.map((academy) => {
+                      const Icon = academy.icon;
+                      return (
+                        <div 
+                          key={academy.id}
+                          className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors cursor-pointer ${
+                            formData.academies.includes(academy.title)
+                              ? academy.isBundle
+                                ? 'bg-accent/10 border-accent/40'
+                                : 'bg-primary/10 border-primary/40'
+                              : 'bg-card/50 border-border/30 hover:border-primary/30'
+                          }`}
+                          onClick={() => {
+                            const newAcademies = formData.academies.includes(academy.title)
+                              ? formData.academies.filter(a => a !== academy.title)
+                              : [...formData.academies, academy.title];
+                            setFormData({...formData, academies: newAcademies});
+                          }}
+                        >
+                          <Checkbox 
+                            checked={formData.academies.includes(academy.title)}
+                            onCheckedChange={() => {
+                              const newAcademies = formData.academies.includes(academy.title)
+                                ? formData.academies.filter(a => a !== academy.title)
+                                : [...formData.academies, academy.title];
+                              setFormData({...formData, academies: newAcademies});
+                            }}
+                          />
+                          <Icon className={`w-4 h-4 ${academy.isBundle ? 'text-accent' : 'text-primary'}`} />
+                          <span className="text-sm text-muted-foreground">{academy.title}</span>
+                          {academy.isBundle && (
+                            <span className="text-[10px] text-accent font-medium">(bundle)</span>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="roles">Cílové role</Label>
+                  <Select value={formData.roles} onValueChange={(value) => setFormData({...formData, roles: value})}>
+                    <SelectTrigger className="input-glow">
+                      <SelectValue placeholder="Vyberte cílovou skupinu" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="administrativa">Administrativa & Backoffice</SelectItem>
+                      <SelectItem value="obchod">Obchod & Podpora</SelectItem>
+                      <SelectItem value="it">IT & Automatizace</SelectItem>
+                      <SelectItem value="management">Management</SelectItem>
+                      <SelectItem value="mix">Mix rolí</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 
                 <div className="space-y-2">
