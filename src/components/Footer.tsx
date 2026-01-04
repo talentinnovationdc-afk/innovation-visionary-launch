@@ -8,6 +8,14 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border bg-card/50">
       <div className="container px-4 py-12 md:px-6">
+        {/* Pricing Disclaimer */}
+        <div className="mb-8 pb-6 border-b border-border/30 text-center">
+          <p className="text-xs text-muted-foreground/80 leading-relaxed">
+            Online akademie: ceny jsou včetně DPH.<br />
+            Služby pro firmy a týmové licence: ceny jsou bez DPH.
+          </p>
+        </div>
+        
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="flex flex-col items-center md:items-start gap-4">

@@ -592,6 +592,15 @@ const ProFirmy = () => {
                         }`}>
                           {service.price}
                         </p>
+                        <p className="text-[10px] text-muted-foreground/70 mt-1 flex items-center gap-1">
+                          bez DPH
+                          <span className="group/tooltip relative cursor-help">
+                            <HelpCircle className="w-3 h-3" />
+                            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-card border border-border rounded text-[9px] whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none z-50">
+                              Fakturace B2B. DPH bude připočteno dle sazby.
+                            </span>
+                          </span>
+                        </p>
                       </div>
                     </div>
                   );
