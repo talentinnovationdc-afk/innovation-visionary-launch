@@ -640,30 +640,6 @@ const ProFirmy = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
           </section>
 
-          {/* Financing Section */}
-          <section className="py-16">
-            <div className="container mx-auto px-4">
-              <div className="max-w-5xl mx-auto bg-gradient-to-r from-card/60 via-card/80 to-card/60 backdrop-blur-xl border border-primary/20 rounded-2xl p-8 md:p-10">
-                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                  <div className="w-20 h-20 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                    <Banknote className="w-10 h-10 text-primary" />
-                  </div>
-                  
-                  <div className="text-center md:text-left">
-                    <h3 className="text-lg font-semibold tracking-[0.15em] text-foreground uppercase mb-3">
-                      FINANCOVÁNÍ Z GRANTŮ
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      <span className="text-primary font-semibold">Daniel Červený</span> zajišťuje kompletní administraci 
-                      dotačních programů pro AI projekty. Od identifikace vhodných grantů přes přípravu žádosti až po 
-                      finální vyúčtování — vy se soustředíte na transformaci, my garantujeme maximální čerpání dostupných zdrojů.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* FAQ Section */}
           <section className="py-20 bg-card/20 relative">
             <div className="container mx-auto px-4">
