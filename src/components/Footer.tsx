@@ -44,7 +44,9 @@ export const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href="#"
+              href="https://www.linkedin.com/company/98109092"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:glow-cyan"
               aria-label="LinkedIn"
             >
