@@ -383,7 +383,8 @@ const Online = () => {
                     <div className="relative z-10 flex-1 flex flex-col">
                       <p className="text-sm text-muted-foreground mb-2">Online školení živě s lektorem</p>
                       <div className="mb-4">
-                        <span className="text-3xl font-bold text-muted-foreground/60 line-through">18 700 Kč vč. DPH</span>
+                        <span className="text-3xl font-bold text-muted-foreground/60 line-through">18 700 Kč</span>
+                        <span className="text-xs text-muted-foreground/50 ml-2">vč. DPH</span>
                       </div>
                       
                       <ul className="space-y-2 text-left flex-1">
