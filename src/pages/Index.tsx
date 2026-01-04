@@ -3,10 +3,13 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
-import { B2BCaseStudies } from "@/components/B2BCaseStudies";
-import { WhyUsSection } from "@/components/WhyUsSection";
 import { MethodologySection } from "@/components/MethodologySection";
-import { MessageSquare, Bot, Wand2 } from "lucide-react";
+import { 
+  Building, GraduationCap, Users, Star, ThumbsUp, Check, 
+  ArrowRight, Shield, TrendingUp, Award, Clock, BadgeCheck
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
@@ -17,156 +20,201 @@ const Index = () => {
         <Navbar />
         
         <main className="flex-1">
-        {/* Hero Section */}
-          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-48 pb-16 md:pt-52 md:pb-24">
+          {/* Hero Section - Benefit-First */}
+          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-40 pb-12 md:pt-48 md:pb-16">
             <div className="container px-4 text-center">
               <div className="max-w-5xl mx-auto">
-                <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-10 leading-[1.1] tracking-[0.2em] uppercase">
+                <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-[1.15] tracking-[0.15em] uppercase">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    TRANSFORMUJEME KOMPLEXITU V
+                    Z AI děláme produktivitu
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    SYSTÉMOVOU AUTONOMII
+                    — ve firmách i pro jednotlivce
                   </span>
                 </h1>
                 
-                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[900px] mx-auto mb-12 normal-case tracking-normal leading-[1.8]">
-                  Strategický partner pro průmysl a regulovaná odvětví. Implementujeme bezpečná AI řešení s nekompromisním respektem k vašim standardům a důrazem na měřitelnou návratnost.
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-10 normal-case tracking-normal leading-[1.8]">
+                  Pro firmy: zrychlení rolí a procesů s měřitelným dopadem.<br />
+                  Pro vás: online akademie s certifikací a LinkedIn odznakem.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="#b2b"
-                    aria-label="Pro firmy: Productivity, Automation & Agents"
-                    className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 text-[10px] md:text-xs font-semibold tracking-[0.12em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
-                  >
-                    Pro firmy: Productivity & Agents
-                  </a>
-                  <a
-                    href="#b2c"
-                    aria-label="Pro vás: AI Creativity"
-                    className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 text-[10px] md:text-xs font-semibold tracking-[0.12em] uppercase rounded-lg border border-accent text-accent bg-transparent shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)] hover:bg-accent/10 transition-all duration-300"
-                  >
-                    Pro vás: AI Creativity
-                  </a>
+                {/* Two CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                  <Link to="/profirmy">
+                    <Button 
+                      size="lg" 
+                      className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
+                    >
+                      <Building className="w-5 h-5 mr-2" />
+                      Rychlá diagnostika pro firmy
+                    </Button>
+                  </Link>
+                  <Link to="/online">
+                    <Button 
+                      variant="outline"
+                      size="lg" 
+                      className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
+                    >
+                      <GraduationCap className="w-5 h-5 mr-2" />
+                      Online akademie
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Trust Metrics */}
+                <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+                  <div className="flex items-center gap-2">
+                    <Users className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-medium text-foreground">1250+ absolventů</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Star className="w-5 h-5 text-primary fill-primary" />
+                    <span className="text-sm font-medium text-foreground">4,9/5 hodnocení</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <ThumbsUp className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-medium text-foreground">95 % doporučuje</span>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Auto-scrolling Logo Ribbon - Wall of Trust */}
-          <LogoRibbon />
+          {/* Logo Ribbon - Trust Bar */}
+          <section className="py-8">
+            <div className="container px-4">
+              <p className="text-center text-xs text-muted-foreground/70 uppercase tracking-[0.2em] mb-6">
+                Těmto týmům a lidem jsme pomohli
+              </p>
+            </div>
+            <LogoRibbon />
+          </section>
 
-          {/* B2B Section - Productivity, Automation & Agents */}
-          <section id="b2b" aria-labelledby="b2b-heading" className="py-20 md:py-28 relative overflow-hidden">
-            {/* Subtle cyan glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,_hsl(176,96%,69%,0.08)_0%,_transparent_70%)] pointer-events-none" />
-            
-            <div className="container px-4 relative z-10">
-              <div className="text-center mb-16">
-                <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">Systémová autonomie</span>
-                <h2 id="b2b-heading" className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
-                  MASTER OF AI PRODUCTIVITY, AUTOMATION & AGENTS
+          {/* Choose Your Path - Two Big Cards */}
+          <section className="py-20 relative">
+            <div className="container px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    Vyberte svou cestu
+                  </span>
                 </h2>
-                <p className="text-muted-foreground max-w-3xl mx-auto normal-case tracking-normal leading-relaxed">
-                  Stavíme autonomní systémy tam, kde je nulový prostor pro chybu. 
-                  Naše metodiky řeší komplexitu v regulovaných odvětvích.
-                </p>
               </div>
-
-              {/* Industry Case Studies with Logo Groups */}
-              <B2BCaseStudies />
-
-              <div className="text-center mt-12">
-                <a
-                  href="/checkout"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.25)] hover:shadow-[0_0_24px_rgba(102,252,241,0.4)] hover:bg-primary/10 transition-all duration-300"
+              
+              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {/* Card A - Pro firmy */}
+                <Link 
+                  to="/profirmy"
+                  className="glass-card p-8 rounded-2xl border border-primary/30 hover:border-primary/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(102,252,241,0.2)] block"
                 >
-                  Firemní AI: Od školení k implementaci →
-                </a>
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(102,252,241,0.3)] transition-all duration-300">
+                      <Building className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Pro firmy / HR</span>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
+                    Produktivita rolí ve vašem týmu
+                  </h3>
+                  
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span>Rychlé úspory času</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span>Bezpečné workflow</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span>Dopad měříme</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-200">
+                    Chci rychlou diagnostiku <ArrowRight className="w-5 h-5" />
+                  </div>
+                </Link>
+
+                {/* Card B - Online akademie */}
+                <Link 
+                  to="/online"
+                  className="glass-card p-8 rounded-2xl border border-accent/30 hover:border-accent/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(189,0,255,0.2)] block"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300">
+                      <GraduationCap className="w-7 h-7 text-accent" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">Pro jednotlivce</span>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
+                    Studujte vlastním tempem
+                  </h3>
+                  
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                      <span>Flexibilní online studium</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                      <span>Certifikát + LinkedIn odznak</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                      <span>Dlouhodobý přístup k obsahu</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all duration-200">
+                    Zobrazit online akademie <ArrowRight className="w-5 h-5" />
+                  </div>
+                </Link>
               </div>
             </div>
           </section>
 
-          {/* B2C Section - AI Creativity */}
-          <section id="b2c" aria-labelledby="b2c-heading" className="py-20 md:py-28 relative overflow-hidden">
-            {/* Subtle purple gradient blob */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_center,_hsl(284,100%,50%,0.06)_0%,_transparent_60%)] pointer-events-none" />
-            
-            <div className="container px-4 relative z-10">
-              <div className="text-center mb-16">
-                <span className="inline-block text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">Individuální mistrovství</span>
-                <h2 id="b2c-heading" className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
-                  MASTER OF AI CREATIVITY
+          {/* What We Deliver - Benefits Grid */}
+          <section className="py-20 bg-card/20 relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+            <div className="container px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
+                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
+                    Co přinášíme
+                  </span>
                 </h2>
-                <p className="text-muted-foreground max-w-3xl mx-auto normal-case tracking-normal leading-relaxed">
-                  Přenášíme korporátní efektivitu do rukou jednotlivců. 
-                  Metodiky z našich průmyslových projektů transformované do praktických kurzů.
-                </p>
               </div>
-
-              {/* Course Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-                <a 
-                  href="https://t-i.cz/online/chatgptakademie" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="glass-card p-6 group cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)] block"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors duration-300">
-                    <MessageSquare className="h-6 w-6 text-accent" />
-                  </div>
-                  <h3 className="text-base font-semibold tracking-[0.15em] text-foreground mb-3 uppercase">
-                    CHATGPT AKADEMIE
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                    Naučte se efektivně komunikovat s AI a vytěžte maximum z každého promptu.
-                  </p>
-                  <span className="inline-block mt-4 text-xs font-semibold tracking-[0.1em] text-accent uppercase">
-                    Prověřená metodika →
-                  </span>
-                </a>
-
-                <a 
-                  href="https://t-i.cz/online/copilotakademie" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="glass-card p-6 group cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)] block"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors duration-300">
-                    <Wand2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <h3 className="text-base font-semibold tracking-[0.15em] text-foreground mb-3 uppercase">
-                    COPILOT AKADEMIE
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                    Ovládněte Microsoft Copilot a zefektivněte práci s dokumenty, emaily i daty.
-                  </p>
-                  <span className="inline-block mt-4 text-xs font-semibold tracking-[0.1em] text-accent uppercase">
-                    Prověřená metodika →
-                  </span>
-                </a>
-
-                <a 
-                  href="https://t-i.cz/online/agentiautomatizace" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="glass-card p-6 group cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)] block"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors duration-300">
-                    <Bot className="h-6 w-6 text-accent" />
-                  </div>
-                  <h3 className="text-base font-semibold tracking-[0.15em] text-foreground mb-3 uppercase">
-                    AI AGENTI & AUTOMATIZACE
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                    Sestavte si vlastní AI agenty pro automatizaci opakujících se úkolů.
-                  </p>
-                  <span className="inline-block mt-4 text-xs font-semibold tracking-[0.1em] text-accent uppercase">
-                    Prověřená metodika →
-                  </span>
-                </a>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
+                  <TrendingUp className="w-10 h-10 text-primary mx-auto mb-4" />
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Měřitelné výsledky</h3>
+                  <p className="text-xs text-muted-foreground">Produktivita, kterou uvidíte v číslech</p>
+                </div>
+                <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
+                  <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Bezpečné workflow</h3>
+                  <p className="text-xs text-muted-foreground">Respektujeme vaše standardy</p>
+                </div>
+                <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
+                  <Award className="w-10 h-10 text-accent mx-auto mb-4" />
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Certifikace</h3>
+                  <p className="text-xs text-muted-foreground">LinkedIn odznak po dokončení</p>
+                </div>
+                <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
+                  <Clock className="w-10 h-10 text-accent mx-auto mb-4" />
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Vlastní tempo</h3>
+                  <p className="text-xs text-muted-foreground">Studujte kdy a kde chcete</p>
+                </div>
               </div>
             </div>
           </section>
@@ -174,9 +222,35 @@ const Index = () => {
           {/* Methodology - Step by Step */}
           <MethodologySection />
 
-          {/* Why Talent Innovation - Bento Box */}
-          <WhyUsSection />
-
+          {/* Final CTA */}
+          <section className="py-20 relative">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto text-center glass-card p-10 md:p-12 rounded-2xl border border-primary/30 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
+                  Připraveni začít?
+                </h2>
+                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                  Vyberte cestu, která vám sedí — pomůžeme vám s produktivitou i vzděláváním.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/profirmy">
+                    <Button size="lg" className="px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
+                      Pro firmy
+                    </Button>
+                  </Link>
+                  <Link to="/online">
+                    <Button 
+                      variant="outline"
+                      size="lg" 
+                      className="px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
+                    >
+                      Online akademie
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
 
         <Footer />
