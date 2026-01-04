@@ -32,7 +32,12 @@ import {
   Users,
   Headphones,
   Cpu,
-  Crown
+  Crown,
+  Calendar,
+  Zap,
+  Lock,
+  PieChart,
+  BookOpen
 } from "lucide-react";
 import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -116,28 +121,40 @@ const processSteps = [
 
 const faqItems = [
   {
+    icon: Calendar,
     question: "Jak dlouho máme přístup k akademiím?",
-    answer: "Licence jsou platné 12 měsíců od aktivace. Po uplynutí lze přístup prodloužit za zvýhodněnou cenu. Všechny aktualizace obsahu během období jsou automaticky zahrnuty."
+    answer: "Licence jsou platné 12 měsíců od aktivace. Po uplynutí lze přístup prodloužit za zvýhodněnou cenu. Všechny aktualizace obsahu během období jsou automaticky zahrnuty.",
+    highlight: "12 měsíců"
   },
   {
+    icon: Zap,
     question: "Co když nemáme Microsoft Copilot?",
-    answer: "Žádný problém. Akademie ChatGPT, Agenti & Automatizace fungují nezávisle na Microsoft 365. Obsah přizpůsobíme nástrojům, které ve firmě používáte."
+    answer: "Žádný problém. Akademie ChatGPT, Agenti & Automatizace fungují nezávisle na Microsoft 365. Obsah přizpůsobíme nástrojům, které ve firmě používáte.",
+    highlight: "Flexibilní nástroje"
   },
   {
+    icon: Lock,
     question: "Jak chráníte naše data?",
-    answer: "Veškerá školení probíhají na zabezpečené platformě. Účastníci pracují s vlastními daty pouze ve svých firemních nástrojích. Nesbíráme ani neukládáme žádná firemní data."
+    answer: "Veškerá školení probíhají na zabezpečené platformě. Účastníci pracují s vlastními daty pouze ve svých firemních nástrojích. Nesbíráme ani neukládáme žádná firemní data.",
+    highlight: "100% bezpečné"
   },
   {
+    icon: PieChart,
     question: "Jak funguje reporting pro HR?",
-    answer: "HR admin má přístup k dashboardu s přehledem: kdo dokončil které moduly, celková míra adopce, a doporučení pro další rozvoj. Report lze exportovat do PDF."
+    answer: "HR admin má přístup k dashboardu s přehledem: kdo dokončil které moduly, celková míra adopce, a doporučení pro další rozvoj. Report lze exportovat do PDF.",
+    highlight: "HR dashboard"
   },
   {
+    icon: Award,
     question: "Jak fungují certifikáty a LinkedIn odznaky?",
-    answer: "Po úspěšném dokončení kurzu účastník obdrží certifikát a LinkedIn odznak, který může sdílet na svém profilu. Certifikát potvrzuje zvládnutí praktických AI dovedností."
+    answer: "Po úspěšném dokončení kurzu účastník obdrží certifikát a LinkedIn odznak, který může sdílet na svém profilu. Certifikát potvrzuje zvládnutí praktických AI dovedností.",
+    highlight: "LinkedIn odznak"
   },
   {
+    icon: BookOpen,
     question: "Jaký je minimální počet licencí?",
-    answer: "Minimální počet je 10 licencí (balíček Starter). Pro menší týmy doporučujeme individuální nákup kurzů na stránce Online akademie."
+    answer: "Minimální počet je 10 licencí (balíček Starter). Pro menší týmy doporučujeme individuální nákup kurzů na stránce Online akademie.",
+    highlight: "Od 10 licencí"
   }
 ];
 
@@ -472,48 +489,103 @@ const AkademieProTymy = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-20 bg-card/20 relative">
-          <div className="container mx-auto px-4">
+        {/* FAQ Section - Refined Accordion */}
+        <section className="py-24 bg-card/20 relative overflow-hidden">
+          {/* Subtle background */}
+          <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[100px]" />
+          <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[120px]" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            {/* Header */}
             <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
+              <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
+                FAQ
+              </span>
+              <h2 className="text-2xl md:text-4xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Nejčastější otázky
+                  ČASTÉ DOTAZY
                 </span>
               </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Odpovědi na nejčastější otázky o firemních licencích
+              </p>
             </div>
             
+            {/* Accordion */}
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="space-y-3">
-                {faqItems.map((item, index) => (
-                  <AccordionItem 
-                    key={index} 
-                    value={`item-${index}`}
-                    className="group border-0"
-                  >
-                    <div className="relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 border-primary/15 hover:border-primary/30">
-                      <AccordionTrigger className="px-6 py-5 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
-                        <div className="flex items-center gap-4 w-full">
-                          <div className="flex-1 text-left">
-                            <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
-                              {item.question}
-                            </h3>
+                {faqItems.map((item, index) => {
+                  const isEven = index % 2 === 0;
+                  const Icon = item.icon;
+                  
+                  return (
+                    <AccordionItem 
+                      key={index} 
+                      value={`item-${index}`}
+                      className="group border-0"
+                    >
+                      <div className={`relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 ${
+                        isEven 
+                          ? 'border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40' 
+                          : 'border-accent/15 hover:border-accent/30 data-[state=open]:border-accent/40'
+                      }`}>
+                        
+                        <AccordionTrigger className="px-6 py-5 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
+                          <div className="flex items-center gap-4 w-full">
+                            {/* Icon */}
+                            <div className={`w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                              isEven 
+                                ? 'bg-primary/10 group-hover:bg-primary/15' 
+                                : 'bg-accent/10 group-hover:bg-accent/15'
+                            }`}>
+                              <Icon className={`w-5 h-5 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                            </div>
+                            
+                            <div className="flex-1 text-left">
+                              <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
+                                {item.question}
+                              </h3>
+                            </div>
+                            
+                            {/* Highlight tag - desktop only */}
+                            <span className={`hidden md:inline-block text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full mr-2 ${
+                              isEven 
+                                ? 'bg-primary/10 text-primary' 
+                                : 'bg-accent/10 text-accent'
+                            }`}>
+                              {item.highlight}
+                            </span>
+                            
+                            {/* Chevron */}
+                            <div className={`chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                              isEven 
+                                ? 'bg-primary/10 group-data-[state=open]:bg-primary' 
+                                : 'bg-accent/10 group-data-[state=open]:bg-accent'
+                            }`}>
+                              <ChevronDown className={`w-4 h-4 transition-colors ${
+                                isEven 
+                                  ? 'text-primary group-data-[state=open]:text-background' 
+                                  : 'text-accent group-data-[state=open]:text-background'
+                              }`} />
+                            </div>
                           </div>
-                          <div className="chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
-                            <ChevronDown className="w-4 h-4 transition-colors text-primary group-data-[state=open]:text-background" />
+                        </AccordionTrigger>
+                        
+                        <AccordionContent>
+                          <div className="px-6 pb-5">
+                            <div className={`ml-[3.75rem] pl-4 border-l-2 ${
+                              isEven ? 'border-primary/20' : 'border-accent/20'
+                            }`}>
+                              <p className="text-muted-foreground leading-relaxed">
+                                {item.answer}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div className="px-6 pb-5">
-                          <p className="text-muted-foreground leading-relaxed">
-                            {item.answer}
-                          </p>
-                        </div>
-                      </AccordionContent>
-                    </div>
-                  </AccordionItem>
-                ))}
+                        </AccordionContent>
+                      </div>
+                    </AccordionItem>
+                  );
+                })}
               </Accordion>
             </div>
           </div>
