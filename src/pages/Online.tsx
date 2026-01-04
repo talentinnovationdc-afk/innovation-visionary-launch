@@ -432,9 +432,10 @@ const Online = () => {
                       )}
                       
                       <div className="mt-auto">
-                        <div className={`text-xl font-bold mb-4 ${course.isProgram ? 'text-accent' : 'text-foreground'}`}>
+                        <div className={`text-xl font-bold mb-1 ${course.isProgram ? 'text-accent' : 'text-foreground'}`}>
                           {course.price}
                         </div>
+                        <p className="text-[10px] text-muted-foreground/70 mb-4">vč. DPH</p>
                         <div className="space-y-2">
                           <Link 
                             to={`/online/${course.slug}`}

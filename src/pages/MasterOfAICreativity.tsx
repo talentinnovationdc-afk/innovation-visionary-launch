@@ -122,8 +122,9 @@ const MasterOfAICreativity = () => {
                 
                 {/* Price */}
                 <div className="mb-8">
-                  <span className="text-4xl font-bold text-accent">12 900 Kč</span>
-                  <span className="text-muted-foreground ml-2">(ušetříte 1 010 Kč)</span>
+                  <span className="text-4xl font-bold text-accent">9 970 Kč</span>
+                  <span className="text-[11px] text-muted-foreground/70 ml-2">vč. DPH</span>
+                  <span className="text-muted-foreground ml-2">(ušetříte 3 940 Kč)</span>
                 </div>
                 
                 {/* CTAs */}
