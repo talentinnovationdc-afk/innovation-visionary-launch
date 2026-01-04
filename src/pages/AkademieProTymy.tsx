@@ -344,7 +344,11 @@ const AkademieProTymy = () => {
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  jednotný standard práce s AI
+                  jednotný standard
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
+                  práce s AI
                 </span>
               </h1>
               
