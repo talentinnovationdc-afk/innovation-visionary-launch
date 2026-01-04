@@ -27,7 +27,7 @@ const courses = [
     id: 0,
     slug: "master-of-ai-creativity",
     title: "MASTER OF AI CREATIVITY",
-    subtitle: "Kompletní program (3 akademie)",
+    subtitle: "Kompletní program\n(3 akademie)",
     focus: "Kompletní cesta: ChatGPT + Copilot + Agenti.",
     description: "Všechny 3 akademie v jedné cestě k digitální autonomii.",
     price: "9 970 Kč",
@@ -321,7 +321,7 @@ const Online = () => {
                       <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                         <Crown className="w-5 h-5 text-accent" />
                       </div>
-                      <h3 className="text-lg font-semibold text-foreground">Kompletní program (3 akademie)</h3>
+                      <h3 className="text-lg font-semibold text-foreground">Kompletní program<br />(3 akademie)</h3>
                     </div>
                     <p className="text-sm text-accent/80 mb-4">Master of AI Creativity</p>
                     <ul className="space-y-2">
@@ -500,7 +500,7 @@ const Online = () => {
                         {course.title}
                       </h3>
                       
-                      <p className={`text-[11px] mb-3 ${course.isProgram ? 'text-accent font-medium' : 'text-muted-foreground/70'}`}>
+                      <p className={`text-[11px] mb-3 whitespace-pre-line ${course.isProgram ? 'text-accent font-medium' : 'text-muted-foreground/70'}`}>
                         {course.subtitle}
                       </p>
                       
