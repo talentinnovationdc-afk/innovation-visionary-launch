@@ -23,7 +23,7 @@ const courses = [
     subtitle: "Kompletní program (3 akademie)",
     focus: "Kompletní cesta: ChatGPT + Copilot + Agenti.",
     description: "Všechny 3 akademie v jedné cestě k digitální autonomii.",
-    price: "12 900 Kč",
+    price: "9 970 Kč",
     icon: Crown,
     link: "https://t-i.cz/online/masterofaicreativity",
     isProgram: true,
