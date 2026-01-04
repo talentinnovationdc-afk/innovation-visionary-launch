@@ -7,7 +7,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   Crown, Award, Check, MessageSquare, Wand2, Bot, 
-  ChevronRight, Users, Building, Download, Sparkles
+  ChevronRight, Users, Building, Download, Sparkles,
+  Clock, BadgeCheck, Infinity, RefreshCw, ArrowRight
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -19,19 +20,31 @@ const includedAcademies = [
     icon: MessageSquare,
     title: "ChatGPT Akademie",
     description: "Práce s GPT od základů po pokročilé workflow.",
-    outputs: ["Šablony promptů", "Automatizace dokumentů", "E-mailové workflow"]
+    outputs: ["Šablony promptů", "Automatizace dokumentů", "E-mailové workflow"],
+    duration: "12×2h",
+    link: "/online/chatgptakademie",
+    buyLink: "https://t-i.cz/online/chatgptakademie",
+    color: "primary"
   },
   {
     icon: Wand2,
     title: "Copilot Akademie",
     description: "Produktivita a automatizace v Microsoft 365.",
-    outputs: ["Word & Excel šablony", "Outlook automatizace", "PowerPoint asistent"]
+    outputs: ["Word & Excel šablony", "Outlook automatizace", "PowerPoint asistent"],
+    duration: "12×2h",
+    link: "/online/copilotakademie",
+    buyLink: "https://t-i.cz/online/copilotakademie",
+    color: "primary"
   },
   {
     icon: Bot,
     title: "Agenti & Automatizace",
     description: "Pokročilé agentické workflow a orchestrace.",
-    outputs: ["Custom AI agenti", "Workflow automatizace", "Integrace nástrojů"]
+    outputs: ["Custom AI agenti", "Workflow automatizace", "Integrace nástrojů"],
+    duration: "16×2h",
+    link: "/online/agentiautomatizace",
+    buyLink: "https://t-i.cz/online/agentiautomatizace",
+    color: "accent"
   }
 ];
 
@@ -213,38 +226,99 @@ const MasterOfAICreativity = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {includedAcademies.map((academy, index) => {
                 const Icon = academy.icon;
+                const isAccent = academy.color === "accent";
                 return (
-                  <div 
+                  <Link 
                     key={index}
-                    className="glass-card p-6 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300 group"
+                    to={academy.link}
+                    className={`glass-card p-6 rounded-2xl border ${isAccent ? 'border-accent/30 hover:border-accent/60' : 'border-primary/30 hover:border-primary/60'} transition-all duration-300 group cursor-pointer hover:shadow-[0_0_30px_${isAccent ? 'rgba(189,0,255,0.2)' : 'rgba(102,252,241,0.2)'}] block`}
                   >
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(102,252,241,0.3)] transition-all duration-300">
-                      <Icon className="w-7 h-7 text-primary" />
+                    {/* Icon & Duration */}
+                    <div className="flex items-start justify-between mb-5">
+                      <div className={`w-14 h-14 rounded-xl ${isAccent ? 'bg-accent/10 border-accent/20' : 'bg-primary/10 border-primary/20'} border flex items-center justify-center group-hover:shadow-[0_0_20px_${isAccent ? 'rgba(189,0,255,0.3)' : 'rgba(102,252,241,0.3)'}] transition-all duration-300`}>
+                        <Icon className={`w-7 h-7 ${isAccent ? 'text-accent' : 'text-primary'}`} />
+                      </div>
+                      <span className={`px-3 py-1 text-[10px] font-medium rounded-full ${isAccent ? 'bg-accent/10 text-accent border-accent/20' : 'bg-primary/10 text-primary border-primary/20'} border`}>
+                        {academy.duration}
+                      </span>
                     </div>
+                    
+                    {/* Title */}
                     <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-2">
                       {academy.title}
                     </h3>
+                    
+                    {/* Description */}
                     <p className="text-sm text-muted-foreground mb-4">{academy.description}</p>
-                    <ul className="space-y-2">
+                    
+                    {/* Outputs */}
+                    <ul className="space-y-2 mb-5">
                       {academy.outputs.map((output, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-primary">
+                        <li key={idx} className={`flex items-center gap-2 text-sm ${isAccent ? 'text-accent' : 'text-primary'}`}>
                           <Check className="w-4 h-4" />
                           {output}
                         </li>
                       ))}
                     </ul>
-                    <Link 
-                      to={`/online/${academy.title.toLowerCase().replace(/ /g, '-').replace(/&/g, '')}`}
-                      className="inline-flex items-center gap-1 mt-4 text-xs text-primary hover:text-primary/80 transition-colors"
+                    
+                    {/* Badges */}
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      <span className="px-2 py-1 text-[10px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">Certifikát</span>
+                      <span className="px-2 py-1 text-[10px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">LinkedIn odznak</span>
+                      <span className="px-2 py-1 text-[10px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">Doživotní přístup</span>
+                    </div>
+                    
+                    {/* CTA */}
+                    <Button 
+                      className={`w-full ${isAccent ? 'bg-accent hover:bg-accent/90 shadow-[0_0_15px_rgba(189,0,255,0.3)]' : 'shadow-[0_0_15px_rgba(102,252,241,0.3)]'} font-semibold tracking-wider`}
                     >
-                      Detail akademie <ChevronRight className="w-3 h-3" />
-                    </Link>
-                  </div>
+                      Zobrazit obsah akademie <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 );
               })}
+            </div>
+            
+            {/* Program Benefits Strip */}
+            <div className="mt-12 max-w-4xl mx-auto">
+              <div className="glass-card p-6 rounded-2xl border border-accent/30">
+                <p className="text-center text-sm text-muted-foreground mb-4">Co získáte v kompletním programu</p>
+                <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+                  <div className="flex items-center gap-2">
+                    <Award className="w-5 h-5 text-accent" />
+                    <span className="text-sm text-foreground">Hlavní certifikát</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <BadgeCheck className="w-5 h-5 text-accent" />
+                    <span className="text-sm text-foreground">LinkedIn odznak</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Infinity className="w-5 h-5 text-accent" />
+                    <span className="text-sm text-foreground">Doživotní přístup</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <RefreshCw className="w-5 h-5 text-accent" />
+                    <span className="text-sm text-foreground">Aktualizace zdarma</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* CTA under cards */}
+            <div className="mt-10 text-center">
+              <a 
+                href="https://t-i.cz/online/masterofaicreativity"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-event="b2c_program_buy_section"
+              >
+                <Button size="lg" className="px-10 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(189,0,255,0.4)] hover:shadow-[0_0_30px_rgba(189,0,255,0.6)] bg-accent hover:bg-accent/90">
+                  Koupit kompletní program za 9 970 Kč
+                </Button>
+              </a>
             </div>
           </div>
         </section>

@@ -12,6 +12,9 @@ import ProFirmy from "./pages/ProFirmy";
 import AkademieProTymy from "./pages/AkademieProTymy";
 import Online from "./pages/Online";
 import MasterOfAICreativity from "./pages/MasterOfAICreativity";
+import ChatGPTAkademie from "./pages/ChatGPTAkademie";
+import CopilotAkademie from "./pages/CopilotAkademie";
+import AgentiAutomatizace from "./pages/AgentiAutomatizace";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +37,9 @@ const App = () => (
           <Route path="/profirmy/akademie-pro-tymy" element={<Navigate to="/akademie-pro-tymy" replace />} />
           <Route path="/online" element={<Online />} />
           <Route path="/online/master-of-ai-creativity" element={<MasterOfAICreativity />} />
+          <Route path="/online/chatgptakademie" element={<ChatGPTAkademie />} />
+          <Route path="/online/copilotakademie" element={<CopilotAkademie />} />
+          <Route path="/online/agentiautomatizace" element={<AgentiAutomatizace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
