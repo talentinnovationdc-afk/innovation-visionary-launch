@@ -26,13 +26,13 @@ export const Navbar = () => {
               alt="Talent Innovation logo" 
               className="h-8 w-auto transition-all duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.25)] group-hover:brightness-110"
             />
-            <span className="hidden md:block text-base font-semibold tracking-[0.2em] text-[#EDEEEE] uppercase">
+            <span className="hidden lg:block text-base font-semibold tracking-[0.2em] text-[#EDEEEE] uppercase">
               TALENT INNOVATION
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               link.isRoute ? (
                 <Link
@@ -56,7 +56,7 @@ export const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Link to="/checkout" aria-label="Rychlá diagnostika">
               <button className="px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
                 Rychlá diagnostika
@@ -66,7 +66,7 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -76,7 +76,7 @@ export const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-border/20 px-4 py-4 animate-fade-in">
+          <div className="lg:hidden border-t border-border/20 px-4 py-4 animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 link.isRoute ? (
