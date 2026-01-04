@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
+import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   MessageSquare, Wand2, Bot, Check, Award, Clock, RefreshCw, Users, Star, 
   ThumbsUp, ChevronLeft, ChevronRight, Building, Crown, Sparkles, X,
@@ -88,12 +89,7 @@ const skillsGrid = [
   { icon: Bot, skill: "Agenti", output: "Custom boti", benefit: "AI asistenti pro váš tým" }
 ];
 
-const testimonials = [
-  { name: "Richard Nedbal", text: "Výklad mě obrovsky obohatil a ihned jsem ho zúročil v praxi." },
-  { name: "Iveta Hutníková", text: "Teď vím, jak s GPT komunikovat efektivněji a ušetřit čas při tvorbě grafů." },
-  { name: "Kristína Hrdová", text: "V práci mi pomůže odbřemenit se od administrativy." },
-  { name: "Zdeňka Valvodová", text: "Kurz mě naučil využít AI ke zrychlení činností i k obrovské kreativitě." }
-];
+// Testimonials are now in TestimonialTicker component
 
 const faqItems = [
   { 
@@ -135,7 +131,6 @@ const faqItems = [
 ];
 
 const Online = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [certModalOpen, setCertModalOpen] = useState(false);
 
   return (
@@ -594,25 +589,8 @@ const Online = () => {
             </div>
           </section>
 
-          {/* Testimonials */}
-          <section className="py-16 relative">
-            <div className="container px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Reference
-                </h2>
-              </div>
-              
-              <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {testimonials.map((item, index) => (
-                  <div key={index} className="glass-card p-5 rounded-xl border border-border/30">
-                    <p className="text-sm text-muted-foreground italic mb-4">"{item.text}"</p>
-                    <p className="text-sm font-semibold text-foreground">{item.name}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          {/* Testimonials Ticker */}
+          <TestimonialTicker />
 
           {/* FAQ Section - Refined Accordion */}
           <section className="py-24 bg-card/20 relative overflow-hidden">
