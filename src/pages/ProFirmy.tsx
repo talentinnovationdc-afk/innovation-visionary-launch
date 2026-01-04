@@ -3,8 +3,19 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
-import { Search, Bot, Users, GraduationCap, Banknote, ClipboardCheck, Shield, Scale, FileCode } from "lucide-react";
+import { 
+  Search, Bot, Users, GraduationCap, Banknote, 
+  ClipboardCheck, Shield, Scale, FileCode,
+  UserCheck, FileText, ShoppingCart, ChevronDown,
+  FileBarChart, Route, LayoutGrid, Award
+} from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const services = [
   {
@@ -49,26 +60,148 @@ const services = [
   },
 ];
 
-const diagnostikaPoints = [
+const targetAudience = [
   {
-    icon: ClipboardCheck,
-    title: "PROCESNÍ ANALÝZA",
-    description: "Mapování vašich workflow a identifikace automatizačního potenciálu.",
+    icon: UserCheck,
+    title: "HR & L&D",
+    description: "Onboarding nových kolegů a škálování dovedností napříč firmou.",
+    bullets: [
+      "Úspora 5–10 h týdně na manuální práci s dokumenty",
+      "Standardizovaný AI onboarding pro celou firmu"
+    ],
   },
   {
+    icon: FileText,
+    title: "BACKOFFICE & ADMINISTRATIVA",
+    description: "E-maily, zápisy z porad, správa dokumentů a reporting.",
+    bullets: [
+      "Úspora 3–6 h týdně na rutinních úkolech",
+      "Automatické zápisy, shrnutí a follow-upy"
+    ],
+  },
+  {
+    icon: ShoppingCart,
+    title: "OBCHOD & PODPORA",
+    description: "Nabídky, CRM, odpovědi zákazníkům a personalizace.",
+    bullets: [
+      "Rychlejší odpovědi o 40–60 %",
+      "AI asistent pro návrhy nabídek a e-mailů"
+    ],
+  },
+];
+
+const journeySteps = [
+  {
+    number: 1,
+    title: "DIAGNOSTIKA PRODUKTIVITY",
+    tag: "AUDIT",
+    description: "Zmapujeme vaše procesy a najdeme, kde AI ušetří nejvíc času.",
+  },
+  {
+    number: 2,
+    title: "PLÁN NASAZENÍ",
+    tag: "BLUEPRINT",
+    description: "Připravíme roadmapu s prioritami, architekturou a pravidly pro data.",
+    note: "Pro regulované týmy volitelně: ISO / ADR / MDR / AI Act readiness.",
+  },
+  {
+    number: 3,
+    title: "AI WORKFLOW DO PRAXE",
+    tag: "IMPLEMENTACE",
+    description: "Nasadíme automatizace a agenty přímo do vašich nástrojů.",
+  },
+  {
+    number: 4,
+    title: "AKADEMIE PRO TÝMY",
+    tag: "TRANSFER",
+    description: "Naučíme vaše lidi pracovat s AI tak, aby byli samostatní.",
+  },
+  {
+    number: 5,
+    title: "DLOUHODOBÉ ZLEPŠOVÁNÍ",
+    tag: "EVOLUCE",
+    description: "Průběžně měříme dopady a optimalizujeme workflow.",
+  },
+];
+
+const expertisePoints = [
+  {
     icon: Shield,
-    title: "DATOVÁ BEZPEČNOST",
-    description: "Audit datových toků a zabezpečení pro AI-ready infrastrukturu.",
+    title: "BEZ RIZIKA",
+    subtitle: "Metodika swimin.ai",
+    description: "Ověřená metodika s tisíci absolventy. Víme, co funguje a co ne.",
   },
   {
     icon: Scale,
-    title: "AI ACT READINESS",
-    description: "Posouzení připravenosti na regulace EU AI Act a compliance strategie.",
+    title: "DATA POD KONTROLOU",
+    subtitle: "Compliance & Bezpečnost",
+    description: "Řešení navržená s ohledem na GDPR, AI Act a vaše interní politiky.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "MĚŘITELNÉ VÝSLEDKY",
+    subtitle: "ROI-first přístup",
+    description: "Každý projekt začíná jasným cílem a KPIs, které sledujeme.",
   },
   {
     icon: FileCode,
+    title: "KNOW-HOW ZŮSTÁVÁ",
+    subtitle: "Transfer znalostí",
+    description: "Nejen dodáváme řešení, ale učíme vaše lidi, aby byli samostatní.",
+  },
+];
+
+const deliverables = [
+  {
+    icon: FileBarChart,
+    title: "AI READINESS REPORT",
+    description: "Analýza připravenosti + identifikace úzkých hrdel",
+    output: "Výstup, který můžete poslat vedení jako podklad pro rozhodnutí.",
+  },
+  {
+    icon: Route,
+    title: "ROI ROADMAPA",
+    description: "Prioritizovaný backlog automatizací s odhadem úspor",
+    output: "Jasný plán, co řešit první a proč.",
+  },
+  {
+    icon: LayoutGrid,
     title: "TECHNICKÝ BLUEPRINT",
-    description: "Detailní plán implementace s architekturou a milníky.",
+    description: "Architektura, datová pravidla a integrace",
+    output: "Dokument pro IT tým s konkrétními kroky.",
+  },
+  {
+    icon: Award,
+    title: "FIREMNÍ AKADEMIE",
+    description: "Licence, certifikace a reporting pro celý tým",
+    output: "Škálovatelné vzdělávání s měřitelným dopadem.",
+  },
+];
+
+const faqItems = [
+  {
+    question: "Kolik času to zabere?",
+    answer: "Rychlá diagnostika trvá 15 minut. Kompletní AI audit s roadmapou připravíme do 2 týdnů. Implementace závisí na rozsahu – od 1 týdne pro pilotní projekt až po 2–3 měsíce pro celofiremní nasazení.",
+  },
+  {
+    question: "Co potřebujete od nás?",
+    answer: "Na začátku stačí 15minutový hovor, abychom pochopili vaše procesy. Pro audit pak potřebujeme přístup k relevantním lidem z týmu (HR, backoffice, obchod) a přehled používaných nástrojů.",
+  },
+  {
+    question: "Jak chráníte data?",
+    answer: "Pracujeme s enterprise verzemi AI nástrojů (Azure OpenAI, Microsoft Copilot), které nepoužívají vaše data k trénování modelů. Všechna řešení navrhujeme s ohledem na GDPR a AI Act.",
+  },
+  {
+    question: "Co když nemáme Copilot?",
+    answer: "Žádný problém. Pracujeme s různými nástroji – od ChatGPT Plus přes Claude až po open-source řešení. Doporučíme to nejlepší pro vaši situaci a rozpočet.",
+  },
+  {
+    question: "Jak fungují firemní licence?",
+    answer: "Akademie nabízíme jako firemní licence s neomezeným počtem přístupů. Cena závisí na počtu uživatelů a rozsahu kurzů. Součástí je reporting a certifikace pro každého absolventa.",
+  },
+  {
+    question: "Jak měříte dopad?",
+    answer: "Před zahájením definujeme konkrétní KPIs (ušetřený čas, počet automatizací, adoption rate). Po 3 měsících vyhodnocujeme a optimalizujeme. Dodáváme měsíční reporty pro management.",
   },
 ];
 
@@ -76,8 +209,8 @@ const ProFirmy = () => {
   return (
     <>
       <SEO 
-        title="Pro firmy | Služby a ceník | Talent Innovation"
-        description="Architekti digitální autonomie. AI audit, implementace, strategické poradenství a akademie pro průmyslové lídry."
+        title="Pro firmy | AI pro týmy a produktivitu | Talent Innovation"
+        description="Zrychlete práci týmů díky AI workflow a firemní Akademii. Od diagnostiky přes automatizace až po škálování know-how. Bezpečně a měřitelně."
         path="/profirmy"
       />
       
@@ -91,27 +224,153 @@ const ProFirmy = () => {
           <section className="pt-44 md:pt-52 pb-16 relative">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-[0.2em] mb-8 leading-[1.1] uppercase">
+                <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[0.1em] mb-6 leading-[1.2]">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    ARCHITEKTI DIGITÁLNÍ
+                    Zrychlete práci týmů o desítky procent
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    AUTONOMIE
+                  <span className="text-foreground text-xl md:text-3xl lg:text-4xl">
+                    díky AI workflow a firemní Akademii
                   </span>
                 </h1>
-                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[900px] mx-auto leading-[1.8]">
-                  Strategický partner pro průmysl a regulovaná odvětví. <span className="text-foreground font-semibold">Jan Bouda</span> navrhuje architekturu, <span className="text-foreground font-semibold">Daniel Červený</span> zajišťuje financování a strategii — společně garantujeme bezpečnou AI transformaci s měřitelnou návratností.
+                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
+                  Od diagnostiky přes automatizace až po škálování know-how. <span className="text-foreground font-medium">Bezpečně, měřitelně a udržitelně.</span>
                 </p>
+                
+                {/* Proof Chips */}
+                <div className="flex flex-wrap justify-center gap-3 mb-10">
+                  <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                    1050+ absolventů
+                  </span>
+                  <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                    4,9/5 hodnocení
+                  </span>
+                  <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                    95 % doporučuje
+                  </span>
+                </div>
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <Link
+                    to="/checkout"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                  >
+                    Rychlá diagnostika produktivity (15 min)
+                  </Link>
+                  <Link
+                    to="/online"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                  >
+                    Akademie pro týmy
+                  </Link>
+                </div>
               </div>
             </div>
             
-            {/* Subtle divider gradient */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           </section>
 
-          {/* Service & Pricing Grid */}
+          {/* Pro koho Section */}
+          <section className="py-20 bg-card/20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
+                PRO KOHO JE TO IDEÁLNÍ
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Pomáháme týmům, které chtějí pracovat chytřeji, ne více.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {targetAudience.map((audience) => {
+                  const Icon = audience.icon;
+                  
+                  return (
+                    <div
+                      key={audience.title}
+                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]"
+                    >
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      
+                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-2">
+                        {audience.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                        {audience.description}
+                      </p>
+                      
+                      <ul className="space-y-2">
+                        {audience.bullets.map((bullet, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <span className="text-primary mt-0.5">•</span>
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          </section>
+
+          {/* Cesta k digitální autonomii */}
           <section className="py-20">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
+                CESTA K DIGITÁLNÍ AUTONOMII
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Ověřený proces od prvního hovoru po měřitelné výsledky.
+              </p>
+              
+              <div className="max-w-4xl mx-auto">
+                <div className="relative">
+                  {/* Vertical line */}
+                  <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-transparent hidden md:block" />
+                  
+                  <div className="space-y-6">
+                    {journeySteps.map((step, index) => (
+                      <div key={step.number} className="relative flex gap-6 items-start">
+                        {/* Step number */}
+                        <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 z-10">
+                          <span className="text-primary font-semibold">{step.number}</span>
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="flex-1 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-5 hover:border-primary/40 transition-all duration-300">
+                          <div className="flex flex-wrap items-center gap-3 mb-2">
+                            <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground">
+                              {step.title}
+                            </h3>
+                            <span className="px-2 py-0.5 text-[10px] font-semibold tracking-[0.1em] uppercase rounded-full bg-primary/10 text-primary border border-primary/20">
+                              {step.tag}
+                            </span>
+                          </div>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {step.description}
+                          </p>
+                          {step.note && (
+                            <p className="text-xs text-accent/80 mt-3 italic">
+                              {step.note}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Service & Pricing Grid */}
+          <section className="py-20 bg-card/20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
                 SLUŽBY & CENÍK
@@ -164,7 +423,6 @@ const ProFirmy = () => {
                         {service.description}
                       </p>
                       
-                      {/* Features */}
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {service.features.map((feature) => (
                           <span 
@@ -180,7 +438,6 @@ const ProFirmy = () => {
                         ))}
                       </div>
                       
-                      {/* Price */}
                       <div className={`pt-4 border-t ${
                         isPurple ? "border-accent/20" : "border-primary/20"
                       }`}>
@@ -195,20 +452,22 @@ const ProFirmy = () => {
                 })}
               </div>
             </div>
+            
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           </section>
 
-          {/* Diagnostika Section */}
-          <section className="py-20 bg-card/20 relative">
+          {/* Bezpečné a ověřené nasazení */}
+          <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                DIAGNOSTIKA AI PŘIPRAVENOSTI
+                BEZPEČNÉ A OVĚŘENÉ NASAZENÍ
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Komplexní analýza vaší organizace před zahájením AI transformace.
+                Proč nám důvěřují desítky firem v citlivých odvětvích.
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                {diagnostikaPoints.map((point) => {
+                {expertisePoints.map((point) => {
                   const Icon = point.icon;
                   
                   return (
@@ -220,9 +479,13 @@ const ProFirmy = () => {
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
                       
-                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-2">
+                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-1">
                         {point.title}
                       </h3>
+                      
+                      <p className="text-xs text-primary/60 mb-3">
+                        {point.subtitle}
+                      </p>
                       
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         {point.description}
@@ -232,9 +495,49 @@ const ProFirmy = () => {
                 })}
               </div>
             </div>
+          </section>
+
+          {/* Co dostanete do ruky */}
+          <section className="py-20 bg-card/20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
+                CO DOSTANETE DO RUKY
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Konkrétní výstupy, které můžete prezentovat vedení.
+              </p>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                {deliverables.map((item) => {
+                  const Icon = item.icon;
+                  
+                  return (
+                    <div
+                      key={item.title}
+                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-accent/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)]"
+                    >
+                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                        <Icon className="w-6 h-6 text-accent" />
+                      </div>
+                      
+                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                        {item.description}
+                      </p>
+                      
+                      <p className="text-xs text-accent/70 italic">
+                        {item.output}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
             
-            {/* Bottom divider */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
           </section>
 
           {/* Financing Section */}
@@ -261,6 +564,39 @@ const ProFirmy = () => {
             </div>
           </section>
 
+          {/* FAQ Section */}
+          <section className="py-20 bg-card/20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
+                ČASTÉ DOTAZY
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Odpovědi na nejčastější otázky od HR a vedení firem.
+              </p>
+              
+              <div className="max-w-3xl mx-auto">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {faqItems.map((item, index) => (
+                    <AccordionItem 
+                      key={index} 
+                      value={`item-${index}`}
+                      className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl px-6 overflow-hidden"
+                    >
+                      <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-5">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground pb-5">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </div>
+            
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          </section>
+
           {/* Primary CTA */}
           <section className="py-12">
             <div className="container mx-auto px-4 text-center">
@@ -268,7 +604,7 @@ const ProFirmy = () => {
                 to="/checkout"
                 className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
               >
-                OBJEDNAT EXPERTNÍ DIAGNOSTIKU
+                RYCHLÁ DIAGNOSTIKA PRODUKTIVITY
               </Link>
             </div>
           </section>
