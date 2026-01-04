@@ -8,7 +8,7 @@ import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   Crown, Award, Check, MessageSquare, Wand2, Bot, 
   ChevronRight, Users, Building, Download, Sparkles,
-  Clock, BadgeCheck, Infinity, RefreshCw, ArrowRight
+  Clock, BadgeCheck, Timer, RefreshCw, ArrowRight
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -268,7 +268,7 @@ const MasterOfAICreativity = () => {
                     <div className="flex flex-wrap gap-2 mb-5">
                       <span className="px-2 py-1 text-[10px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">Certifikát</span>
                       <span className="px-2 py-1 text-[10px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">LinkedIn odznak</span>
-                      <span className="px-2 py-1 text-[10px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">Doživotní přístup</span>
+                      <span className="px-2 py-1 text-[10px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">Dlouhodobý přístup</span>
                     </div>
                     
                     {/* CTA */}
@@ -296,12 +296,12 @@ const MasterOfAICreativity = () => {
                     <span className="text-sm text-foreground">LinkedIn odznak</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Infinity className="w-5 h-5 text-accent" />
-                    <span className="text-sm text-foreground">Doživotní přístup</span>
+                    <Timer className="w-5 h-5 text-accent" />
+                    <span className="text-sm text-foreground">Dlouhodobý přístup</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <RefreshCw className="w-5 h-5 text-accent" />
-                    <span className="text-sm text-foreground">Aktualizace zdarma</span>
+                    <span className="text-sm text-foreground">Studium vlastním tempem</span>
                   </div>
                 </div>
               </div>

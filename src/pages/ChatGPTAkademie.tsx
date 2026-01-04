@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   MessageSquare, Check, Award, Users, Star, Clock, RefreshCw, 
-  ChevronDown, BadgeCheck, Infinity, BookOpen
+  ChevronDown, BadgeCheck, Timer, BookOpen
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -47,7 +47,7 @@ const ChatGPTAkademie = () => {
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
         title="ChatGPT Akademie | Online kurz s certifikátem | Talent Innovation"
-        description="Ovládněte ChatGPT od základů po pokročilé workflow. 12×2h, certifikát, LinkedIn odznak, doživotní přístup. 1250+ absolventů."
+        description="Ovládněte ChatGPT od základů po pokročilé workflow. 12×2h, certifikát, LinkedIn odznak, dlouhodobý přístup. 1250+ absolventů."
         path="/online/chatgptakademie"
       />
       <NeuralNetworkBackground />
@@ -84,7 +84,7 @@ const ChatGPTAkademie = () => {
                   <BookOpen className="w-4 h-4 text-primary" /> Začátečníci – Pokročilí
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <Infinity className="w-4 h-4 text-primary" /> Doživotní přístup
+                  <Timer className="w-4 h-4 text-primary" /> Studujte vlastním tempem
                 </span>
               </div>
               
@@ -235,14 +235,14 @@ const ChatGPTAkademie = () => {
                 <p className="text-xs text-muted-foreground">Přidáte jedním klikem</p>
               </div>
               <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
-                <Infinity className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Doživotní přístup</h3>
-                <p className="text-xs text-muted-foreground">Bez časového omezení</p>
+                <Timer className="w-10 h-10 text-primary mx-auto mb-4" />
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Dlouhodobý přístup</h3>
+                <p className="text-xs text-muted-foreground">Studujte vlastním tempem</p>
               </div>
               <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                 <RefreshCw className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Aktualizace zdarma</h3>
-                <p className="text-xs text-muted-foreground">Vždy aktuální obsah</p>
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Aktuální obsah</h3>
+                <p className="text-xs text-muted-foreground">Průběžně udržovaný</p>
               </div>
             </div>
           </div>
