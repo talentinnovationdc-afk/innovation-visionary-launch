@@ -6,6 +6,7 @@ import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
   { label: "PRO FIRMY", href: "/profirmy", isRoute: true },
+  { label: "AKADEMIE PRO TÝMY", href: "/akademie-pro-tymy", isRoute: true },
   { label: "ONLINE", href: "/online", isRoute: true },
   { label: "METODIKA", href: "/metodika", isRoute: true },
   { label: "O NÁS", href: "/o-nas", isRoute: true },
@@ -38,6 +39,7 @@ export const Navbar = () => {
                   key={link.label}
                   to={link.href}
                   className="text-xs font-semibold tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
+                  data-event={link.label === "AKADEMIE PRO TÝMY" ? "nav_academy_teams" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -83,6 +85,7 @@ export const Navbar = () => {
                     to={link.href}
                     className="text-xs font-semibold tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary py-2"
                     onClick={() => setIsOpen(false)}
+                    data-event={link.label === "AKADEMIE PRO TÝMY" ? "nav_academy_teams" : undefined}
                   >
                     {link.label}
                   </Link>

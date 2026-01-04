@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Checkout from "./pages/Checkout";
 import Dekujeme from "./pages/Dekujeme";
@@ -28,7 +28,9 @@ const App = () => (
           <Route path="/metodika" element={<Metodika />} />
           <Route path="/o-nas" element={<ONas />} />
           <Route path="/profirmy" element={<ProFirmy />} />
-          <Route path="/profirmy/akademie-pro-tymy" element={<AkademieProTymy />} />
+          <Route path="/akademie-pro-tymy" element={<AkademieProTymy />} />
+          {/* Redirect from old route */}
+          <Route path="/profirmy/akademie-pro-tymy" element={<Navigate to="/akademie-pro-tymy" replace />} />
           <Route path="/online" element={<Online />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

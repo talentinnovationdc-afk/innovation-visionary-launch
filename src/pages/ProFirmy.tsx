@@ -125,6 +125,10 @@ const journeySteps = [
     title: "TRANSFER",
     description: "Akademie pro týmy: e-learning, šablony, certifikace a LinkedIn odznaky.",
     accent: "purple" as const,
+    cta: {
+      text: "Akademie pro týmy",
+      href: "/akademie-pro-tymy"
+    }
   },
   {
     number: 5,
@@ -280,12 +284,14 @@ const ProFirmy = () => {
                   <Link
                     to="/checkout"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                    data-event="b2b_primary_cta"
                   >
                     Rychlá diagnostika produktivity (15 min)
                   </Link>
                   <Link
-                    to="/online"
+                    to="/akademie-pro-tymy"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                    data-event="b2b_secondary_cta"
                   >
                     Akademie pro týmy (licence)
                   </Link>
@@ -461,6 +467,23 @@ const ProFirmy = () => {
                               <p className="text-xs text-muted-foreground/70 mt-3 italic">
                                 {step.note}
                               </p>
+                            )}
+                            
+                            {step.cta && (
+                              <Link
+                                to={step.cta.href}
+                                className={`
+                                  inline-flex items-center gap-2 mt-4 px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-lg
+                                  transition-all duration-300
+                                  ${isCyan 
+                                    ? "border border-primary/40 text-primary hover:bg-primary/10 hover:border-primary" 
+                                    : "border border-accent/40 text-accent hover:bg-accent/10 hover:border-accent"
+                                  }
+                                `}
+                                data-event="b2b_transfer_click"
+                              >
+                                {step.cta.text}
+                              </Link>
                             )}
                           </div>
                         </div>

@@ -18,24 +18,24 @@ export const Footer = () => {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              © 2026 Talent Innovation. Všechna práva vyhrazena.
+              © {currentYear} Talent Innovation. Všechna práva vyhrazena.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
-              Služby
-            </a>
-            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/profirmy" className="text-muted-foreground hover:text-primary transition-colors">
+              Pro firmy
+            </Link>
+            <Link to="/akademie-pro-tymy" className="text-muted-foreground hover:text-primary transition-colors">
+              Akademie pro týmy
+            </Link>
+            <Link to="/online" className="text-muted-foreground hover:text-primary transition-colors">
+              Online
+            </Link>
+            <Link to="/o-nas" className="text-muted-foreground hover:text-primary transition-colors">
               O nás
-            </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">
-              Ceník
-            </a>
-            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
-              Kontakt
-            </a>
+            </Link>
           </div>
 
           {/* Social Links */}
