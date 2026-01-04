@@ -261,7 +261,7 @@ const Online = () => {
                 <div className="flex items-center gap-3">
                   <Users className="h-6 w-6 text-primary" />
                   <div>
-                    <div className="text-2xl font-bold text-foreground">1050+</div>
+                    <div className="text-2xl font-bold text-foreground">1250+</div>
                     <div className="text-xs text-muted-foreground uppercase tracking-wide">absolventů</div>
                   </div>
                 </div>
