@@ -30,7 +30,11 @@ const Index = () => {
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    pro firmy i váš profesní růst
+                    pro firmy
+                  </span>
+                  <br />
+                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    i váš profesní růst
                   </span>
                 </h1>
                 
