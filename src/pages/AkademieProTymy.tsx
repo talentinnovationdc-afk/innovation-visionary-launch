@@ -49,11 +49,6 @@ const academies = [
     icon: Bot,
     title: "Agenti & Automatizace",
     description: "Stavba vlastních AI agentů pro automatizaci procesů."
-  },
-  {
-    icon: Image,
-    title: "Multimédia Akademie",
-    description: "Generování obrázků, videa a hlasu pomocí AI."
   }
 ];
 
