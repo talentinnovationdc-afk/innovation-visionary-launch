@@ -3,48 +3,13 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
+import { MethodologySection } from "@/components/MethodologySection";
 import { 
   Building, GraduationCap, Users, Star, ThumbsUp, Check, 
-  ArrowRight, Shield, TrendingUp, Award, Clock, BadgeCheck,
-  Search, FileText, Cog
+  ArrowRight, Shield, TrendingUp, Award, Clock, BadgeCheck
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const methodologySteps = [
-  {
-    number: "01",
-    title: "DIAGNOSTIKA",
-    description: "Najdeme role a procesy, kde AI přinese rychlé úspory.",
-    icon: Search,
-  },
-  {
-    number: "02",
-    title: "PLÁN",
-    description: "Navrhneme postup a pravidla: data, nástroje, governance.",
-    icon: FileText,
-  },
-  {
-    number: "03",
-    title: "IMPLEMENTACE",
-    description: "Nasadíme workflow a automatizace. Měříme dopad.",
-    icon: Cog,
-  },
-  {
-    number: "04",
-    title: "ZAŠKOLENÍ",
-    description: "Tým dostane know-how a přístup do online akademií.",
-    icon: GraduationCap,
-    accent: "purple",
-  },
-  {
-    number: "05",
-    title: "EVOLUCE",
-    description: "Průběžně ladíme a rozšiřujeme podle výsledků.",
-    icon: TrendingUp,
-    accent: "purple",
-  },
-];
 
 const Index = () => {
   return (
@@ -254,122 +219,8 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Cesta k digitální autonomii - Timeline */}
-          <section className="py-20">
-            <div className="container px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    Cesta k digitální autonomii
-                  </span>
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  5 kroků od analýzy k fungující automatizaci.
-                </p>
-              </div>
-              
-              <div className="max-w-5xl mx-auto">
-                {/* Desktop Timeline */}
-                <div className="hidden md:block relative">
-                  {/* Connecting Line */}
-                  <div className="absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/50 to-accent rounded-full" />
-                  
-                  <div className="grid grid-cols-5 gap-4 relative">
-                    {methodologySteps.map((step, index) => {
-                      const Icon = step.icon;
-                      const isPurple = step.accent === "purple";
-                      
-                      return (
-                        <div key={step.number} className="text-center relative">
-                          {/* Step Circle */}
-                          <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4 relative z-10 border-4 ${
-                            isPurple 
-                              ? 'bg-accent/20 border-accent text-accent' 
-                              : 'bg-primary/20 border-primary text-primary'
-                          } shadow-[0_0_20px_${isPurple ? 'rgba(189,0,255,0.4)' : 'rgba(102,252,241,0.4)'}]`}>
-                            <span className="text-lg font-bold">{index + 1}</span>
-                          </div>
-                          
-                          {/* Arrow connector */}
-                          {index < methodologySteps.length - 1 && (
-                            <div className="absolute top-[3.25rem] left-[60%] right-[-40%] flex items-center justify-center">
-                              <ArrowRight className={`w-5 h-5 ${index >= 2 ? 'text-accent/60' : 'text-primary/60'}`} />
-                            </div>
-                          )}
-                          
-                          {/* Content Card */}
-                          <div className={`glass-card p-4 rounded-xl border ${
-                            isPurple 
-                              ? 'border-accent/20 hover:border-accent/40' 
-                              : 'border-primary/20 hover:border-primary/40'
-                          } transition-all duration-300 hover:-translate-y-1`}>
-                            <div className={`w-10 h-10 mx-auto rounded-lg flex items-center justify-center mb-3 ${
-                              isPurple ? 'bg-accent/10' : 'bg-primary/10'
-                            }`}>
-                              <Icon className={`w-5 h-5 ${isPurple ? 'text-accent' : 'text-primary'}`} />
-                            </div>
-                            <h3 className="text-xs font-semibold tracking-wider text-foreground uppercase mb-2">
-                              {step.title}
-                            </h3>
-                            <p className="text-[11px] text-muted-foreground leading-relaxed">
-                              {step.description}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-                
-                {/* Mobile Timeline */}
-                <div className="md:hidden relative">
-                  {/* Vertical Connecting Line */}
-                  <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-accent rounded-full" />
-                  
-                  <div className="space-y-6">
-                    {methodologySteps.map((step, index) => {
-                      const Icon = step.icon;
-                      const isPurple = step.accent === "purple";
-                      
-                      return (
-                        <div key={step.number} className="flex gap-4 relative">
-                          {/* Step Circle */}
-                          <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 relative z-10 border-4 ${
-                            isPurple 
-                              ? 'bg-accent/20 border-accent text-accent' 
-                              : 'bg-primary/20 border-primary text-primary'
-                          }`}>
-                            <span className="text-lg font-bold">{index + 1}</span>
-                          </div>
-                          
-                          {/* Content */}
-                          <div className={`flex-1 glass-card p-4 rounded-xl border ${
-                            isPurple 
-                              ? 'border-accent/20' 
-                              : 'border-primary/20'
-                          }`}>
-                            <div className="flex items-center gap-3 mb-2">
-                              <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                                isPurple ? 'bg-accent/10' : 'bg-primary/10'
-                              }`}>
-                                <Icon className={`w-4 h-4 ${isPurple ? 'text-accent' : 'text-primary'}`} />
-                              </div>
-                              <h3 className="text-sm font-semibold tracking-wider text-foreground uppercase">
-                                {step.title}
-                              </h3>
-                            </div>
-                            <p className="text-xs text-muted-foreground">
-                              {step.description}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* Methodology - Step by Step */}
+          <MethodologySection />
 
           {/* Final CTA */}
           <section className="py-20 relative">
