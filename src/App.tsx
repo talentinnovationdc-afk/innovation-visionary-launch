@@ -11,6 +11,7 @@ import ONas from "./pages/ONas";
 import ProFirmy from "./pages/ProFirmy";
 import AkademieProTymy from "./pages/AkademieProTymy";
 import Online from "./pages/Online";
+import MasterOfAICreativity from "./pages/MasterOfAICreativity";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           {/* Redirect from old route */}
           <Route path="/profirmy/akademie-pro-tymy" element={<Navigate to="/akademie-pro-tymy" replace />} />
           <Route path="/online" element={<Online />} />
+          <Route path="/online/master-of-ai-creativity" element={<MasterOfAICreativity />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
