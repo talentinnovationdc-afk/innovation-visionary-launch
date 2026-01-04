@@ -39,7 +39,10 @@ export const Footer = () => {
               Akademie pro týmy
             </Link>
             <Link to="/online" className="text-muted-foreground hover:text-primary transition-colors">
-              Online
+              Online akademie
+            </Link>
+            <Link to="/metodika" className="text-muted-foreground hover:text-primary transition-colors">
+              Metodika
             </Link>
             <Link to="/o-nas" className="text-muted-foreground hover:text-primary transition-colors">
               O nás
