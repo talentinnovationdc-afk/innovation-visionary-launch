@@ -473,12 +473,24 @@ const Online = () => {
                   return (
                     <div 
                       key={course.id}
-                      className={`glass-card p-6 group transition-all duration-300 hover:-translate-y-2 flex flex-col relative ${
+                      className={`glass-card p-6 group transition-all duration-300 hover:-translate-y-2 flex flex-col relative cursor-pointer ${
                         course.isProgram 
                           ? 'border-accent/40 shadow-[0_0_30px_rgba(189,0,255,0.15)] hover:shadow-[0_0_40px_rgba(189,0,255,0.25)]' 
                           : 'hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)]'
                       }`}
+                      onClick={(e) => {
+                        // Don't navigate if clicking on buttons
+                        if ((e.target as HTMLElement).closest('button') || (e.target as HTMLElement).closest('a')) return;
+                        window.location.href = `/online/${course.slug}`;
+                      }}
                     >
+                      {/* Hover hint */}
+                      <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="px-2 py-1 text-[9px] bg-card/90 border border-border/50 rounded-full text-muted-foreground">
+                          Klikni pro detail
+                        </span>
+                      </div>
+                      
                       {course.isProgram && (
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase">
                           Nejlepší hodnota
@@ -521,32 +533,49 @@ const Online = () => {
                         <div className={`text-xl font-bold mb-1 ${course.isProgram ? 'text-accent' : 'text-foreground'}`}>
                           {course.price}
                         </div>
-                        <p className="text-[10px] text-muted-foreground/70 mb-4">vč. DPH</p>
+                        <div className="flex items-center gap-2 mb-4">
+                          <p className="text-[10px] text-muted-foreground/70">vč. DPH</p>
+                          <Link 
+                            to={`/online/${course.slug}`}
+                            className="text-[10px] text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Co přesně obsahuje? <ChevronRight className="w-3 h-3" />
+                          </Link>
+                        </div>
                         <div className="space-y-2">
                           <Link 
                             to={`/online/${course.slug}`}
                             data-event={course.isProgram ? "b2c_program_view" : "b2c_academy_view"}
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <Button 
                               variant="outline" 
                               size="sm" 
-                              className="w-full text-xs tracking-[0.1em] uppercase"
+                              className={`w-full text-xs tracking-[0.1em] uppercase py-3 ${
+                                course.isProgram 
+                                  ? 'border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_10px_rgba(189,0,255,0.2)] hover:shadow-[0_0_15px_rgba(189,0,255,0.3)]' 
+                                  : 'border-primary/50 text-primary hover:bg-primary/10 shadow-[0_0_10px_rgba(102,252,241,0.2)] hover:shadow-[0_0_15px_rgba(102,252,241,0.3)]'
+                              } group/btn transition-all duration-300`}
                             >
-                              {course.isProgram ? 'Zobrazit program' : 'Zobrazit roadmapu'}
+                              <FileText className="w-4 h-4 mr-2" />
+                              {course.isProgram ? 'Zobrazit obsah programu' : 'Zobrazit obsah akademie'}
+                              <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform duration-200" />
                             </Button>
                           </Link>
                           <a 
                             href={course.link}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <Button 
                               variant="gradient" 
                               size="sm" 
-                              className="w-full text-xs tracking-[0.1em] uppercase"
+                              className="w-full text-xs tracking-[0.1em] uppercase py-3"
                               data-event={course.isProgram ? "b2c_program_buy_click" : "b2c_buy_click"}
                             >
-                              {course.isProgram ? 'Koupit program' : 'Koupit'}
+                              {course.isProgram ? 'Koupit program' : 'Koupit akademii'}
                             </Button>
                           </a>
                         </div>
