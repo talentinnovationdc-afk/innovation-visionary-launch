@@ -6,12 +6,19 @@ import { LogoRibbon } from "@/components/LogoRibbon";
 import { 
   MessageSquare, Wand2, Bot, Check, Award, Clock, RefreshCw, Users, Star, 
   ThumbsUp, ChevronLeft, ChevronRight, Building, Crown, Sparkles, X,
-  FileText, Zap, Target, Lightbulb, Layers, Workflow, Download, Info
+  FileText, Zap, Target, Lightbulb, Layers, Workflow, Download, Info,
+  ChevronDown, Lock, BadgeCheck, HelpCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import certificatePreview from "@/assets/certificate-preview.png";
 import badgePreview from "@/assets/badge-preview.png";
 
@@ -89,12 +96,42 @@ const testimonials = [
 ];
 
 const faqItems = [
-  { q: "Jak dlouho mám přístup ke kurzu?", a: "Přístup je doživotní. Všechny budoucí aktualizace obsahu jsou zdarma." },
-  { q: "Pro koho jsou akademie určené?", a: "Pro každého, kdo chce pracovat efektivněji s AI – od začátečníků po pokročilé. Nevyžadujeme technické znalosti." },
-  { q: "Jak získám certifikát?", a: "Po dokončení akademie obdržíte certifikát automaticky e-mailem. LinkedIn odznak si přidáte jedním klikem." },
-  { q: "Co je rozdíl mezi akademií a kompletním programem?", a: "Akademie je 1 téma. Kompletní program = všechny 3 akademie + hlavní certifikát Master of AI Creativity + hlavní LinkedIn odznak." },
-  { q: "Můžu kurz koupit pro tým?", a: "Ano. Pro firmy nabízíme hromadné licence s onboardingem a reportingem. Více na stránce Akademie pro týmy." },
-  { q: "Potřebuji Microsoft 365 pro Copilot akademii?", a: "Ideálně ano, ale kurz obsahuje i obecné principy použitelné bez Copilotu." }
+  { 
+    icon: Clock, 
+    question: "Jak dlouho mám přístup ke kurzu?", 
+    answer: "Přístup je doživotní. Všechny budoucí aktualizace obsahu jsou zdarma.",
+    highlight: "Doživotní přístup"
+  },
+  { 
+    icon: Users, 
+    question: "Pro koho jsou akademie určené?", 
+    answer: "Pro každého, kdo chce pracovat efektivněji s AI – od začátečníků po pokročilé. Nevyžadujeme technické znalosti.",
+    highlight: "Pro všechny úrovně"
+  },
+  { 
+    icon: BadgeCheck, 
+    question: "Jak získám certifikát?", 
+    answer: "Po dokončení akademie obdržíte certifikát automaticky e-mailem. LinkedIn odznak si přidáte jedním klikem.",
+    highlight: "Automaticky"
+  },
+  { 
+    icon: Crown, 
+    question: "Co je rozdíl mezi akademií a kompletním programem?", 
+    answer: "Akademie je 1 téma. Kompletní program = všechny 3 akademie + hlavní certifikát Master of AI Creativity + hlavní LinkedIn odznak.",
+    highlight: "3 akademie v 1"
+  },
+  { 
+    icon: Building, 
+    question: "Můžu kurz koupit pro tým?", 
+    answer: "Ano. Pro firmy nabízíme hromadné licence s onboardingem a reportingem. Více na stránce Akademie pro týmy.",
+    highlight: "Firemní licence"
+  },
+  { 
+    icon: HelpCircle, 
+    question: "Potřebuji Microsoft 365 pro Copilot akademii?", 
+    answer: "Ideálně ano, ale kurz obsahuje i obecné principy použitelné bez Copilotu.",
+    highlight: "Flexibilní"
+  }
 ];
 
 const Online = () => {
@@ -607,22 +644,104 @@ const Online = () => {
             </div>
           </section>
 
-          {/* FAQ */}
-          <section className="py-16 bg-card/20 relative">
-            <div className="container px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Časté dotazy
+          {/* FAQ Section - Refined Accordion */}
+          <section className="py-24 bg-card/20 relative overflow-hidden">
+            {/* Subtle background orbs */}
+            <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[100px]" />
+            <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[120px]" />
+            
+            <div className="container mx-auto px-4 relative z-10">
+              {/* Header */}
+              <div className="text-center mb-16">
+                <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
+                  FAQ
+                </span>
+                <h2 className="text-2xl md:text-4xl font-bold tracking-[0.1em] uppercase mb-4">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    ČASTÉ DOTAZY
+                  </span>
                 </h2>
+                <p className="text-muted-foreground max-w-xl mx-auto">
+                  Odpovědi na nejčastější otázky o online akademiích
+                </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-                {faqItems.map((item, index) => (
-                  <div key={index} className="glass-card p-5 rounded-xl border border-border/30">
-                    <h3 className="text-sm font-semibold text-foreground mb-2">{item.q}</h3>
-                    <p className="text-sm text-muted-foreground">{item.a}</p>
-                  </div>
-                ))}
+              {/* Accordion */}
+              <div className="max-w-3xl mx-auto">
+                <Accordion type="single" collapsible className="space-y-3">
+                  {faqItems.map((item, index) => {
+                    const isEven = index % 2 === 0;
+                    const Icon = item.icon;
+                    
+                    return (
+                      <AccordionItem 
+                        key={index} 
+                        value={`item-${index}`}
+                        className="group border-0"
+                      >
+                        <div className={`relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 ${
+                          isEven 
+                            ? 'border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40' 
+                            : 'border-accent/15 hover:border-accent/30 data-[state=open]:border-accent/40'
+                        }`}>
+                          
+                          <AccordionTrigger className="px-6 py-5 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
+                            <div className="flex items-center gap-4 w-full">
+                              {/* Icon */}
+                              <div className={`w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                isEven 
+                                  ? 'bg-primary/10 group-hover:bg-primary/15' 
+                                  : 'bg-accent/10 group-hover:bg-accent/15'
+                              }`}>
+                                <Icon className={`w-5 h-5 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                              </div>
+                              
+                              <div className="flex-1 text-left">
+                                <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
+                                  {item.question}
+                                </h3>
+                              </div>
+                              
+                              {/* Highlight tag - desktop only */}
+                              <span className={`hidden md:inline-block text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full mr-2 ${
+                                isEven 
+                                  ? 'bg-primary/10 text-primary' 
+                                  : 'bg-accent/10 text-accent'
+                              }`}>
+                                {item.highlight}
+                              </span>
+                              
+                              {/* Chevron */}
+                              <div className={`chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                                isEven 
+                                  ? 'bg-primary/10 group-data-[state=open]:bg-primary' 
+                                  : 'bg-accent/10 group-data-[state=open]:bg-accent'
+                              }`}>
+                                <ChevronDown className={`w-4 h-4 transition-colors ${
+                                  isEven 
+                                    ? 'text-primary group-data-[state=open]:text-background' 
+                                    : 'text-accent group-data-[state=open]:text-background'
+                                }`} />
+                              </div>
+                            </div>
+                          </AccordionTrigger>
+                          
+                          <AccordionContent>
+                            <div className="px-6 pb-5">
+                              <div className={`ml-[3.75rem] pl-4 border-l-2 ${
+                                isEven ? 'border-primary/20' : 'border-accent/20'
+                              }`}>
+                                <p className="text-muted-foreground leading-relaxed">
+                                  {item.answer}
+                                </p>
+                              </div>
+                            </div>
+                          </AccordionContent>
+                        </div>
+                      </AccordionItem>
+                    );
+                  })}
+                </Accordion>
               </div>
             </div>
           </section>
