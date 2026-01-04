@@ -279,9 +279,6 @@ const ProFirmy = () => {
 
           {/* Logo Trust Strip */}
           <LogoRibbon />
-          <p className="text-center text-[10px] text-muted-foreground/60 -mt-8 mb-8 max-w-xl mx-auto px-4">
-            Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
-          </p>
 
           {/* Pro koho Section */}
           <section className="py-20 bg-card/20 relative">
