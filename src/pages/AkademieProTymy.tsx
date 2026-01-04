@@ -28,6 +28,7 @@ import {
   Wand2,
   Bot,
   ChevronDown,
+  ChevronRight,
   Building,
   Users,
   Headphones,
@@ -38,7 +39,12 @@ import {
   Lock,
   PieChart,
   BookOpen,
-  HelpCircle
+  HelpCircle,
+  FileText,
+  TrendingUp,
+  Shield,
+  ClipboardCheck,
+  ArrowRight
 } from "lucide-react";
 import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -120,42 +126,111 @@ const processSteps = [
   { number: "4", title: "Reporting + rozvoj", duration: "měsíčně", icon: BarChart3 }
 ];
 
-const faqItems = [
+const hrFaqItems = [
   {
-    icon: Calendar,
-    question: "Jak dlouho máme přístup k akademiím?",
-    answer: "Licence jsou platné 12 měsíců od aktivace. Po uplynutí lze přístup prodloužit za zvýhodněnou cenu. Všechny aktualizace obsahu během období jsou automaticky zahrnuty.",
-    highlight: "12 měsíců"
+    question: "Jak rychle uvidíme výsledky?",
+    answer: "První výsledky (zrychlení rutinních úkolů, efektivnější práce s AI) typicky pozorujeme do 2–3 týdnů od startu. Měřitelné úspory času reportují týmy po dokončení prvního modulu."
   },
   {
-    icon: Zap,
-    question: "Co když nemáme Microsoft Copilot?",
-    answer: "Žádný problém. Akademie ChatGPT, Agenti & Automatizace fungují nezávisle na Microsoft 365. Obsah přizpůsobíme nástrojům, které ve firmě používáte.",
-    highlight: "Flexibilní nástroje"
+    question: "Jak se ověřuje dokončení akademie?",
+    answer: "Každý účastník obdrží certifikát a LinkedIn odznak po dokončení všech modulů. HR má přístup k reportu dokončení, kde vidí postup jednotlivců i týmu."
   },
   {
-    icon: Lock,
-    question: "Jak chráníte naše data?",
-    answer: "Veškerá školení probíhají na zabezpečené platformě. Účastníci pracují s vlastními daty pouze ve svých firemních nástrojích. Nesbíráme ani neukládáme žádná firemní data.",
-    highlight: "100% bezpečné"
+    question: "Můžeme kombinovat akademie v jednom balíčku?",
+    answer: "Ano. Licence lze přiřadit různým akademiím podle rolí – např. administrativa dostane Copilot, obchod ChatGPT. Kompletní program je nejvýhodnější pro klíčové role."
   },
   {
-    icon: PieChart,
-    question: "Jak funguje reporting pro HR?",
-    answer: "HR admin má přístup k dashboardu s přehledem: kdo dokončil které moduly, celková míra adopce, a doporučení pro další rozvoj. Report lze exportovat do PDF.",
-    highlight: "HR dashboard"
+    question: "Je možné koupit program pro onboarding nováčků?",
+    answer: "Rozhodně. Akademie ze záznamu jsou ideální pro onboarding – nováčci studují vlastním tempem a mají jasný standard dovedností od prvního dne."
+  },
+  {
+    question: "Jaké jsou podmínky licencí a přístupu?",
+    answer: "Licence jsou platné 12 měsíců od aktivace. Přístup je jmenný (1 licence = 1 osoba). Aktualizace obsahu jsou po celou dobu zdarma."
+  }
+];
+
+const academyCards = [
+  {
+    id: "chatgpt",
+    title: "ChatGPT Akademie",
+    icon: MessageSquare,
+    description: "Standard pro práci s GPT od základů po pokročilé workflow.",
+    outputs: ["Šablony promptů", "Automatizace dokumentů", "E-mailové workflow"],
+    roles: ["administrativa", "obchod", "project management", "support"],
+    link: "/online/chatgptakademie",
+    color: "primary"
+  },
+  {
+    id: "copilot",
+    title: "Copilot Akademie",
+    icon: Wand2,
+    description: "Produktivita a automatizace v M365 pro každodenní práci.",
+    outputs: ["Word & Excel šablony", "Outlook automatizace", "PowerPoint asistent"],
+    roles: ["office role", "manažeři", "back-office", "HR"],
+    link: "/online/copilotakademie",
+    color: "primary"
+  },
+  {
+    id: "agenti",
+    title: "Agenti & Automatizace",
+    icon: Bot,
+    description: "Pokročilé workflow a orchestrace pro týmy, které chtějí automatizovat.",
+    outputs: ["Custom AI agenti", "Workflow automatizace", "Integrace nástrojů"],
+    roles: ["inovace", "ops", "BI/analytici", "power users"],
+    link: "/online/agentiautomatizace",
+    color: "accent"
+  },
+  {
+    id: "master",
+    title: "Kompletní program",
+    icon: Crown,
+    description: "Nejrychlejší cesta ke společnému standardu napříč firmou.",
+    outputs: ["Jednotná metodika", "Certifikace", "Sdílené šablony"],
+    roles: ["management", "klíčové role", "train-the-trainer"],
+    link: "/online/master-of-ai-creativity",
+    color: "accent",
+    isProgram: true
+  }
+];
+
+const hrBenefits = [
+  {
+    icon: Target,
+    title: "Standard dovedností",
+    description: "Jeden rámec práce s AI napříč firmou."
+  },
+  {
+    icon: TrendingUp,
+    title: "Rychlé snížení administrativy",
+    description: "Méně rutiny, víc kapacity na klíčové úkoly."
   },
   {
     icon: Award,
-    question: "Jak fungují certifikáty a LinkedIn odznaky?",
-    answer: "Po úspěšném dokončení kurzu účastník obdrží certifikát a LinkedIn odznak, který může sdílet na svém profilu. Certifikát potvrzuje zvládnutí praktických AI dovedností.",
-    highlight: "LinkedIn odznak"
+    title: "Certifikace a motivace",
+    description: "Certifikát po dokončení + jasný skill progression."
   },
   {
-    icon: BookOpen,
-    question: "Jaký je minimální počet licencí?",
-    answer: "Minimální počet je 10 licencí (balíček Starter). Pro menší týmy doporučujeme individuální nákup kurzů na stránce Online akademie.",
-    highlight: "Od 10 licencí"
+    icon: ClipboardCheck,
+    title: "Přehled a kontrola",
+    description: "HR vidí, kdo dokončil a kde jsou mezery."
+  }
+];
+
+const deploymentSteps = [
+  {
+    num: "1",
+    title: "Vyberete akademii a počet licencí",
+    description: "Zvolíte akademie podle rolí a velikost balíčku."
+  },
+  {
+    num: "2",
+    title: "Dostanete přístupy pro tým",
+    description: "Instrukce pro onboarding + aktivace účtů."
+  },
+  {
+    num: "3",
+    title: "Po 2 týdnech první report",
+    description: "Přehled dokončení + doporučení dalších rolí."
   }
 ];
 
@@ -216,7 +291,7 @@ const AkademieProTymy = () => {
       <Navbar />
       
       <main className="relative z-10 pt-32">
-        {/* Hero Section */}
+        {/* Hero Section for HR */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
@@ -229,44 +304,188 @@ const AkademieProTymy = () => {
               
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Akademie pro týmy:
+                  Online akademie pro týmy
                 </span>
                 <br />
-                <span className="text-foreground">
-                  AI dovednosti, které se promění v úsporu času
+                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
+                  — měřitelná produktivita rolí
                 </span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-                Hromadné licence našich online akademií ze záznamu + onboarding + reporting dokončení.
-                <span className="text-primary font-medium"> Certifikát a LinkedIn odznak</span> pro každého účastníka.
+                Zaměstnanci studují ze záznamu vlastním tempem. Vy dostanete standardizovaný skillset, certifikaci a přehled o dokončení.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#pricing">
+                <a href="#licence">
                   <Button 
                     size="lg" 
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                   >
-                    Zobrazit balíčky licencí
+                    Vybrat balíček licencí
                   </Button>
                 </a>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
-                >
-                  <BadgeCheck className="w-5 h-5 mr-2" />
-                  Ukázka certifikátu & odznaku
-                </Button>
+                <a href="#akademie">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
+                  >
+                    <FileText className="w-5 h-5 mr-2" />
+                    Zobrazit obsah akademií
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What Academies Contain */}
+        <section id="akademie" className="py-20 bg-card/20 relative">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
+                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
+                  Co vaše týmy získají
+                </span>
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                3 akademie. Konkrétní výstupy. Jednotný standard napříč firmou.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {academyCards.map((academy) => {
+                const Icon = academy.icon;
+                const isAccent = academy.color === "accent";
+                return (
+                  <Link 
+                    key={academy.id}
+                    to={academy.link}
+                    className={`glass-card p-6 rounded-2xl border ${
+                      isAccent 
+                        ? 'border-accent/30 hover:border-accent/60' 
+                        : 'border-primary/30 hover:border-primary/60'
+                    } transition-all duration-300 group cursor-pointer hover:shadow-[0_0_30px_${isAccent ? 'rgba(189,0,255,0.2)' : 'rgba(102,252,241,0.2)'}] block relative`}
+                  >
+                    {academy.isProgram && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase">
+                        Nejlepší hodnota
+                      </div>
+                    )}
+                    
+                    <div className={`w-12 h-12 rounded-xl ${
+                      isAccent ? 'bg-accent/10 border-accent/20' : 'bg-primary/10 border-primary/20'
+                    } border flex items-center justify-center mb-4`}>
+                      <Icon className={`w-6 h-6 ${isAccent ? 'text-accent' : 'text-primary'}`} />
+                    </div>
+                    
+                    <h3 className="text-base font-semibold tracking-wider text-foreground uppercase mb-2">
+                      {academy.title}
+                    </h3>
+                    
+                    <p className="text-sm text-muted-foreground mb-4">{academy.description}</p>
+                    
+                    <ul className="space-y-1 mb-4">
+                      {academy.outputs.map((output, idx) => (
+                        <li key={idx} className={`flex items-center gap-2 text-xs ${isAccent ? 'text-accent' : 'text-primary'}`}>
+                          <Check className="w-3 h-3" />
+                          {output}
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {academy.roles.map((role, idx) => (
+                        <span key={idx} className="px-2 py-0.5 text-[9px] bg-card/50 border border-border/30 rounded-full text-muted-foreground">
+                          {role}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div className={`flex items-center gap-1 text-xs font-medium ${isAccent ? 'text-accent' : 'text-primary'} group-hover:gap-2 transition-all duration-200`}>
+                      Zobrazit detail <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* HR Benefits */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
+                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                  Co z toho má HR
+                </span>
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              {hrBenefits.map((benefit, index) => {
+                const Icon = benefit.icon;
+                const isEven = index % 2 === 0;
+                return (
+                  <div 
+                    key={index}
+                    className={`glass-card p-6 rounded-xl border ${
+                      isEven ? 'border-primary/20' : 'border-accent/20'
+                    } text-center`}
+                  >
+                    <div className={`w-12 h-12 rounded-xl ${
+                      isEven ? 'bg-primary/10' : 'bg-accent/10'
+                    } flex items-center justify-center mx-auto mb-4`}>
+                      <Icon className={`w-6 h-6 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                    </div>
+                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">{benefit.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Deployment Steps */}
+        <section className="py-20 bg-card/20 relative">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
+                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
+                  Jak nasadíme akademie do týmu
+                </span>
+              </h2>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-3 gap-6 relative">
+                <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50" />
+                
+                {deploymentSteps.map((step, index) => (
+                  <div key={index} className="text-center relative">
+                    <div className="w-24 h-24 mx-auto rounded-2xl bg-card/80 border border-primary/30 flex items-center justify-center mb-4 relative z-10 shadow-[0_0_20px_rgba(102,252,241,0.15)]">
+                      <span className="text-3xl font-bold text-primary">{step.num}</span>
+                    </div>
+                    <h3 className="text-sm font-semibold tracking-wider text-foreground uppercase mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">{step.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="py-20 bg-card/20 relative">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <section id="licence" className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
@@ -274,8 +493,11 @@ const AkademieProTymy = () => {
                   Balíčky licencí
                 </span>
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Vyberte počet licencí podle velikosti týmu a zvolte akademie, které chcete licencovat.
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-2">
+                Zvolte akademii (nebo kompletní program) a vyberte velikost balíčku.
+              </p>
+              <p className="text-xs text-accent font-medium">
+                Doporučení: Kompletní program pro management a klíčové role.
               </p>
             </div>
 
@@ -524,9 +746,8 @@ const AkademieProTymy = () => {
             {/* Accordion */}
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="space-y-3">
-                {faqItems.map((item, index) => {
+                {hrFaqItems.map((item, index) => {
                   const isEven = index % 2 === 0;
-                  const Icon = item.icon;
                   
                   return (
                     <AccordionItem 
@@ -548,7 +769,7 @@ const AkademieProTymy = () => {
                                 ? 'bg-primary/10 group-hover:bg-primary/15' 
                                 : 'bg-accent/10 group-hover:bg-accent/15'
                             }`}>
-                              <Icon className={`w-5 h-5 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                              <HelpCircle className={`w-5 h-5 ${isEven ? 'text-primary' : 'text-accent'}`} />
                             </div>
                             
                             <div className="flex-1 text-left">
@@ -556,15 +777,6 @@ const AkademieProTymy = () => {
                                 {item.question}
                               </h3>
                             </div>
-                            
-                            {/* Highlight tag - desktop only */}
-                            <span className={`hidden md:inline-block text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full mr-2 ${
-                              isEven 
-                                ? 'bg-primary/10 text-primary' 
-                                : 'bg-accent/10 text-accent'
-                            }`}>
-                              {item.highlight}
-                            </span>
                             
                             {/* Chevron */}
                             <div className={`chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
