@@ -270,42 +270,10 @@ const ProFirmy = () => {
           </section>
 
           {/* Logo Trust Strip */}
-          <section className="py-8">
-            <div className="container mx-auto px-4">
-              <p className="text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-6">
-                Důvěřují nám lídři v průmyslu a technologiích
-              </p>
-              
-              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 max-w-5xl mx-auto">
-                {[
-                  { name: "Iveco Group", logo: "/src/assets/clients/iveco.png", url: "https://www.ivecogroup.com" },
-                  { name: "Publicis Groupe", logo: "/src/assets/clients/publicis.png", url: "https://www.publicisgroupe.cz/cs/" },
-                  { name: "Messer Technogas", logo: "/src/assets/clients/messer.png", url: "https://www.messer.cz" },
-                  { name: "Hirschmann", logo: "/src/assets/clients/hirschmann.png", url: "https://www.hirschmann-automotive.com/en/" },
-                  { name: "FCC Environment", logo: "/src/assets/clients/fcc.png", url: "https://www.fccps.cz" },
-                  { name: "Medi-globe", logo: "/src/assets/clients/medi-globe.png", url: "https://www.medi-globe.cz" },
-                ].map((client) => (
-                  <a
-                    key={client.name}
-                    href={client.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group"
-                  >
-                    <img
-                      src={client.logo}
-                      alt={client.name}
-                      className="h-8 md:h-10 w-auto object-contain grayscale opacity-50 hover:opacity-80 hover:grayscale-0 transition-all duration-300"
-                    />
-                  </a>
-                ))}
-              </div>
-              
-              <p className="text-center text-[10px] text-muted-foreground/60 mt-6 max-w-xl mx-auto">
-                Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
-              </p>
-            </div>
-          </section>
+          <LogoRibbon />
+          <p className="text-center text-[10px] text-muted-foreground/60 -mt-8 mb-8 max-w-xl mx-auto px-4">
+            Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
+          </p>
 
           {/* Pro koho Section */}
           <section className="py-20 bg-card/20 relative">
