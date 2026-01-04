@@ -68,8 +68,11 @@ export const MethodologySection = () => {
           <h2 id="methodology-heading" className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
             CESTA K DIGITÁLNÍ AUTONOMII
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal leading-relaxed">
+          <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal leading-relaxed mb-2">
             Od prvotní analýzy po dlouhodobou evoluci. Provázíme vás každým krokem.
+          </p>
+          <p className="text-sm text-muted-foreground/70 max-w-xl mx-auto normal-case tracking-normal">
+            Začínáme rolí a rychlými výhrami. Technologie přidáváme až když dává smysl.
           </p>
         </div>
 
