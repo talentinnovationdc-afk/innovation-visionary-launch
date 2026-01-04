@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   Crown, Award, Check, MessageSquare, Wand2, Bot, 
   ChevronRight, Users, Building, Download, Sparkles
@@ -344,6 +345,9 @@ const MasterOfAICreativity = () => {
             </div>
           </div>
         </section>
+
+        {/* Testimonial Ticker */}
+        <TestimonialTicker />
 
         {/* For Teams */}
         <section className="py-16 relative">
