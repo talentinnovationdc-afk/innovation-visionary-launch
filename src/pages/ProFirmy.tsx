@@ -659,39 +659,31 @@ const ProFirmy = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
           </section>
 
-          {/* FAQ Section - WOW Accordion */}
+          {/* FAQ Section - Refined Accordion */}
           <section className="py-24 bg-card/20 relative overflow-hidden">
-            {/* Animated background orbs */}
-            <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse" />
-            <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-primary/3 via-transparent to-accent/3 rounded-full blur-[80px]" />
+            {/* Subtle background */}
+            <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[100px]" />
+            <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[120px]" />
             
             <div className="container mx-auto px-4 relative z-10">
               {/* Header */}
-              <div className="text-center mb-20">
-                <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 via-background to-accent/10 border border-primary/20 mb-8 backdrop-blur-xl">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-sm font-bold tracking-[0.2em] uppercase bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    Časté dotazy
-                  </span>
-                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse" style={{ animationDelay: '0.5s' }} />
-                </div>
-                
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6">
-                  <span className="block text-muted-foreground/60 text-lg md:text-xl font-medium tracking-[0.3em] uppercase mb-4">
-                    Odpovědi pro
-                  </span>
+              <div className="text-center mb-16">
+                <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
+                  FAQ
+                </span>
+                <h2 className="text-2xl md:text-4xl font-bold tracking-[0.1em] uppercase mb-4">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    HR & VEDENÍ
+                    ČASTÉ DOTAZY
                   </span>
-                  {" "}
-                  <span className="text-foreground">FIREM</span>
                 </h2>
+                <p className="text-muted-foreground max-w-xl mx-auto">
+                  Odpovědi na nejčastější otázky od HR a vedení firem
+                </p>
               </div>
               
-              {/* Accordion Container */}
-              <div className="max-w-4xl mx-auto">
-                <Accordion type="single" collapsible className="space-y-4">
+              {/* Accordion */}
+              <div className="max-w-3xl mx-auto">
+                <Accordion type="single" collapsible className="space-y-3">
                   {faqItems.map((item, index) => {
                     const isEven = index % 2 === 0;
                     
@@ -701,116 +693,64 @@ const ProFirmy = () => {
                         value={`item-${index}`}
                         className="group border-0"
                       >
-                        {/* Card wrapper with glow */}
-                        <div className="relative">
-                          {/* Animated glow on hover/open */}
-                          <div className={`absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-100 group-data-[state=open]:opacity-100 transition-all duration-700 blur-md ${
-                            isEven 
-                              ? 'bg-gradient-to-r from-primary/50 via-primary/30 to-primary/50' 
-                              : 'bg-gradient-to-r from-accent/50 via-accent/30 to-accent/50'
-                          }`} />
+                        <div className={`relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 ${
+                          isEven 
+                            ? 'border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40' 
+                            : 'border-accent/15 hover:border-accent/30 data-[state=open]:border-accent/40'
+                        }`}>
                           
-                          <div className={`relative rounded-2xl backdrop-blur-xl border transition-all duration-500 overflow-hidden ${
-                            isEven 
-                              ? 'bg-gradient-to-br from-[#0B0C10]/90 via-card/80 to-[#0B0C10]/90 border-primary/20 group-hover:border-primary/50 group-data-[state=open]:border-primary/60' 
-                              : 'bg-gradient-to-br from-[#0B0C10]/90 via-card/80 to-[#0B0C10]/90 border-accent/20 group-hover:border-accent/50 group-data-[state=open]:border-accent/60'
-                          }`}>
-                            
-                            {/* Top gradient line */}
-                            <div className={`absolute top-0 left-0 right-0 h-px ${
-                              isEven 
-                                ? 'bg-gradient-to-r from-transparent via-primary/60 to-transparent' 
-                                : 'bg-gradient-to-r from-transparent via-accent/60 to-transparent'
-                            }`} />
-                            
-                            {/* Number badge - floating */}
-                            <div className={`absolute -left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black transition-all duration-500 ${
-                              isEven 
-                                ? 'bg-primary text-background shadow-[0_0_20px_rgba(102,252,241,0.5)] group-hover:shadow-[0_0_30px_rgba(102,252,241,0.8)] group-hover:scale-110' 
-                                : 'bg-accent text-background shadow-[0_0_20px_rgba(189,0,255,0.5)] group-hover:shadow-[0_0_30px_rgba(189,0,255,0.8)] group-hover:scale-110'
-                            }`}>
-                              {String(index + 1).padStart(2, '0')}
+                          <AccordionTrigger className="px-6 py-5 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
+                            <div className="flex items-center gap-4 w-full">
+                              {/* Icon */}
+                              <div className={`w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                isEven 
+                                  ? 'bg-primary/10 group-hover:bg-primary/15' 
+                                  : 'bg-accent/10 group-hover:bg-accent/15'
+                              }`}>
+                                <item.icon className={`w-5 h-5 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                              </div>
+                              
+                              <div className="flex-1 text-left">
+                                <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
+                                  {item.question}
+                                </h3>
+                              </div>
+                              
+                              {/* Highlight tag - desktop only */}
+                              <span className={`hidden md:inline-block text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full mr-2 ${
+                                isEven 
+                                  ? 'bg-primary/10 text-primary' 
+                                  : 'bg-accent/10 text-accent'
+                              }`}>
+                                {item.highlight}
+                              </span>
+                              
+                              {/* Chevron */}
+                              <div className={`chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                                isEven 
+                                  ? 'bg-primary/10 group-data-[state=open]:bg-primary' 
+                                  : 'bg-accent/10 group-data-[state=open]:bg-accent'
+                              }`}>
+                                <ChevronDown className={`w-4 h-4 transition-colors ${
+                                  isEven 
+                                    ? 'text-primary group-data-[state=open]:text-background' 
+                                    : 'text-accent group-data-[state=open]:text-background'
+                                }`} />
+                              </div>
                             </div>
-                            
-                            <AccordionTrigger className="px-8 py-6 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
-                              <div className="flex items-center gap-5 w-full">
-                                {/* Icon container with pulse effect */}
-                                <div className={`relative w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
-                                  isEven 
-                                    ? 'bg-primary/10 border border-primary/30 group-hover:bg-primary/20 group-data-[state=open]:bg-primary/30' 
-                                    : 'bg-accent/10 border border-accent/30 group-hover:bg-accent/20 group-data-[state=open]:bg-accent/30'
-                                }`}>
-                                  {/* Pulse ring */}
-                                  <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity ${
-                                    isEven ? 'animate-ping bg-primary/20' : 'animate-ping bg-accent/20'
-                                  }`} style={{ animationDuration: '2s' }} />
-                                  <item.icon className={`w-6 h-6 relative z-10 transition-transform duration-300 group-hover:scale-110 ${
-                                    isEven ? 'text-primary' : 'text-accent'
-                                  }`} />
-                                </div>
-                                
-                                <div className="flex-1 text-left">
-                                  {/* Highlight tag */}
-                                  <span className={`inline-block text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full mb-2 ${
-                                    isEven 
-                                      ? 'bg-primary/10 text-primary' 
-                                      : 'bg-accent/10 text-accent'
-                                  }`}>
-                                    {item.highlight}
-                                  </span>
-                                  {/* Question */}
-                                  <h3 className="text-lg md:text-xl font-semibold text-foreground group-hover:text-white transition-colors pr-8">
-                                    {item.question}
-                                  </h3>
-                                </div>
-                                
-                                {/* Custom chevron */}
-                                <div className={`chevron w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
-                                  isEven 
-                                    ? 'bg-primary/10 border border-primary/30 group-hover:bg-primary/20 group-data-[state=open]:bg-primary group-data-[state=open]:shadow-[0_0_20px_rgba(102,252,241,0.5)]' 
-                                    : 'bg-accent/10 border border-accent/30 group-hover:bg-accent/20 group-data-[state=open]:bg-accent group-data-[state=open]:shadow-[0_0_20px_rgba(189,0,255,0.5)]'
-                                }`}>
-                                  <ChevronDown className={`w-5 h-5 transition-colors ${
-                                    isEven 
-                                      ? 'text-primary group-data-[state=open]:text-background' 
-                                      : 'text-accent group-data-[state=open]:text-background'
-                                  }`} />
-                                </div>
+                          </AccordionTrigger>
+                          
+                          <AccordionContent>
+                            <div className="px-6 pb-5">
+                              <div className={`ml-[3.75rem] pl-4 border-l-2 ${
+                                isEven ? 'border-primary/20' : 'border-accent/20'
+                              }`}>
+                                <p className="text-muted-foreground leading-relaxed">
+                                  {item.answer}
+                                </p>
                               </div>
-                            </AccordionTrigger>
-                            
-                            <AccordionContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                              <div className="px-8 pb-6">
-                                <div className={`ml-[4.75rem] pl-6 border-l-2 ${
-                                  isEven ? 'border-primary/30' : 'border-accent/30'
-                                }`}>
-                                  <p className="text-muted-foreground leading-relaxed text-base">
-                                    {item.answer}
-                                  </p>
-                                  
-                                  {/* Mini CTA */}
-                                  <Link 
-                                    to="/checkout"
-                                    className={`inline-flex items-center gap-2 mt-4 text-sm font-semibold transition-all duration-300 group/link ${
-                                      isEven 
-                                        ? 'text-primary hover:text-primary/80' 
-                                        : 'text-accent hover:text-accent/80'
-                                    }`}
-                                  >
-                                    <span>Domluvit konzultaci</span>
-                                    <ChevronDown className="w-4 h-4 -rotate-90 transition-transform group-hover/link:translate-x-1" />
-                                  </Link>
-                                </div>
-                              </div>
-                            </AccordionContent>
-                            
-                            {/* Bottom gradient line */}
-                            <div className={`absolute bottom-0 left-0 right-0 h-px ${
-                              isEven 
-                                ? 'bg-gradient-to-r from-transparent via-primary/30 to-transparent' 
-                                : 'bg-gradient-to-r from-transparent via-accent/30 to-transparent'
-                            }`} />
-                          </div>
+                            </div>
+                          </AccordionContent>
                         </div>
                       </AccordionItem>
                     );
@@ -819,21 +759,15 @@ const ProFirmy = () => {
               </div>
               
               {/* Bottom CTA */}
-              <div className="mt-16 text-center">
-                <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 rounded-2xl bg-gradient-to-r from-primary/5 via-background to-accent/5 border border-border/50 backdrop-blur-xl">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                      <MessageSquare className="w-5 h-5 text-background" />
-                    </div>
-                    <span className="text-muted-foreground">Nenašli jste odpověď?</span>
-                  </div>
-                  <Link
-                    to="/checkout"
-                    className="px-6 py-3 text-sm font-bold tracking-wider uppercase rounded-xl bg-gradient-to-r from-primary to-primary/80 text-background shadow-[0_0_20px_rgba(102,252,241,0.3)] hover:shadow-[0_0_30px_rgba(102,252,241,0.5)] hover:scale-105 transition-all duration-300"
-                  >
-                    Zeptejte se přímo
-                  </Link>
-                </div>
+              <div className="mt-12 text-center">
+                <p className="text-muted-foreground mb-4">Nenašli jste odpověď?</p>
+                <Link
+                  to="/checkout"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-xl border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Zeptejte se nás
+                </Link>
               </div>
             </div>
             
