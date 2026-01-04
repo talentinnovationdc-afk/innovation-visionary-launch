@@ -93,34 +93,36 @@ const targetAudience = [
 const journeySteps = [
   {
     number: 1,
-    title: "DIAGNOSTIKA PRODUKTIVITY",
+    title: "AUDIT",
     tag: "AUDIT",
-    description: "Zmapujeme vaše procesy a najdeme, kde AI ušetří nejvíc času.",
+    description: "Kde mizí čas a kde AI přinese nejrychlejší úspory (80/20).",
   },
   {
     number: 2,
-    title: "PLÁN NASAZENÍ",
+    title: "BLUEPRINT",
     tag: "BLUEPRINT",
-    description: "Připravíme roadmapu s prioritami, architekturou a pravidly pro data.",
-    note: "Pro regulované týmy volitelně: ISO / ADR / MDR / AI Act readiness.",
+    description: "Plán nasazení: procesy, data, role, pravidla a rizika.",
+    note: "Volitelně pro regulované týmy: ISO / ADR / MDR / AI Act readiness.",
   },
   {
     number: 3,
-    title: "AI WORKFLOW DO PRAXE",
+    title: "IMPLEMENTACE",
     tag: "IMPLEMENTACE",
-    description: "Nasadíme automatizace a agenty přímo do vašich nástrojů.",
+    description: "Nasazení AI-native workflow + měření dopadu.",
+    methodologyNote: "Auditovatelný standard nasazení pro spolehlivost a bezpečnost.",
+    methodologyLink: "https://www.swimin.ai",
   },
   {
     number: 4,
-    title: "AKADEMIE PRO TÝMY",
+    title: "TRANSFER",
     tag: "TRANSFER",
-    description: "Naučíme vaše lidi pracovat s AI tak, aby byli samostatní.",
+    description: "Akademie pro týmy: e-learning, šablony, certifikace a LinkedIn odznaky.",
   },
   {
     number: 5,
-    title: "DLOUHODOBÉ ZLEPŠOVÁNÍ",
+    title: "EVOLUCE",
     tag: "EVOLUCE",
-    description: "Průběžně měříme dopady a optimalizujeme workflow.",
+    description: "Dlouhodobé zlepšování: nové automatizace, upgrade standardů a obsahu.",
   },
 ];
 
@@ -154,27 +156,23 @@ const expertisePoints = [
 const deliverables = [
   {
     icon: FileBarChart,
-    title: "AI READINESS REPORT",
-    description: "Analýza připravenosti + identifikace úzkých hrdel",
-    output: "Výstup, který můžete poslat vedení jako podklad pro rozhodnutí.",
+    title: "REPORT",
+    description: "AI readiness + úzká hrdla",
   },
   {
     icon: Route,
     title: "ROI ROADMAPA",
-    description: "Prioritizovaný backlog automatizací s odhadem úspor",
-    output: "Jasný plán, co řešit první a proč.",
+    description: "Backlog automatizací a priorit",
   },
   {
     icon: LayoutGrid,
-    title: "TECHNICKÝ BLUEPRINT",
-    description: "Architektura, datová pravidla a integrace",
-    output: "Dokument pro IT tým s konkrétními kroky.",
+    title: "BLUEPRINT",
+    description: "Architektura + pravidla dat",
   },
   {
     icon: Award,
-    title: "FIREMNÍ AKADEMIE",
-    description: "Licence, certifikace a reporting pro celý tým",
-    output: "Škálovatelné vzdělávání s měřitelným dopadem.",
+    title: "AKADEMIE",
+    description: "Licence + certifikace + reporting",
   },
 ];
 
@@ -226,15 +224,15 @@ const ProFirmy = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[0.1em] mb-6 leading-[1.2]">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Zrychlete práci týmů o desítky procent
+                    Zrychlete práci týmů díky AI workflow
                   </span>
                   <br />
                   <span className="text-foreground text-xl md:text-3xl lg:text-4xl">
-                    díky AI workflow a firemní Akademii
+                    a firemní Akademii.
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Od diagnostiky přes automatizace až po škálování know-how. <span className="text-foreground font-medium">Bezpečně, měřitelně a udržitelně.</span>
+                  Od rychlé diagnostiky přes automatizace až po škálování know-how. <span className="text-foreground font-medium">Bezpečně a měřitelně.</span>
                 </p>
                 
                 {/* Proof Chips */}
@@ -262,13 +260,51 @@ const ProFirmy = () => {
                     to="/online"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent transition-all duration-300"
                   >
-                    Akademie pro týmy
+                    Akademie pro týmy (licence)
                   </Link>
                 </div>
               </div>
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          </section>
+
+          {/* Logo Trust Strip */}
+          <section className="py-8">
+            <div className="container mx-auto px-4">
+              <p className="text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-6">
+                Důvěřují nám lídři v průmyslu a technologiích
+              </p>
+              
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 max-w-5xl mx-auto">
+                {[
+                  { name: "Iveco Group", logo: "/src/assets/clients/iveco.png", url: "https://www.ivecogroup.com" },
+                  { name: "Publicis Groupe", logo: "/src/assets/clients/publicis.png", url: "https://www.publicisgroupe.cz/cs/" },
+                  { name: "Messer Technogas", logo: "/src/assets/clients/messer.png", url: "https://www.messer.cz" },
+                  { name: "Hirschmann", logo: "/src/assets/clients/hirschmann.png", url: "https://www.hirschmann-automotive.com/en/" },
+                  { name: "FCC Environment", logo: "/src/assets/clients/fcc.png", url: "https://www.fccps.cz" },
+                  { name: "Medi-globe", logo: "/src/assets/clients/medi-globe.png", url: "https://www.medi-globe.cz" },
+                ].map((client) => (
+                  <a
+                    key={client.name}
+                    href={client.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group"
+                  >
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="h-8 md:h-10 w-auto object-contain grayscale opacity-50 hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+                    />
+                  </a>
+                ))}
+              </div>
+              
+              <p className="text-center text-[10px] text-muted-foreground/60 mt-6 max-w-xl mx-auto">
+                Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
+              </p>
+            </div>
           </section>
 
           {/* Pro koho Section */}
@@ -326,7 +362,7 @@ const ProFirmy = () => {
                 CESTA K DIGITÁLNÍ AUTONOMII
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Ověřený proces od prvního hovoru po měřitelné výsledky.
+                Od prvotní analýzy po dlouhodobou evoluci. Provázíme vás každým krokem.
               </p>
               
               <div className="max-w-4xl mx-auto">
@@ -335,7 +371,7 @@ const ProFirmy = () => {
                   <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-transparent hidden md:block" />
                   
                   <div className="space-y-6">
-                    {journeySteps.map((step, index) => (
+                    {journeySteps.map((step) => (
                       <div key={step.number} className="relative flex gap-6 items-start">
                         {/* Step number */}
                         <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 z-10">
@@ -356,8 +392,21 @@ const ProFirmy = () => {
                             {step.description}
                           </p>
                           {step.note && (
-                            <p className="text-xs text-accent/80 mt-3 italic">
+                            <p className="text-xs text-muted-foreground/70 mt-3">
                               {step.note}
+                            </p>
+                          )}
+                          {step.methodologyNote && (
+                            <p className="text-xs text-primary/80 mt-3">
+                              <a 
+                                href={step.methodologyLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="hover:text-primary hover:underline transition-colors"
+                              >
+                                swimin.ai
+                              </a>
+                              {" — "}{step.methodologyNote}
                             </p>
                           )}
                         </div>
@@ -504,32 +553,28 @@ const ProFirmy = () => {
                 CO DOSTANETE DO RUKY
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Konkrétní výstupy, které můžete prezentovat vedení.
+                Výstupy, které můžete poslat vedení.
               </p>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
                 {deliverables.map((item) => {
                   const Icon = item.icon;
                   
                   return (
                     <div
                       key={item.title}
-                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-accent/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)]"
+                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-accent/20 rounded-xl p-5 transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)] text-center"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                        <Icon className="w-6 h-6 text-accent" />
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 mx-auto">
+                        <Icon className="w-5 h-5 text-accent" />
                       </div>
                       
-                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-2">
+                      <h3 className="text-xs font-semibold tracking-[0.15em] text-foreground mb-2">
                         {item.title}
                       </h3>
                       
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                      <p className="text-muted-foreground text-xs leading-relaxed">
                         {item.description}
-                      </p>
-                      
-                      <p className="text-xs text-accent/70 italic">
-                        {item.output}
                       </p>
                     </div>
                   );
@@ -597,20 +642,25 @@ const ProFirmy = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           </section>
 
-          {/* Primary CTA */}
-          <section className="py-12">
-            <div className="container mx-auto px-4 text-center">
-              <Link
-                to="/checkout"
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
-              >
-                RYCHLÁ DIAGNOSTIKA PRODUKTIVITY
-              </Link>
+          {/* CTA Band */}
+          <section className="py-20">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.15em] text-foreground mb-4">
+                  CHCETE PRVNÍ QUICK WINS DO 14 DNŮ?
+                </h2>
+                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                  Začněte rychlou diagnostikou produktivity. Výstupem je roadmapa + návrh pilotu.
+                </p>
+                <Link
+                  to="/checkout"
+                  className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                >
+                  Domluvit 15 minut
+                </Link>
+              </div>
             </div>
           </section>
-
-          {/* Trust Bar - Logo Ribbon */}
-          <LogoRibbon />
         </main>
         
         <Footer />
