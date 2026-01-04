@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import {
   Accordion,
@@ -14,54 +15,45 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { 
-  Users, 
-  FileText, 
-  Headphones, 
   Check, 
   Target, 
   Settings, 
   Rocket, 
   BarChart3,
-  CheckCircle,
-  ListChecks,
-  FileStack,
-  Workflow,
-  PieChart,
   Award,
   BadgeCheck,
   Clock,
-  Sparkles
+  Sparkles,
+  MessageSquare,
+  Wand2,
+  Bot,
+  Image,
+  ChevronDown
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
-const targetAudience = [
+const academies = [
   {
-    icon: Users,
-    title: "HR & L&D",
-    subtitle: "Standard dovedností + onboarding",
-    bullets: [
-      "Úspora 8+ hodin měsíčně na administrativě školení",
-      "Měřitelný přehled o adopci AI napříč firmou"
-    ]
+    icon: MessageSquare,
+    title: "ChatGPT Akademie",
+    description: "Mastery in prompting: e-maily, dokumenty, analýzy, automatizace."
   },
   {
-    icon: FileText,
-    title: "Backoffice",
-    subtitle: "E-maily, dokumenty, zápisy",
-    bullets: [
-      "50% rychlejší tvorba dokumentů a reportů",
-      "Automatizované zápisy z porad a e-mailové odpovědi"
-    ]
+    icon: Wand2,
+    title: "Microsoft Copilot Akademie",
+    description: "AI přímo ve Wordu, Excelu, Outlooku a dalších M365 aplikacích."
   },
   {
-    icon: Headphones,
-    title: "Obchod & podpora",
-    subtitle: "Nabídky, odpovědi, CRM",
-    bullets: [
-      "2× rychlejší příprava nabídek a odpovědí",
-      "Personalizované šablony pro zákaznickou komunikaci"
-    ]
+    icon: Bot,
+    title: "Agenti & Automatizace",
+    description: "Stavba vlastních AI agentů pro automatizaci procesů."
+  },
+  {
+    icon: Image,
+    title: "Multimédia Akademie",
+    description: "Generování obrázků, videa a hlasu pomocí AI."
   }
 ];
 
@@ -71,49 +63,46 @@ const pricingPlans = [
     licenses: "10 licencí",
     recommended: false,
     features: [
-      { text: "Přístup ke všem kurzům", included: true },
-      { text: "Pravidelné aktualizace", included: true },
-      { text: "Certifikace + LinkedIn odznak", included: true },
-      { text: "Admin reporting", included: true },
-      { text: "1× onboarding session", included: true },
-      { text: "Interní šablony & prompty", included: true }
-    ],
-    price: "od 890 Kč / licence"
+      "Přístup k vybraným akademiím",
+      "Pravidelné aktualizace obsahu",
+      "Certifikace + LinkedIn odznak",
+      "Admin reporting",
+      "1× onboarding session"
+    ]
   },
   {
     name: "Team",
     licenses: "25 licencí",
     recommended: true,
     features: [
-      { text: "Přístup ke všem kurzům", included: true },
-      { text: "Pravidelné aktualizace", included: true },
-      { text: "Certifikace + LinkedIn odznak", included: true },
-      { text: "Admin reporting", included: true },
-      { text: "2× onboarding session", included: true },
-      { text: "Interní šablony & prompty", included: true }
-    ],
-    price: "od 690 Kč / licence"
+      "Přístup ke všem akademiím",
+      "Pravidelné aktualizace obsahu",
+      "Certifikace + LinkedIn odznak",
+      "Admin reporting",
+      "2× onboarding session",
+      "Interní šablony & prompty"
+    ]
   },
   {
     name: "Company",
     licenses: "50+ licencí",
     recommended: false,
     features: [
-      { text: "Přístup ke všem kurzům", included: true },
-      { text: "Pravidelné aktualizace", included: true },
-      { text: "Certifikace + LinkedIn odznak", included: true },
-      { text: "Admin reporting", included: true },
-      { text: "Neomezené onboarding sessions", included: true },
-      { text: "Interní šablony & prompty", included: true }
-    ],
-    price: "Nabídka na míru"
+      "Přístup ke všem akademiím",
+      "Pravidelné aktualizace obsahu",
+      "Certifikace + LinkedIn odznak",
+      "Rozšířený admin reporting",
+      "Neomezené onboarding sessions",
+      "Interní šablony & prompty",
+      "Prioritní podpora"
+    ]
   }
 ];
 
 const processSteps = [
   {
     number: "1",
-    title: "Výběr rolí a cílů",
+    title: "Výběr cílů a akademií",
     duration: "15–30 min",
     icon: Target
   },
@@ -137,53 +126,30 @@ const processSteps = [
   }
 ];
 
-const deliverables = [
-  {
-    icon: ListChecks,
-    title: "Checklist quick wins pro role",
-    description: "Konkrétní kroky pro okamžité úspory času"
-  },
-  {
-    icon: FileStack,
-    title: "Balíček šablon & promptů",
-    description: "Připravené prompty pro vaše use-cases"
-  },
-  {
-    icon: Workflow,
-    title: "Doporučené workflow",
-    description: "Optimalizované procesy pro M365/ChatGPT"
-  },
-  {
-    icon: PieChart,
-    title: "Reporting pro HR",
-    description: "Přehled dokončování a adopce AI"
-  }
-];
-
 const faqItems = [
   {
-    question: "Jak rychle uvidíme dopad?",
-    answer: "První úspory času uvidíte do 2 týdnů od onboardingu. Typicky účastníci reportují 30–50% úsporu času na rutinních úkolech jako jsou e-maily, dokumenty a zápisy z porad."
+    question: "Jak dlouho máme přístup k akademiím?",
+    answer: "Licence jsou platné 12 měsíců od aktivace. Po uplynutí lze přístup prodloužit za zvýhodněnou cenu. Všechny aktualizace obsahu během období jsou automaticky zahrnuty."
   },
   {
-    question: "Co když nemáme Copilot?",
-    answer: "Akademie pokrývá jak Microsoft Copilot, tak ChatGPT a další AI nástroje. Obsah přizpůsobíme nástrojům, které ve firmě používáte nebo plánujete nasadit."
+    question: "Co když nemáme Microsoft Copilot?",
+    answer: "Žádný problém. Akademie ChatGPT, Agenti & Automatizace i Multimédia fungují nezávisle na Microsoft 365. Obsah přizpůsobíme nástrojům, které ve firmě používáte."
   },
   {
-    question: "Jak chráníte data?",
+    question: "Jak chráníte naše data?",
     answer: "Veškerá školení probíhají na zabezpečené platformě. Účastníci pracují s vlastními daty pouze ve svých firemních nástrojích. Nesbíráme ani neukládáme žádná firemní data."
   },
   {
-    question: "Jak funguje reporting?",
+    question: "Jak funguje reporting pro HR?",
     answer: "HR admin má přístup k dashboardu s přehledem: kdo dokončil které moduly, celková míra adopce, a doporučení pro další rozvoj. Report lze exportovat do PDF."
   },
   {
-    question: "Lze to koupit jako balík kurzů?",
-    answer: "Ano, nabízíme i jednorázový nákup přístupu bez předplatného. Kontaktujte nás pro individuální nabídku podle počtu účastníků a požadovaného obsahu."
+    question: "Jak fungují certifikáty a LinkedIn odznaky?",
+    answer: "Po úspěšném dokončení kurzu účastník obdrží certifikát a LinkedIn odznak, který může sdílet na svém profilu. Certifikát potvrzuje zvládnutí praktických AI dovedností."
   },
   {
-    question: "Jak fungují certifikáty a odznaky?",
-    answer: "Po úspěšném dokončení kurzu účastník obdrží certifikát a LinkedIn odznak, který může sdílet na svém profilu. Certifikát potvrzuje zvládnutí praktických AI dovedností."
+    question: "Jaký je minimální počet licencí?",
+    answer: "Minimální počet je 10 licencí (balíček Starter). Pro menší týmy doporučujeme individuální nákup kurzů na stránce Online akademie."
   }
 ];
 
@@ -194,7 +160,7 @@ const AkademieProTymy = () => {
     company: "",
     email: "",
     licenses: "",
-    roles: "",
+    academies: [] as string[],
     note: ""
   });
 
@@ -204,14 +170,24 @@ const AkademieProTymy = () => {
       title: "Poptávka odeslána",
       description: "Ozveme se vám do 24 hodin s nabídkou.",
     });
-    setFormData({ name: "", company: "", email: "", licenses: "", roles: "", note: "" });
+    setFormData({ name: "", company: "", email: "", licenses: "", academies: [], note: "" });
+  };
+
+  const toggleAcademy = (academy: string) => {
+    setFormData(prev => ({
+      ...prev,
+      academies: prev.academies.includes(academy)
+        ? prev.academies.filter(a => a !== academy)
+        : [...prev.academies, academy]
+    }));
   };
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Akademie pro týmy | AI dovednosti pro firmy | Talent Innovation"
-        description="Firemní AI akademie s licencemi, onboardingem a reportingem. Certifikát a LinkedIn odznak pro každého účastníka."
+        title="Akademie pro týmy | Hromadné licence AI kurzů | Talent Innovation"
+        description="Hromadné licence online AI akademií ze záznamu + onboarding + reporting dokončení. Certifikát a LinkedIn odznak pro každého účastníka."
+        path="/akademie-pro-tymy"
       />
       <NeuralNetworkBackground />
       <Navbar />
@@ -239,14 +215,17 @@ const AkademieProTymy = () => {
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-                Firemní licence + onboarding + šablony + reporting. 
+                Hromadné licence našich online akademií ze záznamu + onboarding + reporting dokončení.
                 <span className="text-primary font-medium"> Certifikát a LinkedIn odznak</span> pro každého účastníka.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#form">
-                  <Button size="lg" className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
-                    Chci nabídku licencí
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
+                  >
+                    Získat nabídku licencí
                   </Button>
                 </a>
                 <Button 
@@ -255,49 +234,43 @@ const AkademieProTymy = () => {
                   className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
                 >
                   <BadgeCheck className="w-5 h-5 mr-2" />
-                  Ukázka: certifikát & odznak
+                  Ukázka certifikátu & odznaku
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Pro koho Section */}
+        {/* Academies Section */}
         <section className="py-20 relative">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  Pro koho
+                  Jaké akademie lze licencovat
                 </span>
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                AI akademie přizpůsobená potřebám konkrétních rolí ve vaší firmě
+                Vyberte akademie podle potřeb vašeho týmu
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {targetAudience.map((item, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {academies.map((academy, index) => (
                 <div 
                   key={index}
-                  className="glass-card p-6 rounded-2xl border border-border/30 hover:border-primary/30 transition-all duration-300 group"
+                  className="glass-card p-6 rounded-2xl border border-accent/20 hover:border-accent/40 transition-all duration-300 group hover:-translate-y-1"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(102,252,241,0.3)] transition-all duration-300">
-                    <item.icon className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300">
+                    <academy.icon className="w-7 h-7 text-accent" />
                   </div>
-                  <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-2">
-                    {item.title}
+                  <h3 className="text-base font-semibold tracking-wider text-foreground uppercase mb-2">
+                    {academy.title}
                   </h3>
-                  <p className="text-sm text-primary/80 mb-4">{item.subtitle}</p>
-                  <ul className="space-y-3">
-                    {item.bullets.map((bullet, bIndex) => (
-                      <li key={bIndex} className="flex items-start gap-3 text-sm text-muted-foreground">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {academy.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -345,14 +318,10 @@ const AkademieProTymy = () => {
                     {plan.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-center gap-3 text-sm text-muted-foreground">
                         <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                        <span>{feature.text}</span>
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  
-                  <div className="text-center mb-6">
-                    <p className="text-xs text-muted-foreground">{plan.price}</p>
-                  </div>
                   
                   <a href="#form">
                     <Button 
@@ -363,7 +332,7 @@ const AkademieProTymy = () => {
                       }`}
                       variant={plan.recommended ? "default" : "outline"}
                     >
-                      Poptat balíček
+                      Získat nabídku
                     </Button>
                   </a>
                 </div>
@@ -408,63 +377,46 @@ const AkademieProTymy = () => {
           </div>
         </section>
 
-        {/* Deliverables Bento Grid */}
+        {/* FAQ Section */}
         <section className="py-20 bg-card/20 relative">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Co dostanete do ruky
-                </span>
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {deliverables.map((item, index) => (
-                <div 
-                  key={index}
-                  className="glass-card p-6 rounded-2xl border border-border/30 hover:border-primary/30 transition-all duration-300 group flex items-start gap-5"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0 group-hover:shadow-[0_0_20px_rgba(189,0,255,0.2)] transition-all duration-300">
-                    <item.icon className="w-7 h-7 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold tracking-wider text-foreground mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
                   Nejčastější otázky
                 </span>
               </h2>
             </div>
             
             <div className="max-w-3xl mx-auto">
-              <Accordion type="single" collapsible className="space-y-4">
+              <Accordion type="single" collapsible className="space-y-3">
                 {faqItems.map((item, index) => (
                   <AccordionItem 
                     key={index} 
                     value={`item-${index}`}
-                    className="glass-card rounded-xl border border-border/30 px-6 overflow-hidden"
+                    className="group border-0"
                   >
-                    <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-5">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground pb-5">
-                      {item.answer}
-                    </AccordionContent>
+                    <div className="relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 border-primary/15 hover:border-primary/30">
+                      <AccordionTrigger className="px-6 py-5 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
+                        <div className="flex items-center gap-4 w-full">
+                          <div className="flex-1 text-left">
+                            <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
+                              {item.question}
+                            </h3>
+                          </div>
+                          <div className="chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
+                            <ChevronDown className="w-4 h-4 transition-colors text-primary group-data-[state=open]:text-background" />
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="px-6 pb-5">
+                          <p className="text-muted-foreground leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </div>
+                      </AccordionContent>
+                    </div>
                   </AccordionItem>
                 ))}
               </Accordion>
@@ -473,7 +425,7 @@ const AkademieProTymy = () => {
         </section>
 
         {/* CTA Form Section */}
-        <section id="form" className="py-20 bg-gradient-to-b from-card/40 to-background relative">
+        <section id="form" className="py-20 relative">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
@@ -494,7 +446,7 @@ const AkademieProTymy = () => {
                 </p>
               </div>
               
-              <form onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl border border-primary/20 space-y-6">
+              <form onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl border border-primary/20 space-y-6" data-event="b2b_lead_submit">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Jméno *</Label>
@@ -533,34 +485,37 @@ const AkademieProTymy = () => {
                   />
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="licenses">Počet licencí</Label>
-                    <Select value={formData.licenses} onValueChange={(value) => setFormData({...formData, licenses: value})}>
-                      <SelectTrigger className="input-glow">
-                        <SelectValue placeholder="Vyberte" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="10">10 licencí (Starter)</SelectItem>
-                        <SelectItem value="25">25 licencí (Team)</SelectItem>
-                        <SelectItem value="50">50+ licencí (Company)</SelectItem>
-                        <SelectItem value="other">Jiný počet</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="roles">Cílové role</Label>
-                    <Select value={formData.roles} onValueChange={(value) => setFormData({...formData, roles: value})}>
-                      <SelectTrigger className="input-glow">
-                        <SelectValue placeholder="Vyberte" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="hr">HR & L&D</SelectItem>
-                        <SelectItem value="backoffice">Backoffice</SelectItem>
-                        <SelectItem value="sales">Obchod & podpora</SelectItem>
-                        <SelectItem value="mixed">Mix rolí</SelectItem>
-                      </SelectContent>
-                    </Select>
+                <div className="space-y-2">
+                  <Label htmlFor="licenses">Počet licencí</Label>
+                  <Select value={formData.licenses} onValueChange={(value) => setFormData({...formData, licenses: value})}>
+                    <SelectTrigger className="input-glow">
+                      <SelectValue placeholder="Vyberte" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="10">10 licencí (Starter)</SelectItem>
+                      <SelectItem value="25">25 licencí (Team)</SelectItem>
+                      <SelectItem value="50">50+ licencí (Company)</SelectItem>
+                      <SelectItem value="other">Jiný počet</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-3">
+                  <Label>Preferované akademie</Label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {academies.map((academy) => (
+                      <div 
+                        key={academy.title}
+                        className="flex items-center space-x-3 p-3 rounded-lg bg-card/50 border border-border/30 hover:border-primary/30 transition-colors cursor-pointer"
+                        onClick={() => toggleAcademy(academy.title)}
+                      >
+                        <Checkbox 
+                          checked={formData.academies.includes(academy.title)}
+                          onCheckedChange={() => toggleAcademy(academy.title)}
+                        />
+                        <span className="text-sm text-muted-foreground">{academy.title}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 
@@ -579,6 +534,7 @@ const AkademieProTymy = () => {
                   type="submit" 
                   size="lg" 
                   className="w-full py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
+                  data-event="b2b_lead_submit"
                 >
                   Získat nabídku
                 </Button>

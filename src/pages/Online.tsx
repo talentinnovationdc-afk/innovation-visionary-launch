@@ -3,9 +3,10 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
-import { MessageSquare, Wand2, Bot, Image, Check, Award, Clock, RefreshCw, Users, Star, ThumbsUp, ChevronLeft, ChevronRight } from "lucide-react";
+import { MessageSquare, Wand2, Bot, Image, Check, Award, Clock, RefreshCw, Users, Star, ThumbsUp, ChevronLeft, ChevronRight, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const courses = [
   {
@@ -250,6 +251,38 @@ const Online = () => {
                     </div>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+
+          {/* B2B CTA Band */}
+          <section className="py-12 relative">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto bg-gradient-to-br from-accent/10 via-card/80 to-primary/10 backdrop-blur-xl border border-accent/30 rounded-2xl p-8 md:p-10">
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                  <div className="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
+                    <Building className="w-8 h-8 text-accent" />
+                  </div>
+                  
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-lg font-semibold tracking-[0.15em] text-foreground uppercase mb-2">
+                      Kupujete pro tým?
+                    </h3>
+                    <p className="text-muted-foreground">
+                      Hromadné licence pro firmy: stejné akademie ze záznamu + onboarding + reporting dokončení.
+                    </p>
+                  </div>
+                  
+                  <Link to="/akademie-pro-tymy">
+                    <Button 
+                      className="px-6 py-3 text-sm font-semibold tracking-wider shadow-[0_0_15px_rgba(189,0,255,0.3)] hover:shadow-[0_0_25px_rgba(189,0,255,0.5)]"
+                      variant="outline"
+                      data-event="b2c_to_b2b_click"
+                    >
+                      Akademie pro týmy
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
