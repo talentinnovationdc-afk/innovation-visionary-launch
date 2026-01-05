@@ -683,17 +683,19 @@ const ProFirmy = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.15em] text-foreground mb-4">
-                  CHCETE PRVNÍ QUICK WINS DO 14 DNŮ?
+                  CHCETE PRVNÍ VÝSLEDKY DO 14 DNŮ?
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Začněte rychlou diagnostikou produktivity. Výstupem je roadmapa + návrh pilotu.
+                  Začněte krátkou diagnostikou (15 min). Do 14 dnů dostanete mapu rolí, 3–10 rychlých zlepšení a návrh pilotu.
                 </p>
                 <Link
                   to="/checkout"
                   className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                  data-event="b2b_cta_bottom"
                 >
-                  Domluvit 15 minut
+                  Chci 15 min diagnostiku
                 </Link>
+                <p className="text-xs text-muted-foreground/60 mt-3">Ozveme se do 24 hodin.</p>
               </div>
             </div>
           </section>
