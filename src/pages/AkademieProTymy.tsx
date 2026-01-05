@@ -129,28 +129,38 @@ const processSteps = [
 const hrFaqItems = [
   {
     question: "Jak rychle uvidíme výsledky?",
-    answer: "Typicky do 1–2 týdnů po onboardingu. První zrychlení uvidíte v rutinních úkolech (e-maily, dokumenty, šablony, reporting). Sledujeme dopad: čas, kvalita výstupů, chybovost.",
-    badge: "Výsledky"
+    answer: "Typicky do 1–2 týdnů po onboardingu.",
+    detail: "První zrychlení uvidíte v rutinních úkolech (e-maily, dokumenty, šablony). Sledujeme dopad: čas, kvalita výstupů, chybovost.",
+    badge: "Výsledky",
+    nextStep: { label: "Domluvit nabídku", link: "#form" }
   },
   {
     question: "Můžeme kombinovat akademie v jednom balíčku?",
-    answer: "Ano. Balíček poskládáte podle rolí v týmu (např. administrativě ChatGPT/Copilot, automatizátorům Agenti). Pro jednotný standard napříč firmou je nejrychlejší Kompletní program (3 akademie).",
-    badge: "Balíčky"
+    answer: "Ano, balíček poskládáte podle rolí v týmu.",
+    detail: "Například administrativě ChatGPT/Copilot, automatizátorům Agenti. Pro jednotný standard je nejrychlejší Kompletní program.",
+    badge: "Balíčky",
+    nextStep: { label: "Zobrazit balíčky", link: "#licence" }
   },
   {
     question: "Je možné koupit program pro onboarding nováčků?",
-    answer: "Ano. Firemní licence jsou ideální pro onboarding. Nováčci získají jasnou cestu a standardy; HR má přehled o dokončení a jednotný skillset napříč týmem.",
-    badge: "Onboarding"
+    answer: "Ano, firemní licence jsou ideální pro onboarding.",
+    detail: "Nováčci získají jasnou cestu a standardy; HR má přehled o dokončení a jednotný skillset.",
+    badge: "Onboarding",
+    nextStep: { label: "Domluvit nabídku", link: "#form" }
   },
   {
     question: "Jak se ověřuje dokončení akademie?",
-    answer: "Po dokončení účastník získá certifikát a LinkedIn odznak. Firma/HR má přehled dokončení (kdo prošel, v jakém je stavu, kde jsou mezery).",
-    badge: "Certifikace"
+    answer: "Certifikát + LinkedIn odznak po dokončení.",
+    detail: "Firma/HR má přehled dokončení (kdo prošel, v jakém je stavu, kde jsou mezery).",
+    badge: "Certifikace",
+    nextStep: { label: "Zobrazit akademie", link: "#akademie" }
   },
   {
     question: "Jaké jsou podmínky licencí a přístupu?",
-    answer: "Licence jsou určené pro týmové nasazení a reporting. Přístup je časově omezený, ale dlouhodobý (studium vlastním tempem). Konkrétní délku a podmínky nastavíme podle balíčku a počtu licencí.",
-    badge: "Podmínky"
+    answer: "Licence jsou určené pro týmové nasazení a reporting.",
+    detail: "Přístup je dlouhodobý (studium vlastním tempem). Konkrétní délku a podmínky nastavíme podle balíčku.",
+    badge: "Podmínky",
+    nextStep: { label: "Zobrazit balíčky", link: "#licence" }
   }
 ];
 
@@ -936,13 +946,30 @@ const AkademieProTymy = () => {
                         </AccordionTrigger>
                         
                         <AccordionContent>
-                          <div className="px-6 pb-5">
+                          <div className={`px-6 pb-5 bg-gradient-to-b ${isEven ? 'from-primary/5' : 'from-accent/5'} to-transparent`}>
                             <div className={`ml-[3.75rem] pl-4 border-l-2 ${
-                              isEven ? 'border-primary/20' : 'border-accent/20'
+                              isEven ? 'border-primary/30' : 'border-accent/30'
                             }`}>
-                              <p className="text-muted-foreground leading-relaxed">
+                              <p className="text-[hsl(210,5%,88%)] leading-[1.8] text-[15px] mb-2">
                                 {item.answer}
                               </p>
+                              {item.detail && (
+                                <p className="text-[hsl(210,5%,82%)] leading-[1.8] text-sm mb-4">
+                                  {item.detail}
+                                </p>
+                              )}
+                              {item.nextStep && (
+                                <div className="pt-3 border-t border-border/30">
+                                  <a 
+                                    href={item.nextStep.link}
+                                    className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                                  >
+                                    <span className="text-muted-foreground">Další krok:</span>
+                                    {item.nextStep.label}
+                                    <ChevronRight className="w-3 h-3" />
+                                  </a>
+                                </div>
+                              )}
                             </div>
                           </div>
                         </AccordionContent>

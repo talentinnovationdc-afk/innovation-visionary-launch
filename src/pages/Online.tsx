@@ -95,38 +95,50 @@ const faqItems = [
   { 
     icon: Clock, 
     question: "Jak dlouho mám přístup ke kurzu?", 
-    answer: "Přístup je dlouhodobý – studujete vlastním tempem, bez stresu z termínů. Obsah průběžně aktualizujeme, abyste měli vždy relevantní know-how.",
-    highlight: "Přístup: dlouhodobě"
+    answer: "Dlouhodobě, studujete vlastním tempem.",
+    detail: "Obsah průběžně aktualizujeme, abyste měli vždy relevantní know-how.",
+    highlight: "Přístup: dlouhodobě",
+    nextStep: { label: "Vybrat akademii", link: "#varianty" }
   },
   { 
     icon: Users, 
     question: "Je to pro mě / pro koho jsou akademie určené?", 
-    answer: "Pro každého, kdo chce pracovat efektivněji s AI. Od úplných začátečníků po pokročilé uživatele. Nevyžadujeme technické znalosti – stačí chuť zlepšit svou produktivitu.",
-    highlight: "Začátečník → pokročilý"
+    answer: "Pro každého, kdo chce pracovat efektivněji s AI.",
+    detail: "Od úplných začátečníků po pokročilé uživatele. Nevyžadujeme technické znalosti.",
+    highlight: "Začátečník → pokročilý",
+    nextStep: { label: "Vybrat akademii", link: "#varianty" }
   },
   { 
     icon: BadgeCheck, 
     question: "Kdy a za co dostanu certifikát a LinkedIn odznak?", 
-    answer: "Po dokončení akademie automaticky obdržíte certifikát e-mailem. LinkedIn odznak si přidáte jedním klikem – ověřitelný na profilu pro recruitery i kolegy.",
-    highlight: "Po dokončení"
+    answer: "Po dokončení akademie automaticky e-mailem.",
+    detail: "LinkedIn odznak si přidáte jedním klikem – ověřitelný pro recruitery i kolegy.",
+    highlight: "Po dokončení",
+    nextStep: { label: "Vybrat akademii", link: "#varianty" }
   },
   { 
     icon: Crown, 
     question: "Co je rozdíl mezi akademií a kompletním programem?", 
-    answer: "Akademie = 1 téma do hloubky. Kompletní program = všechny 3 akademie + hlavní certifikát Master of AI Creativity + prestižní LinkedIn odznak. Ideální pro komplexní AI skillset.",
-    highlight: "Kompletní program"
+    answer: "Akademie = 1 téma. Program = 3 akademie + hlavní certifikát.",
+    detail: "Kompletní program vede k prestižnímu odznaku Master of AI Creativity.",
+    highlight: "Kompletní program",
+    nextStep: { label: "Zobrazit Master program", link: "/online/master-of-ai-creativity" }
   },
   { 
     icon: Building, 
     question: "Můžu kurz koupit pro tým?", 
-    answer: "Ano – pro firmy nabízíme hromadné licence s onboardingem a reportingem dokončení. HR má přehled, kdo prošel a kde jsou mezery. Více na stránce Akademie pro týmy.",
-    highlight: "Firemní licence"
+    answer: "Ano, nabízíme hromadné licence s reportingem pro HR.",
+    detail: "HR má přehled, kdo prošel a kde jsou mezery.",
+    highlight: "Firemní licence",
+    nextStep: { label: "Akademie pro týmy", link: "/akademie-pro-tymy" }
   },
   { 
     icon: HelpCircle, 
     question: "Musím mít Copilot (M365), abych akademii využil naplno?", 
-    answer: "Ideálně ano, ale kurz obsahuje i obecné principy a workflow použitelné bez Copilotu. Pokud M365 nemáte, stále získáte praktické know-how pro práci s AI.",
-    highlight: "Není podmínkou"
+    answer: "Ideálně ano, ale kurz funguje i bez Copilotu.",
+    detail: "Obsahuje obecné principy a workflow použitelné s jinými nástroji.",
+    highlight: "Není podmínkou",
+    nextStep: { label: "Vybrat akademii", link: "#varianty" }
   }
 ];
 
@@ -705,13 +717,30 @@ const Online = () => {
                           </AccordionTrigger>
                           
                           <AccordionContent>
-                            <div className="px-6 pb-5">
+                            <div className={`px-6 pb-5 bg-gradient-to-b ${isEven ? 'from-primary/5' : 'from-accent/5'} to-transparent`}>
                               <div className={`ml-[3.75rem] pl-4 border-l-2 ${
-                                isEven ? 'border-primary/20' : 'border-accent/20'
+                                isEven ? 'border-primary/30' : 'border-accent/30'
                               }`}>
-                                <p className="text-muted-foreground leading-relaxed">
+                                <p className="text-[hsl(210,5%,88%)] leading-[1.8] text-[15px] mb-2">
                                   {item.answer}
                                 </p>
+                                {item.detail && (
+                                  <p className="text-muted-foreground leading-[1.8] text-sm mb-4">
+                                    {item.detail}
+                                  </p>
+                                )}
+                                {item.nextStep && (
+                                  <div className="pt-3 border-t border-border/30">
+                                    <Link 
+                                      to={item.nextStep.link}
+                                      className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                                    >
+                                      <span className="text-muted-foreground">Další krok:</span>
+                                      {item.nextStep.label}
+                                      <ChevronRight className="w-3 h-3" />
+                                    </Link>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </AccordionContent>
