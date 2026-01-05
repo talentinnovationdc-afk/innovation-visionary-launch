@@ -25,9 +25,11 @@ const services = [
     title: "DIAGNOSTIKA",
     subtitle: "AI Audit",
     description: "Najdeme role a procesy s nejrychlejším dopadem. Dostanete mapu úzkých míst, seznam quick wins a doporučenou roadmapu.",
+    output: "Co dostanete: mapa rolí + quick wins + ROI roadmapa.",
     features: ["Mapa rolí", "Quick wins", "ROI roadmapa", "Rizika & data"],
     price: "18 000 – 25 000 Kč",
     priceNote: null,
+    priceDetail: null,
     accent: "cyan",
     highlighted: true,
     cta: { label: "Chci rychlou diagnostiku", link: "/checkout" },
@@ -37,9 +39,11 @@ const services = [
     title: "IMPLEMENTACE",
     subtitle: "Workflow & automatizace",
     description: "Nasadíme konkrétní workflow a automatizace. Přidáme šablony a nastavíme měření dopadu (čas, kvalita, chybovost).",
-    features: ["Workflow automatizace", "Šablony a standardy", "Integrace nástrojů", "Měření dopadu"],
+    output: "Co dostanete: nasazené workflow + šablony + měření dopadu.",
+    features: ["Workflow automatizace", "Šablony", "Integrace", "Měření dopadu"],
     price: "25 000 – 35 000 Kč / MD",
     priceNote: "MD = konzultační den",
+    priceDetail: null,
     accent: "cyan",
     highlighted: false,
     cta: { label: "Chci návrh implementace", link: "/checkout" },
@@ -49,21 +53,25 @@ const services = [
     title: "STRATEGIE A ŘÍZENÍ",
     subtitle: "Pravidla & governance",
     description: "Nastavíme pravidla bezpečného používání AI, odpovědnosti a plán rozvoje. Regulace řešíme jen pokud je pro váš obor relevantní.",
-    features: ["Pravidla použití", "Governance (role a pravidla)", "Roadmapa", "Regulace (pokud relevantní)"],
+    output: "Co dostanete: pravidla AI + governance + roadmapa na 90 dní.",
+    features: ["Pravidla použití", "Governance", "Roadmapa", "Regulace (pokud relevantní)"],
     price: "15 000 – 19 000 Kč",
-    priceNote: "Workshop 0,5 dne pro vedení",
+    priceNote: null,
+    priceDetail: "Rozsah: workshop s vedením (0,5 dne, max. 6 osob) + stručný výstup (pravidla, governance, roadmapa).",
     accent: "purple",
     highlighted: false,
-    cta: { label: "Chci konzultaci", link: "/checkout" },
+    cta: { label: "Chci workshop s vedením", link: "/checkout" },
   },
   {
     icon: GraduationCap,
     title: "ŠKOLENÍ PRO TÝMY",
     subtitle: "Firemní akademie",
     description: "Zaměstnanci získají jednotný skillset pro práci s AI. Vy jako firma máte přehled o dokončení a jednotný standard napříč týmy.",
-    features: ["Týmový skillset", "Certifikace", "Přehled HR", "Standardy napříč firmou"],
+    output: "Co dostanete: přístupy + certifikace + HR reporting.",
+    features: ["Týmový skillset", "Certifikace", "Přehled HR", "Standardy"],
     price: "od 1 490 Kč / licence",
     priceNote: "dle balíčku licencí",
+    priceDetail: null,
     accent: "purple",
     highlighted: false,
     cta: { label: "Zobrazit akademie pro týmy", link: "/akademie-pro-tymy" },
@@ -406,8 +414,12 @@ const ProFirmy = () => {
                         {service.title}
                       </h3>
                       
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-5 flex-grow">
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-3 flex-grow">
                         {service.description}
+                      </p>
+                      
+                      <p className="text-xs text-primary font-medium mb-4 italic">
+                        {service.output}
                       </p>
                       
                       <div className="flex flex-wrap gap-1.5 mb-5">
@@ -442,13 +454,18 @@ const ProFirmy = () => {
                             </span>
                           </span>
                         </p>
+                        {service.priceDetail && (
+                          <p className="text-[9px] text-muted-foreground/60 mt-2 leading-relaxed">
+                            {service.priceDetail}
+                          </p>
+                        )}
                         
                         <Link
                           to={service.cta.link}
                           className={`mt-4 inline-flex items-center justify-center w-full px-4 py-2.5 text-[10px] font-semibold tracking-[0.1em] uppercase rounded-lg transition-all duration-300 ${
-                            isPurple
-                              ? "border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent"
-                              : "border border-primary/50 text-primary bg-primary/5 hover:bg-primary/10 hover:border-primary"
+                            service.highlighted
+                              ? "bg-primary text-primary-foreground shadow-[0_0_15px_hsla(176,96%,69%,0.3)] hover:shadow-[0_0_25px_hsla(176,96%,69%,0.5)]"
+                              : "border-2 border-primary text-primary hover:bg-primary/10"
                           }`}
                         >
                           {service.cta.label}
@@ -459,8 +476,8 @@ const ProFirmy = () => {
                 })}
               </div>
               
-              <p className="text-[11px] text-muted-foreground/60 text-center mt-8 max-w-2xl mx-auto">
-                Ceny jsou bez DPH. Rozsah upřesníme podle počtu rolí, systémů a požadované míry automatizace.
+              <p className="text-[11px] text-muted-foreground/70 text-center mt-8 max-w-2xl mx-auto">
+                Ceny jsou bez DPH. Rozsah upřesníme podle počtu rolí, systémů a míry automatizace.
               </p>
             </div>
             
