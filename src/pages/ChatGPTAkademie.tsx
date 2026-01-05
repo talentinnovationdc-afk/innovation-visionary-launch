@@ -35,11 +35,11 @@ const learnings = [
   "Efektivně promptovat a získat přesné výstupy na první pokus",
   "Automatizovat tvorbu dokumentů, e-mailů a reportů",
   "Analyzovat data a vytvářet přehledy během minut",
-  "Vytvořit vlastní AI agenty pro opakující se úkoly",
+  "Sestavit opakovatelné workflow a šablony pro vaši práci",
   "Pracovat s hlasem, obrazem a multimodálními vstupy",
   "Integrovat GPT do vašich stávajících workflow",
-  "Rozpoznat a eliminovat AI halucinace",
-  "Stavět firemní AI nástroje bez programování"
+  "Rozpoznat a výrazně omezit halucinace / ověřovat výstupy",
+  "Navrhnout jednoduché interní postupy a standardy pro práci s AI"
 ];
 
 const ChatGPTAkademie = () => {
@@ -78,13 +78,16 @@ const ChatGPTAkademie = () => {
               {/* Meta badges */}
               <div className="flex flex-wrap justify-center gap-3 mb-8">
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-primary" /> 12×2 hodiny
+                  <Clock className="w-4 h-4 text-primary" /> 12 modulů (cca 24 h)
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-primary" /> Začátečníci – Pokročilí
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
                   <Timer className="w-4 h-4 text-primary" /> Studujte vlastním tempem
+                </span>
+                <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
+                  <Award className="w-4 h-4 text-primary" /> Certifikát + LinkedIn odznak
                 </span>
               </div>
               
@@ -110,9 +113,10 @@ const ChatGPTAkademie = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary/50 text-primary hover:bg-primary/10"
+                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary text-primary bg-primary/5 hover:bg-primary/15"
                   >
-                    Zobrazit roadmapu
+                    <BookOpen className="w-4 h-4 mr-2" />
+                    Zobrazit osnovu (ukázka)
                   </Button>
                 </a>
               </div>
