@@ -3,11 +3,12 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
+import { MethodologySection } from "@/components/MethodologySection";
 import { 
   Search, Bot, Users, GraduationCap, Banknote, 
   ClipboardCheck, Shield, Scale, FileCode,
   UserCheck, FileText, ShoppingCart, ChevronDown,
-  FileBarChart, Route, LayoutGrid, Award, Rocket, RefreshCw,
+  FileBarChart, Route, LayoutGrid, Award,
   Clock, MessageSquare, Lock, Zap, BookOpen, BarChart3, HelpCircle
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -91,53 +92,6 @@ const targetAudience = [
   },
 ];
 
-const journeySteps = [
-  {
-    number: 1,
-    icon: Search,
-    title: "AUDIT",
-    description: "Kde mizí čas a kde AI přinese nejrychlejší úspory (80/20).",
-    accent: "cyan" as const,
-  },
-  {
-    number: 2,
-    icon: FileText,
-    title: "BLUEPRINT",
-    description: "Plán nasazení: procesy, data, role, pravidla a rizika.",
-    note: "Volitelně pro regulované týmy: ISO / ADR / MDR / AI Act readiness.",
-    accent: "cyan" as const,
-  },
-  {
-    number: 3,
-    icon: Rocket,
-    title: "IMPLEMENTACE",
-    description: "Nasazení AI-native workflow + měření dopadu.",
-    accent: "cyan" as const,
-    link: {
-      text: "swimin.ai",
-      url: "https://www.swimin.ai",
-      note: "Auditovatelný standard nasazení pro spolehlivost a bezpečnost.",
-    },
-  },
-  {
-    number: 4,
-    icon: GraduationCap,
-    title: "TRANSFER",
-    description: "Akademie pro týmy: e-learning, šablony, certifikace a LinkedIn odznaky.",
-    accent: "purple" as const,
-    cta: {
-      text: "Akademie pro týmy",
-      href: "/akademie-pro-tymy"
-    }
-  },
-  {
-    number: 5,
-    icon: RefreshCw,
-    title: "EVOLUCE",
-    description: "Dlouhodobé zlepšování: nové automatizace, upgrade standardů a obsahu.",
-    accent: "purple" as const,
-  },
-];
 
 const expertisePoints = [
   {
@@ -354,166 +308,7 @@ const ProFirmy = () => {
           </section>
 
           {/* Cesta k digitální autonomii */}
-          <section className="py-20 md:py-28 relative overflow-hidden">
-            {/* Subtle gradient background */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(176,96%,69%,0.03)_0%,_transparent_50%)] pointer-events-none" />
-            
-            <div className="container mx-auto px-4 relative z-10">
-              <div className="text-center mb-16">
-                <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
-                  Náš proces
-                </span>
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
-                  CESTA K DIGITÁLNÍ AUTONOMII
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal leading-relaxed">
-                  Od prvotní analýzy po dlouhodobou evoluci. Provázíme vás každým krokem.
-                </p>
-              </div>
-
-              {/* Timeline */}
-              <div className="max-w-4xl mx-auto relative">
-                {/* Vertical line */}
-                <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-accent/50 md:-translate-x-px" />
-
-                {journeySteps.map((step, index) => {
-                  const Icon = step.icon;
-                  const isCyan = step.accent === "cyan";
-                  const isEven = index % 2 === 0;
-
-                  return (
-                    <div
-                      key={step.number}
-                      className={`relative flex items-start gap-6 md:gap-0 mb-12 last:mb-0 ${
-                        isEven ? "md:flex-row" : "md:flex-row-reverse"
-                      }`}
-                    >
-                      {/* Content Card */}
-                      <div className={`flex-1 md:w-1/2 ${isEven ? "md:pr-12" : "md:pl-12"}`}>
-                        <div
-                          className={`
-                            group relative p-6 rounded-xl
-                            bg-gradient-to-b from-[#1F2833]/80 to-[#0B0C10]/90
-                            border border-white/5
-                            transition-all duration-300 ease-out
-                            hover:-translate-y-1
-                            ${isCyan 
-                              ? "hover:border-primary/30 hover:shadow-[0_0_30px_rgba(102,252,241,0.12)]" 
-                              : "hover:border-accent/30 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)]"
-                            }
-                          `}
-                        >
-                          {/* Glow overlay */}
-                          <div 
-                            className={`
-                              absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 
-                              transition-opacity duration-300 pointer-events-none
-                              ${isCyan 
-                                ? "bg-[radial-gradient(ellipse_at_top,_hsl(176,96%,69%,0.05)_0%,_transparent_70%)]"
-                                : "bg-[radial-gradient(ellipse_at_top,_hsl(284,100%,50%,0.05)_0%,_transparent_70%)]"
-                              }
-                            `}
-                          />
-
-                          <div className="relative z-10">
-                            {/* Icon */}
-                            <div 
-                              className={`
-                                w-10 h-10 rounded-lg flex items-center justify-center mb-4
-                                transition-all duration-300
-                                ${isCyan 
-                                  ? "bg-primary/10 border border-primary/20 group-hover:bg-primary/20" 
-                                  : "bg-accent/10 border border-accent/20 group-hover:bg-accent/20"
-                                }
-                              `}
-                            >
-                              <Icon className={`h-5 w-5 ${isCyan ? "text-primary" : "text-accent"}`} />
-                            </div>
-
-                            {/* Title */}
-                            <h3 className="text-sm font-semibold tracking-[0.2em] text-foreground mb-2 uppercase">
-                              {step.title}
-                            </h3>
-
-                            {/* Description */}
-                            <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                              {step.description}
-                              {step.link && (
-                                <>
-                                  {" "}
-                                  <a
-                                    href={step.link.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`
-                                      font-semibold underline underline-offset-2 decoration-1
-                                      transition-colors duration-200
-                                      ${isCyan 
-                                        ? "text-primary hover:text-primary/80" 
-                                        : "text-accent hover:text-accent/80"
-                                      }
-                                    `}
-                                  >
-                                    {step.link.text}
-                                  </a>
-                                  {step.link.note && (
-                                    <span className="text-muted-foreground/70"> — {step.link.note}</span>
-                                  )}
-                                </>
-                              )}
-                            </p>
-                            
-                            {step.note && (
-                              <p className="text-xs text-muted-foreground/70 mt-3 italic">
-                                {step.note}
-                              </p>
-                            )}
-                            
-                            {step.cta && (
-                              <Link
-                                to={step.cta.href}
-                                className={`
-                                  inline-flex items-center gap-2 mt-4 px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-lg
-                                  transition-all duration-300
-                                  ${isCyan 
-                                    ? "border border-primary/40 text-primary hover:bg-primary/10 hover:border-primary" 
-                                    : "border border-accent/40 text-accent hover:bg-accent/10 hover:border-accent"
-                                  }
-                                `}
-                                data-event="b2b_transfer_click"
-                              >
-                                {step.cta.text}
-                              </Link>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Timeline Node */}
-                      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
-                        <div 
-                          className={`
-                            w-12 h-12 rounded-full flex items-center justify-center
-                            text-sm font-bold tracking-wider
-                            transition-all duration-300
-                            ${isCyan 
-                              ? "bg-primary/20 border-2 border-primary text-primary shadow-[0_0_20px_rgba(102,252,241,0.3)]" 
-                              : "bg-accent/20 border-2 border-accent text-accent shadow-[0_0_20px_rgba(189,0,255,0.3)]"
-                            }
-                          `}
-                        >
-                          {step.number}
-                        </div>
-                      </div>
-
-                      {/* Spacer for opposite side */}
-                      <div className="hidden md:block flex-1 md:w-1/2" />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
+          <MethodologySection />
 
           {/* Service & Pricing Grid */}
           <section className="py-20 bg-card/20 relative">
