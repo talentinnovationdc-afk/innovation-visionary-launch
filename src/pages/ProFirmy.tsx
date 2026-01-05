@@ -52,7 +52,6 @@ const services = [
     features: ["Pravidla použití", "Governance (role a pravidla)", "Roadmapa", "Regulace (pokud relevantní)"],
     price: "15 000 – 19 000 Kč",
     priceNote: "Workshop 0,5 dne pro vedení",
-    priceNote2: "Výstup: návrh pravidel, rolí a dalších kroků (1–2 strany)",
     accent: "purple",
     highlighted: false,
     cta: { label: "Chci konzultaci", link: "/checkout" },
@@ -443,11 +442,6 @@ const ProFirmy = () => {
                             </span>
                           </span>
                         </p>
-                        {service.priceNote2 && (
-                          <p className="text-[10px] text-muted-foreground/60 mt-1">
-                            {service.priceNote2}
-                          </p>
-                        )}
                         
                         <Link
                           to={service.cta.link}
