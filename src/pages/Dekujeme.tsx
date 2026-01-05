@@ -66,7 +66,7 @@ const Dekujeme = () => {
               </h1>
               
               <p className="text-muted-foreground text-base leading-relaxed normal-case tracking-normal">
-                Objednávka je úspěšně zpracována. Přístup vám přišel e-mailem do 2 minut. Pokud ho nevidíte, zkontrolujte Spam/Hromadné.
+                Objednávka je úspěšně zpracována. Přístup Vám dorazí v průběhu dnešního dne.
               </p>
 
               {/* Help link */}
