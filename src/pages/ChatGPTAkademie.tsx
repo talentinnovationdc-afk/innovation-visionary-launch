@@ -315,8 +315,8 @@ const ChatGPTAkademie = () => {
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           {module.description}
                         </p>
-                        <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 border border-primary/20">
-                          <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                        <div className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                             <FileText className="w-4 h-4 text-primary" />
                           </div>
                           <div>
