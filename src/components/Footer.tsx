@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.png";
 
@@ -53,18 +53,18 @@ export const Footer = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="#"
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:glow-cyan"
-              aria-label="Twitter"
-            >
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a
-              href="#"
+              href="mailto:Daniel.Cerveny@t-i.cz"
               className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:glow-cyan"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
+            </a>
+            <a
+              href="tel:+420733611425"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:glow-cyan"
+              aria-label="Telefon"
+            >
+              <Phone className="h-5 w-5" />
             </a>
           </div>
         </div>
