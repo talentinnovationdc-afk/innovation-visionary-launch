@@ -79,14 +79,14 @@ const courses = [
 ];
 
 const skillsGrid = [
-  { icon: MessageSquare, skill: "Prompting", output: "Šablony promptů", benefit: "Rychlejší a přesnější výstupy z AI" },
-  { icon: FileText, skill: "Dokumenty", output: "Automatizované reporty", benefit: "Méně času na rutinní tvorbu" },
-  { icon: Zap, skill: "E-maily", output: "Šablony odpovědí", benefit: "Profesionální komunikace za minutu" },
-  { icon: Target, skill: "Analýzy", output: "Dashboardy", benefit: "Data-driven rozhodování" },
-  { icon: Lightbulb, skill: "Kreativita", output: "Návrhy & koncepty", benefit: "Nové nápady na vyžádání" },
-  { icon: Layers, skill: "Prezentace", output: "Slide decky", benefit: "Působivé prezentace rychle" },
-  { icon: Workflow, skill: "Automatizace", output: "Workflow šablony", benefit: "Opakující se úkoly na autopilota" },
-  { icon: Bot, skill: "Agenti", output: "Custom boti", benefit: "AI asistenti pro váš tým" }
+  { icon: MessageSquare, skill: "Prompting", output: "Šablony promptů", benefit: "Rychlejší a přesnější výstupy díky šablonám promptů." },
+  { icon: FileText, skill: "Dokumenty", output: "Automatizované reporty", benefit: "Automatizované reporty a texty bez rutiny." },
+  { icon: Zap, skill: "E-maily", output: "Šablony odpovědí", benefit: "Profesionální odpovědi za minutu." },
+  { icon: Target, skill: "Analýzy", output: "Dashboardy", benefit: "Dashboardy a rozhodování z dat." },
+  { icon: Lightbulb, skill: "Kreativita", output: "Návrhy a koncepty", benefit: "Návrhy a koncepty na vyžádání." },
+  { icon: Layers, skill: "Prezentace", output: "Prezentace (šablony)", benefit: "Šablony a tvorba prezentací rychle." },
+  { icon: Workflow, skill: "Automatizace", output: "Workflow šablony", benefit: "Opakované úkoly na autopilota." },
+  { icon: Bot, skill: "Agenti", output: "Vlastní AI asistenti", benefit: "Vlastní AI asistenti pro váš tým." }
 ];
 
 // Testimonials are now in TestimonialTicker component
@@ -347,10 +347,10 @@ const Online = () => {
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Co si odnesete v kapse
+                  Co získáte do praxe
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Praktické dovednosti a výstupy, které začnete používat okamžitě
+                  Praktické výstupy, které použijete okamžitě.
                 </p>
               </div>
               
@@ -375,42 +375,53 @@ const Online = () => {
             <div className="container px-4">
               <div className="max-w-5xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-8 items-stretch">
-                  {/* Left - Live Online Training (more expensive) */}
-                  <div className="glass-card p-8 rounded-2xl border border-muted/30 relative overflow-hidden flex flex-col">
-                    <div className="absolute inset-0 bg-gradient-to-br from-muted/10 to-transparent" />
+                  {/* Left - Custom Corporate Training */}
+                  <div className="glass-card p-8 rounded-2xl border border-accent/30 relative overflow-hidden flex flex-col hover:border-accent/50 transition-all duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
                     <div className="relative z-10 flex-1 flex flex-col">
-                      <p className="text-sm text-muted-foreground mb-2">Online školení živě s lektorem</p>
+                      <p className="text-sm text-accent mb-2 font-semibold">Firemní školení na míru</p>
                       <div className="mb-4">
-                        <span className="text-3xl font-bold text-muted-foreground/60 line-through">18 700 Kč</span>
-                        <span className="text-xs text-muted-foreground/50 ml-2">vč. DPH</span>
+                        <span className="text-xl font-semibold text-foreground">Cena dle rozsahu</span>
                       </div>
                       
-                      <ul className="space-y-2 text-left flex-1">
-                        <li className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <span className="text-muted-foreground/50 mt-0.5">•</span>
-                          Fixní termín (musíte se přizpůsobit)
+                      <ul className="space-y-2 text-left flex-1 mb-4">
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                          Interaktivně s lektorem (živě)
                         </li>
-                        <li className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <span className="text-muted-foreground/50 mt-0.5">•</span>
-                          Omezená kapacita skupiny
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                          Malá skupina = zpětná vazba
                         </li>
-                        <li className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <span className="text-muted-foreground/50 mt-0.5">•</span>
-                          Nutná účast v reálném čase
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                          Práce na reálných příkladech
                         </li>
-                        <li className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <span className="text-muted-foreground/50 mt-0.5">•</span>
-                          Povinná účast min. 80 %
+                        <li className="flex items-center gap-2 text-xs text-foreground">
+                          <Check className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                          Intenzivní progres v krátkém čase
                         </li>
                       </ul>
+                      
+                      <div className="mt-auto">
+                        <Link to="/profirmy">
+                          <Button 
+                            variant="outline"
+                            size="sm" 
+                            className="w-full text-xs border-accent/50 text-accent hover:bg-accent/10"
+                          >
+                            Poptat školení pro firmu
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Right - Online Academy (cheaper, highlighted) */}
+                  {/* Right - Online Academy (highlighted) */}
                   <div className="glass-card p-8 rounded-2xl border border-primary/40 relative overflow-hidden shadow-[0_0_30px_rgba(102,252,241,0.15)] flex flex-col">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
                     <div className="relative z-10 flex-1 flex flex-col">
-                      <p className="text-sm text-primary mb-2 font-semibold">Online akademie ze záznamu</p>
+                      <p className="text-sm text-primary mb-2 font-semibold">Online akademie (vlastním tempem)</p>
                       <div className="mb-4">
                         <span className="text-3xl font-bold text-foreground">od 4 470 Kč</span>
                         <span className="text-xs text-muted-foreground/70 ml-2">vč. DPH</span>
