@@ -257,13 +257,12 @@ const Metodika = () => {
               </p>
               
               <div className="max-w-3xl mx-auto relative">
-                <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-accent hidden md:block" />
-                
                 <div className="space-y-8">
                   {methodologySteps.map((step, index) => {
                     const Icon = step.icon;
                     const isLeft = index % 2 === 0;
                     const isPurple = step.accent === "purple";
+                    const isLast = index === methodologySteps.length - 1;
                     
                     return (
                       <div
@@ -308,11 +307,25 @@ const Metodika = () => {
                           </div>
                         </div>
                         
-                        <div className={`hidden md:flex w-4 h-4 rounded-full border-2 z-10 ${
-                          isPurple
-                            ? "bg-accent/20 border-accent"
-                            : "bg-primary/20 border-primary"
-                        }`} />
+                        {/* Timeline dot and connector */}
+                        <div className="hidden md:flex flex-col items-center">
+                          {/* Dot */}
+                          <div className={`w-5 h-5 rounded-full border-2 z-10 shadow-lg ${
+                            isPurple
+                              ? "bg-accent/30 border-accent shadow-[0_0_12px_rgba(189,0,255,0.5)]"
+                              : "bg-primary/30 border-primary shadow-[0_0_12px_rgba(102,252,241,0.5)]"
+                          }`} />
+                          {/* Connector line to next step */}
+                          {!isLast && (
+                            <div className={`w-0.5 h-16 ${
+                              index < 2 
+                                ? "bg-gradient-to-b from-primary to-primary/50" 
+                                : index === 2 
+                                  ? "bg-gradient-to-b from-primary/50 to-accent/50"
+                                  : "bg-gradient-to-b from-accent/50 to-accent"
+                            }`} />
+                          )}
+                        </div>
                         
                         <div className="flex-1 hidden md:block" />
                       </div>
