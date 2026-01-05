@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
@@ -103,80 +104,90 @@ const Index = () => {
               
               <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 {/* Card A - Pro firmy */}
-                <Link 
-                  to="/profirmy"
-                  className="glass-card p-8 rounded-2xl border border-primary/30 hover:border-primary/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(102,252,241,0.2)] block"
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -8 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(102,252,241,0.3)] transition-all duration-300">
-                      <Building className="w-7 h-7 text-primary" />
+                  <Link 
+                    to="/profirmy"
+                    className="glass-card p-8 rounded-2xl border border-primary/30 hover:border-primary/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(102,252,241,0.2)] block h-full"
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(102,252,241,0.3)] transition-all duration-300">
+                        <Building className="w-7 h-7 text-primary" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Pro firmy a HR</span>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Pro firmy a HR</span>
+                    
+                    <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
+                      Rychlé úspory času napříč rolemi — bezpečně a měřitelně
+                    </h3>
+                    
+                    <ul className="space-y-3 mb-6">
+                      <li className="flex items-center gap-3 text-muted-foreground">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                        <span>Rychlé úspory času v rolích a procesech</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-muted-foreground">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                        <span>Bezpečné workflow a pravidla použití</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-muted-foreground">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                        <span>Dopad měříme (čas, kvalita, chybovost)</span>
+                      </li>
+                    </ul>
+                    
+                    <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-200">
+                      Chci rychlou diagnostiku <ArrowRight className="w-5 h-5" />
                     </div>
-                  </div>
-                  
-                  <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
-                    Rychlé úspory času napříč rolemi — bezpečně a měřitelně
-                  </h3>
-                  
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-center gap-3 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span>Rychlé úspory času v rolích a procesech</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span>Bezpečné workflow a pravidla použití</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span>Dopad měříme (čas, kvalita, chybovost)</span>
-                    </li>
-                  </ul>
-                  
-                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-200">
-                    Chci rychlou diagnostiku <ArrowRight className="w-5 h-5" />
-                  </div>
-                </Link>
+                  </Link>
+                </motion.div>
 
                 {/* Card B - Pro profesionály */}
-                <Link 
-                  to="/online"
-                  className="glass-card p-8 rounded-2xl border border-accent/30 hover:border-accent/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(189,0,255,0.2)] block"
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -8 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300">
-                      <BadgeCheck className="w-7 h-7 text-accent" />
+                  <Link 
+                    to="/online"
+                    className="glass-card p-8 rounded-2xl border border-accent/30 hover:border-accent/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(189,0,255,0.2)] block h-full"
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300">
+                        <BadgeCheck className="w-7 h-7 text-accent" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">Pro profesionály</span>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">Pro profesionály</span>
+                    
+                    <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
+                      Získejte uznání dovedností v AI, které je vidět
+                    </h3>
+                    
+                    <ul className="space-y-3 mb-6">
+                      <li className="flex items-center gap-3 text-muted-foreground">
+                        <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                        <span>Certifikát + LinkedIn odznak po dokončení</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-muted-foreground">
+                        <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                        <span>Praktické workflow pro vaši profesi</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-muted-foreground">
+                        <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                        <span>Dlouhodobý přístup k obsahu a studium vlastním tempem</span>
+                      </li>
+                    </ul>
+                    
+                    <div className="flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all duration-200">
+                      Získat certifikaci a odznak <ArrowRight className="w-5 h-5" />
                     </div>
-                  </div>
-                  
-                  <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
-                    Získejte uznání dovedností v AI, které je vidět
-                  </h3>
-                  
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-center gap-3 text-muted-foreground">
-                      <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>Certifikát + LinkedIn odznak po dokončení</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-muted-foreground">
-                      <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>Praktické workflow pro vaši profesi</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-muted-foreground">
-                      <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>Dlouhodobý přístup k obsahu a studium vlastním tempem</span>
-                    </li>
-                  </ul>
-                  
-                  <div className="flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all duration-200">
-                    Získat certifikaci a odznak <ArrowRight className="w-5 h-5" />
-                  </div>
-                </Link>
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </section>
