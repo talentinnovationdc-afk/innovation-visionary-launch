@@ -16,6 +16,7 @@ import ChatGPTAkademie from "./pages/ChatGPTAkademie";
 import CopilotAkademie from "./pages/CopilotAkademie";
 import AgentiAutomatizace from "./pages/AgentiAutomatizace";
 import NotFound from "./pages/NotFound";
+import Gdpr from "./pages/Gdpr";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/online/chatgptakademie" element={<ChatGPTAkademie />} />
           <Route path="/online/copilotakademie" element={<CopilotAkademie />} />
           <Route path="/online/agentiautomatizace" element={<AgentiAutomatizace />} />
+          <Route path="/gdpr" element={<Gdpr />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
