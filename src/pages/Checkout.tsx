@@ -249,9 +249,6 @@ const Checkout = () => {
             {/* Logo Ribbon Section */}
             <div className="mt-12">
               <LogoRibbon />
-              <p className="text-center text-xs text-muted-foreground/70 mt-4 max-w-lg mx-auto">
-                Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
-              </p>
             </div>
           </div>
         </div>
