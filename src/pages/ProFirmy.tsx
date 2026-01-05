@@ -209,15 +209,15 @@ const ProFirmy = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[0.1em] mb-6 leading-[1.2]">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Zrychlete práci týmů díky AI workflow
+                    Zrychlete práci týmů díky AI postupům
                   </span>
                   <br />
                   <span className="text-foreground text-xl md:text-3xl lg:text-4xl">
-                    a firemní Akademii.
+                    a firemní akademii.
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Od rychlé diagnostiky přes automatizace až po škálování know-how. <span className="text-foreground font-medium">Bezpečně a měřitelně.</span>
+                  Za 15 minut zjistíte, kde v rolích vzniká největší ztráta času. <span className="text-foreground font-medium">Navrhneme rychlé výhry a bezpečná pravidla nasazení.</span>
                 </p>
                 
                 {/* Proof Chips */}
@@ -234,30 +234,35 @@ const ProFirmy = () => {
                 </div>
                 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
-                  <Link
-                    to="/checkout"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
-                    data-event="b2b_primary_cta"
-                  >
-                    Rychlá diagnostika produktivity (15 min)
-                  </Link>
+                <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
+                  <div className="flex flex-col items-center">
+                    <Link
+                      to="/checkout"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                      data-event="b2b_primary_cta"
+                    >
+                      Rychlá diagnostika
+                    </Link>
+                    <span className="text-xs text-muted-foreground mt-2">15 min • bez závazku</span>
+                  </div>
                   <Link
                     to="/akademie-pro-tymy"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent transition-all duration-300"
                     data-event="b2b_secondary_cta"
                   >
-                    Akademie pro týmy (licence)
+                    Licence pro týmy
                   </Link>
                 </div>
               </div>
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            
+            {/* Logo Trust Strip - directly in hero for tighter spacing */}
+            <div className="mt-8">
+              <LogoRibbon />
+            </div>
           </section>
-
-          {/* Logo Trust Strip */}
-          <LogoRibbon />
 
           {/* Pro koho Section */}
           <section className="py-20 bg-card/20 relative">
