@@ -13,26 +13,26 @@ const steps: Step[] = [
   {
     number: "01",
     title: "DIAGNOSTIKA",
-    description: "Najdeme role a procesy, kde AI přinese rychlé úspory a minimální riziko.",
+    description: "Najdeme role a procesy s největší úsporou času a nízkým rizikem. Výstup: mapa příležitostí + quick wins.",
     icon: Search,
   },
   {
     number: "02",
     title: "PLÁN",
-    description: "Navrhneme postup a pravidla: data, nástroje, governance.",
-    note: "Regulace (AI Act/ISO) řešíme, pokud je to pro váš obor relevantní.",
+    description: "Navrhneme postup a pravidla: data, nástroje, pravidla použití a odpovědnosti.",
+    note: "Regulace (AI Act/ISO) řešíme jen pokud je to pro váš obor relevantní.",
     icon: FileText,
   },
   {
     number: "03",
     title: "IMPLEMENTACE",
-    description: "Nasadíme workflow a automatizace. Měříme dopad (čas, kvalita, chybovost).",
+    description: "Nasadíme workflow a automatizace. Dopad měříme (čas, kvalita, chybovost).",
     icon: Cog,
   },
   {
     number: "04",
     title: "ZAŠKOLENÍ",
-    description: "Tým dostane know-how a přístup do Online akademií. HR má přehled dokončení.",
+    description: "Tým dostane know-how a přístup do Online akademie. HR má přehled o dokončení.",
     icon: GraduationCap,
     accent: "purple",
   },
@@ -59,11 +59,8 @@ export const MethodologySection = () => {
           <h2 id="methodology-heading" className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
             CESTA K DIGITÁLNÍ AUTONOMII
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal leading-relaxed mb-2">
-            5 kroků od analýzy k fungující automatizaci.
-          </p>
-          <p className="text-sm text-muted-foreground/70 max-w-xl mx-auto normal-case tracking-normal">
-            Začínáme rolí a rychlými výhrami. Technologie přidáváme až když dává smysl.
+          <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal leading-relaxed">
+            Začínáme rolemi a procesy, kde je nejrychlejší přínos. Technologie přidáváme až tehdy, když dává měřitelný smysl.
           </p>
         </div>
 
