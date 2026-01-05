@@ -65,29 +65,32 @@ const services = [
 const targetAudience = [
   {
     icon: UserCheck,
-    title: "HR & L&D",
-    description: "Onboarding nových kolegů a škálování dovedností napříč firmou.",
+    title: "HR / ROZVOJ LIDÍ",
+    description: "Onboarding, interní know-how a standard dovedností napříč firmou.",
     bullets: [
-      "Úspora 5–10 h týdně na manuální práci s dokumenty",
-      "Standardizovaný AI onboarding pro celou firmu"
+      "Rychlejší zaškolení a jednotný skillset",
+      "Šablony pro komunikaci, dokumenty a HR procesy",
+      "Přehled o dokončení (užitečné pro HR)"
     ],
   },
   {
     icon: FileText,
     title: "BACKOFFICE & ADMINISTRATIVA",
-    description: "E-maily, zápisy z porad, správa dokumentů a reporting.",
+    description: "E-maily, zápisy z porad, správa dokumentů, reporting.",
     bullets: [
-      "Úspora 3–6 h týdně na rutinních úkolech",
-      "Automatické zápisy, shrnutí a follow-upy"
+      "Méně ruční práce v rutinních úkolech",
+      "Automatické shrnutí, follow-upy a kontrola kvality",
+      "Standardizované workflow pro tým"
     ],
   },
   {
     icon: ShoppingCart,
-    title: "OBCHOD & PODPORA",
+    title: "OBCHOD & ZÁKAZNICKÁ PODPORA",
     description: "Nabídky, CRM, odpovědi zákazníkům a personalizace.",
     bullets: [
-      "Rychlejší odpovědi o 40–60 %",
-      "AI asistent pro návrhy nabídek a e-mailů"
+      "Rychlejší reakce a konzistentní odpovědi",
+      "Asistent pro návrhy nabídek a e-mailů",
+      "Méně chyb v komunikaci a lepší přehled"
     ],
   },
 ];
@@ -271,7 +274,7 @@ const ProFirmy = () => {
                 PRO KOHO JE TO IDEÁLNÍ
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Pomáháme týmům, které chtějí pracovat chytřeji, ne více.
+                Pomáháme týmům pracovat chytřeji — rychleji, kvalitněji a bez chaosu.
               </p>
               
               <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
