@@ -95,38 +95,38 @@ const faqItems = [
   { 
     icon: Clock, 
     question: "Jak dlouho mám přístup ke kurzu?", 
-    answer: "Máte dlouhodobý přístup k obsahu a studujete vlastním tempem. Obsah průběžně udržujeme aktuální.",
-    highlight: "Dlouhodobý přístup"
+    answer: "Přístup je dlouhodobý – studujete vlastním tempem, bez stresu z termínů. Obsah průběžně aktualizujeme, abyste měli vždy relevantní know-how.",
+    highlight: "Přístup: dlouhodobě"
   },
   { 
     icon: Users, 
-    question: "Pro koho jsou akademie určené?", 
-    answer: "Pro každého, kdo chce pracovat efektivněji s AI – od začátečníků po pokročilé. Nevyžadujeme technické znalosti.",
-    highlight: "Pro všechny úrovně"
+    question: "Je to pro mě / pro koho jsou akademie určené?", 
+    answer: "Pro každého, kdo chce pracovat efektivněji s AI. Od úplných začátečníků po pokročilé uživatele. Nevyžadujeme technické znalosti – stačí chuť zlepšit svou produktivitu.",
+    highlight: "Začátečník → pokročilý"
   },
   { 
     icon: BadgeCheck, 
-    question: "Jak získám certifikát?", 
-    answer: "Po dokončení akademie obdržíte certifikát automaticky e-mailem. LinkedIn odznak si přidáte jedním klikem.",
-    highlight: "Automaticky"
+    question: "Kdy a za co dostanu certifikát a LinkedIn odznak?", 
+    answer: "Po dokončení akademie automaticky obdržíte certifikát e-mailem. LinkedIn odznak si přidáte jedním klikem – ověřitelný na profilu pro recruitery i kolegy.",
+    highlight: "Po dokončení"
   },
   { 
     icon: Crown, 
     question: "Co je rozdíl mezi akademií a kompletním programem?", 
-    answer: "Akademie je 1 téma. Kompletní program = všechny 3 akademie + hlavní certifikát Master of AI Creativity + hlavní LinkedIn odznak.",
-    highlight: "3 akademie v 1"
+    answer: "Akademie = 1 téma do hloubky. Kompletní program = všechny 3 akademie + hlavní certifikát Master of AI Creativity + prestižní LinkedIn odznak. Ideální pro komplexní AI skillset.",
+    highlight: "Kompletní program"
   },
   { 
     icon: Building, 
     question: "Můžu kurz koupit pro tým?", 
-    answer: "Ano. Pro firmy nabízíme hromadné licence s onboardingem a reportingem. Více na stránce Akademie pro týmy.",
+    answer: "Ano – pro firmy nabízíme hromadné licence s onboardingem a reportingem dokončení. HR má přehled, kdo prošel a kde jsou mezery. Více na stránce Akademie pro týmy.",
     highlight: "Firemní licence"
   },
   { 
     icon: HelpCircle, 
-    question: "Potřebuji Microsoft 365 pro Copilot akademii?", 
-    answer: "Ideálně ano, ale kurz obsahuje i obecné principy použitelné bez Copilotu.",
-    highlight: "Flexibilní"
+    question: "Musím mít Copilot (M365), abych akademii využil naplno?", 
+    answer: "Ideálně ano, ale kurz obsahuje i obecné principy a workflow použitelné bez Copilotu. Pokud M365 nemáte, stále získáte praktické know-how pro práci s AI.",
+    highlight: "Není podmínkou"
   }
 ];
 
