@@ -282,24 +282,27 @@ const ChatGPTAkademie = () => {
               </p>
             </div>
             
-            <div className="max-w-3xl mx-auto">
-              <Accordion type="single" collapsible className="space-y-3">
+            <div className="max-w-3xl mx-auto relative">
+              {/* Vertical timeline line */}
+              <div className="absolute left-[29px] top-8 bottom-8 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent hidden md:block" />
+              
+              <Accordion type="single" collapsible className="space-y-4">
                 {modules.map((module) => (
                   <AccordionItem 
                     key={module.num} 
                     value={`module-${module.num}`}
-                    className="border-0"
+                    className="border-0 group"
                   >
-                    <AccordionTrigger className="glass-card px-5 py-4 rounded-xl border border-border/30 hover:border-primary/40 hover:no-underline transition-all duration-300 [&[data-state=open]]:rounded-b-none [&[data-state=open]]:border-b-0">
+                    <AccordionTrigger className="glass-card px-5 py-5 rounded-xl border border-border/30 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(102,252,241,0.1)] hover:no-underline transition-all duration-300 [&[data-state=open]]:rounded-b-none [&[data-state=open]]:border-b-0 [&[data-state=open]]:border-primary/40 [&[data-state=open]]:shadow-[0_0_25px_rgba(102,252,241,0.15)]">
                       <div className="flex items-center gap-4 text-left w-full">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                          <span className="text-sm font-bold text-primary">{module.num}</span>
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-300 relative z-10">
+                          <span className="text-base font-bold text-primary">{module.num}</span>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <span className="text-sm md:text-base text-foreground font-medium block">{module.title}</span>
-                          <div className="flex flex-wrap gap-1.5 mt-2">
+                          <span className="text-sm md:text-base text-foreground font-semibold block group-hover:text-primary transition-colors duration-300">{module.title}</span>
+                          <div className="flex flex-wrap gap-2 mt-2.5">
                             {module.tags.map((tag, idx) => (
-                              <span key={idx} className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 rounded-full">
+                              <span key={idx} className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider bg-card/80 text-muted-foreground border border-border/40 rounded-md hover:border-primary/30 hover:text-primary transition-colors duration-200">
                                 {tag}
                               </span>
                             ))}
@@ -307,15 +310,20 @@ const ChatGPTAkademie = () => {
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="glass-card px-5 py-4 border border-t-0 border-border/30 rounded-b-xl">
-                      <div className="pl-14 space-y-3">
-                        <p className="text-sm text-muted-foreground">
+                    <AccordionContent className="glass-card px-5 py-5 border border-t-0 border-primary/40 rounded-b-xl bg-gradient-to-b from-primary/5 to-transparent shadow-[inset_0_2px_10px_rgba(102,252,241,0.05)]">
+                      <div className="pl-16 space-y-4">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           {module.description}
                         </p>
-                        <p className="text-sm text-foreground font-medium flex items-center gap-2">
-                          <FileText className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span><span className="text-primary">Výstup:</span> {module.output}</span>
-                        </p>
+                        <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 border border-primary/20">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                            <FileText className="w-4 h-4 text-primary" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-semibold uppercase tracking-wider text-primary block mb-1">Výstup modulu</span>
+                            <span className="text-sm text-foreground font-medium">{module.output}</span>
+                          </div>
+                        </div>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
