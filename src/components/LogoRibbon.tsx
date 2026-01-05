@@ -22,10 +22,10 @@ interface ClientLogo {
 }
 
 const clients: ClientLogo[] = [
-  { name: "Iveco Group", logo: iveco, url: "https://www.ivecogroup.com" },
   { name: "Publicis Groupe", logo: publicis, url: "https://www.publicisgroupe.cz/cs/" },
   { name: "Messer Technogas", logo: messer, url: "https://www.messer.cz" },
   { name: "Patok", logo: patok, url: "https://www.patok.cz" },
+  { name: "Iveco Group", logo: iveco, url: "https://www.ivecogroup.com" },
   { name: "Hirschmann Automotive", logo: hirschmann, url: "https://www.hirschmann-automotive.com/en/" },
   { name: "Medi-globe", logo: mediGlobe, url: "https://www.medi-globe.cz" },
   { name: "FCC Environment", logo: fcc, url: "https://www.fccps.cz" },
