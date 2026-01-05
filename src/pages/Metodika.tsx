@@ -20,7 +20,9 @@ import {
   Building,
   MonitorPlay,
   ArrowRight,
-  Settings
+  Settings,
+  BarChart3,
+  User
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -89,37 +91,36 @@ const methodologySteps = [
 
 const dnaCards = [
   {
-    icon: Shield,
-    title: "BEZPEČNÉ POUŽITÍ AI",
-    subtitle: "COMPLIANCE",
-    description: "Nastavíme pravidla tak, aby AI respektovala vaše interní směrnice i legislativu.",
-    benefit: "Klidné spaní pro management i právní oddělení.",
+    icon: BarChart3,
+    title: "MĚŘENÍ DOPADU",
+    subtitle: "VÝSLEDKY",
+    description: "Sledujeme čas, kvalitu a chybovost. Víte přesně, co AI přinesla.",
+    benefit: "Jasný důkaz návratnosti investice.",
     accent: "cyan",
   },
   {
     icon: Settings,
-    title: "PROCESNÍ PRECIZNOST",
-    subtitle: "WORKFLOW",
-    description: "Každé řešení stavíme na analýze reálných procesů, ne na obecných šablonách.",
+    title: "ŘEŠENÍ NA MÍRU",
+    subtitle: "PROCESY",
+    description: "Analyzujeme vaše reálné procesy, ne obecné šablony.",
     benefit: "Automatizace, která sedí na vaši firmu.",
     accent: "cyan",
+  },
+  {
+    icon: Shield,
+    title: "BEZPEČNÉ POUŽITÍ",
+    subtitle: "PRAVIDLA",
+    description: "Nastavíme pravidla pro data, přístupy a odpovědnosti.",
+    benefit: "Klid pro management i právní oddělení.",
+    accent: "purple",
   },
   {
     icon: Lock,
     title: "OCHRANA DAT",
     subtitle: "GDPR / DSA",
-    description: "Vaše data zůstávají pod kontrolou. Žádné sdílení bez vašeho vědomí.",
-    benefit: "Transparentnost a důvěra zákazníků.",
+    description: "Vaše data zůstávají pod kontrolou. Žádné sdílení bez vědomí.",
+    benefit: "Transparentnost a důvěra.",
     accent: "purple",
-  },
-  {
-    icon: Award,
-    title: "AUTOMATIZACE NA MÍRU",
-    subtitle: "SWIMIN.AI",
-    description: "Navrhujeme řešení podle metodiky swimin.ai pro maximální efektivitu.",
-    benefit: "Měřitelné výsledky od prvního týdne.",
-    accent: "purple",
-    link: { url: "https://www.swimin.ai/", text: "swimin.ai" },
   },
 ];
 
@@ -155,7 +156,8 @@ const Metodika = () => {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-10">
-                  Nezačínáme technologií. Začínáme rolí, procesem a rychlými výhrami. Pak teprve stavíme bezpečné workflow.
+                  Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami.<br className="hidden md:block" />
+                  <span className="text-primary font-medium">Do 14 dnů: mapa rolí + quick wins + ROI roadmapa.</span>
                 </p>
                 
                 {/* CTA Buttons */}
@@ -166,15 +168,15 @@ const Metodika = () => {
                     data-event="metodika_diagnostika_click"
                     asChild
                   >
-                    <Link to="/profirmy#kontakt">
-                      Rychlá diagnostika
+                    <Link to="/checkout">
+                      Domluvit diagnostiku (15 min)
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Link>
                   </Button>
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="text-base px-8 py-6 border-accent/30 text-accent hover:bg-accent/10"
+                    className="text-base px-8 py-6 border-accent/50 text-accent hover:bg-accent/10 hover:border-accent"
                     data-event="metodika_online_click"
                     asChild
                   >
@@ -322,10 +324,10 @@ const Metodika = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                KOMU TO DÁVÁ SMYSL
+                VYBERTE SI CESTU
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Vyberte si cestu, která odpovídá vašim potřebám.
+                Firemní implementace nebo individuální rozvoj.
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -343,25 +345,25 @@ const Metodika = () => {
                   </p>
                   
                   <Button 
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(102,252,241,0.3)]"
                     data-event="metodika_b2b_click"
                     asChild
                   >
-                    <Link to="/profirmy#kontakt">
+                    <Link to="/checkout">
                       Rychlá diagnostika
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </Button>
                 </div>
 
-                {/* Online akademie */}
+                {/* Pro jednotlivce */}
                 <div className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-accent/20 rounded-2xl p-8 transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_40px_rgba(189,0,255,0.15)] hover:-translate-y-1">
                   <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                    <MonitorPlay className="w-8 h-8 text-accent" />
+                    <User className="w-8 h-8 text-accent" />
                   </div>
                   
                   <h3 className="text-xl font-semibold tracking-[0.15em] text-foreground mb-3">
-                    ONLINE AKADEMIE ZE ZÁZNAMU
+                    PRO JEDNOTLIVCE
                   </h3>
                   <p className="text-muted-foreground mb-6">
                     Certifikát + LinkedIn odznak + studium vlastním tempem. 3 akademie nebo kompletní program.
@@ -369,7 +371,7 @@ const Metodika = () => {
                   
                   <Button 
                     variant="outline"
-                    className="w-full border-accent/30 text-accent hover:bg-accent/10"
+                    className="w-full border-accent/50 text-accent hover:bg-accent/10 hover:border-accent"
                     data-event="metodika_b2c_click"
                     asChild
                   >
@@ -387,10 +389,10 @@ const Metodika = () => {
           <section className="py-20 bg-card/20">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                DNA NAŠÍ EXPERTÍZY
+                NA ČEM SI ZAKLÁDÁME
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Co od nás můžete očekávat.
+                Principy, které nás odlišují.
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -427,23 +429,6 @@ const Metodika = () => {
                       
                       <p className="text-muted-foreground text-sm mb-3">
                         {card.description}
-                        {card.link && (
-                          <>
-                            {" "}
-                            <a
-                              href={card.link.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`font-semibold underline underline-offset-4 ${
-                                isPurple
-                                  ? "text-accent hover:text-accent/80"
-                                  : "text-primary hover:text-primary/80"
-                            }`}
-                            >
-                              {card.link.text} →
-                            </a>
-                          </>
-                        )}
                       </p>
                       
                       <p className={`text-xs font-medium ${
