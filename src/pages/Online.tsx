@@ -489,7 +489,7 @@ const Online = () => {
                       key={course.id}
                       className={`glass-card p-6 group transition-all duration-300 hover:-translate-y-2 flex flex-col relative cursor-pointer ${
                         course.isProgram 
-                          ? 'border-accent/40 shadow-[0_0_20px_rgba(189,0,255,0.1)] hover:shadow-[0_0_25px_rgba(189,0,255,0.15)]' 
+                          ? 'border-primary/50 shadow-[0_0_25px_hsla(176,96%,69%,0.15)] hover:shadow-[0_0_35px_hsla(176,96%,69%,0.25)]' 
                           : 'hover:border-primary/40 hover:shadow-[0_0_20px_rgba(102,252,241,0.12)]'
                       }`}
                       onClick={(e) => {
@@ -506,28 +506,28 @@ const Online = () => {
                       </div>
                       
                       {course.isProgram && (
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase shadow-[0_0_10px_hsla(284,100%,50%,0.4)]">
                           Nejlepší hodnota
                         </div>
                       )}
                       
                       <div className={`w-12 h-12 rounded-lg border flex items-center justify-center mb-5 transition-colors duration-300 ${
                         course.isProgram 
-                          ? 'bg-accent/20 border-accent/40 group-hover:bg-accent/25' 
+                          ? 'bg-primary/15 border-primary/40 group-hover:bg-primary/20' 
                           : 'bg-primary/10 border-primary/20 group-hover:bg-primary/15'
                       }`}>
-                        <Icon className={`h-6 w-6 ${course.isProgram ? 'text-accent' : 'text-primary'}`} />
+                        <Icon className="h-6 w-6 text-primary" />
                       </div>
                       
                       <h3 className="text-sm font-semibold tracking-[0.1em] text-foreground mb-1 uppercase">
                         {course.title}
                       </h3>
                       
-                      <p className={`text-[11px] mb-3 whitespace-pre-line ${course.isProgram ? 'text-accent font-medium' : 'text-muted-foreground/70'}`}>
+                      <p className={`text-[11px] mb-3 whitespace-pre-line ${course.isProgram ? 'text-primary font-medium' : 'text-muted-foreground/70'}`}>
                         {course.subtitle}
                       </p>
                       
-                      <p className="text-xs text-primary mb-3 italic">
+                      <p className="text-xs text-primary/80 mb-3 italic">
                         {course.focus}
                       </p>
                       
@@ -542,35 +542,13 @@ const Online = () => {
                       )}
                       
                       <div className="mt-auto">
-                        <div className={`text-xl font-bold mb-1 ${course.isProgram ? 'text-accent' : 'text-foreground'}`}>
+                        <div className="text-xl font-bold mb-1 text-foreground">
                           {course.price}
                         </div>
-                        <div className="flex items-center gap-2 mb-4">
-                          <p className="text-[10px] text-muted-foreground/70">vč. DPH</p>
-                          <Link 
-                            to={`/online/${course.slug}`}
-                            className="text-[10px] text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            Co přesně obsahuje? <ChevronRight className="w-3 h-3" />
-                          </Link>
-                        </div>
+                        <p className="text-[10px] text-muted-foreground/70 mb-4">vč. DPH</p>
+                        
                         <div className="space-y-2">
-                          <Link 
-                            to={`/online/${course.slug}`}
-                            data-event={course.isProgram ? "b2c_program_view" : "b2c_academy_view"}
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <Button 
-                              variant="outline" 
-                              size="sm" 
-                              className="w-full text-xs tracking-[0.1em] uppercase py-3 border-primary/50 text-primary hover:bg-primary/10 shadow-[0_0_8px_rgba(102,252,241,0.15)] hover:shadow-[0_0_12px_rgba(102,252,241,0.25)] group/btn transition-all duration-300"
-                            >
-                              <FileText className="w-4 h-4 mr-2" />
-                              Ukázka obsahu
-                              <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                            </Button>
-                          </Link>
+                          {/* Primary CTA: Koupit - cyan solid */}
                           <a 
                             href={course.link}
                             target="_blank"
@@ -579,12 +557,28 @@ const Online = () => {
                           >
                             <Button 
                               size="sm" 
-                              className="w-full text-xs tracking-[0.1em] uppercase py-3 bg-gradient-to-r from-primary to-[#00D4FF] text-primary-foreground font-semibold hover:opacity-90 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:scale-[1.02] transition-all duration-300"
+                              className="w-full text-xs tracking-[0.1em] uppercase py-3"
                               data-event={course.isProgram ? "b2c_program_buy_click" : "b2c_buy_click"}
                             >
                               {course.isProgram ? 'Koupit program' : 'Koupit akademii'}
                             </Button>
                           </a>
+                          
+                          {/* Secondary CTA: Zobrazit obsah - outline cyan */}
+                          <Link 
+                            to={`/online/${course.slug}`}
+                            data-event={course.isProgram ? "b2c_program_view" : "b2c_academy_view"}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              className="w-full text-xs tracking-[0.1em] uppercase py-3 group/btn"
+                            >
+                              Zobrazit obsah
+                              <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </div>
