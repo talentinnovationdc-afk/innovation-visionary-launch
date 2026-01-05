@@ -213,7 +213,7 @@ const Checkout = () => {
 
               {/* CTA Button */}
               <div className="pt-2">
-                <Button type="submit" variant="gradient" size="lg" className="w-full">
+                <Button type="submit" size="lg" className="w-full">
                   Získat rychlou diagnostiku
                   <ArrowRight className="h-5 w-5" />
                 </Button>
