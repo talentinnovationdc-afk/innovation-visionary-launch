@@ -113,6 +113,19 @@ const Dekujeme = () => {
           </div>
         </div>
 
+        {/* Help section */}
+        <div className="container px-4 mt-12">
+          <div className="max-w-lg mx-auto">
+            <div className="glass-card p-6 text-center">
+              <h2 className="text-sm font-semibold tracking-[0.15em] uppercase text-foreground mb-3">
+                Tip pro nalezení e-mailu
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
+                Zkontrolujte složku Spam/Hromadné a vyhledejte v poště „Talent Innovation".
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
 
       <Footer />
