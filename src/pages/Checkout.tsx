@@ -248,9 +248,6 @@ const Checkout = () => {
 
             {/* Logo Ribbon Section */}
             <div className="mt-12">
-              <p className="text-center text-sm tracking-[0.15em] uppercase text-muted-foreground mb-6">
-                Důvěřují nám lídři v průmyslu a technologiích
-              </p>
               <LogoRibbon />
               <p className="text-center text-xs text-muted-foreground/70 mt-4 max-w-lg mx-auto">
                 Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
