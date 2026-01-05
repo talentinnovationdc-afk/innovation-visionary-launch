@@ -183,7 +183,7 @@ export const LogoRibbon = () => {
                   loading="lazy"
                   className={`h-full w-auto object-contain max-w-[160px] grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${
                     client.name === "Iveco Group"
-                      ? "invert brightness-125 contrast-125 opacity-85 drop-shadow-[0_0_10px_rgba(255,255,255,0.18)] group-hover:invert-0"
+                      ? "invert opacity-50 group-hover:invert-0 group-hover:opacity-100"
                       : ""
                   }`}
                 />
