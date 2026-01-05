@@ -129,23 +129,28 @@ const processSteps = [
 const hrFaqItems = [
   {
     question: "Jak rychle uvidíme výsledky?",
-    answer: "První výsledky (zrychlení rutinních úkolů, efektivnější práce s AI) typicky pozorujeme do 2–3 týdnů od startu. Měřitelné úspory času reportují týmy po dokončení prvního modulu."
-  },
-  {
-    question: "Jak se ověřuje dokončení akademie?",
-    answer: "Každý účastník obdrží certifikát a LinkedIn odznak po dokončení všech modulů. HR má přístup k reportu dokončení, kde vidí postup jednotlivců i týmu."
+    answer: "Typicky do 1–2 týdnů po onboardingu. První zrychlení uvidíte v rutinních úkolech (e-maily, dokumenty, šablony, reporting). Sledujeme dopad: čas, kvalita výstupů, chybovost.",
+    badge: "Výsledky"
   },
   {
     question: "Můžeme kombinovat akademie v jednom balíčku?",
-    answer: "Ano. Licence lze přiřadit různým akademiím podle rolí – např. administrativa dostane Copilot, obchod ChatGPT. Kompletní program je nejvýhodnější pro klíčové role."
+    answer: "Ano. Balíček poskládáte podle rolí v týmu (např. administrativě ChatGPT/Copilot, automatizátorům Agenti). Pro jednotný standard napříč firmou je nejrychlejší Kompletní program (3 akademie).",
+    badge: "Balíčky"
   },
   {
     question: "Je možné koupit program pro onboarding nováčků?",
-    answer: "Rozhodně. Online akademie jsou ideální pro onboarding – nováčci studují vlastním tempem a mají jasný standard dovedností od prvního dne."
+    answer: "Ano. Firemní licence jsou ideální pro onboarding. Nováčci získají jasnou cestu a standardy; HR má přehled o dokončení a jednotný skillset napříč týmem.",
+    badge: "Onboarding"
+  },
+  {
+    question: "Jak se ověřuje dokončení akademie?",
+    answer: "Po dokončení účastník získá certifikát a LinkedIn odznak. Firma/HR má přehled dokončení (kdo prošel, v jakém je stavu, kde jsou mezery).",
+    badge: "Certifikace"
   },
   {
     question: "Jaké jsou podmínky licencí a přístupu?",
-    answer: "Licence jsou platné 12 měsíců od aktivace. Přístup je jmenný (1 licence = 1 osoba). Dlouhodobý přístup k obsahu."
+    answer: "Licence jsou určené pro týmové nasazení a reporting. Přístup je časově omezený, ale dlouhodobý (studium vlastním tempem). Konkrétní délku a podmínky nastavíme podle balíčku a počtu licencí.",
+    badge: "Podmínky"
   }
 ];
 
@@ -901,6 +906,15 @@ const AkademieProTymy = () => {
                             </div>
                             
                             <div className="flex-1 text-left">
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full ${
+                                  isEven 
+                                    ? 'bg-primary/20 text-primary' 
+                                    : 'bg-accent/20 text-accent'
+                                }`}>
+                                  {item.badge}
+                                </span>
+                              </div>
                               <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
                                 {item.question}
                               </h3>
@@ -937,6 +951,18 @@ const AkademieProTymy = () => {
                   );
                 })}
               </Accordion>
+            </div>
+            
+            {/* FAQ CTA */}
+            <div className="text-center mt-10">
+              <p className="text-muted-foreground mb-4">
+                Nenašli jste odpověď? Napište nám — doporučíme balíček podle rolí.
+              </p>
+              <a href="#form">
+                <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10">
+                  Zeptat se nás
+                </Button>
+              </a>
             </div>
           </div>
         </section>
