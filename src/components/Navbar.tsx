@@ -86,6 +86,16 @@ export const Navbar = () => {
         {isOpen && (
           <div className="lg:hidden border-t border-border/20 px-4 py-4 animate-fade-in">
             <div className="flex flex-col gap-4">
+              {/* Home link - mobile only */}
+              <Link
+                to="/"
+                className={`text-xs font-semibold tracking-[0.15em] transition-colors hover:text-primary py-2 ${
+                  isActive("/") ? "text-primary" : "text-muted-foreground"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                DOMŮ
+              </Link>
               {navLinks.map((link) => (
                 link.isRoute ? (
                   <Link
