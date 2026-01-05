@@ -191,14 +191,7 @@ const Metodika = () => {
           </section>
 
           {/* Logo Ribbon */}
-          <section className="py-12 bg-card/20">
-            <div className="container mx-auto px-4">
-              <p className="text-center text-sm text-muted-foreground mb-8 tracking-wide">
-                Důvěřují nám lídři v průmyslu a technologiích
-              </p>
-            </div>
-            <LogoRibbon />
-          </section>
+          <LogoRibbon />
 
           {/* Quick Wins Section - Co získáte do 14 dnů */}
           <section className="py-20">
