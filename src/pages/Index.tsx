@@ -39,8 +39,7 @@ const Index = () => {
                 </h1>
                 
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-10 normal-case tracking-normal leading-[1.8]">
-                  Pro firmy: zrychlení rolí a procesů s měřitelným dopadem.<br />
-                  Pro vás: profesní upgrade potvrzený certifikátem a LinkedIn odznakem — viditelné uznání dovedností v AI.
+                  Firmám zrychlujeme rutinní práci a snižujeme chybovost, vám dáváme profesní náskok potvrzený certifikátem a LinkedIn odznakem.
                 </p>
                 
                 {/* Two CTAs */}
