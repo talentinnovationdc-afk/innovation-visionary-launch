@@ -22,43 +22,51 @@ import {
 const services = [
   {
     icon: Search,
-    title: "DISCOVERY",
+    title: "DIAGNOSTIKA",
     subtitle: "AI Audit",
-    description: "Identifikace úzkých hrdel ve vašich procesech a návrh ROI roadmapy pro AI transformaci.",
-    features: ["Bottleneck Identification", "ROI Roadmap", "Risk Assessment"],
+    description: "Najdeme role a procesy s nejrychlejším dopadem. Dostanete mapu úzkých míst, seznam quick wins a doporučenou roadmapu.",
+    features: ["Mapa rolí", "Quick wins", "ROI roadmapa", "Rizika & data"],
     price: "18 000 – 25 000 Kč",
+    priceNote: null,
     accent: "cyan",
-    highlighted: false,
+    highlighted: true,
+    cta: { label: "Chci rychlou diagnostiku", link: "/checkout" },
   },
   {
     icon: Bot,
-    title: "IMPLEMENTATION",
-    subtitle: "Autonomní Systémy",
-    description: "Nasazení autonomních AI agentů s využitím Few-shot Prompting pro maximální přesnost a spolehlivost.",
-    features: ["Autonomous Agents", "Few-shot Prompting", "Custom Workflows"],
+    title: "IMPLEMENTACE",
+    subtitle: "Workflow & automatizace",
+    description: "Nasadíme konkrétní workflow a automatizace. Přidáme šablony a nastavíme měření dopadu (čas, kvalita, chybovost).",
+    features: ["Workflow automatizace", "Šablony a standardy", "Integrace nástrojů", "Měření dopadu"],
     price: "25 000 – 35 000 Kč / MD",
+    priceNote: "MD = konzultační den",
     accent: "cyan",
-    highlighted: true,
+    highlighted: false,
+    cta: { label: "Chci návrh implementace", link: "/checkout" },
   },
   {
     icon: Users,
-    title: "STRATEGY",
-    subtitle: "Executive Advisory",
-    description: "Board-level strategie pro AI Act compliance a dlouhodobou digitální transformaci.",
-    features: ["AI Act Compliance", "Board-level Strategy", "Digital Roadmap"],
+    title: "STRATEGIE A ŘÍZENÍ",
+    subtitle: "Pravidla & governance",
+    description: "Nastavíme pravidla bezpečného používání AI, odpovědnosti a plán rozvoje. Regulace řešíme jen pokud je pro váš obor relevantní.",
+    features: ["Pravidla použití", "Governance", "Roadmapa", "Regulace (pokud relevantní)"],
     price: "15 000 – 19 000 Kč",
+    priceNote: null,
     accent: "purple",
     highlighted: false,
+    cta: { label: "Chci konzultaci", link: "/checkout" },
   },
   {
     icon: GraduationCap,
-    title: "ACADEMY",
-    subtitle: "Know-how Transfer",
-    description: "Přenos znalostí vašim týmům pro zvýšení produktivity a samostatnosti v práci s AI.",
-    features: ["Know-how Transfer", "Productivity Boost", "Team Enablement"],
-    price: "od 8 500 Kč / os.",
+    title: "ŠKOLENÍ PRO TÝMY",
+    subtitle: "Firemní akademie",
+    description: "Zaměstnanci získají jednotný skillset pro práci s AI. Vy jako firma máte přehled o dokončení a jednotný standard napříč týmy.",
+    features: ["Týmový skillset", "Certifikace", "Přehled HR", "Standardy napříč firmou"],
+    price: "od 8 500 Kč / licence",
+    priceNote: "dle balíčku licencí",
     accent: "purple",
     highlighted: false,
+    cta: { label: "Zobrazit akademie pro týmy", link: "/akademie-pro-tymy" },
   },
 ];
 
@@ -99,27 +107,27 @@ const targetAudience = [
 const expertisePoints = [
   {
     icon: Shield,
-    title: "BEZ RIZIKA",
-    subtitle: "Metodika swimin.ai",
-    description: "Ověřená metodika s tisíci absolventy. Víme, co funguje a co ne.",
+    title: "BEZPEČNÝ START",
+    subtitle: "1250+ absolventů",
+    description: "Začneme na rolích a rychlých výhrách. Jasná pravidla pro data, přístupy a používání AI.",
   },
   {
     icon: Scale,
     title: "DATA POD KONTROLOU",
-    subtitle: "Compliance & Bezpečnost",
-    description: "Řešení navržená s ohledem na GDPR, AI Act a vaše interní politiky.",
+    subtitle: "GDPR & firemní pravidla",
+    description: "Nastavíme, co smí do AI, kdo má přístup a jak pracovat s citlivými daty. GDPR a pravidla firmy respektujeme.",
   },
   {
     icon: ClipboardCheck,
     title: "MĚŘITELNÉ VÝSLEDKY",
-    subtitle: "ROI-first přístup",
-    description: "Každý projekt začíná jasným cílem a KPIs, které sledujeme.",
+    subtitle: "Čas, kvalita, chybovost",
+    description: "Měříme dopad: ušetřený čas, kvalitu výstupů a chybovost. Víte, co funguje.",
   },
   {
     icon: FileCode,
-    title: "KNOW-HOW ZŮSTÁVÁ",
-    subtitle: "Transfer znalostí",
-    description: "Nejen dodáváme řešení, ale učíme vaše lidi, aby byli samostatní.",
+    title: "KNOW-HOW ZŮSTÁVÁ VE FIRMĚ",
+    subtitle: "Skillset & standardy",
+    description: "Tým získá skillset a standardy. HR má přehled o dokončení a jednotný způsob práce.",
   },
 ];
 
@@ -396,7 +404,7 @@ const ProFirmy = () => {
                           {service.price}
                         </p>
                         <p className="text-[10px] text-muted-foreground/70 mt-1 flex items-center gap-1">
-                          bez DPH
+                          {service.priceNote ? service.priceNote : "bez DPH"}
                           <span className="group/tooltip relative cursor-help">
                             <HelpCircle className="w-3 h-3" />
                             <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-card border border-border rounded text-[9px] whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none z-50">
@@ -404,11 +412,26 @@ const ProFirmy = () => {
                             </span>
                           </span>
                         </p>
+                        
+                        <Link
+                          to={service.cta.link}
+                          className={`mt-4 inline-flex items-center justify-center w-full px-4 py-2.5 text-[10px] font-semibold tracking-[0.1em] uppercase rounded-lg transition-all duration-300 ${
+                            isPurple
+                              ? "border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent"
+                              : "border border-primary/50 text-primary bg-primary/5 hover:bg-primary/10 hover:border-primary"
+                          }`}
+                        >
+                          {service.cta.label}
+                        </Link>
                       </div>
                     </div>
                   );
                 })}
               </div>
+              
+              <p className="text-[11px] text-muted-foreground/60 text-center mt-8 max-w-2xl mx-auto">
+                Ceny jsou bez DPH. Rozsah upřesníme podle počtu rolí, systémů a požadované míry automatizace.
+              </p>
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
