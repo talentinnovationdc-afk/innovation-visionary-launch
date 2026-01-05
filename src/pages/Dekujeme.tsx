@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { CheckCircle, GraduationCap, ArrowLeft, BookOpen, HelpCircle } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const PRODUCTION_DOMAIN = "t-i.cz";
 const ACADEMY_URL = "https://talent-innovation.learnworlds.com/start";
@@ -12,7 +12,7 @@ const Dekujeme = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const isProduction = typeof window !== "undefined" && window.location.hostname === PRODUCTION_DOMAIN;
-  const helpRef = useRef<HTMLDivElement>(null);
+  
 
   useEffect(() => {
     // Fire GTM purchase event when session_id is present (Stripe redirect)
@@ -38,9 +38,6 @@ const Dekujeme = () => {
     }
   }, [sessionId]);
 
-  const scrollToHelp = () => {
-    helpRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -70,13 +67,13 @@ const Dekujeme = () => {
               </p>
 
               {/* Help link */}
-              <button
-                onClick={scrollToHelp}
+              <a
+                href="mailto:daniel.cerveny@t-i.cz?subject=Nedostal jsem přístupový e-mail"
                 className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline transition-colors"
               >
                 <HelpCircle className="h-4 w-4" />
                 Nedostal jsem e-mail
-              </button>
+              </a>
 
               <nav className="pt-4 flex flex-col gap-4" aria-label="Akce po nákupu">
                 <div>
@@ -116,22 +113,6 @@ const Dekujeme = () => {
           </div>
         </div>
 
-        {/* Help section */}
-        <div ref={helpRef} className="container px-4 mt-12">
-          <div className="max-w-lg mx-auto">
-            <div className="glass-card p-6 text-center">
-              <h2 className="text-sm font-semibold tracking-[0.15em] uppercase text-foreground mb-3">
-                Tip pro nalezení e-mailu
-              </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                Zkontrolujte složku Spam/Hromadné a vyhledejte v poště „Talent Innovation". Když e-mail nedorazí ani do 10 minut, napište nám přes{" "}
-                <Link to="/o-nas" className="text-primary hover:underline">
-                  Kontakt
-                </Link>.
-              </p>
-            </div>
-          </div>
-        </div>
       </main>
 
       <Footer />
