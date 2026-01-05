@@ -211,22 +211,22 @@ const Index = () => {
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <TrendingUp className="w-10 h-10 text-primary mx-auto mb-4" />
                   <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Měřitelný posun</h3>
-                  <p className="text-xs text-muted-foreground">Produktivitu uvidíte v číslech (čas, kvalita, chybovost).</p>
+                  <p className="text-xs text-muted-foreground">Úspory času, vyšší kvalita a méně chyb — měřitelné v praxi.</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
                   <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Bezpečné použití AI</h3>
-                  <p className="text-xs text-muted-foreground">Jasná pravidla a workflow v souladu s vašimi standardy.</p>
+                  <p className="text-xs text-muted-foreground">Pravidla práce s AI, přístupy k datům a kontrola výstupů.</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Award className="w-10 h-10 text-accent mx-auto mb-4" />
                   <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Uznání dovedností</h3>
-                  <p className="text-xs text-muted-foreground">Certifikát a LinkedIn odznak, který je vidět.</p>
+                  <p className="text-xs text-muted-foreground">Certifikát + LinkedIn odznak — viditelné potvrzení AI dovedností.</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Clock className="w-10 h-10 text-accent mx-auto mb-4" />
                   <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Vlastní tempo</h3>
-                  <p className="text-xs text-muted-foreground">Studium kdykoli a odkudkoli — bez tlaku na termín.</p>
+                  <p className="text-xs text-muted-foreground">Dlouhodobý přístup k obsahu. Studium vlastním tempem bez tlaku na termín.</p>
                 </div>
               </div>
             </div>
