@@ -39,7 +39,7 @@ const courses = [
   },
   {
     id: 1,
-    slug: "chatgpt-akademie",
+    slug: "chatgptakademie",
     title: "CHATGPT AKADEMIE",
     subtitle: "Samostatná akademie (součást programu Master of AI Creativity)",
     focus: "Práce s GPT od základů po pokročilé workflow.",
@@ -52,7 +52,7 @@ const courses = [
   },
   {
     id: 2,
-    slug: "copilot-akademie",
+    slug: "copilotakademie",
     title: "MICROSOFT COPILOT AKADEMIE",
     subtitle: "Samostatná akademie (součást programu Master of AI Creativity)",
     focus: "Produktivita a automatizace v Microsoft 365.",
@@ -65,7 +65,7 @@ const courses = [
   },
   {
     id: 3,
-    slug: "agenti-automatizace",
+    slug: "agentiautomatizace",
     title: "AGENTI & AUTOMATIZACE",
     subtitle: "Samostatná akademie (součást programu Master of AI Creativity)",
     focus: "Pokročilé agentické workflow a orchestrace.",
