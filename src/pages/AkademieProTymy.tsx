@@ -340,39 +340,51 @@ const AkademieProTymy = () => {
               
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Online akademie pro týmy:
+                  Online akademie pro týmy
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  jednotný standard
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  práce s AI
+                  Standard práce s AI napříč firmou
                 </span>
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-                Zaměstnanci studují vlastním tempem. Vy získáte měřitelný posun dovedností, certifikaci a přehled o dokončení — napříč rolí i týmem.
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Zaměstnanci studují vlastním tempem. Vy získáte jednotný skillset, certifikaci a přehled o dokončení napříč rolemi i týmy.
               </p>
               
+              {/* Chip row */}
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
+                <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                  Reporting pro HR
+                </span>
+                <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                  Certifikace
+                </span>
+                <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                  Šablony & workflow
+                </span>
+                <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                  Vlastní tempo
+                </span>
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#akademie">
+                <a href="#licence">
                   <Button 
                     size="lg" 
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                   >
-                    <FileText className="w-5 h-5 mr-2" />
-                    Zobrazit obsah akademií
+                    Vybrat balíček licencí
                   </Button>
                 </a>
-                <a href="#licence">
+                <a href="#akademie">
                   <Button 
                     variant="outline" 
                     size="lg" 
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
                   >
-                    Vybrat balíček licencí
+                    <FileText className="w-5 h-5 mr-2" />
+                    Zobrazit obsah akademií
                   </Button>
                 </a>
               </div>
