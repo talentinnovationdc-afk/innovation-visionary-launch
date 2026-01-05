@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   MessageSquare, Check, Award, Users, Star, Clock, RefreshCw, 
-  ChevronDown, BadgeCheck, Timer, BookOpen
+  ChevronDown, BadgeCheck, Timer, BookOpen, FileText, CheckSquare, Workflow, Play, Crown
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -17,18 +17,90 @@ import {
 } from "@/components/ui/accordion";
 
 const modules = [
-  { num: 1, title: "Rozluštění AI: Od staré dobré logiky k revoluci modelů, které píší svět znovu" },
-  { num: 2, title: "AI pod kontrolou: Co se děje, když stroje lžou – a jak tomu zabránit" },
-  { num: 3, title: "Superpowers AI: Od hlasu a obrazu až po modely, které mění pravidla hry" },
-  { num: 4, title: "Ovládněte AI jako profík: Jak s umělou inteligencí mluvit tak, aby vám rozuměla na první pokus" },
-  { num: 5, title: "AI v akci: Praktické nástroje, které vám ušetří hodiny denně" },
-  { num: 6, title: "Datová inteligence s AI: Očistěte data, odhalte souvislosti a podívejte se do budoucnosti" },
-  { num: 7, title: "AI pro řízení projektů a produktivity: Plánujte, delegujte a prezentujte jako profesionál" },
-  { num: 8, title: "AI asistenti a agenti: Úkoly, které běží za vás – i když nepracujete" },
-  { num: 9, title: "AI analýza dat od A do Z: Vyčistěte, pochopte a vysvětlete jakákoliv data během minut" },
-  { num: 10, title: "AI agenti v praxi: Předpovědi, automatizace a asistenti, kteří pracují sami" },
-  { num: 11, title: "Firemní AI agenti: Od horké linky až po vlastní expertní nástroje" },
-  { num: 12, title: "AI bez limitů: Vlastní modely, vlastní GPU a hyper-realistická tvorba v profesionální kvalitě" }
+  { 
+    num: 1, 
+    title: "Jak AI funguje", 
+    description: "Od staré dobré logiky k revoluci modelů, které píší svět znovu. Pochopíte základy fungování jazykových modelů.",
+    output: "Checklist: Klíčové pojmy AI pro non-tech lídry",
+    tags: ["2h", "checklist", "ukázka"]
+  },
+  { 
+    num: 2, 
+    title: "Halucinace a jak jim předejít", 
+    description: "Co se děje, když stroje lžou – a jak tomu zabránit. Naučíte se ověřovat a validovat výstupy.",
+    output: "Framework: 5 kroků k ověření AI výstupu",
+    tags: ["2h", "framework", "checklist"]
+  },
+  { 
+    num: 3, 
+    title: "Multimodální AI: hlas a obraz", 
+    description: "Od hlasu a obrazu až po modely, které mění pravidla hry. Praktické ukázky práce s médii.",
+    output: "Šablona: Multimodální prompt pro analýzu obrázků",
+    tags: ["2h", "šablona", "ukázka"]
+  },
+  { 
+    num: 4, 
+    title: "Promptování jako profík", 
+    description: "Jak s umělou inteligencí mluvit tak, aby vám rozuměla na první pokus. Techniky pro přesné výstupy.",
+    output: "Šablona: 10 univerzálních prompt vzorů",
+    tags: ["2h", "šablona", "workflow"]
+  },
+  { 
+    num: 5, 
+    title: "AI nástroje pro každý den", 
+    description: "Praktické nástroje, které vám ušetří hodiny denně. Přehled a porovnání aktuálních AI řešení.",
+    output: "Checklist: Výběr správného AI nástroje podle úkolu",
+    tags: ["2h", "checklist", "ukázka"]
+  },
+  { 
+    num: 6, 
+    title: "Datová analýza s AI", 
+    description: "Očistěte data, odhalte souvislosti a podívejte se do budoucnosti. Práce s tabulkami a reporty.",
+    output: "Šablona: Prompt pro analýzu CSV/Excelu",
+    tags: ["2h", "šablona", "workflow"]
+  },
+  { 
+    num: 7, 
+    title: "AI pro projekty a produktivitu", 
+    description: "Plánujte, delegujte a prezentujte jako profesionál. AI jako váš projektový asistent.",
+    output: "Workflow: AI-asistované řízení týdenních priorit",
+    tags: ["2h", "workflow", "šablona"]
+  },
+  { 
+    num: 8, 
+    title: "AI asistenti a agenti", 
+    description: "Úkoly, které běží za vás – i když nepracujete. Automatizace opakujících se činností.",
+    output: "Šablona: Nastavení Custom GPT pro váš tým",
+    tags: ["2h", "šablona", "ukázka"]
+  },
+  { 
+    num: 9, 
+    title: "Pokročilá analýza dat", 
+    description: "Vyčistěte, pochopte a vysvětlete jakákoliv data během minut. Od surových dat k insights.",
+    output: "Mini-dashboard: Automatický report z dat",
+    tags: ["2h", "workflow", "ukázka"]
+  },
+  { 
+    num: 10, 
+    title: "Agenti v praxi: predikce", 
+    description: "Předpovědi, automatizace a asistenti, kteří pracují sami. Pokročilé scénáře využití.",
+    output: "Framework: Nasazení prediktivního agenta",
+    tags: ["2h", "framework", "workflow"]
+  },
+  { 
+    num: 11, 
+    title: "Firemní AI agenti", 
+    description: "Od horké linky až po vlastní expertní nástroje. Interní AI řešení pro firmy.",
+    output: "Checklist: Požadavky na firemního AI agenta",
+    tags: ["2h", "checklist", "ukázka"]
+  },
+  { 
+    num: 12, 
+    title: "AI bez limitů: vlastní modely", 
+    description: "Vlastní modely, vlastní GPU a hyper-realistická tvorba v profesionální kvalitě.",
+    output: "Roadmapa: Cesta k vlastnímu fine-tuned modelu",
+    tags: ["2h", "framework", "ukázka"]
+  }
 ];
 
 const learnings = [
@@ -197,17 +269,32 @@ const ChatGPTAkademie = () => {
                     className="border-0"
                   >
                     <AccordionTrigger className="glass-card px-5 py-4 rounded-xl border border-border/30 hover:border-primary/40 hover:no-underline transition-all duration-300 [&[data-state=open]]:rounded-b-none [&[data-state=open]]:border-b-0">
-                      <div className="flex items-center gap-4 text-left">
+                      <div className="flex items-center gap-4 text-left w-full">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
                           <span className="text-sm font-bold text-primary">{module.num}</span>
                         </div>
-                        <span className="text-sm md:text-base text-foreground font-medium">{module.title}</span>
+                        <div className="flex-1 min-w-0">
+                          <span className="text-sm md:text-base text-foreground font-medium block">{module.title}</span>
+                          <div className="flex flex-wrap gap-1.5 mt-2">
+                            {module.tags.map((tag, idx) => (
+                              <span key={idx} className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 rounded-full">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="glass-card px-5 py-4 border border-t-0 border-border/30 rounded-b-xl">
-                      <p className="text-sm text-muted-foreground pl-14">
-                        Praktický modul s video lekcemi, příklady a cvičeními. Součástí jsou šablony a materiály ke stažení.
-                      </p>
+                      <div className="pl-14 space-y-3">
+                        <p className="text-sm text-muted-foreground">
+                          {module.description}
+                        </p>
+                        <p className="text-sm text-foreground font-medium flex items-center gap-2">
+                          <FileText className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span><span className="text-primary">Výstup:</span> {module.output}</span>
+                        </p>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -263,13 +350,25 @@ const ChatGPTAkademie = () => {
               <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
                 Začněte s ChatGPT Akademií
               </h2>
-              <p className="text-muted-foreground mb-6">
-                12 modulů praktického obsahu + certifikát + LinkedIn odznak
-              </p>
-              <div className="mb-8">
+              
+              <div className="mb-6">
                 <span className="text-4xl font-bold text-primary">4 470 Kč</span>
                 <span className="text-sm text-muted-foreground ml-2">vč. DPH</span>
               </div>
+              
+              {/* Benefit bullets */}
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <BookOpen className="w-4 h-4 text-primary" /> 12 modulů prakticky
+                </span>
+                <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Award className="w-4 h-4 text-primary" /> Certifikát + LinkedIn odznak
+                </span>
+                <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Timer className="w-4 h-4 text-primary" /> Dlouhodobý přístup
+                </span>
+              </div>
+              
               <a 
                 href="https://t-i.cz/online/chatgptakademie"
                 target="_blank"
@@ -280,9 +379,18 @@ const ChatGPTAkademie = () => {
                   Koupit akademii
                 </Button>
               </a>
-              <p className="text-xs text-muted-foreground/60 mt-6">
-                Nebo zvažte <Link to="/online/master-of-ai-creativity" className="text-accent hover:underline">kompletní program Master of AI Creativity</Link> se všemi 3 akademiemi.
-              </p>
+              
+              {/* Secondary links */}
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+                <a href="#roadmap" className="text-sm text-primary hover:text-primary/80 hover:underline transition-colors flex items-center justify-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Nejdřív chci vidět roadmapu
+                </a>
+                <Link to="/online/master-of-ai-creativity" className="text-sm text-accent hover:text-accent/80 hover:underline transition-colors flex items-center justify-center gap-1">
+                  <Crown className="w-3.5 h-3.5" />
+                  Chci kompletní program (3 akademie)
+                </Link>
+              </div>
             </div>
           </div>
         </section>
