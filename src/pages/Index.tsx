@@ -21,8 +21,8 @@ const Index = () => {
         <Navbar />
         
         <main className="flex-1">
-          {/* Hero Section - Benefit-First */}
-          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-40 pb-12 md:pt-48 md:pb-16">
+          {/* Hero Section - Fixed height to prevent CLS */}
+          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-32 pb-8 md:pt-48 md:pb-16 min-h-[70vh] md:min-h-[75vh]">
             <div className="container px-4 text-center">
               <div className="max-w-5xl mx-auto">
                 <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-[1.15] tracking-[0.15em] uppercase">

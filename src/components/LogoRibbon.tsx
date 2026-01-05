@@ -155,7 +155,7 @@ export const LogoRibbon = () => {
   const duplicatedClients = useMemo(() => [...clients, ...clients], []);
 
   return (
-    <section className="py-12 md:py-16 overflow-hidden">
+    <section className="py-8 md:py-16 overflow-hidden min-h-[120px] md:min-h-[160px]">
       <div className="container px-4">
         <p className="text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-10">
           Důvěřují nám lídři v průmyslu a technologiích

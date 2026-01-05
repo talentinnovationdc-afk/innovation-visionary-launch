@@ -5,12 +5,19 @@ import { loadSlim } from "tsparticles-slim";
 
 const OrbitalBackgroundComponent = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Delay particle loading for better FCP
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
   }, []);
 
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -25,12 +32,14 @@ const OrbitalBackgroundComponent = () => {
           value: "transparent",
         },
       },
-      fpsLimit: 60,
+      // Lower FPS on mobile for better performance
+      fpsLimit: isMobile ? 30 : 60,
       interactivity: {
         detectsOn: "window" as const,
         events: {
           onHover: {
-            enable: true,
+            // Disable hover effects on mobile
+            enable: !isMobile,
             mode: ["grab", "connect"],
           },
           resize: true,
@@ -58,9 +67,9 @@ const OrbitalBackgroundComponent = () => {
         },
         links: {
           color: "#66FCF1",
-          distance: 150,
+          distance: isMobile ? 120 : 150,
           enable: true,
-          opacity: 0.2,
+          opacity: isMobile ? 0.15 : 0.2,
           width: 1,
           triangles: {
             enable: false,
@@ -68,7 +77,8 @@ const OrbitalBackgroundComponent = () => {
         },
         move: {
           enable: true,
-          speed: 0.3,
+          // Slower on mobile
+          speed: isMobile ? 0.15 : 0.3,
           direction: "none" as const,
           outModes: {
             default: "bounce" as const,
@@ -76,14 +86,14 @@ const OrbitalBackgroundComponent = () => {
           random: false,
           straight: false,
           attract: {
-            enable: true,
+            enable: !isMobile,
             rotate: {
               x: 3000,
               y: 3000,
             },
           },
           spin: {
-            enable: true,
+            enable: !isMobile,
             position: {
               x: 50,
               y: 50,
@@ -96,10 +106,11 @@ const OrbitalBackgroundComponent = () => {
             enable: true,
             area: 1000,
           },
-          value: isMobile ? 18 : 35,
+          // Much fewer particles on mobile
+          value: isMobile ? 12 : 35,
         },
         opacity: {
-          value: { min: 0.3, max: 0.7 },
+          value: isMobile ? { min: 0.2, max: 0.5 } : { min: 0.3, max: 0.7 },
         },
         shape: {
           type: "circle",
@@ -108,7 +119,7 @@ const OrbitalBackgroundComponent = () => {
           value: { min: 2, max: 4 },
         },
       },
-      emitters: {
+      emitters: isMobile ? undefined : {
         position: {
           x: 50,
           y: 45,
@@ -127,10 +138,15 @@ const OrbitalBackgroundComponent = () => {
           delay: 0,
         },
       },
-      detectRetina: true,
+      detectRetina: !isMobile,
     }),
     [isMobile]
   );
+
+  // Don't render particles until after initial paint
+  if (!isVisible) {
+    return null;
+  }
 
   return (
     <Particles
