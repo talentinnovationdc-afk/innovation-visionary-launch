@@ -256,7 +256,7 @@ const Index = () => {
                       className="px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
                     >
                       <BadgeCheck className="w-5 h-5 mr-2" />
-                      Získat certifikaci a LinkedIn odznak
+                      Vybrat online akademii
                     </Button>
                   </Link>
                 </div>
