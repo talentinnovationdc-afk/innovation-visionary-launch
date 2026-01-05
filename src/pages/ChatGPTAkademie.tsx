@@ -249,15 +249,37 @@ const ChatGPTAkademie = () => {
 
         {/* Roadmap */}
         <section id="roadmap" className="py-20 bg-card/20 relative">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+                <BookOpen className="w-4 h-4 text-accent" />
+                <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">
+                  Osnova kurzu
+                </span>
+              </div>
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  Roadmap: Obsah akademie
+                  Obsah akademie
                 </span>
               </h2>
-              <p className="text-muted-foreground">12 modulů × 2 hodiny praktického obsahu</p>
+              <p className="text-muted-foreground flex items-center justify-center gap-3">
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  12 modulů
+                </span>
+                <span className="text-border">•</span>
+                <span className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-primary/60" />
+                  cca 24 hodin obsahu
+                </span>
+                <span className="text-border">•</span>
+                <span className="flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-primary/60" />
+                  šablony & workflow
+                </span>
+              </p>
             </div>
             
             <div className="max-w-3xl mx-auto">
