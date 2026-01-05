@@ -134,23 +134,23 @@ const expertisePoints = [
 const deliverables = [
   {
     icon: FileBarChart,
-    title: "REPORT",
-    description: "AI readiness + úzká hrdla",
+    title: "MAPA ROLÍ A ÚZKÝCH MÍST",
+    description: "Kde dnes vzniká nejvíc práce navíc a kde AI ušetří nejvíc času.",
   },
   {
     icon: Route,
-    title: "ROI ROADMAPA",
-    description: "Backlog automatizací a priorit",
+    title: "QUICK WINS & PRIORITY",
+    description: "3–10 konkrétních zlepšení seřazených podle dopadu a náročnosti.",
   },
   {
     icon: LayoutGrid,
-    title: "BLUEPRINT",
-    description: "Architektura + pravidla dat",
+    title: "PRAVIDLA BEZPEČNÉHO POUŽITÍ",
+    description: "Co smí do AI, kdo má přístup a jak chránit citlivá data.",
   },
   {
     icon: Award,
-    title: "AKADEMIE",
-    description: "Licence + certifikace + reporting",
+    title: "PLÁN ZAŠKOLENÍ TÝMU",
+    description: "Doporučené akademie + licence + přehled pro HR o dokončení.",
   },
 ];
 
@@ -478,14 +478,14 @@ const ProFirmy = () => {
             </div>
           </section>
 
-          {/* Co dostanete do ruky */}
+          {/* Co získáte během prvních 14 dnů */}
           <section className="py-20 bg-card/20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                CO DOSTANETE DO RUKY
+                CO ZÍSKÁTE BĚHEM PRVNÍCH 14 DNŮ
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Výstupy, které můžete poslat vedení.
+                Výstupy, které můžete poslat vedení — jasné, stručné, použitelné.
               </p>
               
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
@@ -512,6 +512,11 @@ const ProFirmy = () => {
                   );
                 })}
               </div>
+              
+              <p className="text-[11px] text-muted-foreground/60 text-center mt-8 max-w-xl mx-auto">
+                Pro firmy. Pokud chcete jen individuální studium, přejděte na{" "}
+                <Link to="/online" className="text-primary hover:underline">Online akademie</Link>.
+              </p>
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
