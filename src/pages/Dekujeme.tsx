@@ -6,7 +6,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
 const PRODUCTION_DOMAIN = "t-i.cz";
-const ACADEMY_URL = "https://learning.t-i.cz";
+const ACADEMY_URL = "https://talent-innovation.learnworlds.com/start";
 
 const Dekujeme = () => {
   const [searchParams] = useSearchParams();
