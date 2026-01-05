@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   Wand2, Check, Award, Users, Star, Clock, RefreshCw, 
-  ChevronDown, BadgeCheck, Timer, BookOpen
+  ChevronDown, BadgeCheck, Timer, BookOpen, FileText, Crown
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -17,18 +17,90 @@ import {
 } from "@/components/ui/accordion";
 
 const modules = [
-  { num: 1, title: "Revoluce v produktivitě: Jak AI odhalí plýtvání a promění váš pracovní styl" },
-  { num: 2, title: "AI pod tlakem: Jak zkrotit halucinace a přimět Copilot myslet jako expert" },
-  { num: 3, title: "Kreativita na steroidech: Myslící Copilot, perfektní texty a nejlepší nápady bez námahy" },
-  { num: 4, title: "Copilot & NotebookLM jako váš editor, designer a vyjednavač" },
-  { num: 5, title: "AI rentgen vaší firmy: Najděte odpověď, data i řešení během jediné vteřiny" },
-  { num: 6, title: "Z chaosu k jasnozřivosti: Copilot jako váš osobní datový analytik" },
-  { num: 7, title: "AI agenti na povel: Jak během minut vytvořit bota, který zná celou vaši firmu" },
-  { num: 8, title: "Firemní experti na povel: Jak postavit ultra-přesné AI agenty během pár minut" },
-  { num: 9, title: "Power Automate: Budujte agenty, kteří propojí celou firmu a jede to samo" },
-  { num: 10, title: "Power Automate Mastery: Postavte workflow, které jede samo" },
-  { num: 11, title: "Vaše první AI aplikace: Postavte firemní nástroj bez jediného řádku kódu" },
-  { num: 12, title: "Kreativita bez limitů: AI, která tvoří nápady, organizuje chaos a natáčí video za vás" }
+  { 
+    num: 1, 
+    title: "AI a produktivita v M365", 
+    description: "Jak AI odhalí plýtvání a promění váš pracovní styl. Základy práce s Copilotem v ekosystému Microsoft.",
+    output: "Checklist: Kde Copilot ušetří nejvíc času",
+    tags: ["2h", "checklist", "ukázka"]
+  },
+  { 
+    num: 2, 
+    title: "Halucinace a přesnost Copilota", 
+    description: "Jak zkrotit halucinace a přimět Copilot myslet jako expert. Validace a ověřování výstupů.",
+    output: "Framework: Ověření Copilot výstupů",
+    tags: ["2h", "framework", "checklist"]
+  },
+  { 
+    num: 3, 
+    title: "Kreativní texty s AI", 
+    description: "Myslící Copilot, perfektní texty a nejlepší nápady bez námahy. Psaní a editace obsahu.",
+    output: "Šablona: Prompt vzory pro různé typy textů",
+    tags: ["2h", "šablona", "workflow"]
+  },
+  { 
+    num: 4, 
+    title: "Copilot jako editor a designer", 
+    description: "Copilot & NotebookLM jako váš editor, designer a vyjednavač. Vizuální a textová tvorba.",
+    output: "Workflow: Od nápadu k hotové prezentaci",
+    tags: ["2h", "workflow", "ukázka"]
+  },
+  { 
+    num: 5, 
+    title: "Firemní data a vyhledávání", 
+    description: "Najděte odpověď, data i řešení během jediné vteřiny. Práce s interními dokumenty.",
+    output: "Checklist: Nastavení Copilot pro firemní data",
+    tags: ["2h", "checklist", "šablona"]
+  },
+  { 
+    num: 6, 
+    title: "Copilot jako datový analytik", 
+    description: "Z chaosu k jasnozřivosti: Copilot jako váš osobní datový analytik. Excel a analýzy.",
+    output: "Šablona: Prompty pro datovou analýzu v Excelu",
+    tags: ["2h", "šablona", "workflow"]
+  },
+  { 
+    num: 7, 
+    title: "Vlastní AI agenti – základy", 
+    description: "Jak během minut vytvořit bota, který zná celou vaši firmu. Copilot Studio intro.",
+    output: "Šablona: První agent v Copilot Studiu",
+    tags: ["2h", "šablona", "ukázka"]
+  },
+  { 
+    num: 8, 
+    title: "Ultra-přesní firemní agenti", 
+    description: "Jak postavit ultra-přesné AI agenty během pár minut. Pokročilé techniky.",
+    output: "Framework: Knowledge base pro agenty",
+    tags: ["2h", "framework", "workflow"]
+  },
+  { 
+    num: 9, 
+    title: "Power Automate – propojení", 
+    description: "Budujte agenty, kteří propojí celou firmu a jede to samo. Automatizace procesů.",
+    output: "Workflow: Agent + Power Automate integrace",
+    tags: ["2h", "workflow", "ukázka"]
+  },
+  { 
+    num: 10, 
+    title: "Power Automate Mastery", 
+    description: "Postavte workflow, které jede samo. Pokročilé scénáře a triggery.",
+    output: "Šablona: 5 nejužitečnějších automatizací",
+    tags: ["2h", "šablona", "workflow"]
+  },
+  { 
+    num: 11, 
+    title: "AI aplikace bez kódu", 
+    description: "Postavte firemní nástroj bez jediného řádku kódu. Power Apps a Copilot.",
+    output: "Mini-app: Jednoduchá firemní aplikace",
+    tags: ["2h", "workflow", "ukázka"]
+  },
+  { 
+    num: 12, 
+    title: "Kreativita bez limitů", 
+    description: "AI, která tvoří nápady, organizuje chaos a natáčí video za vás. Multimodální tvorba.",
+    output: "Checklist: AI nástroje pro kreativní práci",
+    tags: ["2h", "checklist", "ukázka"]
+  }
 ];
 
 const learnings = [
@@ -78,13 +150,16 @@ const CopilotAkademie = () => {
               {/* Meta badges */}
               <div className="flex flex-wrap justify-center gap-3 mb-8">
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-primary" /> 12×2 hodiny
+                  <Clock className="w-4 h-4 text-primary" /> 12 modulů (cca 24 h)
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-primary" /> Začátečníci – Pokročilí
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
                   <Timer className="w-4 h-4 text-primary" /> Studujte vlastním tempem
+                </span>
+                <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
+                  <Award className="w-4 h-4 text-primary" /> Certifikát + LinkedIn odznak
                 </span>
               </div>
               
@@ -110,9 +185,10 @@ const CopilotAkademie = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary/50 text-primary hover:bg-primary/10"
+                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary text-primary bg-primary/5 hover:bg-primary/15"
                   >
-                    Zobrazit roadmapu
+                    <BookOpen className="w-4 h-4 mr-2" />
+                    Zobrazit osnovu (ukázka)
                   </Button>
                 </a>
               </div>
@@ -173,37 +249,82 @@ const CopilotAkademie = () => {
 
         {/* Roadmap */}
         <section id="roadmap" className="py-20 bg-card/20 relative">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+                <BookOpen className="w-4 h-4 text-accent" />
+                <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">
+                  Osnova kurzu
+                </span>
+              </div>
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  Roadmap: Obsah akademie
+                  Obsah akademie
                 </span>
               </h2>
-              <p className="text-muted-foreground">12 modulů × 2 hodiny praktického obsahu</p>
+              <p className="text-muted-foreground flex items-center justify-center gap-3">
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  12 modulů
+                </span>
+                <span className="text-border">•</span>
+                <span className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-primary/60" />
+                  cca 24 hodin obsahu
+                </span>
+                <span className="text-border">•</span>
+                <span className="flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-primary/60" />
+                  šablony & workflow
+                </span>
+              </p>
             </div>
             
-            <div className="max-w-3xl mx-auto">
-              <Accordion type="single" collapsible className="space-y-3">
+            <div className="max-w-3xl mx-auto relative">
+              {/* Vertical timeline line */}
+              <div className="absolute left-[29px] top-8 bottom-8 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent hidden md:block" />
+              
+              <Accordion type="single" collapsible className="space-y-4">
                 {modules.map((module) => (
                   <AccordionItem 
                     key={module.num} 
                     value={`module-${module.num}`}
-                    className="border-0"
+                    className="border-0 group"
                   >
-                    <AccordionTrigger className="glass-card px-5 py-4 rounded-xl border border-border/30 hover:border-primary/40 hover:no-underline transition-all duration-300 [&[data-state=open]]:rounded-b-none [&[data-state=open]]:border-b-0">
-                      <div className="flex items-center gap-4 text-left">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                          <span className="text-sm font-bold text-primary">{module.num}</span>
+                    <AccordionTrigger className="glass-card px-5 py-5 rounded-xl border border-border/30 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(102,252,241,0.1)] hover:no-underline transition-all duration-300 [&[data-state=open]]:rounded-b-none [&[data-state=open]]:border-b-0 [&[data-state=open]]:border-primary/40 [&[data-state=open]]:shadow-[0_0_25px_rgba(102,252,241,0.15)]">
+                      <div className="flex items-center gap-4 text-left w-full">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-300 relative z-10">
+                          <span className="text-base font-bold text-primary">{module.num}</span>
                         </div>
-                        <span className="text-sm md:text-base text-foreground font-medium">{module.title}</span>
+                        <div className="flex-1 min-w-0">
+                          <span className="text-sm md:text-base text-foreground font-semibold block group-hover:text-primary transition-colors duration-300">{module.title}</span>
+                          <div className="flex flex-wrap gap-2 mt-2.5">
+                            {module.tags.map((tag, idx) => (
+                              <span key={idx} className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider bg-card/80 text-muted-foreground border border-border/40 rounded-md hover:border-primary/30 hover:text-primary transition-colors duration-200">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="glass-card px-5 py-4 border border-t-0 border-border/30 rounded-b-xl">
-                      <p className="text-sm text-muted-foreground pl-14">
-                        Praktický modul s video lekcemi, příklady a cvičeními. Součástí jsou šablony a materiály ke stažení.
-                      </p>
+                    <AccordionContent className="glass-card px-5 py-5 border border-t-0 border-primary/40 rounded-b-xl bg-gradient-to-b from-primary/5 to-transparent shadow-[inset_0_2px_10px_rgba(102,252,241,0.05)]">
+                      <div className="pl-16 space-y-4">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {module.description}
+                        </p>
+                        <div className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                            <FileText className="w-4 h-4 text-primary" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-semibold uppercase tracking-wider text-primary block mb-1">Výstup modulu</span>
+                            <span className="text-sm text-foreground font-medium">{module.output}</span>
+                          </div>
+                        </div>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -259,13 +380,25 @@ const CopilotAkademie = () => {
               <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
                 Začněte s Copilot Akademií
               </h2>
-              <p className="text-muted-foreground mb-6">
-                12 modulů praktického obsahu + certifikát + LinkedIn odznak
-              </p>
-              <div className="mb-8">
+              
+              <div className="mb-6">
                 <span className="text-4xl font-bold text-primary">4 470 Kč</span>
                 <span className="text-sm text-muted-foreground ml-2">vč. DPH</span>
               </div>
+              
+              {/* Benefit bullets */}
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <BookOpen className="w-4 h-4 text-primary" /> 12 modulů prakticky
+                </span>
+                <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Award className="w-4 h-4 text-primary" /> Certifikát + LinkedIn odznak
+                </span>
+                <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Timer className="w-4 h-4 text-primary" /> Dlouhodobý přístup
+                </span>
+              </div>
+              
               <a 
                 href="https://t-i.cz/online/copilotakademie"
                 target="_blank"
@@ -276,9 +409,18 @@ const CopilotAkademie = () => {
                   Koupit akademii
                 </Button>
               </a>
-              <p className="text-xs text-muted-foreground/60 mt-6">
-                Nebo zvažte <Link to="/online/master-of-ai-creativity" className="text-accent hover:underline">kompletní program Master of AI Creativity</Link> se všemi 3 akademiemi.
-              </p>
+              
+              {/* Secondary links */}
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+                <a href="#roadmap" className="text-sm text-primary hover:text-primary/80 hover:underline transition-colors flex items-center justify-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Nejdřív chci vidět roadmapu
+                </a>
+                <Link to="/online/master-of-ai-creativity" className="text-sm text-accent hover:text-accent/80 hover:underline transition-colors flex items-center justify-center gap-1">
+                  <Crown className="w-3.5 h-3.5" />
+                  Chci kompletní program (3 akademie)
+                </Link>
+              </div>
             </div>
           </div>
         </section>
