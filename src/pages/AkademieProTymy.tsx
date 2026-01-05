@@ -65,8 +65,8 @@ const pricingPlans = [
     recommended: false,
     features: [
       "Přístup k vybraným akademiím",
-      "Certifikát & LinkedIn odznak",
-      "HR reporting dokončení"
+      "Certifikát + LinkedIn odznak",
+      "Přehled o dokončení (pro HR)"
     ],
     extraFeatures: []
   },
@@ -77,8 +77,8 @@ const pricingPlans = [
     recommended: true,
     features: [
       "Přístup k vybraným akademiím",
-      "Certifikát & LinkedIn odznak",
-      "HR reporting dokončení"
+      "Certifikát + LinkedIn odznak",
+      "Přehled o dokončení (pro HR)"
     ],
     extraFeatures: [
       "Onboarding pro tým (60 min)"
@@ -91,12 +91,12 @@ const pricingPlans = [
     recommended: false,
     features: [
       "Přístup k vybraným akademiím",
-      "Certifikát & LinkedIn odznak",
-      "HR reporting dokončení"
+      "Certifikát + LinkedIn odznak",
+      "Přehled o dokončení (pro HR)"
     ],
     extraFeatures: [
       "Onboarding pro tým (60 min)",
-      "Quarterly review (30 min) / optimalizace programu"
+      "Quarterly review (30 min) + optimalizace programu"
     ]
   }
 ];
@@ -621,11 +621,11 @@ const AkademieProTymy = () => {
                   Balíčky licencí
                 </span>
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mb-2">
-                Zvolte akademii (nebo kompletní program) a vyberte velikost balíčku.
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-3">
+                Zvolte akademii (nebo Kompletní program) a vyberte velikost balíčku.
               </p>
               <p className="text-xs text-accent font-medium">
-                Doporučení: Kompletní program pro management a klíčové role.
+                Tip: Pro management a klíčové role doporučujeme Kompletní program (3 akademie).
               </p>
             </div>
 
@@ -665,9 +665,6 @@ const AkademieProTymy = () => {
                   );
                 })}
               </div>
-              <p className="text-xs text-muted-foreground text-center">
-                Kompletní program doporučujeme pro management a klíčové role.
-              </p>
             </div>
             
             {/* Pricing Cards */}
@@ -715,8 +712,11 @@ const AkademieProTymy = () => {
                           </span>
                         </span>
                       </p>
+                      <p className="text-[10px] text-primary/70 mt-1">
+                        Dlouhodobý přístup a studium vlastním tempem.
+                      </p>
                       <div className="text-sm text-primary font-medium mt-2">
-                        Celkem: {formatPrice(totalPrice)} Kč
+                        Celkem: {formatPrice(totalPrice)} Kč (bez DPH)
                       </div>
                     </div>
                     
@@ -744,7 +744,7 @@ const AkademieProTymy = () => {
                       }`}
                       variant={plan.recommended ? "default" : "outline"}
                     >
-                      Poptat {plan.name}
+                      Chci {plan.name} nabídku
                     </Button>
                   </div>
                 );
@@ -760,7 +760,7 @@ const AkademieProTymy = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-1">
-                      100+ licencí?
+                      Potřebujete 100+ licencí?
                     </h3>
                     <p className="text-muted-foreground">
                       Připravíme nabídku na míru.
@@ -771,7 +771,7 @@ const AkademieProTymy = () => {
                     variant="outline"
                     className="border-accent/50 text-accent hover:bg-accent/10"
                   >
-                    Kontaktovat pro Enterprise
+                    Domluvit firemní nabídku
                   </Button>
                 </div>
               </div>
