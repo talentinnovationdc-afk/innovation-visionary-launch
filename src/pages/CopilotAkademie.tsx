@@ -253,14 +253,14 @@ const CopilotAkademie = () => {
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
-                <BookOpen className="w-4 h-4 text-accent" />
-                <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <BookOpen className="w-4 h-4 text-primary" />
+                <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">
                   Osnova kurzu
                 </span>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
                   Obsah akademie
                 </span>
               </h2>
