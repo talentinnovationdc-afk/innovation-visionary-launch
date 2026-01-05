@@ -469,7 +469,7 @@ const Online = () => {
 
           {/* Course Catalog */}
           <section id="varianty" className="py-16 md:py-24 relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,_hsl(284,100%,50%,0.06)_0%,_transparent_70%)] pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,_hsl(176,96%,69%,0.06)_0%,_transparent_70%)] pointer-events-none" />
             
             <div className="container px-4 relative z-10">
               <div className="text-center mb-12">
@@ -489,8 +489,8 @@ const Online = () => {
                       key={course.id}
                       className={`glass-card p-6 group transition-all duration-300 hover:-translate-y-2 flex flex-col relative cursor-pointer ${
                         course.isProgram 
-                          ? 'border-accent/40 shadow-[0_0_30px_rgba(189,0,255,0.15)] hover:shadow-[0_0_40px_rgba(189,0,255,0.25)]' 
-                          : 'hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)]'
+                          ? 'border-accent/40 shadow-[0_0_20px_rgba(189,0,255,0.1)] hover:shadow-[0_0_25px_rgba(189,0,255,0.15)]' 
+                          : 'hover:border-primary/40 hover:shadow-[0_0_20px_rgba(102,252,241,0.12)]'
                       }`}
                       onClick={(e) => {
                         // Don't navigate if clicking on buttons
@@ -511,10 +511,12 @@ const Online = () => {
                         </div>
                       )}
                       
-                      <div className={`w-12 h-12 rounded-lg border flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors duration-300 ${
-                        course.isProgram ? 'bg-accent/20 border-accent/40' : 'bg-accent/10 border-accent/20'
+                      <div className={`w-12 h-12 rounded-lg border flex items-center justify-center mb-5 transition-colors duration-300 ${
+                        course.isProgram 
+                          ? 'bg-accent/20 border-accent/40 group-hover:bg-accent/25' 
+                          : 'bg-primary/10 border-primary/20 group-hover:bg-primary/15'
                       }`}>
-                        <Icon className="h-6 w-6 text-accent" />
+                        <Icon className={`h-6 w-6 ${course.isProgram ? 'text-accent' : 'text-primary'}`} />
                       </div>
                       
                       <h3 className="text-sm font-semibold tracking-[0.1em] text-foreground mb-1 uppercase">
@@ -531,12 +533,8 @@ const Online = () => {
                       
                       {course.tags && (
                         <div className="flex flex-wrap gap-1.5 mb-4">
-                          {course.tags.map((tag, idx) => (
-                            <span key={idx} className={`px-2 py-0.5 text-[9px] font-semibold uppercase rounded-full border ${
-                              course.isProgram 
-                                ? 'bg-accent/10 text-accent border-accent/20' 
-                                : 'bg-primary/10 text-primary border-primary/20'
-                            }`}>
+                          {course.tags.slice(0, 3).map((tag, idx) => (
+                            <span key={idx} className="px-2 py-0.5 text-[9px] font-medium uppercase rounded-full border bg-secondary/50 text-muted-foreground border-primary/20">
                               {tag}
                             </span>
                           ))}
@@ -566,14 +564,10 @@ const Online = () => {
                             <Button 
                               variant="outline" 
                               size="sm" 
-                              className={`w-full text-xs tracking-[0.1em] uppercase py-3 ${
-                                course.isProgram 
-                                  ? 'border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_10px_rgba(189,0,255,0.2)] hover:shadow-[0_0_15px_rgba(189,0,255,0.3)]' 
-                                  : 'border-primary/50 text-primary hover:bg-primary/10 shadow-[0_0_10px_rgba(102,252,241,0.2)] hover:shadow-[0_0_15px_rgba(102,252,241,0.3)]'
-                              } group/btn transition-all duration-300`}
+                              className="w-full text-xs tracking-[0.1em] uppercase py-3 border-primary/50 text-primary hover:bg-primary/10 shadow-[0_0_8px_rgba(102,252,241,0.15)] hover:shadow-[0_0_12px_rgba(102,252,241,0.25)] group/btn transition-all duration-300"
                             >
                               <FileText className="w-4 h-4 mr-2" />
-                              {course.isProgram ? 'Zobrazit obsah programu' : 'Zobrazit obsah akademie'}
+                              Ukázka obsahu
                               <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform duration-200" />
                             </Button>
                           </Link>
@@ -584,9 +578,8 @@ const Online = () => {
                             onClick={(e) => e.stopPropagation()}
                           >
                             <Button 
-                              variant="gradient" 
                               size="sm" 
-                              className="w-full text-xs tracking-[0.1em] uppercase py-3"
+                              className="w-full text-xs tracking-[0.1em] uppercase py-3 bg-gradient-to-r from-primary to-[#00D4FF] text-primary-foreground font-semibold hover:opacity-90 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:scale-[1.02] transition-all duration-300"
                               data-event={course.isProgram ? "b2c_program_buy_click" : "b2c_buy_click"}
                             >
                               {course.isProgram ? 'Koupit program' : 'Koupit akademii'}
@@ -604,10 +597,10 @@ const Online = () => {
           {/* B2B CTA Band */}
           <section className="py-16 bg-card/20 relative">
             <div className="container px-4">
-              <div className="max-w-4xl mx-auto bg-gradient-to-br from-accent/10 via-card/80 to-primary/10 backdrop-blur-xl border border-accent/30 rounded-2xl p-8 md:p-10">
+              <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary/10 via-card/80 to-primary/5 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 md:p-10">
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                  <div className="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
-                    <Building className="w-8 h-8 text-accent" />
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Building className="w-8 h-8 text-primary" />
                   </div>
                   
                   <div className="flex-1 text-center md:text-left">
@@ -615,7 +608,7 @@ const Online = () => {
                       Kupujete pro tým?
                     </h3>
                     <p className="text-muted-foreground mb-2">
-                      Hromadné licence pro firmy: stejné akademie ze záznamu + onboarding + reporting dokončení.
+                      Hromadné licence pro firmy: stejné akademie ve vlastním tempu + onboarding + reporting.
                     </p>
                     <p className="text-xs text-muted-foreground/70">
                       Individuální nákup = osobní rozvoj. Firemní licence = onboarding a měření.
@@ -623,7 +616,7 @@ const Online = () => {
                   </div>
                   
                   <Link to="/akademie-pro-tymy" data-event="b2c_to_b2b_click">
-                    <Button className="px-6 py-3 shadow-[0_0_15px_rgba(189,0,255,0.3)] hover:shadow-[0_0_25px_rgba(189,0,255,0.5)]">
+                    <Button className="px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
                       Akademie pro týmy
                     </Button>
                   </Link>
