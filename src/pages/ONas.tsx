@@ -13,7 +13,8 @@ const experts = [
     name: "Daniel Červený",
     role: "STRATEGIE & PRODUKTY",
     description: "Navrhuje strategii a roadmapu, identifikuje quick wins v rolích a procesech a převádí je do měřitelných výsledků.",
-    focus: ["AI strategie", "Procesy & role", "Business case", "Change & adopce"],
+    clientValue: "Co přináším klientovi: Jasný plán, kde AI ušetří čas a peníze – s měřitelným dopadem.",
+    focus: ["Bezpečné workflow", "Governance a pravidla", "Měření dopadu"],
     linkedin: "https://www.linkedin.com/in/daniel-%C4%8Derven%C3%BD-a8479629/",
     image: danielCerveny,
   },
@@ -21,7 +22,8 @@ const experts = [
     name: "Jan Bouda",
     role: "AI ARCHITEKTURA & AUTOMATIZACE",
     description: "Navrhuje spolehlivé AI workflow, integrace a automatizace tak, aby fungovaly v běžném provozu – bezpečně a měřitelně.",
-    focus: ["Workflow automatizace", "Šablony & standardy", "Integrace", "Bezpečné nasazení"],
+    clientValue: "Co přináším klientovi: Workflow a automatizace, které fungují každý den – bez komplikací.",
+    focus: ["Automatizace procesů", "Standardy a šablony", "Bezpečné workflow"],
     linkedin: "https://www.linkedin.com/in/jan-bouda-7151b7167/",
     image: janBouda,
   },
@@ -125,7 +127,8 @@ const ONas = () => {
                         {expert.name.toUpperCase()}
                       </h3>
                       <p className="text-primary font-semibold tracking-[0.1em] text-sm mb-4">{expert.role}</p>
-                      <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{expert.description}</p>
+                      <p className="text-muted-foreground text-sm mb-3 leading-relaxed">{expert.description}</p>
+                      <p className="text-primary text-sm font-medium mb-5 italic">{expert.clientValue}</p>
                       
                       {/* Focus areas */}
                       <div className="flex flex-wrap justify-center gap-2 mb-6">
