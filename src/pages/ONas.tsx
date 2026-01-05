@@ -11,17 +11,17 @@ import janBouda from "@/assets/team/jan-bouda.png";
 const experts = [
   {
     name: "Daniel Červený",
-    role: "STRATEGIC ENABLER",
-    description: "Architekt obchodní kontinuity a AI strategie. Specializuje se na transformaci procesů a zajištění dlouhodobé udržitelnosti projektů pro střední a velké podniky.",
-    focus: ["Business Continuity", "AI Strategy", "Process Transformation"],
+    role: "STRATEGIE & PRODUKTY",
+    description: "Navrhuje strategii a roadmapu, identifikuje quick wins v rolích a procesech a převádí je do měřitelných výsledků.",
+    focus: ["AI strategie", "Procesy & role", "Business case", "Change & adopce"],
     linkedin: "https://www.linkedin.com/in/daniel-%C4%8Derven%C3%BD-a8479629/",
     image: danielCerveny,
   },
   {
     name: "Jan Bouda",
-    role: "AI ARCHITECT",
-    description: "Engineering AI specialista s důrazem na Few-shot prompting a spolehlivé B2B implementace. Garantuje technickou preciznost a bezpečnost každého řešení.",
-    focus: ["Engineering AI", "Few-shot Prompting", "B2B Implementation"],
+    role: "AI ARCHITEKTURA & AUTOMATIZACE",
+    description: "Navrhuje spolehlivé AI workflow, integrace a automatizace tak, aby fungovaly v běžném provozu – bezpečně a měřitelně.",
+    focus: ["Workflow automatizace", "Šablony & standardy", "Integrace", "Bezpečné nasazení"],
     linkedin: "https://www.linkedin.com/in/jan-bouda-7151b7167/",
     image: janBouda,
   },
@@ -30,30 +30,30 @@ const experts = [
 const dnaCards = [
   {
     icon: Shield,
-    title: "REGULATORY SAFETY",
-    subtitle: "AI ACT",
-    description: "Připravenost na regulace EU AI Act s důrazem na transparentnost a odpovědnost.",
-    accent: "purple",
+    title: "REGULACE (POKUD RELEVANTNÍ)",
+    subtitle: "PRAVIDLA",
+    description: "Pravidla pro AI nastavíme tak, aby seděla vašemu oboru. Regulace řešíme jen když je relevantní.",
+    accent: "cyan",
   },
   {
     icon: Cog,
-    title: "OPERATIONAL PRECISION",
-    subtitle: "ISO / ADR",
-    description: "Soulad s průmyslovými standardy ISO a ADR pro kritickou infrastrukturu.",
+    title: "PROVOZNÍ PRECIZNOST",
+    subtitle: "WORKFLOW",
+    description: "Workflow navrhujeme tak, aby šly používat každý den – i bez AI nadšenců v týmu.",
     accent: "cyan",
   },
   {
     icon: Database,
-    title: "DATA INTEGRITY",
+    title: "OCHRANA DAT",
     subtitle: "GDPR",
-    description: "Plná ochrana dat a transparentnost dle evropských standardů GDPR.",
-    accent: "cyan",
+    description: "Jasně určíte, co smí do AI, kdo má přístup a jak pracovat s citlivými daty.",
+    accent: "purple",
   },
   {
     icon: Zap,
-    title: "CUSTOM AUTOMATION",
-    subtitle: "AI AGENTS",
-    description: "Automatizační řešení na míru s autonomními AI agenty pro vaše procesy.",
+    title: "AUTOMATIZACE NA MÍRU",
+    subtitle: "MĚŘENÍ DOPADU",
+    description: "Z opakovaných úkolů uděláme automatizaci – s měřením dopadu.",
     accent: "purple",
   },
 ];
@@ -87,7 +87,7 @@ const ONas = () => {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[900px] mx-auto leading-[1.8]">
-                  Strategické vedení a technická preciznost pro průmyslové lídry i ambiciózní střední firmy.
+                  Strategie, workflow a školení, díky kterým týmy pracují rychleji – bezpečně a měřitelně.
                 </p>
               </div>
             </div>
@@ -162,10 +162,10 @@ const ONas = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                DNA NAŠÍ EXPERTÍZY
+                NA ČEM SI ZAKLÁDÁME
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Naše odbornost je zakotvena v nejpřísnějších průmyslových a regulatorních standardech.
+                Principy, které nás odlišují.
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -217,7 +217,7 @@ const ONas = () => {
                 to="/checkout"
                 className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
               >
-                DIAGNOSTIKA AI PŘIPRAVENOSTI A RIZIK
+                DOMLUVIT 15 MINUT
               </Link>
             </div>
           </section>
