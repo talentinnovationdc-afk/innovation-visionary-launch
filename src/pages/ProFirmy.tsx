@@ -7,7 +7,7 @@ import { MethodologySection } from "@/components/MethodologySection";
 import { 
   Search, Bot, Users, GraduationCap, Banknote, 
   ClipboardCheck, Shield, Scale, FileCode,
-  UserCheck, FileText, ShoppingCart, ChevronDown,
+  UserCheck, FileText, ShoppingCart, ChevronDown, ChevronRight,
   FileBarChart, Route, LayoutGrid, Award,
   Clock, MessageSquare, Lock, Zap, BookOpen, BarChart3, HelpCircle
 } from "lucide-react";
@@ -166,19 +166,19 @@ const faqItems = [
   {
     icon: Clock,
     question: "Kolik času to zabere?",
-    answer: "Začínáme krátkým úvodem (15 min), kde si potvrdíme cíle a role. Pak jdeme po krocích.",
+    answer: "Začínáme 15minutovým úvodním callem.",
     bullets: [
-      "15 min úvodní call",
       "1–2 týdny: mapa rolí + quick wins",
       "Poté: implementace a zaškolení podle domluvy"
     ],
     highlight: "15 min úvod",
     size: "normal" as const,
+    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
   },
   {
     icon: MessageSquare,
     question: "Co potřebujete od nás?",
-    answer: "Nechceme složité přípravy. Stačí krátké informace o týmu a procesech.",
+    answer: "Stačí krátké informace o týmu a procesech.",
     bullets: [
       "Kdo jsou cílové role (např. HR, obchod, back office)",
       "2–3 typické úkoly, které řeší denně",
@@ -186,11 +186,12 @@ const faqItems = [
     ],
     highlight: "Minimum vstupů",
     size: "normal" as const,
+    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
   },
   {
     icon: Lock,
     question: "Jak chráníte data?",
-    answer: "Nastavíme pravidla použití a přístupy. Citlivá data řešíme režimem 'co do AI patří a co ne'.",
+    answer: "Nastavíme pravidla použití a přístupy k datům.",
     bullets: [
       "Pravidla práce s daty + role a oprávnění",
       "Volba nástrojů podle citlivosti",
@@ -198,11 +199,12 @@ const faqItems = [
     ],
     highlight: "GDPR + interní pravidla",
     size: "featured" as const,
+    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
   },
   {
     icon: Zap,
     question: "Co když nemáme Copilot?",
-    answer: "Nejsme vázaní na jednu platformu. Přizpůsobíme workflow vašemu stacku.",
+    answer: "Nejsme vázaní na jednu platformu.",
     bullets: [
       "M365 není podmínka",
       "Doporučíme vhodné nástroje pro vaše role",
@@ -210,11 +212,12 @@ const faqItems = [
     ],
     highlight: "Flexibilní nástroje",
     size: "normal" as const,
+    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
   },
   {
     icon: BookOpen,
     question: "Jak fungují firemní licence?",
-    answer: "Licence jsou týmové — vybíráte počet licencí a akademie. HR získá přehled o dokončení.",
+    answer: "Vybíráte počet licencí a akademie, HR má přehled.",
     bullets: [
       "Balíčky podle velikosti týmu",
       "Dlouhodobý přístup a studium vlastním tempem",
@@ -222,11 +225,12 @@ const faqItems = [
     ],
     highlight: "Týmové licence",
     size: "normal" as const,
+    nextStep: { label: "Zobrazit akademie pro týmy", link: "/akademie-pro-tymy" }
   },
   {
     icon: BarChart3,
     question: "Jak měříte dopad?",
-    answer: "Dopad vyhodnocujeme na jednoduchých metrikách, které dávají smysl vedení.",
+    answer: "Jednoduché metriky, které dávají smysl vedení.",
     bullets: [
       "Časová úspora, kvalita výstupů, chybovost",
       "Před/po srovnání u vybraných procesů",
@@ -234,6 +238,7 @@ const faqItems = [
     ],
     highlight: "Měřitelné KPI",
     size: "featured" as const,
+    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
   },
 ];
 
@@ -651,22 +656,34 @@ const ProFirmy = () => {
                           </AccordionTrigger>
                           
                           <AccordionContent>
-                            <div className="px-6 pb-5">
+                            <div className={`px-6 pb-5 bg-gradient-to-b ${isEven ? 'from-primary/5' : 'from-accent/5'} to-transparent`}>
                               <div className={`ml-[3.75rem] pl-4 border-l-2 ${
-                                isEven ? 'border-primary/20' : 'border-accent/20'
+                                isEven ? 'border-primary/30' : 'border-accent/30'
                               }`}>
-                                <p className="text-muted-foreground leading-relaxed mb-3">
+                                <p className="text-[hsl(210,5%,88%)] leading-[1.8] text-[15px] mb-3">
                                   {item.answer}
                                 </p>
                                 {item.bullets && item.bullets.length > 0 && (
-                                  <ul className="space-y-1.5">
+                                  <ul className="space-y-1.5 mb-4">
                                     {item.bullets.map((bullet, bulletIdx) => (
-                                      <li key={bulletIdx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                      <li key={bulletIdx} className="flex items-start gap-2 text-sm text-[hsl(210,5%,82%)] leading-[1.7]">
                                         <span className={isEven ? 'text-primary' : 'text-accent'}>•</span>
                                         {bullet}
                                       </li>
                                     ))}
                                   </ul>
+                                )}
+                                {item.nextStep && (
+                                  <div className="pt-3 border-t border-border/30">
+                                    <Link 
+                                      to={item.nextStep.link}
+                                      className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                                    >
+                                      <span className="text-muted-foreground">Další krok:</span>
+                                      {item.nextStep.label}
+                                      <ChevronRight className="w-3 h-3" />
+                                    </Link>
+                                  </div>
                                 )}
                               </div>
                             </div>
