@@ -158,43 +158,73 @@ const faqItems = [
   {
     icon: Clock,
     question: "Kolik času to zabere?",
-    answer: "Rychlá diagnostika trvá 15 minut. Kompletní AI audit s roadmapou připravíme do 2 týdnů. Implementace závisí na rozsahu – od 1 týdne pro pilotní projekt až po 2–3 měsíce pro celofiremní nasazení.",
-    highlight: "15 min diagnostika",
+    answer: "Začínáme krátkým úvodem (15 min), kde si potvrdíme cíle a role. Pak jdeme po krocích.",
+    bullets: [
+      "15 min úvodní call",
+      "1–2 týdny: mapa rolí + quick wins",
+      "Poté: implementace a zaškolení podle domluvy"
+    ],
+    highlight: "15 min úvod",
     size: "normal" as const,
   },
   {
     icon: MessageSquare,
     question: "Co potřebujete od nás?",
-    answer: "Na začátku stačí 15minutový hovor, abychom pochopili vaše procesy. Pro audit pak potřebujeme přístup k relevantním lidem z týmu (HR, backoffice, obchod) a přehled používaných nástrojů.",
-    highlight: "Jen 15min call",
+    answer: "Nechceme složité přípravy. Stačí krátké informace o týmu a procesech.",
+    bullets: [
+      "Kdo jsou cílové role (např. HR, obchod, back office)",
+      "2–3 typické úkoly, které řeší denně",
+      "Jaké nástroje používáte (M365/Google/CRM ap.)"
+    ],
+    highlight: "Minimum vstupů",
     size: "normal" as const,
   },
   {
     icon: Lock,
     question: "Jak chráníte data?",
-    answer: "Pracujeme s enterprise verzemi AI nástrojů (Azure OpenAI, Microsoft Copilot), které nepoužívají vaše data k trénování modelů. Všechna řešení navrhujeme s ohledem na GDPR a AI Act.",
-    highlight: "GDPR & AI Act ready",
+    answer: "Nastavíme pravidla použití a přístupy. Citlivá data řešíme režimem 'co do AI patří a co ne'.",
+    bullets: [
+      "Pravidla práce s daty + role a oprávnění",
+      "Volba nástrojů podle citlivosti",
+      "Soulad s vašimi interními politikami a GDPR"
+    ],
+    highlight: "GDPR + interní pravidla",
     size: "featured" as const,
   },
   {
     icon: Zap,
     question: "Co když nemáme Copilot?",
-    answer: "Žádný problém. Pracujeme s různými nástroji – od ChatGPT Plus přes Claude až po open-source řešení. Doporučíme to nejlepší pro vaši situaci a rozpočet.",
+    answer: "Nejsme vázaní na jednu platformu. Přizpůsobíme workflow vašemu stacku.",
+    bullets: [
+      "M365 není podmínka",
+      "Doporučíme vhodné nástroje pro vaše role",
+      "Začneme tam, kde to dává nejrychlejší smysl"
+    ],
     highlight: "Flexibilní nástroje",
     size: "normal" as const,
   },
   {
     icon: BookOpen,
     question: "Jak fungují firemní licence?",
-    answer: "Akademie nabízíme jako firemní licence s neomezeným počtem přístupů. Cena závisí na počtu uživatelů a rozsahu kurzů. Součástí je reporting a certifikace pro každého absolventa.",
-    highlight: "Neomezené přístupy",
+    answer: "Licence jsou týmové — vybíráte počet licencí a akademie. HR získá přehled o dokončení.",
+    bullets: [
+      "Balíčky podle velikosti týmu",
+      "Dlouhodobý přístup a studium vlastním tempem",
+      "Přehled dokončení pro HR (reporting)"
+    ],
+    highlight: "Týmové licence",
     size: "normal" as const,
   },
   {
     icon: BarChart3,
     question: "Jak měříte dopad?",
-    answer: "Před zahájením definujeme konkrétní KPIs (ušetřený čas, počet automatizací, adoption rate). Po 3 měsících vyhodnocujeme a optimalizujeme. Dodáváme měsíční reporty pro management.",
-    highlight: "Měsíční reporty",
+    answer: "Dopad vyhodnocujeme na jednoduchých metrikách, které dávají smysl vedení.",
+    bullets: [
+      "Časová úspora, kvalita výstupů, chybovost",
+      "Před/po srovnání u vybraných procesů",
+      "Průběžné vyhodnocení a doporučení dalších kroků"
+    ],
+    highlight: "Měřitelné KPI",
     size: "featured" as const,
   },
 ];
@@ -540,7 +570,7 @@ const ProFirmy = () => {
                   </span>
                 </h2>
                 <p className="text-muted-foreground max-w-xl mx-auto">
-                  Odpovědi na nejčastější otázky od HR a vedení firem
+                  Rychlé odpovědi pro HR a vedení — jak to probíhá, co potřebujeme a jak chráníme data.
                 </p>
               </div>
               
@@ -608,9 +638,19 @@ const ProFirmy = () => {
                               <div className={`ml-[3.75rem] pl-4 border-l-2 ${
                                 isEven ? 'border-primary/20' : 'border-accent/20'
                               }`}>
-                                <p className="text-muted-foreground leading-relaxed">
+                                <p className="text-muted-foreground leading-relaxed mb-3">
                                   {item.answer}
                                 </p>
+                                {item.bullets && item.bullets.length > 0 && (
+                                  <ul className="space-y-1.5">
+                                    {item.bullets.map((bullet, bulletIdx) => (
+                                      <li key={bulletIdx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                        <span className={isEven ? 'text-primary' : 'text-accent'}>•</span>
+                                        {bullet}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
                               </div>
                             </div>
                           </AccordionContent>
@@ -623,7 +663,8 @@ const ProFirmy = () => {
               
               {/* Bottom CTA */}
               <div className="mt-12 text-center">
-                <p className="text-muted-foreground mb-4">Nenašli jste odpověď?</p>
+                <p className="text-muted-foreground mb-2">Nenašli jste odpověď?</p>
+                <p className="text-sm text-muted-foreground/70 mb-4">Napište nám, co chcete zlepšit — odpovíme do 24 hodin.</p>
                 <Link
                   to="/checkout"
                   className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-xl border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
