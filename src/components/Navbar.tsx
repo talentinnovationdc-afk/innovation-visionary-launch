@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
@@ -14,6 +14,12 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (href: string) => {
+    if (href === "/") return location.pathname === "/";
+    return location.pathname.startsWith(href);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -38,7 +44,9 @@ export const Navbar = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="text-xs font-semibold tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
+                  className={`text-xs font-semibold tracking-[0.15em] transition-colors hover:text-primary ${
+                    isActive(link.href) ? "text-primary" : "text-muted-foreground"
+                  }`}
                   data-event={link.label === "AKADEMIE PRO TÝMY" ? "nav_academy_teams" : undefined}
                 >
                   {link.label}
@@ -83,7 +91,9 @@ export const Navbar = () => {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className="text-xs font-semibold tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary py-2"
+                    className={`text-xs font-semibold tracking-[0.15em] transition-colors hover:text-primary py-2 ${
+                      isActive(link.href) ? "text-primary" : "text-muted-foreground"
+                    }`}
                     onClick={() => setIsOpen(false)}
                     data-event={link.label === "AKADEMIE PRO TÝMY" ? "nav_academy_teams" : undefined}
                   >
