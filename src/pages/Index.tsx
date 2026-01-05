@@ -117,7 +117,7 @@ const Index = () => {
                         <Building className="w-7 h-7 text-primary" />
                       </div>
                       <div>
-                        <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Pro firmy a HR</span>
+                        <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Pro firmy</span>
                       </div>
                     </div>
                     
@@ -126,9 +126,12 @@ const Index = () => {
                     </h3>
                     
                     <ul className="space-y-3 mb-6">
-                      <li className="flex items-center gap-3 text-muted-foreground">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span>Rychlé úspory času v rolích a procesech</span>
+                      <li className="text-muted-foreground">
+                        <div className="flex items-center gap-3">
+                          <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                          <span>Rychlé úspory času v rolích a procesech</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground/70 ml-8 mt-1">HR/L&D ocení: jednotný skillset a přehled o dokončení.</p>
                       </li>
                       <li className="flex items-center gap-3 text-muted-foreground">
                         <Check className="w-5 h-5 text-primary flex-shrink-0" />
@@ -184,7 +187,7 @@ const Index = () => {
                     </ul>
                     
                     <div className="flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all duration-200">
-                      Získat certifikaci a odznak <ArrowRight className="w-5 h-5" />
+                      Zobrazit online akademie <ArrowRight className="w-5 h-5" />
                     </div>
                   </Link>
                 </motion.div>
