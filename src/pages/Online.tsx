@@ -157,16 +157,16 @@ const Online = () => {
                   
                   <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                     <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                      Ovládněte AI
+                      AI pro vaši profesi
                     </span>
                     <br />
                     <span className="text-foreground">
-                      a získejte digitální odznak na LinkedIn.
+                      — a ověřitelný odznak na LinkedIn.
                     </span>
                   </h1>
                   
                   <p className="text-lg text-muted-foreground mb-6 max-w-xl mx-auto lg:mx-0">
-                    Vyberte si jednu akademii, nebo kompletní program Master of AI Creativity (3 akademie). Včetně certifikátu a praktických šablon.
+                    Vyberte jednu akademii, nebo kompletní program (3 akademie). Získáte certifikát, praktické šablony a LinkedIn odznak — ověřitelný na profilu.
                   </p>
                   
                   {/* Proof Chips */}
@@ -186,7 +186,7 @@ const Online = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a href="#varianty" data-event="b2c_variant_select">
                       <Button size="lg" className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
-                        Vybrat variantu
+                        Vybrat akademii
                       </Button>
                     </a>
                     <Button 
@@ -197,7 +197,7 @@ const Online = () => {
                       data-event="b2c_certificate_open"
                     >
                       <Award className="w-5 h-5 mr-2" />
-                      Ukázka certifikátu
+                      Jak vypadá odznak
                     </Button>
                   </div>
                 </div>
@@ -248,7 +248,7 @@ const Online = () => {
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
                           <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold text-primary">1</div>
-                          <span className="text-sm text-muted-foreground">Studujete ze záznamu</span>
+                          <span className="text-sm text-muted-foreground">Studujete online vlastním tempem</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold text-primary">2</div>
@@ -259,7 +259,10 @@ const Online = () => {
                           <span className="text-sm text-muted-foreground">Odznak přidáte na LinkedIn (1 klik)</span>
                         </div>
                       </div>
-                      <p className="text-[10px] text-muted-foreground/60 mt-3">Ukázka je anonymizovaná.</p>
+                      <p className="text-[11px] text-muted-foreground/50 mt-4">
+                        Výstup můžete sdílet na LinkedIn a přiložit k profilu i CV.
+                      </p>
+                      <p className="text-[10px] text-muted-foreground/40 mt-1">Ukázka je anonymizovaná.</p>
                     </div>
                   </div>
                 </div>
