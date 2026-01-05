@@ -1,55 +1,46 @@
-import { Search, FileText, Rocket, GraduationCap, RefreshCw } from "lucide-react";
+import { Search, FileText, Cog, GraduationCap, TrendingUp } from "lucide-react";
 
 interface Step {
-  number: number;
+  number: string;
   icon: React.ElementType;
   title: string;
   description: string;
-  accent: "cyan" | "purple";
-  link?: {
-    text: string;
-    url: string;
-  };
+  note?: string;
+  accent?: "purple";
 }
 
 const steps: Step[] = [
   {
-    number: 1,
+    number: "01",
+    title: "DIAGNOSTIKA",
+    description: "Najdeme role a procesy, kde AI přinese rychlé úspory a minimální riziko.",
     icon: Search,
-    title: "AUDIT",
-    description: "Identifikace úzkých hrdel a analýza průmyslových rizik.",
-    accent: "cyan",
   },
   {
-    number: 2,
+    number: "02",
+    title: "PLÁN",
+    description: "Navrhneme postup a pravidla: data, nástroje, governance.",
+    note: "Regulace (AI Act/ISO) řešíme, pokud je to pro váš obor relevantní.",
     icon: FileText,
-    title: "BLUEPRINT",
-    description: "Návrh řešení v souladu s ISO, ADR, MDR a AI Act.",
-    accent: "cyan",
   },
   {
-    number: 3,
-    icon: Rocket,
+    number: "03",
     title: "IMPLEMENTACE",
-    description: "Nasazení AI-native workflow auditovaného metodikou",
-    accent: "cyan",
-    link: {
-      text: "swimin.ai",
-      url: "https://www.swimin.ai",
-    },
+    description: "Nasadíme workflow a automatizace. Měříme dopad (čas, kvalita, chybovost).",
+    icon: Cog,
   },
   {
-    number: 4,
+    number: "04",
+    title: "ZAŠKOLENÍ",
+    description: "Tým dostane know-how a přístup do Online akademií. HR má přehled dokončení.",
     icon: GraduationCap,
-    title: "TRANSFER",
-    description: "Předání know-how vašim týmům skrze naši Online Akademii.",
     accent: "purple",
   },
   {
-    number: 5,
-    icon: RefreshCw,
+    number: "05",
     title: "EVOLUCE",
-    description: "Dlouhodobý audit a adaptace na nové digitální standardy.",
+    description: "Průběžně ladíme a rozšiřujeme podle výsledků a změn ve firmě.",
+    icon: TrendingUp,
     accent: "purple",
   },
 ];
@@ -69,7 +60,7 @@ export const MethodologySection = () => {
             CESTA K DIGITÁLNÍ AUTONOMII
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal leading-relaxed mb-2">
-            Od prvotní analýzy po dlouhodobou evoluci. Provázíme vás každým krokem.
+            5 kroků od analýzy k fungující automatizaci.
           </p>
           <p className="text-sm text-muted-foreground/70 max-w-xl mx-auto normal-case tracking-normal">
             Začínáme rolí a rychlými výhrami. Technologie přidáváme až když dává smysl.
@@ -77,120 +68,81 @@ export const MethodologySection = () => {
         </div>
 
         {/* Timeline */}
-        <div className="max-w-4xl mx-auto relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-accent/50 md:-translate-x-px" />
+        <div className="max-w-3xl mx-auto relative">
+          {/* Continuous gradient line */}
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/60 via-50% to-accent hidden md:block md:-translate-x-1/2" />
+          
+          {/* Mobile line */}
+          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/60 via-50% to-accent md:hidden" />
 
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            const isCyan = step.accent === "cyan";
-            const isEven = index % 2 === 0;
+          <div className="space-y-8">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              const isPurple = step.accent === "purple";
+              const isEven = index % 2 === 0;
 
-            return (
-              <div
-                key={step.number}
-                className={`relative flex items-start gap-6 md:gap-0 mb-12 last:mb-0 ${
-                  isEven ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Content Card */}
-                <div className={`flex-1 md:w-1/2 ${isEven ? "md:pr-12" : "md:pl-12"}`}>
-                  <div
-                    className={`
-                      group relative p-6 rounded-xl
-                      bg-gradient-to-b from-[#1F2833]/80 to-[#0B0C10]/90
-                      border border-white/5
-                      transition-all duration-300 ease-out
-                      hover:-translate-y-1
-                      ${isCyan 
-                        ? "hover:border-primary/30 hover:shadow-[0_0_30px_rgba(102,252,241,0.12)]" 
-                        : "hover:border-accent/30 hover:shadow-[0_0_30px_rgba(189,0,255,0.12)]"
-                      }
-                    `}
-                  >
-                    {/* Glow overlay */}
-                    <div 
+              return (
+                <div
+                  key={step.number}
+                  className={`relative flex items-center gap-8 ${
+                    isEven ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
+                >
+                  {/* Content Card */}
+                  <div className={`flex-1 ml-16 md:ml-0 ${isEven ? "md:text-right" : "md:text-left"}`}>
+                    <div
                       className={`
-                        absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 
-                        transition-opacity duration-300 pointer-events-none
-                        ${isCyan 
-                          ? "bg-[radial-gradient(ellipse_at_top,_hsl(176,96%,69%,0.05)_0%,_transparent_70%)]"
-                          : "bg-[radial-gradient(ellipse_at_top,_hsl(284,100%,50%,0.05)_0%,_transparent_70%)]"
+                        group inline-block bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl 
+                        border rounded-xl p-6 transition-all duration-500 hover:-translate-y-1
+                        ${isPurple 
+                          ? "border-accent/20 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.2)]" 
+                          : "border-primary/20 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.2)]"
                         }
                       `}
-                    />
-
-                    <div className="relative z-10">
-                      {/* Icon */}
-                      <div 
-                        className={`
-                          w-10 h-10 rounded-lg flex items-center justify-center mb-4
-                          transition-all duration-300
-                          ${isCyan 
-                            ? "bg-primary/10 border border-primary/20 group-hover:bg-primary/20" 
-                            : "bg-accent/10 border border-accent/20 group-hover:bg-accent/20"
-                          }
-                        `}
-                      >
-                        <Icon className={`h-5 w-5 ${isCyan ? "text-primary" : "text-accent"}`} />
+                    >
+                      <div className={`flex items-center gap-4 mb-3 ${isEven ? "md:flex-row-reverse" : ""}`}>
+                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
+                          isPurple 
+                            ? "bg-accent/10 text-accent"
+                            : "bg-primary/10 text-primary"
+                        }`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <span className={`text-xs font-medium ${
+                            isPurple ? "text-accent/60" : "text-primary/60"
+                          }`}>
+                            KROK {step.number}
+                          </span>
+                          <h3 className="text-lg font-semibold tracking-[0.15em] text-foreground">
+                            {step.title}
+                          </h3>
+                        </div>
                       </div>
-
-                      {/* Title */}
-                      <h3 className="text-sm font-semibold tracking-[0.2em] text-foreground mb-2 uppercase">
-                        {step.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
+                      <p className="text-muted-foreground text-sm normal-case tracking-normal">
                         {step.description}
-                        {step.link && (
-                          <>
-                            {" "}
-                            <a
-                              href={step.link.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`
-                                font-semibold underline underline-offset-2 decoration-1
-                                transition-colors duration-200
-                                ${isCyan 
-                                  ? "text-primary hover:text-primary/80" 
-                                  : "text-accent hover:text-accent/80"
-                                }
-                              `}
-                            >
-                              {step.link.text}
-                            </a>
-                            .
-                          </>
-                        )}
                       </p>
+                      {step.note && (
+                        <p className="text-muted-foreground/60 text-xs mt-2 italic normal-case tracking-normal">
+                          {step.note}
+                        </p>
+                      )}
                     </div>
                   </div>
-                </div>
 
-                {/* Timeline Node */}
-                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
-                  <div 
-                    className={`
-                      w-12 h-12 rounded-full flex items-center justify-center
-                      text-sm font-bold tracking-wider
-                      transition-all duration-300
-                      ${isCyan 
-                        ? "bg-primary/20 border-2 border-primary text-primary shadow-[0_0_20px_rgba(102,252,241,0.3)]" 
-                        : "bg-accent/20 border-2 border-accent text-accent shadow-[0_0_20px_rgba(189,0,255,0.3)]"
-                      }
-                    `}
-                  >
-                    {step.number}
-                  </div>
-                </div>
+                  {/* Timeline dot */}
+                  <div className={`absolute left-4 md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full border-2 z-10 shadow-lg ${
+                    isPurple
+                      ? "bg-accent/30 border-accent shadow-[0_0_12px_rgba(189,0,255,0.5)]"
+                      : "bg-primary/30 border-primary shadow-[0_0_12px_rgba(102,252,241,0.5)]"
+                  }`} />
 
-                {/* Spacer for opposite side */}
-                <div className="hidden md:block flex-1 md:w-1/2" />
-              </div>
-            );
-          })}
+                  {/* Spacer for opposite side */}
+                  <div className="hidden md:block flex-1" />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
