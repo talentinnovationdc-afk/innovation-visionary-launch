@@ -241,39 +241,39 @@ const hrBenefits = [
   {
     icon: Target,
     title: "Standard dovedností",
-    description: "Jeden rámec práce s AI napříč firmou."
+    description: "Jednotná metodika a šablony pro práci s AI napříč rolemi a týmy."
   },
   {
     icon: TrendingUp,
-    title: "Rychlé snížení administrativy",
-    description: "Méně rutiny, víc kapacity na klíčové úkoly."
+    title: "Méně rutiny, víc kapacity",
+    description: "Méně rutinních úkonů v rolích. Více času na klíčové úkoly a rozvoj lidí."
   },
   {
     icon: Award,
-    title: "Certifikace a motivace",
-    description: "Certifikát po dokončení + jasný skill progression."
+    title: "Certifikace + LinkedIn odznak",
+    description: "Certifikát po dokončení + viditelné uznání dovedností. Jasný skill progress."
   },
   {
     icon: ClipboardCheck,
-    title: "Přehled a kontrola",
-    description: "HR vidí, kdo dokončil a kde jsou mezery."
+    title: "Přehled a reporting",
+    description: "HR vidí, kdo dokončil, kde jsou mezery a jaké role doporučit jako další."
   }
 ];
 
 const deploymentSteps = [
   {
     num: "1",
-    title: "Vyberete akademii a počet licencí",
-    description: "Zvolíte akademie podle rolí a velikost balíčku."
+    title: "Vyberete akademii a balíček licencí",
+    description: "Zvolíte akademii podle rolí a velikost balíčku licencí."
   },
   {
     num: "2",
-    title: "Dostanete přístupy pro tým",
+    title: "Aktivujeme přístupy a onboarding",
     description: "Instrukce pro onboarding + aktivace účtů."
   },
   {
     num: "3",
-    title: "Po 2 týdnech první report",
+    title: "První report za 14 dní",
     description: "Přehled dokončení + doporučení dalších rolí."
   }
 ];
@@ -543,7 +543,7 @@ const AkademieProTymy = () => {
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Co z toho má HR
+                  Co získá HR / L&D
                 </span>
               </h2>
             </div>
@@ -603,6 +603,11 @@ const AkademieProTymy = () => {
                   </div>
                 ))}
               </div>
+              
+              {/* Subtitle */}
+              <p className="text-center text-sm text-muted-foreground mt-8">
+                Bez složitého IT. HR dostane přehled a doporučení dalších kroků.
+              </p>
             </div>
           </div>
         </section>
