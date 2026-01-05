@@ -62,7 +62,7 @@ const services = [
     subtitle: "Firemní akademie",
     description: "Zaměstnanci získají jednotný skillset pro práci s AI. Vy jako firma máte přehled o dokončení a jednotný standard napříč týmy.",
     features: ["Týmový skillset", "Certifikace", "Přehled HR", "Standardy napříč firmou"],
-    price: "od 8 500 Kč / licence",
+    price: "od 1 490 Kč / licence",
     priceNote: "dle balíčku licencí",
     accent: "purple",
     highlighted: false,
