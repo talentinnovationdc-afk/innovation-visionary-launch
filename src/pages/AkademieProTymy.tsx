@@ -104,26 +104,26 @@ const pricingPlans = [
 const roleRecommendations = [
   {
     icon: Users,
-    role: "Administrativa & Backoffice",
-    recommendation: "Copilot nebo ChatGPT"
+    role: "Administrativa a back-office",
+    recommendation: "Šablony + rutiny pro e-maily a dokumenty"
   },
   {
     icon: Headphones,
-    role: "Obchod & podpora",
-    recommendation: "ChatGPT"
+    role: "Obchod a podpora",
+    recommendation: "Odpovědi zákazníkům, nabídky a follow-upy"
   },
   {
     icon: Cpu,
-    role: "Automatizace & IT",
-    recommendation: "Agenti & Automatizace"
+    role: "Automatizace a IT",
+    recommendation: "Workflow automatizace a interní asistenti"
   }
 ];
 
 const processSteps = [
-  { number: "1", title: "Výběr cílů a akademií", duration: "15–30 min", icon: Target },
-  { number: "2", title: "Nastavení licencí a přístupů", duration: "1–2 dny", icon: Settings },
-  { number: "3", title: "Onboarding + první quick wins", duration: "1–2 týdny", icon: Rocket },
-  { number: "4", title: "Reporting + rozvoj", duration: "měsíčně", icon: BarChart3 }
+  { number: "1", title: "Výběr rolí a akademií", duration: "15–30 min", icon: Target },
+  { number: "2", title: "Zřízení licencí a přístupů", duration: "1–2 dny", icon: Settings },
+  { number: "3", title: "Onboarding a první výsledky", duration: "1–2 týdny", icon: Rocket },
+  { number: "4", title: "Přehled dopadu a rozvoj", duration: "měsíčně", icon: BarChart3 }
 ];
 
 const hrFaqItems = [
@@ -802,15 +802,15 @@ const AkademieProTymy = () => {
                 })}
               </div>
               <p className="text-xs text-muted-foreground text-center mt-4">
-                Pro management doporučujeme <span className="text-accent font-medium">Master of AI Creativity</span> (bundle).
+                Pro management doporučujeme Kompletní program (3 akademie).
               </p>
             </div>
 
             {/* Microtext */}
-            <p className="text-xs text-muted-foreground/70 text-center max-w-2xl mx-auto">
-              Firemní licence jsou určené pro onboarding a měření rozvoje týmů (zahrnují reporting a administraci). 
-              Individuální nákup je ideální pro osobní rozvoj.
-            </p>
+            <div className="text-xs text-muted-foreground/70 text-center max-w-2xl mx-auto space-y-1">
+              <p>Firemní licence: onboarding, přehled o dokončení a jednotný standard práce.</p>
+              <p>Individuální licence: vlastní tempo + potvrzení dovedností (certifikát + LinkedIn odznak).</p>
+            </div>
           </div>
         </section>
 
