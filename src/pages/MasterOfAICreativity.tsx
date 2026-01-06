@@ -492,7 +492,7 @@ const MasterOfAICreativity = () => {
                   data-event="b2c_program_begin_checkout"
                 >
                   <Button size="lg" className="px-10 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(189,0,255,0.4)] hover:shadow-[0_0_30px_rgba(189,0,255,0.6)] bg-accent hover:bg-accent/90">
-                    Koupit program za 12 900 Kč
+                    Koupit program za 9 970 Kč
                   </Button>
                 </a>
               </div>
