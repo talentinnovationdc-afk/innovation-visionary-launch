@@ -146,13 +146,13 @@ const Metodika = () => {
                 <h2 className="text-sm font-semibold tracking-[0.2em] text-primary mb-6 uppercase">
                   JAK PRACUJEME
                 </h2>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-[0.15em] mb-8 leading-[1.2] uppercase">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-8 leading-[1.15] uppercase">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    JAK Z AI UDĚLÁME PRODUKTIVITU
+                    Jak z AI uděláme produktivitu
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    VE VAŠEM TÝMU
+                    ve vašem týmu
                   </span>
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-10">
