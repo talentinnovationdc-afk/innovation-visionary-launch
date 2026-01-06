@@ -168,11 +168,11 @@ const Online = () => {
                   </span>
                   
                   <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] via-[#0080FF] to-[#8A2BE2] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                       AI pro vaši profesi
                     </span>
                     <br />
-                    <span className="text-foreground">
+                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] via-[#0080FF] to-[#8A2BE2] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                       — a ověřitelný odznak na LinkedIn.
                     </span>
                   </h1>

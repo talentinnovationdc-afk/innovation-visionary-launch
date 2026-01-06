@@ -16,7 +16,7 @@ const Gdpr = () => {
         <div className="container px-4">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-8">
-              <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent uppercase" style={{ WebkitTextFillColor: 'transparent' }}>
+              <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] via-[#0080FF] to-[#8A2BE2] bg-clip-text text-transparent uppercase" style={{ WebkitTextFillColor: 'transparent' }}>
                 Zpracování osobních údajů
               </span>
             </h1>

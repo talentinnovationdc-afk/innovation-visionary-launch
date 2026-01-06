@@ -80,11 +80,11 @@ const ONas = () => {
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-[0.2em] mb-8 leading-[1.1] uppercase">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] via-[#0080FF] to-[#8A2BE2] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                     ARCHITEKTI DIGITÁLNÍ
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] via-[#0080FF] to-[#8A2BE2] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                     AUTONOMIE
                   </span>
                 </h1>
