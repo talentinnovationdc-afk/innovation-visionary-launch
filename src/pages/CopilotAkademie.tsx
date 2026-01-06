@@ -138,7 +138,7 @@ const CopilotAkademie = () => {
               </div>
               
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] via-[#0080FF] to-[#8A2BE2] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                   Microsoft Copilot Akademie
                 </span>
               </h1>

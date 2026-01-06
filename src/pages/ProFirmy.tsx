@@ -262,11 +262,11 @@ const ProFirmy = () => {
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[0.1em] mb-6 leading-[1.2]">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] via-[#0080FF] to-[#8A2BE2] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                     Zrychlete práci týmů díky AI postupům
                   </span>
                   <br />
-                  <span className="text-foreground text-xl md:text-3xl lg:text-4xl">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] via-[#0080FF] to-[#8A2BE2] bg-clip-text text-transparent text-xl md:text-3xl lg:text-4xl" style={{ WebkitTextFillColor: 'transparent' }}>
                     a firemní akademii.
                   </span>
                 </h1>
