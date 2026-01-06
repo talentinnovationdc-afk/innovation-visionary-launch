@@ -462,7 +462,9 @@ const AkademieProTymy = () => {
                       </div>
                       <div>
                         <h3 className={`text-lg font-semibold tracking-wider uppercase mb-1 ${isProgram ? 'text-accent' : 'text-foreground'}`}>
-                          {academy.title}
+                          {isProgram ? (
+                            <>Kompletní program<br />(3 akademie)</>
+                          ) : academy.title}
                         </h3>
                         <p className="text-sm text-muted-foreground">{academy.description}</p>
                         <p className="text-sm mt-2 font-medium text-primary/90">
