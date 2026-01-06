@@ -366,7 +366,7 @@ const AkademieProTymy = () => {
                   Online akademie pro týmy
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                   Standard práce s AI napříč firmou
                 </span>
               </h1>
