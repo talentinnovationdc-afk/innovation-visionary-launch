@@ -266,8 +266,8 @@ const ProFirmy = () => {
                     Zrychlete práci týmů díky AI postupům
                   </span>
                   <br />
-                  <span className="text-foreground text-xl md:text-3xl lg:text-4xl">
-                    a firemní akademii.
+                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    a firemní akademii
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
