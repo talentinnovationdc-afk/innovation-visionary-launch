@@ -16,6 +16,7 @@ import MasterOfAICreativity from "./pages/MasterOfAICreativity";
 import ChatGPTAkademie from "./pages/ChatGPTAkademie";
 import CopilotAkademie from "./pages/CopilotAkademie";
 import AgentiAutomatizace from "./pages/AgentiAutomatizace";
+import AiAgentiNaMiru from "./pages/AiAgentiNaMiru";
 import NotFound from "./pages/NotFound";
 import Gdpr from "./pages/Gdpr";
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/metodika" element={<Metodika />} />
           <Route path="/o-nas" element={<ONas />} />
           <Route path="/profirmy" element={<ProFirmy />} />
+          <Route path="/ai-agenti-na-miru" element={<AiAgentiNaMiru />} />
           <Route path="/akademie-pro-tymy" element={<AkademieProTymy />} />
           {/* Redirect from old route */}
           <Route path="/profirmy/akademie-pro-tymy" element={<Navigate to="/akademie-pro-tymy" replace />} />
