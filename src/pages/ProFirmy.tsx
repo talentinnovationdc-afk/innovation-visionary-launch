@@ -12,6 +12,7 @@ import {
   Clock, MessageSquare, Lock, Zap, BookOpen, BarChart3, HelpCircle
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -368,6 +369,44 @@ const ProFirmy = () => {
 
           {/* Cesta k digitální autonomii */}
           <MethodologySection />
+
+          {/* AI Agenti Premium Block */}
+          <section className="py-16 relative">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto bg-gradient-to-br from-accent/10 via-card/80 to-primary/10 backdrop-blur-xl border border-accent/30 rounded-2xl p-8 md:p-10 shadow-[0_0_40px_rgba(189,0,255,0.1)]">
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="inline-block px-3 py-1 bg-accent/20 border border-accent/30 rounded-full text-[10px] font-bold tracking-wider text-accent uppercase mb-3">
+                      Prémiová služba
+                    </div>
+                    <h3 className="text-lg md:text-xl font-semibold tracking-wider text-foreground uppercase mb-3">
+                      AI AGENTI NA MÍRU
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Navrhneme, nasadíme a změříme dopad. Bezpečně, s napojením na vaše nástroje.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
+                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Podpora & znalosti</span>
+                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Obchod & kvalifikace</span>
+                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Reporting & data</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <Link to="/ai-agenti-na-miru">
+                      <Button className="w-full px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
+                        Poptat agenta
+                      </Button>
+                    </Link>
+                    <Link to="/checkout">
+                      <Button variant="outline" className="w-full px-6 py-3 border-primary/50 text-primary hover:bg-primary/10">
+                        Rychlá diagnostika (15 min)
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Service & Pricing Grid */}
           <section className="py-20 bg-card/20 relative">
