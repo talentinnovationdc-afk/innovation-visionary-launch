@@ -288,10 +288,8 @@ const Online = () => {
             <div className="container px-4">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-10">
-                  <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase mb-4">
-                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                      JAK TO U NÁS FUNGUJE
-                    </span>
+                  <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                    JAK TO U NÁS FUNGUJE
                   </h2>
                   <p className="text-muted-foreground max-w-2xl mx-auto">
                     Máte na výběr jednu akademii, nebo kompletní program Master of AI Creativity. Kompletní program obsahuje všechny 3 akademie a vede k hlavnímu odznaku.
@@ -360,10 +358,8 @@ const Online = () => {
           <section className="py-16 md:py-20 relative">
             <div className="container px-4">
               <div className="text-center mb-12">
-                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase mb-4">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    CO ZÍSKÁTE DO PRAXE
-                  </span>
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  CO ZÍSKÁTE DO PRAXE
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Praktické výstupy, které použijete okamžitě.
@@ -489,10 +485,8 @@ const Online = () => {
             
             <div className="container px-4 relative z-10">
               <div className="text-center mb-12">
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] uppercase mb-4">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    VYBERTE SI VARIANTU
-                  </span>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  VYBERTE SI VARIANTU
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Kompletní program nebo jednotlivá akademie
@@ -652,10 +646,8 @@ const Online = () => {
                 <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
                   FAQ
                 </span>
-                <h2 className="text-2xl md:text-4xl font-bold tracking-[0.1em] uppercase mb-4">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    ČASTÉ DOTAZY
-                  </span>
+                <h2 className="text-2xl md:text-4xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  ČASTÉ DOTAZY
                 </h2>
                 <p className="text-muted-foreground max-w-xl mx-auto">
                   Odpovědi na nejčastější otázky o online akademiích

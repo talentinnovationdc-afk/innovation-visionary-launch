@@ -420,10 +420,8 @@ const AkademieProTymy = () => {
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  CO VAŠE TÝMY ZÍSKAJÍ
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                CO VAŠE TÝMY ZÍSKAJÍ
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 3 akademie. Konkrétní workflow výstupy. Jednotný standard napříč firmou — včetně certifikace a sdílených šablon.
@@ -556,10 +554,8 @@ const AkademieProTymy = () => {
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Co získá HR / L&D
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                Co získá HR / L&D
               </h2>
             </div>
             
@@ -595,10 +591,8 @@ const AkademieProTymy = () => {
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  JAK NASADÍME AKADEMIE DO TÝMU
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                JAK NASADÍME AKADEMIE DO TÝMU
               </h2>
             </div>
             
@@ -631,10 +625,8 @@ const AkademieProTymy = () => {
         <section id="licence" className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Balíčky licencí
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                Balíčky licencí
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-3">
                 Zvolte akademii (nebo Kompletní program) a vyberte velikost balíčku.
@@ -833,10 +825,8 @@ const AkademieProTymy = () => {
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  JAK TO PROBÍHÁ
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                JAK TO PROBÍHÁ
               </h2>
             </div>
             
@@ -876,10 +866,8 @@ const AkademieProTymy = () => {
               <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
                 FAQ
               </span>
-              <h2 className="text-2xl md:text-4xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  ČASTÉ DOTAZY
-                </span>
+              <h2 className="text-2xl md:text-4xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                ČASTÉ DOTAZY
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
                 Odpovědi na nejčastější otázky o firemních licencích

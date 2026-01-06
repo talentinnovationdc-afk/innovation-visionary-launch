@@ -198,10 +198,8 @@ const Metodika = () => {
           {/* Quick Wins Section - Co získáte do 14 dnů */}
           <section className="py-20">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  CO ZÍSKÁTE BĚHEM PRVNÍCH 14 DNŮ
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                CO ZÍSKÁTE BĚHEM PRVNÍCH 14 DNŮ
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Rychlý start s měřitelnými výsledky.
@@ -246,10 +244,8 @@ const Metodika = () => {
           {/* Methodology Timeline */}
           <section className="py-20 bg-card/20">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  CESTA K DIGITÁLNÍ AUTONOMII
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                CESTA K DIGITÁLNÍ AUTONOMII
               </h2>
               <p className="text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
                 Začínáme rolemi a procesy, kde je nejrychlejší přínos. Technologie přidáváme až tehdy, když dává měřitelný smysl.
@@ -327,10 +323,8 @@ const Metodika = () => {
           {/* Komu to dává smysl - 2 Cards */}
           <section className="py-20">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  VYBERTE SI CESTU
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                VYBERTE SI CESTU
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Firemní implementace nebo individuální rozvoj.
@@ -394,10 +388,8 @@ const Metodika = () => {
           {/* DNA Section */}
           <section className="py-20 bg-card/20">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  NA ČEM SI ZAKLÁDÁME
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                NA ČEM SI ZAKLÁDÁME
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Principy, které nás odlišují.
