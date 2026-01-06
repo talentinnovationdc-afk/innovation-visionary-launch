@@ -431,42 +431,41 @@ const AkademieProTymy = () => {
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {academyCards.map((academy) => {
                 const Icon = academy.icon;
-                const isAccent = academy.color === "accent";
+                const isProgram = academy.isProgram;
+                // For program: use cyan for content, keep purple only for border and badges
                 return (
                   <div 
                     key={academy.id}
                     className={`glass-card p-6 rounded-2xl border ${
-                      isAccent 
+                      isProgram 
                         ? 'border-accent/30 hover:border-accent/60 hover:shadow-[0_0_40px_rgba(189,0,255,0.25)]' 
                         : 'border-primary/30 hover:border-primary/60 hover:shadow-[0_0_40px_rgba(102,252,241,0.25)]'
                     } transition-all duration-300 group relative`}
                   >
-                    {/* Badge for program - Nejlepší hodnota */}
-                    {academy.isProgram && (
+                    {/* Badge for program - Nejlepší hodnota (purple) */}
+                    {isProgram && (
                       <div className="absolute -top-3 right-4 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase shadow-[0_0_15px_rgba(189,0,255,0.4)]">
                         Nejlepší hodnota
                       </div>
                     )}
                     
-                    {/* Main badge (UKÁZKA OBSAHU or NEJČASTĚJŠÍ VOLBA) */}
+                    {/* Main badge (UKÁZKA OBSAHU or NEJČASTĚJŠÍ VOLBA) - purple for program */}
                     <div className={`absolute -top-3 left-4 px-3 py-1 ${
-                      isAccent ? 'bg-accent/20 border-accent/40 text-accent' : 'bg-primary/20 border-primary/40 text-primary'
+                      isProgram ? 'bg-accent/20 border-accent/40 text-accent' : 'bg-primary/20 border-primary/40 text-primary'
                     } border text-[10px] font-bold tracking-wider rounded-full uppercase`}>
                       {academy.badge}
                     </div>
                     
                     <div className="flex items-start gap-4 mb-4 mt-2">
-                      <div className={`w-14 h-14 rounded-xl ${
-                        isAccent ? 'bg-accent/10 border-accent/20' : 'bg-primary/10 border-primary/20'
-                      } border flex items-center justify-center flex-shrink-0`}>
-                        <Icon className={`w-7 h-7 ${isAccent ? 'text-accent' : 'text-primary'}`} />
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 border-primary/20 border flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-7 h-7 text-primary" />
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-1">
                           {academy.title}
                         </h3>
                         <p className="text-sm text-muted-foreground">{academy.description}</p>
-                        <p className={`text-sm mt-2 font-medium ${isAccent ? 'text-accent/90' : 'text-primary/90'}`}>
+                        <p className="text-sm mt-2 font-medium text-primary/90">
                           {academy.benefit}
                         </p>
                       </div>
@@ -477,7 +476,7 @@ const AkademieProTymy = () => {
                       <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2 font-semibold">Výstupy pro tým:</p>
                       <ul className="space-y-1.5">
                         {academy.outputs.map((output, idx) => (
-                          <li key={idx} className={`flex items-start gap-2 text-sm ${isAccent ? 'text-accent' : 'text-primary'}`}>
+                          <li key={idx} className="flex items-start gap-2 text-sm text-primary">
                             <Check className="w-4 h-4 flex-shrink-0 mt-0.5" />
                             <span>{output}</span>
                           </li>
@@ -486,12 +485,12 @@ const AkademieProTymy = () => {
                     </div>
                     
                     {/* Content Preview */}
-                    <div className={`mb-4 p-3 rounded-lg ${isAccent ? 'bg-accent/5 border-accent/20' : 'bg-primary/5 border-primary/20'} border`}>
+                    <div className="mb-4 p-3 rounded-lg bg-primary/5 border-primary/20 border">
                       <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2 font-semibold">Ukázka obsahu:</p>
                       <ul className="space-y-1">
                         {academy.contentPreview.map((item, idx) => (
                           <li key={idx} className="text-xs text-muted-foreground flex items-start gap-2">
-                            <span className={`${isAccent ? 'text-accent' : 'text-primary'}`}>•</span>
+                            <span className="text-primary">•</span>
                             {item}
                           </li>
                         ))}
@@ -508,12 +507,12 @@ const AkademieProTymy = () => {
                     </div>
                     
                     {/* CTA Buttons */}
-                    {academy.isProgram ? (
+                    {isProgram ? (
                       <div className="space-y-2">
                         <Link to="#licence">
                           <Button 
                             size="sm"
-                            className="w-full shadow-[0_0_15px_rgba(189,0,255,0.3)] hover:shadow-[0_0_20px_rgba(189,0,255,0.5)]"
+                            className="w-full bg-primary text-primary-foreground shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)]"
                           >
                             Vybrat licenci
                             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -521,7 +520,7 @@ const AkademieProTymy = () => {
                         </Link>
                         <Link 
                           to={academy.link}
-                          className={`block text-center text-sm ${isAccent ? 'text-accent hover:text-accent/80' : 'text-primary hover:text-primary/80'} underline underline-offset-4 transition-colors`}
+                          className="block text-center text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
                         >
                           Zobrazit ukázku
                         </Link>
@@ -531,11 +530,7 @@ const AkademieProTymy = () => {
                         <Button 
                           variant="outline"
                           size="sm"
-                          className={`w-full ${
-                            isAccent 
-                              ? 'border-accent/50 text-accent hover:bg-accent/10 hover:border-accent' 
-                              : 'border-primary/50 text-primary hover:bg-primary/10 hover:border-primary'
-                          } group-hover:shadow-[0_0_15px_rgba(102,252,241,0.3)] transition-all`}
+                          className="w-full border-primary/50 text-primary hover:bg-primary/10 hover:border-primary group-hover:shadow-[0_0_15px_rgba(102,252,241,0.3)] transition-all"
                         >
                           <BookOpen className="w-4 h-4 mr-2" />
                           Zobrazit ukázku
