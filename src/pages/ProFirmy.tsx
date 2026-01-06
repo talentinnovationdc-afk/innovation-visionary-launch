@@ -321,10 +321,8 @@ const ProFirmy = () => {
           {/* Pro koho Section */}
           <section className="py-20 bg-card/20 relative">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  PRO KOHO JE TO IDEÁLNÍ
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                PRO KOHO JE TO IDEÁLNÍ
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Pomáháme týmům pracovat chytřeji — rychleji, kvalitněji a bez chaosu.
@@ -374,10 +372,8 @@ const ProFirmy = () => {
           {/* Service & Pricing Grid */}
           <section className="py-20 bg-card/20 relative">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  SLUŽBY & CENÍK
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                SLUŽBY & CENÍK
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Komplexní portfolio služeb od diagnostiky po dlouhodobou podporu.
@@ -496,10 +492,8 @@ const ProFirmy = () => {
           {/* Bezpečné a ověřené nasazení */}
           <section className="py-20">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  BEZPEČNÉ A OVĚŘENÉ NASAZENÍ
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                BEZPEČNÉ A OVĚŘENÉ NASAZENÍ
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Proč nám důvěřují desítky firem v citlivých odvětvích.
@@ -539,10 +533,8 @@ const ProFirmy = () => {
           {/* Co získáte během prvních 14 dnů */}
           <section className="py-20 bg-card/20 relative">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  CO ZÍSKÁTE BĚHEM PRVNÍCH 14 DNŮ
-                </span>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                CO ZÍSKÁTE BĚHEM PRVNÍCH 14 DNŮ
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Výstupy, které můžete poslat vedení — jasné, stručné, použitelné.
@@ -594,10 +586,8 @@ const ProFirmy = () => {
                 <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
                   FAQ
                 </span>
-                <h2 className="text-2xl md:text-4xl font-bold tracking-[0.1em] uppercase mb-4">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    ČASTÉ DOTAZY
-                  </span>
+                <h2 className="text-2xl md:text-4xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  ČASTÉ DOTAZY
                 </h2>
                 <p className="text-muted-foreground max-w-xl mx-auto">
                   Rychlé odpovědi pro HR a vedení — jak to probíhá, co potřebujeme a jak chráníme data.
@@ -724,10 +714,8 @@ const ProFirmy = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12">
-                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.15em] mb-4">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    CHCETE PRVNÍ VÝSLEDKY DO 14 DNŮ?
-                  </span>
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  CHCETE PRVNÍ VÝSLEDKY DO 14 DNŮ?
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
                   Začněte krátkou diagnostikou (15 min). Do 14 dnů dostanete mapu rolí, 3–10 rychlých zlepšení a návrh pilotu.

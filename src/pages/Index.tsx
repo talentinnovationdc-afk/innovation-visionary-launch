@@ -95,10 +95,8 @@ const Index = () => {
           <section className="py-20 relative">
             <div className="container px-4">
               <div className="text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    Vyberte si, co chcete zlepšit
-                  </span>
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  Vyberte si, co chcete zlepšit
                 </h2>
               </div>
               
@@ -200,10 +198,8 @@ const Index = () => {
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container px-4">
               <div className="text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    CO VÁM TO PŘINESE
-                  </span>
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  CO VÁM TO PŘINESE
                 </h2>
               </div>
               
