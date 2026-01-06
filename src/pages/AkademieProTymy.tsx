@@ -421,8 +421,8 @@ const AkademieProTymy = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  Co vaše týmy získají
+                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                  CO VAŠE TÝMY ZÍSKAJÍ
                 </span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -596,8 +596,8 @@ const AkademieProTymy = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  Jak nasadíme akademie do týmu
+                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                  JAK NASADÍME AKADEMIE DO TÝMU
                 </span>
               </h2>
             </div>
@@ -834,8 +834,8 @@ const AkademieProTymy = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  Jak to probíhá
+                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                  JAK TO PROBÍHÁ
                 </span>
               </h2>
             </div>
