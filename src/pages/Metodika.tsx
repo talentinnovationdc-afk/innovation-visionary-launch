@@ -140,7 +140,7 @@ const Metodika = () => {
         
         <main className="pb-20">
           {/* Hero Section */}
-          <section className="pt-44 md:pt-48 pb-16 relative">
+          <section className="pt-40 md:pt-48 pb-16 md:pb-20 relative">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
                 <h2 className="text-sm font-semibold tracking-[0.2em] text-primary mb-6 uppercase">

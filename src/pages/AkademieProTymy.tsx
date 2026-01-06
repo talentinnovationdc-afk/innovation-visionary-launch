@@ -349,9 +349,9 @@ const AkademieProTymy = () => {
       <NeuralNetworkBackground />
       <Navbar />
       
-      <main className="relative z-10 pt-32">
+      <main className="relative z-10 pt-40 md:pt-48">
         {/* Hero Section for HR */}
-        <section className="py-16 md:py-24">
+        <section className="pb-16 md:pb-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
