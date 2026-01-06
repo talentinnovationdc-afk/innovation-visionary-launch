@@ -645,21 +645,13 @@ const ProFirmy = () => {
                         value={`item-${index}`}
                         className="group border-0"
                       >
-                        <div className={`relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 ${
-                          isEven 
-                            ? 'border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40' 
-                            : 'border-accent/15 hover:border-accent/30 data-[state=open]:border-accent/40'
-                        }`}>
+                        <div className="relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40">
                           
                           <AccordionTrigger className="px-6 py-5 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
                             <div className="flex items-center gap-4 w-full">
                               {/* Icon */}
-                              <div className={`w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                                isEven 
-                                  ? 'bg-primary/10 group-hover:bg-primary/15' 
-                                  : 'bg-accent/10 group-hover:bg-accent/15'
-                              }`}>
-                                <item.icon className={`w-5 h-5 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                              <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-primary/10 group-hover:bg-primary/15">
+                                <item.icon className="w-5 h-5 text-primary" />
                               </div>
                               
                               <div className="flex-1 text-left">
@@ -669,34 +661,20 @@ const ProFirmy = () => {
                               </div>
                               
                               {/* Highlight tag - desktop only */}
-                              <span className={`hidden md:inline-block text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full mr-2 ${
-                                isEven 
-                                  ? 'bg-primary/10 text-primary' 
-                                  : 'bg-accent/10 text-accent'
-                              }`}>
+                              <span className="hidden md:inline-block text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full mr-2 bg-primary/10 text-primary">
                                 {item.highlight}
                               </span>
                               
                               {/* Chevron */}
-                              <div className={`chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                                isEven 
-                                  ? 'bg-primary/10 group-data-[state=open]:bg-primary' 
-                                  : 'bg-accent/10 group-data-[state=open]:bg-accent'
-                              }`}>
-                                <ChevronDown className={`w-4 h-4 transition-colors ${
-                                  isEven 
-                                    ? 'text-primary group-data-[state=open]:text-background' 
-                                    : 'text-accent group-data-[state=open]:text-background'
-                                }`} />
+                              <div className="chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
+                                <ChevronDown className="w-4 h-4 transition-colors text-primary group-data-[state=open]:text-background" />
                               </div>
                             </div>
                           </AccordionTrigger>
                           
                           <AccordionContent>
-                            <div className={`px-6 pb-5 bg-gradient-to-b ${isEven ? 'from-primary/5' : 'from-accent/5'} to-transparent`}>
-                              <div className={`ml-[3.75rem] pl-4 border-l-2 ${
-                                isEven ? 'border-primary/30' : 'border-accent/30'
-                              }`}>
+                            <div className="px-6 pb-5 bg-gradient-to-b from-primary/5 to-transparent">
+                              <div className="ml-[3.75rem] pl-4 border-l-2 border-primary/30">
                                 <p className="text-[hsl(210,5%,88%)] leading-[1.8] text-[15px] mb-3">
                                   {item.answer}
                                 </p>
@@ -704,7 +682,7 @@ const ProFirmy = () => {
                                   <ul className="space-y-1.5 mb-4">
                                     {item.bullets.map((bullet, bulletIdx) => (
                                       <li key={bulletIdx} className="flex items-start gap-2 text-sm text-[hsl(210,5%,82%)] leading-[1.7]">
-                                        <span className={isEven ? 'text-primary' : 'text-accent'}>•</span>
+                                        <span className="text-primary">•</span>
                                         {bullet}
                                       </li>
                                     ))}
