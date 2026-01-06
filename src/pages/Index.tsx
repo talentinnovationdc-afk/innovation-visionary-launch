@@ -201,8 +201,8 @@ const Index = () => {
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                    Co vám to přinese
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    CO VÁM TO PŘINESE
                   </span>
                 </h2>
               </div>

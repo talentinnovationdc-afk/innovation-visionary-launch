@@ -101,8 +101,10 @@ const ONas = () => {
           {/* Expert Profiles */}
           <section className="py-20 bg-card/30 relative">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                EXPERTNÍ TÝM
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
+                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                  EXPERTNÍ TÝM
+                </span>
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Kombinace strategického vedení a technické excelence pro vaši digitální transformaci.
@@ -164,8 +166,10 @@ const ONas = () => {
           {/* DNA Expertise Bento Grid */}
           <section className="py-20">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground text-center mb-4">
-                NA ČEM SI ZAKLÁDÁME
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-center mb-4">
+                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                  NA ČEM SI ZAKLÁDÁME
+                </span>
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                 Principy, které nás odlišují.
