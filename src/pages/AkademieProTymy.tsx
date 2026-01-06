@@ -225,7 +225,7 @@ const academyCards = [
     ],
     roles: ["Power users", "Inovace", "Back-office", "Management"],
     link: "/online/agentiautomatizace",
-    color: "accent",
+    color: "primary",
     badge: "UKÁZKA OBSAHU"
   },
   {
