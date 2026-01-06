@@ -457,11 +457,11 @@ const AkademieProTymy = () => {
                     </div>
                     
                     <div className="flex items-start gap-4 mb-4 mt-2">
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 border-primary/20 border flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-7 h-7 text-primary" />
+                      <div className={`w-14 h-14 rounded-xl ${isProgram ? 'bg-accent/10 border-accent/20' : 'bg-primary/10 border-primary/20'} border flex items-center justify-center flex-shrink-0`}>
+                        <Icon className={`w-7 h-7 ${isProgram ? 'text-accent' : 'text-primary'}`} />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-1">
+                        <h3 className={`text-lg font-semibold tracking-wider uppercase mb-1 ${isProgram ? 'text-accent' : 'text-foreground'}`}>
                           {academy.title}
                         </h3>
                         <p className="text-sm text-muted-foreground">{academy.description}</p>
