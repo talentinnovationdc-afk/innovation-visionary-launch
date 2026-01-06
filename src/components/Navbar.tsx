@@ -26,15 +26,24 @@ export const Navbar = () => {
       <nav className="glass mx-4 mt-4 rounded-2xl md:mx-8">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-4 group">
-            <img 
-              src={logoIcon} 
-              alt="Talent Innovation logo" 
-              className="h-8 w-auto transition-all duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.25)] group-hover:brightness-110"
-            />
-            <span className="hidden lg:block text-base font-semibold tracking-[0.2em] text-[#EDEEEE] uppercase">
-              TALENT INNOVATION
-            </span>
+          <Link to="/" className="flex items-center gap-3 group">
+            {/* Icon - slightly smaller, no sticker look */}
+            <div className="relative flex-shrink-0">
+              <img 
+                src={logoIcon} 
+                alt="Talent Innovation logo" 
+                className="h-7 w-auto transition-all duration-300 brightness-95 group-hover:brightness-105"
+                style={{ filter: 'drop-shadow(0 0 6px rgba(102, 252, 241, 0.15))' }}
+              />
+            </div>
+            {/* Wordmark - hidden on mobile/tablet */}
+            <div className="hidden lg:flex flex-col items-start">
+              <span className="text-sm font-bold tracking-[0.18em] text-[#F0F1F1] uppercase leading-none">
+                TALENT INNOVATION
+              </span>
+              {/* Subtle cyan underline accent */}
+              <div className="mt-1.5 h-[1.5px] w-full bg-gradient-to-r from-primary/70 via-primary/40 to-transparent" />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
