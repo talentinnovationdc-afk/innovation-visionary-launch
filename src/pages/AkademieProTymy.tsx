@@ -1071,7 +1071,11 @@ const AkademieProTymy = () => {
                             }}
                           />
                           <Icon className={`w-4 h-4 ${academy.isProgram ? 'text-accent' : 'text-primary'}`} />
-                          <span className="text-sm text-muted-foreground">{academy.title}</span>
+                          <span className="text-sm text-muted-foreground">
+                            {academy.isProgram ? (
+                              <>Kompletní program<br /><span className="text-xs">(3 akademie)</span></>
+                            ) : academy.title}
+                          </span>
                           {academy.isProgram && (
                             <span className="text-[10px] text-accent font-medium">(kompletní program)</span>
                           )}
