@@ -28,19 +28,21 @@ const Index = () => {
               <div className="max-w-5xl mx-auto">
                 <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-[1.15] tracking-[0.15em] uppercase">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Zrychlete práci týmů díky AI
+                    Méně rutiny. Více kapacity. Díky AI.
                   </span>
                   <br />
                   <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    měřitelně a bezpečně
+                    Měřitelně. Bezpečně. Škálovatelně.
                   </span>
                 </h1>
                 
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-4 normal-case tracking-normal leading-[1.8]">
-                  Za 15 minut zjistíte, kde vzniká největší ztráta času. Do 14 dnů dodáme mapu rolí, rychlé výhry a ROI plán prvního pilotu.
+                  Do 14 dnů dodáme mapu rolí, rychlé výhry a ROI plán prvního pilotu.
                 </p>
                 <p className="text-sm text-primary/90 max-w-[700px] mx-auto mb-10">
-                  Pro firmy: měřitelný dopad do 14 dnů. Pro jednotlivce: ověřitelný LinkedIn odznak a praktické workflow.
+                  Pro firmy: měřitelný dopad do 14 dnů.
+                  <br />
+                  Pro profesionály: ověřitelný LinkedIn odznak a praktické workflow.
                 </p>
                 
                 {/* Two CTAs */}
