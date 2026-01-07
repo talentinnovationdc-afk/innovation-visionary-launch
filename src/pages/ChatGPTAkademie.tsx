@@ -146,8 +146,14 @@ const ChatGPTAkademie = () => {
                 </span>
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Praktické workflow s GPT, které zrychlí psaní, analýzu i rozhodování. Méně přepisování, víc hotových výstupů — konzistentně napříč týmem.
+              <p className="text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
+                Praktické workflow s GPT, které zrychlí psaní, analýzu i rozhodování.
+              </p>
+              <p className="text-sm text-primary mb-2">
+                Ideální pro: Administrativa, HR, obchod, podpora — každý, kdo denně píše.
+              </p>
+              <p className="text-sm text-muted-foreground mb-6">
+                Typický výsledek: 2–3× rychlejší e-maily a dokumenty, konzistentní tón.
               </p>
               
               {/* Meta badges */}
@@ -311,7 +317,7 @@ const ChatGPTAkademie = () => {
                 </span>
               </p>
               <p className="text-sm text-muted-foreground/80">
-                Rozklikněte modul a uvidíte ukázku výstupů, checklisty a šablony.
+                Každý modul: příklad + šablona + úkol do praxe. Rozklikněte modul a uvidíte ukázku výstupů.
               </p>
             </div>
             

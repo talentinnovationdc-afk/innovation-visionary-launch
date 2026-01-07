@@ -146,8 +146,14 @@ const CopilotAkademie = () => {
                 </span>
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Praktické workflow v M365, které zrychlí dokumenty, e-maily i prezentace. Méně rutiny, víc hotových výstupů — konzistentně napříč týmem.
+              <p className="text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
+                Praktické workflow v M365, které zrychlí dokumenty, e-maily i prezentace.
+              </p>
+              <p className="text-sm text-primary mb-2">
+                Ideální pro: Uživatelé M365 — Word, Excel, Outlook, PowerPoint v denní praxi.
+              </p>
+              <p className="text-sm text-muted-foreground mb-6">
+                Typický výsledek: 30–50 % času zpět na úkolech v Excelu, Wordu a Outlooku.
               </p>
               
               {/* Meta badges */}
@@ -311,7 +317,7 @@ const CopilotAkademie = () => {
                 </span>
               </p>
               <p className="text-sm text-muted-foreground/80">
-                Rozklikněte modul a uvidíte ukázku výstupů, checklisty a šablony.
+                Každý modul: příklad + šablona + úkol do praxe. Rozklikněte modul a uvidíte ukázku výstupů.
               </p>
             </div>
             

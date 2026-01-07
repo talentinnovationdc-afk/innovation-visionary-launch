@@ -171,8 +171,14 @@ const AgentiAutomatizace = () => {
                 </span>
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Pokročilé agentické workflow a orchestrace. Naučte se stavět vlastní AI agenty pro automatizaci procesů.
+              <p className="text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
+                Pokročilé agentické workflow a orchestrace. Naučte se stavět vlastní AI agenty.
+              </p>
+              <p className="text-sm text-primary mb-2">
+                Ideální pro: Power users, procesní vlastníci, inovace — ti, kdo chtějí automatizovat.
+              </p>
+              <p className="text-sm text-muted-foreground mb-6">
+                Typický výsledek: 1–2 hodiny denně zpět díky automatizaci opakujících se úkolů.
               </p>
               
               {/* Meta badges */}
@@ -292,7 +298,7 @@ const AgentiAutomatizace = () => {
                   Obsah akademie
                 </span>
               </h2>
-              <p className="text-muted-foreground flex items-center justify-center gap-3">
+              <p className="text-muted-foreground flex items-center justify-center gap-3 mb-2">
                 <span className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                   16 modulů
@@ -307,6 +313,9 @@ const AgentiAutomatizace = () => {
                   <FileText className="w-4 h-4 text-primary/60" />
                   šablony & workflow
                 </span>
+              </p>
+              <p className="text-sm text-muted-foreground/80">
+                Každý modul: příklad + šablona + úkol do praxe.
               </p>
             </div>
             

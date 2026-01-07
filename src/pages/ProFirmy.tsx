@@ -308,7 +308,7 @@ const ProFirmy = () => {
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       data-event="b2b_primary_cta"
                     >
-                      Domluvit 15 min konzultaci
+                      Domluvit 15 min diagnostiku
                     </Link>
                     <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>
                   </div>
@@ -372,7 +372,7 @@ const ProFirmy = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
                   { step: "01", title: "DIAGNOSTIKA", subtitle: "15 min konzultace — zjistíte, kde začít", benefit: "Úspora: jasný směr bez závazku", cta: "Domluvit konzultaci", link: "/checkout", highlighted: true },
-                  { step: "02", title: "AI QUICKSCAN", subtitle: "Mapa úspor a priorit do 1–2 týdnů", benefit: "Rychlost: konkrétní výstupy pro vedení", cta: "Chci mapu úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
+                  { step: "02", title: "AI QUICKSCAN", subtitle: "Mapa úspor + backlog use-casů + roadmapa 30/60/90", benefit: "Rychlost: konkrétní výstupy pro vedení", cta: "Chci QuickScan", link: "/pro-firmy/ai-quickscan", highlighted: false },
                   { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci pilota", link: "/checkout", highlighted: false },
                   { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Adopce: aby se řešení ujalo u lidí", cta: "Chci škálovat", link: "/checkout", highlighted: false },
                 ].map((card, idx) => (

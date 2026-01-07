@@ -22,22 +22,26 @@ const deliverables = [
   {
     icon: FileBarChart,
     title: "MAPA ROLÍ A ÚZKÝCH MÍST",
-    description: "Kde dnes vzniká nejvíc práce navíc a kde AI ušetří nejvíc času."
+    description: "Kde dnes vzniká nejvíc práce navíc a kde AI ušetří nejvíc času.",
+    format: "Formát: 3–6 stran + tabulka"
   },
   {
     icon: Target,
-    title: "QUICK WINS S ROI ODHADEM",
-    description: "3–10 konkrétních zlepšení seřazených podle dopadu a náročnosti."
+    title: "BACKLOG 10–20 USE-CASŮ (S ROI)",
+    description: "Konkrétní zlepšení seřazená podle dopadu a náročnosti.",
+    format: "Formát: 3–6 stran + tabulka"
   },
   {
     icon: Route,
-    title: "DOPORUČENÝ PILOT",
-    description: "1–2 procesy pro start + odhad přínosu v čase a kvalitě."
+    title: "DOPORUČENÝ PILOT (1–2 PROCESY)",
+    description: "Procesy pro start + odhad přínosu v čase a kvalitě.",
+    format: "Formát: 3–6 stran + tabulka"
   },
   {
     icon: Shield,
-    title: "BEZPEČNÁ PRAVIDLA",
-    description: "Pravidla pro data, přístupy a používání AI ve firmě."
+    title: "RÁMEC BEZPEČNOSTI A PRAVIDEL",
+    description: "Pravidla pro data, přístupy a používání AI ve firmě.",
+    format: "Formát: 3–6 stran + tabulka"
   }
 ];
 
@@ -47,24 +51,28 @@ const processSteps = [
     icon: Users,
     title: "WORKSHOP S LIDMI Z PRAXE",
     description: "Sejdeme se s klíčovými rolemi a zmapujeme denní rutinu, úzká místa a příležitosti.",
+    output: "Výstup: Mapa rolí a úzkých míst"
   },
   {
     number: "02",
     icon: Search,
     title: "ANALÝZA PROCESŮ A DAT",
     description: "Vyhodnotíme data, identifikujeme quick wins a odhadneme ROI.",
+    output: "Výstup: Seznam quick wins s ROI odhadem"
   },
   {
     number: "03",
     icon: Target,
     title: "PRIORITIZACE A VÝBĚR PILOTA",
     description: "Seřadíme use-casy podle dopadu a vybereme proces pro první pilot.",
+    output: "Výstup: Prioritizovaný backlog 10–20 use-casů"
   },
   {
     number: "04",
     icon: FileCheck,
     title: "ROADMAPA + KPI",
-    description: "Mapa rolí, seznam priorit (10–20 use-casů), ROI odhad a návrh pilotu — vše připraveno pro vedení.",
+    description: "Mapa rolí, seznam priorit, ROI odhad a návrh pilotu — vše připraveno pro vedení.",
+    output: "Výstup: Roadmapa 30/60/90 + KPI"
   }
 ];
 
@@ -157,11 +165,11 @@ const AiQuickScan = () => {
                   </span>
                   <br />
                   <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Mapa úspor a priorit (1–2 týdny)
+                    Bezpečný start AI transformace
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Za 1–2 týdny dostanete mapu úspor, seznam priorit (10–20 use-casů) a doporučený pilot — včetně KPI a bezpečnostních pravidel.
+                  Za 1–2 týdny zjistíte, kde má AI největší dopad, kolik to přinese a s čím začít pilotem.
                 </p>
                 
                 {/* Trust Chips */}
@@ -188,7 +196,7 @@ const AiQuickScan = () => {
                         size="lg"
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       >
-                        Domluvit 15 min konzultaci
+                        Domluvit 15 min diagnostiku
                       </Button>
                     </Link>
                     <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>
@@ -199,7 +207,7 @@ const AiQuickScan = () => {
                       size="lg"
                       className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
                     >
-                      Ukázat výstupy
+                      Ukázka výstupů QuickScanu
                     </Button>
                   </a>
                 </div>
