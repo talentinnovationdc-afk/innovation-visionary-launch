@@ -19,7 +19,8 @@ import AgentiAutomatizace from "./pages/AgentiAutomatizace";
 import AiAgentiNaMiru from "./pages/AiAgentiNaMiru";
 import AiQuickScan from "./pages/AiQuickScan";
 import NotFound from "./pages/NotFound";
-import Gdpr from "./pages/Gdpr";
+import Legal from "./pages/Legal";
+
 
 const queryClient = new QueryClient();
 
@@ -50,7 +51,8 @@ const App = () => (
           <Route path="/online/chatgptakademie" element={<ChatGPTAkademie />} />
           <Route path="/online/copilotakademie" element={<CopilotAkademie />} />
           <Route path="/online/agentiautomatizace" element={<AgentiAutomatizace />} />
-          <Route path="/gdpr" element={<Gdpr />} />
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/gdpr" element={<Legal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
