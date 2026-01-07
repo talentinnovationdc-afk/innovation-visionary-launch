@@ -50,7 +50,7 @@ const ObchodniPodminky = () => {
               
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  "Online obsah je zpřístupněn ihned po zaplacení",
+                  "Online obsah je zpřístupněn do 24 hodin po zaplacení",
                   "Kurzy a akademie studujete vlastním tempem",
                   "U digitálního obsahu není zákonné 14denní odstoupení",
                   "Poskytujeme nadstandardní garanci spokojenosti",
