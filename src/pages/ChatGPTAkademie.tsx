@@ -310,7 +310,7 @@ const ChatGPTAkademie = () => {
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="glass-card px-5 py-5 border border-t-0 border-primary/40 rounded-b-xl bg-gradient-to-b from-primary/5 to-transparent shadow-[inset_0_2px_10px_rgba(102,252,241,0.05)]">
+                    <AccordionContent className="glass-card px-5 pt-6 pb-5 border border-t-0 border-primary/40 rounded-b-xl bg-gradient-to-b from-primary/5 to-transparent shadow-[inset_0_2px_10px_rgba(102,252,241,0.05)]">
                       <div className="pl-16 space-y-4">
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           {module.description}
