@@ -22,96 +22,99 @@ const modules = [
     title: "AI a produktivita v M365", 
     description: "Jak AI odhalí plýtvání a promění váš pracovní styl. Základy práce s Copilotem v ekosystému Microsoft.",
     output: "Checklist: Kde Copilot ušetří nejvíc času",
-    tags: ["2h", "checklist", "ukázka"]
+    tags: ["2h", "Framework", "Checklist", "Ukázka"]
   },
   { 
     num: 2, 
     title: "Halucinace a přesnost Copilota", 
     description: "Jak zkrotit halucinace a přimět Copilot myslet jako expert. Validace a ověřování výstupů.",
     output: "Framework: Ověření Copilot výstupů",
-    tags: ["2h", "framework", "checklist"]
+    tags: ["2h", "Framework", "Checklist"]
   },
   { 
     num: 3, 
     title: "Kreativní texty s AI", 
     description: "Myslící Copilot, perfektní texty a nejlepší nápady bez námahy. Psaní a editace obsahu.",
     output: "Šablona: Prompt vzory pro různé typy textů",
-    tags: ["2h", "šablona", "workflow"]
+    tags: ["2h", "Šablona", "Workflow"]
   },
   { 
     num: 4, 
     title: "Copilot jako editor a designer", 
     description: "Copilot & NotebookLM jako váš editor, designer a vyjednavač. Vizuální a textová tvorba.",
     output: "Workflow: Od nápadu k hotové prezentaci",
-    tags: ["2h", "workflow", "ukázka"]
+    tags: ["2h", "Workflow", "Ukázka"]
   },
   { 
     num: 5, 
     title: "Firemní data a vyhledávání", 
     description: "Najděte odpověď, data i řešení během jediné vteřiny. Práce s interními dokumenty.",
     output: "Checklist: Nastavení Copilot pro firemní data",
-    tags: ["2h", "checklist", "šablona"]
+    tags: ["2h", "Checklist", "Šablona"]
   },
   { 
     num: 6, 
     title: "Copilot jako datový analytik", 
     description: "Z chaosu k jasnozřivosti: Copilot jako váš osobní datový analytik. Excel a analýzy.",
     output: "Šablona: Prompty pro datovou analýzu v Excelu",
-    tags: ["2h", "šablona", "workflow"]
+    tags: ["2h", "Šablona", "Workflow"]
   },
   { 
     num: 7, 
     title: "Vlastní AI agenti – základy", 
     description: "Jak během minut vytvořit bota, který zná celou vaši firmu. Copilot Studio intro.",
     output: "Šablona: První agent v Copilot Studiu",
-    tags: ["2h", "šablona", "ukázka"]
+    tags: ["2h", "Šablona", "Ukázka"]
   },
   { 
     num: 8, 
     title: "Ultra-přesní firemní agenti", 
     description: "Jak postavit ultra-přesné AI agenty během pár minut. Pokročilé techniky.",
     output: "Framework: Knowledge base pro agenty",
-    tags: ["2h", "framework", "workflow"]
+    tags: ["2h", "Framework", "Workflow"]
   },
   { 
     num: 9, 
     title: "Power Automate – propojení", 
     description: "Budujte agenty, kteří propojí celou firmu a jede to samo. Automatizace procesů.",
     output: "Workflow: Agent + Power Automate integrace",
-    tags: ["2h", "workflow", "ukázka"]
+    tags: ["2h", "Workflow", "Ukázka"]
   },
   { 
     num: 10, 
     title: "Power Automate Mastery", 
     description: "Postavte workflow, které jede samo. Pokročilé scénáře a triggery.",
     output: "Šablona: 5 nejužitečnějších automatizací",
-    tags: ["2h", "šablona", "workflow"]
+    tags: ["2h", "Šablona", "Workflow"]
   },
   { 
     num: 11, 
     title: "AI aplikace bez kódu", 
     description: "Postavte firemní nástroj bez jediného řádku kódu. Power Apps a Copilot.",
     output: "Mini-app: Jednoduchá firemní aplikace",
-    tags: ["2h", "workflow", "ukázka"]
+    tags: ["2h", "Workflow", "Ukázka"]
   },
   { 
     num: 12, 
     title: "Kreativita bez limitů", 
     description: "AI, která tvoří nápady, organizuje chaos a natáčí video za vás. Multimodální tvorba.",
     output: "Checklist: AI nástroje pro kreativní práci",
-    tags: ["2h", "checklist", "ukázka"]
+    tags: ["2h", "Checklist", "Ukázka"]
   }
 ];
 
-const learnings = [
-  "Maximalizovat produktivitu v Microsoft 365 s Copilotem",
-  "Automatizovat práci ve Wordu, Excelu a PowerPointu",
-  "Vytvářet profesionální prezentace během minut",
-  "Efektivně spravovat e-maily v Outlooku s AI",
-  "Analyzovat firemní data přímo v prostředí M365",
-  "Stavět Power Automate workflow bez programování",
-  "Vytvořit vlastní AI agenty pro firemní procesy",
-  "Integrovat Copilot do týmové spolupráce"
+const learningsOutcome = [
+  "Produktivita v M365: méně rutiny, více výsledků",
+  "Rychlejší dokumenty a prezentace ve firemním standardu",
+  "Lepší práce s e-maily a Teams (jasně, stručně, konzistentně)",
+  "Připravenost pro tým: šablony a doporučené postupy"
+];
+
+const learningsWorkflow = [
+  "Word/Excel šablony pro opakované výstupy a reporty",
+  "Outlook: odpovědi, shrnutí vláken a follow-upy",
+  "PowerPoint: struktura + obsah prezentace během minut",
+  "Copilot + Power Automate: jednoduché asistenty a automatizace bez kódu"
 ];
 
 const CopilotAkademie = () => {
@@ -144,7 +147,7 @@ const CopilotAkademie = () => {
               </h1>
               
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Produktivita a automatizace v Microsoft 365. Integrujte AI přímo do svých kancelářských aplikací.
+                Praktické workflow v M365, které zrychlí dokumenty, e-maily i prezentace. Méně rutiny, víc hotových výstupů — konzistentně napříč týmem.
               </p>
               
               {/* Meta badges */}
@@ -153,10 +156,10 @@ const CopilotAkademie = () => {
                   <Clock className="w-4 h-4 text-primary" /> 12 modulů (cca 24 h)
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-primary" /> Začátečníci – Pokročilí
+                  <BookOpen className="w-4 h-4 text-primary" /> Začátečník → pokročilý
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <Timer className="w-4 h-4 text-primary" /> Studujte vlastním tempem
+                  <Timer className="w-4 h-4 text-primary" /> Vlastní tempo
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
                   <Award className="w-4 h-4 text-primary" /> Certifikát + LinkedIn odznak
@@ -192,6 +195,14 @@ const CopilotAkademie = () => {
                   </Button>
                 </a>
               </div>
+              
+              {/* Trust lines */}
+              <p className="text-xs text-muted-foreground mt-4">
+                Okamžitý přístup • studium vlastním tempem
+              </p>
+              <p className="text-xs text-muted-foreground/70 mt-1">
+                2 min čtení • uvidíte moduly + ukázky
+              </p>
             </div>
           </div>
         </section>
@@ -228,21 +239,40 @@ const CopilotAkademie = () => {
         {/* What You'll Learn */}
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Co se naučíte
-                </span>
-              </h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              {learnings.map((item, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 glass-card rounded-xl border border-border/30">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{item}</span>
+            <div className="max-w-4xl mx-auto">
+              {/* Block 1: Outcome */}
+              <div className="mb-12">
+                <h2 className="text-xl md:text-2xl font-bold tracking-[0.1em] uppercase mb-6 text-center">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    Výsledek pro vás (prakticky)
+                  </span>
+                </h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {learningsOutcome.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 glass-card rounded-xl border border-border/30">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              
+              {/* Block 2: Workflow */}
+              <div>
+                <h2 className="text-xl md:text-2xl font-bold tracking-[0.1em] uppercase mb-6 text-center">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    Konkrétní workflow (druhý den v práci)
+                  </span>
+                </h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {learningsWorkflow.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 glass-card rounded-xl border border-border/30">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -264,7 +294,7 @@ const CopilotAkademie = () => {
                   Obsah akademie
                 </span>
               </h2>
-              <p className="text-muted-foreground flex items-center justify-center gap-3">
+              <p className="text-muted-foreground flex flex-wrap items-center justify-center gap-3 mb-4">
                 <span className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                   12 modulů
@@ -279,6 +309,9 @@ const CopilotAkademie = () => {
                   <FileText className="w-4 h-4 text-primary/60" />
                   šablony & workflow
                 </span>
+              </p>
+              <p className="text-sm text-muted-foreground/80">
+                Rozklikněte modul a uvidíte ukázku výstupů, checklisty a šablony.
               </p>
             </div>
             
@@ -366,6 +399,10 @@ const CopilotAkademie = () => {
                 <p className="text-xs text-muted-foreground">Průběžně udržovaný</p>
               </div>
             </div>
+            
+            <p className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto">
+              Součástí jsou šablony, checklisty a ukázky – použitelné hned v praxi.
+            </p>
           </div>
         </section>
 
@@ -378,25 +415,16 @@ const CopilotAkademie = () => {
             <div className="max-w-3xl mx-auto text-center glass-card p-10 md:p-12 rounded-2xl border border-primary/30 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
               <Wand2 className="w-12 h-12 text-primary mx-auto mb-6" />
               <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
-                Začněte s Copilot Akademií
+                Začněte s Copilot Akademií ještě dnes
               </h2>
+              
+              <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+                Okamžitý přístup • certifikát + LinkedIn odznak • dlouhodobý přístup
+              </p>
               
               <div className="mb-6">
                 <span className="text-4xl font-bold text-primary">4 470 Kč</span>
                 <span className="text-sm text-muted-foreground ml-2">vč. DPH</span>
-              </div>
-              
-              {/* Benefit bullets */}
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <BookOpen className="w-4 h-4 text-primary" /> 12 modulů prakticky
-                </span>
-                <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Award className="w-4 h-4 text-primary" /> Certifikát + LinkedIn odznak
-                </span>
-                <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Timer className="w-4 h-4 text-primary" /> Dlouhodobý přístup
-                </span>
               </div>
               
               <a 
@@ -414,7 +442,7 @@ const CopilotAkademie = () => {
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
                 <a href="#roadmap" className="text-sm text-primary hover:text-primary/80 hover:underline transition-colors flex items-center justify-center gap-1">
                   <BookOpen className="w-3.5 h-3.5" />
-                  Nejdřív chci vidět roadmapu
+                  Nejdřív chci vidět osnovu
                 </a>
                 <Link to="/online/master-of-ai-creativity" className="text-sm text-accent hover:text-accent/80 hover:underline transition-colors flex items-center justify-center gap-1">
                   <Crown className="w-3.5 h-3.5" />
