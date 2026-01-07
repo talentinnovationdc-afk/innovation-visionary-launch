@@ -394,7 +394,7 @@ const Index = () => {
                       Poptat agenta
                       </Button>
                     </Link>
-                    <Link to="/pro-firmy/ai-agenti-na-miru">
+                    <Link to="/profirmy/ai-agenti-na-miru">
                       <Button variant="outline" className="w-full px-6 py-3 border-primary/50 text-primary hover:bg-primary/10">
                         Ukázat příklady z praxe
                       </Button>

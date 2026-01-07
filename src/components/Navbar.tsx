@@ -12,8 +12,8 @@ const navLinks = [
     hasDropdown: true,
     subItems: [
       { label: "Služby pro firmy", href: "/profirmy" },
-      { label: "Mapa úspor", href: "/pro-firmy/mapa-uspor", subtitle: "Diagnostika do 14 dnů" },
-      { label: "AI agenti na míru", href: "/pro-firmy/ai-agenti-na-miru", subtitle: "Digitální kolega do procesu" },
+      { label: "Mapa úspor", href: "/profirmy/mapa-uspor", subtitle: "Diagnostika do 14 dnů" },
+      { label: "AI agenti na míru", href: "/profirmy/ai-agenti-na-miru", subtitle: "Digitální kolega do procesu" },
     ]
   },
   { label: "AKADEMIE PRO TÝMY", href: "/akademie-pro-tymy", isRoute: true },

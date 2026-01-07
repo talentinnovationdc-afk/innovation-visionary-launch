@@ -372,7 +372,7 @@ const ProFirmy = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
                   { step: "01", title: "DIAGNOSTIKA", subtitle: "15 min konzultace — zjistíte, kde začít", benefit: "Jasný směr bez závazku", cta: "Domluvit 15 min diagnostiku", link: "/poptavka", highlighted: true },
-                  { step: "02", title: "MAPA ÚSPOR", subtitle: "Mapa rolí + seznam příležitostí (use-casů) + roadmapa 30/60/90", benefit: "Konkrétní výstupy pro vedení", cta: "Co dostanu v Mapě úspor", link: "/pro-firmy/mapa-uspor", highlighted: false },
+                  { step: "02", title: "MAPA ÚSPOR", subtitle: "Mapa rolí + seznam příležitostí (use-casů) + roadmapa 30/60/90", benefit: "Konkrétní výstupy pro vedení", cta: "Co dostanu v Mapě úspor", link: "/profirmy/mapa-uspor", highlighted: false },
                   { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Měříme dopad od začátku", cta: "Chci nasadit pilot", link: "/poptavka", highlighted: false },
                   { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Aby se řešení ujalo u lidí", cta: "Chci škálovat na firmu", link: "/poptavka", highlighted: false },
                 ].map((card, idx) => (
@@ -496,7 +496,7 @@ const ProFirmy = () => {
                     </div>
                   </div>
                   <div className="flex flex-col gap-3">
-                    <Link to="/pro-firmy/ai-agenti-na-miru">
+                    <Link to="/profirmy/ai-agenti-na-miru">
                       <Button className="w-full px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
                         Chci návrh agenta
                       </Button>
