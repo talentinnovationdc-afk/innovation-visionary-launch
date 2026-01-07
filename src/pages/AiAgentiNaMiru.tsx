@@ -93,24 +93,24 @@ const securityCards = [
 const caseStudies = [
   {
     icon: AlertTriangle,
-    title: "PŘEDCHOZÍ AI INICIATIVA SELHALA",
+    title: "PROČ AI INICIATIVA SELHALA (A JAK JSME JI ROZJELI)",
     problem: "Odpor lidí, bez vlastníka projektu, bez KPI.",
     solution: "Restart: workshop, roadmapa, pilot s měřením, adopce.",
-    result: "Úspora času rutiny + měřitelné dopady v konkrétních rolích."
+    result: "Úspora: hodiny týdně na rutinních úkolech + měřitelné dopady."
   },
   {
     icon: TrendingUp,
-    title: "OBCHOD BEZ RYCHLÉ REAKCE",
+    title: "OBCHOD BEZ RYCHLÉ REAKCE: FOLLOW-UP AGENT",
     problem: "Poptávky čekaly, CRM neaktuální, follow-up zapomenutý.",
     solution: "Agent třídí poptávky, připraví podklady, hlídá follow-up.",
-    result: "Rychlejší reakce, konzistence, více času na jednání."
+    result: "O 40 % rychlejší reakce + konzistence v komunikaci."
   },
   {
     icon: Users,
-    title: "KAPACITA BEZ NÁBORU",
+    title: "KAPACITA BEZ NÁBORU: RUTINA PRYČ",
     problem: "Klíčové role přetížené, rutina blokuje důležitou práci.",
     solution: "AI přebírá opakované úkoly, uvolňuje kapacitu.",
-    result: "Méně rutiny, vyšší průchodnost práce."
+    result: "2–3 hodiny týdně zpět pro každou roli."
   }
 ];
 
@@ -176,7 +176,7 @@ const AiAgentiNaMiru = () => {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Za 2–4 týdny nasadíme agenta do procesu X a změříme dopad. <span className="text-foreground font-medium">Bezpečně a s napojením na vaše nástroje.</span>
+                  Za 2–4 týdny nasadíme agenta do procesu X a změříme dopad. <span className="text-foreground font-medium">Typicky pilot do 14 dnů.</span>
                 </p>
                 
                 {/* Trust Chips */}
@@ -203,7 +203,7 @@ const AiAgentiNaMiru = () => {
                         size="lg"
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       >
-                        Domluvit 15 min konzultaci
+                        Poptat agenta
                       </Button>
                     </Link>
                     <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>

@@ -165,7 +165,7 @@ const MasterOfAICreativity = () => {
                   <span className="text-[11px] text-muted-foreground/70 ml-2">vč. DPH</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Ušetříte 3 940 Kč oproti nákupu 3 akademií zvlášť
+                  Sleva oproti 3 akademiím: 3 940 Kč
                 </p>
                 <p className="text-xs text-primary mb-8">
                   Okamžitý přístup • studium vlastním tempem • ověřitelný LinkedIn odznak
@@ -189,7 +189,7 @@ const MasterOfAICreativity = () => {
                       size="lg" 
                       className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
                     >
-                      Ukázat sylabus
+                      Co program obsahuje
                     </Button>
                   </a>
                 </div>

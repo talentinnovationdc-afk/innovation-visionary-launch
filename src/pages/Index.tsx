@@ -41,7 +41,7 @@ const Index = () => {
                 </h1>
                 
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-10 normal-case tracking-normal leading-[1.8]">
-                  Firmám zrychlujeme rutinní práci a snižujeme chybovost, Vám dáváme profesní náskok potvrzený certifikátem a LinkedIn odznakem.
+                  Za 15 minut zjistíte, kde ve firmě mizí čas. Navrhneme quick wins, bezpečná pravidla a další krok.
                 </p>
                 
                 {/* Two CTAs */}
@@ -53,7 +53,7 @@ const Index = () => {
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                       >
                         <Building className="w-5 h-5 mr-2" />
-                        Domluvit 15 min konzultaci
+                        Domluvit 15 min diagnostiku
                       </Button>
                     </Link>
                     <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
@@ -67,8 +67,8 @@ const Index = () => {
                         size="lg" 
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
                       >
-                        <BadgeCheck className="w-5 h-5 mr-2" />
-                        Vybrat akademii (certifikace)
+                        <GraduationCap className="w-5 h-5 mr-2" />
+                        Chci firemní akademii
                       </Button>
                     </Link>
                     <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
@@ -133,8 +133,9 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">AI QuickScan — Mapa úspor (1–2 týdny)</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Mapa úspor (14 dní)</h3>
                     <p className="text-sm text-primary font-medium mb-2">Zjistíte, kde AI přinese největší úspory.</p>
+                    <p className="text-[10px] text-muted-foreground/70 mb-2">Pro koho: CEO / COO / vedení týmu</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
                       Výstup: seznam procesů s nejvyšší návratností + odhad ROI.
                     </p>
@@ -164,8 +165,9 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Target className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">ROI plán a prioritizace</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">ROI plán & prioritizace</h3>
                     <p className="text-sm text-muted-foreground font-medium mb-2">Seznam procesů seřazených podle dopadu.</p>
+                    <p className="text-[10px] text-muted-foreground/70 mb-2">Pro koho: Projekt / Operations</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
                       Výstup: prioritizovaný plán + KPI + návrh pilotu.
                     </p>
@@ -195,8 +197,9 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Rocket className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Pilot do 14 dnů v provozu</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Nasazení digitálního kolegy</h3>
                     <p className="text-sm text-muted-foreground font-medium mb-2">AI agent pro jeden proces — nasazeno a měřeno.</p>
+                    <p className="text-[10px] text-muted-foreground/70 mb-2">Pro koho: Proces s nejvyšší návratností</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
                       Digitální kolega, který šetří čas od prvního dne.
                     </p>
@@ -208,7 +211,7 @@ const Index = () => {
                     </div>
                     <Link to="/ai-agenti-na-miru" className="mt-auto">
                       <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
-                        Spustit pilot
+                        Chci pilota
                       </Button>
                     </Link>
                   </div>
@@ -228,6 +231,7 @@ const Index = () => {
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">Škálování na firmu</h3>
                     <p className="text-sm text-muted-foreground font-medium mb-2">Standardy, bezpečnost a adopce napříč týmy.</p>
+                    <p className="text-[10px] text-muted-foreground/70 mb-2">Pro koho: Celá firma / více týmů</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
                       Aby se řešení ujalo u lidí a fungovalo dlouhodobě.
                     </p>
@@ -371,12 +375,12 @@ const Index = () => {
                   <div className="flex flex-col gap-3 items-center">
                     <Link to="/checkout">
                       <Button className="w-full px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
-                        Domluvit 15 min diagnostiku
+                      Poptat agenta
                       </Button>
                     </Link>
                     <Link to="/pro-firmy/ai-agenti-na-miru">
                       <Button variant="outline" className="w-full px-6 py-3 border-primary/50 text-primary hover:bg-primary/10">
-                        Zobrazit use-cases
+                        Ukázat příklady z praxe
                       </Button>
                     </Link>
                     <p className="text-xs text-muted-foreground/70 mt-1 text-center max-w-[280px]">

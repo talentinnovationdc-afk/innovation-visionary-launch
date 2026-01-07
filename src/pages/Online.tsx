@@ -253,7 +253,7 @@ const Online = () => {
                       data-event="b2c_certificate_open"
                     >
                       <Award className="w-5 h-5 mr-2" />
-                      Ukázka odznaku
+                      Jak vypadá odznak
                     </Button>
                   </div>
                   
