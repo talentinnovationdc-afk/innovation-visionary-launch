@@ -38,7 +38,7 @@ const courses = [
     ],
     price: "9 970 Kč",
     icon: Crown,
-    link: "https://t-i.cz/online/masterofaicreativity",
+    link: "https://buy.stripe.com/aFadRaftA8Rj0Kf9r06Ri09",
     isProgram: true,
     tags: ["3 akademie", "Hlavní certifikát", "Hlavní LinkedIn odznak"]
   },
