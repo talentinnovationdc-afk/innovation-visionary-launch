@@ -486,7 +486,7 @@ const AkademieProTymy = () => {
                     {/* CTA Buttons */}
                     {isProgram ? (
                       <div className="space-y-2">
-                        <Link to="#licence">
+                        <a href="#licence">
                           <Button 
                             size="sm"
                             className="w-full bg-primary text-primary-foreground shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)]"
@@ -494,7 +494,7 @@ const AkademieProTymy = () => {
                             Vybrat licenci
                             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                           </Button>
-                        </Link>
+                        </a>
                         <Link 
                           to={academy.link}
                           className="block text-center text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors mt-2"
