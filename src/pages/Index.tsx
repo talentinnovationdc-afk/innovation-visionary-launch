@@ -25,16 +25,27 @@ const Index = () => {
           {/* Hero Section - Fixed height to prevent CLS */}
           <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-32 pb-8 md:pt-48 md:pb-16 min-h-[70vh] md:min-h-[75vh]">
             <div className="container px-4 text-center">
-              <div className="max-w-5xl mx-auto">
-                <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-[1.15] tracking-[0.15em] uppercase">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Méně rutiny. Více kapacity. Díky AI.
-                  </span>
-                  <br />
-                  <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Měřitelně. Bezpečně. Škálovatelně.
-                  </span>
-                </h1>
+              {/* Same max-w-6xl as "Vyberte si, kde začít" section */}
+              <div className="max-w-6xl mx-auto">
+                {/* H1 wrapper with responsive max-width */}
+                <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
+                  <h1 
+                    id="hero-heading" 
+                    className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase"
+                    style={{ 
+                      lineHeight: '1.08', 
+                      letterSpacing: '-0.01em',
+                      textWrap: 'balance'
+                    }}
+                  >
+                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                      Méně rutiny. Více kapacity. Díky AI.
+                    </span>{' '}
+                    <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                      Měřitelně. Bezpečně. Škálovatelně.
+                    </span>
+                  </h1>
+                </div>
                 
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-4 normal-case tracking-normal leading-[1.8]">
                   Za 15 minut zjistíte, kde vzniká největší ztráta času.
