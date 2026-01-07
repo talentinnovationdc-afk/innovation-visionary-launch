@@ -363,7 +363,7 @@ const Metodika = () => {
                   </div>
                   
                   <h3 className="text-xl font-semibold tracking-[0.15em] text-foreground mb-3">
-                    PRO JEDNOTLIVCE
+                    PRO PROFESIONÁLY
                   </h3>
                   <p className="text-muted-foreground mb-6">
                     Certifikát + LinkedIn odznak + studium vlastním tempem. 3 akademie nebo kompletní program.
