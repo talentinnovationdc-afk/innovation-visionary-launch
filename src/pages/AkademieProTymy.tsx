@@ -169,18 +169,20 @@ const academyCards = [
     id: "chatgpt",
     title: "ChatGPT Akademie",
     icon: MessageSquare,
-    description: "Standard pro práci s GPT v administrativě, HR, obchodě i podpoře — rychlejší psaní, analýza a šablony.",
-    benefit: "Standard pro e-maily, dokumenty a rozhodování – rychleji a konzistentně napříč týmem.",
+    forWhom: "Pro koho: Administrativa, HR, obchod — každý, kdo denně píše e-maily a dokumenty.",
+    description: "Základ pro efektivní psaní a rozhodování. Jeden jasný standard pro celý tým.",
+    benefit: "Typicky 2–3× rychlejší e-maily a dokumenty. Méně chyb, konzistentní tón.",
     outputs: [
-      "Šablony promptů pro každodenní agendu",
-      "Automatizace dokumentů a textů (rychleji, konzistentně)",
-      "E-mailové workflow a odpovědi v jednotném tónu"
+      "Šablony promptů pro e-maily, zápisy a nabídky",
+      "Rewriting a kontrola textů v jednotném stylu",
+      "Rychlé shrnutí a analýza podkladů"
     ],
     contentPreview: [
-      "Jak zadávat úkoly tak, aby to vyšlo na první dobrou",
-      "Rewriting, sumarizace, tabulky a rozhodování",
-      "Firemní šablony: maily, nabídky, reporty"
+      "Jak zadat úkol tak, aby výsledek vyšel napoprvé",
+      "E-maily: odpovědi, follow-upy, reklamace",
+      "Dokumenty: nabídky, zápisy, reporty"
     ],
+    beforeAfter: "Před: 20 min na e-mail → Po: 5 min s kontrolou kvality.",
     roles: ["Back-office", "Obchod", "HR", "Management"],
     link: "/online/chatgptakademie",
     color: "primary",
@@ -190,18 +192,20 @@ const academyCards = [
     id: "copilot",
     title: "Copilot Akademie",
     icon: Wand2,
-    description: "Produktivita v Microsoft 365: Word, Excel, Outlook, PowerPoint — méně rutiny, víc výsledků.",
-    benefit: "Šablony a workflow v M365 pro méně rutiny a víc výsledků.",
+    forWhom: "Pro koho: Uživatelé M365 — Word, Excel, Outlook, PowerPoint v denní praxi.",
+    description: "Méně klikání, víc výsledků. Copilot jako asistent přímo v nástrojích, které už používáte.",
+    benefit: "Typicky 30–50 % času zpět na úkolech v Excelu, Wordu a Outlooku.",
     outputs: [
-      "Word & Excel šablony pro opakované výstupy",
-      "Outlook automatizace a lepší organizace práce",
-      "PowerPoint asistence: rychlejší tvorba prezentací"
+      "Excel: analýzy, souhrny a reporty bez vzorců",
+      "Word: šablony dokumentů a rychlé úpravy",
+      "Outlook: triage e-mailů a plánování schůzek"
     ],
     contentPreview: [
-      "Copilot v dokumentech a šablonách",
-      "Excel: analýza, souhrny, reporty",
-      "Outlook/Teams: rutina pryč"
+      "Copilot v dokumentech: shrnutí, přepis, formátování",
+      "Excel: datová analýza bez složitých vzorců",
+      "Outlook/Teams: méně času v e-mailu"
     ],
+    beforeAfter: "Před: 45 min report v Excelu → Po: 10 min s Copilotem.",
     roles: ["Back-office", "Management", "HR", "Obchod"],
     link: "/online/copilotakademie",
     color: "primary",
@@ -211,18 +215,20 @@ const academyCards = [
     id: "agenti",
     title: "Agenti & Automatizace",
     icon: Bot,
-    description: "Pro power users a inovátory: automatizace workflow a integrace nástrojů.",
-    benefit: "Pokročilé workflow a integrace nástrojů pro power users a inovátory.",
+    forWhom: "Pro koho: Power users, procesní vlastníci — ti, kdo chtějí automatizovat opakující se práci.",
+    description: "Pokročilé workflow a orchestrace nástrojů. Pro ty, kdo chtějí jít dál než základní prompting.",
+    benefit: "Typicky 1–2 hodiny denně zpět díky automatizaci opakujících se úkolů.",
     outputs: [
-      "Custom AI agenti pro opakující se procesy",
-      "Workflow automatizace napříč nástroji",
+      "Návrh a nasazení jednoduchého AI agenta",
+      "Automatizace workflow napříč nástroji",
       "Integrace: data → akce → výstup"
     ],
     contentPreview: [
-      "Návrh workflow (od problému k automatizaci)",
-      "Orchestrace a napojení nástrojů",
+      "Od problému k automatizaci: jak navrhnout workflow",
+      "Orchestrace nástrojů a napojení na data",
       "Bezpečné nasazení v týmu"
     ],
+    beforeAfter: "Před: 2 hodiny denně na reporty → Po: automatický report ráno v e-mailu.",
     roles: ["Power users", "Inovace", "Back-office", "Management"],
     link: "/online/agentiautomatizace",
     color: "primary",
@@ -232,18 +238,20 @@ const academyCards = [
     id: "master",
     title: "Kompletní program (3 akademie)",
     icon: Crown,
-    description: "Nejrychlejší cesta k jednotnému AI standardu napříč firmou — pro management a klíčové role.",
-    benefit: "Jednotný AI standard napříč firmou – včetně certifikace a reportingu pro HR.",
+    forWhom: "Pro koho: Management a klíčové role — ti, kdo potřebují rozumět všemu a nastavit standard.",
+    description: "Jednotný AI standard napříč firmou. Všechny 3 akademie + certifikace pro celý tým.",
+    benefit: "Nejrychlejší cesta k jednotnému skillu a měřitelnému dopadu.",
     outputs: [
       "Jednotná metodika a společný jazyk v týmu",
       "Certifikace + sdílené šablony napříč rolemi",
       "Rychlejší onboarding nových kolegů"
     ],
     contentPreview: [
-      "Základní standard (ChatGPT) → produktivita (Copilot) → pokročilé workflow (Agenti)",
+      "Základy (ChatGPT) → produktivita (Copilot) → automatizace (Agenti)",
       "Role-based použití napříč firmou",
       "Praktické šablony pro každodenní práci"
     ],
+    beforeAfter: "Před: každý používá AI jinak → Po: jeden standard, měřitelné výsledky.",
     roles: ["Management", "HR", "Power users", "Inovace"],
     link: "/online/master-of-ai-creativity",
     color: "accent",
@@ -392,22 +400,25 @@ const AkademieProTymy = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#licence">
-                  <Button 
-                    size="lg" 
-                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
-                  >
-                    Vybrat balíček licencí
-                  </Button>
-                </a>
+                <div className="flex flex-col items-center">
+                  <Link to="/checkout">
+                    <Button 
+                      size="lg" 
+                      className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
+                    >
+                      Domluvit 15 min konzultaci
+                    </Button>
+                  </Link>
+                  <span className="text-xs text-muted-foreground/70 mt-2">15 min • bez závazku • ozveme se do 24 hodin</span>
+                </div>
                 <a href="#akademie">
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
+                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary/50 text-primary hover:bg-primary/10"
                   >
                     <FileText className="w-5 h-5 mr-2" />
-                    Zobrazit obsah akademií
+                    Ukázat obsah akademií
                   </Button>
                 </a>
               </div>
@@ -466,6 +477,7 @@ const AkademieProTymy = () => {
                             <>Kompletní program<br />(3 akademie)</>
                           ) : academy.title}
                         </h3>
+                        <p className="text-xs text-primary/80 font-medium mb-1">{academy.forWhom}</p>
                         <p className="text-sm text-muted-foreground">{academy.description}</p>
                         <p className="text-sm mt-2 font-medium text-primary/90">
                           {academy.benefit}
@@ -499,6 +511,13 @@ const AkademieProTymy = () => {
                       </ul>
                     </div>
                     
+                    {/* Before/After */}
+                    {academy.beforeAfter && (
+                      <div className="mb-4 p-3 rounded-lg bg-accent/5 border border-accent/20">
+                        <p className="text-xs text-accent font-medium">{academy.beforeAfter}</p>
+                      </div>
+                    )}
+                    
                     {/* Roles */}
                     <div className="flex flex-wrap gap-1 mb-4">
                       {academy.roles.map((role, idx) => (
@@ -522,9 +541,9 @@ const AkademieProTymy = () => {
                         </Link>
                         <Link 
                           to={academy.link}
-                          className="block text-center text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+                          className="block text-center text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors mt-2"
                         >
-                          Zobrazit ukázku
+                          Ukázat obsah
                         </Link>
                       </div>
                     ) : (
@@ -532,10 +551,10 @@ const AkademieProTymy = () => {
                         <Button 
                           variant="outline"
                           size="sm"
-                          className="w-full border-primary/50 text-primary hover:bg-primary/10 hover:border-primary group-hover:shadow-[0_0_15px_rgba(102,252,241,0.3)] transition-all"
+                          className="w-full border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all"
                         >
                           <BookOpen className="w-4 h-4 mr-2" />
-                          Zobrazit ukázku
+                          Ukázat obsah
                           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </Link>

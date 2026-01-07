@@ -308,17 +308,17 @@ const ProFirmy = () => {
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       data-event="b2b_primary_cta"
                     >
-                      Domluvit 15 min diagnostiku
+                      Domluvit 15 min konzultaci
                     </Link>
-                    <span className="text-xs text-muted-foreground mt-2">15 min • bez závazku • ozveme se do 24 hodin</span>
+                    <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>
                   </div>
-                  <Link
-                    to="/akademie-pro-tymy"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                  <a
+                    href="#services"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary/50 text-primary bg-primary/5 hover:bg-primary/10 hover:border-primary transition-all duration-300"
                     data-event="b2b_secondary_cta"
                   >
-                    Vybrat nejlepší start
-                  </Link>
+                    Zjistit, kde začít
+                  </a>
                 </div>
               </div>
             </div>
@@ -360,20 +360,20 @@ const ProFirmy = () => {
           </section>
 
           {/* Vyberte si cestu - Product Cards */}
-          <section className="py-20 relative">
+          <section id="services" className="py-20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
                 VYBERTE SI CESTU
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Start → Pilot → Škálování — produktizovaná AI transformace.
+                Diagnostika → Pilot → Škálování — produktizovaná AI transformace.
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
-                  { step: "01", title: "DIAGNOSTIKA", subtitle: "Mapa příležitostí + další krok", benefit: "Úspora: jasný směr za 15 minut", cta: "Chci diagnostiku", link: "/checkout", highlighted: true },
-                  { step: "02", title: "AI QUICKSCAN", subtitle: "Mapa úspor a priorit (1–2 týdny) + seznam priorit (10–20 use-casů)", benefit: "Rychlost: výstupy do 2 týdnů", cta: "Chci mapu úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
-                  { step: "03", title: "PILOT (DO 14 DNŮ V PROVOZU)", subtitle: "AI agent (digitální kolega) pro 1 proces — nasazeno a měřeno", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci pilota", link: "/checkout", highlighted: false },
+                  { step: "01", title: "DIAGNOSTIKA", subtitle: "15 min konzultace — zjistíte, kde začít", benefit: "Úspora: jasný směr bez závazku", cta: "Domluvit konzultaci", link: "/checkout", highlighted: true },
+                  { step: "02", title: "AI QUICKSCAN", subtitle: "Mapa úspor a priorit do 1–2 týdnů", benefit: "Rychlost: konkrétní výstupy pro vedení", cta: "Chci mapu úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
+                  { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci pilota", link: "/checkout", highlighted: false },
                   { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Adopce: aby se řešení ujalo u lidí", cta: "Chci škálovat", link: "/checkout", highlighted: false },
                 ].map((card, idx) => (
                   <div key={idx} className={`relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-xl p-6 transition-all duration-300 hover:-translate-y-2 ${card.highlighted ? "border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)]" : "border-primary/20 hover:border-primary/40"}`}>

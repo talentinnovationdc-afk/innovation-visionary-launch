@@ -53,11 +53,11 @@ const Index = () => {
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                       >
                         <Building className="w-5 h-5 mr-2" />
-                        Domluvit 15 min diagnostiku
+                        Domluvit 15 min konzultaci
                       </Button>
                     </Link>
                     <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
-                      15 min • bez závazku • ozveme se do 24 hodin
+                      Bez závazku • ozveme se do 24 hodin
                     </p>
                   </div>
                   <div className="flex flex-col items-center">
@@ -133,10 +133,10 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">AI QuickScan — Mapa úspor a priorit (1–2 týdny)</h3>
-                    <p className="text-sm text-primary font-medium mb-2">Najdeme ‚zlaté žíly' a místa, kde AI vydělá nejrychleji.</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">AI QuickScan — Mapa úspor (1–2 týdny)</h3>
+                    <p className="text-sm text-primary font-medium mb-2">Zjistíte, kde AI přinese největší úspory.</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Výstup: seznam quick wins + odhad ROI.
+                      Výstup: seznam procesů s nejvyšší návratností + odhad ROI.
                     </p>
                     <div className="px-3 py-2 bg-primary/10 border border-primary/20 rounded-lg mb-4">
                       <p className="text-xs font-medium text-primary">
@@ -164,8 +164,8 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Target className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">KROK 02 – ROI plán & prioritizace</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-2">Seznam priorit (10–20 use-casů) seřazených podle dopadu.</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">ROI plán a prioritizace</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">Seznam procesů seřazených podle dopadu.</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
                       Výstup: prioritizovaný plán + KPI + návrh pilotu.
                     </p>
@@ -195,10 +195,10 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Rocket className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Pilot (do 14 dnů v provozu)</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-2">AI agent nebo automatizace pro jeden proces — nasazeno a měřeno.</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Pilot do 14 dnů v provozu</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">AI agent pro jeden proces — nasazeno a měřeno.</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Digitální kolega v praxi s měřením dopadu od prvního dne.
+                      Digitální kolega, který šetří čas od prvního dne.
                     </p>
                     <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
                       <p className="text-xs font-medium text-foreground">
@@ -226,10 +226,10 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Scale className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">KROK 04 – Škálování na firmu</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-2">Standardy, bezpečnost, adopce a dlouhodobý rozvoj.</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Škálování na firmu</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">Standardy, bezpečnost a adopce napříč týmy.</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Aby se řešení skutečně ujalo u lidí.
+                      Aby se řešení ujalo u lidí a fungovalo dlouhodobě.
                     </p>
                     <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
                       <p className="text-xs font-medium text-foreground">
@@ -299,7 +299,7 @@ const Index = () => {
                     </ul>
                     
                     <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-200">
-                      Vybrat nejlepší start <ArrowRight className="w-5 h-5" />
+                      Zjistit, kde začít <ArrowRight className="w-5 h-5" />
                     </div>
                   </Link>
                 </motion.div>

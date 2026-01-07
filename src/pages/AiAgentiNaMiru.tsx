@@ -203,10 +203,10 @@ const AiAgentiNaMiru = () => {
                         size="lg"
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       >
-                        Domluvit 15 min diagnostiku
+                        Domluvit 15 min konzultaci
                       </Button>
                     </Link>
-                    <span className="text-xs text-muted-foreground mt-2">15 min • bez závazku • ozveme se do 24 hodin</span>
+                    <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>
                   </div>
                   <a href="#solutions">
                     <Button 
@@ -214,7 +214,7 @@ const AiAgentiNaMiru = () => {
                       size="lg"
                       className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
                     >
-                      Zobrazit use-cases
+                      Ukázat příklady z praxe
                     </Button>
                   </a>
                 </div>
