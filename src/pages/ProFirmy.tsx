@@ -36,7 +36,7 @@ const services = [
     priceDetail: null,
     accent: "cyan",
     highlighted: true,
-    cta: { label: "Chci mapu úspor", link: "/checkout" },
+    cta: { label: "Chci mapu úspor", link: "/poptavka" },
   },
   {
     icon: Target,
@@ -53,7 +53,7 @@ const services = [
     priceDetail: null,
     accent: "cyan",
     highlighted: false,
-    cta: { label: "Chci ROI plán", link: "/checkout" },
+    cta: { label: "Chci ROI plán", link: "/poptavka" },
   },
   {
     icon: Rocket,
@@ -70,7 +70,7 @@ const services = [
     priceDetail: "MD = konzultační den. Odhad upřesníme po diagnostice.",
     accent: "cyan",
     highlighted: false,
-    cta: { label: "Chci nasadit pilot", link: "/checkout" },
+    cta: { label: "Chci nasadit pilot", link: "/poptavka" },
   },
   {
     icon: TrendingUp,
@@ -87,7 +87,7 @@ const services = [
     priceDetail: null,
     accent: "cyan",
     highlighted: false,
-    cta: { label: "Chci škálovat na firmu", link: "/checkout" },
+    cta: { label: "Chci škálovat na firmu", link: "/poptavka" },
   },
 ];
 
@@ -186,7 +186,7 @@ const faqItems = [
     ],
     highlight: "15 min úvod",
     size: "normal" as const,
-    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/poptavka" }
   },
   {
     icon: MessageSquare,
@@ -199,7 +199,7 @@ const faqItems = [
     ],
     highlight: "Minimum vstupů",
     size: "normal" as const,
-    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/poptavka" }
   },
   {
     icon: Lock,
@@ -212,7 +212,7 @@ const faqItems = [
     ],
     highlight: "GDPR + interní pravidla",
     size: "featured" as const,
-    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/poptavka" }
   },
   {
     icon: Zap,
@@ -225,7 +225,7 @@ const faqItems = [
     ],
     highlight: "Flexibilní nástroje",
     size: "normal" as const,
-    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/poptavka" }
   },
   {
     icon: BookOpen,
@@ -251,7 +251,7 @@ const faqItems = [
     ],
     highlight: "Měřitelné KPI",
     size: "featured" as const,
-    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/poptavka" }
   },
 ];
 
@@ -304,7 +304,7 @@ const ProFirmy = () => {
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
                   <div className="flex flex-col items-center">
                     <Link
-                      to="/checkout"
+                      to="/poptavka"
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       data-event="b2b_primary_cta"
                     >
@@ -371,10 +371,10 @@ const ProFirmy = () => {
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
-                  { step: "01", title: "DIAGNOSTIKA", subtitle: "15 min konzultace — zjistíte, kde začít", benefit: "Jasný směr bez závazku", cta: "Domluvit 15 min diagnostiku", link: "/checkout", highlighted: true },
+                  { step: "01", title: "DIAGNOSTIKA", subtitle: "15 min konzultace — zjistíte, kde začít", benefit: "Jasný směr bez závazku", cta: "Domluvit 15 min diagnostiku", link: "/poptavka", highlighted: true },
                   { step: "02", title: "MAPA ÚSPOR", subtitle: "Mapa rolí + seznam příležitostí (use-casů) + roadmapa 30/60/90", benefit: "Konkrétní výstupy pro vedení", cta: "Co dostanu v Mapě úspor", link: "/pro-firmy/mapa-uspor", highlighted: false },
-                  { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Měříme dopad od začátku", cta: "Chci nasadit pilot", link: "/checkout", highlighted: false },
-                  { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Aby se řešení ujalo u lidí", cta: "Chci škálovat na firmu", link: "/checkout", highlighted: false },
+                  { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Měříme dopad od začátku", cta: "Chci nasadit pilot", link: "/poptavka", highlighted: false },
+                  { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Aby se řešení ujalo u lidí", cta: "Chci škálovat na firmu", link: "/poptavka", highlighted: false },
                 ].map((card, idx) => (
                   <div key={idx} className={`relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-xl p-6 transition-all duration-300 hover:-translate-y-2 ${card.highlighted ? "border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)]" : "border-primary/20 hover:border-primary/40"}`}>
                     {card.highlighted && (
@@ -501,7 +501,7 @@ const ProFirmy = () => {
                         Chci návrh agenta
                       </Button>
                     </Link>
-                    <Link to="/checkout">
+                    <Link to="/poptavka">
                       <Button variant="outline" className="w-full px-6 py-3 border-primary/50 text-primary hover:bg-primary/10">
                         Domluvit 15 min diagnostiku
                       </Button>
@@ -807,7 +807,7 @@ const ProFirmy = () => {
                 <p className="text-muted-foreground mb-2">Nenašli jste odpověď?</p>
                 <p className="text-sm text-muted-foreground/70 mb-4">Napište nám, co chcete zlepšit — odpovíme do 24 hodin.</p>
                 <Link
-                  to="/checkout"
+                  to="/poptavka"
                   className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-xl border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
                 >
                   <MessageSquare className="w-4 h-4" />
@@ -830,7 +830,7 @@ const ProFirmy = () => {
                   Začněte krátkou diagnostikou (15 min). Do 14 dnů dostanete mapu rolí, 3–10 rychlých zlepšení a návrh pilotu.
                 </p>
                 <Link
-                  to="/checkout"
+                  to="/poptavka"
                   className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   data-event="b2b_cta_bottom"
                 >

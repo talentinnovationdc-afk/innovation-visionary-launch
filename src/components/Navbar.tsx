@@ -133,7 +133,7 @@ export const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link to="/checkout" aria-label="Rychlá diagnostika">
+            <Link to="/poptavka" aria-label="Rychlá diagnostika">
               <button className="px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
                 Rychlá diagnostika
               </button>
@@ -212,7 +212,7 @@ export const Navbar = () => {
                   </a>
                 )
               ))}
-              <Link to="/checkout" onClick={() => setIsOpen(false)} aria-label="Rychlá diagnostika">
+              <Link to="/poptavka" onClick={() => setIsOpen(false)} aria-label="Rychlá diagnostika">
                 <button className="mt-2 w-full px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
                   Rychlá diagnostika
                 </button>

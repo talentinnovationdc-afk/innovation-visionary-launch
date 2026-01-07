@@ -63,7 +63,7 @@ const Index = () => {
                 {/* Two CTAs */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
                   <div className="flex flex-col items-center">
-                    <Link to="/checkout">
+                    <Link to="/poptavka">
                       <Button 
                         size="lg" 
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
@@ -161,7 +161,7 @@ const Index = () => {
                         Quick wins + ROI odhad
                       </p>
                     </div>
-                    <Link to="/checkout" className="mt-auto">
+                    <Link to="/poptavka" className="mt-auto">
                       <Button className="w-full shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
                         Chci mapu úspor
                       </Button>
@@ -389,7 +389,7 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="flex flex-col gap-3 items-center">
-                    <Link to="/checkout">
+                    <Link to="/poptavka">
                       <Button className="w-full px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
                       Poptat agenta
                       </Button>
@@ -454,7 +454,7 @@ const Index = () => {
                   Vyberte si další krok:
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                  <Link to="/checkout">
+                  <Link to="/poptavka">
                     <Button size="lg" className="px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
                       <Building className="w-5 h-5 mr-2" />
                       Domluvit 15 min diagnostiku

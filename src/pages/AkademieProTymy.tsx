@@ -381,7 +381,7 @@ const AkademieProTymy = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <div className="flex flex-col items-center">
-                  <Link to="/checkout">
+                  <Link to="/poptavka">
                     <Button 
                       size="lg" 
                       className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
