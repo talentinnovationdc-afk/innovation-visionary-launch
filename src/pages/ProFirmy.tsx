@@ -506,7 +506,7 @@ const ProFirmy = () => {
                         Domluvit 15 min diagnostiku
                       </Button>
                     </Link>
-                    <p className="text-xs text-muted-foreground/70 text-center">15 min • bez závazku • ozveme se do 24 hodin</p>
+                    <p className="text-xs text-muted-foreground/70 text-center">bez závazku • ozveme se do 24 hodin</p>
                   </div>
                 </div>
                 <p className="text-[10px] text-muted-foreground/60 text-center md:text-left mt-4">

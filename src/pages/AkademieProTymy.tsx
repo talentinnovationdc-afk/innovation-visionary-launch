@@ -389,7 +389,7 @@ const AkademieProTymy = () => {
                       Domluvit diagnostiku (15 min)
                     </Button>
                   </Link>
-                  <span className="text-xs text-muted-foreground/70 mt-2">15 min • bez závazku • ozveme se do 24 hodin</span>
+                  <span className="text-xs text-muted-foreground/70 mt-2">bez závazku • ozveme se do 24 hodin</span>
                 </div>
                 <a href="#akademie">
                   <Button 
