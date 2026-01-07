@@ -42,8 +42,6 @@ const Index = () => {
                   Do 14 dnů dodáme mapu rolí, rychlé výhry a ROI plán prvního pilotu.
                 </p>
                 <p className="text-sm text-primary/90 max-w-[700px] mx-auto mb-10">
-                  Pro firmy: měřitelný dopad do 14 dnů.
-                  <br />
                   Pro profesionály: ověřitelný LinkedIn odznak a praktické workflow.
                 </p>
                 
