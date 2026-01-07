@@ -73,7 +73,7 @@ const Index = () => {
                       </Button>
                     </a>
                     <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
-                      Pro profesionály i týmy. Studujte vlastním tempem.
+                      Pro profesionály i týmy.
                     </p>
                   </div>
                 </div>
