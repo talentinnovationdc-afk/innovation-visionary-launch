@@ -33,14 +33,18 @@ const Index = () => {
                     id="hero-heading" 
                     className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase"
                     style={{ 
-                      lineHeight: '1.08', 
-                      letterSpacing: '-0.01em',
-                      textWrap: 'balance'
+                      lineHeight: '1.15', 
+                      letterSpacing: '-0.01em'
                     }}
                   >
                     <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                      Méně rutiny. Více kapacity. Díky AI.
-                    </span>{' '}
+                      Méně rutiny. Více kapacity.
+                    </span>
+                    <br />
+                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                      Díky AI.
+                    </span>
+                    <br />
                     <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                       Měřitelně. Bezpečně. Škálovatelně.
                     </span>
