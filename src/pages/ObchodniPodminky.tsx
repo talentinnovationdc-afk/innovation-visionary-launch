@@ -179,7 +179,7 @@ const ObchodniPodminky = () => {
               </h2>
               
               <p>
-                <strong className="text-foreground">5.1</strong> Online akademie jsou zpřístupněny bezodkladně po úhradě.
+                <strong className="text-foreground">5.1</strong> Online akademie jsou zpřístupněny do 24 hodin po úhradě.
               </p>
 
               <p>
