@@ -12,8 +12,8 @@ const navLinks = [
     hasDropdown: true,
     subItems: [
       { label: "Služby pro firmy", href: "/profirmy" },
-      { label: "AI QuickScan", href: "/ai-quickscan" },
-      { label: "AI agenti na míru", href: "/ai-agenti-na-miru" },
+      { label: "Mapa úspor (14 dní)", href: "/pro-firmy/ai-quickscan" },
+      { label: "AI agenti na míru", href: "/pro-firmy/ai-agenti-na-miru" },
     ]
   },
   { label: "AKADEMIE PRO TÝMY", href: "/akademie-pro-tymy", isRoute: true },

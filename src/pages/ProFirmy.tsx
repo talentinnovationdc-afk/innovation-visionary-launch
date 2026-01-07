@@ -3,13 +3,13 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
-import { MethodologySection } from "@/components/MethodologySection";
 import { 
-  Search, Bot, Users, GraduationCap, Banknote, 
+  Search, Bot, Users, GraduationCap, 
   ClipboardCheck, Shield, Scale, FileCode,
   UserCheck, FileText, ShoppingCart, ChevronDown, ChevronRight,
   FileBarChart, Route, LayoutGrid, Award,
-  Clock, MessageSquare, Lock, Zap, BookOpen, BarChart3, HelpCircle
+  Clock, MessageSquare, Lock, Zap, BookOpen, BarChart3, HelpCircle,
+  Target, Rocket, TrendingUp, RefreshCw
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -23,59 +23,59 @@ import {
 const services = [
   {
     icon: Search,
-    title: "DIAGNOSTIKA",
-    subtitle: "AI Audit",
-    description: "Najdeme role a procesy s nejrychlejším dopadem. Dostanete mapu úzkých míst, seznam quick wins a doporučenou roadmapu.",
-    output: "Co dostanete: mapa rolí + quick wins + ROI roadmapa.",
-    features: ["Mapa rolí", "Quick wins", "ROI roadmapa", "Rizika & data"],
+    title: "START",
+    subtitle: "Mapa úspor (14 dní)",
+    description: "Najdeme role a procesy s nejrychlejším dopadem. Dostanete mapu úzkých míst, seznam quick wins a odhad ROI.",
+    output: "Výstupy: mapa rolí & úzkých míst, quick wins, ROI odhad, bezpečné minimum pravidel.",
+    features: ["Mapa rolí", "Quick wins", "ROI odhad", "Bezpečná pravidla"],
     price: "18 000 – 25 000 Kč",
-    priceNote: null,
+    priceNote: "bez DPH",
     priceDetail: null,
     accent: "cyan",
     highlighted: true,
-    cta: { label: "Chci rychlou diagnostiku", link: "/checkout" },
+    cta: { label: "Chci mapu úspor", link: "/checkout" },
   },
   {
-    icon: Bot,
-    title: "IMPLEMENTACE",
-    subtitle: "Workflow & automatizace",
-    description: "Nasadíme konkrétní workflow a automatizace. Přidáme šablony a nastavíme měření dopadu (čas, kvalita, chybovost).",
-    output: "Co dostanete: nasazené workflow + šablony + měření dopadu.",
-    features: ["Workflow automatizace", "Šablony", "Integrace", "Měření dopadu"],
-    price: "25 000 – 35 000 Kč / MD",
-    priceNote: "MD = konzultační den",
-    priceDetail: null,
-    accent: "cyan",
-    highlighted: false,
-    cta: { label: "Chci návrh implementace", link: "/checkout" },
-  },
-  {
-    icon: Users,
-    title: "STRATEGIE A ŘÍZENÍ",
-    subtitle: "Pravidla & governance",
-    description: "Nastavíme pravidla bezpečného používání AI, odpovědnosti a plán rozvoje. Regulace řešíme jen pokud je pro váš obor relevantní.",
-    output: "Co dostanete: pravidla AI + governance + roadmapa na 90 dní.",
-    features: ["Pravidla použití", "Governance", "Roadmapa", "Regulace (pokud relevantní)"],
+    icon: Target,
+    title: "PLÁN",
+    subtitle: "ROI plán & prioritizace",
+    description: "Co dělat první, kolik to přinese a jak to řídit. Seřadíme use-casy podle dopadu a navrhneme první pilot.",
+    output: "Výstupy: backlog use-casů, KPI, návrh pilotu, governance minimum.",
+    features: ["Backlog use-casů", "KPI", "Návrh pilotu", "Governance"],
     price: "15 000 – 19 000 Kč",
-    priceNote: null,
-    priceDetail: "Rozsah: workshop s vedením (0,5 dne, max. 6 osob) + stručný výstup (pravidla, governance, roadmapa).",
-    accent: "cyan",
-    highlighted: false,
-    cta: { label: "Chci workshop s vedením", link: "/checkout" },
-  },
-  {
-    icon: GraduationCap,
-    title: "ŠKOLENÍ PRO TÝMY",
-    subtitle: "Firemní akademie",
-    description: "Zaměstnanci získají jednotný skillset pro práci s AI. Vy jako firma máte přehled o dokončení a jednotný standard napříč týmy.",
-    output: "Co dostanete: přístupy + certifikace + HR reporting.",
-    features: ["Týmový skillset", "Certifikace", "Přehled HR", "Standardy"],
-    price: "od 1 490 Kč / licence",
-    priceNote: "dle balíčku licencí",
+    priceNote: "bez DPH",
     priceDetail: null,
     accent: "cyan",
     highlighted: false,
-    cta: { label: "Zobrazit akademie pro týmy", link: "/akademie-pro-tymy" },
+    cta: { label: "Chci ROI plán", link: "/checkout" },
+  },
+  {
+    icon: Rocket,
+    title: "PILOT",
+    subtitle: "Digitální kolega (1 proces)",
+    description: "Agent nebo automatizace pro jeden konkrétní proces — do provozu. Pilotujeme rychle, bezpečně a s měřením dopadu.",
+    output: "Výstupy: agent/automatizace v procesu, integrace, měření dopadu, zaškolení klíčových lidí.",
+    features: ["Agent v provozu", "Integrace", "Měření dopadu", "Zaškolení"],
+    price: "od 45 000 Kč",
+    priceNote: "typicky 45–120k bez DPH",
+    priceDetail: null,
+    accent: "cyan",
+    highlighted: false,
+    cta: { label: "Chci pilot", link: "/checkout" },
+  },
+  {
+    icon: TrendingUp,
+    title: "ŠKÁLOVÁNÍ",
+    subtitle: "Standardy & adopce",
+    description: "Standardy, bezpečnost, adopce a dlouhodobý rozvoj. Aby se řešení skutečně ujalo u lidí.",
+    output: "Výstupy: governance, šablony, reporting, adopce, rozvoj roadmapy.",
+    features: ["Governance", "Šablony", "Reporting", "Adopce"],
+    price: "od 25 000 Kč / měsíc",
+    priceNote: "bez DPH",
+    priceDetail: null,
+    accent: "cyan",
+    highlighted: false,
+    cta: { label: "Chci škálování", link: "/checkout" },
   },
 ];
 
@@ -174,7 +174,7 @@ const faqItems = [
     ],
     highlight: "15 min úvod",
     size: "normal" as const,
-    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
   },
   {
     icon: MessageSquare,
@@ -187,7 +187,7 @@ const faqItems = [
     ],
     highlight: "Minimum vstupů",
     size: "normal" as const,
-    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
   },
   {
     icon: Lock,
@@ -200,7 +200,7 @@ const faqItems = [
     ],
     highlight: "GDPR + interní pravidla",
     size: "featured" as const,
-    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
   },
   {
     icon: Zap,
@@ -213,7 +213,7 @@ const faqItems = [
     ],
     highlight: "Flexibilní nástroje",
     size: "normal" as const,
-    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
   },
   {
     icon: BookOpen,
@@ -239,7 +239,7 @@ const faqItems = [
     ],
     highlight: "Měřitelné KPI",
     size: "featured" as const,
-    nextStep: { label: "Domluvit diagnostiku", link: "/checkout" }
+    nextStep: { label: "Chci diagnostiku", link: "/checkout" }
   },
 ];
 
@@ -296,16 +296,16 @@ const ProFirmy = () => {
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       data-event="b2b_primary_cta"
                     >
-                      Rychlá diagnostika
+                      Domluvit rychlou diagnostiku (15 min)
                     </Link>
-                    <span className="text-xs text-muted-foreground mt-2">15 min • bez závazku</span>
+                    <span className="text-xs text-muted-foreground mt-2">Bez závazků • Ozveme se do 24 hodin</span>
                   </div>
                   <Link
                     to="/akademie-pro-tymy"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent transition-all duration-300"
                     data-event="b2b_secondary_cta"
                   >
-                    Licence pro týmy
+                    Chci licenci pro tým
                   </Link>
                 </div>
               </div>
@@ -319,7 +319,7 @@ const ProFirmy = () => {
             </div>
           </section>
 
-          {/* Pain Points Section - NEW */}
+          {/* Pain Points Section */}
           <section className="py-16 bg-card/20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
@@ -347,22 +347,22 @@ const ProFirmy = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           </section>
 
-          {/* Vyberte si cestu - Product Cards - NEW */}
+          {/* Vyberte si cestu - Product Cards */}
           <section className="py-20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
                 VYBERTE SI CESTU
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Od diagnostiky po škálování — produktizovaná AI transformace.
+                Start → Pilot → Škálování — produktizovaná AI transformace.
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
-                  { step: "01", title: "DIAGNOSTIKA", desc: "Mapa příležitostí + další krok.", cta: "Domluvit diagnostiku", link: "/checkout", highlighted: true },
-                  { step: "02", title: "AI QUICKSCAN", desc: "Backlog use-casů + roadmapa + KPI.", cta: "Zobrazit AI QuickScan", link: "/ai-quickscan", highlighted: false },
-                  { step: "03", title: "PILOT", desc: "Nasazené řešení + šablony + měření.", cta: "Chci pilot", link: "/checkout", highlighted: false },
-                  { step: "04", title: "ŠKÁLOVÁNÍ", desc: "Rozvoj, governance, adopce, reporting.", cta: "Chci škálovat", link: "/checkout", highlighted: false },
+                  { step: "01", title: "DIAGNOSTIKA", subtitle: "Mapa příležitostí + další krok", benefit: "Úspora: jasný směr za 15 minut", cta: "Chci diagnostiku", link: "/checkout", highlighted: true },
+                  { step: "02", title: "MAPA ÚSPOR (14 DNÍ)", subtitle: "Backlog use-casů + ROI plán + návrh pilotu", benefit: "Rychlost: výstupy do 2 týdnů", cta: "Chci mapu úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
+                  { step: "03", title: "NASAZENÍ DIGITÁLNÍHO KOLEGY", subtitle: "Agent/automatizace pro 1 konkrétní proces — do provozu", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci pilota", link: "/checkout", highlighted: false },
+                  { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Adopce: aby se řešení ujalo u lidí", cta: "Chci škálovat", link: "/checkout", highlighted: false },
                 ].map((card, idx) => (
                   <div key={idx} className={`relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-xl p-6 transition-all duration-300 hover:-translate-y-2 ${card.highlighted ? "border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)]" : "border-primary/20 hover:border-primary/40"}`}>
                     {card.highlighted && (
@@ -372,7 +372,8 @@ const ProFirmy = () => {
                     )}
                     <div className="text-xs font-bold text-primary/60 mb-2">KROK {card.step}</div>
                     <h3 className="text-sm font-semibold tracking-[0.12em] text-foreground mb-2">{card.title}</h3>
-                    <p className="text-xs text-muted-foreground mb-4">{card.desc}</p>
+                    <p className="text-xs text-muted-foreground mb-2">{card.subtitle}</p>
+                    <p className="text-[10px] text-primary/80 mb-4 italic">{card.benefit}</p>
                     <Link to={card.link} className={`inline-block w-full text-center px-4 py-2 text-[10px] font-semibold tracking-wider uppercase rounded-lg transition-all ${card.highlighted ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(102,252,241,0.3)]" : "border border-primary/50 text-primary hover:bg-primary/10"}`}>
                       {card.cta}
                     </Link>
@@ -382,8 +383,38 @@ const ProFirmy = () => {
             </div>
           </section>
 
+          {/* Cesta k digitální autonomii - Shortened */}
+          <section className="py-16 bg-card/20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                CESTA K DIGITÁLNÍ AUTONOMII
+              </h2>
+              <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+                Úspěch = ušetřený čas + méně chyb + přijetí lidmi. Ne PoC do šuplíku.
+              </p>
+              
+              <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                {[
+                  { step: "01", title: "Diagnostika", desc: "Najdeme role a procesy s nejvyšším dopadem." },
+                  { step: "02", title: "Prioritizace", desc: "Seřadíme use-casy podle ROI a náročnosti." },
+                  { step: "03", title: "Pilot", desc: "Nasadíme a změříme dopad v praxi." },
+                  { step: "04", title: "Škálování", desc: "Standardy, adopce a dlouhodobý rozvoj." },
+                ].map((item, idx) => (
+                  <div key={idx} className="text-center">
+                    <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mb-3">
+                      <span className="text-xs font-bold text-primary">{item.step}</span>
+                    </div>
+                    <h3 className="text-xs font-semibold tracking-[0.12em] text-foreground uppercase mb-2">{item.title}</h3>
+                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          </section>
+
           {/* Pro koho Section */}
-          <section className="py-20 bg-card/20 relative">
+          <section className="py-20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
                 PRO KOHO JE TO IDEÁLNÍ
@@ -430,9 +461,6 @@ const ProFirmy = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           </section>
 
-          {/* Cesta k digitální autonomii */}
-          <MethodologySection />
-
           {/* AI Agenti Premium Block */}
           <section className="py-16 relative">
             <div className="container mx-auto px-4">
@@ -442,31 +470,38 @@ const ProFirmy = () => {
                     <div className="inline-block px-3 py-1 bg-accent/20 border border-accent/30 rounded-full text-[10px] font-bold tracking-wider text-accent uppercase mb-3">
                       Prémiová služba
                     </div>
-                    <h3 className="text-lg md:text-xl font-semibold tracking-wider text-foreground uppercase mb-3">
+                    <h3 className="text-lg md:text-xl font-semibold tracking-wider text-foreground uppercase mb-2">
                       AI AGENTI NA MÍRU
                     </h3>
+                    <p className="text-xs text-muted-foreground/80 mb-3">
+                      (digitální kolega pro vaše procesy)
+                    </p>
                     <p className="text-muted-foreground text-sm mb-4">
-                      Navrhneme, nasadíme a změříme dopad. Bezpečně, s napojením na vaše nástroje.
+                      Za 2–4 týdny nasadíme agenta do procesu X a změříme dopad.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
-                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Podpora & znalosti</span>
                       <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Obchod & kvalifikace</span>
+                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Podpora & znalosti</span>
                       <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Reporting & data</span>
+                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Orchestrace</span>
                     </div>
                   </div>
                   <div className="flex flex-col gap-3">
-                    <Link to="/ai-agenti-na-miru">
+                    <Link to="/pro-firmy/ai-agenti-na-miru">
                       <Button className="w-full px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
-                        Poptat agenta
+                        Chci návrh agenta
                       </Button>
                     </Link>
                     <Link to="/checkout">
                       <Button variant="outline" className="w-full px-6 py-3 border-primary/50 text-primary hover:bg-primary/10">
-                        Rychlá diagnostika (15 min)
+                        Domluvit 15 min diagnostiku
                       </Button>
                     </Link>
                   </div>
                 </div>
+                <p className="text-[10px] text-muted-foreground/60 text-center md:text-left mt-4">
+                  Data zůstávají vaše. Bezpečnost řešíme od prvního dne.
+                </p>
               </div>
             </div>
           </section>
@@ -478,13 +513,12 @@ const ProFirmy = () => {
                 SLUŽBY & CENÍK
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Komplexní portfolio služeb od diagnostiky po dlouhodobou podporu.
+                4 balíčky od startu po dlouhodobou podporu.
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 {services.map((service) => {
                   const Icon = service.icon;
-                  const isPurple = service.accent === "purple";
                   
                   return (
                     <div
@@ -492,9 +526,7 @@ const ProFirmy = () => {
                       className={`group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 flex flex-col ${
                         service.highlighted
                           ? "border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)] lg:scale-105 lg:-translate-y-2"
-                          : isPurple
-                            ? "border-accent/20 hover:border-accent/40 hover:shadow-[0_0_40px_rgba(189,0,255,0.2)]"
-                            : "border-primary/20 hover:border-primary/40 hover:shadow-[0_0_40px_rgba(102,252,241,0.2)]"
+                          : "border-primary/20 hover:border-primary/40 hover:shadow-[0_0_40px_rgba(102,252,241,0.2)]"
                       }`}
                     >
                       {service.highlighted && (
@@ -503,17 +535,11 @@ const ProFirmy = () => {
                         </div>
                       )}
                       
-                      <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${
-                        isPurple
-                          ? "bg-accent/10 text-accent"
-                          : "bg-primary/10 text-primary"
-                      }`}>
+                      <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 bg-primary/10 text-primary">
                         <Icon className="w-7 h-7" />
                       </div>
                       
-                      <p className={`text-xs font-medium mb-1 ${
-                        isPurple ? "text-accent/60" : "text-primary/60"
-                      }`}>
+                      <p className="text-xs font-medium mb-1 text-primary/60">
                         {service.subtitle}
                       </p>
                       
@@ -533,27 +559,19 @@ const ProFirmy = () => {
                         {service.features.map((feature) => (
                           <span 
                             key={feature}
-                            className={`px-2 py-0.5 text-[9px] font-semibold tracking-[0.05em] uppercase rounded-full ${
-                              isPurple
-                                ? "bg-accent/10 text-accent/80 border border-accent/20"
-                                : "bg-primary/10 text-primary/80 border border-primary/20"
-                            }`}
+                            className="px-2 py-0.5 text-[9px] font-semibold tracking-[0.05em] uppercase rounded-full bg-primary/10 text-primary/80 border border-primary/20"
                           >
                             {feature}
                           </span>
                         ))}
                       </div>
                       
-                      <div className={`pt-4 border-t ${
-                        isPurple ? "border-accent/20" : "border-primary/20"
-                      }`}>
-                        <p className={`text-lg font-semibold tracking-[0.05em] ${
-                          isPurple ? "text-accent" : "text-primary"
-                        }`}>
+                      <div className="pt-4 border-t border-primary/20">
+                        <p className="text-lg font-semibold tracking-[0.05em] text-primary">
                           {service.price}
                         </p>
                         <p className="text-[10px] text-muted-foreground/70 mt-1 flex items-center gap-1">
-                          {service.priceNote ? service.priceNote : "bez DPH"}
+                          {service.priceNote}
                           <span className="group/tooltip relative cursor-help">
                             <HelpCircle className="w-3 h-3" />
                             <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-card border border-border rounded text-[9px] whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none z-50">
@@ -584,7 +602,7 @@ const ProFirmy = () => {
               </div>
               
               <p className="text-[11px] text-muted-foreground/70 text-center mt-8 max-w-2xl mx-auto">
-                Ceny jsou bez DPH. Rozsah upřesníme podle počtu rolí, systémů a míry automatizace.
+                Rozsah upřesníme podle rolí, systémů a míry automatizace. Začít můžete vždy Startem.
               </p>
             </div>
             
@@ -649,10 +667,10 @@ const ProFirmy = () => {
                   return (
                     <div
                       key={item.title}
-                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-accent/20 rounded-xl p-5 transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)] text-center"
+                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-5 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)] text-center"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 mx-auto">
-                        <Icon className="w-5 h-5 text-accent" />
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 mx-auto">
+                        <Icon className="w-5 h-5 text-primary" />
                       </div>
                       
                       <h3 className="text-xs font-semibold tracking-[0.15em] text-foreground mb-2">
@@ -673,14 +691,14 @@ const ProFirmy = () => {
               </p>
             </div>
             
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           </section>
 
           {/* FAQ Section - Refined Accordion */}
           <section className="py-24 bg-card/20 relative overflow-hidden">
             {/* Subtle background */}
             <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[100px]" />
-            <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[120px]" />
+            <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[120px]" />
             
             <div className="container mx-auto px-4 relative z-10">
               {/* Header */}
@@ -700,8 +718,6 @@ const ProFirmy = () => {
               <div className="max-w-3xl mx-auto">
                 <Accordion type="single" collapsible className="space-y-3">
                   {faqItems.map((item, index) => {
-                    const isEven = index % 2 === 0;
-                    
                     return (
                       <AccordionItem 
                         key={index} 
@@ -805,7 +821,7 @@ const ProFirmy = () => {
                   className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   data-event="b2b_cta_bottom"
                 >
-                  Chci 15 min diagnostiku
+                  Domluvit rychlou diagnostiku (15 min)
                 </Link>
                 <p className="text-xs text-muted-foreground/60 mt-3">Ozveme se do 24 hodin.</p>
               </div>
