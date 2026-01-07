@@ -146,7 +146,7 @@ const AiQuickScan = () => {
       <SEO 
         title="Mapa úspor do 14 dní | AI transformace pro firmy | Talent Innovation"
         description="Za 1–2 týdny zjistíte, kde AI ušetří nejvíc času. Mapa rolí, quick wins s ROI odhadem a návrh pilotu."
-        path="/pro-firmy/ai-quickscan"
+        path="/pro-firmy/mapa-uspor"
       />
       
       <NeuralNetworkBackground />
