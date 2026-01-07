@@ -193,8 +193,8 @@ const Online = () => {
     <>
       <SEO 
         path="/online"
-        title="Online AI Akademie | Certifikát + LinkedIn odznak | Talent Innovation"
-        description="Ovládněte AI a získejte digitální odznak na LinkedIn. 1250+ absolventů. ChatGPT, Copilot, Agenti & Automatizace. Certifikát + praktické šablony."
+        title="Online AI akademie s certifikátem a LinkedIn odznakem"
+        description="Ovládněte AI a získejte ověřitelný odznak na LinkedIn. ChatGPT, Copilot, Agenti & Automatizace. 1250+ absolventů, 4,9/5 hodnocení."
       />
       <NeuralNetworkBackground />
       <div className="min-h-screen flex flex-col relative z-10">

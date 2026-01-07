@@ -16,7 +16,11 @@ import { motion } from "framer-motion";
 const Index = () => {
   return (
     <>
-      <SEO path="/" />
+      <SEO 
+        title="Méně rutiny, více kapacity díky AI"
+        description="Pomáháme firmám zrychlit práci díky AI – měřitelně, bezpečně a škálovatelně. Diagnostika, mapa úspor, AI agenti a akademie."
+        path="/" 
+      />
       <NeuralNetworkBackground />
       <div className="min-h-screen flex flex-col relative z-10">
         <Navbar />

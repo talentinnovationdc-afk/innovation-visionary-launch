@@ -157,9 +157,9 @@ const AiAgentiNaMiru = () => {
   return (
     <>
       <SEO 
-        title="AI agenti na míru | Automatizace procesů pro firmy | Talent Innovation"
-        description="AI agenti na míru pro obchod, reporting a orchestraci. Napojení na vaše nástroje, měření dopadu a bezpečné nasazení. Pilot do 14 dnů."
-        path="/ai-agenti-na-miru"
+        title="AI agenti na míru – automatizace procesů pro firmy"
+        description="Navrhneme a nasadíme AI agenta pro váš proces. Integrace na vaše nástroje, měření dopadu a bezpečné nasazení. Pilot do 14 dnů."
+        path="/profirmy/ai-agenti-na-miru"
       />
       
       <NeuralNetworkBackground />

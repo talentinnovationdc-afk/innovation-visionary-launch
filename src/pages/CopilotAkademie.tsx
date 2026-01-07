@@ -121,8 +121,8 @@ const CopilotAkademie = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Microsoft Copilot Akademie | Online kurz s certifikátem | Talent Innovation"
-        description="Ovládněte Microsoft Copilot a M365. 12×2h, certifikát, LinkedIn odznak, dlouhodobý přístup. Automatizace Word, Excel, Outlook, PowerPoint."
+        title="Microsoft Copilot Akademie – online kurz s certifikátem"
+        description="Ovládněte Microsoft Copilot a M365. 12 modulů, certifikát, LinkedIn odznak. Automatizace Word, Excel, Outlook, PowerPoint."
         path="/online/copilotakademie"
       />
       <NeuralNetworkBackground />
