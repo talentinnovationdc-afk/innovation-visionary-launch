@@ -27,14 +27,14 @@ const deliverables = [
   },
   {
     icon: Target,
-    title: "BACKLOG 10–20 USE-CASŮ (S ROI)",
-    description: "Konkrétní zlepšení seřazená podle dopadu a náročnosti.",
+    title: "SEZNAM 10–20 PŘÍLEŽITOSTÍ (S ROI)",
+    description: "Konkrétní use-casy seřazené podle dopadu a náročnosti.",
     format: "Formát: 3–6 stran + tabulka"
   },
   {
     icon: Route,
     title: "DOPORUČENÝ PILOT (1–2 PROCESY)",
-    description: "Procesy pro start + odhad přínosu v čase a kvalitě.",
+    description: "Procesy pro rychlý start s měřením dopadu.",
     format: "Formát: 3–6 stran + tabulka"
   },
   {
@@ -57,22 +57,22 @@ const processSteps = [
     number: "02",
     icon: Search,
     title: "ANALÝZA PROCESŮ A DAT",
-    description: "Vyhodnotíme data, identifikujeme quick wins a odhadneme ROI.",
-    output: "Výstup: Seznam quick wins s ROI odhadem"
+    description: "Vyhodnotíme data, identifikujeme rychlé výhry a odhadneme ROI.",
+    output: "Výstup: Seznam rychlých výher s ROI odhadem"
   },
   {
     number: "03",
     icon: Target,
-    title: "PRIORITIZACE A VÝBĚR PILOTA",
-    description: "Seřadíme use-casy podle dopadu a vybereme proces pro první pilot.",
-    output: "Výstup: Prioritizovaný backlog 10–20 use-casů"
+    title: "VÝBĚR PILOTU (CO PŘINESE NEJDŘÍV)",
+    description: "Seřadíme příležitosti podle dopadu a vybereme proces pro první pilot.",
+    output: "Výstup: Prioritizovaný seznam 10–20 příležitostí"
   },
   {
     number: "04",
     icon: FileCheck,
-    title: "ROADMAPA + KPI",
+    title: "ROADMAPA + KPI (30/60/90)",
     description: "Mapa rolí, seznam priorit, ROI odhad a návrh pilotu — vše připraveno pro vedení.",
-    output: "Výstup: Roadmapa 30/60/90 + KPI"
+    output: "Výstup: Roadmapa 30/60/90 + KPI pro měření"
   }
 ];
 
@@ -161,7 +161,7 @@ const AiQuickScan = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-8 leading-[1.15] uppercase">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    AI QuickScan
+                    Mapa úspor (AI QuickScan)
                   </span>
                   <br />
                   <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
@@ -169,7 +169,7 @@ const AiQuickScan = () => {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Za 1–2 týdny zjistíte, kde má AI největší dopad, kolik to přinese a s čím začít pilotem.
+                  Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, kolik to přinese a jak bezpečně začít pilotem.
                 </p>
                 
                 {/* Trust Chips */}
@@ -196,7 +196,7 @@ const AiQuickScan = () => {
                         size="lg"
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       >
-                        Domluvit 15 min diagnostiku
+                        Domluvit diagnostiku (15 min)
                       </Button>
                     </Link>
                     <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>
@@ -207,7 +207,7 @@ const AiQuickScan = () => {
                       size="lg"
                       className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
                     >
-                      Ukázka výstupů QuickScanu
+                      Zobrazit, co dostanu
                     </Button>
                   </a>
                 </div>

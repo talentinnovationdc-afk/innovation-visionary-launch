@@ -172,7 +172,7 @@ const academyCards = [
     forWhom: "Pro koho: Administrativa, HR, obchod — každý, kdo denně píše e-maily a dokumenty.",
     kdyZvolit: "Kdy zvolit: Když chcete rychle standard pro text a rozhodování.",
     description: "Základ pro efektivní psaní a rozhodování. Jeden jasný standard pro celý tým.",
-    benefit: "Typicky 2–3× rychlejší e-maily a dokumenty. Méně chyb, konzistentní tón.",
+    benefit: "Po 14 dnech: Jednotný styl e-mailů + šablony pro rutiny.",
     outputs: [
       "Šablony promptů pro e-maily, zápisy a nabídky",
       "Rewriting a kontrola textů v jednotném stylu",
@@ -196,7 +196,7 @@ const academyCards = [
     forWhom: "Pro koho: Uživatelé M365 — Word, Excel, Outlook, PowerPoint v denní praxi.",
     kdyZvolit: "Kdy zvolit: Když jedete na M365 a chcete automatizace v Office.",
     description: "Méně klikání, víc výsledků. Copilot jako asistent přímo v nástrojích, které už používáte.",
-    benefit: "Typicky 30–50 % času zpět na úkolech v Excelu, Wordu a Outlooku.",
+    benefit: "Po 14 dnech: Méně rutiny ve Word/Excel/Outlook + sdílené workflow.",
     outputs: [
       "Excel: analýzy, souhrny a reporty bez vzorců",
       "Word: šablony dokumentů a rychlé úpravy",
@@ -220,7 +220,7 @@ const academyCards = [
     forWhom: "Pro koho: Power users, procesní vlastníci — ti, kdo chtějí automatizovat opakující se práci.",
     kdyZvolit: "Kdy zvolit: Když chcete workflow, integrace a pokročilou orchestraci.",
     description: "Pokročilé workflow a orchestrace nástrojů. Pro ty, kdo chtějí jít dál než základní prompting.",
-    benefit: "Typicky 1–2 hodiny denně zpět díky automatizaci opakujících se úkolů.",
+    benefit: "Po 14 dnech: První automatizace + plán agentů do procesů.",
     outputs: [
       "Návrh a nasazení jednoduchého AI agenta",
       "Automatizace workflow napříč nástroji",
@@ -410,7 +410,7 @@ const AkademieProTymy = () => {
                       size="lg" 
                       className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                     >
-                      Domluvit 15 min diagnostiku
+                      Domluvit diagnostiku (15 min)
                     </Button>
                   </Link>
                   <span className="text-xs text-muted-foreground/70 mt-2">15 min • bez závazku • ozveme se do 24 hodin</span>
@@ -422,7 +422,7 @@ const AkademieProTymy = () => {
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary/50 text-primary hover:bg-primary/10"
                   >
                     <FileText className="w-5 h-5 mr-2" />
-                    Ukázat obsah akademií
+                    Zobrazit ukázku
                   </Button>
                 </a>
               </div>
