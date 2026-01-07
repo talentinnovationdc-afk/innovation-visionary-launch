@@ -70,7 +70,7 @@ const Checkout = () => {
       <SEO 
         title="Rychlá diagnostika: kde vám AI ušetří čas | Talent Innovation" 
         description="Za 15 minut zjistíte, kde ve vašich rolích a procesech vzniká zbytečná zátěž. Bezpečně. Prakticky. S měřitelným dopadem."
-        path="/checkout"
+        path="/poptavka"
       />
       <Navbar />
       

@@ -166,7 +166,7 @@ const Metodika = () => {
                     data-event="metodika_diagnostika_click"
                     asChild
                   >
-                    <Link to="/checkout">
+                    <Link to="/poptavka">
                       Domluvit diagnostiku (15 min)
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Link>
@@ -347,7 +347,7 @@ const Metodika = () => {
                     data-event="metodika_b2b_click"
                     asChild
                   >
-                    <Link to="/checkout">
+                    <Link to="/poptavka">
                       Rychlá diagnostika
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>

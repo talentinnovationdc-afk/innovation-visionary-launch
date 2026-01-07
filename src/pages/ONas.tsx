@@ -238,7 +238,7 @@ const ONas = () => {
           <section className="py-16">
             <div className="container mx-auto px-4 text-center">
               <Link
-                to="/checkout"
+                to="/poptavka"
                 className="inline-flex items-center justify-center gap-2 px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
               >
                 DOMLUVIT 15 MINUT

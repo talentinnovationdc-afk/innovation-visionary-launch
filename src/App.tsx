@@ -36,7 +36,8 @@ const App = () => (
         <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/poptavka" element={<Checkout />} />
+          <Route path="/checkout" element={<Navigate to="/poptavka" replace />} />
           <Route path="/dekujeme" element={<Dekujeme />} />
           <Route path="/metodika" element={<Metodika />} />
           <Route path="/o-nas" element={<ONas />} />

@@ -207,7 +207,7 @@ const AiAgentiNaMiru = () => {
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
                   <div className="flex flex-col items-center">
-                    <Link to="/checkout">
+                    <Link to="/poptavka">
                       <Button 
                         size="lg"
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
@@ -519,7 +519,7 @@ const AiAgentiNaMiru = () => {
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
                   Domluvte 15 minut. Řeknete nám, kde pálíte čas, a my navrhneme první use-case s měřením dopadu.
                 </p>
-                <Link to="/checkout">
+                <Link to="/poptavka">
                   <Button 
                     size="lg"
                     className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
