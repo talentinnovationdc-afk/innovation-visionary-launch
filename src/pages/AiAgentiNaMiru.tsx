@@ -527,7 +527,7 @@ const AiAgentiNaMiru = () => {
                     Domluvit 15 min diagnostiku
                   </Button>
                 </Link>
-                <p className="text-xs text-muted-foreground/60 mt-3">15 min • bez závazku • ozveme se do 24 hodin</p>
+                <p className="text-xs text-muted-foreground/60 mt-3">bez závazku • ozveme se do 24 hodin</p>
               </div>
             </div>
           </section>

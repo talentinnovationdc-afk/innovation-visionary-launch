@@ -400,7 +400,7 @@ const Index = () => {
                       </Button>
                     </Link>
                     <p className="text-xs text-muted-foreground/70 mt-1 text-center max-w-[280px]">
-                      15 min • bez závazku • ozveme se do 24 hodin
+                      bez závazku • ozveme se do 24 hodin
                     </p>
                   </div>
                 </div>
