@@ -39,7 +39,7 @@ const Legal = () => {
                 <p>Talent Innovation s.r.o.</p>
                 <p>IČO: 28380070</p>
                 <p>Sídlo: Česká republika</p>
-                <p>E-mail: <a href="mailto:info@t-i.cz" className="text-primary hover:underline">info@t-i.cz</a></p>
+                <p>E-mail: <a href="mailto:Daniel.Cerveny@t-i.cz" className="text-primary hover:underline">Daniel.Cerveny@t-i.cz</a></p>
                 <p className="mt-2 text-sm">(dále jen „Talent Innovation")</p>
               </section>
             </div>
@@ -261,7 +261,7 @@ const Legal = () => {
                 <li>podat stížnost u ÚOOÚ.</li>
               </ul>
               <p className="mt-4">
-                Kontakt: <a href="mailto:info@t-i.cz" className="text-primary hover:underline">info@t-i.cz</a>
+                Kontakt: <a href="mailto:Daniel.Cerveny@t-i.cz" className="text-primary hover:underline">Daniel.Cerveny@t-i.cz</a>
               </p>
             </div>
 
