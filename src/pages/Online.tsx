@@ -56,7 +56,7 @@ const courses = [
     ],
     price: "4 470 Kč",
     icon: MessageSquare,
-    link: "https://t-i.cz/online/chatgptakademie",
+    link: "https://buy.stripe.com/4gM8wQ2GO9Vn2SnfPo6Ri03",
     isProgram: false,
     tags: ["Šablony", "Prompty", "Certifikace"]
   },
