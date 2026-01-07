@@ -24,19 +24,19 @@ const solutions = [
     icon: MessageSquare,
     title: "Obchod & podpora",
     description: "Kvalifikace leadů, odpovědi zákazníkům, follow-up a schůzky.",
-    result: "Rychlejší reakce a více času na jednání."
+    result: "Agent na odpovědi + follow-up + přípravu podkladů"
   },
   {
     icon: BarChart3,
     title: "Reporting & data",
     description: "Sběr dat, shrnutí, alerty a přehled pro management.",
-    result: "Rozhodování z dat bez ručního reportingu."
+    result: "Shrnutí dat + alerty + pravidelný management report"
   },
   {
     icon: RefreshCw,
     title: "Procesní orchestrace",
-    description: "Když nastane A, provede se B/C/D napříč nástroji.",
-    result: "Méně rutiny a plynulejší procesy."
+    description: "Když nastane událost, provede kroky napříč nástroji.",
+    result: "Automatické kroky napříč nástroji bez ruční práce"
   }
 ];
 
@@ -142,7 +142,7 @@ const faqItems = [
   {
     icon: Database,
     question: "Kolik to stojí?",
-    answer: "Začínáme diagnostikou a doporučíme rozsah pilotu. Cena závisí na složitosti procesu a integracích.",
+    answer: "Cena závisí na rozsahu. Po 15min diagnostice dáme rámec a varianty (pilot / plné nasazení).",
     highlight: "Cena dle rozsahu"
   }
 ];
@@ -175,8 +175,11 @@ const AiAgentiNaMiru = () => {
                     (digitální kolega pro vaše procesy)
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Za 2–4 týdny nasadíme agenta do procesu X a změříme dopad. <span className="text-foreground font-medium">Typicky pilot do 14 dnů.</span>
+                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-4">
+                  Navrhneme, nasadíme a změříme dopad. Bezpečně, s napojením na vaše nástroje.
+                </p>
+                <p className="text-sm text-primary font-medium mb-8">
+                  Typicky pilot do 14 dnů.
                 </p>
                 
                 {/* Trust Chips */}

@@ -56,33 +56,33 @@ const quickWinsCards = [
 const methodologySteps = [
   {
     number: "01",
-    title: "DIAGNOSTIKA",
-    description: "Najdeme role a procesy s největší úsporou času a nízkým rizikem. Výstup: mapa příležitostí + quick wins.",
+    title: "DIAGNOSTIKA (MAPA ÚSPOR)",
+    description: "Najdeme role a procesy s největší úsporou času a nízkým rizikem. Výstup: mapa příležitostí + rychlé výhry.",
     icon: Search,
   },
   {
     number: "02",
-    title: "PLÁN",
+    title: "PLÁN (ROI + PRAVIDLA)",
     description: "Navrhneme postup a pravidla: data, nástroje, pravidla použití a odpovědnosti.",
     note: "Regulace (AI Act/ISO) řešíme jen pokud je to pro váš obor relevantní.",
     icon: FileText,
   },
   {
     number: "03",
-    title: "IMPLEMENTACE",
+    title: "IMPLEMENTACE (PILOT)",
     description: "Nasadíme workflow a automatizace. Dopad měříme (čas, kvalita, chybovost).",
     icon: Cog,
   },
   {
     number: "04",
-    title: "ZAŠKOLENÍ",
+    title: "ZAŠKOLENÍ (ADOPCE)",
     description: "Tým dostane know-how a přístup do Online akademie. HR má přehled o dokončení.",
     icon: GraduationCap,
     accent: "purple",
   },
   {
     number: "05",
-    title: "EVOLUCE",
+    title: "EVOLUCE (ŠKÁLOVÁNÍ)",
     description: "Průběžně ladíme a rozšiřujeme podle výsledků a změn ve firmě.",
     icon: TrendingUp,
     accent: "purple",
@@ -156,8 +156,8 @@ const Metodika = () => {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-10">
-                  Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami.<br className="hidden md:block" />
-                  <span className="text-primary font-medium">Do 14 dnů: mapa rolí + quick wins + ROI roadmapa.</span>
+                  Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologii přidáváme až když má měřitelný smysl.<br className="hidden md:block" />
+                  <span className="text-primary font-medium">Do 14 dnů: mapa rolí, rychlé výhry a ROI plán prvního pilotu.</span>
                 </p>
                 
                 {/* CTA Buttons */}
@@ -182,7 +182,7 @@ const Metodika = () => {
                   >
                     <Link to="/online">
                       <MonitorPlay className="mr-2 w-5 h-5" />
-                      Online akademie ze záznamu
+                      Zobrazit akademie
                     </Link>
                   </Button>
                 </div>

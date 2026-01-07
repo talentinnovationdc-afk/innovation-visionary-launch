@@ -28,20 +28,16 @@ const Index = () => {
               <div className="max-w-5xl mx-auto">
                 <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-[1.15] tracking-[0.15em] uppercase">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Z AI děláme měřitelnou produktivitu
+                    Zrychlete práci týmů díky AI
                   </span>
                   <br />
                   <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    pro firmy
-                  </span>
-                  <br />
-                  <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    a váš profesní růst
+                    měřitelně a bezpečně
                   </span>
                 </h1>
                 
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-10 normal-case tracking-normal leading-[1.8]">
-                  Za 15 minut zjistíte, kde ve firmě mizí čas. Navrhneme quick wins, bezpečná pravidla a další krok.
+                  Za 15 minut zjistíte, kde vzniká největší ztráta času. Do 14 dnů dodáme mapu rolí, rychlé výhry a ROI plán prvního pilotu.
                 </p>
                 
                 {/* Two CTAs */}
@@ -53,26 +49,26 @@ const Index = () => {
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                       >
                         <Building className="w-5 h-5 mr-2" />
-                        Domluvit 15 min diagnostiku
+                        Domluvit diagnostiku (15 min)
                       </Button>
                     </Link>
                     <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
-                      Bez závazku • ozveme se do 24 hodin
+                      Bez závazku • Ozveme se do 24 hodin
                     </p>
                   </div>
                   <div className="flex flex-col items-center">
-                    <Link to="/online">
+                    <a href="#journey">
                       <Button 
                         variant="outline"
                         size="lg" 
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
                       >
                         <GraduationCap className="w-5 h-5 mr-2" />
-                        Chci firemní akademii
+                        Zobrazit cestu (kroky)
                       </Button>
-                    </Link>
+                    </a>
                     <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
-                      Pro jednotlivce i týmy. Studujte vlastním tempem.
+                      Pro profesionály i týmy. Studujte vlastním tempem.
                     </p>
                   </div>
                 </div>
@@ -103,7 +99,7 @@ const Index = () => {
           <LogoRibbon />
 
           {/* Vyberte si, kde začít - B2B Journey Steps */}
-          <section className="py-20 relative">
+          <section id="journey" className="py-20 relative">
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
@@ -211,7 +207,7 @@ const Index = () => {
                     </div>
                     <Link to="/ai-agenti-na-miru" className="mt-auto">
                       <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
-                        Chci pilota
+                        Chci nasadit pilot
                       </Button>
                     </Link>
                   </div>
@@ -243,7 +239,7 @@ const Index = () => {
                     </div>
                     <Link to="/profirmy" className="mt-auto">
                       <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
-                        Chci škálovat
+                        Chci škálovat na firmu
                       </Button>
                     </Link>
                   </div>

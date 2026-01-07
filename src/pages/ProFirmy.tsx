@@ -24,10 +24,10 @@ const services = [
   {
     icon: Search,
     title: "START",
-    subtitle: "AI QuickScan — Mapa úspor a priorit (1–2 týdny)",
-    description: "Najdeme role a procesy s nejrychlejším dopadem. Dostanete mapu úzkých míst, seznam quick wins a odhad ROI.",
-    output: "Výstupy: mapa rolí & úzkých míst, quick wins, ROI odhad, bezpečné minimum pravidel.",
-    features: ["Mapa rolí", "Quick wins", "ROI odhad", "Bezpečná pravidla"],
+    subtitle: "Mapa úspor (AI QuickScan) — do 14 dnů",
+    description: "Najdeme role a procesy s nejrychlejším dopadem. Dostanete mapu úzkých míst, seznam rychlých výher a odhad ROI.",
+    output: "Výstupy: mapa rolí & úzkých míst, rychlé výhry, ROI odhad, bezpečné minimum pravidel.",
+    features: ["Mapa rolí", "Rychlé výhry", "ROI odhad", "Bezpečná pravidla"],
     proKoho: "CEO / COO / HR",
     doba: "1–2 týdny",
     vystup: "Mapa rolí + seznam priorit + ROI odhad",
@@ -42,9 +42,9 @@ const services = [
     icon: Target,
     title: "PLÁN",
     subtitle: "ROI plán & prioritizace",
-    description: "Seznam priorit (10–20 use-casů) seřazených podle dopadu a náročnosti. Návrh pilotu s KPI.",
-    output: "Výstupy: seznam priorit (10–20 use-casů), KPI, návrh pilotu, governance minimum.",
-    features: ["Seznam priorit", "KPI", "Návrh pilotu", "Governance"],
+    description: "Seznam 10–20 příležitostí (use-casů) seřazených podle dopadu a náročnosti. Návrh pilotu s KPI.",
+    output: "Výstupy: seznam příležitostí, KPI, návrh pilotu, governance minimum.",
+    features: ["Seznam příležitostí", "KPI", "Návrh pilotu", "Governance"],
     proKoho: "Projektový tým / Operations",
     doba: "1–2 týdny",
     vystup: "Prioritizovaný seznam + návrh pilotu",
@@ -58,8 +58,8 @@ const services = [
   {
     icon: Rocket,
     title: "PILOT",
-    subtitle: "Pilot (do 14 dnů v provozu)",
-    description: "AI agent nebo automatizace (digitální kolega) pro jeden konkrétní proces — nasazeno a měřeno.",
+    subtitle: "Nasazení digitálního kolegy (do 14 dnů v provozu)",
+    description: "AI agent nebo automatizace pro jeden konkrétní proces — nasazeno a měřeno.",
     output: "Výstupy: agent/automatizace v procesu, integrace, měření dopadu, zaškolení klíčových lidí.",
     features: ["Agent v provozu", "Integrace", "Měření dopadu", "Zaškolení"],
     proKoho: "Proces s nejvyšší návratností",
@@ -67,10 +67,10 @@ const services = [
     vystup: "Běžící agent + KPI + zaškolení",
     price: "od 45 000 Kč",
     priceNote: "typicky 45–120k bez DPH (3–8 MD)",
-    priceDetail: null,
+    priceDetail: "MD = konzultační den. Odhad upřesníme po diagnostice.",
     accent: "cyan",
     highlighted: false,
-    cta: { label: "Chci pilot", link: "/checkout" },
+    cta: { label: "Chci nasadit pilot", link: "/checkout" },
   },
   {
     icon: TrendingUp,
@@ -87,7 +87,7 @@ const services = [
     priceDetail: null,
     accent: "cyan",
     highlighted: false,
-    cta: { label: "Chci škálování", link: "/checkout" },
+    cta: { label: "Chci škálovat na firmu", link: "/checkout" },
   },
 ];
 
@@ -160,7 +160,7 @@ const deliverables = [
   },
   {
     icon: Route,
-    title: "QUICK WINS & PRIORITY",
+    title: "RYCHLÉ VÝHRY & PRIORITY",
     description: "3–10 konkrétních zlepšení seřazených podle dopadu a náročnosti.",
   },
   {
@@ -308,7 +308,7 @@ const ProFirmy = () => {
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       data-event="b2b_primary_cta"
                     >
-                      Domluvit 15 min diagnostiku
+                      Domluvit diagnostiku (15 min)
                     </Link>
                     <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>
                   </div>
@@ -343,10 +343,10 @@ const ProFirmy = () => {
               
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
                 {[
-                  { title: "Chaos v AI", desc: "Bez pravidel a bezpečnosti.", result: "Governance + pravidla od prvního dne." },
-                  { title: "Rutina požírá kapacitu", desc: "E-maily, reporty, přepisy.", result: "Automatizace rutinních úkolů." },
-                  { title: "Poptávky bez reakce", desc: "Obchod/podpora nestíhá.", result: "Rychlejší odpovědi a follow-up." },
-                  { title: "Data rozstříštěná", desc: "CRM, Excel, e-mail.", result: "Jeden zdroj pravdy pro reporting." },
+                  { title: "Chaos v AI", desc: "Bez pravidel a bezpečnosti.", result: "Jasná pravidla, co smí AI a co kontrolovat." },
+                  { title: "Rutina požírá kapacitu", desc: "E-maily, reporty, přepisy.", result: "Méně ruční práce, víc kapacity pro klíčové úkoly." },
+                  { title: "Poptávky bez reakce", desc: "Obchod/podpora nestíhá.", result: "Rychlejší odpověď, více follow-upů, vyšší konverze." },
+                  { title: "Data rozstříštěná", desc: "CRM, Excel, e-mail.", result: "Jedno místo pro reporting a rozhodování." },
                 ].map((pain, idx) => (
                   <div key={idx} className="bg-card/60 border border-primary/20 rounded-xl p-5 hover:border-primary/40 transition-all">
                     <h3 className="text-sm font-semibold text-foreground mb-2">{pain.title}</h3>
@@ -372,9 +372,9 @@ const ProFirmy = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
                   { step: "01", title: "DIAGNOSTIKA", subtitle: "15 min konzultace — zjistíte, kde začít", benefit: "Úspora: jasný směr bez závazku", cta: "Domluvit konzultaci", link: "/checkout", highlighted: true },
-                  { step: "02", title: "AI QUICKSCAN", subtitle: "Mapa úspor + backlog use-casů + roadmapa 30/60/90", benefit: "Rychlost: konkrétní výstupy pro vedení", cta: "Chci QuickScan", link: "/pro-firmy/ai-quickscan", highlighted: false },
-                  { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci pilota", link: "/checkout", highlighted: false },
-                  { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Adopce: aby se řešení ujalo u lidí", cta: "Chci škálovat", link: "/checkout", highlighted: false },
+                  { step: "02", title: "MAPA ÚSPOR", subtitle: "AI QuickScan + seznam příležitostí + roadmapa 30/60/90", benefit: "Rychlost: konkrétní výstupy pro vedení", cta: "Co dostanu v Mapě úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
+                  { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci nasadit pilot", link: "/checkout", highlighted: false },
+                  { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Adopce: aby se řešení ujalo u lidí", cta: "Chci škálovat na firmu", link: "/checkout", highlighted: false },
                 ].map((card, idx) => (
                   <div key={idx} className={`relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-xl p-6 transition-all duration-300 hover:-translate-y-2 ${card.highlighted ? "border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)]" : "border-primary/20 hover:border-primary/40"}`}>
                     {card.highlighted && (
