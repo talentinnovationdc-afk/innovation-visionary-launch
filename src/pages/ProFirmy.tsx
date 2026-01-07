@@ -24,10 +24,13 @@ const services = [
   {
     icon: Search,
     title: "START",
-    subtitle: "Mapa úspor (14 dní)",
+    subtitle: "AI QuickScan — Mapa úspor a priorit (1–2 týdny)",
     description: "Najdeme role a procesy s nejrychlejším dopadem. Dostanete mapu úzkých míst, seznam quick wins a odhad ROI.",
     output: "Výstupy: mapa rolí & úzkých míst, quick wins, ROI odhad, bezpečné minimum pravidel.",
     features: ["Mapa rolí", "Quick wins", "ROI odhad", "Bezpečná pravidla"],
+    proKoho: "CEO / COO / HR",
+    doba: "1–2 týdny",
+    vystup: "Mapa rolí + seznam priorit + ROI odhad",
     price: "18 000 – 25 000 Kč",
     priceNote: "bez DPH",
     priceDetail: null,
@@ -39,9 +42,12 @@ const services = [
     icon: Target,
     title: "PLÁN",
     subtitle: "ROI plán & prioritizace",
-    description: "Co dělat první, kolik to přinese a jak to řídit. Seřadíme use-casy podle dopadu a navrhneme první pilot.",
-    output: "Výstupy: backlog use-casů, KPI, návrh pilotu, governance minimum.",
-    features: ["Backlog use-casů", "KPI", "Návrh pilotu", "Governance"],
+    description: "Seznam priorit (10–20 use-casů) seřazených podle dopadu a náročnosti. Návrh pilotu s KPI.",
+    output: "Výstupy: seznam priorit (10–20 use-casů), KPI, návrh pilotu, governance minimum.",
+    features: ["Seznam priorit", "KPI", "Návrh pilotu", "Governance"],
+    proKoho: "Projektový tým / Operations",
+    doba: "1–2 týdny",
+    vystup: "Prioritizovaný seznam + návrh pilotu",
     price: "15 000 – 19 000 Kč",
     priceNote: "bez DPH",
     priceDetail: null,
@@ -52,12 +58,15 @@ const services = [
   {
     icon: Rocket,
     title: "PILOT",
-    subtitle: "Digitální kolega (1 proces)",
-    description: "Agent nebo automatizace pro jeden konkrétní proces — do provozu. Pilotujeme rychle, bezpečně a s měřením dopadu.",
+    subtitle: "Pilot (do 14 dnů v provozu)",
+    description: "AI agent nebo automatizace (digitální kolega) pro jeden konkrétní proces — nasazeno a měřeno.",
     output: "Výstupy: agent/automatizace v procesu, integrace, měření dopadu, zaškolení klíčových lidí.",
     features: ["Agent v provozu", "Integrace", "Měření dopadu", "Zaškolení"],
+    proKoho: "Proces s nejvyšší návratností",
+    doba: "2–4 týdny (typicky 3–8 MD)",
+    vystup: "Běžící agent + KPI + zaškolení",
     price: "od 45 000 Kč",
-    priceNote: "typicky 45–120k bez DPH",
+    priceNote: "typicky 45–120k bez DPH (3–8 MD)",
     priceDetail: null,
     accent: "cyan",
     highlighted: false,
@@ -70,6 +79,9 @@ const services = [
     description: "Standardy, bezpečnost, adopce a dlouhodobý rozvoj. Aby se řešení skutečně ujalo u lidí.",
     output: "Výstupy: governance, šablony, reporting, adopce, rozvoj roadmapy.",
     features: ["Governance", "Šablony", "Reporting", "Adopce"],
+    proKoho: "Celá firma / více týmů",
+    doba: "Průběžně",
+    vystup: "Governance + šablony + reporting",
     price: "od 25 000 Kč / měsíc",
     priceNote: "bez DPH",
     priceDetail: null,
@@ -296,16 +308,16 @@ const ProFirmy = () => {
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       data-event="b2b_primary_cta"
                     >
-                      Domluvit rychlou diagnostiku (15 min)
+                      Domluvit 15 min diagnostiku
                     </Link>
-                    <span className="text-xs text-muted-foreground mt-2">Bez závazků • Ozveme se do 24 hodin</span>
+                    <span className="text-xs text-muted-foreground mt-2">15 min • bez závazku • ozveme se do 24 hodin</span>
                   </div>
                   <Link
                     to="/akademie-pro-tymy"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-accent/50 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent transition-all duration-300"
                     data-event="b2b_secondary_cta"
                   >
-                    Chci licenci pro tým
+                    Vybrat nejlepší start
                   </Link>
                 </div>
               </div>
@@ -360,8 +372,8 @@ const ProFirmy = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
                   { step: "01", title: "DIAGNOSTIKA", subtitle: "Mapa příležitostí + další krok", benefit: "Úspora: jasný směr za 15 minut", cta: "Chci diagnostiku", link: "/checkout", highlighted: true },
-                  { step: "02", title: "MAPA ÚSPOR (14 DNÍ)", subtitle: "Backlog use-casů + ROI plán + návrh pilotu", benefit: "Rychlost: výstupy do 2 týdnů", cta: "Chci mapu úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
-                  { step: "03", title: "NASAZENÍ DIGITÁLNÍHO KOLEGY", subtitle: "Agent/automatizace pro 1 konkrétní proces — do provozu", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci pilota", link: "/checkout", highlighted: false },
+                  { step: "02", title: "AI QUICKSCAN", subtitle: "Mapa úspor a priorit (1–2 týdny) + seznam priorit (10–20 use-casů)", benefit: "Rychlost: výstupy do 2 týdnů", cta: "Chci mapu úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
+                  { step: "03", title: "PILOT (DO 14 DNŮ V PROVOZU)", subtitle: "AI agent (digitální kolega) pro 1 proces — nasazeno a měřeno", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci pilota", link: "/checkout", highlighted: false },
                   { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Adopce: aby se řešení ujalo u lidí", cta: "Chci škálovat", link: "/checkout", highlighted: false },
                 ].map((card, idx) => (
                   <div key={idx} className={`relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-xl p-6 transition-all duration-300 hover:-translate-y-2 ${card.highlighted ? "border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)]" : "border-primary/20 hover:border-primary/40"}`}>
@@ -466,16 +478,13 @@ const ProFirmy = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto bg-gradient-to-br from-accent/10 via-card/80 to-primary/10 backdrop-blur-xl border border-accent/30 rounded-2xl p-8 md:p-10 shadow-[0_0_40px_rgba(189,0,255,0.1)]">
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                  <div className="flex-1 text-center md:text-left">
+                <div className="flex-1 text-center md:text-left">
                     <div className="inline-block px-3 py-1 bg-accent/20 border border-accent/30 rounded-full text-[10px] font-bold tracking-wider text-accent uppercase mb-3">
                       Prémiová služba
                     </div>
                     <h3 className="text-lg md:text-xl font-semibold tracking-wider text-foreground uppercase mb-2">
-                      AI AGENTI NA MÍRU
+                      AI AGENTI NA MÍRU (DIGITÁLNÍ KOLEGA PRO VAŠE PROCESY)
                     </h3>
-                    <p className="text-xs text-muted-foreground/80 mb-3">
-                      (digitální kolega pro vaše procesy)
-                    </p>
                     <p className="text-muted-foreground text-sm mb-4">
                       Za 2–4 týdny nasadíme agenta do procesu X a změříme dopad.
                     </p>
@@ -497,6 +506,7 @@ const ProFirmy = () => {
                         Domluvit 15 min diagnostiku
                       </Button>
                     </Link>
+                    <p className="text-xs text-muted-foreground/70 text-center">15 min • bez závazku • ozveme se do 24 hodin</p>
                   </div>
                 </div>
                 <p className="text-[10px] text-muted-foreground/60 text-center md:text-left mt-4">
@@ -547,13 +557,16 @@ const ProFirmy = () => {
                         {service.title}
                       </h3>
                       
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-3 flex-grow">
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">
                         {service.description}
                       </p>
                       
-                      <p className="text-xs text-primary font-medium mb-4 italic">
-                        {service.output}
-                      </p>
+                      {/* Pro koho / Doba / Výstup */}
+                      <div className="space-y-1 mb-3 text-xs">
+                        <p><span className="text-muted-foreground/70">Pro koho:</span> <span className="text-foreground">{service.proKoho}</span></p>
+                        <p><span className="text-muted-foreground/70">Doba:</span> <span className="text-foreground">{service.doba}</span></p>
+                        <p><span className="text-muted-foreground/70">Výstup:</span> <span className="text-primary">{service.vystup}</span></p>
+                      </div>
                       
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {service.features.map((feature) => (

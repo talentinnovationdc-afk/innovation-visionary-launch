@@ -44,21 +44,27 @@ const deliverables = [
 const processSteps = [
   {
     number: "01",
-    icon: Clock,
-    title: "15 MIN CALL",
-    description: "Krátký úvodní hovor — zjistíme, jestli je Mapa úspor pro vás správný krok.",
+    icon: Users,
+    title: "WORKSHOP S LIDMI Z PRAXE",
+    description: "Sejdeme se s klíčovými rolemi a zmapujeme denní rutinu, úzká místa a příležitosti.",
   },
   {
     number: "02",
-    icon: Users,
-    title: "WORKSHOP S KLÍČOVÝMI ROLEMI",
-    description: "Sejdeme se s lidmi z praxe, zmapujeme denní rutinu a úzká místa.",
+    icon: Search,
+    title: "ANALÝZA PROCESŮ A DAT",
+    description: "Vyhodnotíme data, identifikujeme quick wins a odhadneme ROI.",
   },
   {
     number: "03",
+    icon: Target,
+    title: "PRIORITIZACE A VÝBĚR PILOTA",
+    description: "Seřadíme use-casy podle dopadu a vybereme proces pro první pilot.",
+  },
+  {
+    number: "04",
     icon: FileCheck,
-    title: "VÝSTUPY DO 14 DNÍ",
-    description: "Mapa rolí, quick wins, ROI odhad a návrh pilotu — vše připraveno pro vedení.",
+    title: "ROADMAPA + KPI",
+    description: "Mapa rolí, seznam priorit (10–20 use-casů), ROI odhad a návrh pilotu — vše připraveno pro vedení.",
   }
 ];
 
@@ -147,15 +153,15 @@ const AiQuickScan = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-8 leading-[1.15] uppercase">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Mapa úspor do 14 dní
+                    AI QuickScan
                   </span>
                   <br />
                   <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    bezpečný start AI transformace
+                    Mapa úspor a priorit (1–2 týdny)
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Za 1–2 týdny zjistíte, kde AI ušetří nejvíc času. Dostanete mapu rolí, quick wins a návrh pilotu.
+                  Za 1–2 týdny dostanete mapu úspor, seznam priorit (10–20 use-casů) a doporučený pilot — včetně KPI a bezpečnostních pravidel.
                 </p>
                 
                 {/* Trust Chips */}
@@ -176,21 +182,24 @@ const AiQuickScan = () => {
                 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
-                  <Link to="/checkout">
-                    <Button 
-                      size="lg"
-                      className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
-                    >
-                      Domluvit rychlou diagnostiku (15 min)
-                    </Button>
-                  </Link>
+                  <div className="flex flex-col items-center">
+                    <Link to="/checkout">
+                      <Button 
+                        size="lg"
+                        className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                      >
+                        Domluvit 15 min diagnostiku
+                      </Button>
+                    </Link>
+                    <span className="text-xs text-muted-foreground mt-2">15 min • bez závazku • ozveme se do 24 hodin</span>
+                  </div>
                   <a href="#deliverables">
                     <Button 
                       variant="outline"
                       size="lg"
                       className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
                     >
-                      Co dostanu v QuickScanu
+                      Co dostanu za 1–2 týdny
                     </Button>
                   </a>
                 </div>
@@ -358,10 +367,10 @@ const AiQuickScan = () => {
                     size="lg"
                     className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   >
-                    Domluvit rychlou diagnostiku (15 min)
+                    Domluvit 15 min diagnostiku
                   </Button>
                 </Link>
-                <p className="text-xs text-muted-foreground/60 mt-3">Bez závazku • Ozveme se do 24 hodin</p>
+                <p className="text-xs text-muted-foreground/60 mt-3">15 min • bez závazku • ozveme se do 24 hodin</p>
               </div>
             </div>
           </section>
