@@ -53,7 +53,7 @@ const ObchodniPodminky = () => {
                   "Online obsah je zpřístupněn do 24 hodin po zaplacení",
                   "Kurzy a akademie studujete vlastním tempem",
                   "U digitálního obsahu není zákonné 14denní odstoupení",
-                  "Poskytujeme nadstandardní garanci spokojenosti",
+                  
                   "Obsah je chráněn autorským právem",
                   "Data zpracováváme v souladu s GDPR",
                 ].map((item, index) => (
