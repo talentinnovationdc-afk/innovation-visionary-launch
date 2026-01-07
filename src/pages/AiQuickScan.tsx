@@ -27,7 +27,7 @@ const deliverables = [
   },
   {
     icon: Target,
-    title: "SEZNAM 10–20 PŘÍLEŽITOSTÍ (PRIORITIZOVANÝ)",
+    title: "SEZNAM PŘÍLEŽITOSTÍ (PRIORITIZOVANÝ)",
     description: "Konkrétní use-casy seřazené podle dopadu a náročnosti.",
     format: "Formát: 3–6 stran + tabulka"
   },
