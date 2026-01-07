@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { CheckCircle, GraduationCap, ArrowLeft, BookOpen, HelpCircle } from "lucide-react";
+import { CheckCircle, GraduationCap, ArrowLeft, BookOpen } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -42,8 +42,8 @@ const Dekujeme = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Děkujeme | Talent Innovation" 
-        description="Objednávka zpracována. Přístup vám přišel e-mailem. Začněte studovat ihned."
+        title="Hotovo | Talent Innovation" 
+        description="Vaši poptávku jsme přijali. Do 24 hodin se ozveme s návrhem termínu krátkého hovoru."
         path="/dekujeme"
       />
       <Navbar />
@@ -58,29 +58,28 @@ const Dekujeme = () => {
                 </div>
               </div>
 
-              <h1 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground">
-                HOTOVO. ZAČNĚTE STUDOVAT.
+              <h1 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase">
+                Hotovo. Další krok je na nás.
               </h1>
               
-              <p className="text-muted-foreground text-base leading-relaxed normal-case tracking-normal">
-                Objednávka je úspěšně zpracována. Přístup Vám dorazí v průběhu dnešního dne.
-              </p>
+              <div className="space-y-3 text-muted-foreground text-base leading-relaxed normal-case tracking-normal">
+                <p>
+                  Vaši poptávku jsme přijali.
+                </p>
+                <p>
+                  Do 24 hodin se ozveme s návrhem termínu krátkého hovoru.
+                </p>
+                <p className="text-sm text-primary/80">
+                  První zprávu posíláme ručně — žádný automat.
+                </p>
+              </div>
 
-              {/* Help link */}
-              <a
-                href="mailto:daniel.cerveny@t-i.cz?subject=Nedostal jsem přístupový e-mail"
-                className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline transition-colors"
-              >
-                <HelpCircle className="h-4 w-4" />
-                Nedostal jsem e-mail
-              </a>
-
-              <nav className="pt-4 flex flex-col gap-4" aria-label="Akce po nákupu">
+              <nav className="pt-4 flex flex-col gap-4" aria-label="Akce po odeslání">
                 <div>
                   <a href={ACADEMY_URL} target="_blank" rel="noopener noreferrer" aria-label="Vstoupit do akademie na learning.t-i.cz">
                     <button className="w-full px-6 py-4 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2">
                       <GraduationCap className="h-5 w-5" aria-hidden="true" />
-                      VSTOUPIT DO AKADEMIE
+                      Vstoupit do akademie
                     </button>
                   </a>
                   <p className="text-xs text-muted-foreground mt-2 normal-case tracking-normal">
@@ -91,7 +90,7 @@ const Dekujeme = () => {
                 <Link to="/" aria-label="Zpět na hlavní stránku">
                   <button className="w-full px-6 py-3 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-border bg-transparent text-foreground hover:bg-secondary transition-all duration-300 inline-flex items-center justify-center gap-2">
                     <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-                    ZPĚT DOMŮ
+                    Zpět domů
                   </button>
                 </Link>
 
@@ -109,20 +108,6 @@ const Dekujeme = () => {
                   Dev mode: session_id detected ({sessionId.slice(0, 12)}...)
                 </p>
               )}
-            </div>
-          </div>
-        </div>
-
-        {/* Help section */}
-        <div className="container px-4 mt-12">
-          <div className="max-w-lg mx-auto">
-            <div className="glass-card p-6 text-center">
-              <h2 className="text-sm font-semibold tracking-[0.15em] uppercase text-foreground mb-3">
-                Tip pro nalezení e-mailu
-              </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed normal-case tracking-normal">
-                Zkontrolujte složku Spam/Hromadné a vyhledejte v poště „Talent Innovation".
-              </p>
             </div>
           </div>
         </div>
