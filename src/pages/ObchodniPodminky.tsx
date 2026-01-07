@@ -291,11 +291,7 @@ const ObchodniPodminky = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <Link to="/gdpr-cookies" className="text-primary hover:underline">
-                  Zásady ochrany osobních údajů
-                </Link>
-                <span className="text-muted-foreground">•</span>
-                <Link to="/legal#cookies" className="text-primary hover:underline">
-                  Cookies
+                  Zásady ochrany osobních údajů a Cookies
                 </Link>
               </div>
             </div>
