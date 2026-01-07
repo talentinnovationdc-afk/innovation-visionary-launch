@@ -74,7 +74,7 @@ const courses = [
     ],
     price: "4 470 Kč",
     icon: Wand2,
-    link: "https://t-i.cz/online/copilotakademie",
+    link: "https://buy.stripe.com/eVq8wQepw9Vn3Wr8mW6Ri02",
     isProgram: false,
     tags: ["M365", "Šablony", "Certifikace"],
     note: "Copilot licence není podmínkou — řekneme varianty."
