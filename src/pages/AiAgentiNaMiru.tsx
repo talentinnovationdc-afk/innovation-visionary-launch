@@ -172,11 +172,11 @@ const AiAgentiNaMiru = () => {
                   </span>
                   <br />
                   <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    kteří šetří čas v reálných procesech
+                    (digitální kolega pro vaše procesy)
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Navrhneme, nasadíme a změříme dopad. <span className="text-foreground font-medium">Bezpečně a s napojením na vaše nástroje.</span>
+                  Za 2–4 týdny nasadíme agenta do procesu X a změříme dopad. <span className="text-foreground font-medium">Bezpečně a s napojením na vaše nástroje.</span>
                 </p>
                 
                 {/* Trust Chips */}
@@ -197,14 +197,17 @@ const AiAgentiNaMiru = () => {
                 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
-                  <Link to="/checkout">
-                    <Button 
-                      size="lg"
-                      className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
-                    >
-                      Domluvit rychlou diagnostiku (15 min)
-                    </Button>
-                  </Link>
+                  <div className="flex flex-col items-center">
+                    <Link to="/checkout">
+                      <Button 
+                        size="lg"
+                        className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                      >
+                        Domluvit 15 min diagnostiku
+                      </Button>
+                    </Link>
+                    <span className="text-xs text-muted-foreground mt-2">15 min • bez závazku • ozveme se do 24 hodin</span>
+                  </div>
                   <a href="#solutions">
                     <Button 
                       variant="outline"
@@ -507,10 +510,10 @@ const AiAgentiNaMiru = () => {
                     size="lg"
                     className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   >
-                    Domluvit rychlou diagnostiku (15 min)
+                    Domluvit 15 min diagnostiku
                   </Button>
                 </Link>
-                <p className="text-xs text-muted-foreground/60 mt-3">Ozveme se do 24 hodin.</p>
+                <p className="text-xs text-muted-foreground/60 mt-3">15 min • bez závazku • ozveme se do 24 hodin</p>
               </div>
             </div>
           </section>
