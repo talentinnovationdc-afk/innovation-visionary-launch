@@ -24,30 +24,37 @@ const Index = () => {
         <main className="flex-1">
           {/* Hero Section - Fixed height to prevent CLS */}
           <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-32 pb-8 md:pt-48 md:pb-16 min-h-[70vh] md:min-h-[75vh]">
-            <div className="container px-4 text-center">
-              <div className="max-w-5xl mx-auto">
-                <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-[1.15] tracking-[0.15em] uppercase">
-                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Méně rutiny. Více kapacity. Díky AI.
-                  </span>
-                  <br />
-                  <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    Měřitelně. Bezpečně. Škálovatelně.
-                  </span>
-                </h1>
+            <div className="container px-4">
+              <div className="max-w-3xl mx-auto md:mx-0 text-center md:text-left">
+                {/* Text backdrop for readability */}
+                <div className="relative">
+                  <div className="absolute inset-0 -m-8 bg-gradient-radial from-background/60 via-background/40 to-transparent blur-2xl pointer-events-none" />
+                  
+                  <h1 id="hero-heading" className="relative text-3xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] md:leading-[1.04] tracking-[-0.02em] uppercase mb-4 md:mb-5">
+                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent brightness-110" style={{ WebkitTextFillColor: 'transparent' }}>
+                      Méně rutiny. Více kapacity.
+                    </span>
+                    <br />
+                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent brightness-110" style={{ WebkitTextFillColor: 'transparent' }}>
+                      Díky AI.
+                    </span>
+                    <br />
+                    <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent brightness-110" style={{ WebkitTextFillColor: 'transparent' }}>
+                      Měřitelně. Bezpečně. Škálovatelně.
+                    </span>
+                  </h1>
+                </div>
                 
-                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-4 normal-case tracking-normal leading-[1.8]">
+                <p className="relative text-base md:text-lg lg:text-xl text-muted-foreground max-w-[600px] mx-auto md:mx-0 mb-1 normal-case tracking-normal leading-[1.7]">
                   Za 15 minut zjistíte, kde vzniká největší ztráta času.
-                  <br />
-                  Do 14 dnů dodáme mapu rolí, rychlé výhry a ROI plán prvního pilotu.
                 </p>
-                <p className="text-sm text-primary/90 max-w-[700px] mx-auto mb-10">
-                  Pro profesionály: ověřitelný LinkedIn odznak a praktické workflow.
+                <p className="relative text-base md:text-lg lg:text-xl text-muted-foreground max-w-[600px] mx-auto md:mx-0 mb-6 md:mb-7 normal-case tracking-normal leading-[1.7]">
+                  Do 14 dnů dodáme mapu rolí, rychlé výhry a ROI plán prvního pilotu.
                 </p>
                 
                 {/* Two CTAs */}
-                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                  <div className="flex flex-col items-center">
+                <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start mb-12 md:mb-16">
+                  <div className="flex flex-col items-center md:items-start">
                     <Link to="/checkout">
                       <Button 
                         size="lg" 
@@ -57,11 +64,11 @@ const Index = () => {
                         Domluvit diagnostiku (15 min)
                       </Button>
                     </Link>
-                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
+                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center md:text-left">
                       Bez závazku • Ozveme se do 24 hodin
                     </p>
                   </div>
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center md:items-start">
                     <a href="#journey">
                       <Button 
                         variant="outline"
@@ -72,14 +79,14 @@ const Index = () => {
                         Zobrazit cestu (kroky)
                       </Button>
                     </a>
-                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
+                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center md:text-left">
                       Pro profesionály i týmy.
                     </p>
                   </div>
                 </div>
 
                 {/* Trust Metrics */}
-                <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-4">
+                <div className="flex flex-wrap justify-center md:justify-start gap-6 md:gap-10 mb-4">
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-primary" />
                     <span className="text-sm font-medium text-foreground">1250+ absolventů</span>
@@ -93,7 +100,7 @@ const Index = () => {
                     <span className="text-sm font-medium text-foreground">95 % doporučuje</span>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground/70 max-w-md mx-auto">
+                <p className="text-xs text-muted-foreground/70 max-w-md mx-auto md:mx-0">
                   Nejde o teorii. Učíme workflow, které lidé používají hned druhý den.
                 </p>
               </div>
