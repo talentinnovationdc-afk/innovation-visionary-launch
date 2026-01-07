@@ -259,8 +259,8 @@ const ProFirmy = () => {
   return (
     <>
       <SEO 
-        title="Pro firmy | AI pro týmy a produktivitu | Talent Innovation"
-        description="Zrychlete práci týmů díky AI workflow a firemní Akademii. Od diagnostiky přes automatizace až po škálování know-how. Bezpečně a měřitelně."
+        title="AI pro firmy – diagnostika, agenti a školení týmů"
+        description="Zrychlete práci týmů díky AI workflow a firemní akademii. Od diagnostiky po nasazení agentů. Bezpečně a měřitelně."
         path="/profirmy"
       />
       

@@ -121,8 +121,8 @@ const ChatGPTAkademie = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="ChatGPT Akademie | Online kurz s certifikátem | Talent Innovation"
-        description="Ovládněte ChatGPT od základů po pokročilé workflow. 12×2h, certifikát, LinkedIn odznak, dlouhodobý přístup. 1250+ absolventů."
+        title="ChatGPT Akademie – online kurz s certifikátem"
+        description="Ovládněte ChatGPT od základů po pokročilé workflow. 12 modulů, certifikát, LinkedIn odznak. Pro administrativu, HR a obchod."
         path="/online/chatgptakademie"
       />
       <NeuralNetworkBackground />

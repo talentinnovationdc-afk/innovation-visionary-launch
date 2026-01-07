@@ -124,8 +124,8 @@ const Metodika = () => {
   return (
     <>
       <SEO 
-        title="Jak pracujeme | AI pro produktivitu týmů | Talent Innovation"
-        description="Bezpečná a měřitelná AI implementace pro firmy. Diagnostika, plán, implementace a zaškolení týmu."
+        title="Jak pracujeme – bezpečná AI implementace pro firmy"
+        description="5 kroků k měřitelné produktivitě díky AI. Diagnostika, plán, implementace, zaškolení a evoluce. Bez závazku."
         path="/metodika"
       />
       

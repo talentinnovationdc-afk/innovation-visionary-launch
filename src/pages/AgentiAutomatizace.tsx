@@ -146,8 +146,8 @@ const AgentiAutomatizace = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Agenti & Automatizace | Online kurz s certifikátem | Talent Innovation"
-        description="Pokročilé agentické workflow a orchestrace. 16×2h, certifikát, LinkedIn odznak. Stavte vlastní AI agenty a automatizace."
+        title="Agenti & Automatizace – pokročilý kurz s certifikátem"
+        description="Naučte se stavět AI agenty a automatizace. 16 modulů, certifikát, LinkedIn odznak. Pro power users a procesní vlastníky."
         path="/online/agentiautomatizace"
       />
       <NeuralNetworkBackground />

@@ -114,8 +114,8 @@ const MasterOfAICreativity = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Master of AI Creativity | Kompletní program (3 akademie) | Talent Innovation"
-        description="Kompletní program Master of AI Creativity: ChatGPT + Copilot + Agenti & Automatizace. Hlavní certifikát a LinkedIn odznak. 1250+ absolventů."
+        title="Master of AI Creativity – kompletní AI program (3 akademie)"
+        description="Kompletní program: ChatGPT + Copilot + Agenti & Automatizace. Hlavní certifikát a LinkedIn odznak. 1250+ absolventů, 4,9/5."
         path="/online/master-of-ai-creativity"
       />
       <NeuralNetworkBackground />

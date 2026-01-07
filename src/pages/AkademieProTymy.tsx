@@ -326,8 +326,8 @@ const AkademieProTymy = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Akademie pro týmy | Hromadné licence AI kurzů | Talent Innovation"
-        description="Hromadné licence online AI akademií ze záznamu + onboarding + reporting dokončení. Certifikát a LinkedIn odznak pro každého účastníka."
+        title="Akademie pro týmy – hromadné licence AI kurzů"
+        description="Firemní licence AI akademií s onboardingem a reportingem pro HR. Certifikát a LinkedIn odznak pro každého účastníka."
         path="/akademie-pro-tymy"
       />
       <NeuralNetworkBackground />

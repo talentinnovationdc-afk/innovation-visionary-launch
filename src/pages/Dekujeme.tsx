@@ -42,9 +42,10 @@ const Dekujeme = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Hotovo | Talent Innovation" 
+        title="Děkujeme za poptávku"
         description="Vaši poptávku jsme přijali. Do 24 hodin se ozveme s návrhem termínu krátkého hovoru."
         path="/dekujeme"
+        noindex={true}
       />
       <Navbar />
       
