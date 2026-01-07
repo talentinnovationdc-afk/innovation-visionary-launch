@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   MessageSquare, Check, Award, Users, Star, Clock, RefreshCw, 
-  ChevronDown, BadgeCheck, Timer, BookOpen, FileText, CheckSquare, Workflow, Play, Crown
+  ChevronDown, BadgeCheck, Timer, BookOpen, FileText, CheckSquare, Workflow, Crown
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -22,7 +22,7 @@ const modules = [
     title: "Jak AI funguje", 
     description: "Od staré dobré logiky k revoluci modelů, které píší svět znovu. Pochopíte základy fungování jazykových modelů.",
     output: "Checklist: Klíčové pojmy AI pro non-tech lídry",
-    tags: ["2h", "Checklist", "Ukázka"]
+    tags: ["2h", "Framework", "Checklist"]
   },
   { 
     num: 2, 
@@ -103,15 +103,18 @@ const modules = [
   }
 ];
 
-const learnings = [
-  "Psát e-maily a dokumenty rychleji a v jednotném tónu.",
-  "Dělat shrnutí schůzek a zápisy bez ručního přepisování.",
-  "Převádět zadání na jasný výstup na první pokus (struktura promptů).",
-  "Z dat udělat přehled pro vedení během minut (šablony + postup).",
-  "Nastavit opakovatelné workflow a kontrolu kvality výstupů.",
-  "Bezpečně pracovat s citlivými informacemi a omezit halucinace.",
-  "Využít multimodální vstupy (hlas/obraz) tam, kde dávají smysl.",
-  "Napojit GPT do běžné práce (bez chaosu a bez zbytečné složitosti)."
+const learningsOutcome = [
+  "Promptování jako profík: méně pokusů, přesnější výstupy",
+  "Rychlejší psaní a rozhodování (e-maily, dokumenty, shrnutí)",
+  "Méně chyb: kontrola halucinací a ověřování",
+  "Standard pro tým: šablony a doporučené postupy"
+];
+
+const learningsWorkflow = [
+  "Šablony pro e-maily, zápisy, reporty a nabídky",
+  "Shrnutí schůzek + akční kroky během minut",
+  "Analýza dat + komentáře k tabulkám (rychle, srozumitelně)",
+  "Mini-asistenti pro opakované úkoly (bez chaosu)"
 ];
 
 const ChatGPTAkademie = () => {
@@ -187,15 +190,18 @@ const ChatGPTAkademie = () => {
                     size="lg" 
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary text-primary bg-primary/5 hover:bg-primary/15"
                   >
-                    <Play className="w-4 h-4 mr-2" />
-                    Prohlédnout ukázku lekcí
+                    <BookOpen className="w-4 h-4 mr-2" />
+                    Zobrazit osnovu (ukázka)
                   </Button>
                 </a>
               </div>
               
-              {/* Trust line */}
-              <p className="text-xs text-muted-foreground mt-5">
-                Okamžitý přístup • Aktualizovaný obsah • Certifikát + LinkedIn odznak
+              {/* Trust lines */}
+              <p className="text-xs text-muted-foreground mt-4">
+                Okamžitý přístup • studium vlastním tempem
+              </p>
+              <p className="text-xs text-muted-foreground/70 mt-1">
+                2 min čtení • uvidíte moduly + ukázky
               </p>
             </div>
           </div>
@@ -233,21 +239,40 @@ const ChatGPTAkademie = () => {
         {/* What You'll Learn */}
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Co budete umět a používat hned
-                </span>
-              </h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              {learnings.map((item, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 glass-card rounded-xl border border-border/30">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{item}</span>
+            <div className="max-w-4xl mx-auto">
+              {/* Block 1: Outcome */}
+              <div className="mb-12">
+                <h2 className="text-xl md:text-2xl font-bold tracking-[0.1em] uppercase mb-6 text-center">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    Výsledek pro vás (prakticky)
+                  </span>
+                </h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {learningsOutcome.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 glass-card rounded-xl border border-border/30">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              
+              {/* Block 2: Workflow */}
+              <div>
+                <h2 className="text-xl md:text-2xl font-bold tracking-[0.1em] uppercase mb-6 text-center">
+                  <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
+                    Konkrétní workflow (druhý den v práci)
+                  </span>
+                </h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {learningsWorkflow.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 glass-card rounded-xl border border-border/30">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -376,7 +401,7 @@ const ChatGPTAkademie = () => {
             </div>
             
             <p className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto">
-              Nejde o teorii — odnášíte si šablony a standard, který použijete hned druhý den.
+              Součástí jsou šablony, checklisty a ukázky – použitelné hned v praxi.
             </p>
           </div>
         </section>
@@ -390,29 +415,16 @@ const ChatGPTAkademie = () => {
             <div className="max-w-3xl mx-auto text-center glass-card p-10 md:p-12 rounded-2xl border border-primary/30 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
               <MessageSquare className="w-12 h-12 text-primary mx-auto mb-6" />
               <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
-                Začněte s ChatGPT Akademií — výsledky hned v praxi
+                Začněte s ChatGPT Akademií ještě dnes
               </h2>
               
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Pokud chcete i Copilot a Agenty, podívejte se na Kompletní program (3 akademie).
+                Okamžitý přístup • certifikát + LinkedIn odznak • dlouhodobý přístup
               </p>
               
               <div className="mb-6">
                 <span className="text-4xl font-bold text-primary">4 470 Kč</span>
                 <span className="text-sm text-muted-foreground ml-2">vč. DPH</span>
-              </div>
-              
-              {/* Benefit bullets */}
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <BookOpen className="w-4 h-4 text-primary" /> 12 modulů prakticky
-                </span>
-                <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Award className="w-4 h-4 text-primary" /> Certifikát + LinkedIn odznak
-                </span>
-                <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Timer className="w-4 h-4 text-primary" /> Dlouhodobý přístup
-                </span>
               </div>
               
               <a 
@@ -430,7 +442,7 @@ const ChatGPTAkademie = () => {
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
                 <a href="#roadmap" className="text-sm text-primary hover:text-primary/80 hover:underline transition-colors flex items-center justify-center gap-1">
                   <BookOpen className="w-3.5 h-3.5" />
-                  Nejdřív chci vidět obsah
+                  Nejdřív chci vidět osnovu
                 </a>
                 <Link to="/online/master-of-ai-creativity" className="text-sm text-accent hover:text-accent/80 hover:underline transition-colors flex items-center justify-center gap-1">
                   <Crown className="w-3.5 h-3.5" />
