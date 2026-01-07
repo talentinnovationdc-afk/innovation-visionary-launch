@@ -213,7 +213,7 @@ const AiQuickScan = () => {
                 Konkrétní výstupy, které můžete poslat vedení.
               </p>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {deliverables.map((item) => {
                   const Icon = item.icon;
                   
