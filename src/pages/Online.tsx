@@ -8,7 +8,7 @@ import {
   MessageSquare, Wand2, Bot, Check, Award, Clock, RefreshCw, Users, Star, 
   ThumbsUp, ChevronLeft, ChevronRight, Building, Crown, Sparkles, X,
   FileText, Zap, Target, Lightbulb, Layers, Workflow, Download, Info,
-  ChevronDown, Lock, BadgeCheck, HelpCircle
+  ChevronDown, Lock, BadgeCheck, HelpCircle, UserCheck
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -29,8 +29,13 @@ const courses = [
     slug: "master-of-ai-creativity",
     title: "MASTER OF AI CREATIVITY",
     subtitle: "Kompletní program\n(3 akademie)",
-    focus: "Kompletní cesta: ChatGPT + Copilot + Agenti.",
-    description: "Všechny 3 akademie v jedné cestě k digitální autonomii.",
+    forWhom: "Pro ty, kdo chtějí kompletní standard práce s AI.",
+    benefit: "Nejrychlejší cesta ke konzistentním výstupům napříč agendou.",
+    outputs: [
+      "Šablony pro e-maily, dokumenty, rozhodování",
+      "Workflow v M365 + pokročilé automatizace",
+      "Certifikát + hlavní LinkedIn odznak"
+    ],
     price: "9 970 Kč",
     icon: Crown,
     link: "https://t-i.cz/online/masterofaicreativity",
@@ -41,92 +46,131 @@ const courses = [
     id: 1,
     slug: "chatgptakademie",
     title: "CHATGPT AKADEMIE",
-    subtitle: "Samostatná akademie (součást programu Master of AI Creativity)",
-    focus: "Práce s GPT od základů po pokročilé workflow.",
-    description: "Ovládněte umění promptingu a ušetřete hodiny práce každý týden.",
+    subtitle: "Samostatná akademie",
+    forWhom: "Administrativa, HR, obchod, podpora.",
+    benefit: "Rychlé psaní, analýza, šablony a jistota tónu.",
+    outputs: [
+      "E-mailové a dokumentové šablony",
+      "Prompty pro každodenní agendu",
+      "Certifikát + LinkedIn odznak"
+    ],
     price: "4 470 Kč",
     icon: MessageSquare,
     link: "https://t-i.cz/online/chatgptakademie",
     isProgram: false,
-    tags: ["Šablony", "Workflow", "Certifikace"]
+    tags: ["Šablony", "Prompty", "Certifikace"]
   },
   {
     id: 2,
     slug: "copilotakademie",
     title: "MICROSOFT COPILOT AKADEMIE",
-    subtitle: "Samostatná akademie (součást programu Master of AI Creativity)",
-    focus: "Produktivita a automatizace v Microsoft 365.",
-    description: "Integrujte AI přímo do svých kancelářských aplikací Microsoft 365.",
+    subtitle: "Samostatná akademie",
+    forWhom: "Týmy v Microsoft 365.",
+    benefit: "Méně rutiny v Outlook/Word/Excel/PowerPoint.",
+    outputs: [
+      "Šablony v M365 pro opakované výstupy",
+      "Zrychlení reportingu a prezentací",
+      "Certifikát + LinkedIn odznak"
+    ],
     price: "4 470 Kč",
     icon: Wand2,
     link: "https://t-i.cz/online/copilotakademie",
     isProgram: false,
-    tags: ["Šablony", "Workflow", "Certifikace"]
+    tags: ["M365", "Šablony", "Certifikace"],
+    note: "Copilot licence není podmínkou — řekneme varianty."
   },
   {
     id: 3,
     slug: "agentiautomatizace",
     title: "AGENTI & AUTOMATIZACE",
-    subtitle: "Samostatná akademie (součást programu Master of AI Creativity)",
-    focus: "Pokročilé agentické workflow a orchestrace.",
-    description: "Naučte se stavět vlastní AI agenty pro automatizaci procesů.",
+    subtitle: "Samostatná akademie",
+    forWhom: "Power users, inovace, provoz.",
+    benefit: "Automatizace workflow a integrace nástrojů.",
+    outputs: [
+      "Návrh workflow: problém → automatizace",
+      "Bezpečné nasazení a měření dopadu",
+      "Základy agentů + šablony"
+    ],
     price: "4 970 Kč",
     icon: Bot,
     link: "https://t-i.cz/online/agentiautomatizace",
     isProgram: false,
-    tags: ["Šablony", "Workflow", "Certifikace"]
+    tags: ["Workflow", "Agenti", "Certifikace"]
   }
 ];
 
 const skillsGrid = [
-  { icon: MessageSquare, skill: "Prompting", output: "Šablony promptů", benefit: "Rychlejší a přesnější výstupy díky šablonám promptů." },
-  { icon: FileText, skill: "Dokumenty", output: "Automatizované reporty", benefit: "Automatizované reporty a texty bez rutiny." },
-  { icon: Zap, skill: "E-maily", output: "Šablony odpovědí", benefit: "Profesionální odpovědi za minutu." },
-  { icon: Target, skill: "Analýzy", output: "Dashboardy", benefit: "Dashboardy a rozhodování z dat." },
-  { icon: Lightbulb, skill: "Kreativita", output: "Návrhy a koncepty", benefit: "Návrhy a koncepty na vyžádání." },
-  { icon: Layers, skill: "Prezentace", output: "Prezentace (šablony)", benefit: "Šablony a tvorba prezentací rychle." },
-  { icon: Workflow, skill: "Automatizace", output: "Workflow šablony", benefit: "Opakované úkoly na autopilota." },
-  { icon: Bot, skill: "Agenti", output: "Vlastní AI asistenti", benefit: "Vlastní AI asistenti pro váš tým." }
+  { icon: MessageSquare, skill: "Prompting", result: "Rychlejší výstupy díky šablonám promptů", outputs: "šablony, checklisty, ukázky" },
+  { icon: FileText, skill: "Dokumenty", result: "Méně rutiny v dokumentech a reportech", outputs: "šablony, struktury, příklady" },
+  { icon: Zap, skill: "E-maily", result: "Konzistentní e-maily za pár minut", outputs: "odpovědi, follow-upy, tón" },
+  { icon: Target, skill: "Analýzy", result: "Rychlejší rozhodování z dat", outputs: "dashboardy, shrnutí, doporučení" },
+  { icon: Lightbulb, skill: "Kreativita", result: "Nápady a varianty bez bloků", outputs: "koncepty, návrhy, alternativy" },
+  { icon: Layers, skill: "Prezentace", result: "Prezentace rychleji a lépe strukturované", outputs: "struktura, slidy, vizuály" },
+  { icon: Workflow, skill: "Automatizace", result: "Workflow šablony pro opakované úkoly", outputs: "procesy, triggery, šablony" },
+  { icon: Bot, skill: "Agenti", result: "Základy agentů a automatizací (prakticky)", outputs: "use-cases, bezpečnost, měření" }
 ];
 
-// Testimonials are now in TestimonialTicker component
+// Role recommendation cards
+const roleCards = [
+  {
+    icon: FileText,
+    role: "Administrativa / HR",
+    description: "E-maily, dokumenty, onboarding, komunikace.",
+    recommended: "ChatGPT Akademie",
+    link: "/online/chatgptakademie"
+  },
+  {
+    icon: Target,
+    role: "Obchod / Podpora",
+    description: "Nabídky, odpovědi zákazníkům, follow-upy.",
+    recommended: "ChatGPT Akademie",
+    link: "/online/chatgptakademie"
+  },
+  {
+    icon: Crown,
+    role: "Management / Power users",
+    description: "Strategie, reporting, automatizace procesů.",
+    recommended: "Master of AI Creativity",
+    link: "/online/master-of-ai-creativity"
+  }
+];
 
 const faqItems = [
   { 
     icon: Clock, 
-    question: "Jak dlouho mám přístup ke kurzu?", 
+    question: "Jak dlouho mám přístup?", 
     answer: "Dlouhodobě, studujete vlastním tempem.",
     detail: "Obsah průběžně aktualizujeme, abyste měli vždy relevantní know-how.",
-    highlight: "Přístup: dlouhodobě",
+    highlight: "Dlouhodobě",
     nextStep: { label: "Vybrat akademii", link: "#varianty" }
   },
   { 
     icon: Users, 
-    question: "Je to pro mě / pro koho jsou akademie určené?", 
-    answer: "Pro každého, kdo chce pracovat efektivněji s AI.",
-    detail: "Od úplných začátečníků po pokročilé uživatele. Nevyžadujeme technické znalosti.",
-    highlight: "Začátečník → pokročilý",
-    nextStep: { label: "Vybrat akademii", link: "#varianty" }
+    question: "Pro koho je která akademie?", 
+    answer: "ChatGPT = administrativa, HR, obchod. Copilot = M365 uživatelé. Agenti = power users.",
+    detail: "Nevyžadujeme technické znalosti. Začátečník → pokročilý.",
+    highlight: "Všechny úrovně",
+    nextStep: { label: "Doporučit akademii", link: "#doporuceni" }
   },
   { 
     icon: BadgeCheck, 
-    question: "Kdy a za co dostanu certifikát a LinkedIn odznak?", 
+    question: "Kdy dostanu certifikát a odznak?", 
     answer: "Po dokončení akademie automaticky e-mailem.",
-    detail: "LinkedIn odznak si přidáte jedním klikem – ověřitelný pro recruitery i kolegy.",
+    detail: "LinkedIn odznak si přidáte jedním klikem — ověřitelný pro recruitery i kolegy.",
     highlight: "Po dokončení",
-    nextStep: { label: "Vybrat akademii", link: "#varianty" }
+    nextStep: { label: "Ukázka odznaku", link: "#" }
   },
   { 
     icon: Crown, 
-    question: "Co je rozdíl mezi akademií a kompletním programem?", 
+    question: "Rozdíl: akademie vs kompletní program?", 
     answer: "Akademie = 1 téma. Program = 3 akademie + hlavní certifikát.",
     detail: "Kompletní program vede k prestižnímu odznaku Master of AI Creativity.",
-    highlight: "Kompletní program",
+    highlight: "3 akademie v 1",
     nextStep: { label: "Zobrazit Master program", link: "/online/master-of-ai-creativity" }
   },
   { 
     icon: Building, 
-    question: "Můžu kurz koupit pro tým?", 
+    question: "Můžu koupit pro tým?", 
     answer: "Ano, nabízíme hromadné licence s reportingem pro HR.",
     detail: "HR má přehled, kdo prošel a kde jsou mezery.",
     highlight: "Firemní licence",
@@ -134,8 +178,8 @@ const faqItems = [
   },
   { 
     icon: HelpCircle, 
-    question: "Musím mít Copilot (M365), abych akademii využil naplno?", 
-    answer: "Ideálně ano, ale kurz funguje i bez Copilotu.",
+    question: "Potřebuji Copilot licenci?", 
+    answer: "Ideálně ano, ale akademie funguje i bez Copilotu.",
     detail: "Obsahuje obecné principy a workflow použitelné s jinými nástroji.",
     highlight: "Není podmínkou",
     nextStep: { label: "Vybrat akademii", link: "#varianty" }
@@ -167,30 +211,30 @@ const Online = () => {
                     Online vzdělávání
                   </span>
                   
-                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-8 leading-[1.15] uppercase">
+                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-4 leading-[1.15] uppercase">
                     <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                       AI pro vaši profesi
                     </span>
-                    <br />
-                    <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                      a ověřitelný odznak na LinkedIn
-                    </span>
                   </h1>
                   
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-medium tracking-[0.1em] mb-6 uppercase bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    Ověřitelný certifikát a LinkedIn odznak
+                  </h2>
+                  
                   <p className="text-lg text-muted-foreground mb-6 max-w-xl mx-auto lg:mx-0">
-                    Vyberte jednu akademii, nebo kompletní program (3 akademie). Získáte certifikát, praktické šablony a LinkedIn odznak — ověřitelný na profilu.
+                    Vyberte jednu akademii nebo kompletní program. Získáte šablony do praxe, certifikát a LinkedIn odznak — ověřitelné na profilu.
                   </p>
                   
-                  {/* Proof Chips */}
+                  {/* Benefit Chips */}
                   <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
                     <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                      1250+ absolventů
+                      Šablony do praxe
                     </span>
                     <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                      4,9/5 hodnocení
+                      Certifikát + odznak
                     </span>
                     <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                      95 % doporučuje
+                      Vlastní tempo
                     </span>
                   </div>
                   
@@ -209,9 +253,14 @@ const Online = () => {
                       data-event="b2c_certificate_open"
                     >
                       <Award className="w-5 h-5 mr-2" />
-                      Jak vypadá odznak
+                      Ukázka odznaku
                     </Button>
                   </div>
+                  
+                  {/* Helper text */}
+                  <p className="text-xs text-muted-foreground/70 mt-4 text-center lg:text-left">
+                    Okamžitý přístup po zaplacení • Vlastní tempo
+                  </p>
                 </div>
                 
                 {/* Right - Proof Stack */}
@@ -272,9 +321,8 @@ const Online = () => {
                         </div>
                       </div>
                       <p className="text-[11px] text-muted-foreground/50 mt-4">
-                        Výstup můžete sdílet na LinkedIn a přiložit k profilu i CV.
+                        Výstup sdílíte na LinkedIn a přiložíte k profilu i CV.
                       </p>
-                      <p className="text-[10px] text-muted-foreground/40 mt-1">Ukázka je anonymizovaná.</p>
                     </div>
                   </div>
                 </div>
@@ -292,7 +340,7 @@ const Online = () => {
                     JAK TO U NÁS FUNGUJE
                   </h2>
                   <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Máte na výběr jednu akademii, nebo kompletní program Master of AI Creativity. Kompletní program obsahuje všechny 3 akademie a vede k hlavnímu odznaku.
+                    Máte na výběr jednu akademii, nebo kompletní program. Kompletní program obsahuje všechny 3 akademie a vede k hlavnímu odznaku.
                   </p>
                 </div>
                 
@@ -354,12 +402,12 @@ const Online = () => {
             </div>
           </section>
 
-          {/* Skills Grid - "Co si odnesete v kapse" */}
+          {/* Skills Grid - "Co budete umět a používat hned" */}
           <section className="py-16 md:py-20 relative">
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  CO ZÍSKÁTE DO PRAXE
+                  CO BUDETE UMĚT A POUŽÍVAT HNED
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Praktické výstupy, které použijete okamžitě.
@@ -372,9 +420,11 @@ const Online = () => {
                   return (
                     <div key={index} className="glass-card p-4 rounded-xl border border-border/30 hover:border-primary/30 transition-all duration-300 group">
                       <Icon className="w-6 h-6 text-primary mb-3 group-hover:scale-110 transition-transform" />
-                      <h3 className="text-sm font-semibold text-foreground mb-1">{item.skill}</h3>
-                      <p className="text-xs text-primary mb-2">{item.output}</p>
-                      <p className="text-xs text-muted-foreground">{item.benefit}</p>
+                      <h3 className="text-sm font-semibold text-foreground mb-2">{item.skill}</h3>
+                      <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{item.result}</p>
+                      <p className="text-[10px] text-primary/80">
+                        <span className="font-medium">Výstup:</span> {item.outputs}
+                      </p>
                     </div>
                   );
                 })}
@@ -462,6 +512,10 @@ const Online = () => {
                         </li>
                       </ul>
                       
+                      <p className="text-xs text-muted-foreground/70 mb-4">
+                        Vhodné pro jednotlivce — když chcete rychle zvýšit výkon a mít to ověřitelné.
+                      </p>
+                      
                       <div className="mt-auto">
                         <a href="#varianty">
                           <Button 
@@ -539,18 +593,31 @@ const Online = () => {
                         {course.subtitle}
                       </p>
                       
-                      <p className="text-xs text-primary/80 mb-3 italic">
-                        {course.focus}
+                      {/* Pro koho */}
+                      <p className="text-xs text-muted-foreground mb-2">
+                        <span className="font-medium text-foreground">Pro koho:</span> {course.forWhom}
                       </p>
                       
-                      {course.tags && (
-                        <div className="flex flex-wrap gap-1.5 mb-4">
-                          {course.tags.slice(0, 3).map((tag, idx) => (
-                            <span key={idx} className="px-2 py-0.5 text-[9px] font-medium uppercase rounded-full border bg-secondary/50 text-muted-foreground border-primary/20">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
+                      {/* Největší přínos */}
+                      <p className="text-xs text-primary/80 mb-3 italic">
+                        {course.benefit}
+                      </p>
+                      
+                      {/* Outputs */}
+                      <ul className="space-y-1 mb-4">
+                        {course.outputs.map((output, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-[11px] text-muted-foreground">
+                            <Check className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
+                            {output}
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      {/* Note for Copilot */}
+                      {course.note && (
+                        <p className="text-[10px] text-muted-foreground/60 mb-3 italic">
+                          {course.note}
+                        </p>
                       )}
                       
                       <div className="mt-auto">
@@ -572,11 +639,11 @@ const Online = () => {
                               className="w-full text-xs tracking-[0.1em] uppercase py-3"
                               data-event={course.isProgram ? "b2c_program_buy_click" : "b2c_buy_click"}
                             >
-                              {course.isProgram ? 'Koupit program' : 'Koupit akademii'}
+                              Koupit
                             </Button>
                           </a>
                           
-                          {/* Secondary CTA: Zobrazit obsah - outline cyan */}
+                          {/* Secondary CTA: Osnova a ukázky - outline cyan */}
                           <Link 
                             to={`/online/${course.slug}`}
                             data-event={course.isProgram ? "b2c_program_view" : "b2c_academy_view"}
@@ -587,7 +654,7 @@ const Online = () => {
                               size="sm" 
                               className="w-full text-xs tracking-[0.1em] uppercase py-3 group/btn"
                             >
-                              Zobrazit obsah
+                              Osnova a ukázky
                               <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform duration-200" />
                             </Button>
                           </Link>
@@ -597,11 +664,59 @@ const Online = () => {
                   );
                 })}
               </div>
+              
+              {/* Recommendation helper */}
+              <div className="text-center mt-8">
+                <p className="text-sm text-muted-foreground mb-2">
+                  Nejste si jistý výběrem?
+                </p>
+                <a href="#doporuceni" className="text-sm text-primary hover:text-primary/80 font-medium transition-colors">
+                  Doporučit akademii podle role →
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* Role Recommendation Section */}
+          <section id="doporuceni" className="py-16 bg-card/20 relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-10">
+                  <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                    DOPORUČENÍ PODLE ROLE
+                  </h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    Najděte akademii, která odpovídá vaší práci.
+                  </p>
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-6">
+                  {roleCards.map((card, index) => {
+                    const Icon = card.icon;
+                    return (
+                      <Link 
+                        key={index} 
+                        to={card.link}
+                        className="glass-card p-6 rounded-2xl border border-border/30 hover:border-primary/40 transition-all duration-300 group"
+                      >
+                        <Icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                        <h3 className="text-base font-semibold text-foreground mb-2">{card.role}</h3>
+                        <p className="text-xs text-muted-foreground mb-4">{card.description}</p>
+                        <div className="pt-3 border-t border-border/30">
+                          <p className="text-xs text-muted-foreground mb-1">Doporučujeme:</p>
+                          <p className="text-sm text-primary font-medium">{card.recommended}</p>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </section>
 
           {/* B2B CTA Band */}
-          <section className="py-16 bg-card/20 relative">
+          <section className="py-16 relative">
             <div className="container px-4">
               <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary/10 via-card/80 to-primary/5 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 md:p-10">
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
@@ -614,16 +729,13 @@ const Online = () => {
                       Kupujete pro tým?
                     </h3>
                     <p className="text-muted-foreground mb-2">
-                      Hromadné licence pro firmy: stejné akademie ve vlastním tempu + onboarding + reporting.
-                    </p>
-                    <p className="text-xs text-muted-foreground/70">
-                      Individuální nákup = osobní rozvoj. Firemní licence = onboarding a měření.
+                      Chcete stejný standard pro celý tým? Firemní licence přidá onboarding, reporting pro HR a jednotné workflow napříč rolemi.
                     </p>
                   </div>
                   
                   <Link to="/akademie-pro-tymy" data-event="b2c_to_b2b_click">
                     <Button className="px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
-                      Akademie pro týmy
+                      Zobrazit Akademie pro týmy
                     </Button>
                   </Link>
                 </div>
@@ -658,7 +770,6 @@ const Online = () => {
               <div className="max-w-3xl mx-auto">
                 <Accordion type="single" collapsible className="space-y-3">
                   {faqItems.map((item, index) => {
-                    const isEven = index % 2 === 0;
                     const Icon = item.icon;
                     
                     return (
@@ -707,14 +818,25 @@ const Online = () => {
                                 )}
                                 {item.nextStep && (
                                   <div className="pt-3 border-t border-border/30">
-                                    <Link 
-                                      to={item.nextStep.link}
-                                      className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
-                                    >
-                                      <span className="text-muted-foreground">Další krok:</span>
-                                      {item.nextStep.label}
-                                      <ChevronRight className="w-3 h-3" />
-                                    </Link>
+                                    {item.nextStep.link.startsWith('#') ? (
+                                      <a 
+                                        href={item.nextStep.link}
+                                        className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                                      >
+                                        <span className="text-muted-foreground">Další krok:</span>
+                                        {item.nextStep.label}
+                                        <ChevronRight className="w-3 h-3" />
+                                      </a>
+                                    ) : (
+                                      <Link 
+                                        to={item.nextStep.link}
+                                        className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                                      >
+                                        <span className="text-muted-foreground">Další krok:</span>
+                                        {item.nextStep.label}
+                                        <ChevronRight className="w-3 h-3" />
+                                      </Link>
+                                    )}
                                   </div>
                                 )}
                               </div>
@@ -740,7 +862,7 @@ const Online = () => {
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto bg-card border-primary/30">
           <DialogHeader>
             <DialogTitle className="text-xl font-semibold tracking-wider text-foreground">
-              Certifikát Master of AI Creativity
+              Certifikát a LinkedIn odznak
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-6">
