@@ -36,8 +36,11 @@ const Index = () => {
                   </span>
                 </h1>
                 
-                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-10 normal-case tracking-normal leading-[1.8]">
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto mb-4 normal-case tracking-normal leading-[1.8]">
                   Za 15 minut zjistíte, kde vzniká největší ztráta času. Do 14 dnů dodáme mapu rolí, rychlé výhry a ROI plán prvního pilotu.
+                </p>
+                <p className="text-sm text-primary/90 max-w-[700px] mx-auto mb-10">
+                  Pro firmy: měřitelný dopad do 14 dnů. Pro jednotlivce: ověřitelný LinkedIn odznak a praktické workflow.
                 </p>
                 
                 {/* Two CTAs */}

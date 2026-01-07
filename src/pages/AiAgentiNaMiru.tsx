@@ -94,24 +94,30 @@ const caseStudies = [
   {
     icon: AlertTriangle,
     title: "PROČ AI INICIATIVA SELHALA (A JAK JSME JI ROZJELI)",
-    problem: "Odpor lidí, bez vlastníka projektu, bez KPI.",
-    solution: "Restart: workshop, roadmapa, pilot s měřením, adopce.",
-    result: "Úspora: hodiny týdně na rutinních úkolech + měřitelné dopady."
+    problem: "Chyběl owner, lidé se báli dopadu na práci, nebyla pravidla.",
+    solution: "Restart: workshop, roadmapa, pilot s měřením, adopce + komunikace.",
+    result: "−30 % času na rutinu v dotčených rolích + měřitelný dopad."
   },
   {
     icon: TrendingUp,
     title: "OBCHOD BEZ RYCHLÉ REAKCE: FOLLOW-UP AGENT",
     problem: "Poptávky čekaly, CRM neaktuální, follow-up zapomenutý.",
-    solution: "Agent třídí poptávky, připraví podklady, hlídá follow-up.",
-    result: "O 40 % rychlejší reakce + konzistence v komunikaci."
+    solution: "Kvalifikace leadů + návrh e-mailů/nabídek + hlídání follow-upu + zápisy ze schůzek.",
+    result: "O 40 % rychlejší reakce + vyšší konverze."
   },
   {
     icon: Users,
-    title: "KAPACITA BEZ NÁBORU: RUTINA PRYČ",
-    problem: "Klíčové role přetížené, rutina blokuje důležitou práci.",
-    solution: "AI přebírá opakované úkoly, uvolňuje kapacitu.",
-    result: "2–3 hodiny týdně zpět pro každou roli."
+    title: "REPORTING BEZ RUČNÍ PRÁCE",
+    problem: "Manuální shrnutí týdenních reportů z více zdrojů, chyby, ztráta času.",
+    solution: "Automatizované shrnutí + upozornění na odchylky.",
+    result: "2–3 h týdně zpět pro manažery + méně chyb."
   }
+];
+
+const roiCalculation = [
+  "Čas ušetřený / role × hodinová sazba",
+  "Dopad na kvalitu a chybovost výstupů",
+  "Dopad na rychlost reakce (obchod / podpora)"
 ];
 
 const faqItems = [
@@ -401,25 +407,33 @@ const AiAgentiNaMiru = () => {
                 })}
               </div>
               
-              {/* Why anonymized */}
-              <div className="max-w-2xl mx-auto">
+              {/* Why anonymized + How we calculate ROI */}
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                {/* Why anonymized */}
                 <div className="glass-card p-6 rounded-xl border border-primary/20">
                   <h4 className="text-xs font-semibold tracking-[0.15em] text-foreground mb-3 uppercase text-center">
                     Proč anonymizované?
                   </h4>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Pracujeme s interními procesy a citlivými daty. Anonymizace chrání know-how klientů a umožňuje sdílet principy přenositelné do jiných firem.
+                  </p>
+                  <p className="text-xs text-primary italic">
+                    Konkrétní reference sdílíme při 15min diagnostice.
+                  </p>
+                </div>
+
+                {/* How we calculate ROI */}
+                <div className="glass-card p-6 rounded-xl border border-primary/20">
+                  <h4 className="text-xs font-semibold tracking-[0.15em] text-foreground mb-3 uppercase text-center">
+                    Jak počítáme ROI
+                  </h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-0.5">•</span>
-                      Ochrana klientů a jejich know-how
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-0.5">•</span>
-                      Práce s interními procesy a citlivými daty
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-0.5">•</span>
-                      Cílem je přenositelnost zkušenosti, ne marketing
-                    </li>
+                    {roiCalculation.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-primary mt-0.5">•</span>
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>

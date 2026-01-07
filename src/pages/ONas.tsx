@@ -108,7 +108,7 @@ const ONas = () => {
                 Kombinace strategického vedení a technické excelence pro vaši digitální transformaci.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
                 {experts.map((expert) => (
                   <div
                     key={expert.name}
@@ -154,6 +154,27 @@ const ONas = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Why It Works Block */}
+              <div className="max-w-3xl mx-auto glass-card p-6 rounded-2xl border border-primary/30">
+                <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-4 text-center">
+                  PROČ TO FUNGUJE
+                </h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="text-center">
+                    <p className="text-primary font-semibold text-sm mb-1">Výstupy do 14 dnů</p>
+                    <p className="text-xs text-muted-foreground">Rychlé výhry a měřitelné výsledky.</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-primary font-semibold text-sm mb-1">Měření dopadu</p>
+                    <p className="text-xs text-muted-foreground">Čas, kvalita, chybovost — víte, co funguje.</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-primary font-semibold text-sm mb-1">Práce s adopcí</p>
+                    <p className="text-xs text-muted-foreground">Lidé + pravidla — aby se řešení ujalo.</p>
+                  </div>
+                </div>
               </div>
             </div>
             

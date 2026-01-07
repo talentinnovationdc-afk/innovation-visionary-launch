@@ -94,32 +94,28 @@ const dnaCards = [
     icon: BarChart3,
     title: "MĚŘENÍ DOPADU",
     subtitle: "VÝSLEDKY",
-    description: "Sledujeme čas, kvalitu a chybovost. Víte přesně, co AI přinesla.",
-    benefit: "Jasný důkaz návratnosti investice.",
+    description: "Čas, kvalitu a chybovost měříme. Víte, co funguje.",
     accent: "cyan",
   },
   {
     icon: Settings,
     title: "ŘEŠENÍ NA MÍRU",
     subtitle: "PROCESY",
-    description: "Analyzujeme vaše reálné procesy, ne obecné šablony.",
-    benefit: "Automatizace, která sedí na vaši firmu.",
+    description: "Analyzujeme reálné procesy, ne obecné šablony.",
     accent: "cyan",
   },
   {
     icon: Shield,
     title: "BEZPEČNÉ POUŽITÍ",
     subtitle: "PRAVIDLA",
-    description: "Nastavíme pravidla pro data, přístupy a odpovědnosti.",
-    benefit: "Klid pro management i právní oddělení.",
+    description: "Data, přístupy a odpovědnosti nastavíme od začátku.",
     accent: "purple",
   },
   {
     icon: Lock,
     title: "OCHRANA DAT",
     subtitle: "GDPR / DSA",
-    description: "Vaše data zůstávají pod kontrolou. Žádné sdílení bez vědomí.",
-    benefit: "Transparentnost a důvěra.",
+    description: "Vaše data zůstávají pod kontrolou.",
     accent: "purple",
   },
 ];
@@ -155,9 +151,11 @@ const Metodika = () => {
                     ve vašem týmu
                   </span>
                 </h1>
-                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-10">
-                  Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologii přidáváme až když má měřitelný smysl.<br className="hidden md:block" />
-                  <span className="text-primary font-medium">Do 14 dnů: mapa rolí, rychlé výhry a ROI plán prvního pilotu.</span>
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-4">
+                  Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologii přidáváme až když má měřitelný smysl.
+                </p>
+                <p className="text-sm text-primary mb-10">
+                  Startujeme 15min diagnostikou. Když dává smysl, navážeme Mapou úspor (14 dní).
                 </p>
                 
                 {/* CTA Buttons */}
@@ -427,14 +425,8 @@ const Metodika = () => {
                         {card.title}
                       </h3>
                       
-                      <p className="text-muted-foreground text-sm mb-3">
+                      <p className="text-muted-foreground text-sm">
                         {card.description}
-                      </p>
-                      
-                      <p className={`text-xs font-medium ${
-                        isPurple ? "text-accent/80" : "text-primary/80"
-                      }`}>
-                        → {card.benefit}
                       </p>
                     </div>
                   );
