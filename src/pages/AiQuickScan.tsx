@@ -27,7 +27,7 @@ const deliverables = [
   },
   {
     icon: Target,
-    title: "SEZNAM 10–20 PŘÍLEŽITOSTÍ (S ROI)",
+    title: "SEZNAM 10–20 PŘÍLEŽITOSTÍ (PRIORITIZOVANÝ)",
     description: "Konkrétní use-casy seřazené podle dopadu a náročnosti.",
     format: "Formát: 3–6 stran + tabulka"
   },
@@ -64,8 +64,8 @@ const processSteps = [
     number: "03",
     icon: Target,
     title: "VÝBĚR PILOTU (CO PŘINESE NEJDŘÍV)",
-    description: "Seřadíme příležitosti podle dopadu a vybereme proces pro první pilot.",
-    output: "Výstup: Prioritizovaný seznam 10–20 příležitostí"
+    description: "Seřadíme příležitosti podle dopadu a vybereme 1–2 procesy pro první pilot.",
+    output: "Výstup: Výběr 1–2 pilotů + odhad ROI"
   },
   {
     number: "04",
@@ -168,8 +168,11 @@ const AiQuickScan = () => {
                     Bezpečný start AI transformace
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
+                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-4">
                   Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, kolik to přinese a jak bezpečně začít pilotem.
+                </p>
+                <p className="text-sm text-primary mb-8">
+                  Nejde o prezentaci nástrojů. Dodáme seznam konkrétních příležitostí (use-casů) + KPI + doporučený pilot.
                 </p>
                 
                 {/* Trust Chips */}

@@ -343,10 +343,10 @@ const ProFirmy = () => {
               
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
                 {[
-                  { title: "Chaos v AI", desc: "Bez pravidel a bezpečnosti.", result: "Jasná pravidla, co smí AI a co kontrolovat." },
-                  { title: "Rutina požírá kapacitu", desc: "E-maily, reporty, přepisy.", result: "Méně ruční práce, víc kapacity pro klíčové úkoly." },
-                  { title: "Poptávky bez reakce", desc: "Obchod/podpora nestíhá.", result: "Rychlejší odpověď, více follow-upů, vyšší konverze." },
-                  { title: "Data rozstříštěná", desc: "CRM, Excel, e-mail.", result: "Jedno místo pro reporting a rozhodování." },
+                  { title: "AI bez pravidel", desc: "Přístupy, data, kontrola výstupů.", result: "Jasná pravidla, co smí AI a co kontrolovat." },
+                  { title: "Rutina požírá kapacitu", desc: "E-maily, reporty, přepisy.", result: "Uvolníme 2–10 h týdně / roli (typicky)." },
+                  { title: "Poptávky bez reakce", desc: "Obchod/podpora nestíhá.", result: "Rychlejší odpověď + follow-up bez zapomínání." },
+                  { title: "Data rozstříštěná", desc: "CRM, Excel, e-mail.", result: "Jeden přehled pro vedení." },
                 ].map((pain, idx) => (
                   <div key={idx} className="bg-card/60 border border-primary/20 rounded-xl p-5 hover:border-primary/40 transition-all">
                     <h3 className="text-sm font-semibold text-foreground mb-2">{pain.title}</h3>
@@ -371,10 +371,10 @@ const ProFirmy = () => {
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
-                  { step: "01", title: "DIAGNOSTIKA", subtitle: "15 min konzultace — zjistíte, kde začít", benefit: "Úspora: jasný směr bez závazku", cta: "Domluvit konzultaci", link: "/checkout", highlighted: true },
-                  { step: "02", title: "MAPA ÚSPOR", subtitle: "AI QuickScan + seznam příležitostí + roadmapa 30/60/90", benefit: "Rychlost: konkrétní výstupy pro vedení", cta: "Co dostanu v Mapě úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
-                  { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Bezpečnost: měříme dopad od začátku", cta: "Chci nasadit pilot", link: "/checkout", highlighted: false },
-                  { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Adopce: aby se řešení ujalo u lidí", cta: "Chci škálovat na firmu", link: "/checkout", highlighted: false },
+                  { step: "01", title: "DIAGNOSTIKA", subtitle: "15 min konzultace — zjistíte, kde začít", benefit: "Jasný směr bez závazku", cta: "Domluvit 15 min diagnostiku", link: "/checkout", highlighted: true },
+                  { step: "02", title: "MAPA ÚSPOR", subtitle: "Mapa rolí + seznam příležitostí (use-casů) + roadmapa 30/60/90", benefit: "Konkrétní výstupy pro vedení", cta: "Co dostanu v Mapě úspor", link: "/pro-firmy/ai-quickscan", highlighted: false },
+                  { step: "03", title: "PILOT", subtitle: "AI agent pro 1 proces — nasazeno do 14 dnů", benefit: "Měříme dopad od začátku", cta: "Chci nasadit pilot", link: "/checkout", highlighted: false },
+                  { step: "04", title: "ŠKÁLOVÁNÍ", subtitle: "Rozvoj, governance, adopce, reporting", benefit: "Aby se řešení ujalo u lidí", cta: "Chci škálovat na firmu", link: "/checkout", highlighted: false },
                 ].map((card, idx) => (
                   <div key={idx} className={`relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-xl p-6 transition-all duration-300 hover:-translate-y-2 ${card.highlighted ? "border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)]" : "border-primary/20 hover:border-primary/40"}`}>
                     {card.highlighted && (
