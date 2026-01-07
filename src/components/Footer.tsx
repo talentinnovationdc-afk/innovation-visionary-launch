@@ -39,7 +39,7 @@ export const Footer = () => {
             <Link to="/o-nas" className="text-muted-foreground hover:text-primary transition-colors">
               O nás
             </Link>
-            <Link to="/legal" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/gdpr-cookies" className="text-muted-foreground hover:text-primary transition-colors">
               Ochrana údajů
             </Link>
             <Link to="/obchodni-podminky" className="text-muted-foreground hover:text-primary transition-colors">

@@ -253,7 +253,7 @@ const ObchodniPodminky = () => {
 
               <p>
                 <strong className="text-foreground">8.2</strong> Podrobnosti jsou uvedeny v samostatném dokumentu{" "}
-                <Link to="/legal" className="text-primary hover:underline">
+                <Link to="/gdpr-cookies" className="text-primary hover:underline">
                   „Zásady ochrany osobních údajů"
                 </Link>.
               </p>
@@ -303,7 +303,7 @@ const ObchodniPodminky = () => {
                 Tyto podmínky chrání obě strany a umožňují nám poskytovat služby bezpečně, transparentně a profesionálně.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <Link to="/legal" className="text-primary hover:underline">
+                <Link to="/gdpr-cookies" className="text-primary hover:underline">
                   Zásady ochrany osobních údajů
                 </Link>
                 <span className="text-muted-foreground">•</span>

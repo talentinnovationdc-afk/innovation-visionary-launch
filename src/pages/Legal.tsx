@@ -14,9 +14,9 @@ const Legal = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Právní podmínky, ochrana osobních údajů a cookies | Talent Innovation" 
-        description="Informace o zpracování osobních údajů, cookies a právních podmínkách služeb Talent Innovation."
-        path="/legal"
+        title="Ochrana osobních údajů a cookies | Talent Innovation" 
+        description="Informace o zpracování osobních údajů a cookies služeb Talent Innovation."
+        path="/gdpr-cookies"
       />
       <Navbar />
       
@@ -25,7 +25,7 @@ const Legal = () => {
           <div className="max-w-4xl mx-auto">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4">
               <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent uppercase" style={{ WebkitTextFillColor: 'transparent' }}>
-                Právní podmínky, ochrana osobních údajů a cookies
+                Ochrana osobních údajů a cookies
               </span>
             </h1>
 

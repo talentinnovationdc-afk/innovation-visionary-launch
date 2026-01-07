@@ -52,8 +52,9 @@ const App = () => (
           <Route path="/online/chatgptakademie" element={<ChatGPTAkademie />} />
           <Route path="/online/copilotakademie" element={<CopilotAkademie />} />
           <Route path="/online/agentiautomatizace" element={<AgentiAutomatizace />} />
-          <Route path="/legal" element={<Legal />} />
-          <Route path="/gdpr" element={<Legal />} />
+          <Route path="/gdpr-cookies" element={<Legal />} />
+          <Route path="/legal" element={<Navigate to="/gdpr-cookies" replace />} />
+          <Route path="/gdpr" element={<Navigate to="/gdpr-cookies" replace />} />
           <Route path="/obchodni-podminky" element={<ObchodniPodminky />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
