@@ -13,7 +13,8 @@ import {
 import { 
   Target, FileBarChart, Route, Shield, Clock,
   Users, Search, BarChart3, FileCheck,
-  ChevronDown, UserCheck, Lightbulb, BookOpen, ArrowRight
+  ChevronDown, UserCheck, Lightbulb, BookOpen, ArrowRight,
+  Lock, HelpCircle, Briefcase, Building2
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -25,8 +26,8 @@ const deliverables = [
   },
   {
     icon: Target,
-    title: "BACKLOG 10–20 USE-CASŮ",
-    description: "Skóre u každého: ROI, náročnost, riziko. Prioritizované podle dopadu."
+    title: "QUICK WINS S ROI ODHADEM",
+    description: "3–10 konkrétních zlepšení seřazených podle dopadu a náročnosti."
   },
   {
     icon: Route,
@@ -34,13 +35,8 @@ const deliverables = [
     description: "1–2 procesy pro start + odhad přínosu v čase a kvalitě."
   },
   {
-    icon: Clock,
-    title: "ROADMAPA 30/60/90",
-    description: "Jasný plán kroků na první 3 měsíce transformace."
-  },
-  {
     icon: Shield,
-    title: "ZÁKLADNÍ RÁMEC BEZPEČNOSTI",
+    title: "BEZPEČNÁ PRAVIDLA",
     description: "Pravidla pro data, přístupy a používání AI ve firmě."
   }
 ];
@@ -48,46 +44,66 @@ const deliverables = [
 const processSteps = [
   {
     number: "01",
-    icon: Users,
-    title: "WORKSHOP S LIDMI Z PRAXE",
-    description: "Sejdeme se s klíčovými rolemi, zmapujeme denní rutinu a úzká místa.",
+    icon: Clock,
+    title: "15 MIN CALL",
+    description: "Krátký úvodní hovor — zjistíme, jestli je Mapa úspor pro vás správný krok.",
   },
   {
     number: "02",
-    icon: Search,
-    title: "ANALÝZA PROCESŮ A DATOVÝCH TOKŮ",
-    description: "Prozkoumáme, jak proudí data a kde vzniká nejvíc manuální práce.",
+    icon: Users,
+    title: "WORKSHOP S KLÍČOVÝMI ROLEMI",
+    description: "Sejdeme se s lidmi z praxe, zmapujeme denní rutinu a úzká místa.",
   },
   {
     number: "03",
-    icon: BarChart3,
-    title: "PRIORITIZACE A VÝBĚR PILOTU",
-    description: "Seřadíme use-casy podle dopadu a vybereme první pilot.",
-  },
-  {
-    number: "04",
     icon: FileCheck,
-    title: "ROADMAPA + KPI",
-    description: "Vytvoříme plán 30/60/90 a nastavíme měřitelné cíle.",
+    title: "VÝSTUPY DO 14 DNÍ",
+    description: "Mapa rolí, quick wins, ROI odhad a návrh pilotu — vše připraveno pro vedení.",
   }
 ];
 
-const adoptionPoints = [
+const targetAudience = [
+  {
+    icon: Briefcase,
+    title: "CEO / COO",
+    description: "Chcete vědět, kde AI přinese největší úspory a jak začít bezpečně."
+  },
   {
     icon: UserCheck,
-    text: "Zapojení lidí od začátku — nejsou jen příjemci, ale spoluautoři"
+    title: "HR / ROZVOJ LIDÍ",
+    description: "Potřebujete standard dovedností a plán zaškolení týmů."
   },
   {
-    icon: Users,
-    text: "Jasné vymezení rolí AI vs. člověk — kdo co dělá"
+    icon: Building2,
+    title: "OBCHOD / PODPORA",
+    description: "Hledáte způsob, jak zrychlit reakce a uvolnit kapacitu."
+  }
+];
+
+const faqItems = [
+  {
+    icon: Clock,
+    question: "Jak dlouho to trvá?",
+    answer: "Workshop + analýza + výstupy do 14 dnů od startu.",
+    highlight: "14 dní"
   },
   {
-    icon: BookOpen,
-    text: "Pravidla a governance — co smí do AI, jak kontrolovat výstupy"
+    icon: HelpCircle,
+    question: "Co potřebujete od nás?",
+    answer: "Krátký popis klíčových rolí a procesů, přístup k lidem z praxe na workshop.",
+    highlight: "Minimum vstupů"
   },
   {
-    icon: Lightbulb,
-    text: "Role-based školení — každá role dostane, co potřebuje"
+    icon: Lock,
+    question: "Jak chráníte data?",
+    answer: "Pravidla přístupů a práce s citlivými daty nastavíme od prvního dne. Soulad s GDPR a vašimi interními politikami.",
+    highlight: "GDPR"
+  },
+  {
+    icon: BarChart3,
+    question: "Co dostanu na konci?",
+    answer: "Mapu rolí, quick wins s ROI odhadem, návrh pilotu a základní pravidla bezpečnosti — vše připraveno pro vedení.",
+    highlight: "Výstupy pro vedení"
   }
 ];
 
@@ -95,9 +111,9 @@ const AiQuickScan = () => {
   return (
     <>
       <SEO 
-        title="AI QuickScan | Bezpečný start AI transformace | Talent Innovation"
-        description="Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, jaký bude přínos a jak začít pilotem. Backlog use-casů, roadmapa 30/60/90 a rámec bezpečnosti."
-        path="/ai-quickscan"
+        title="Mapa úspor do 14 dní | AI transformace pro firmy | Talent Innovation"
+        description="Za 1–2 týdny zjistíte, kde AI ušetří nejvíc času. Mapa rolí, quick wins s ROI odhadem a návrh pilotu."
+        path="/pro-firmy/ai-quickscan"
       />
       
       <NeuralNetworkBackground />
@@ -112,7 +128,7 @@ const AiQuickScan = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-8 leading-[1.15] uppercase">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
-                    AI QuickScan
+                    Mapa úspor do 14 dní
                   </span>
                   <br />
                   <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
@@ -120,7 +136,7 @@ const AiQuickScan = () => {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, jaký bude přínos a jak začít pilotem.
+                  Za 1–2 týdny zjistíte, kde AI ušetří nejvíc času. Dostanete mapu rolí, quick wins a návrh pilotu.
                 </p>
                 
                 {/* Trust Chips */}
