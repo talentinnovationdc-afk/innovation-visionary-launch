@@ -78,7 +78,7 @@ const Legal = () => {
               
               <div className="grid md:grid-cols-2 gap-6 mt-4">
                 <div>
-                  <h3 className="text-foreground font-medium mb-2">Pro firmy</h3>
+                  <h3 className="text-foreground text-sm font-medium mb-2">Pro firmy</h3>
                   <ul className="list-disc list-inside space-y-1 ml-2">
                     <li>Rychlá diagnostika (15 minut)</li>
                     <li>AI QuickScan (mapa rolí, procesů a quick wins)</li>
@@ -87,7 +87,7 @@ const Legal = () => {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-foreground font-medium mb-2">Pro jednotlivce</h3>
+                  <h3 className="text-foreground text-sm font-medium mb-2">Pro jednotlivce</h3>
                   <ul className="list-disc list-inside space-y-1 ml-2">
                     <li>Online akademie</li>
                     <li>ChatGPT Akademie</li>
@@ -109,7 +109,7 @@ const Legal = () => {
               
               <div className="space-y-4 mt-4">
                 <div>
-                  <h3 className="text-foreground font-medium mb-2">Kontaktní údaje</h3>
+                  <h3 className="text-foreground text-sm font-medium mb-2">Kontaktní údaje</h3>
                   <ul className="list-disc list-inside space-y-1 ml-2">
                     <li>jméno a příjmení</li>
                     <li>e-mailová adresa</li>
@@ -119,7 +119,7 @@ const Legal = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-foreground font-medium mb-2">Údaje související se službou</h3>
+                  <h3 className="text-foreground text-sm font-medium mb-2">Údaje související se službou</h3>
                   <ul className="list-disc list-inside space-y-1 ml-2">
                     <li>obsah poptávky nebo diagnostiky</li>
                     <li>zvolená akademie nebo program</li>
@@ -128,7 +128,7 @@ const Legal = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-foreground font-medium mb-2">Technické údaje</h3>
+                  <h3 className="text-foreground text-sm font-medium mb-2">Technické údaje</h3>
                   <ul className="list-disc list-inside space-y-1 ml-2">
                     <li>anonymizovaná IP adresa</li>
                     <li>typ zařízení a prohlížeče</li>
@@ -235,7 +235,7 @@ const Legal = () => {
               </ul>
               
               <div className="mt-4">
-                <h3 className="text-foreground font-medium mb-2">Typy cookies</h3>
+                <h3 className="text-foreground text-sm font-medium mb-2">Typy cookies</h3>
                 <ul className="list-disc list-inside space-y-1 ml-2">
                   <li><strong className="text-foreground">Technické (nezbytné)</strong> – vždy aktivní</li>
                   <li><strong className="text-foreground">Analytické</strong> – anonymizované</li>
