@@ -4,11 +4,18 @@ import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
   Crown, Award, Check, MessageSquare, Wand2, Bot, 
   ChevronRight, Users, Building, Download, Sparkles,
-  Clock, BadgeCheck, Timer, RefreshCw, ArrowRight
+  Clock, BadgeCheck, Timer, RefreshCw, ArrowRight, ChevronDown,
+  HelpCircle, Layers, Calendar, Zap, Gift, Settings
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -91,14 +98,14 @@ const programRoadmap = [
 ];
 
 const faqItems = [
-  { q: "Jak dlouho trvá dokončení programu?", a: "Tempo si určujete sami. Typicky 4–8 týdnů při 2–3 hodinách týdně." },
-  { q: "Musím akademie absolvovat v pořadí?", a: "Doporučujeme začít ChatGPT Akademií, ale pořadí si můžete přizpůsobit." },
-  { q: "Co když už jednu akademii mám?", a: "Kontaktujte nás pro upgrade na kompletní program se slevou." },
-  { q: "Jak funguje hlavní odznak?", a: "Po dokončení všech 3 akademií získáte hlavní certifikát a LinkedIn odznak Master of AI Creativity." },
-  { q: "Můžu program koupit pro tým?", a: "Ano. Pro firmy nabízíme hromadné licence s onboardingem a reportingem." },
-  { q: "Jaký je rozdíl oproti jednotlivým akademiím?", a: "Program = všechny 3 akademie + hlavní certifikát + hlavní LinkedIn odznak." },
-  { q: "Je program vhodný i pro začátečníky?", a: "Ano. Postupujete od základů k pokročilému — tempo i pořadí si volíte sami." },
-  { q: "Kolik času týdně potřebuji?", a: "Typicky 2–3 hodiny týdně. Můžete i intenzivněji, přístup je dlouhodobý." }
+  { icon: Clock, question: "Jak dlouho trvá dokončení programu?", answer: "Tempo si určujete sami. Typicky 4–8 týdnů při 2–3 hodinách týdně.", highlight: "Vlastní tempo" },
+  { icon: Layers, question: "Musím akademie absolvovat v pořadí?", answer: "Doporučujeme začít ChatGPT Akademií, ale pořadí si můžete přizpůsobit.", highlight: "Flexibilní" },
+  { icon: Gift, question: "Co když už jednu akademii mám?", answer: "Kontaktujte nás pro upgrade na kompletní program se slevou.", highlight: "Upgrade" },
+  { icon: BadgeCheck, question: "Jak funguje hlavní odznak?", answer: "Po dokončení všech 3 akademií získáte hlavní certifikát a LinkedIn odznak Master of AI Creativity.", highlight: "Certifikace" },
+  { icon: Users, question: "Můžu program koupit pro tým?", answer: "Ano. Pro firmy nabízíme hromadné licence s onboardingem a reportingem.", highlight: "Týmy" },
+  { icon: Settings, question: "Jaký je rozdíl oproti jednotlivým akademiím?", answer: "Program = všechny 3 akademie + hlavní certifikát + hlavní LinkedIn odznak.", highlight: "Komplet" },
+  { icon: Zap, question: "Je program vhodný i pro začátečníky?", answer: "Ano. Postupujete od základů k pokročilému — tempo i pořadí si volíte sami.", highlight: "Pro všechny" },
+  { icon: Calendar, question: "Kolik času týdně potřebuji?", answer: "Typicky 2–3 hodiny týdně. Můžete i intenzivněji, přístup je dlouhodobý.", highlight: "2–3 h/týden" }
 ];
 
 const MasterOfAICreativity = () => {
@@ -483,23 +490,78 @@ const MasterOfAICreativity = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-20 bg-card/20 relative">
-          <div className="container mx-auto px-4">
+        <section className="py-24 bg-card/20 relative overflow-hidden">
+          {/* Subtle background orbs */}
+          <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[100px]" />
+          <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[120px]" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            {/* Header */}
             <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Časté dotazy
-                </span>
+              <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
+                FAQ
+              </span>
+              <h2 className="text-2xl md:text-4xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                ČASTÉ DOTAZY
               </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Odpovědi na nejčastější otázky o kompletním programu
+              </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              {faqItems.map((item, index) => (
-                <div key={index} className="glass-card p-5 rounded-xl border border-border/30">
-                  <h3 className="text-sm font-semibold text-foreground mb-2">{item.q}</h3>
-                  <p className="text-sm text-muted-foreground">{item.a}</p>
-                </div>
-              ))}
+            {/* Accordion */}
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-3">
+                {faqItems.map((item, index) => {
+                  const Icon = item.icon;
+                  
+                  return (
+                    <AccordionItem 
+                      key={index} 
+                      value={`item-${index}`}
+                      className="group border-0"
+                    >
+                      <div className="relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40">
+                        
+                        <AccordionTrigger className="px-6 py-5 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
+                          <div className="flex items-center gap-4 w-full">
+                            {/* Icon */}
+                            <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-primary/10 group-hover:bg-primary/15">
+                              <Icon className="w-5 h-5 text-primary" />
+                            </div>
+                            
+                            <div className="flex-1 text-left">
+                              <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
+                                {item.question}
+                              </h3>
+                            </div>
+                            
+                            {/* Highlight tag - desktop only */}
+                            <span className="hidden md:inline-block text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full mr-2 bg-primary/10 text-primary">
+                              {item.highlight}
+                            </span>
+                            
+                            {/* Chevron */}
+                            <div className="chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
+                              <ChevronDown className="w-4 h-4 transition-colors text-primary group-data-[state=open]:text-background" />
+                            </div>
+                          </div>
+                        </AccordionTrigger>
+                        
+                        <AccordionContent>
+                          <div className="px-6 pt-2 pb-5 bg-gradient-to-b from-primary/5 to-transparent">
+                            <div className="ml-[3.75rem] pl-4 border-l-2 border-primary/30">
+                              <p className="text-[hsl(210,5%,88%)] leading-[1.8] text-[15px]">
+                                {item.answer}
+                              </p>
+                            </div>
+                          </div>
+                        </AccordionContent>
+                      </div>
+                    </AccordionItem>
+                  );
+                })}
+              </Accordion>
             </div>
           </div>
         </section>
