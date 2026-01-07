@@ -42,12 +42,14 @@ const App = () => (
           <Route path="/metodika" element={<Metodika />} />
           <Route path="/o-nas" element={<ONas />} />
           <Route path="/profirmy" element={<ProFirmy />} />
-          <Route path="/pro-firmy/ai-agenti-na-miru" element={<AiAgentiNaMiru />} />
-          <Route path="/pro-firmy/mapa-uspor" element={<AiQuickScan />} />
+          <Route path="/profirmy/ai-agenti-na-miru" element={<AiAgentiNaMiru />} />
+          <Route path="/profirmy/mapa-uspor" element={<AiQuickScan />} />
           {/* Redirects from old routes */}
-          <Route path="/ai-agenti-na-miru" element={<Navigate to="/pro-firmy/ai-agenti-na-miru" replace />} />
-          <Route path="/ai-quickscan" element={<Navigate to="/pro-firmy/mapa-uspor" replace />} />
-          <Route path="/pro-firmy/ai-quickscan" element={<Navigate to="/pro-firmy/mapa-uspor" replace />} />
+          <Route path="/ai-agenti-na-miru" element={<Navigate to="/profirmy/ai-agenti-na-miru" replace />} />
+          <Route path="/ai-quickscan" element={<Navigate to="/profirmy/mapa-uspor" replace />} />
+          <Route path="/pro-firmy/ai-quickscan" element={<Navigate to="/profirmy/mapa-uspor" replace />} />
+          <Route path="/pro-firmy/mapa-uspor" element={<Navigate to="/profirmy/mapa-uspor" replace />} />
+          <Route path="/pro-firmy/ai-agenti-na-miru" element={<Navigate to="/profirmy/ai-agenti-na-miru" replace />} />
           <Route path="/akademie-pro-tymy" element={<AkademieProTymy />} />
           {/* Redirect from old route */}
           <Route path="/profirmy/akademie-pro-tymy" element={<Navigate to="/akademie-pro-tymy" replace />} />
