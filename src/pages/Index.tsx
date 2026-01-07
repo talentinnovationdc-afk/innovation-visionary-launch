@@ -37,33 +37,17 @@ const Index = () => {
                       letterSpacing: '-0.01em'
                     }}
                   >
-                    <motion.span 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                      className="block bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" 
-                      style={{ WebkitTextFillColor: 'transparent' }}
-                    >
+                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                       Méně rutiny. Více kapacity.
-                    </motion.span>
-                    <motion.span 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-                      className="block bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" 
-                      style={{ WebkitTextFillColor: 'transparent' }}
-                    >
+                    </span>
+                    <br />
+                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                       Díky AI.
-                    </motion.span>
-                    <motion.span 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-                      className="block text-xl md:text-3xl lg:text-4xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" 
-                      style={{ WebkitTextFillColor: 'transparent' }}
-                    >
+                    </span>
+                    <br />
+                    <span className="text-xl md:text-3xl lg:text-4xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                       Měřitelně. Bezpečně. Škálovatelně.
-                    </motion.span>
+                    </span>
                   </h1>
                 </div>
                 
