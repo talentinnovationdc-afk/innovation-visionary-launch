@@ -202,19 +202,6 @@ const ObchodniPodminky = () => {
                 dle § 1837 občanského zákoníku, jelikož je plnění zahájeno okamžitě.
               </p>
 
-              <div className="bg-primary/5 border border-primary/20 p-4 rounded-lg mt-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <ShieldCheck className="h-5 w-5 text-primary" />
-                  <strong className="text-foreground">6.2 Smluvní garance spokojenosti</strong>
-                </div>
-                <p className="text-sm">
-                  Poskytovatel umožňuje vrácení peněz do 7 dnů od nákupu, pokud:
-                </p>
-                <ul className="list-disc list-inside space-y-1 ml-4 mt-2 text-sm">
-                  <li>nebylo absolvováno více než 20 % obsahu</li>
-                  <li>žádost je zaslána e-mailem</li>
-                </ul>
-              </div>
             </div>
 
             {/* 7. Autorská práva a licence */}
