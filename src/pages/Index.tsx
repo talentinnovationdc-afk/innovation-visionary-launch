@@ -45,7 +45,7 @@ const Index = () => {
                       Díky AI.
                     </span>
                     <br />
-                    <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    <span className="text-xl md:text-3xl lg:text-4xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
                       Měřitelně. Bezpečně. Škálovatelně.
                     </span>
                   </h1>
