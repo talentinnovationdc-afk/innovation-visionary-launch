@@ -40,7 +40,10 @@ export const Footer = () => {
               O nás
             </Link>
             <Link to="/legal" className="text-muted-foreground hover:text-primary transition-colors">
-              Právní podmínky
+              Ochrana údajů
+            </Link>
+            <Link to="/obchodni-podminky" className="text-muted-foreground hover:text-primary transition-colors">
+              Obchodní podmínky
             </Link>
           </div>
 

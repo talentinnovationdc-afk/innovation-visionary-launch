@@ -20,6 +20,7 @@ import AiAgentiNaMiru from "./pages/AiAgentiNaMiru";
 import AiQuickScan from "./pages/AiQuickScan";
 import NotFound from "./pages/NotFound";
 import Legal from "./pages/Legal";
+import ObchodniPodminky from "./pages/ObchodniPodminky";
 
 
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/online/agentiautomatizace" element={<AgentiAutomatizace />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/gdpr" element={<Legal />} />
+          <Route path="/obchodni-podminky" element={<ObchodniPodminky />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
