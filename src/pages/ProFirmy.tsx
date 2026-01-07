@@ -319,6 +319,69 @@ const ProFirmy = () => {
             </div>
           </section>
 
+          {/* Pain Points Section - NEW */}
+          <section className="py-16 bg-card/20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                CO VÁS NEJVÍC BRZDÍ?
+              </h2>
+              <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+                Typické problémy, které řešíme s našimi klienty.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                {[
+                  { title: "Chaos v AI", desc: "Bez pravidel a bezpečnosti.", result: "Governance + pravidla od prvního dne." },
+                  { title: "Rutina požírá kapacitu", desc: "E-maily, reporty, přepisy.", result: "Automatizace rutinních úkolů." },
+                  { title: "Poptávky bez reakce", desc: "Obchod/podpora nestíhá.", result: "Rychlejší odpovědi a follow-up." },
+                  { title: "Data rozstříštěná", desc: "CRM, Excel, e-mail.", result: "Jeden zdroj pravdy pro reporting." },
+                ].map((pain, idx) => (
+                  <div key={idx} className="bg-card/60 border border-primary/20 rounded-xl p-5 hover:border-primary/40 transition-all">
+                    <h3 className="text-sm font-semibold text-foreground mb-2">{pain.title}</h3>
+                    <p className="text-xs text-muted-foreground mb-3">{pain.desc}</p>
+                    <p className="text-xs text-primary font-medium">→ {pain.result}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          </section>
+
+          {/* Vyberte si cestu - Product Cards - NEW */}
+          <section className="py-20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                VYBERTE SI CESTU
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Od diagnostiky po škálování — produktizovaná AI transformace.
+              </p>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                {[
+                  { step: "01", title: "DIAGNOSTIKA", desc: "Mapa příležitostí + další krok.", cta: "Domluvit diagnostiku", link: "/checkout", highlighted: true },
+                  { step: "02", title: "AI QUICKSCAN", desc: "Backlog use-casů + roadmapa + KPI.", cta: "Zobrazit AI QuickScan", link: "/ai-quickscan", highlighted: false },
+                  { step: "03", title: "PILOT", desc: "Nasazené řešení + šablony + měření.", cta: "Chci pilot", link: "/checkout", highlighted: false },
+                  { step: "04", title: "ŠKÁLOVÁNÍ", desc: "Rozvoj, governance, adopce, reporting.", cta: "Chci škálovat", link: "/checkout", highlighted: false },
+                ].map((card, idx) => (
+                  <div key={idx} className={`relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-xl p-6 transition-all duration-300 hover:-translate-y-2 ${card.highlighted ? "border-primary/50 shadow-[0_0_30px_rgba(102,252,241,0.2)]" : "border-primary/20 hover:border-primary/40"}`}>
+                    {card.highlighted && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-[9px] font-semibold tracking-wider uppercase rounded-full">
+                        Start zde
+                      </div>
+                    )}
+                    <div className="text-xs font-bold text-primary/60 mb-2">KROK {card.step}</div>
+                    <h3 className="text-sm font-semibold tracking-[0.12em] text-foreground mb-2">{card.title}</h3>
+                    <p className="text-xs text-muted-foreground mb-4">{card.desc}</p>
+                    <Link to={card.link} className={`inline-block w-full text-center px-4 py-2 text-[10px] font-semibold tracking-wider uppercase rounded-lg transition-all ${card.highlighted ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(102,252,241,0.3)]" : "border border-primary/50 text-primary hover:bg-primary/10"}`}>
+                      {card.cta}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Pro koho Section */}
           <section className="py-20 bg-card/20 relative">
             <div className="container mx-auto px-4">

@@ -17,6 +17,7 @@ import ChatGPTAkademie from "./pages/ChatGPTAkademie";
 import CopilotAkademie from "./pages/CopilotAkademie";
 import AgentiAutomatizace from "./pages/AgentiAutomatizace";
 import AiAgentiNaMiru from "./pages/AiAgentiNaMiru";
+import AiQuickScan from "./pages/AiQuickScan";
 import NotFound from "./pages/NotFound";
 import Gdpr from "./pages/Gdpr";
 
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/o-nas" element={<ONas />} />
           <Route path="/profirmy" element={<ProFirmy />} />
           <Route path="/ai-agenti-na-miru" element={<AiAgentiNaMiru />} />
+          <Route path="/ai-quickscan" element={<AiQuickScan />} />
           <Route path="/akademie-pro-tymy" element={<AkademieProTymy />} />
           {/* Redirect from old route */}
           <Route path="/profirmy/akademie-pro-tymy" element={<Navigate to="/akademie-pro-tymy" replace />} />

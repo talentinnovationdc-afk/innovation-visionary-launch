@@ -193,24 +193,36 @@ const Index = () => {
             </div>
           </section>
 
-          {/* AI Agenti Teaser */}
+          {/* AI Agenti Teaser - Premium Block */}
           <section className="py-12 relative">
             <div className="container px-4">
-              <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary/10 via-card/80 to-primary/5 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 md:p-10">
+              <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary/10 via-card/80 to-primary/5 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 md:p-10 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
                   <div className="flex-1 text-center md:text-left">
                     <h3 className="text-lg md:text-xl font-semibold tracking-wider text-foreground uppercase mb-2">
                       Chcete hotové řešení? Postavíme AI agenta na míru.
                     </h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-sm mb-4">
                       Napojíme na vaše nástroje, nastavíme pravidla a změříme dopad.
                     </p>
+                    <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Obchod & podpora</span>
+                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Reporting</span>
+                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Orchestrace</span>
+                    </div>
                   </div>
-                  <Link to="/ai-agenti-na-miru">
-                    <Button className="px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
-                      Zjistit víc
-                    </Button>
-                  </Link>
+                  <div className="flex flex-col gap-3">
+                    <Link to="/checkout">
+                      <Button className="w-full px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
+                        Domluvit diagnostiku (15 min)
+                      </Button>
+                    </Link>
+                    <Link to="/ai-agenti-na-miru">
+                      <Button variant="outline" className="w-full px-6 py-3 border-primary/50 text-primary hover:bg-primary/10">
+                        Zjistit víc
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
