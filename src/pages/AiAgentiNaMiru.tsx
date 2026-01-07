@@ -417,9 +417,6 @@ const AiAgentiNaMiru = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     Pracujeme s interními procesy a citlivými daty. Anonymizace chrání know-how klientů a umožňuje sdílet principy přenositelné do jiných firem.
                   </p>
-                  <p className="text-xs text-primary italic">
-                    Konkrétní reference sdílíme při 15min diagnostice.
-                  </p>
                 </div>
 
                 {/* How we calculate ROI */}
