@@ -248,7 +248,7 @@ const Checkout = () => {
               <div className="pt-2 border-t border-border/50">
                 <p className="text-xs text-muted-foreground text-center">
                   Kontaktní údaje použijeme pouze k domluvě diagnostiky.{" "}
-                  <Link to="/legal" className="text-primary hover:underline">
+                  <Link to="/gdpr-cookies" className="text-primary hover:underline">
                     Zpracování osobních údajů
                   </Link>
                 </p>
