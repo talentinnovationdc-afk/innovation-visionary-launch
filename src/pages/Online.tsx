@@ -93,7 +93,7 @@ const courses = [
     ],
     price: "4 970 Kč",
     icon: Bot,
-    link: "https://t-i.cz/online/agentiautomatizace",
+    link: "https://buy.stripe.com/14A00k2GOffHfF946G6Ri01",
     isProgram: false,
     tags: ["Workflow", "Agenti", "Certifikace"]
   }
