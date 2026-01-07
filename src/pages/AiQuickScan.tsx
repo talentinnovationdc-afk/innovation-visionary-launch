@@ -80,6 +80,25 @@ const targetAudience = [
   }
 ];
 
+const adoptionPoints = [
+  {
+    icon: Users,
+    text: "Zapojujeme klíčové lidi od začátku — aby řešení nebylo ‚shora'."
+  },
+  {
+    icon: Lightbulb,
+    text: "Ukazujeme konkrétní přínosy pro jednotlivé role, ne jen technologii."
+  },
+  {
+    icon: BookOpen,
+    text: "Připravíme jednoduché návody a pravidla pro každodenní práci."
+  },
+  {
+    icon: UserCheck,
+    text: "Měříme, jak lidé nástroje přijímají — a reagujeme na zpětnou vazbu."
+  }
+];
+
 const faqItems = [
   {
     icon: Clock,
