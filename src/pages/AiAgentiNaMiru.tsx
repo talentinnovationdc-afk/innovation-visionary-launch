@@ -11,74 +11,32 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { 
-  UserCheck, FileText, ShoppingCart, 
   MessageSquare, TrendingUp, BarChart3,
   Search, Cog, Rocket, Target,
   Shield, Lock, ClipboardCheck, Layers,
-  ChevronDown, ChevronRight, ArrowRight,
-  Clock, HelpCircle, Settings, Database, Zap
+  ChevronDown, Clock, HelpCircle, Settings, Database,
+  AlertTriangle, RefreshCw, Users
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const targetAudience = [
-  {
-    icon: UserCheck,
-    title: "HR / ROZVOJ LIDÍ",
-    description: "Onboarding, standardy práce a interní know-how.",
-    bullets: [
-      "Automatické odpovědi z firemních podkladů",
-      "Jednotné zaškolení nových kolegů",
-      "Méně opakovaných dotazů na HR tým"
-    ],
-  },
-  {
-    icon: FileText,
-    title: "BACKOFFICE & ADMINISTRATIVA",
-    description: "E-maily, dokumenty, reporty a rutiny.",
-    bullets: [
-      "Automatické shrnutí a zápisy",
-      "Generování reportů z dat",
-      "Standardizované odpovědi a follow-upy"
-    ],
-  },
-  {
-    icon: ShoppingCart,
-    title: "OBCHOD & PODPORA",
-    description: "Kvalifikace poptávek, odpovědi a follow-up.",
-    bullets: [
-      "Třídění a kvalifikace leadů",
-      "Rychlejší odpovědi zákazníkům",
-      "Automatické připomenutí a follow-up"
-    ],
-  },
-];
-
-const deliverables = [
-  "Mapa procesu + návrh agent workflow (co dělá člověk vs. agent)",
-  "Napojení na vaše nástroje (např. M365/Google/CRM/helpdesk)",
-  "Šablony výstupů (odpovědi, reporty, zápisy, follow-up)",
-  "Měření dopadu (čas, kvalita, chybovost) + doporučení dalšího kroku",
-  "Pravidla přístupů a práce s citlivými daty"
-];
 
 const solutions = [
   {
     icon: MessageSquare,
-    title: "Podpora & interní znalosti",
-    description: "Agent odpovídá z vašich podkladů, zrychluje vyřízení dotazů a předává složité případy.",
-    result: "Rychlejší odpovědi a méně ruční práce."
-  },
-  {
-    icon: TrendingUp,
-    title: "Obchod & kvalifikace",
-    description: "Agent třídí poptávky, připraví podklady pro schůzku a hlídá follow-up.",
-    result: "Méně ztracených leadů a vyšší konverze."
+    title: "Obchod & podpora",
+    description: "Kvalifikace leadů, odpovědi zákazníkům, follow-up a schůzky.",
+    result: "Rychlejší reakce a více času na jednání."
   },
   {
     icon: BarChart3,
     title: "Reporting & data",
-    description: "Agent sbírá data z nástrojů a posílá pravidelné reporty a upozornění.",
-    result: "Rozhodování z dat bez manuálního sběru."
+    description: "Sběr dat, shrnutí, alerty a přehled pro management.",
+    result: "Rozhodování z dat bez ručního reportingu."
+  },
+  {
+    icon: RefreshCw,
+    title: "Procesní orchestrace",
+    description: "Když nastane A, provede se B/C/D napříč nástroji.",
+    result: "Méně rutiny a plynulejší procesy."
   }
 ];
 
@@ -86,30 +44,26 @@ const processSteps = [
   {
     number: "01",
     icon: Search,
-    title: "RYCHLÁ DIAGNOSTIKA",
-    description: "Vybereme 1 proces s největší návratností.",
-    duration: "15 min"
+    title: "DIAGNOSTIKA",
+    description: "Vybereme proces s nejvyšší návratností."
   },
   {
     number: "02",
     icon: Cog,
-    title: "NÁVRH ŘEŠENÍ",
-    description: "Workflow, pravidla přístupů, integrace.",
-    duration: "1–2 týdny"
+    title: "ARCHITEKTURA",
+    description: "Návrh workflow, pravidla, integrace."
   },
   {
     number: "03",
     icon: Rocket,
-    title: "PILOT & NASAZENÍ",
-    description: "Šablony výstupů + test + uvedení do provozu.",
-    duration: "2–4 týdny"
+    title: "PILOT",
+    description: "Nasazení + šablony + testování."
   },
   {
     number: "04",
     icon: Target,
-    title: "MĚŘENÍ DOPADU",
-    description: "Vyhodnocení + plán škálování.",
-    duration: "průběžně"
+    title: "NASAZENÍ & MĚŘENÍ",
+    description: "Provoz + vyhodnocení dopadu."
   }
 ];
 
@@ -133,6 +87,30 @@ const securityCards = [
     icon: Layers,
     title: "STANDARDIZACE A ŠABLONY",
     description: "Jednotný způsob práce napříč týmem."
+  }
+];
+
+const caseStudies = [
+  {
+    icon: AlertTriangle,
+    title: "PŘEDCHOZÍ AI INICIATIVA SELHALA",
+    problem: "Odpor lidí, bez vlastníka projektu, bez KPI.",
+    solution: "Restart: workshop, roadmapa, pilot s měřením, adopce.",
+    result: "Úspora času rutiny + měřitelné dopady v konkrétních rolích."
+  },
+  {
+    icon: TrendingUp,
+    title: "OBCHOD BEZ RYCHLÉ REAKCE",
+    problem: "Poptávky čekaly, CRM neaktuální, follow-up zapomenutý.",
+    solution: "Agent třídí poptávky, připraví podklady, hlídá follow-up.",
+    result: "Rychlejší reakce, konzistence, více času na jednání."
+  },
+  {
+    icon: Users,
+    title: "KAPACITA BEZ NÁBORU",
+    problem: "Klíčové role přetížené, rutina blokuje důležitou práci.",
+    solution: "AI přebírá opakované úkoly, uvolňuje kapacitu.",
+    result: "Méně rutiny, vyšší průchodnost práce."
   }
 ];
 
@@ -164,7 +142,7 @@ const faqItems = [
   {
     icon: Database,
     question: "Kolik to stojí?",
-    answer: "Po diagnostice doporučíme rozsah; typicky začínáme pilotem na 1 procesu.",
+    answer: "Začínáme diagnostikou a doporučíme rozsah pilotu. Cena závisí na složitosti procesu a integracích.",
     highlight: "Cena dle rozsahu"
   }
 ];
@@ -174,7 +152,7 @@ const AiAgentiNaMiru = () => {
     <>
       <SEO 
         title="AI agenti na míru | Automatizace procesů pro firmy | Talent Innovation"
-        description="AI agenti na míru pro HR, backoffice a obchod. Napojení na vaše nástroje, měření dopadu a bezpečné nasazení. Pilot do 14 dnů."
+        description="AI agenti na míru pro obchod, reporting a orchestraci. Napojení na vaše nástroje, měření dopadu a bezpečné nasazení. Pilot do 14 dnů."
         path="/ai-agenti-na-miru"
       />
       
@@ -198,19 +176,19 @@ const AiAgentiNaMiru = () => {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Navrhneme, nasadíme a změříme dopad. <span className="text-foreground font-medium">Bezpečně, s napojením na vaše nástroje.</span>
+                  Navrhneme, nasadíme a změříme dopad. <span className="text-foreground font-medium">Bezpečně a s napojením na vaše nástroje.</span>
                 </p>
                 
                 {/* Trust Chips */}
                 <div className="flex flex-wrap justify-center gap-3 mb-10">
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
+                    Integrace
+                  </span>
+                  <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
                     Měření dopadu
                   </span>
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
                     Bezpečné přístupy
-                  </span>
-                  <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                    Integrace do nástrojů
                   </span>
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
                     Pilot do 14 dnů
@@ -227,13 +205,13 @@ const AiAgentiNaMiru = () => {
                       Domluvit rychlou diagnostiku (15 min)
                     </Button>
                   </Link>
-                  <a href="#deliverables">
+                  <a href="#solutions">
                     <Button 
                       variant="outline"
                       size="lg"
                       className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
                     >
-                      Chci nejdřív vidět, co dostanu
+                      Zobrazit use-cases
                     </Button>
                   </a>
                 </div>
@@ -246,83 +224,8 @@ const AiAgentiNaMiru = () => {
           {/* Logo Trust Strip */}
           <LogoRibbon />
 
-          {/* Pro koho Section */}
-          <section className="py-20 bg-card/20 relative">
-            <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                PRO KOHO JE TO IDEÁLNÍ
-              </h2>
-              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                AI agenti pro role, kde se opakuje rutina a kde záleží na rychlosti.
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {targetAudience.map((audience) => {
-                  const Icon = audience.icon;
-                  
-                  return (
-                    <div
-                      key={audience.title}
-                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]"
-                    >
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      
-                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-2">
-                        {audience.title}
-                      </h3>
-                      
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                        {audience.description}
-                      </p>
-                      
-                      <ul className="space-y-2">
-                        {audience.bullets.map((bullet, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <span className="text-primary mt-0.5">•</span>
-                            {bullet}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-          </section>
-
-          {/* Deliverables Section */}
-          <section id="deliverables" className="py-20 relative">
-            <div className="container mx-auto px-4">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                CO PŘESNĚ DOSTANETE
-              </h2>
-              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Konkrétní výstupy, které můžete poslat vedení.
-              </p>
-              
-              <div className="max-w-3xl mx-auto">
-                <div className="glass-card p-8 rounded-2xl border border-primary/30">
-                  <ul className="space-y-4">
-                    {deliverables.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-4">
-                        <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Zap className="w-3.5 h-3.5 text-primary" />
-                        </div>
-                        <span className="text-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Solutions Section */}
-          <section className="py-20 bg-card/20 relative">
+          {/* Solutions Section - 3 Cards */}
+          <section id="solutions" className="py-20 bg-card/20 relative">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
@@ -335,21 +238,14 @@ const AiAgentiNaMiru = () => {
               <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {solutions.map((solution, idx) => {
                   const Icon = solution.icon;
-                  const isMiddle = idx === 1;
                   
                   return (
                     <div
                       key={solution.title}
-                      className={`group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 ${
-                        isMiddle 
-                          ? "border-accent/40 hover:border-accent/60 hover:shadow-[0_0_40px_rgba(189,0,255,0.2)]"
-                          : "border-primary/20 hover:border-primary/40 hover:shadow-[0_0_40px_rgba(102,252,241,0.2)]"
-                      }`}
+                      className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_40px_rgba(102,252,241,0.2)]"
                     >
-                      <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${
-                        isMiddle ? "bg-accent/10 text-accent" : "bg-primary/10 text-primary"
-                      }`}>
-                        <Icon className="w-7 h-7" />
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                        <Icon className="w-7 h-7 text-primary" />
                       </div>
                       
                       <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-3">
@@ -360,9 +256,9 @@ const AiAgentiNaMiru = () => {
                         {solution.description}
                       </p>
                       
-                      <div className={`pt-4 border-t ${isMiddle ? "border-accent/20" : "border-primary/20"}`}>
+                      <div className="pt-4 border-t border-primary/20">
                         <p className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider mb-1">Výsledek:</p>
-                        <p className={`text-sm font-medium ${isMiddle ? "text-accent" : "text-primary"}`}>
+                        <p className="text-sm font-medium text-primary">
                           {solution.result}
                         </p>
                       </div>
@@ -371,10 +267,10 @@ const AiAgentiNaMiru = () => {
                 })}
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           </section>
 
-          {/* Process Steps */}
+          {/* Process Steps - Horizontal */}
           <section className="py-20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
@@ -387,44 +283,29 @@ const AiAgentiNaMiru = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-4 gap-6 relative">
                   {/* Connection line */}
-                  <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50" />
+                  <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/50 via-primary/30 to-primary/50" />
                   
                   {processSteps.map((step, index) => {
                     const Icon = step.icon;
-                    const isPurple = index >= 2;
                     
                     return (
                       <div key={step.number} className="text-center relative">
-                        <div className={`w-24 h-24 mx-auto rounded-2xl bg-card/80 border flex items-center justify-center mb-4 relative z-10 ${
-                          isPurple 
-                            ? "border-accent/30 shadow-[0_0_20px_rgba(189,0,255,0.15)]"
-                            : "border-primary/30 shadow-[0_0_20px_rgba(102,252,241,0.15)]"
-                        }`}>
-                          <Icon className={`w-10 h-10 ${isPurple ? "text-accent" : "text-primary"}`} />
+                        <div className="w-24 h-24 mx-auto rounded-2xl bg-card/80 border border-primary/30 flex items-center justify-center mb-4 relative z-10 shadow-[0_0_20px_rgba(102,252,241,0.15)]">
+                          <Icon className="w-10 h-10 text-primary" />
                         </div>
-                        <div className={`text-xs font-bold mb-2 ${isPurple ? "text-accent/60" : "text-primary/60"}`}>
+                        <div className="text-xs font-bold mb-2 text-primary/60">
                           KROK {step.number}
                         </div>
                         <h3 className="text-xs font-semibold tracking-[0.12em] text-foreground uppercase mb-2">
                           {step.title}
                         </h3>
-                        <p className="text-xs text-muted-foreground mb-2">
+                        <p className="text-xs text-muted-foreground">
                           {step.description}
                         </p>
-                        <div className={`inline-flex items-center gap-1 px-3 py-1 rounded-full ${
-                          isPurple ? "bg-accent/10 border-accent/20" : "bg-primary/10 border-primary/20"
-                        } border`}>
-                          <Clock className={`w-3 h-3 ${isPurple ? "text-accent" : "text-primary"}`} />
-                          <span className={`text-[10px] ${isPurple ? "text-accent" : "text-primary"}`}>{step.duration}</span>
-                        </div>
                       </div>
                     );
                   })}
                 </div>
-                
-                <p className="text-center text-sm text-muted-foreground mt-12 max-w-xl mx-auto">
-                  Začínáme jedním procesem, aby bylo riziko minimální a dopad měřitelný.
-                </p>
               </div>
             </div>
           </section>
@@ -443,21 +324,14 @@ const AiAgentiNaMiru = () => {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
                 {securityCards.map((card, idx) => {
                   const Icon = card.icon;
-                  const isEven = idx % 2 === 0;
                   
                   return (
                     <div
                       key={card.title}
-                      className={`group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border rounded-xl p-5 transition-all duration-500 hover:-translate-y-2 text-center ${
-                        isEven
-                          ? "border-primary/20 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]"
-                          : "border-accent/20 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)]"
-                      }`}
+                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-5 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)] text-center"
                     >
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 mx-auto ${
-                        isEven ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"
-                      }`}>
-                        <Icon className="w-5 h-5" />
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 mx-auto">
+                        <Icon className="w-5 h-5 text-primary" />
                       </div>
                       
                       <h3 className="text-xs font-semibold tracking-[0.12em] text-foreground mb-2">
@@ -475,10 +349,82 @@ const AiAgentiNaMiru = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           </section>
 
+          {/* Case Studies Section */}
+          <section className="py-20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                PŘÍKLADY Z PRAXE
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Anonymizované případové studie z reálných projektů.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+                {caseStudies.map((study, idx) => {
+                  const Icon = study.icon;
+                  
+                  return (
+                    <div
+                      key={study.title}
+                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      
+                      <h3 className="text-xs font-semibold tracking-[0.15em] text-foreground mb-4">
+                        {study.title}
+                      </h3>
+                      
+                      <div className="space-y-3 text-sm">
+                        <div>
+                          <p className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider mb-1">Problém:</p>
+                          <p className="text-muted-foreground">{study.problem}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider mb-1">Řešení:</p>
+                          <p className="text-muted-foreground">{study.solution}</p>
+                        </div>
+                        <div className="pt-3 border-t border-primary/20">
+                          <p className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider mb-1">Výsledek:</p>
+                          <p className="text-primary font-medium">{study.result}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              
+              {/* Why anonymized */}
+              <div className="max-w-2xl mx-auto">
+                <div className="glass-card p-6 rounded-xl border border-primary/20">
+                  <h4 className="text-xs font-semibold tracking-[0.15em] text-foreground mb-3 uppercase text-center">
+                    Proč anonymizované?
+                  </h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-0.5">•</span>
+                      Ochrana klientů a jejich know-how
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-0.5">•</span>
+                      Práce s interními procesy a citlivými daty
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-0.5">•</span>
+                      Cílem je přenositelnost zkušenosti, ne marketing
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* FAQ Section */}
-          <section className="py-24 relative overflow-hidden">
+          <section className="py-24 bg-card/20 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[100px]" />
-            <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[120px]" />
+            <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[120px]" />
             
             <div className="container mx-auto px-4 relative z-10">
               <div className="text-center mb-16">
@@ -496,7 +442,6 @@ const AiAgentiNaMiru = () => {
               <div className="max-w-3xl mx-auto">
                 <Accordion type="single" collapsible className="space-y-3">
                   {faqItems.map((item, index) => {
-                    const isEven = index % 2 === 0;
                     const Icon = item.icon;
                     
                     return (
@@ -548,8 +493,7 @@ const AiAgentiNaMiru = () => {
           </section>
 
           {/* Final CTA */}
-          <section className="py-20 bg-card/20 relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          <section className="py-20 relative">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
