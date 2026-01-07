@@ -45,26 +45,36 @@ const Index = () => {
                 </p>
                 
                 {/* Two CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                  <Link to="/profirmy">
-                    <Button 
-                      size="lg" 
-                      className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
-                    >
-                      <Building className="w-5 h-5 mr-2" />
-                      Rychlá diagnostika pro firmy
-                    </Button>
-                  </Link>
-                  <Link to="/online">
-                    <Button 
-                      variant="outline"
-                      size="lg" 
-                      className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
-                    >
-                      <BadgeCheck className="w-5 h-5 mr-2" />
-                      Získat AI certifikaci a odznak
-                    </Button>
-                  </Link>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+                  <div className="flex flex-col items-center">
+                    <Link to="/checkout">
+                      <Button 
+                        size="lg" 
+                        className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
+                      >
+                        <Building className="w-5 h-5 mr-2" />
+                        Domluvit diagnostiku (15 min)
+                      </Button>
+                    </Link>
+                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
+                      Bez závazků. Doporučíme další krok a odhadneme přínos.
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <Link to="/online">
+                      <Button 
+                        variant="outline"
+                        size="lg" 
+                        className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
+                      >
+                        <BadgeCheck className="w-5 h-5 mr-2" />
+                        Vybrat akademii (certifikace)
+                      </Button>
+                    </Link>
+                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
+                      Pro jednotlivce i týmy. Studujte vlastním tempem.
+                    </p>
+                  </div>
                 </div>
 
                 {/* Trust Metrics */}
@@ -123,20 +133,20 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Mapa úspor (14 dní)</h3>
-                    <p className="text-sm text-primary font-medium mb-3">Najdeme zlaté žíly a místa, kde AI vydělá nejrychleji</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">KROK 01 – Mapa úspor (14 dní)</h3>
+                    <p className="text-sm text-primary font-medium mb-2">Najdeme ‚zlaté žíly' a místa, kde AI vydělá nejrychleji.</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Mapování procesů, analýza rolí, identifikace quick-wins.
+                      Výstup: seznam quick wins + odhad ROI.
                     </p>
                     <div className="px-3 py-2 bg-primary/10 border border-primary/20 rounded-lg mb-4">
                       <p className="text-xs font-medium text-primary">
                         <Check className="w-3 h-3 inline mr-1" />
-                        Mapa příležitostí + ROI odhad
+                        Quick wins + ROI odhad
                       </p>
                     </div>
                     <Link to="/checkout" className="mt-auto">
                       <Button className="w-full shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
-                        Začít mapou úspor
+                        Chci mapu úspor
                       </Button>
                     </Link>
                   </div>
@@ -154,20 +164,20 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Target className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">ROI plán & prioritizace</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-3">Co dělat první, kolik to přinese a jak to řídit</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">KROK 02 – ROI plán & prioritizace</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">Co dělat první, kolik to přinese a jak to řídit.</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Prioritizace use-casů, roadmapa, business case.
+                      Výstup: prioritizovaný plán + KPI.
                     </p>
                     <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
                       <p className="text-xs font-medium text-foreground">
                         <Check className="w-3 h-3 inline mr-1" />
-                        Prioritizovaný plán + KPI
+                        Prioritní plán + KPI
                       </p>
                     </div>
                     <Link to="/ai-quickscan" className="mt-auto">
                       <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
-                        Chci prioritizaci
+                        Chci ROI plán
                       </Button>
                     </Link>
                   </div>
@@ -185,20 +195,20 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Rocket className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Nasazení digitálního kolegy</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-3">AI agent nebo automatizace přímo do provozu</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">KROK 03 – Nasazení digitálního kolegy</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">Agent nebo automatizace pro jeden konkrétní proces — do provozu.</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Vývoj a nasazení AI agentů nebo automatizace na míru.
+                      Pilotujeme rychle, bezpečně a s měřením dopadu.
                     </p>
                     <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
                       <p className="text-xs font-medium text-foreground">
                         <Check className="w-3 h-3 inline mr-1" />
-                        Funkční řešení + měřitelný dopad
+                        Do provozu + měření
                       </p>
                     </div>
                     <Link to="/ai-agenti-na-miru" className="mt-auto">
                       <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
-                        Chci pilot
+                        Spustit pilot
                       </Button>
                     </Link>
                   </div>
@@ -216,15 +226,15 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Scale className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Škálování na firmu</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-3">Standardy, bezpečnost, adopce a rozvoj</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">KROK 04 – Škálování na firmu</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">Standardy, bezpečnost, adopce a dlouhodobý rozvoj.</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Governance, bezpečnost, adopce zaměstnanci, dlouhodobé škálování.
+                      Aby se řešení skutečně ujalo u lidí.
                     </p>
                     <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
                       <p className="text-xs font-medium text-foreground">
                         <Check className="w-3 h-3 inline mr-1" />
-                        Stabilní AI řešení přijaté lidmi
+                        Governance + adopce
                       </p>
                     </div>
                     <Link to="/profirmy" className="mt-auto">
@@ -289,7 +299,7 @@ const Index = () => {
                     </ul>
                     
                     <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-200">
-                      Chci rychlou diagnostiku <ArrowRight className="w-5 h-5" />
+                      Domluvit diagnostiku <ArrowRight className="w-5 h-5" />
                     </div>
                   </Link>
                 </motion.div>
@@ -332,7 +342,7 @@ const Index = () => {
                     </ul>
                     
                     <div className="flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all duration-200">
-                      Zobrazit online akademie <ArrowRight className="w-5 h-5" />
+                      Vybrat akademii <ArrowRight className="w-5 h-5" />
                     </div>
                   </Link>
                 </motion.div>
@@ -347,10 +357,10 @@ const Index = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
                   <div className="flex-1 text-center md:text-left">
                     <h3 className="text-lg md:text-xl font-semibold tracking-wider text-foreground uppercase mb-2">
-                      Chcete hotové řešení? Postavíme AI agenta na míru.
+                      Chcete hotový výsledek? Nasadíme digitálního kolegu.
                     </h3>
                     <p className="text-muted-foreground text-sm mb-4">
-                      Napojíme na vaše nástroje, nastavíme pravidla a změříme dopad.
+                      Nejdřív vybereme proces. Pak teprve stavíme.
                     </p>
                     <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                       <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Obchod & podpora</span>
@@ -358,17 +368,20 @@ const Index = () => {
                       <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Orchestrace</span>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-3 items-center">
                     <Link to="/checkout">
                       <Button className="w-full px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
-                        Domluvit diagnostiku (15 min)
+                        Domluvit konzultaci (15 min)
                       </Button>
                     </Link>
                     <Link to="/ai-agenti-na-miru">
                       <Button variant="outline" className="w-full px-6 py-3 border-primary/50 text-primary hover:bg-primary/10">
-                        Zjistit víc
+                        Ukázat příklady
                       </Button>
                     </Link>
+                    <p className="text-xs text-muted-foreground/70 mt-1 text-center max-w-[280px]">
+                      Data zůstávají vaše. Bezpečnost řešíme od prvního dne.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -421,10 +434,10 @@ const Index = () => {
                   Vyberte si další krok:
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                  <Link to="/profirmy">
+                  <Link to="/checkout">
                     <Button size="lg" className="px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
                       <Building className="w-5 h-5 mr-2" />
-                      Rychlá diagnostika pro firmy
+                      Domluvit diagnostiku (15 min)
                     </Button>
                   </Link>
                   <Link to="/online">
@@ -434,7 +447,7 @@ const Index = () => {
                       className="px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
                     >
                       <BadgeCheck className="w-5 h-5 mr-2" />
-                      Vybrat online akademii
+                      Vybrat akademii (certifikace)
                     </Button>
                   </Link>
                 </div>
