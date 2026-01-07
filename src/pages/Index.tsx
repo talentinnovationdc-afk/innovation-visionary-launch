@@ -6,7 +6,8 @@ import { LogoRibbon } from "@/components/LogoRibbon";
 import { MethodologySection } from "@/components/MethodologySection";
 import { 
   Building, GraduationCap, Users, Star, ThumbsUp, Check, 
-  ArrowRight, Shield, TrendingUp, Award, Clock, BadgeCheck
+  ArrowRight, Shield, TrendingUp, Award, Clock, BadgeCheck,
+  Sparkles, Target, Rocket, Scale, MapPin
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -90,6 +91,152 @@ const Index = () => {
 
           {/* Logo Ribbon - Trust Bar */}
           <LogoRibbon />
+
+          {/* Vyberte si, kde začít - B2B Journey Steps */}
+          <section className="py-20 relative">
+            <div className="container px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  Vyberte si, kde začít
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Každá firma je jinde. Začněte tam, kde to dává smysl — a posunujte se dál vlastním tempem.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                {/* Step 1 - Highlighted */}
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="relative"
+                >
+                  <div className="absolute -top-3 left-4 z-10">
+                    <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full shadow-[0_0_15px_rgba(102,252,241,0.5)]">
+                      DOPORUČUJEME
+                    </span>
+                  </div>
+                  <div className="glass-card p-6 rounded-2xl border-2 border-primary/60 h-full flex flex-col shadow-[0_0_30px_rgba(102,252,241,0.15)] hover:shadow-[0_0_40px_rgba(102,252,241,0.25)] transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-xs font-bold tracking-[0.15em] text-primary">KROK 01</span>
+                    </div>
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Mapa úspor (14 dní)</h3>
+                    <p className="text-sm text-primary font-medium mb-3">Najdeme zlaté žíly a místa, kde AI vydělá nejrychleji</p>
+                    <p className="text-xs text-muted-foreground mb-4 flex-grow">
+                      Mapování procesů, analýza rolí, identifikace quick-wins.
+                    </p>
+                    <div className="px-3 py-2 bg-primary/10 border border-primary/20 rounded-lg mb-4">
+                      <p className="text-xs font-medium text-primary">
+                        <Check className="w-3 h-3 inline mr-1" />
+                        Mapa příležitostí + ROI odhad
+                      </p>
+                    </div>
+                    <Link to="/checkout" className="mt-auto">
+                      <Button className="w-full shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
+                        Začít mapou úspor
+                      </Button>
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {/* Step 2 */}
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div className="glass-card p-6 rounded-2xl border border-border/40 h-full flex flex-col hover:border-primary/40 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">KROK 02</span>
+                    </div>
+                    <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
+                      <Target className="w-6 h-6 text-foreground" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">ROI plán & prioritizace</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-3">Co dělat první, kolik to přinese a jak to řídit</p>
+                    <p className="text-xs text-muted-foreground mb-4 flex-grow">
+                      Prioritizace use-casů, roadmapa, business case.
+                    </p>
+                    <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
+                      <p className="text-xs font-medium text-foreground">
+                        <Check className="w-3 h-3 inline mr-1" />
+                        Prioritizovaný plán + KPI
+                      </p>
+                    </div>
+                    <Link to="/ai-quickscan" className="mt-auto">
+                      <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
+                        Chci prioritizaci
+                      </Button>
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {/* Step 3 */}
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div className="glass-card p-6 rounded-2xl border border-border/40 h-full flex flex-col hover:border-primary/40 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">KROK 03</span>
+                    </div>
+                    <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
+                      <Rocket className="w-6 h-6 text-foreground" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Nasazení digitálního kolegy</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-3">AI agent nebo automatizace přímo do provozu</p>
+                    <p className="text-xs text-muted-foreground mb-4 flex-grow">
+                      Vývoj a nasazení AI agentů nebo automatizace na míru.
+                    </p>
+                    <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
+                      <p className="text-xs font-medium text-foreground">
+                        <Check className="w-3 h-3 inline mr-1" />
+                        Funkční řešení + měřitelný dopad
+                      </p>
+                    </div>
+                    <Link to="/ai-agenti-na-miru" className="mt-auto">
+                      <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
+                        Chci pilot
+                      </Button>
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {/* Step 4 */}
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div className="glass-card p-6 rounded-2xl border border-border/40 h-full flex flex-col hover:border-primary/40 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">KROK 04</span>
+                    </div>
+                    <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
+                      <Scale className="w-6 h-6 text-foreground" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Škálování na firmu</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-3">Standardy, bezpečnost, adopce a rozvoj</p>
+                    <p className="text-xs text-muted-foreground mb-4 flex-grow">
+                      Governance, bezpečnost, adopce zaměstnanci, dlouhodobé škálování.
+                    </p>
+                    <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
+                      <p className="text-xs font-medium text-foreground">
+                        <Check className="w-3 h-3 inline mr-1" />
+                        Stabilní AI řešení přijaté lidmi
+                      </p>
+                    </div>
+                    <Link to="/profirmy" className="mt-auto">
+                      <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
+                        Chci škálovat
+                      </Button>
+                    </Link>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
 
           {/* Choose Your Path - Two Big Cards */}
           <section className="py-20 relative">
