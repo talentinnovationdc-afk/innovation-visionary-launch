@@ -911,7 +911,7 @@ const AkademieProTymy = () => {
                         </AccordionTrigger>
                         
                         <AccordionContent>
-                          <div className="px-6 pb-5 bg-gradient-to-b from-primary/5 to-transparent">
+                          <div className="px-6 pt-2 pb-5 bg-gradient-to-b from-primary/5 to-transparent">
                             <div className="ml-[3.75rem] pl-4 border-l-2 border-primary/30">
                               <p className="text-[hsl(210,5%,88%)] leading-[1.8] text-[15px] mb-2">
                                 {item.answer}
