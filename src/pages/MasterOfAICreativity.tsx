@@ -19,8 +19,12 @@ const includedAcademies = [
   {
     icon: MessageSquare,
     title: "ChatGPT Akademie",
-    description: "Práce s GPT od základů po pokročilé workflow.",
-    outputs: ["Šablony promptů", "Automatizace dokumentů", "E-mailové workflow"],
+    description: "Rychlejší psaní a rozhodování díky ověřeným šablonám.",
+    outputs: [
+      "Rychlejší výstupy díky šablonám promptů",
+      "Konzistentní e-maily a dokumenty napříč rolí",
+      "Základní workflow pro každodenní agendu"
+    ],
     duration: "12×2h",
     link: "/online/chatgptakademie",
     buyLink: "https://t-i.cz/online/chatgptakademie",
@@ -29,8 +33,12 @@ const includedAcademies = [
   {
     icon: Wand2,
     title: "Copilot Akademie",
-    description: "Produktivita a automatizace v Microsoft 365.",
-    outputs: ["Word & Excel šablony", "Outlook automatizace", "PowerPoint asistent"],
+    description: "Méně rutiny v M365 — opakovatelné šablony a automatizace.",
+    outputs: [
+      "Produktivita v M365 bez chaosu",
+      "Opakovatelné šablony a automatizace pro tým",
+      "Přehledné výstupy pro reporting a práci s daty"
+    ],
     duration: "12×2h",
     link: "/online/copilotakademie",
     buyLink: "https://t-i.cz/online/copilotakademie",
@@ -39,8 +47,12 @@ const includedAcademies = [
   {
     icon: Bot,
     title: "Agenti & Automatizace",
-    description: "Pokročilé agentické workflow a orchestrace.",
-    outputs: ["Custom AI agenti", "Workflow automatizace", "Integrace nástrojů"],
+    description: "Pokročilé workflow a agentní scénáře pro reálné procesy.",
+    outputs: [
+      "Pokročilé workflow a agentní scénáře",
+      "Integrace nástrojů a orchestrace kroků",
+      "Bezpečné nasazení a standardy pro tým"
+    ],
     duration: "16×2h",
     link: "/online/agentiautomatizace",
     buyLink: "https://t-i.cz/online/agentiautomatizace",
@@ -49,9 +61,9 @@ const includedAcademies = [
 ];
 
 const badgeSteps = [
-  { step: "1", title: "Dokončíte 3 akademie", description: "Projdete všechny moduly a cvičení" },
-  { step: "2", title: "Splníte praktické úkoly", description: "Aplikujete znalosti v praxi" },
-  { step: "3", title: "Získáte hlavní certifikát a odznak", description: "Automaticky po dokončení" }
+  { step: "1", title: "Dokončíte 3 akademie", description: "Moduly + krátká cvičení" },
+  { step: "2", title: "Splníte praktické úkoly", description: "Aplikace na reálných scénářích" },
+  { step: "3", title: "Získáte hlavní certifikát a odznak", description: "Ověřitelný důkaz kompetence" }
 ];
 
 const programRoadmap = [
@@ -59,29 +71,34 @@ const programRoadmap = [
     academy: "ChatGPT Akademie",
     icon: MessageSquare,
     order: 1,
-    outputs: ["Prompting základy → pokročilé", "Dokumentové workflow", "Analýzy a reporting"]
+    outputs: ["Prompting základy → pokročilé", "Dokumentové workflow", "Analýzy a reporting"],
+    result: "Zvládnete standard výstupů a šablon pro každodenní práci."
   },
   {
     academy: "Copilot Akademie",
     icon: Wand2,
     order: 2,
-    outputs: ["M365 integrace", "Automatizace v Office", "Týmová produktivita"]
+    outputs: ["M365 integrace", "Automatizace v Office", "Týmová produktivita"],
+    result: "Zrychlíte práci v M365 a snížíte rutinu."
   },
   {
     academy: "Agenti & Automatizace",
     icon: Bot,
     order: 3,
-    outputs: ["Agentické architektury", "No-code automatizace", "Enterprise nasazení"]
+    outputs: ["Agentické architektury", "No-code automatizace", "Enterprise nasazení"],
+    result: "Postavíte pokročilé workflow a automatizace napříč nástroji."
   }
 ];
 
 const faqItems = [
-  { q: "Jak dlouho trvá dokončení programu?", a: "Tempo si určujete sami. Většina absolventů dokončí program za 4-8 týdnů při studiu 2-3 hodiny týdně." },
+  { q: "Jak dlouho trvá dokončení programu?", a: "Tempo si určujete sami. Typicky 4–8 týdnů při 2–3 hodinách týdně." },
   { q: "Musím akademie absolvovat v pořadí?", a: "Doporučujeme začít ChatGPT Akademií, ale pořadí si můžete přizpůsobit." },
   { q: "Co když už jednu akademii mám?", a: "Kontaktujte nás pro upgrade na kompletní program se slevou." },
   { q: "Jak funguje hlavní odznak?", a: "Po dokončení všech 3 akademií získáte hlavní certifikát a LinkedIn odznak Master of AI Creativity." },
   { q: "Můžu program koupit pro tým?", a: "Ano. Pro firmy nabízíme hromadné licence s onboardingem a reportingem." },
-  { q: "Jaký je rozdíl oproti jednotlivým akademiím?", a: "Program = všechny 3 akademie + hlavní certifikát + hlavní LinkedIn odznak. Jednotlivé akademie mají vlastní certifikáty." }
+  { q: "Jaký je rozdíl oproti jednotlivým akademiím?", a: "Program = všechny 3 akademie + hlavní certifikát + hlavní LinkedIn odznak." },
+  { q: "Je program vhodný i pro začátečníky?", a: "Ano. Postupujete od základů k pokročilému — tempo i pořadí si volíte sami." },
+  { q: "Kolik času týdně potřebuji?", a: "Typicky 2–3 hodiny týdně. Můžete i intenzivněji, přístup je dlouhodobý." }
 ];
 
 const MasterOfAICreativity = () => {
@@ -118,7 +135,7 @@ const MasterOfAICreativity = () => {
                 </h1>
                 
                 <p className="text-xl text-muted-foreground mb-2">
-                  Kompletní program (3 akademie): ChatGPT + Copilot + Agenti & Automatizace
+                  Kompletní program (3 akademie): ChatGPT + Copilot + Agenti & Automatizace — praktické výstupy, které použijete hned.
                 </p>
                 
                 {/* Proof Chips */}
@@ -135,11 +152,17 @@ const MasterOfAICreativity = () => {
                 </div>
                 
                 {/* Price */}
-                <div className="mb-8">
+                <div className="mb-4">
+                  <span className="text-lg text-muted-foreground line-through mr-2">13 910 Kč</span>
                   <span className="text-4xl font-bold text-accent">9 970 Kč</span>
                   <span className="text-[11px] text-muted-foreground/70 ml-2">vč. DPH</span>
-                  <span className="text-muted-foreground ml-2">(ušetříte 3 940 Kč)</span>
                 </div>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Ušetříte 3 940 Kč oproti nákupu 3 akademií zvlášť
+                </p>
+                <p className="text-xs text-primary mb-8">
+                  Okamžitý přístup • studium vlastním tempem • ověřitelný LinkedIn odznak
+                </p>
                 
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -159,10 +182,13 @@ const MasterOfAICreativity = () => {
                       size="lg" 
                       className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10"
                     >
-                      Co obsahuje program
+                      Ukázat sylabus
                     </Button>
                   </a>
                 </div>
+                <p className="text-xs text-muted-foreground mt-4">
+                  Bez registrace navíc. Přístup aktivní hned po nákupu.
+                </p>
               </div>
               
               {/* Right - Credential Proof */}
@@ -218,11 +244,11 @@ const MasterOfAICreativity = () => {
             <div className="text-center mb-16">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
-                  Co program obsahuje
+                  Co přesně získáte
                 </span>
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                3 akademie v jednom komplexním programu
+                3 akademie v jednom programu + hlavní certifikát a ověřitelný LinkedIn odznak.
               </p>
             </div>
             
@@ -275,7 +301,7 @@ const MasterOfAICreativity = () => {
                     <Button 
                       className={`w-full ${isAccent ? 'bg-accent hover:bg-accent/90 shadow-[0_0_15px_rgba(189,0,255,0.3)]' : 'shadow-[0_0_15px_rgba(102,252,241,0.3)]'} font-semibold tracking-wider`}
                     >
-                      Zobrazit obsah akademie <ArrowRight className="w-4 h-4 ml-2" />
+                      Ukázat sylabus <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
                 );
@@ -285,7 +311,8 @@ const MasterOfAICreativity = () => {
             {/* Program Benefits Strip */}
             <div className="mt-12 max-w-4xl mx-auto">
               <div className="glass-card p-6 rounded-2xl border border-accent/30">
-                <p className="text-center text-sm text-muted-foreground mb-4">Co získáte v kompletním programu</p>
+                <p className="text-center text-sm text-muted-foreground mb-2">Co získáte v kompletním programu</p>
+                <p className="text-center text-xs text-primary mb-4">Výstupy jsou praktické: šablony, prompty, workflow a checklisty — vše připravené k použití.</p>
                 <div className="flex flex-wrap justify-center gap-6 md:gap-10">
                   <div className="flex items-center gap-2">
                     <Award className="w-5 h-5 text-accent" />
@@ -316,7 +343,7 @@ const MasterOfAICreativity = () => {
                 data-event="b2c_program_buy_section"
               >
                 <Button size="lg" className="px-10 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(189,0,255,0.4)] hover:shadow-[0_0_30px_rgba(189,0,255,0.6)] bg-accent hover:bg-accent/90">
-                  Koupit kompletní program za 9 970 Kč
+                  Koupit program (9 970 Kč)
                 </Button>
               </a>
             </div>
@@ -350,6 +377,9 @@ const MasterOfAICreativity = () => {
                   </div>
                 ))}
               </div>
+              <p className="text-center text-xs text-muted-foreground mt-8">
+                Odznak i certifikát jsou určené jako důkaz pro HR, klienty a váš profil.
+              </p>
             </div>
           </div>
         </section>
@@ -388,13 +418,14 @@ const MasterOfAICreativity = () => {
                           <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-2">
                             {item.academy}
                           </h3>
-                          <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-2 mb-2">
                             {item.outputs.map((output, idx) => (
                               <span key={idx} className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
                                 {output}
                               </span>
                             ))}
                           </div>
+                          <p className="text-sm text-muted-foreground">{item.result}</p>
                         </div>
                       </div>
                     </div>
@@ -434,16 +465,16 @@ const MasterOfAICreativity = () => {
                 
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-xl font-semibold tracking-wider text-foreground uppercase mb-2">
-                    Pro týmy
+                    Kupujete pro tým?
                   </h3>
                   <p className="text-muted-foreground">
-                    Hromadné licence kompletního programu pro firmy s onboardingem a reportingem.
+                    Hromadné licence pro firmy: onboarding, reporting pro HR a jednotný standard práce.
                   </p>
                 </div>
                 
                 <Link to="/akademie-pro-tymy" data-event="b2c_to_b2b_click">
                   <Button className="px-6 py-3 shadow-[0_0_15px_rgba(189,0,255,0.3)] hover:shadow-[0_0_25px_rgba(189,0,255,0.5)]">
-                    Akademie pro týmy
+                    Zobrazit Akademie pro týmy
                   </Button>
                 </Link>
               </div>
