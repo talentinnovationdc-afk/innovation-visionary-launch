@@ -169,12 +169,12 @@ const AiQuickScan = () => {
                     Bezpečný start AI transformace
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
+                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-12">
                   Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, kolik to přinese a jak bezpečně začít pilotem.
                 </p>
                 
                 {/* Trust Chips */}
-                <div className="flex flex-wrap justify-center gap-3 mb-10">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
                     Fixní výstupy
                   </span>
