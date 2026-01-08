@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -12,10 +13,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowRight, MapPin, Zap, ListChecks, ShieldCheck } from "lucide-react";
+import { ArrowRight, MapPin, Zap, ListChecks, ShieldCheck, Loader2 } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { LogoRibbon } from "@/components/LogoRibbon";
+
+const WEBHOOK_URL = "https://hook.eu1.make.com/kfd2mio7cxmu78yk58eqlqs4hogx8qru";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -28,10 +31,65 @@ const Checkout = () => {
     improvement: "",
     painPoint: "",
   });
+  const [gdprConsent, setGdprConsent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    navigate("/dekujeme");
+    
+    if (!gdprConsent) {
+      setSubmitError("Pro odeslání je nutný souhlas se zpracováním osobních údajů.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const payload = {
+      form_type: "rychla_diagnostika",
+      jmeno: formData.name.trim(),
+      email: formData.email.trim(),
+      firma: formData.company.trim(),
+      telefon: formData.phone.trim(),
+      velikost_tymu: formData.teamSize,
+      oblast_zlepseni: formData.improvement,
+      bolest: formData.painPoint.trim(),
+      gdpr_consent: true,
+      url: window.location.href,
+      timestamp: new Date().toISOString(),
+      source: "t-i.cz"
+    };
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        throw new Error("Webhook request failed");
+      }
+
+      navigate("/dekujeme?form=rychla_diagnostika");
+    } catch (error) {
+      if (error instanceof Error && error.name === "AbortError") {
+        setSubmitError("Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.");
+      } else {
+        setSubmitError("Odeslání se nepovedlo. Zkuste to prosím znovu.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -233,24 +291,60 @@ const Checkout = () => {
                 />
               </div>
 
+              {/* GDPR Checkbox */}
+              <div className="flex items-start space-x-3 pt-2">
+                <Checkbox
+                  id="gdpr"
+                  checked={gdprConsent}
+                  onCheckedChange={(checked) => setGdprConsent(checked === true)}
+                  className="mt-0.5"
+                />
+                <Label htmlFor="gdpr" className="text-sm text-muted-foreground font-normal cursor-pointer leading-relaxed">
+                  Souhlasím se zpracováním osobních údajů za účelem domluvy / zpracování poptávky.{" "}
+                  <Link to="/gdpr-cookies" className="text-primary hover:underline">
+                    (více)
+                  </Link>
+                </Label>
+              </div>
+
+              {/* Error Banner */}
+              {submitError && (
+                <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/30 text-destructive text-sm">
+                  <p className="mb-2">{submitError}</p>
+                  <Button 
+                    type="button" 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => setSubmitError(null)}
+                    className="border-destructive/50 text-destructive hover:bg-destructive/10"
+                  >
+                    Zkusit znovu
+                  </Button>
+                </div>
+              )}
+
               {/* CTA Button */}
               <div className="pt-2">
-                <Button type="submit" size="lg" className="w-full">
-                  Získat rychlou diagnostiku
-                  <ArrowRight className="h-5 w-5" />
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full"
+                  disabled={isSubmitting || !gdprConsent}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                      Odesílám...
+                    </>
+                  ) : (
+                    <>
+                      Získat rychlou diagnostiku
+                      <ArrowRight className="h-5 w-5" />
+                    </>
+                  )}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center mt-3">
                   Odpověď do 24 hodin. Bez spamu.
-                </p>
-              </div>
-
-              {/* GDPR Microcopy */}
-              <div className="pt-2 border-t border-border/50">
-                <p className="text-xs text-muted-foreground text-center">
-                  Kontaktní údaje použijeme pouze k domluvě diagnostiky.{" "}
-                  <Link to="/gdpr-cookies" className="text-primary hover:underline">
-                    Zpracování osobních údajů
-                  </Link>
                 </p>
               </div>
             </form>

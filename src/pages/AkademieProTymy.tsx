@@ -47,8 +47,10 @@ import {
   ArrowRight
 } from "lucide-react";
 import { useState, useRef } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { Loader2 } from "lucide-react";
+
+const WEBHOOK_URL = "https://hook.eu1.make.com/kfd2mio7cxmu78yk58eqlqs4hogx8qru";
 
 const academyOptions = [
   { id: "master", title: "Kompletní program (3 akademie)", icon: Crown, isProgram: true, note: "Master of AI Creativity" },
@@ -278,7 +280,7 @@ const deploymentSteps = [
 ];
 
 const AkademieProTymy = () => {
-  const { toast } = useToast();
+  const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
   const [selectedAcademies, setSelectedAcademies] = useState<string[]>([]);
   const [formData, setFormData] = useState({
@@ -290,15 +292,65 @@ const AkademieProTymy = () => {
     roles: "",
     note: ""
   });
+  const [gdprConsent, setGdprConsent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Poptávka odeslána",
-      description: "Ozveme se vám do 24 hodin s nabídkou.",
-    });
-    setFormData({ name: "", company: "", email: "", licenses: "", academies: [], roles: "", note: "" });
-    setSelectedAcademies([]);
+    
+    if (!gdprConsent) {
+      setSubmitError("Pro odeslání je nutný souhlas se zpracováním osobních údajů.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const payload = {
+      form_type: "nezavazna_poptavka",
+      jmeno: formData.name.trim(),
+      email: formData.email.trim(),
+      firma: formData.company.trim(),
+      pocet_licenci: formData.licenses,
+      akademie: formData.academies,
+      cilove_role: formData.roles,
+      poznamka: formData.note.trim(),
+      gdpr_consent: true,
+      url: window.location.href,
+      timestamp: new Date().toISOString(),
+      source: "t-i.cz"
+    };
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        throw new Error("Webhook request failed");
+      }
+
+      navigate("/dekujeme?form=nezavazna_poptavka");
+    } catch (error) {
+      if (error instanceof Error && error.name === "AbortError") {
+        setSubmitError("Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.");
+      } else {
+        setSubmitError("Odeslání se nepovedlo. Zkuste to prosím znovu.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const toggleAcademy = (academyId: string) => {
@@ -1083,14 +1135,54 @@ const AkademieProTymy = () => {
                     placeholder="Máte specifické požadavky nebo otázky?"
                   />
                 </div>
+
+                {/* GDPR Checkbox */}
+                <div className="flex items-start space-x-3 pt-2">
+                  <Checkbox
+                    id="gdpr-akademie"
+                    checked={gdprConsent}
+                    onCheckedChange={(checked) => setGdprConsent(checked === true)}
+                    className="mt-0.5"
+                  />
+                  <Label htmlFor="gdpr-akademie" className="text-sm text-muted-foreground font-normal cursor-pointer leading-relaxed">
+                    Souhlasím se zpracováním osobních údajů za účelem domluvy / zpracování poptávky.{" "}
+                    <Link to="/gdpr-cookies" className="text-primary hover:underline">
+                      (více)
+                    </Link>
+                  </Label>
+                </div>
+
+                {/* Error Banner */}
+                {submitError && (
+                  <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/30 text-destructive text-sm">
+                    <p className="mb-2">{submitError}</p>
+                    <Button 
+                      type="button" 
+                      variant="outline" 
+                      size="sm"
+                      onClick={() => setSubmitError(null)}
+                      className="border-destructive/50 text-destructive hover:bg-destructive/10"
+                    >
+                      Zkusit znovu
+                    </Button>
+                  </div>
+                )}
                 
                 <Button 
                   type="submit" 
                   size="lg" 
                   className="w-full py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                   data-event="b2b_lead_submit"
+                  disabled={isSubmitting || !gdprConsent}
                 >
-                  Získat nabídku
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                      Odesílám...
+                    </>
+                  ) : (
+                    "Získat nabídku"
+                  )}
                 </Button>
               </form>
             </div>
