@@ -220,8 +220,8 @@ const Reference = () => {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
-                  Spolupracujeme s firmami a týmy, které chtějí pracovat chytřeji. 
-                  <span className="text-foreground font-medium"> Pomáháme jim zavádět AI nástroje, školíme praktické dovednosti a navrhujeme automatizaci na míru.</span>
+                  Pomáháme týmům proměnit AI v reálnou úsporu času: od prvních rychlých výher až po škálovatelné workflow.
+                  <span className="text-foreground font-medium"> Zavádíme nástroje, školíme praxi a navrhujeme automatizace na míru.</span>
                 </p>
                 
                 {/* Proof Chips */}
