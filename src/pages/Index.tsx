@@ -38,21 +38,29 @@ const Index = () => {
                 <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
                   <h1 
                     id="hero-heading" 
-                    className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase"
-                    style={{ 
-                      lineHeight: '1.15', 
-                      letterSpacing: '-0.01em'
-                    }}
+                    className="mb-8 uppercase"
                   >
-                    <span className="heading-hero">
+                    {/* Line 1: Main claim */}
+                    <span 
+                      className="block text-3xl md:text-5xl lg:text-6xl font-semibold heading-hero"
+                      style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}
+                    >
                       Méně rutiny · Více kapacity
                     </span>
-                    <br />
-                    <span className="heading-hero">
+                    
+                    {/* Line 2: Bridge/cause - smaller, lighter, tighter */}
+                    <span 
+                      className="block text-xl md:text-3xl lg:text-4xl font-medium mt-2 md:mt-3 mb-4 md:mb-5 text-primary/90 flex items-center justify-center gap-2"
+                      style={{ letterSpacing: '0.02em' }}
+                    >
+                      <svg className="w-4 h-4 md:w-5 md:h-5 text-primary/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                      </svg>
                       Díky AI
                     </span>
-                    <br />
-                    <span className="text-xl md:text-3xl lg:text-4xl text-accent">
+                    
+                    {/* Line 3: Properties */}
+                    <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent">
                       Měřitelně · Bezpečně · Škálovatelně
                     </span>
                   </h1>
