@@ -530,7 +530,7 @@ const Index = () => {
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container px-4">
               <div className="max-w-4xl mx-auto text-center glass-card p-10 md:p-12 rounded-2xl border border-primary/30 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
+                <h2 className="text-2xl md:text-3xl font-normal tracking-wider text-foreground uppercase mb-4">
                   Vyberte si další krok:
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
