@@ -39,11 +39,30 @@ const Index = () => {
                   
                   {/* Hero content with holographic scan effect */}
                   <div className="relative">
-                    {/* "DÍKY AI" - subtle label */}
+                    {/* "DÍKY AI" - subtle label with synchronized glow */}
                     <motion.span 
                       initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      animate={{ 
+                        opacity: 1, 
+                        y: 0,
+                        textShadow: [
+                          '0 0 0px hsl(176 96% 69% / 0)',
+                          '0 0 0px hsl(176 96% 69% / 0)',
+                          '0 0 20px hsl(176 96% 69% / 0.8), 0 0 40px hsl(176 96% 69% / 0.4)',
+                          '0 0 0px hsl(176 96% 69% / 0)',
+                          '0 0 0px hsl(176 96% 69% / 0)',
+                        ],
+                      }}
+                      transition={{ 
+                        opacity: { duration: 0.6, ease: "easeOut" },
+                        y: { duration: 0.6, ease: "easeOut" },
+                        textShadow: { 
+                          duration: 7, 
+                          repeat: Infinity, 
+                          ease: "easeInOut",
+                          times: [0, 0.1, 0.15, 0.25, 1],
+                        },
+                      }}
                       className="block text-sm md:text-base lg:text-lg font-medium text-primary/70 uppercase tracking-[0.3em] mb-4 md:mb-6"
                     >
                       Díky AI
