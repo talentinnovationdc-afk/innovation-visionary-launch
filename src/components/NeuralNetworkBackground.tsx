@@ -6,12 +6,29 @@ import { loadSlim } from "tsparticles-slim";
 const OrbitalBackgroundComponent = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Watch for theme changes
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+    checkTheme();
+    
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, { 
+      attributes: true, 
+      attributeFilter: ["class"] 
+    });
+    
+    return () => observer.disconnect();
   }, []);
 
   // Delay particle loading for better FCP
@@ -23,6 +40,15 @@ const OrbitalBackgroundComponent = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
+
+  // Different colors for dark/light mode
+  const particleColor = isDarkMode ? "#66FCF1" : "#0d9488";
+  const particleOpacity = isDarkMode 
+    ? (isMobile ? { min: 0.2, max: 0.5 } : { min: 0.3, max: 0.7 })
+    : (isMobile ? { min: 0.15, max: 0.35 } : { min: 0.2, max: 0.45 });
+  const linkOpacity = isDarkMode 
+    ? (isMobile ? 0.15 : 0.2)
+    : (isMobile ? 0.08 : 0.12);
 
   const options = useMemo(
     () => ({
@@ -48,14 +74,14 @@ const OrbitalBackgroundComponent = () => {
           grab: {
             distance: 180,
             links: {
-              opacity: 0.35,
-              color: "#66FCF1",
+              opacity: isDarkMode ? 0.35 : 0.2,
+              color: particleColor,
             },
           },
           connect: {
             distance: 130,
             links: {
-              opacity: 0.18,
+              opacity: isDarkMode ? 0.18 : 0.1,
             },
             radius: 140,
           },
@@ -63,13 +89,13 @@ const OrbitalBackgroundComponent = () => {
       },
       particles: {
         color: {
-          value: "#66FCF1",
+          value: particleColor,
         },
         links: {
-          color: "#66FCF1",
+          color: particleColor,
           distance: isMobile ? 120 : 150,
           enable: true,
-          opacity: isMobile ? 0.15 : 0.2,
+          opacity: linkOpacity,
           width: 1,
           triangles: {
             enable: false,
@@ -110,7 +136,7 @@ const OrbitalBackgroundComponent = () => {
           value: isMobile ? 12 : 35,
         },
         opacity: {
-          value: isMobile ? { min: 0.2, max: 0.5 } : { min: 0.3, max: 0.7 },
+          value: particleOpacity,
         },
         shape: {
           type: "circle",
@@ -140,7 +166,7 @@ const OrbitalBackgroundComponent = () => {
       },
       detectRetina: !isMobile,
     }),
-    [isMobile]
+    [isMobile, isDarkMode, particleColor, particleOpacity, linkOpacity]
   );
 
   // Don't render particles until after initial paint
