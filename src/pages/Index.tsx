@@ -48,7 +48,7 @@ const Index = () => {
                       Méně rutiny · Více kapacity
                     </span>
                     <br />
-                    <span className="heading-hero" style={{ letterSpacing: '-0.02em' }}>
+                    <span className="heading-hero">
                       Díky AI
                     </span>
                     <br />
