@@ -112,9 +112,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Horizontal Divider */}
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
 
           {/* Vyberte si, kde začít - B2B Journey Steps */}
           <section id="journey" className="py-20 relative">
