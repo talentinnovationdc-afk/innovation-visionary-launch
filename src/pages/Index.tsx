@@ -190,7 +190,7 @@ const Index = () => {
 
 
           {/* Vyberte si, kde začít - B2B Journey Steps */}
-          <section id="journey" className="py-20 relative">
+          <section id="journey" className="py-20 relative scroll-mt-16">
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
