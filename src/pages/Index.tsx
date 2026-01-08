@@ -108,9 +108,31 @@ const Index = () => {
                     <span className="text-sm font-medium text-foreground">95 % doporučuje</span>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground/70 max-w-md mx-auto">
+                <p className="text-xs text-muted-foreground/70 max-w-md mx-auto mb-8">
                   Nejde o teorii. Učíme workflow, které lidé používají hned druhý den.
                 </p>
+                
+                {/* Scroll indicator */}
+                <motion.a
+                  href="#journey"
+                  className="inline-flex flex-col items-center gap-1 text-muted-foreground/50 hover:text-primary transition-colors cursor-pointer"
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <span className="text-[10px] uppercase tracking-widest">Scroll</span>
+                  <svg 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <path d="M12 5v14M5 12l7 7 7-7" />
+                  </svg>
+                </motion.a>
               </div>
             </div>
           </section>
