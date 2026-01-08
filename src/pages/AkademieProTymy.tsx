@@ -907,7 +907,7 @@ const AkademieProTymy = () => {
                     value={`item-${index}`}
                     className="group border-0 rounded-xl backdrop-blur-xl border border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40 bg-card/60 overflow-hidden"
                   >
-                    <AccordionTrigger className="px-6 py-5 hover:no-underline [&>svg]:hidden">
+                    <AccordionTrigger className="px-6 py-5 hover:no-underline">
                       <div className="flex items-center gap-4 w-full">
                         {/* Icon */}
                         <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-primary/10 group-hover:bg-primary/15">
@@ -920,14 +920,9 @@ const AkademieProTymy = () => {
                               {item.badge}
                             </span>
                           </div>
-                          <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
+                          <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors">
                             {item.question}
                           </h3>
-                        </div>
-                        
-                        {/* Custom Chevron */}
-                        <div className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
-                          <ChevronDown className="w-4 h-4 transition-all duration-200 text-primary group-data-[state=open]:text-background group-data-[state=open]:rotate-180" />
                         </div>
                       </div>
                     </AccordionTrigger>
