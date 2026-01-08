@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
 import { MethodologySection } from "@/components/MethodologySection";
+import { AiBadge } from "@/components/AiBadge";
 import { 
   Building, GraduationCap, Users, Star, ThumbsUp, Check, 
   ArrowRight, Shield, TrendingUp, Award, Clock, BadgeCheck,
@@ -38,21 +39,22 @@ const Index = () => {
                 <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
                   <h1 
                     id="hero-heading" 
-                    className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase"
+                    className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase flex flex-col items-center gap-4 md:gap-5"
                     style={{ 
                       lineHeight: '1.15', 
                       letterSpacing: '-0.01em'
                     }}
                   >
+                    {/* A) Výsledek - Cyan */}
                     <span className="heading-hero">
                       Méně rutiny · Více kapacity
                     </span>
-                    <br />
-                    <span className="heading-hero">
-                      Díky AI
-                    </span>
-                    <br />
-                    <span className="text-xl md:text-3xl lg:text-4xl text-accent">
+                    
+                    {/* Engine Badge - DÍKY AI */}
+                    <AiBadge />
+                    
+                    {/* B) Vlastnosti - Purple */}
+                    <span className="text-xl md:text-3xl lg:text-4xl heading-accent">
                       Měřitelně · Bezpečně · Škálovatelně
                     </span>
                   </h1>
