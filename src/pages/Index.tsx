@@ -37,9 +37,9 @@ const Index = () => {
                 {/* H1 wrapper with responsive max-width */}
                 <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
                   
-                  {/* Hero content - Precise sequence: 1s delay → glow → vertical → scan */}
+                  {/* Hero content - Synchronized sequence with 9s total cycle */}
                   <div className="relative flex flex-col items-center">
-                    {/* Step 1: "DÍKY AI" glow - starts 1s after load, duration 1.2s */}
+                    {/* Step 1: "DÍKY AI" glow - delay 1s, duration 1.2s, repeatDelay 7.8s = 9s cycle */}
                     <motion.span 
                       initial={{ opacity: 1, textShadow: '0 0 0px hsl(176 96% 69% / 0)' }}
                       animate={{ 
@@ -55,7 +55,7 @@ const Index = () => {
                           duration: 1.2,
                           delay: 1,
                           repeat: Infinity, 
-                          repeatDelay: 6.8,
+                          repeatDelay: 7.8,
                           ease: "easeInOut",
                           times: [0, 0.35, 0.7, 1],
                         },
@@ -65,7 +65,7 @@ const Index = () => {
                       Díky AI
                     </motion.span>
                     
-                    {/* Step 2: Vertical pulse - starts at 2.2s (after glow ends), duration 1.3s */}
+                    {/* Step 2: Vertical pulse - delay 2.2s, duration 1.3s, repeatDelay 7.7s = 9s cycle */}
                     <div className="relative h-10 md:h-12 w-px flex items-center justify-center mb-3">
                       <div className="absolute inset-0 bg-gradient-to-b from-primary/15 via-primary/8 to-transparent" />
                       
@@ -84,14 +84,14 @@ const Index = () => {
                           duration: 1.3,
                           delay: 2.2,
                           repeat: Infinity,
-                          repeatDelay: 5.5,
+                          repeatDelay: 7.7,
                           ease: "easeInOut",
                           times: [0, 0.6, 1],
                         }}
                       />
                     </div>
                     
-                    {/* Step 3: Horizontal scan - starts at 3.5s (after vertical ends), duration 2s */}
+                    {/* Step 3: Horizontal scan - delay 3.5s, duration 2s, repeatDelay 7s = 9s cycle */}
                     <div className="relative overflow-hidden">
                       <motion.div
                         className="absolute left-0 right-0 h-px pointer-events-none z-10"
@@ -108,7 +108,7 @@ const Index = () => {
                           duration: 2,
                           delay: 3.5,
                           repeat: Infinity,
-                          repeatDelay: 3.5,
+                          repeatDelay: 7,
                           ease: "linear",
                           times: [0, 0.12, 0.88, 1],
                         }}
