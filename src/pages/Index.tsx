@@ -36,6 +36,110 @@ const Index = () => {
               <div className="max-w-6xl mx-auto">
                 {/* H1 wrapper with responsive max-width */}
                 <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
+                  
+                  {/* Causality Diagram: DÍKY AI → Headline */}
+                  <div className="flex flex-col items-center mb-6 md:mb-8">
+                    {/* "DÍKY AI" label */}
+                    <span 
+                      className="text-lg md:text-2xl lg:text-3xl font-medium text-primary uppercase tracking-wider mb-3 md:mb-4"
+                      style={{ 
+                        textShadow: '0 0 20px hsl(176 96% 69% / 0.5), 0 0 40px hsl(176 96% 69% / 0.3)',
+                        letterSpacing: '0.15em'
+                      }}
+                    >
+                      Díky AI
+                    </span>
+                    
+                    {/* Network diagram: Node + T-junction + arrows */}
+                    <svg 
+                      className="w-full max-w-[280px] md:max-w-[400px] lg:max-w-[500px] h-[50px] md:h-[60px] lg:h-[70px]"
+                      viewBox="0 0 200 35"
+                      fill="none"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <defs>
+                        {/* Glow filter for neon effect */}
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                          <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                        {/* Arrow marker */}
+                        <marker 
+                          id="arrowhead" 
+                          markerWidth="6" 
+                          markerHeight="6" 
+                          refX="3" 
+                          refY="3" 
+                          orient="auto"
+                        >
+                          <path 
+                            d="M0,1 L3,3 L0,5" 
+                            fill="none" 
+                            stroke="hsl(176 96% 69%)" 
+                            strokeWidth="0.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </marker>
+                      </defs>
+                      
+                      {/* Central node (glowing dot) */}
+                      <circle 
+                        cx="100" 
+                        cy="4" 
+                        r="3" 
+                        fill="hsl(176 96% 69%)" 
+                        filter="url(#glow)"
+                        style={{ filter: 'drop-shadow(0 0 4px hsl(176 96% 69%))' }}
+                      />
+                      
+                      {/* Vertical line from node down */}
+                      <line 
+                        x1="100" y1="7" 
+                        x2="100" y2="14" 
+                        stroke="hsl(176 96% 69%)" 
+                        strokeWidth="1.2"
+                        filter="url(#glow)"
+                        strokeLinecap="round"
+                      />
+                      
+                      {/* Horizontal line (T-junction) */}
+                      <line 
+                        x1="30" y1="14" 
+                        x2="170" y2="14" 
+                        stroke="hsl(176 96% 69%)" 
+                        strokeWidth="1.2"
+                        filter="url(#glow)"
+                        strokeLinecap="round"
+                      />
+                      
+                      {/* Left diagonal arrow */}
+                      <line 
+                        x1="55" y1="14" 
+                        x2="35" y2="32" 
+                        stroke="hsl(176 96% 69%)" 
+                        strokeWidth="1.2"
+                        filter="url(#glow)"
+                        strokeLinecap="round"
+                        markerEnd="url(#arrowhead)"
+                      />
+                      
+                      {/* Right diagonal arrow */}
+                      <line 
+                        x1="145" y1="14" 
+                        x2="165" y2="32" 
+                        stroke="hsl(176 96% 69%)" 
+                        strokeWidth="1.2"
+                        filter="url(#glow)"
+                        strokeLinecap="round"
+                        markerEnd="url(#arrowhead)"
+                      />
+                    </svg>
+                  </div>
+                  
                   <h1 
                     id="hero-heading" 
                     className="mb-8 uppercase"
@@ -48,19 +152,8 @@ const Index = () => {
                       Méně rutiny · Více kapacity
                     </span>
                     
-                    {/* Line 2: Bridge/cause - smaller, lighter, tighter */}
-                    <span 
-                      className="block text-xl md:text-3xl lg:text-4xl font-medium mt-2 md:mt-3 mb-4 md:mb-5 text-primary/90 flex items-center justify-center gap-2"
-                      style={{ letterSpacing: '0.02em' }}
-                    >
-                      <svg className="w-4 h-4 md:w-5 md:h-5 text-primary/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                      </svg>
-                      Díky AI
-                    </span>
-                    
-                    {/* Line 3: Properties */}
-                    <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent">
+                    {/* Line 2: Properties */}
+                    <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6">
                       Měřitelně · Bezpečně · Škálovatelně
                     </span>
                   </h1>
