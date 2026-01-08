@@ -21,13 +21,16 @@ const Index = () => {
         description="Pomáháme firmám zrychlit práci díky AI – měřitelně, bezpečně a škálovatelně. Diagnostika, mapa úspor, AI agenti a akademie."
         path="/" 
       />
-      <NeuralNetworkBackground />
       <div className="min-h-screen flex flex-col relative z-10">
         <Navbar />
         
         <main className="flex-1">
           {/* Hero Section - Fixed height to prevent CLS */}
-          <section aria-labelledby="hero-heading" className="flex items-center justify-center pt-32 pb-8 md:pt-48 md:pb-16 min-h-[70vh] md:min-h-[75vh]">
+          <section aria-labelledby="hero-heading" className="relative flex items-center justify-center pt-32 pb-8 md:pt-48 md:pb-16 min-h-[70vh] md:min-h-[75vh]">
+            {/* Neural network only in hero */}
+            <div className="absolute inset-0 overflow-hidden">
+              <NeuralNetworkBackground />
+            </div>
             <div className="container px-4 text-center">
               {/* Same max-w-6xl as "Vyberte si, kde začít" section */}
               <div className="max-w-6xl mx-auto">
