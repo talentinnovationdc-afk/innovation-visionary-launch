@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  .dark {
     /* Softened Dark Mode 2025 */
     --background: 220 21% 5%;          /* #0B0C10 Obsidian Void */
     --foreground: 180 3% 93%;          /* #EDEEEE Soft White */
@@ -51,11 +52,58 @@
     --shadow-glow-purple: 0 0 20px hsl(284, 100%, 50%, 0.4);
     --shadow-card: 0 4px 24px hsla(0, 0%, 0%, 0.5);
   }
+
+  .light {
+    /* Light Mode - Professional & Clean */
+    --background: 210 20% 98%;         /* Off-white */
+    --foreground: 220 25% 12%;         /* Dark charcoal for high contrast */
+
+    --card: 0 0% 100%;                 /* Pure white cards */
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    /* Toned-down Cyan for light mode */
+    --primary: 176 70% 40%;            /* Deeper cyan, less neon */
+    --primary-foreground: 0 0% 100%;
+
+    /* Softer Purple accent */
+    --accent: 284 70% 45%;             /* Deeper purple */
+    --accent-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 220 10% 40%;   /* Good contrast for body text */
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 95%;
+    --ring: 176 70% 40%;
+
+    /* Custom gradients - softer for light */
+    --gradient-primary: linear-gradient(135deg, hsl(176, 70%, 40%) 0%, hsl(284, 70%, 45%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(176, 70%, 40%, 0.08) 0%, transparent 70%);
+
+    /* Glass effect tokens - light version */
+    --glass-bg: hsla(0, 0%, 100%, 0.85);
+    --glass-border: hsla(220, 25%, 12%, 0.08);
+    --glass-blur: 12px;
+
+    /* Shadows - subtle and elegant */
+    --shadow-glow-cyan: 0 4px 20px hsl(176, 70%, 40%, 0.15);
+    --shadow-glow-purple: 0 4px 20px hsl(284, 70%, 45%, 0.15);
+    --shadow-card: 0 4px 24px hsla(220, 25%, 12%, 0.08);
+  }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-colors duration-200;
   }
 
   body {
@@ -63,6 +111,7 @@
     font-family: 'Inter', system-ui, sans-serif;
     /* Prevent layout shift from scrollbar */
     scrollbar-gutter: stable;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
