@@ -440,6 +440,29 @@ const Metodika = () => {
               </div>
             </div>
           </section>
+
+          {/* Final CTA */}
+          <section className="py-20 relative">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  Chcete zjistit, kde AI ušetří nejvíc času?
+                </h2>
+                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                  Začněte 15minutovou diagnostikou – zjistíme, kde má AI smysl právě u vás.
+                </p>
+                <Link to="/poptavka">
+                  <Button 
+                    size="lg"
+                    className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                  >
+                    Domluvit 15 min diagnostiku
+                  </Button>
+                </Link>
+                <p className="text-xs text-muted-foreground/60 mt-3">bez závazku • ozveme se do 24 hodin</p>
+              </div>
+            </div>
+          </section>
         </main>
         
         <Footer />
