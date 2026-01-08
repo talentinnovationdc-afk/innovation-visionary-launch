@@ -136,7 +136,7 @@ const MasterOfAICreativity = () => {
                 </div>
                 
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-                  <span className="bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent">
+                  <span className="text-accent">
                     Master of AI Creativity
                   </span>
                 </h1>

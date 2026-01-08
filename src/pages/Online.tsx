@@ -212,12 +212,12 @@ const Online = () => {
                   </span>
                   
                   <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-4 leading-[1.15] uppercase">
-                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    <span className="text-primary">
                       AI pro vaši profesi
                     </span>
                   </h1>
                   
-                  <h2 className="text-lg md:text-xl lg:text-2xl font-medium tracking-[0.1em] mb-6 uppercase bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-medium tracking-[0.1em] mb-6 uppercase text-accent">
                     Ověřitelný certifikát a LinkedIn odznak
                   </h2>
                   

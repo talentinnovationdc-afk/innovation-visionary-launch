@@ -19,7 +19,7 @@ const ObchodniPodminky = () => {
           <div className="max-w-4xl mx-auto">
             {/* Hero */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4">
-              <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent uppercase" style={{ WebkitTextFillColor: 'transparent' }}>
+              <span className="text-primary uppercase">
                 Obchodní podmínky Talent Innovation
               </span>
             </h1>
