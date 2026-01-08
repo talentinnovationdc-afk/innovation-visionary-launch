@@ -39,105 +39,217 @@ const Index = () => {
                   
                   {/* Causality Diagram: DÍKY AI → Headline */}
                   <div className="flex flex-col items-center mb-6 md:mb-8">
-                    {/* "DÍKY AI" label */}
-                    <span 
-                      className="text-lg md:text-2xl lg:text-3xl font-medium text-primary uppercase tracking-wider mb-3 md:mb-4"
-                      style={{ 
-                        textShadow: '0 0 20px hsl(176 96% 69% / 0.5), 0 0 40px hsl(176 96% 69% / 0.3)',
-                        letterSpacing: '0.15em'
-                      }}
+                    {/* "DÍKY AI" label with dramatic animation */}
+                    <motion.div
+                      initial={{ opacity: 0, y: -20, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                      className="relative mb-3 md:mb-4"
                     >
-                      Díky AI
-                    </span>
+                      {/* Outer glow ring */}
+                      <motion.div
+                        className="absolute inset-0 -m-4 rounded-full"
+                        style={{
+                          background: 'radial-gradient(circle, hsl(176 96% 69% / 0.15) 0%, transparent 70%)',
+                        }}
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          opacity: [0.5, 0.8, 0.5],
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
+                      <motion.span 
+                        className="relative text-xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wider"
+                        style={{ 
+                          background: 'linear-gradient(135deg, hsl(176 96% 75%) 0%, hsl(176 96% 69%) 50%, hsl(200 90% 60%) 100%)',
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                          letterSpacing: '0.2em',
+                          filter: 'drop-shadow(0 0 30px hsl(176 96% 69% / 0.8)) drop-shadow(0 0 60px hsl(176 96% 69% / 0.4))',
+                        }}
+                        animate={{
+                          filter: [
+                            'drop-shadow(0 0 30px hsl(176 96% 69% / 0.8)) drop-shadow(0 0 60px hsl(176 96% 69% / 0.4))',
+                            'drop-shadow(0 0 40px hsl(176 96% 69% / 1)) drop-shadow(0 0 80px hsl(176 96% 69% / 0.6))',
+                            'drop-shadow(0 0 30px hsl(176 96% 69% / 0.8)) drop-shadow(0 0 60px hsl(176 96% 69% / 0.4))',
+                          ],
+                        }}
+                        transition={{
+                          duration: 2.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        ⚡ Díky AI
+                      </motion.span>
+                    </motion.div>
                     
-                    {/* Network diagram: Node + T-junction + arrows */}
-                    <svg 
-                      className="w-full max-w-[280px] md:max-w-[400px] lg:max-w-[500px] h-[50px] md:h-[60px] lg:h-[70px]"
-                      viewBox="0 0 200 35"
+                    {/* Network diagram: Node + T-junction + arrows - animated */}
+                    <motion.svg 
+                      className="w-full max-w-[320px] md:max-w-[450px] lg:max-w-[550px] h-[60px] md:h-[70px] lg:h-[80px]"
+                      viewBox="0 0 200 40"
                       fill="none"
                       preserveAspectRatio="xMidYMid meet"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
                     >
                       <defs>
-                        {/* Glow filter for neon effect */}
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                          <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                        {/* Enhanced glow filter */}
+                        <filter id="glowStrong" x="-100%" y="-100%" width="300%" height="300%">
+                          <feGaussianBlur stdDeviation="2" result="blur1"/>
+                          <feGaussianBlur stdDeviation="4" result="blur2"/>
                           <feMerge>
-                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="blur2"/>
+                            <feMergeNode in="blur1"/>
                             <feMergeNode in="SourceGraphic"/>
                           </feMerge>
                         </filter>
-                        {/* Arrow marker */}
+                        {/* Animated gradient for lines */}
+                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="hsl(176 96% 69%)" stopOpacity="0.3">
+                            <animate attributeName="stopOpacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+                          </stop>
+                          <stop offset="50%" stopColor="hsl(176 96% 75%)" stopOpacity="1">
+                            <animate attributeName="stopOpacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+                          </stop>
+                          <stop offset="100%" stopColor="hsl(176 96% 69%)" stopOpacity="0.3">
+                            <animate attributeName="stopOpacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+                          </stop>
+                        </linearGradient>
+                        {/* Arrow gradient */}
+                        <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="hsl(176 96% 69%)"/>
+                          <stop offset="100%" stopColor="hsl(200 90% 60%)"/>
+                        </linearGradient>
+                        {/* Animated arrow marker */}
                         <marker 
-                          id="arrowhead" 
-                          markerWidth="6" 
-                          markerHeight="6" 
-                          refX="3" 
-                          refY="3" 
+                          id="arrowheadAnimated" 
+                          markerWidth="10" 
+                          markerHeight="10" 
+                          refX="5" 
+                          refY="5" 
                           orient="auto"
                         >
                           <path 
-                            d="M0,1 L3,3 L0,5" 
+                            d="M1,2 L5,5 L1,8" 
                             fill="none" 
-                            stroke="hsl(176 96% 69%)" 
-                            strokeWidth="0.8"
+                            stroke="url(#arrowGradient)" 
+                            strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                          />
+                          >
+                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+                          </path>
                         </marker>
                       </defs>
                       
-                      {/* Central node (glowing dot) */}
+                      {/* Central node (pulsing glowing orb) */}
                       <circle 
                         cx="100" 
-                        cy="4" 
-                        r="3" 
+                        cy="6" 
+                        r="5" 
                         fill="hsl(176 96% 69%)" 
-                        filter="url(#glow)"
-                        style={{ filter: 'drop-shadow(0 0 4px hsl(176 96% 69%))' }}
-                      />
+                        filter="url(#glowStrong)"
+                      >
+                        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                      </circle>
+                      {/* Inner bright core */}
+                      <circle 
+                        cx="100" 
+                        cy="6" 
+                        r="2" 
+                        fill="white"
+                      >
+                        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+                      </circle>
                       
-                      {/* Vertical line from node down */}
+                      {/* Vertical line from node - animated draw */}
                       <line 
-                        x1="100" y1="7" 
-                        x2="100" y2="14" 
-                        stroke="hsl(176 96% 69%)" 
-                        strokeWidth="1.2"
-                        filter="url(#glow)"
+                        x1="100" y1="11" 
+                        x2="100" y2="18" 
+                        stroke="url(#lineGradient)" 
+                        strokeWidth="2"
+                        filter="url(#glowStrong)"
                         strokeLinecap="round"
-                      />
+                      >
+                        <animate attributeName="stroke-dasharray" values="0,10;10,0" dur="0.5s" fill="freeze" begin="0.3s"/>
+                      </line>
                       
-                      {/* Horizontal line (T-junction) */}
+                      {/* Horizontal line (T-junction) - animated expand */}
                       <line 
-                        x1="30" y1="14" 
-                        x2="170" y2="14" 
-                        stroke="hsl(176 96% 69%)" 
-                        strokeWidth="1.2"
-                        filter="url(#glow)"
+                        x1="25" y1="18" 
+                        x2="175" y2="18" 
+                        stroke="url(#lineGradient)" 
+                        strokeWidth="2"
+                        filter="url(#glowStrong)"
                         strokeLinecap="round"
-                      />
+                        strokeDasharray="150"
+                        strokeDashoffset="150"
+                      >
+                        <animate attributeName="stroke-dashoffset" from="150" to="0" dur="0.8s" fill="freeze" begin="0.5s"/>
+                      </line>
                       
-                      {/* Left diagonal arrow */}
-                      <line 
-                        x1="55" y1="14" 
-                        x2="35" y2="32" 
-                        stroke="hsl(176 96% 69%)" 
-                        strokeWidth="1.2"
-                        filter="url(#glow)"
-                        strokeLinecap="round"
-                        markerEnd="url(#arrowhead)"
-                      />
+                      {/* Left diagonal arrow - animated */}
+                      <g>
+                        <line 
+                          x1="50" y1="18" 
+                          x2="25" y2="38" 
+                          stroke="url(#arrowGradient)" 
+                          strokeWidth="2"
+                          filter="url(#glowStrong)"
+                          strokeLinecap="round"
+                          markerEnd="url(#arrowheadAnimated)"
+                          strokeDasharray="30"
+                          strokeDashoffset="30"
+                        >
+                          <animate attributeName="stroke-dashoffset" from="30" to="0" dur="0.4s" fill="freeze" begin="1s"/>
+                        </line>
+                        {/* Pulse effect on arrow end */}
+                        <circle cx="25" cy="38" r="3" fill="hsl(176 96% 69%)" opacity="0">
+                          <animate attributeName="opacity" values="0;0.8;0" dur="1.5s" repeatCount="indefinite" begin="1.4s"/>
+                          <animate attributeName="r" values="2;6;2" dur="1.5s" repeatCount="indefinite" begin="1.4s"/>
+                        </circle>
+                      </g>
                       
-                      {/* Right diagonal arrow */}
-                      <line 
-                        x1="145" y1="14" 
-                        x2="165" y2="32" 
-                        stroke="hsl(176 96% 69%)" 
-                        strokeWidth="1.2"
-                        filter="url(#glow)"
-                        strokeLinecap="round"
-                        markerEnd="url(#arrowhead)"
-                      />
-                    </svg>
+                      {/* Right diagonal arrow - animated */}
+                      <g>
+                        <line 
+                          x1="150" y1="18" 
+                          x2="175" y2="38" 
+                          stroke="url(#arrowGradient)" 
+                          strokeWidth="2"
+                          filter="url(#glowStrong)"
+                          strokeLinecap="round"
+                          markerEnd="url(#arrowheadAnimated)"
+                          strokeDasharray="30"
+                          strokeDashoffset="30"
+                        >
+                          <animate attributeName="stroke-dashoffset" from="30" to="0" dur="0.4s" fill="freeze" begin="1.2s"/>
+                        </line>
+                        {/* Pulse effect on arrow end */}
+                        <circle cx="175" cy="38" r="3" fill="hsl(176 96% 69%)" opacity="0">
+                          <animate attributeName="opacity" values="0;0.8;0" dur="1.5s" repeatCount="indefinite" begin="1.6s"/>
+                          <animate attributeName="r" values="2;6;2" dur="1.5s" repeatCount="indefinite" begin="1.6s"/>
+                        </circle>
+                      </g>
+                      
+                      {/* Traveling energy particles on horizontal line */}
+                      <circle cx="100" cy="18" r="1.5" fill="white">
+                        <animate attributeName="cx" values="100;25" dur="1.5s" repeatCount="indefinite" begin="1.5s"/>
+                        <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" begin="1.5s"/>
+                      </circle>
+                      <circle cx="100" cy="18" r="1.5" fill="white">
+                        <animate attributeName="cx" values="100;175" dur="1.5s" repeatCount="indefinite" begin="1.5s"/>
+                        <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" begin="1.5s"/>
+                      </circle>
+                    </motion.svg>
                   </div>
                   
                   <h1 
