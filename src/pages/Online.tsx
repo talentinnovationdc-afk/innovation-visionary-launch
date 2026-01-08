@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
 import { TestimonialTicker } from "@/components/TestimonialTicker";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { 
   MessageSquare, Wand2, Bot, Check, Award, Clock, RefreshCw, Users, Star, 
   ThumbsUp, ChevronLeft, ChevronRight, Building, Crown, Sparkles, X,
@@ -329,9 +330,14 @@ const Online = () => {
               </div>
             </div>
           </section>
+          
+          {/* Scroll Indicator */}
+          <div className="flex justify-center py-8">
+            <ScrollIndicator targetId="how-it-works" />
+          </div>
 
           {/* How It Works Section */}
-          <section className="py-16 bg-card/20 relative">
+          <section id="how-it-works" className="py-16 bg-card/20 relative scroll-mt-16">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container px-4">
               <div className="max-w-4xl mx-auto">

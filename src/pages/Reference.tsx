@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Workflow, Zap, Bot, Shield, Scale, ClipboardCheck, FileCode } from "lucide-react";
 import { useRef, useEffect, useMemo, useState } from "react";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 
 // Client logos with URLs
 import bircher from "@/assets/clients/bircher.png";
@@ -322,12 +323,17 @@ const Reference = () => {
                   Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
                 </p>
               </div>
+              
+              {/* Scroll Indicator */}
+              <div className="flex justify-center mt-12">
+                <ScrollIndicator targetId="content" />
+              </div>
             </div>
           </section>
 
 
           {/* What Cooperation Includes Section */}
-          <section className="py-16 md:py-24 relative">
+          <section id="content" className="py-16 md:py-24 relative scroll-mt-16">
             <div className="container px-4">
               <h2 className="text-center text-xl md:text-2xl font-semibold tracking-[0.1em] text-foreground uppercase mb-4">
                 Co spolupráce obvykle zahrnuje

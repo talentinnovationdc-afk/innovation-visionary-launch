@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -414,9 +415,14 @@ const AkademieProTymy = () => {
             </div>
           </div>
         </section>
+        
+        {/* Scroll Indicator */}
+        <div className="flex justify-center py-8">
+          <ScrollIndicator targetId="akademie" />
+        </div>
 
         {/* What Academies Contain */}
-        <section id="akademie" className="py-20 bg-card/20 relative">
+        <section id="akademie" className="py-20 bg-card/20 relative scroll-mt-16">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">

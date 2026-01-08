@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { 
   Search, Bot, Users, GraduationCap, 
   ClipboardCheck, Shield, Scale, FileCode,
@@ -329,10 +330,15 @@ const ProFirmy = () => {
             <div className="mt-8">
               <LogoRibbon />
             </div>
+            
+            {/* Scroll Indicator */}
+            <div className="flex justify-center mt-10">
+              <ScrollIndicator targetId="pain-points" />
+            </div>
           </section>
 
           {/* Pain Points Section */}
-          <section className="py-16 bg-card/20 relative">
+          <section id="pain-points" className="py-16 bg-card/20 relative scroll-mt-16">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
                 CO VÁS NEJVÍC BRZDÍ?

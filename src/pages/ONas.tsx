@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Shield, Cog, Database, Zap, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import danielCerveny from "@/assets/team/daniel-cerveny.png";
@@ -96,10 +97,15 @@ const ONas = () => {
             
             {/* Subtle divider gradient */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            
+            {/* Scroll Indicator */}
+            <div className="flex justify-center mt-12 pb-8">
+              <ScrollIndicator targetId="team" />
+            </div>
           </section>
 
           {/* Expert Profiles */}
-          <section className="py-20 bg-card/30 relative">
+          <section id="team" className="py-20 bg-card/30 relative scroll-mt-16">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
                 EXPERTNÍ TÝM

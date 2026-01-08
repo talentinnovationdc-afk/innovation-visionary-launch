@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/ui/button";
 import { 
   Shield, 
@@ -192,9 +193,14 @@ const Metodika = () => {
 
           {/* Logo Ribbon */}
           <LogoRibbon />
+          
+          {/* Scroll Indicator */}
+          <div className="flex justify-center py-8">
+            <ScrollIndicator targetId="quick-wins" />
+          </div>
 
           {/* Quick Wins Section - Co získáte do 14 dnů */}
-          <section className="py-20">
+          <section id="quick-wins" className="py-20 scroll-mt-16">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
                 CO ZÍSKÁTE BĚHEM PRVNÍCH 14 DNŮ
