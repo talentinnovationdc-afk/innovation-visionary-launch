@@ -158,22 +158,24 @@
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
     @apply rounded-xl;
   }
 
   /* Gradient text - use sparingly, max 1 per section */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
   }
 
   /* Card text - improved contrast */
   .card-body-text {
-    color: hsl(210, 5%, 85%);
+    @apply text-muted-foreground;
   }
 
   .input-glow:focus {
-    box-shadow: 0 0 0 2px hsl(176, 96%, 69%, 0.3), 0 0 20px hsl(176, 96%, 69%, 0.2);
-    border-color: hsl(176, 96%, 69%);
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.3), var(--shadow-glow-cyan);
+    border-color: hsl(var(--primary));
   }
 
   .glow-cyan {

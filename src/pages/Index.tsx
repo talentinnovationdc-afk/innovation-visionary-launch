@@ -41,15 +41,15 @@ const Index = () => {
                       letterSpacing: '-0.01em'
                     }}
                   >
-                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    <span className="gradient-text">
                       Méně rutiny. Více kapacity.
                     </span>
                     <br />
-                    <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    <span className="gradient-text">
                       Díky AI.
                     </span>
                     <br />
-                    <span className="text-xl md:text-3xl lg:text-4xl bg-gradient-to-r from-[#8A2BE2] to-[#FF00FF] bg-clip-text text-transparent" style={{ WebkitTextFillColor: 'transparent' }}>
+                    <span className="text-xl md:text-3xl lg:text-4xl text-accent">
                       Měřitelně. Bezpečně. Škálovatelně.
                     </span>
                   </h1>

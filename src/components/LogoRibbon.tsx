@@ -176,14 +176,14 @@ export const LogoRibbon = () => {
             className="flex-shrink-0 group"
           >
             {client.logo ? (
-              <div className="h-10 md:h-12 w-auto px-4 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.35)]">
+              <div className="h-10 md:h-12 w-auto px-4 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[var(--shadow-glow-cyan)]">
                 <img
                   src={processedLogos[client.name] ?? client.logo}
                   alt={client.name}
                   loading="lazy"
-                  className={`h-full w-auto object-contain max-w-[160px] grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${
+                  className={`h-full w-auto object-contain max-w-[160px] grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:brightness-100 ${
                     client.name === "Iveco Group"
-                      ? "invert opacity-40 group-hover:invert-0 group-hover:opacity-100"
+                      ? "dark:invert dark:opacity-40 dark:group-hover:invert-0 dark:group-hover:opacity-100"
                       : ""
                   }`}
                 />

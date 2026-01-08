@@ -67,7 +67,7 @@ export const Navbar = () => {
               />
             </div>
             <div className="hidden lg:flex flex-col items-start">
-              <span className="text-sm font-bold tracking-[0.18em] text-[#F0F1F1] uppercase leading-none">
+              <span className="text-sm font-bold tracking-[0.18em] text-foreground uppercase leading-none">
                 TALENT INNOVATION
               </span>
               <div className="mt-1.5 h-[1.5px] w-full bg-gradient-to-r from-primary/70 via-primary/40 to-transparent" />

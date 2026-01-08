@@ -11,12 +11,12 @@ const buttonVariants = cva(
       variant: {
         // Primary: Solid cyan, strong contrast, clear hover
         default:
-          "bg-primary text-primary-foreground hover:bg-[hsl(176,96%,60%)] active:bg-[hsl(176,96%,55%)] shadow-[0_0_20px_hsla(176,96%,69%,0.3)] hover:shadow-[0_0_30px_hsla(176,96%,69%,0.5)]",
+          "bg-primary text-primary-foreground hover:brightness-110 active:brightness-95 shadow-[var(--shadow-glow-cyan)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)]",
         // Secondary: Outline cyan, transparent fill
         outline:
-          "border-2 border-primary bg-transparent text-primary hover:bg-primary/10 hover:shadow-[0_0_20px_hsla(176,96%,69%,0.2)]",
+          "border-2 border-primary bg-transparent text-primary hover:bg-primary/10 hover:shadow-[var(--shadow-glow-cyan)]",
         // Tertiary: Text link cyan
-        link: "text-primary underline-offset-4 hover:underline hover:text-[hsl(176,96%,75%)] p-0 h-auto",
+        link: "text-primary underline-offset-4 hover:underline hover:brightness-110 p-0 h-auto",
         // Utility variants
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
@@ -25,7 +25,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-secondary hover:text-foreground",
         // Glass for special cases
         glass:
-          "bg-[hsla(210,24%,16%,0.8)] backdrop-blur-xl border border-[hsla(180,3%,93%,0.15)] text-foreground hover:bg-[hsla(210,24%,16%,0.9)] hover:border-primary/40",
+          "glass text-foreground hover:border-primary/40",
       },
       size: {
         // Larger touch targets on mobile

@@ -13,7 +13,7 @@ export const Footer = () => {
           <div className="flex flex-col items-center md:items-start gap-4">
             <Link to="/" className="flex items-center gap-4">
               <img src={logoIcon} alt="Talent Innovation logo" className="h-8 w-8 object-contain" />
-              <span className="text-base font-semibold tracking-[0.2em] text-[#EDEEEE] uppercase">
+              <span className="text-base font-semibold tracking-[0.2em] text-foreground uppercase">
                 TALENT INNOVATION
               </span>
             </Link>
