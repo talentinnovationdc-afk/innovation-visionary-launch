@@ -91,7 +91,7 @@ const Index = () => {
                 </div>
 
                 {/* Trust Metrics */}
-                <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-4">
+                <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-2">
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-primary" />
                     <span className="text-sm font-medium text-foreground">1250+ absolventů</span>
