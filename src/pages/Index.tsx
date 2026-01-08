@@ -46,8 +46,8 @@ const Index = () => {
                         opacity: 1,
                         textShadow: [
                           '0 0 0px hsl(176 96% 69% / 0)',
-                          '0 0 15px hsl(176 96% 69% / 0.7)',
-                          '0 0 8px hsl(176 96% 69% / 0.4)',
+                          '0 0 25px hsl(176 96% 69% / 1), 0 0 50px hsl(176 96% 69% / 0.5)',
+                          '0 0 15px hsl(176 96% 69% / 0.6), 0 0 30px hsl(176 96% 69% / 0.3)',
                           '0 0 0px hsl(176 96% 69% / 0)',
                           '0 0 0px hsl(176 96% 69% / 0)',
                         ],
@@ -61,7 +61,7 @@ const Index = () => {
                           times: [0, 0.1, 0.2, 0.35, 1],
                         },
                       }}
-                      className="text-xs md:text-sm font-medium text-primary/60 uppercase tracking-[0.4em] mb-3"
+                      className="text-xs md:text-sm font-medium text-primary uppercase tracking-[0.4em] mb-3"
                     >
                       Díky AI
                     </motion.span>
