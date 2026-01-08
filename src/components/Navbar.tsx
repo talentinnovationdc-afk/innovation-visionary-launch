@@ -14,6 +14,7 @@ const navLinks = [
       { label: "Služby pro firmy", href: "/profirmy" },
       { label: "Mapa úspor", href: "/profirmy/mapa-uspor", subtitle: "Diagnostika do 14 dnů" },
       { label: "AI agenti na míru", href: "/profirmy/ai-agenti-na-miru", subtitle: "Digitální kolega do procesu" },
+      { label: "Reference", href: "/reference", subtitle: "Firmy, které nám důvěřují" },
     ]
   },
   { label: "AKADEMIE PRO TÝMY", href: "/akademie-pro-tymy", isRoute: true },

@@ -22,6 +22,7 @@ import CopilotAkademie from "./pages/CopilotAkademie";
 import AgentiAutomatizace from "./pages/AgentiAutomatizace";
 import AiAgentiNaMiru from "./pages/AiAgentiNaMiru";
 import AiQuickScan from "./pages/AiQuickScan";
+import Reference from "./pages/Reference";
 import NotFound from "./pages/NotFound";
 import Legal from "./pages/Legal";
 import ObchodniPodminky from "./pages/ObchodniPodminky";
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/profirmy" element={<ProFirmy />} />
           <Route path="/profirmy/ai-agenti-na-miru" element={<AiAgentiNaMiru />} />
           <Route path="/profirmy/mapa-uspor" element={<AiQuickScan />} />
+          <Route path="/reference" element={<Reference />} />
           {/* Redirects from old routes */}
           <Route path="/ai-agenti-na-miru" element={<Navigate to="/profirmy/ai-agenti-na-miru" replace />} />
           <Route path="/ai-quickscan" element={<Navigate to="/profirmy/mapa-uspor" replace />} />
