@@ -284,7 +284,7 @@ const ProFirmy = () => {
                     díky AI postupům
                   </span>
                   <br />
-                  <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6" style={{ letterSpacing: '0.05em' }}>
+                  <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6 uppercase" style={{ letterSpacing: '0.15em' }}>
                     a firemní akademii
                   </span>
                 </h1>
