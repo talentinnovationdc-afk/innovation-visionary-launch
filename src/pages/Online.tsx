@@ -212,13 +212,13 @@ const Online = () => {
                     Online vzdělávání
                   </span>
                   
-                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-4 leading-[1.15] uppercase">
+                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-4 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                     <span className="heading-hero">
                       AI pro vaši profesi
                     </span>
                   </h1>
                   
-                  <h2 className="text-lg md:text-xl lg:text-2xl font-medium tracking-[0.1em] mb-6 uppercase text-accent">
+                  <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold mb-6 text-accent uppercase" style={{ letterSpacing: '0.15em' }}>
                     Ověřitelný certifikát a LinkedIn odznak
                   </h2>
                   
