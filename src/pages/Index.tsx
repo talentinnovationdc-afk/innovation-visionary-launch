@@ -112,8 +112,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Logo Ribbon - Trust Bar */}
-          <LogoRibbon />
 
           {/* Vyberte si, kde začít - B2B Journey Steps */}
           <section id="journey" className="py-20 relative">
@@ -442,6 +440,21 @@ const Index = () => {
 
           {/* Methodology - Step by Step */}
           <MethodologySection />
+
+          {/* Logo Ribbon - Trust Bar */}
+          <section className="py-12 relative">
+            <div className="container px-4">
+              <div className="text-center mb-8">
+                <h2 className="text-lg md:text-xl font-semibold tracking-[0.15em] text-foreground uppercase mb-2">
+                  Důvěřují nám lídři v průmyslu a technologiích
+                </h2>
+                <p className="text-xs text-muted-foreground/70 max-w-xl mx-auto">
+                  Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
+                </p>
+              </div>
+            </div>
+            <LogoRibbon />
+          </section>
 
           {/* Final CTA */}
           <section className="py-20 relative">
