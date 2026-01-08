@@ -14,7 +14,7 @@ const buttonVariants = cva(
           "bg-primary text-primary-foreground hover:brightness-110 active:brightness-95 shadow-[var(--shadow-glow-cyan)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)]",
         // Secondary: Outline cyan, stronger border, glow outward on hover
         outline:
-          "border-2 border-primary/70 bg-transparent text-primary hover:border-primary hover:shadow-[0_0_25px_hsl(var(--primary)/0.4)] hover:text-primary",
+          "border-2 border-primary/70 bg-transparent text-primary hover:border-primary hover:shadow-[0_0_25px_hsl(var(--primary)/0.4)]",
         // Tertiary: Text link cyan
         link: "text-primary underline-offset-4 hover:underline hover:brightness-110 p-0 h-auto",
         // Utility variants
