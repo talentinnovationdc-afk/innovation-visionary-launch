@@ -168,24 +168,24 @@
     background-image: var(--gradient-primary);
   }
 
-  /* Hero heading - cyan gradient in dark mode, solid cyan in light mode */
+  /* Hero heading - cyan gradient (light→dark) in dark mode, solid cyan in light mode */
   .heading-hero {
     @apply text-primary;
   }
 
   .dark .heading-hero {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(176, 96%, 69%) 0%, hsl(176, 80%, 50%) 100%);
+    background-image: linear-gradient(135deg, hsl(176, 96%, 75%) 0%, hsl(176, 90%, 45%) 100%);
   }
 
-  /* Accent heading - purple gradient in dark mode, solid purple in light mode */
+  /* Accent heading - purple gradient (dark→light) in dark mode, solid purple in light mode */
   .heading-accent {
     @apply text-accent;
   }
 
   .dark .heading-accent {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(284, 100%, 60%) 0%, hsl(284, 80%, 45%) 100%);
+    background-image: linear-gradient(135deg, hsl(284, 80%, 40%) 0%, hsl(284, 100%, 65%) 100%);
   }
 
   /* Card text - improved contrast */
