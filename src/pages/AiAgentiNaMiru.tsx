@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -228,6 +229,11 @@ const AiAgentiNaMiru = () => {
                   </a>
                 </div>
               </div>
+            </div>
+            
+            {/* Scroll Indicator */}
+            <div className="flex justify-center mt-16">
+              <ScrollIndicator targetId="solutions" />
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
