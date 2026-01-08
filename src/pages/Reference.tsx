@@ -224,18 +224,6 @@ const Reference = () => {
                   <span className="text-foreground font-medium"> Zavádíme nástroje, školíme praxi a navrhujeme automatizace na míru.</span>
                 </p>
                 
-                {/* Proof Chips */}
-                <div className="flex flex-wrap justify-center gap-6 mb-10">
-                  <span className="text-sm font-medium text-primary">
-                    1250+ absolventů
-                  </span>
-                  <span className="text-sm font-medium text-primary">
-                    4,9/5 hodnocení
-                  </span>
-                  <span className="text-sm font-medium text-primary">
-                    95 % doporučuje
-                  </span>
-                </div>
                 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
