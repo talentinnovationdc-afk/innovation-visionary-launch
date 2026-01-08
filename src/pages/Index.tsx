@@ -145,13 +145,21 @@ const Index = () => {
                 
                 <div className="mb-12 md:mb-16"></div>
                 
-                {/* Two CTAs */}
+                {/* Two CTAs - consistent light logic (both outer glow) */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+                  {/* Primary CTA */}
                   <div className="flex flex-col items-center">
                     <Link to="/poptavka">
                       <Button 
                         size="lg" 
-                        className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
+                        className="w-full sm:w-auto min-h-[52px] px-8 py-4 text-sm font-semibold tracking-wider rounded-xl
+                          bg-primary text-primary-foreground
+                          shadow-[0_0_20px_rgba(102,252,241,0.35)]
+                          hover:shadow-[0_0_28px_rgba(102,252,241,0.5)]
+                          hover:-translate-y-[2px] hover:scale-[1.02]
+                          focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background
+                          active:translate-y-[1px] active:shadow-[0_0_15px_rgba(102,252,241,0.3)]
+                          transition-all duration-200 ease-out"
                       >
                         <Building className="w-5 h-5 mr-2" />
                         Domluvit diagnostiku (15 min)
@@ -161,12 +169,22 @@ const Index = () => {
                       Bez závazku • Ozveme se do 24 hodin
                     </p>
                   </div>
+                  
+                  {/* Secondary CTA - ghost/outline with outer glow (softer) */}
                   <div className="flex flex-col items-center">
                     <a href="#journey">
                       <Button 
                         variant="outline"
                         size="lg" 
-                        className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
+                        className="w-full sm:w-auto min-h-[52px] px-8 py-4 text-sm font-semibold tracking-wider rounded-xl
+                          bg-transparent border-2 border-accent/60 text-accent
+                          shadow-[0_0_15px_rgba(189,0,255,0.2)]
+                          hover:border-accent/90 hover:text-accent hover:bg-accent/5
+                          hover:shadow-[0_0_22px_rgba(189,0,255,0.35)]
+                          hover:-translate-y-[2px] hover:scale-[1.02]
+                          focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background
+                          active:translate-y-[1px] active:shadow-[0_0_12px_rgba(189,0,255,0.15)]
+                          transition-all duration-200 ease-out"
                       >
                         <GraduationCap className="w-5 h-5 mr-2" />
                         Zobrazit cestu (kroky)
