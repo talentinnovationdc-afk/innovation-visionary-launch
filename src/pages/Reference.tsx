@@ -279,12 +279,12 @@ const Reference = () => {
                       rel="noopener noreferrer"
                       className="group"
                     >
-                      <div className="h-12 md:h-14 w-auto px-4 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.4)]">
+                      <div className="h-16 md:h-20 w-auto px-6 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.4)]">
                         <img
                           src={processedLogos[client.name] ?? client.logo}
                           alt={client.name}
                           loading="lazy"
-                          className={`h-full w-auto object-contain max-w-[160px] grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${
+                          className={`h-full w-auto object-contain max-w-[200px] grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${
                             client.name === "Iveco Group"
                               ? "dark:invert dark:opacity-40 dark:group-hover:invert-0 dark:group-hover:opacity-100"
                               : ""
@@ -310,12 +310,12 @@ const Reference = () => {
                     rel="noopener noreferrer"
                     className="flex-shrink-0 group"
                   >
-                    <div className="h-12 md:h-14 w-auto px-4 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.4)]">
+                    <div className="h-16 md:h-20 w-auto px-6 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.4)]">
                       <img
                         src={processedLogos[client.name] ?? client.logo}
                         alt={client.name}
                         loading="lazy"
-                        className={`h-full w-auto object-contain max-w-[160px] grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${
+                        className={`h-full w-auto object-contain max-w-[200px] grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${
                           client.name === "Iveco Group"
                             ? "dark:invert dark:opacity-40 dark:group-hover:invert-0 dark:group-hover:opacity-100"
                             : ""
