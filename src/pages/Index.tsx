@@ -37,238 +37,68 @@ const Index = () => {
                 {/* H1 wrapper with responsive max-width */}
                 <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
                   
-                  {/* Causality Diagram: DÍKY AI → Headline */}
-                  <div className="flex flex-col items-center mb-6 md:mb-8">
-                    {/* "DÍKY AI" label with dramatic animation */}
-                    <motion.div
-                      initial={{ opacity: 0, y: -20, scale: 0.9 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
-                      className="relative mb-3 md:mb-4"
+                  {/* Hero content with holographic scan effect */}
+                  <div className="relative">
+                    {/* "DÍKY AI" - subtle label */}
+                    <motion.span 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      className="block text-sm md:text-base lg:text-lg font-medium text-primary/70 uppercase tracking-[0.3em] mb-4 md:mb-6"
                     >
-                      {/* Outer glow ring */}
+                      Díky AI
+                    </motion.span>
+                    
+                    {/* Main headline with scan overlay */}
+                    <div className="relative overflow-hidden">
+                      {/* Holographic scan line */}
                       <motion.div
-                        className="absolute inset-0 -m-4 rounded-full"
+                        className="absolute left-0 right-0 h-[2px] pointer-events-none z-10"
                         style={{
-                          background: 'radial-gradient(circle, hsl(176 96% 69% / 0.15) 0%, transparent 70%)',
+                          background: 'linear-gradient(90deg, transparent 0%, hsl(176 96% 69% / 0.8) 50%, transparent 100%)',
+                          boxShadow: '0 0 20px 4px hsl(176 96% 69% / 0.4), 0 0 40px 8px hsl(176 96% 69% / 0.2)',
                         }}
-                        animate={{
-                          scale: [1, 1.2, 1],
-                          opacity: [0.5, 0.8, 0.5],
+                        initial={{ top: '-10%', opacity: 0 }}
+                        animate={{ 
+                          top: ['0%', '100%', '100%'],
+                          opacity: [0, 1, 0],
                         }}
                         transition={{
                           duration: 3,
                           repeat: Infinity,
+                          repeatDelay: 4,
                           ease: "easeInOut",
+                          times: [0, 0.8, 1],
                         }}
                       />
-                      <motion.span 
-                        className="relative text-xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wider"
-                        style={{ 
-                          background: 'linear-gradient(135deg, hsl(176 96% 75%) 0%, hsl(176 96% 69%) 50%, hsl(200 90% 60%) 100%)',
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent',
-                          backgroundClip: 'text',
-                          letterSpacing: '0.2em',
-                          filter: 'drop-shadow(0 0 30px hsl(176 96% 69% / 0.8)) drop-shadow(0 0 60px hsl(176 96% 69% / 0.4))',
-                        }}
-                        animate={{
-                          filter: [
-                            'drop-shadow(0 0 30px hsl(176 96% 69% / 0.8)) drop-shadow(0 0 60px hsl(176 96% 69% / 0.4))',
-                            'drop-shadow(0 0 40px hsl(176 96% 69% / 1)) drop-shadow(0 0 80px hsl(176 96% 69% / 0.6))',
-                            'drop-shadow(0 0 30px hsl(176 96% 69% / 0.8)) drop-shadow(0 0 60px hsl(176 96% 69% / 0.4))',
-                          ],
-                        }}
-                        transition={{
-                          duration: 2.5,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
+                      
+                      <h1 
+                        id="hero-heading" 
+                        className="mb-8 uppercase relative"
                       >
-                        ⚡ Díky AI
-                      </motion.span>
-                    </motion.div>
-                    
-                    {/* Network diagram: Node + T-junction + arrows - animated */}
-                    <motion.svg 
-                      className="w-full max-w-[320px] md:max-w-[450px] lg:max-w-[550px] h-[60px] md:h-[70px] lg:h-[80px]"
-                      viewBox="0 0 200 40"
-                      fill="none"
-                      preserveAspectRatio="xMidYMid meet"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                      <defs>
-                        {/* Enhanced glow filter */}
-                        <filter id="glowStrong" x="-100%" y="-100%" width="300%" height="300%">
-                          <feGaussianBlur stdDeviation="2" result="blur1"/>
-                          <feGaussianBlur stdDeviation="4" result="blur2"/>
-                          <feMerge>
-                            <feMergeNode in="blur2"/>
-                            <feMergeNode in="blur1"/>
-                            <feMergeNode in="SourceGraphic"/>
-                          </feMerge>
-                        </filter>
-                        {/* Animated gradient for lines */}
-                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="hsl(176 96% 69%)" stopOpacity="0.3">
-                            <animate attributeName="stopOpacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-                          </stop>
-                          <stop offset="50%" stopColor="hsl(176 96% 75%)" stopOpacity="1">
-                            <animate attributeName="stopOpacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
-                          </stop>
-                          <stop offset="100%" stopColor="hsl(176 96% 69%)" stopOpacity="0.3">
-                            <animate attributeName="stopOpacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-                          </stop>
-                        </linearGradient>
-                        {/* Arrow gradient */}
-                        <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="hsl(176 96% 69%)"/>
-                          <stop offset="100%" stopColor="hsl(200 90% 60%)"/>
-                        </linearGradient>
-                        {/* Animated arrow marker */}
-                        <marker 
-                          id="arrowheadAnimated" 
-                          markerWidth="10" 
-                          markerHeight="10" 
-                          refX="5" 
-                          refY="5" 
-                          orient="auto"
+                        {/* Line 1: Main claim */}
+                        <motion.span 
+                          className="block text-3xl md:text-5xl lg:text-6xl font-semibold heading-hero"
+                          style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}
+                          initial={{ opacity: 0.3 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 1, delay: 0.3 }}
                         >
-                          <path 
-                            d="M1,2 L5,5 L1,8" 
-                            fill="none" 
-                            stroke="url(#arrowGradient)" 
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
-                          </path>
-                        </marker>
-                      </defs>
-                      
-                      {/* Central node (pulsing glowing orb) */}
-                      <circle 
-                        cx="100" 
-                        cy="6" 
-                        r="5" 
-                        fill="hsl(176 96% 69%)" 
-                        filter="url(#glowStrong)"
-                      >
-                        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-                      </circle>
-                      {/* Inner bright core */}
-                      <circle 
-                        cx="100" 
-                        cy="6" 
-                        r="2" 
-                        fill="white"
-                      >
-                        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
-                      </circle>
-                      
-                      {/* Vertical line from node - animated draw */}
-                      <line 
-                        x1="100" y1="11" 
-                        x2="100" y2="18" 
-                        stroke="url(#lineGradient)" 
-                        strokeWidth="2"
-                        filter="url(#glowStrong)"
-                        strokeLinecap="round"
-                      >
-                        <animate attributeName="stroke-dasharray" values="0,10;10,0" dur="0.5s" fill="freeze" begin="0.3s"/>
-                      </line>
-                      
-                      {/* Horizontal line (T-junction) - animated expand */}
-                      <line 
-                        x1="25" y1="18" 
-                        x2="175" y2="18" 
-                        stroke="url(#lineGradient)" 
-                        strokeWidth="2"
-                        filter="url(#glowStrong)"
-                        strokeLinecap="round"
-                        strokeDasharray="150"
-                        strokeDashoffset="150"
-                      >
-                        <animate attributeName="stroke-dashoffset" from="150" to="0" dur="0.8s" fill="freeze" begin="0.5s"/>
-                      </line>
-                      
-                      {/* Left diagonal arrow - animated */}
-                      <g>
-                        <line 
-                          x1="50" y1="18" 
-                          x2="25" y2="38" 
-                          stroke="url(#arrowGradient)" 
-                          strokeWidth="2"
-                          filter="url(#glowStrong)"
-                          strokeLinecap="round"
-                          markerEnd="url(#arrowheadAnimated)"
-                          strokeDasharray="30"
-                          strokeDashoffset="30"
+                          Méně rutiny · Více kapacity
+                        </motion.span>
+                        
+                        {/* Line 2: Properties */}
+                        <motion.span 
+                          className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6"
+                          initial={{ opacity: 0.3 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 1, delay: 0.5 }}
                         >
-                          <animate attributeName="stroke-dashoffset" from="30" to="0" dur="0.4s" fill="freeze" begin="1s"/>
-                        </line>
-                        {/* Pulse effect on arrow end */}
-                        <circle cx="25" cy="38" r="3" fill="hsl(176 96% 69%)" opacity="0">
-                          <animate attributeName="opacity" values="0;0.8;0" dur="1.5s" repeatCount="indefinite" begin="1.4s"/>
-                          <animate attributeName="r" values="2;6;2" dur="1.5s" repeatCount="indefinite" begin="1.4s"/>
-                        </circle>
-                      </g>
-                      
-                      {/* Right diagonal arrow - animated */}
-                      <g>
-                        <line 
-                          x1="150" y1="18" 
-                          x2="175" y2="38" 
-                          stroke="url(#arrowGradient)" 
-                          strokeWidth="2"
-                          filter="url(#glowStrong)"
-                          strokeLinecap="round"
-                          markerEnd="url(#arrowheadAnimated)"
-                          strokeDasharray="30"
-                          strokeDashoffset="30"
-                        >
-                          <animate attributeName="stroke-dashoffset" from="30" to="0" dur="0.4s" fill="freeze" begin="1.2s"/>
-                        </line>
-                        {/* Pulse effect on arrow end */}
-                        <circle cx="175" cy="38" r="3" fill="hsl(176 96% 69%)" opacity="0">
-                          <animate attributeName="opacity" values="0;0.8;0" dur="1.5s" repeatCount="indefinite" begin="1.6s"/>
-                          <animate attributeName="r" values="2;6;2" dur="1.5s" repeatCount="indefinite" begin="1.6s"/>
-                        </circle>
-                      </g>
-                      
-                      {/* Traveling energy particles on horizontal line */}
-                      <circle cx="100" cy="18" r="1.5" fill="white">
-                        <animate attributeName="cx" values="100;25" dur="1.5s" repeatCount="indefinite" begin="1.5s"/>
-                        <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" begin="1.5s"/>
-                      </circle>
-                      <circle cx="100" cy="18" r="1.5" fill="white">
-                        <animate attributeName="cx" values="100;175" dur="1.5s" repeatCount="indefinite" begin="1.5s"/>
-                        <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" begin="1.5s"/>
-                      </circle>
-                    </motion.svg>
+                          Měřitelně · Bezpečně · Škálovatelně
+                        </motion.span>
+                      </h1>
+                    </div>
                   </div>
-                  
-                  <h1 
-                    id="hero-heading" 
-                    className="mb-8 uppercase"
-                  >
-                    {/* Line 1: Main claim */}
-                    <span 
-                      className="block text-3xl md:text-5xl lg:text-6xl font-semibold heading-hero"
-                      style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}
-                    >
-                      Méně rutiny · Více kapacity
-                    </span>
-                    
-                    {/* Line 2: Properties */}
-                    <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6">
-                      Měřitelně · Bezpečně · Škálovatelně
-                    </span>
-                  </h1>
                 </div>
                 
                 <div className="mb-12 md:mb-16"></div>
