@@ -1056,42 +1056,47 @@ const AkademieProTymy = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {academyOptions.map((academy) => {
                       const Icon = academy.icon;
+                      const isChecked = formData.academies.includes(academy.title);
+
+                      const toggle = () => {
+                        setFormData((prev) => ({
+                          ...prev,
+                          academies: isChecked
+                            ? prev.academies.filter((a) => a !== academy.title)
+                            : [...prev.academies, academy.title],
+                        }));
+                      };
+
                       return (
-                        <div 
+                        <button
                           key={academy.id}
-                          className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors cursor-pointer ${
-                            formData.academies.includes(academy.title)
+                          type="button"
+                          className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors cursor-pointer text-left w-full ${
+                            isChecked
                               ? academy.isProgram
-                                ? 'bg-accent/10 border-accent/40'
-                                : 'bg-primary/10 border-primary/40'
-                              : 'bg-card/50 border-border/30 hover:border-primary/30'
+                                ? "bg-accent/10 border-accent/40"
+                                : "bg-primary/10 border-primary/40"
+                              : "bg-card/50 border-border/30 hover:border-primary/30"
                           }`}
-                          onClick={() => {
-                            const newAcademies = formData.academies.includes(academy.title)
-                              ? formData.academies.filter(a => a !== academy.title)
-                              : [...formData.academies, academy.title];
-                            setFormData({...formData, academies: newAcademies});
-                          }}
+                          onClick={toggle}
                         >
-                          <Checkbox 
-                            checked={formData.academies.includes(academy.title)}
-                            onCheckedChange={() => {
-                              const newAcademies = formData.academies.includes(academy.title)
-                                ? formData.academies.filter(a => a !== academy.title)
-                                : [...formData.academies, academy.title];
-                              setFormData({...formData, academies: newAcademies});
-                            }}
-                          />
-                          <Icon className={`w-4 h-4 ${academy.isProgram ? 'text-accent' : 'text-primary'}`} />
+                          <Checkbox checked={isChecked} className="pointer-events-none" />
+                          <Icon className={`w-4 h-4 ${academy.isProgram ? "text-accent" : "text-primary"}`} />
                           <span className="text-sm text-muted-foreground">
                             {academy.isProgram ? (
-                              <>Kompletní program<br /><span className="text-xs">(3 akademie)</span></>
-                            ) : academy.title}
+                              <>
+                                Kompletní program
+                                <br />
+                                <span className="text-xs">(3 akademie)</span>
+                              </>
+                            ) : (
+                              academy.title
+                            )}
                           </span>
                           {academy.isProgram && (
                             <span className="text-[10px] text-accent font-medium">(kompletní program)</span>
                           )}
-                        </div>
+                        </button>
                       );
                     })}
                   </div>
