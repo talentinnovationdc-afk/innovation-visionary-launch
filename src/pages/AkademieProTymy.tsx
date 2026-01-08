@@ -912,7 +912,7 @@ const AkademieProTymy = () => {
                     >
                       <div className="relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40">
                         
-                        <AccordionTrigger className="px-6 py-5 hover:no-underline [&[data-state=open]>div>.chevron]:rotate-180">
+                        <AccordionTrigger className="px-6 py-5 hover:no-underline [&>svg]:hidden">
                           <div className="flex items-center gap-4 w-full">
                             {/* Icon */}
                             <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-primary/10 group-hover:bg-primary/15">
@@ -930,9 +930,9 @@ const AkademieProTymy = () => {
                               </h3>
                             </div>
                             
-                            {/* Chevron */}
-                            <div className="chevron w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
-                              <ChevronDown className="w-4 h-4 transition-colors text-primary group-data-[state=open]:text-background" />
+                            {/* Custom Chevron */}
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
+                              <ChevronDown className="w-4 h-4 transition-all duration-200 text-primary group-data-[state=open]:text-background group-data-[state=open]:rotate-180" />
                             </div>
                           </div>
                         </AccordionTrigger>
