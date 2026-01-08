@@ -48,12 +48,6 @@ const Index = () => {
                       Méně rutiny · Více kapacity
                     </span>
                     <br />
-                    <span 
-                      className="block text-[11px] md:text-[13px] lg:text-[15px] font-medium tracking-[0.15em] text-primary/65 mb-1 md:mb-2"
-                      style={{ marginTop: '0.5em' }}
-                    >
-                      Poháněno umělou inteligencí
-                    </span>
                     <span className="heading-hero">
                       Díky AI
                     </span>
