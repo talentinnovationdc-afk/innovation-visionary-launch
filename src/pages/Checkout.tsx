@@ -80,7 +80,7 @@ const Checkout = () => {
         throw new Error("Webhook request failed");
       }
 
-      navigate("/dekujeme?form=rychla_diagnostika");
+      navigate("/dekujeme-formular?form=rychla_diagnostika");
     } catch (error) {
       if (error instanceof Error && error.name === "AbortError") {
         setSubmitError("Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.");
