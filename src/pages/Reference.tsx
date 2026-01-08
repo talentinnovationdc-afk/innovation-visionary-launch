@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { GraduationCap, Workflow, Zap, Bot } from "lucide-react";
+import { GraduationCap, Workflow, Zap, Bot, Shield, Scale, ClipboardCheck, FileCode } from "lucide-react";
 import { useRef, useEffect, useMemo, useState } from "react";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { LogoRibbon } from "@/components/LogoRibbon";
@@ -384,6 +384,74 @@ const Reference = () => {
                   s ohledem na interní know-how našich klientů. Detaily rádi probereme 
                   při osobní konzultaci."
                 </p>
+              </div>
+            </div>
+            
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+          </section>
+
+          {/* Bezpečné a ověřené nasazení */}
+          <section className="py-20 relative">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
+                BEZPEČNÉ A OVĚŘENÉ NASAZENÍ
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Proč nám důvěřují desítky firem v citlivých odvětvích.
+              </p>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                {[
+                  {
+                    icon: Shield,
+                    title: "BEZPEČNÝ START",
+                    subtitle: "1250+ absolventů",
+                    description: "Začneme na rolích a rychlých výhrách. Jasná pravidla pro data, přístupy a používání AI.",
+                  },
+                  {
+                    icon: Scale,
+                    title: "DATA POD KONTROLOU",
+                    subtitle: "GDPR & firemní pravidla",
+                    description: "Nastavíme, co smí do AI, kdo má přístup a jak pracovat s citlivými daty. GDPR a pravidla firmy respektujeme.",
+                  },
+                  {
+                    icon: ClipboardCheck,
+                    title: "MĚŘITELNÉ VÝSLEDKY",
+                    subtitle: "Čas, kvalita, chybovost",
+                    description: "Měříme dopad: ušetřený čas, kvalitu výstupů a chybovost. Víte, co funguje.",
+                  },
+                  {
+                    icon: FileCode,
+                    title: "KNOW-HOW ZŮSTÁVÁ VE FIRMĚ",
+                    subtitle: "Skillset & standardy",
+                    description: "Tým získá skillset a standardy. HR má přehled o dokončení a jednotný způsob práce.",
+                  },
+                ].map((point) => {
+                  const Icon = point.icon;
+                  
+                  return (
+                    <div
+                      key={point.title}
+                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]"
+                    >
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      
+                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-1">
+                        {point.title}
+                      </h3>
+                      
+                      <p className="text-xs text-primary/60 mb-3">
+                        {point.subtitle}
+                      </p>
+                      
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {point.description}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
             
