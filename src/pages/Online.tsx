@@ -212,7 +212,7 @@ const Online = () => {
                   </span>
                   
                   <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-4 leading-[1.15] uppercase">
-                    <span className="text-primary">
+                    <span className="heading-hero">
                       AI pro vaši profesi
                     </span>
                   </h1>

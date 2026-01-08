@@ -24,7 +24,7 @@ const Legal = () => {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4">
-              <span className="text-primary uppercase">
+              <span className="heading-hero uppercase">
                 Ochrana osobních údajů a cookies
               </span>
             </h1>
