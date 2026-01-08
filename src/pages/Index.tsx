@@ -136,7 +136,7 @@ const Index = () => {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                          Měřitelně    Bezpečně    Škálovatelně
+                          Měřitelně · Bezpečně · Škálovatelně
                         </motion.span>
                       </h1>
                     </div>
