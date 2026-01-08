@@ -332,7 +332,7 @@ const Online = () => {
           </section>
           
           {/* Scroll Indicator */}
-          <div className="flex justify-center py-8">
+          <div className="flex justify-center pt-16 pb-8">
             <ScrollIndicator targetId="how-it-works" />
           </div>
 

@@ -99,7 +99,7 @@ const ONas = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             
             {/* Scroll Indicator */}
-            <div className="flex justify-center mt-12 pb-8">
+            <div className="flex justify-center mt-16 pb-8">
               <ScrollIndicator targetId="team" />
             </div>
           </section>

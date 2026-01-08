@@ -325,7 +325,7 @@ const Reference = () => {
               </div>
               
               {/* Scroll Indicator */}
-              <div className="flex justify-center mt-12">
+              <div className="flex justify-center mt-16">
                 <ScrollIndicator targetId="content" />
               </div>
             </div>
