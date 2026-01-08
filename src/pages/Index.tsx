@@ -45,15 +45,15 @@ const Index = () => {
                     }}
                   >
                     <span className="heading-hero">
-                      Méně rutiny. Více kapacity.
+                      Méně rutiny, více kapacity
                     </span>
                     <br />
                     <span className="heading-hero">
-                      Díky AI.
+                      Díky AI
                     </span>
                     <br />
                     <span className="text-xl md:text-3xl lg:text-4xl text-accent">
-                      Měřitelně. Bezpečně. Škálovatelně.
+                      Měřitelně · Bezpečně · Škálovatelně
                     </span>
                   </h1>
                 </div>
