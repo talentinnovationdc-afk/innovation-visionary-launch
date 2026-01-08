@@ -41,11 +41,11 @@ const Index = () => {
                       letterSpacing: '-0.01em'
                     }}
                   >
-                    <span className="text-primary">
+                    <span className="heading-hero">
                       Méně rutiny. Více kapacity.
                     </span>
                     <br />
-                    <span className="text-primary">
+                    <span className="heading-hero">
                       Díky AI.
                     </span>
                     <br />

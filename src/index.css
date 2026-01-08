@@ -168,9 +168,14 @@
     background-image: var(--gradient-primary);
   }
 
-  /* Solid primary heading - main H1 style */
-  .heading-primary {
+  /* Hero heading - gradient in dark mode, solid cyan in light mode */
+  .heading-hero {
     @apply text-primary;
+  }
+
+  .dark .heading-hero {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
   }
 
   /* Accent heading for secondary lines */

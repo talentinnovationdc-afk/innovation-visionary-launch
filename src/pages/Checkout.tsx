@@ -80,7 +80,7 @@ const Checkout = () => {
             {/* Hero Copy */}
             <div className="text-center mb-10">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4 leading-[1.3]">
-                <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent uppercase" style={{ WebkitTextFillColor: 'transparent' }}>
+                <span className="heading-hero uppercase">
                   Rychlá diagnostika: kde vám AI ušetří čas
                 </span>
                 <br />

@@ -141,7 +141,7 @@ const CopilotAkademie = () => {
               </div>
               
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                <span className="text-primary">
+                <span className="heading-hero">
                   Microsoft Copilot Akademie
                 </span>
               </h1>

@@ -19,7 +19,7 @@ const ObchodniPodminky = () => {
           <div className="max-w-4xl mx-auto">
             {/* Hero */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4">
-              <span className="text-primary uppercase">
+              <span className="heading-hero uppercase">
                 Obchodní podmínky Talent Innovation
               </span>
             </h1>
