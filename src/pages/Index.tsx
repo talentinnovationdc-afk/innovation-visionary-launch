@@ -37,28 +37,27 @@ const Index = () => {
                 {/* H1 wrapper with responsive max-width */}
                 <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
                   
-                  {/* Hero content - Sequence: glow → vertical pulse → horizontal scan */}
+                  {/* Hero content - Precise sequence: 1s delay → glow → vertical → scan */}
                   <div className="relative flex flex-col items-center">
-                    {/* Step 1: "DÍKY AI" glow starts first */}
+                    {/* Step 1: "DÍKY AI" glow - starts 1s after load, duration 1.2s */}
                     <motion.span 
-                      initial={{ opacity: 0 }}
+                      initial={{ opacity: 1, textShadow: '0 0 0px hsl(176 96% 69% / 0)' }}
                       animate={{ 
-                        opacity: 1,
                         textShadow: [
                           '0 0 0px hsl(176 96% 69% / 0)',
                           '0 0 25px hsl(176 96% 69% / 1), 0 0 50px hsl(176 96% 69% / 0.5)',
-                          '0 0 15px hsl(176 96% 69% / 0.6), 0 0 30px hsl(176 96% 69% / 0.3)',
-                          '0 0 0px hsl(176 96% 69% / 0)',
+                          '0 0 10px hsl(176 96% 69% / 0.4)',
                           '0 0 0px hsl(176 96% 69% / 0)',
                         ],
                       }}
                       transition={{ 
-                        opacity: { duration: 1, ease: "easeOut" },
                         textShadow: { 
-                          duration: 8,
+                          duration: 1.2,
+                          delay: 1,
                           repeat: Infinity, 
+                          repeatDelay: 6.8,
                           ease: "easeInOut",
-                          times: [0, 0.1, 0.2, 0.35, 1],
+                          times: [0, 0.35, 0.7, 1],
                         },
                       }}
                       className="text-xs md:text-sm font-medium text-primary uppercase tracking-[0.4em] mb-3"
@@ -66,33 +65,33 @@ const Index = () => {
                       Díky AI
                     </motion.span>
                     
-                    {/* Step 2: Vertical pulse - starts after glow peaks */}
+                    {/* Step 2: Vertical pulse - starts at 2.2s (after glow ends), duration 1.3s */}
                     <div className="relative h-10 md:h-12 w-px flex items-center justify-center mb-3">
                       <div className="absolute inset-0 bg-gradient-to-b from-primary/15 via-primary/8 to-transparent" />
                       
                       <motion.div
-                        className="absolute w-px bg-primary/80 rounded-full"
+                        className="absolute w-px bg-primary rounded-full"
                         style={{
-                          boxShadow: '0 0 8px 2px hsl(176 96% 69% / 0.5)',
+                          boxShadow: '0 0 10px 3px hsl(176 96% 69% / 0.6)',
                         }}
-                        initial={{ top: 0, height: 0, opacity: 0 }}
+                        initial={{ top: '0%', height: '0%', opacity: 0 }}
                         animate={{ 
-                          top: ['0%', '50%', '100%'],
+                          top: ['0%', '60%', '100%'],
                           height: ['0%', '40%', '0%'],
-                          opacity: [0, 0.8, 0],
+                          opacity: [0, 1, 0],
                         }}
                         transition={{
-                          duration: 1.5,
+                          duration: 1.3,
+                          delay: 2.2,
                           repeat: Infinity,
-                          repeatDelay: 6.5,
-                          delay: 0.6,
+                          repeatDelay: 5.5,
                           ease: "easeInOut",
-                          times: [0, 0.5, 1],
+                          times: [0, 0.6, 1],
                         }}
                       />
                     </div>
                     
-                    {/* Step 3: Horizontal scan - starts when vertical pulse reaches bottom */}
+                    {/* Step 3: Horizontal scan - starts at 3.5s (after vertical ends), duration 2s */}
                     <div className="relative overflow-hidden">
                       <motion.div
                         className="absolute left-0 right-0 h-px pointer-events-none z-10"
@@ -102,16 +101,16 @@ const Index = () => {
                         }}
                         initial={{ top: '-5%', opacity: 0 }}
                         animate={{ 
-                          top: ['-5%', '25%', '75%', '105%'],
-                          opacity: [0, 0.8, 0.8, 0],
+                          top: ['-5%', '20%', '80%', '105%'],
+                          opacity: [0, 0.9, 0.9, 0],
                         }}
                         transition={{
-                          duration: 2.2,
+                          duration: 2,
+                          delay: 3.5,
                           repeat: Infinity,
-                          repeatDelay: 5.8,
-                          delay: 2.1,
+                          repeatDelay: 3.5,
                           ease: "linear",
-                          times: [0, 0.15, 0.85, 1],
+                          times: [0, 0.12, 0.88, 1],
                         }}
                       />
                       
