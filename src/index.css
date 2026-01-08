@@ -168,6 +168,16 @@
     background-image: var(--gradient-primary);
   }
 
+  /* Solid primary heading - main H1 style */
+  .heading-primary {
+    @apply text-primary;
+  }
+
+  /* Accent heading for secondary lines */
+  .heading-accent {
+    @apply text-accent;
+  }
+
   /* Card text - improved contrast */
   .card-body-text {
     @apply text-muted-foreground;
