@@ -341,7 +341,7 @@ const AkademieProTymy = () => {
         throw new Error("Webhook request failed");
       }
 
-      navigate("/dekujeme?form=nezavazna_poptavka");
+      navigate("/dekujeme-formular?form=nezavazna_poptavka");
     } catch (error) {
       if (error instanceof Error && error.name === "AbortError") {
         setSubmitError("Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.");

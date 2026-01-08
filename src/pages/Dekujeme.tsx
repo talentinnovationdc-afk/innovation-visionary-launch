@@ -2,63 +2,19 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
-import { CheckCircle, ArrowLeft, BookOpen, RefreshCw, Mail } from "lucide-react";
-import { Link, useSearchParams } from "react-router-dom";
+import { CheckCircle, ArrowLeft, BookOpen, Mail, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const PRODUCTION_DOMAIN = "t-i.cz";
-
-const formContextContent = {
-  rychla_diagnostika: {
-    title: "Rychlá diagnostika (15 min)",
-    text: "Připravte si 1–2 příklady rutiny, kde dnes ztrácíte čas (reporting, e-maily, onboarding...)."
-  },
-  nezavazna_poptavka: {
-    title: "Nezávazná poptávka (Akademie pro týmy)",
-    text: "V odpovědi pošleme doporučený balíček licencí + varianty pro role a onboarding."
-  },
-  default: {
-    title: "Děkujeme",
-    text: "Ozveme se do 24 hodin."
-  }
-};
+// TODO: Replace with actual LMS login URL when available
+const LMS_URL = "#";
 
 const Dekujeme = () => {
-  const [searchParams] = useSearchParams();
-  const formType = searchParams.get("form") as keyof typeof formContextContent | null;
-  
-  const contextContent = formType && formContextContent[formType] 
-    ? formContextContent[formType] 
-    : formContextContent.default;
-
-  const handleBackToForm = () => {
-    // Check if referrer is from t-i.cz
-    if (typeof document !== "undefined" && document.referrer) {
-      try {
-        const referrerUrl = new URL(document.referrer);
-        if (referrerUrl.hostname === PRODUCTION_DOMAIN || referrerUrl.hostname.endsWith(`.${PRODUCTION_DOMAIN}`)) {
-          window.location.href = document.referrer;
-          return;
-        }
-      } catch {
-        // Invalid URL, fall through to default
-      }
-    }
-    // Default fallback
-    window.location.href = "/profirmy";
-  };
-
-  const steps = [
-    "Navrhneme termín krátkého hovoru.",
-    "Pošleme krátký checklist a doporučený postup.",
-    "Bez závazku. Bez prodeje."
-  ];
-
   return (
     <div className="min-h-screen bg-background relative overflow-hidden flex flex-col">
       <SEO 
-        title="Děkujeme | Talent Innovation"
-        description="Potvrzení odeslání formuláře. Ozveme se do 24 hodin."
+        title="Děkujeme za objednávku | Talent Innovation"
+        description="Objednávka dokončena. Přístup do akademie dorazí e-mailem."
         path="/dekujeme"
         noindex={true}
       />
@@ -72,23 +28,23 @@ const Dekujeme = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
               <CheckCircle className="w-4 h-4 text-primary" />
               <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">
-                Odesláno
+                Zaplaceno
               </span>
             </div>
 
             {/* H1 */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4 leading-[1.3] uppercase">
               <span className="heading-hero">
-                Hotovo. Ozveme se do 24 hodin.
+                Hotovo. Začněte studovat.
               </span>
             </h1>
             
             {/* Subtext */}
             <p className="text-lg text-muted-foreground mb-10 max-w-lg mx-auto">
-              Zpracovali jsme váš požadavek. Do 24 hodin pošleme další kroky.
+              Objednávka je úspěšně zpracovaná. Přístup vám dorazí v průběhu dnešního dne.
             </p>
 
-            {/* Main glass card with check icon and steps */}
+            {/* Main glass card with check icon */}
             <div className="glass-card p-8 md:p-10 mb-8">
               {/* Check icon with glow */}
               <div className="flex justify-center mb-8">
@@ -97,49 +53,50 @@ const Dekujeme = () => {
                 </div>
               </div>
 
-              {/* 3 steps */}
-              <div className="space-y-4 text-left max-w-sm mx-auto">
-                {steps.map((step, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm font-semibold">
-                      {index + 1}
-                    </div>
-                    <p className="text-foreground text-base">{step}</p>
-                  </div>
-                ))}
+              {/* Info text */}
+              <div className="space-y-4 text-center max-w-sm mx-auto">
+                <p className="text-foreground text-base">
+                  Přístupy do akademie posíláme ručně — není to automat.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  E-mail s přihlašovacími údaji vám dorazí v průběhu dnešního dne.
+                </p>
               </div>
-            </div>
-
-            {/* Context block based on form parameter */}
-            <div className="glass-card p-6 mb-8 border-l-4 border-l-primary">
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {contextContent.title}
-              </h3>
-              <p className="text-muted-foreground text-sm">
-                {contextContent.text}
-              </p>
             </div>
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link to="/">
+              {/* TODO: Update href when LMS is available */}
+              <a href={LMS_URL}>
                 <Button 
                   size="lg" 
                   className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
+                  disabled={LMS_URL === "#"}
                 >
-                  <ArrowLeft className="h-5 w-5 mr-2" />
-                  Zpět domů
+                  <ExternalLink className="h-5 w-5 mr-2" />
+                  Vstoupit do akademie
                 </Button>
-              </Link>
-              <Link to="/online">
+              </a>
+              <Link to="/">
                 <Button 
                   variant="outline" 
                   size="lg" 
                   className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary/50 text-primary hover:bg-primary/10"
                 >
-                  <BookOpen className="h-5 w-5 mr-2" />
-                  Zobrazit akademie
+                  <ArrowLeft className="h-5 w-5 mr-2" />
+                  Zpět domů
                 </Button>
+              </Link>
+            </div>
+
+            {/* Link to other academies */}
+            <div className="mb-8">
+              <Link 
+                to="/online" 
+                className="text-primary hover:text-primary/80 underline underline-offset-4 text-sm inline-flex items-center gap-1"
+              >
+                <BookOpen className="w-4 h-4" />
+                Zobrazit další akademie
               </Link>
             </div>
 
@@ -148,27 +105,22 @@ const Dekujeme = () => {
               <div className="flex items-center gap-2 mb-3">
                 <Mail className="w-5 h-5 text-muted-foreground" />
                 <h4 className="text-sm font-semibold text-foreground">
-                  Nedorazil e-mail?
+                  Nedostal jsem e-mail
                 </h4>
               </div>
               <div className="text-sm text-muted-foreground space-y-2 text-left">
                 <p>
-                  Zkontrolujte Spam/Hromadné a vyhledejte "Talent Innovation".
+                  <strong>Tip:</strong> Zkontrolujte složku Spam/Hromadné a vyhledejte "Talent Innovation".
                 </p>
                 <p>
-                  Pokud nic nedorazí, odešlete formulář znovu nebo nás kontaktujte.
+                  Pokud e-mail nedorazí do konce dne, napište nám na{" "}
+                  <a 
+                    href="mailto:Daniel.Cerveny@t-i.cz" 
+                    className="text-primary hover:underline"
+                  >
+                    Daniel.Cerveny@t-i.cz
+                  </a>
                 </p>
-              </div>
-              <div className="mt-4">
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  onClick={handleBackToForm}
-                  className="text-primary hover:text-primary/80 hover:bg-primary/10"
-                >
-                  <RefreshCw className="w-4 h-4 mr-2" />
-                  Zpět na formulář
-                </Button>
               </div>
             </div>
           </div>

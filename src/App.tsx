@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import Checkout from "./pages/Checkout";
 import Dekujeme from "./pages/Dekujeme";
+import DekujemeFormular from "./pages/DekujemeFormular";
 import Metodika from "./pages/Metodika";
 import ONas from "./pages/ONas";
 import ProFirmy from "./pages/ProFirmy";
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/poptavka" element={<Checkout />} />
           <Route path="/checkout" element={<Navigate to="/poptavka" replace />} />
           <Route path="/dekujeme" element={<Dekujeme />} />
+          <Route path="/dekujeme-formular" element={<DekujemeFormular />} />
           <Route path="/metodika" element={<Metodika />} />
           <Route path="/o-nas" element={<ONas />} />
           <Route path="/profirmy" element={<ProFirmy />} />
