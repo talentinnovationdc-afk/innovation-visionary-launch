@@ -946,7 +946,16 @@ const AkademieProTymy = () => {
                           }`}
                           onClick={toggle}
                         >
-                          <Checkbox checked={isChecked} className="pointer-events-none" />
+                          <span
+                            className={`flex h-4 w-4 items-center justify-center rounded-sm border transition-colors ${
+                              isChecked
+                                ? "border-primary bg-primary text-primary-foreground"
+                                : "border-primary/60 bg-transparent"
+                            }`}
+                            aria-hidden="true"
+                          >
+                            {isChecked ? <Check className="h-4 w-4" /> : null}
+                          </span>
                           <Icon className={`w-4 h-4 ${academy.isProgram ? "text-accent" : "text-primary"}`} />
                           <span className="text-sm text-muted-foreground">
                             {academy.isProgram ? (
