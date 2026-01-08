@@ -97,13 +97,13 @@ const Index = () => {
                       <motion.div
                         className="absolute left-0 right-0 h-px pointer-events-none z-10"
                         style={{
-                          background: 'linear-gradient(90deg, transparent 0%, hsl(176 96% 69% / 0.5) 50%, transparent 100%)',
-                          boxShadow: '0 0 10px 2px hsl(176 96% 69% / 0.25)',
+                          background: 'linear-gradient(90deg, transparent 0%, hsl(176 96% 69% / 0.6) 50%, transparent 100%)',
+                          boxShadow: '0 0 12px 3px hsl(176 96% 69% / 0.35)',
                         }}
                         initial={{ top: '-5%', opacity: 0 }}
                         animate={{ 
-                          top: ['-5%', '105%'],
-                          opacity: [0, 0.7, 0.7, 0],
+                          top: ['-5%', '25%', '75%', '105%'],
+                          opacity: [0, 0.8, 0.8, 0],
                         }}
                         transition={{
                           duration: 2.2,
@@ -111,11 +111,7 @@ const Index = () => {
                           repeatDelay: 5.8,
                           delay: 2.1,
                           ease: "linear",
-                          opacity: {
-                            duration: 2.2,
-                            times: [0, 0.1, 0.9, 1],
-                            ease: "easeInOut",
-                          },
+                          times: [0, 0.15, 0.85, 1],
                         }}
                       />
                       
