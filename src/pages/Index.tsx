@@ -449,16 +449,6 @@ const Index = () => {
           {/* Logo Ribbon - Trust Bar */}
           <section className="py-12 bg-card/20 relative">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-            <div className="container px-4">
-              <div className="text-center mb-8">
-                <h2 className="text-lg md:text-xl font-semibold tracking-[0.15em] text-foreground uppercase mb-2">
-                  Důvěřují nám lídři v průmyslu a technologiích
-                </h2>
-                <p className="text-xs text-muted-foreground/70 max-w-xl mx-auto">
-                  Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
-                </p>
-              </div>
-            </div>
             <LogoRibbon />
           </section>
 
