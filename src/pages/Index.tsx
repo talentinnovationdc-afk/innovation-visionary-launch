@@ -631,29 +631,34 @@ const Index = () => {
           {/* Final CTA */}
           <section className="py-20 relative">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-            <div className="container px-4">
-              <div className="max-w-4xl mx-auto text-center glass-card p-10 md:p-12 rounded-2xl border border-primary/30 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
-                <h2 className="text-2xl md:text-3xl font-normal tracking-wider text-foreground uppercase mb-4">
-                  Vyberte si další krok:
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
+                <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                  Vyberte si další krok
                 </h2>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                  Začněte 15minutovou diagnostikou nebo vyberte akademii pro certifikaci.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/poptavka">
-                    <Button size="lg" className="px-8 py-6 text-sm font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
-                      <Building className="w-5 h-5 mr-2" />
+                    <Button 
+                      size="lg"
+                      className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                    >
                       Domluvit 15 min diagnostiku
                     </Button>
                   </Link>
                   <Link to="/online">
                     <Button 
                       variant="outline"
-                      size="lg" 
-                      className="px-8 py-6 text-sm font-semibold tracking-wider border-accent/50 text-accent hover:bg-accent/10 shadow-[0_0_12px_rgba(189,0,255,0.25)] hover:shadow-[0_0_24px_rgba(189,0,255,0.4)]"
+                      size="lg"
+                      className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase border-accent/50 text-accent hover:bg-accent/10 hover:border-accent transition-all duration-300"
                     >
-                      <BadgeCheck className="w-5 h-5 mr-2" />
-                      Vybrat akademii (certifikace)
+                      Vybrat akademii
                     </Button>
                   </Link>
                 </div>
+                <p className="text-xs text-muted-foreground/60 mt-4">bez závazku • ozveme se do 24 hodin</p>
               </div>
             </div>
           </section>
