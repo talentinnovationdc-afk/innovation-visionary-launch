@@ -26,6 +26,12 @@ const buttonVariants = cva(
         // Glass for special cases
         glass:
           "glass text-foreground hover:border-primary/40",
+        // Hero CTA: Primary with outer glow + lift effect
+        primaryGlow:
+          "bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.35)] hover:shadow-[0_0_28px_hsl(var(--primary)/0.5)] hover:-translate-y-[2px] hover:scale-[1.02] active:translate-y-[1px] active:shadow-[0_0_15px_hsl(var(--primary)/0.3)]",
+        // Hero CTA: Secondary ghost/outline with softer outer glow
+        secondaryGlow:
+          "bg-transparent border-2 border-accent/60 text-accent shadow-[0_0_15px_hsl(var(--accent)/0.2)] hover:border-accent/90 hover:bg-accent/5 hover:shadow-[0_0_22px_hsl(var(--accent)/0.35)] hover:-translate-y-[2px] hover:scale-[1.02] active:translate-y-[1px] active:shadow-[0_0_12px_hsl(var(--accent)/0.15)]",
       },
       size: {
         // Larger touch targets on mobile
