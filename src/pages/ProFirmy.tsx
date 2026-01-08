@@ -326,10 +326,6 @@ const ProFirmy = () => {
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             
-            {/* Logo Trust Strip - directly in hero for tighter spacing */}
-            <div className="mt-8">
-              <LogoRibbon />
-            </div>
             
             {/* Scroll Indicator */}
             <div className="flex justify-center mt-10">
@@ -711,6 +707,11 @@ const ProFirmy = () => {
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          </section>
+
+          {/* Logo Trust Strip */}
+          <section className="py-16">
+            <LogoRibbon />
           </section>
 
           {/* FAQ Section - Refined Accordion */}
