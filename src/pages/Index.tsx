@@ -45,7 +45,7 @@ const Index = () => {
                     }}
                   >
                     <span className="heading-hero">
-                      Méně rutiny, více kapacity
+                      Méně rutiny · Více kapacity
                     </span>
                     <br />
                     <span className="heading-hero">
