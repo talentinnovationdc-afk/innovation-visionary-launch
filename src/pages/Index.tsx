@@ -37,19 +37,35 @@ const Index = () => {
                 {/* H1 wrapper with responsive max-width */}
                 <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
                   
-                  {/* Hero content - Negative space / Minimalist approach */}
+                  {/* Hero content - Combined: vertical pulse + horizontal scan */}
                   <div className="relative flex flex-col items-center">
-                    {/* "DÍKY AI" - clean, understated */}
+                    {/* "DÍKY AI" - clean, understated with sync glow */}
                     <motion.span 
                       initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
+                      animate={{ 
+                        opacity: 1,
+                        textShadow: [
+                          '0 0 0px hsl(176 96% 69% / 0)',
+                          '0 0 0px hsl(176 96% 69% / 0)',
+                          '0 0 12px hsl(176 96% 69% / 0.6)',
+                          '0 0 0px hsl(176 96% 69% / 0)',
+                        ],
+                      }}
+                      transition={{ 
+                        opacity: { duration: 0.8, ease: "easeOut" },
+                        textShadow: { 
+                          duration: 6.5, 
+                          repeat: Infinity, 
+                          ease: "easeInOut",
+                          times: [0, 0.15, 0.25, 0.4],
+                        },
+                      }}
                       className="text-xs md:text-sm font-medium text-primary/60 uppercase tracking-[0.4em] mb-3"
                     >
                       Díky AI
                     </motion.span>
                     
-                    {/* Vertical pulse - single elegant line connecting AI to headline */}
+                    {/* Vertical pulse - elegant line connecting AI to headline */}
                     <div className="relative h-8 md:h-10 w-px flex items-center justify-center mb-3">
                       {/* Static faint line */}
                       <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/10 to-transparent" />
@@ -67,40 +83,64 @@ const Index = () => {
                           opacity: [0, 1, 1, 0],
                         }}
                         transition={{
-                          duration: 1.5,
+                          duration: 1.2,
                           repeat: Infinity,
-                          repeatDelay: 5,
+                          repeatDelay: 5.3,
                           ease: "easeOut",
-                          times: [0, 1],
                         }}
                       />
                     </div>
                     
-                    <h1 
-                      id="hero-heading" 
-                      className="mb-8 uppercase"
-                    >
-                      {/* Line 1: Main claim */}
-                      <motion.span 
-                        className="block text-3xl md:text-5xl lg:text-6xl font-semibold heading-hero"
-                        style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                      >
-                        Méně rutiny · Více kapacity
-                      </motion.span>
+                    {/* Headline with horizontal scan overlay */}
+                    <div className="relative overflow-hidden">
+                      {/* Holographic scan line - triggers after vertical pulse */}
+                      <motion.div
+                        className="absolute left-0 right-0 h-[1.5px] pointer-events-none z-10"
+                        style={{
+                          background: 'linear-gradient(90deg, transparent 0%, hsl(176 96% 69% / 0.6) 50%, transparent 100%)',
+                          boxShadow: '0 0 15px 3px hsl(176 96% 69% / 0.3)',
+                        }}
+                        initial={{ top: '-5%', opacity: 0 }}
+                        animate={{ 
+                          top: ['0%', '100%', '100%'],
+                          opacity: [0, 0.8, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          repeatDelay: 4.5,
+                          delay: 1.2,
+                          ease: "easeInOut",
+                          times: [0, 0.85, 1],
+                        }}
+                      />
                       
-                      {/* Line 2: Properties */}
-                      <motion.span 
-                        className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                      <h1 
+                        id="hero-heading" 
+                        className="mb-8 uppercase relative"
                       >
-                        Měřitelně · Bezpečně · Škálovatelně
-                      </motion.span>
-                    </h1>
+                        {/* Line 1: Main claim */}
+                        <motion.span 
+                          className="block text-3xl md:text-5xl lg:text-6xl font-semibold heading-hero"
+                          style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                          Méně rutiny · Více kapacity
+                        </motion.span>
+                        
+                        {/* Line 2: Properties */}
+                        <motion.span 
+                          className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, delay: 0.4 }}
+                        >
+                          Měřitelně · Bezpečně · Škálovatelně
+                        </motion.span>
+                      </h1>
+                    </div>
                   </div>
                 </div>
                 
