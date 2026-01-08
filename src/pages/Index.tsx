@@ -267,7 +267,8 @@ const Index = () => {
           </section>
 
           {/* Choose Your Path - Two Big Cards */}
-          <section className="py-20 relative">
+          <section className="py-20 bg-card/20 relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
@@ -369,7 +370,8 @@ const Index = () => {
           </section>
 
           {/* AI Agenti Teaser - Premium Block */}
-          <section className="py-12 relative">
+          <section className="py-12 bg-card/10 relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container px-4">
               <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary/10 via-card/80 to-primary/5 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 md:p-10 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
@@ -445,7 +447,8 @@ const Index = () => {
           <MethodologySection />
 
           {/* Logo Ribbon - Trust Bar */}
-          <section className="py-12 relative">
+          <section className="py-12 bg-card/20 relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container px-4">
               <div className="text-center mb-8">
                 <h2 className="text-lg md:text-xl font-semibold tracking-[0.15em] text-foreground uppercase mb-2">
@@ -461,6 +464,7 @@ const Index = () => {
 
           {/* Final CTA */}
           <section className="py-20 relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container px-4">
               <div className="max-w-4xl mx-auto text-center glass-card p-10 md:p-12 rounded-2xl border border-primary/30 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
