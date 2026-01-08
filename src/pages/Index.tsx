@@ -55,6 +55,8 @@ const Index = () => {
                   </h1>
                 </div>
                 
+                <div className="mb-12 md:mb-16"></div>
+                
                 {/* Two CTAs */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
                   <div className="flex flex-col items-center">
