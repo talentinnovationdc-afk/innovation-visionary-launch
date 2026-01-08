@@ -104,7 +104,7 @@ const OrbitalBackgroundComponent = () => {
         move: {
           enable: true,
           // Slower on mobile
-          speed: isMobile ? 0.15 : 0.3,
+          speed: isMobile ? 0.08 : 0.15,
           direction: "none" as const,
           outModes: {
             default: "bounce" as const,
