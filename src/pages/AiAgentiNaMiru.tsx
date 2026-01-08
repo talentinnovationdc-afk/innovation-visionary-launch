@@ -172,12 +172,12 @@ const AiAgentiNaMiru = () => {
           <section className="pt-40 md:pt-48 pb-16 md:pb-20 relative">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-8 leading-[1.15] uppercase">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                   <span className="heading-hero">
                     AI agenti na míru
                   </span>
                   <br />
-                  <span className="text-2xl md:text-4xl lg:text-5xl text-accent">
+                  <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6 uppercase" style={{ letterSpacing: '0.15em' }}>
                     Digitální kolega pro vaše procesy
                   </span>
                 </h1>

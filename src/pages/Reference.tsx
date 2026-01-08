@@ -214,7 +214,7 @@ const Reference = () => {
           <section className="pt-40 md:pt-48 pb-16 md:pb-20 relative">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.15em] mb-8 leading-[1.15] uppercase">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                   <span className="heading-hero">
                     Reference a spolupráce
                   </span>
