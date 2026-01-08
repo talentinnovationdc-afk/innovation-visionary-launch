@@ -328,7 +328,7 @@ const ProFirmy = () => {
             
             
             {/* Scroll Indicator */}
-            <div className="flex justify-center mt-10">
+            <div className="flex justify-center mt-16">
               <ScrollIndicator targetId="pain-points" />
             </div>
           </section>
