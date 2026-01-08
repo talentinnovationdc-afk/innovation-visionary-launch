@@ -169,11 +169,8 @@ const AiQuickScan = () => {
                     Bezpečný start AI transformace
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-4">
+                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-8">
                   Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, kolik to přinese a jak bezpečně začít pilotem.
-                </p>
-                <p className="text-sm text-primary mb-8">
-                  Nejde o prezentaci nástrojů. Dodáme seznam konkrétních příležitostí (use-casů) + KPI + doporučený pilot.
                 </p>
                 
                 {/* Trust Chips */}
