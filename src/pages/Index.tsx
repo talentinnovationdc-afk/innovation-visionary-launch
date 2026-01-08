@@ -37,27 +37,28 @@ const Index = () => {
                 {/* H1 wrapper with responsive max-width */}
                 <div className="mx-auto w-[94%] md:w-[85%] lg:w-[80%] max-w-[1100px] md:max-w-[840px] lg:max-w-[1100px]">
                   
-                  {/* Hero content - Combined: vertical pulse + horizontal scan (seamless flow) */}
+                  {/* Hero content - Combined: vertical pulse + horizontal scan (elegant, slow flow) */}
                   <div className="relative flex flex-col items-center">
-                    {/* "DÍKY AI" - glow synced with pulse start */}
+                    {/* "DÍKY AI" - gentle glow synced with pulse */}
                     <motion.span 
                       initial={{ opacity: 0 }}
                       animate={{ 
                         opacity: 1,
                         textShadow: [
                           '0 0 0px hsl(176 96% 69% / 0)',
-                          '0 0 15px hsl(176 96% 69% / 0.8)',
-                          '0 0 8px hsl(176 96% 69% / 0.4)',
+                          '0 0 0px hsl(176 96% 69% / 0)',
+                          '0 0 12px hsl(176 96% 69% / 0.6)',
+                          '0 0 8px hsl(176 96% 69% / 0.3)',
                           '0 0 0px hsl(176 96% 69% / 0)',
                         ],
                       }}
                       transition={{ 
-                        opacity: { duration: 0.8, ease: "easeOut" },
+                        opacity: { duration: 1, ease: "easeOut" },
                         textShadow: { 
-                          duration: 5,
+                          duration: 8,
                           repeat: Infinity, 
                           ease: "easeInOut",
-                          times: [0, 0.08, 0.2, 0.35],
+                          times: [0, 0.05, 0.15, 0.3, 0.5],
                         },
                       }}
                       className="text-xs md:text-sm font-medium text-primary/60 uppercase tracking-[0.4em] mb-3"
@@ -65,50 +66,50 @@ const Index = () => {
                       Díky AI
                     </motion.span>
                     
-                    {/* Vertical pulse - flows into horizontal scan */}
-                    <div className="relative h-8 md:h-10 w-px flex items-center justify-center mb-3">
-                      <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/10 to-transparent" />
+                    {/* Vertical pulse - slow, elegant descent */}
+                    <div className="relative h-10 md:h-12 w-px flex items-center justify-center mb-3">
+                      <div className="absolute inset-0 bg-gradient-to-b from-primary/15 via-primary/8 to-transparent" />
                       
                       <motion.div
-                        className="absolute w-px bg-primary rounded-full"
+                        className="absolute w-px bg-primary/80 rounded-full"
                         style={{
-                          boxShadow: '0 0 10px 2px hsl(176 96% 69% / 0.7)',
+                          boxShadow: '0 0 8px 2px hsl(176 96% 69% / 0.5)',
                         }}
                         initial={{ top: 0, height: 0, opacity: 0 }}
                         animate={{ 
-                          top: ['0%', '70%', '100%'],
-                          height: ['0%', '30%', '0%'],
-                          opacity: [0, 1, 0],
+                          top: ['0%', '50%', '100%'],
+                          height: ['0%', '40%', '0%'],
+                          opacity: [0, 0.8, 0],
                         }}
                         transition={{
-                          duration: 0.8,
+                          duration: 1.8,
                           repeat: Infinity,
-                          repeatDelay: 4.2,
-                          ease: "easeIn",
-                          times: [0, 0.6, 1],
+                          repeatDelay: 6.2,
+                          ease: "easeInOut",
+                          times: [0, 0.5, 1],
                         }}
                       />
                     </div>
                     
-                    {/* Headline with horizontal scan - starts exactly when vertical pulse ends */}
+                    {/* Headline with horizontal scan - flows after vertical pulse */}
                     <div className="relative overflow-hidden">
                       <motion.div
-                        className="absolute left-0 right-0 h-[1.5px] pointer-events-none z-10"
+                        className="absolute left-0 right-0 h-px pointer-events-none z-10"
                         style={{
-                          background: 'linear-gradient(90deg, transparent 0%, hsl(176 96% 69% / 0.7) 50%, transparent 100%)',
-                          boxShadow: '0 0 12px 3px hsl(176 96% 69% / 0.4)',
+                          background: 'linear-gradient(90deg, transparent 0%, hsl(176 96% 69% / 0.5) 50%, transparent 100%)',
+                          boxShadow: '0 0 10px 2px hsl(176 96% 69% / 0.25)',
                         }}
                         initial={{ top: '-5%', opacity: 0 }}
                         animate={{ 
                           top: ['-5%', '50%', '105%'],
-                          opacity: [0, 1, 0],
+                          opacity: [0, 0.7, 0],
                         }}
                         transition={{
-                          duration: 1.5,
+                          duration: 2.5,
                           repeat: Infinity,
-                          repeatDelay: 3.5,
-                          delay: 0.75,
-                          ease: [0.4, 0, 0.2, 1],
+                          repeatDelay: 5.5,
+                          delay: 1.8,
+                          ease: "easeInOut",
                           times: [0, 0.5, 1],
                         }}
                       />
