@@ -102,16 +102,20 @@ const Index = () => {
                         }}
                         initial={{ top: '-5%', opacity: 0 }}
                         animate={{ 
-                          top: ['-5%', '50%', '105%'],
-                          opacity: [0, 0.7, 0],
+                          top: ['-5%', '105%'],
+                          opacity: [0, 0.7, 0.7, 0],
                         }}
                         transition={{
-                          duration: 2,
+                          duration: 2.2,
                           repeat: Infinity,
-                          repeatDelay: 6,
+                          repeatDelay: 5.8,
                           delay: 2.1,
-                          ease: "easeInOut",
-                          times: [0, 0.5, 1],
+                          ease: "linear",
+                          opacity: {
+                            duration: 2.2,
+                            times: [0, 0.1, 0.9, 1],
+                            ease: "easeInOut",
+                          },
                         }}
                       />
                       
