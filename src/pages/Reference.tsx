@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Workflow, Zap, Bot, Shield, Scale, ClipboardCheck, FileCode } from "lucide-react";
 import { useRef, useEffect, useMemo, useState } from "react";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
-import { LogoRibbon } from "@/components/LogoRibbon";
 
 // Client logos with URLs
 import bircher from "@/assets/clients/bircher.png";
@@ -250,9 +249,79 @@ const Reference = () => {
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             
-            {/* Logo Trust Strip - directly in hero for tighter spacing */}
-            <div className="mt-8">
-              <LogoRibbon />
+            {/* Logo Trust Strip - larger version for Reference page */}
+            <div className="mt-12 py-12 md:py-16">
+              <div className="container px-4">
+                <p className="text-center text-sm md:text-base font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-12">
+                  Důvěřují nám lídři v průmyslu a technologiích
+                </p>
+              </div>
+
+              {prefersReducedMotion ? (
+                // Static grid for reduced motion
+                <div className="container px-4">
+                  <div className="flex flex-wrap justify-center gap-10 md:gap-14">
+                    {clients.map((client) => (
+                      <a
+                        key={client.name}
+                        href={client.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group"
+                      >
+                        <div className="h-14 md:h-16 w-auto px-5 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.4)]">
+                          <img
+                            src={processedLogos[client.name] ?? client.logo}
+                            alt={client.name}
+                            loading="lazy"
+                            className={`h-full w-auto object-contain max-w-[180px] grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${
+                              client.name === "Iveco Group"
+                                ? "dark:invert dark:opacity-40 dark:group-hover:invert-0 dark:group-hover:opacity-100"
+                                : ""
+                            }`}
+                          />
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                // Animated slideshow
+                <div
+                  ref={scrollRef}
+                  className="flex gap-14 md:gap-18 overflow-x-hidden cursor-default"
+                  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                >
+                  {duplicatedClients.map((client, index) => (
+                    <a
+                      key={`${client.name}-${index}`}
+                      href={client.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0 group"
+                    >
+                      <div className="h-14 md:h-16 w-auto px-5 flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(102,252,241,0.4)]">
+                        <img
+                          src={processedLogos[client.name] ?? client.logo}
+                          alt={client.name}
+                          loading="lazy"
+                          className={`h-full w-auto object-contain max-w-[180px] grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${
+                            client.name === "Iveco Group"
+                              ? "dark:invert dark:opacity-40 dark:group-hover:invert-0 dark:group-hover:opacity-100"
+                              : ""
+                          }`}
+                        />
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              <div className="container px-4">
+                <p className="text-center text-xs md:text-sm text-muted-foreground/60 mt-10 max-w-xl mx-auto">
+                  Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
+                </p>
+              </div>
             </div>
           </section>
 
