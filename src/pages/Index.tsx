@@ -31,7 +31,7 @@ const Index = () => {
             <div className="absolute inset-0 overflow-hidden">
               <NeuralNetworkBackground />
             </div>
-            <div className="container px-4 text-center">
+            <div className="container px-4 text-center relative z-10">
               {/* Same max-w-6xl as "Vyberte si, kde začít" section */}
               <div className="max-w-6xl mx-auto">
                 {/* H1 wrapper with responsive max-width */}
