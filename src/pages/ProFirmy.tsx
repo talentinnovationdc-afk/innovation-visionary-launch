@@ -277,7 +277,11 @@ const ProFirmy = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                   <span className="heading-hero">
-                    Zrychlete práci týmů díky AI postupům
+                    Zrychlete práci týmů
+                  </span>
+                  <br />
+                  <span className="heading-hero">
+                    díky AI postupům
                   </span>
                   <br />
                   <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6">
