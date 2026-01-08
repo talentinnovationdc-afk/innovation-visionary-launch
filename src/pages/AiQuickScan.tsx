@@ -223,9 +223,6 @@ const AiQuickScan = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           </section>
 
-          {/* Logo Trust Strip */}
-          <LogoRibbon />
-
           {/* Deliverables Section */}
           <section id="deliverables" className="py-20 relative">
             <div className="container mx-auto px-4">
@@ -387,6 +384,11 @@ const AiQuickScan = () => {
                 <p className="text-xs text-muted-foreground/60 mt-3">Bez závazku • ozveme se do 24 hodin</p>
               </div>
             </div>
+          </section>
+
+          {/* Logo Trust Strip */}
+          <section className="py-16">
+            <LogoRibbon />
           </section>
         </main>
         
