@@ -901,72 +901,65 @@ const AkademieProTymy = () => {
             {/* Accordion */}
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="space-y-3">
-                {hrFaqItems.map((item, index) => {
-                  const isEven = index % 2 === 0;
-                  
-                  return (
-                    <AccordionItem 
-                      key={index} 
-                      value={`item-${index}`}
-                      className="group border-0"
-                    >
-                      <div className="relative rounded-xl backdrop-blur-xl border transition-all duration-300 overflow-hidden bg-card/60 border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40">
+                {hrFaqItems.map((item, index) => (
+                  <AccordionItem 
+                    key={index} 
+                    value={`item-${index}`}
+                    className="group border-0 rounded-xl backdrop-blur-xl border border-primary/15 hover:border-primary/30 data-[state=open]:border-primary/40 bg-card/60 overflow-hidden"
+                  >
+                    <AccordionTrigger className="px-6 py-5 hover:no-underline [&>svg]:hidden">
+                      <div className="flex items-center gap-4 w-full">
+                        {/* Icon */}
+                        <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-primary/10 group-hover:bg-primary/15">
+                          <HelpCircle className="w-5 h-5 text-primary" />
+                        </div>
                         
-                        <AccordionTrigger className="px-6 py-5 hover:no-underline [&>svg]:hidden">
-                          <div className="flex items-center gap-4 w-full">
-                            {/* Icon */}
-                            <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-primary/10 group-hover:bg-primary/15">
-                              <HelpCircle className="w-5 h-5 text-primary" />
-                            </div>
-                            
-                            <div className="flex-1 text-left">
-                              <div className="flex items-center gap-2 mb-1">
-                                <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-primary/20 text-primary">
-                                  {item.badge}
-                                </span>
-                              </div>
-                              <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
-                                {item.question}
-                              </h3>
-                            </div>
-                            
-                            {/* Custom Chevron */}
-                            <div className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
-                              <ChevronDown className="w-4 h-4 transition-all duration-200 text-primary group-data-[state=open]:text-background group-data-[state=open]:rotate-180" />
-                            </div>
+                        <div className="flex-1 text-left">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-primary/20 text-primary">
+                              {item.badge}
+                            </span>
                           </div>
-                        </AccordionTrigger>
+                          <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors pr-4">
+                            {item.question}
+                          </h3>
+                        </div>
                         
-                        <AccordionContent>
-                          <div className="px-6 pt-2 pb-5 bg-gradient-to-b from-primary/5 to-transparent">
-                            <div className="ml-[3.75rem] pl-4 border-l-2 border-primary/30">
-                              <p className="text-[hsl(210,5%,88%)] leading-[1.8] text-[15px] mb-2">
-                                {item.answer}
-                              </p>
-                              {item.detail && (
-                                <p className="text-[hsl(210,5%,82%)] leading-[1.8] text-sm mb-4">
-                                  {item.detail}
-                                </p>
-                              )}
-                              {item.nextStep && (
-                                <div className="pt-3 border-t border-border/30">
-                                  <a 
-                                    href={item.nextStep.link}
-                                    className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
-                                  >
-                                    <span className="text-muted-foreground">Další krok:</span>
-                                    {item.nextStep.label}
-                                    <ChevronRight className="w-3 h-3" />
-                                  </a>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </AccordionContent>
+                        {/* Custom Chevron */}
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-primary/10 group-data-[state=open]:bg-primary">
+                          <ChevronDown className="w-4 h-4 transition-all duration-200 text-primary group-data-[state=open]:text-background group-data-[state=open]:rotate-180" />
+                        </div>
                       </div>
-                    </AccordionItem>
-                  );
-                })}
+                    </AccordionTrigger>
+                    
+                    <AccordionContent>
+                      <div className="px-6 pt-2 pb-5 bg-gradient-to-b from-primary/5 to-transparent">
+                        <div className="ml-[3.75rem] pl-4 border-l-2 border-primary/30">
+                          <p className="text-muted-foreground leading-[1.8] text-[15px] mb-2">
+                            {item.answer}
+                          </p>
+                          {item.detail && (
+                            <p className="text-muted-foreground/80 leading-[1.8] text-sm mb-4">
+                              {item.detail}
+                            </p>
+                          )}
+                          {item.nextStep && (
+                            <div className="pt-3 border-t border-border/30">
+                              <a 
+                                href={item.nextStep.link}
+                                className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                              >
+                                <span className="text-muted-foreground">Další krok:</span>
+                                {item.nextStep.label}
+                                <ChevronRight className="w-3 h-3" />
+                              </a>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
               </Accordion>
             </div>
             
