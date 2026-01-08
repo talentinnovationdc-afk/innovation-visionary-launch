@@ -179,7 +179,7 @@ const OrbitalBackgroundComponent = () => {
       id="orbital-particles"
       init={particlesInit}
       options={options}
-      className="fixed inset-0 z-0 pointer-events-none"
+      className="absolute inset-0 z-0 pointer-events-none"
     />
   );
 };
