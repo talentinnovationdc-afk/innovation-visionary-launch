@@ -250,7 +250,12 @@ const Reference = () => {
             
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             
-            {/* Logo Trust Strip - larger version for Reference page */}
+            {/* Scroll Indicator */}
+            <div className="flex justify-center mt-12">
+              <ScrollIndicator targetId="content" />
+            </div>
+            
+            {/* Logo Trust Strip - below scroll indicator */}
             <div className="mt-12 py-12 md:py-16">
               <div className="container px-4">
                 <p className="text-center text-sm md:text-base font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-12">
@@ -322,11 +327,6 @@ const Reference = () => {
                 <p className="text-center text-xs md:text-sm text-muted-foreground/60 mt-10 max-w-xl mx-auto">
                   Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
                 </p>
-              </div>
-              
-              {/* Scroll Indicator */}
-              <div className="flex justify-center mt-16">
-                <ScrollIndicator targetId="content" />
               </div>
             </div>
           </section>
