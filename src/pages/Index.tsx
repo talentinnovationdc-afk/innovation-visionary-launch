@@ -108,7 +108,7 @@ const Index = () => {
                     <span className="text-sm font-medium text-foreground">95 % doporučuje</span>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground/70 max-w-md mx-auto mb-8">
+                <p className="text-xs text-muted-foreground/70 max-w-md mx-auto mb-12 md:mb-16">
                   Nejde o teorii. Učíme workflow, které lidé používají hned druhý den.
                 </p>
                 
