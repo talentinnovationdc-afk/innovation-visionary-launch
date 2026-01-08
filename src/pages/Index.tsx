@@ -74,9 +74,6 @@ const Index = () => {
                         Domluvit diagnostiku (15 min)
                       </Button>
                     </Link>
-                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
-                      Bez závazku • Ozveme se do 24 hodin
-                    </p>
                   </div>
                   <div className="flex flex-col items-center">
                     <a href="#journey">
@@ -89,9 +86,6 @@ const Index = () => {
                         Zobrazit cestu (kroky)
                       </Button>
                     </a>
-                    <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
-                      Pro profesionály i týmy.
-                    </p>
                   </div>
                 </div>
 
