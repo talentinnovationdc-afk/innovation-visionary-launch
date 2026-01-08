@@ -239,9 +239,6 @@ const AiAgentiNaMiru = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           </section>
 
-          {/* Logo Trust Strip */}
-          <LogoRibbon />
-
           {/* Solutions Section - 3 Cards */}
           <section id="solutions" className="py-20 bg-card/20 relative">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
@@ -513,6 +510,11 @@ const AiAgentiNaMiru = () => {
                 </Accordion>
               </div>
             </div>
+          </section>
+
+          {/* Logo Trust Strip */}
+          <section className="py-16">
+            <LogoRibbon />
           </section>
 
           {/* Final CTA */}
