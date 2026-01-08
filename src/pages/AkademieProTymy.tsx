@@ -295,6 +295,7 @@ const AkademieProTymy = () => {
   const [gdprConsent, setGdprConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [faqOpenItem, setFaqOpenItem] = useState<string | undefined>(undefined);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -900,7 +901,13 @@ const AkademieProTymy = () => {
             
             {/* Accordion */}
             <div className="max-w-3xl mx-auto">
-              <Accordion type="single" collapsible className="space-y-3">
+              <Accordion
+                type="single"
+                collapsible
+                value={faqOpenItem}
+                onValueChange={setFaqOpenItem}
+                className="space-y-3"
+              >
                 {hrFaqItems.map((item, index) => (
                   <AccordionItem 
                     key={index} 
