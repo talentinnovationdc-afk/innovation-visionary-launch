@@ -168,14 +168,9 @@
     background-image: var(--gradient-primary);
   }
 
-  /* Hero heading - gradient in dark mode, solid cyan in light mode */
+  /* Hero heading - solid cyan in both modes */
   .heading-hero {
     @apply text-primary;
-  }
-
-  .dark .heading-hero {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-primary);
   }
 
   /* Accent heading for secondary lines */
