@@ -169,7 +169,7 @@ const AiQuickScan = () => {
                     Bezpečný start AI transformace
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-16">
+                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-20">
                   Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, kolik to přinese a jak bezpečně začít pilotem.
                 </p>
                 
