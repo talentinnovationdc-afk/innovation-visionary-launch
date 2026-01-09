@@ -125,12 +125,15 @@ const CopilotAkademie = () => {
         description="Ovládněte Microsoft Copilot a M365. 12 modulů, certifikát, LinkedIn odznak. Automatizace Word, Excel, Outlook, PowerPoint."
         path="/online/copilotakademie"
       />
-      <NeuralNetworkBackground />
       <Navbar />
       
       <main className="relative z-10 pt-32">
         {/* Hero */}
-        <section className="py-16 md:py-20">
+        <section className="py-16 md:py-20 relative min-h-[600px]">
+          {/* Neural Network only in hero */}
+          <div className="absolute inset-0 overflow-hidden -z-10">
+            <NeuralNetworkBackground />
+          </div>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
