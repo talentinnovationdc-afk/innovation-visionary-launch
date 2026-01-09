@@ -826,5 +826,152 @@
     },
     "submit": "Send",
     "submitting": "Sending..."
+  },
+
+  "academyProTymy": {
+    "seo": {
+      "title": "AI Academy for Teams | Talent Innovation",
+      "description": "Comprehensive AI training for corporate teams. ChatGPT, Copilot, automation. Certificates, LinkedIn badges, HR reporting."
+    },
+    "hero": {
+      "label": "FOR TEAMS",
+      "title1": "AI Skills",
+      "title2": "for Your Entire Team",
+      "subtitle": "measurably and safely",
+      "description": "Practical academies your team will use immediately. Measurable impact, certificates, and HR reporting.",
+      "cta": "Choose a license package",
+      "ctaSecondary": "View academy content",
+      "showPreview": "Show content",
+      "helper": "no commitment • we'll respond within 24 hours",
+      "chips": {
+        "hrReporting": "HR Reporting",
+        "certification": "Certification + LinkedIn",
+        "templates": "Practical templates",
+        "ownPace": "Own pace"
+      }
+    },
+    "academyOptions": {
+      "master": "Complete Program (3 academies)",
+      "chatgpt": "ChatGPT Academy",
+      "copilot": "Microsoft Copilot Academy",
+      "agenti": "Agents & Automation"
+    },
+    "badges": {
+      "preview": "Preview",
+      "popular": "MOST POPULAR"
+    },
+    "cards": {
+      "chatgpt": {
+        "title": "ChatGPT Academy",
+        "proKoho": "For: marketing, sales, HR, management",
+        "benefit": "Teach your team to effectively prompt and use ChatGPT in daily work.",
+        "po14Dnech": "Team writes emails, analyses, and reports 2× faster",
+        "topVystupy": ["Prompt templates", "Email workflows", "Data analysis in ChatGPT"],
+        "detailDescription": "Complete ChatGPT course from basics to advanced techniques.",
+        "allOutputs": ["Prompt templates", "Email workflows", "Data analysis", "Content generation", "Brainstorming", "Document summarization"],
+        "kdyZvolit": "When your team works daily with texts, emails, or analyses."
+      },
+      "copilot": {
+        "title": "Microsoft Copilot Academy",
+        "proKoho": "For: companies with Microsoft 365",
+        "benefit": "Maximize productivity in Excel, Word, PowerPoint, Outlook, and Teams.",
+        "po14Dnech": "Team automates routine in Office 365",
+        "topVystupy": ["Excel automation", "Word templates", "PowerPoint generation"],
+        "detailDescription": "Teach your team to use AI directly in the tools they already use.",
+        "allOutputs": ["Excel automation", "Word templates", "PowerPoint generation", "Outlook assistant", "Teams summaries", "OneNote organization"],
+        "kdyZvolit": "When your team works daily in Microsoft 365."
+      },
+      "agenti": {
+        "title": "Agents & Automation",
+        "proKoho": "For: operations, IT, back-office",
+        "benefit": "Teach your team to design and deploy AI agents for process automation.",
+        "po14Dnech": "Team has its own AI agent for routine tasks",
+        "topVystupy": ["AI agent design", "Workflow automation", "Tool integration"],
+        "detailDescription": "From design to deployment of AI agents that work for you.",
+        "allOutputs": ["AI agent design", "Workflow automation", "Tool integration", "Monitoring and measurement", "Scaling solutions"],
+        "kdyZvolit": "When you want to automate repetitive processes."
+      },
+      "master": {
+        "title": "Complete Program",
+        "proKoho": "For: companies wanting comprehensive AI transformation",
+        "benefit": "All 3 academies in one discounted bundle.",
+        "po14Dnech": "Team masters ChatGPT, Copilot, and automation",
+        "topVystupy": ["3 academies in 1", "Complete AI skillset", "Best price"],
+        "detailDescription": "Complete program includes ChatGPT, Copilot, and Agents & Automation.",
+        "allOutputs": ["ChatGPT Academy", "Copilot Academy", "Agents & Automation", "Cross-tool workflows", "Master Certificate"],
+        "kdyZvolit": "When you want comprehensive AI transformation for your entire team."
+      }
+    },
+    "hrBenefits": {
+      "standard": {
+        "title": "Unified Standard",
+        "description": "Everyone at the same AI skill level."
+      },
+      "lessRoutine": {
+        "title": "Less Routine",
+        "description": "Team focuses on valuable work."
+      },
+      "certification": {
+        "title": "Certification",
+        "description": "LinkedIn badges and certificates for everyone."
+      },
+      "reporting": {
+        "title": "HR Reporting",
+        "description": "Overview of completion and progress."
+      }
+    },
+    "deployment": {
+      "step1": {
+        "title": "Academy Selection",
+        "description": "Choose academies based on team needs."
+      },
+      "step2": {
+        "title": "Access Setup",
+        "description": "We prepare access for your team."
+      },
+      "step3": {
+        "title": "Study and Reporting",
+        "description": "Team studies, you track progress."
+      }
+    },
+    "pricing": {
+      "features": {
+        "access": "Full academy access",
+        "certificate": "Certificate + LinkedIn badge",
+        "hrReporting": "HR reporting"
+      },
+      "extraFeatures": {
+        "onboarding": "Onboarding call"
+      },
+      "enterpriseNote": "Have 100+ people? Contact us."
+    },
+    "form": {
+      "title": "Non-binding Inquiry",
+      "subtitle": "We'll respond within 24 hours.",
+      "selectAcademies": "Preferred academies",
+      "targetRoles": "Target roles (optional)",
+      "note": "Note (optional)",
+      "submit": "Submit inquiry",
+      "errors": {
+        "gdprRequired": "Consent to personal data processing is required to submit."
+      }
+    },
+    "sections": {
+      "academies": {
+        "title": "WHAT YOUR TEAMS GET",
+        "subtitle": "Choose one academy or the complete program."
+      },
+      "whatTeamsGet": {
+        "title": "WHAT YOUR TEAMS GET",
+        "subtitle": "Choose one academy or the complete program."
+      },
+      "hrBenefits": {
+        "title": "WHY HR CHOOSES OUR ACADEMIES"
+      },
+      "pricing": {
+        "title": "LICENSE PACKAGES",
+        "subtitle": "Prices excl. VAT."
+      }
+    }
   }
 }

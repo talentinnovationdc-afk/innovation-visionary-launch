@@ -815,5 +815,152 @@
     },
     "submit": "Odeslat",
     "submitting": "Odesílám..."
+  },
+
+  "academyProTymy": {
+    "seo": {
+      "title": "AI akademie pro firemní týmy | Talent Innovation",
+      "description": "Komplexní AI školení pro firemní týmy. ChatGPT, Copilot, automatizace. Certifikáty, LinkedIn odznaky, HR reporting."
+    },
+    "hero": {
+      "label": "PRO FIREMNÍ TÝMY",
+      "title1": "AI dovednosti",
+      "title2": "pro celý tým",
+      "subtitle": "měřitelně a bezpečně",
+      "description": "Praktické akademie, které tým začne používat hned. Měřitelný dopad, certifikáty a HR reporting.",
+      "cta": "Vybrat balíček licencí",
+      "ctaSecondary": "Zobrazit obsah akademií",
+      "showPreview": "Ukázat obsah",
+      "helper": "bez závazku • ozveme se do 24 hodin",
+      "chips": {
+        "hrReporting": "HR Reporting",
+        "certification": "Certifikace + LinkedIn",
+        "templates": "Praktické šablony",
+        "ownPace": "Vlastní tempo"
+      }
+    },
+    "academyOptions": {
+      "master": "Kompletní program (3 akademie)",
+      "chatgpt": "ChatGPT Akademie",
+      "copilot": "Microsoft Copilot Akademie",
+      "agenti": "Agenti & Automatizace"
+    },
+    "badges": {
+      "preview": "Ukázka",
+      "popular": "NEJČASTĚJŠÍ VOLBA"
+    },
+    "cards": {
+      "chatgpt": {
+        "title": "ChatGPT Akademie",
+        "proKoho": "Pro: marketing, obchod, HR, management",
+        "benefit": "Naučte tým efektivně promptovat a používat ChatGPT v každodenní práci.",
+        "po14Dnech": "Tým píše e-maily, analýzy a reporty 2× rychleji",
+        "topVystupy": ["Promptovací šablony", "Workflow pro e-maily", "Analýza dat v ChatGPT"],
+        "detailDescription": "Kompletní kurz práce s ChatGPT od základů po pokročilé techniky.",
+        "allOutputs": ["Promptovací šablony", "E-mailové workflow", "Analýza dat", "Generování obsahu", "Brainstorming", "Sumarizace dokumentů"],
+        "kdyZvolit": "Když tým denně pracuje s texty, e-maily nebo analýzami."
+      },
+      "copilot": {
+        "title": "Microsoft Copilot Akademie",
+        "proKoho": "Pro: firmy s Microsoft 365",
+        "benefit": "Maximalizujte produktivitu v Excel, Word, PowerPoint, Outlook a Teams.",
+        "po14Dnech": "Tým automatizuje rutinu v Office 365",
+        "topVystupy": ["Excel automatizace", "Word šablony", "PowerPoint generování"],
+        "detailDescription": "Naučte tým využívat AI přímo v nástrojích, které už používá.",
+        "allOutputs": ["Excel automatizace", "Word šablony", "PowerPoint generování", "Outlook asistent", "Teams shrnutí", "OneNote organizace"],
+        "kdyZvolit": "Když tým denně pracuje v Microsoft 365."
+      },
+      "agenti": {
+        "title": "Agenti & Automatizace",
+        "proKoho": "Pro: operations, IT, back-office",
+        "benefit": "Naučte tým navrhovat a nasazovat AI agenty pro automatizaci procesů.",
+        "po14Dnech": "Tým má vlastního AI agenta pro rutinní úkoly",
+        "topVystupy": ["Návrh AI agentů", "Automatizace workflow", "Integrace nástrojů"],
+        "detailDescription": "Od návrhu po nasazení AI agentů, kteří pracují za vás.",
+        "allOutputs": ["Návrh AI agentů", "Automatizace workflow", "Integrace nástrojů", "Monitoring a měření", "Škálování řešení"],
+        "kdyZvolit": "Když chcete automatizovat opakující se procesy."
+      },
+      "master": {
+        "title": "Kompletní program",
+        "proKoho": "Pro: firmy, které chtějí komplexní AI transformaci",
+        "benefit": "Všechny 3 akademie v jednom balíčku se slevou.",
+        "po14Dnech": "Tým ovládá ChatGPT, Copilot i automatizace",
+        "topVystupy": ["3 akademie v 1", "Kompletní AI skillset", "Nejlepší cena"],
+        "detailDescription": "Kompletní program zahrnuje ChatGPT, Copilot a Agenty & Automatizace.",
+        "allOutputs": ["ChatGPT Akademie", "Copilot Akademie", "Agenti & Automatizace", "Křížové workflow", "Certifikát Master"],
+        "kdyZvolit": "Když chcete komplexní AI transformaci celého týmu."
+      }
+    },
+    "hrBenefits": {
+      "standard": {
+        "title": "Jednotný standard",
+        "description": "Všichni na stejné úrovni AI dovedností."
+      },
+      "lessRoutine": {
+        "title": "Méně rutiny",
+        "description": "Tým se soustředí na hodnotnou práci."
+      },
+      "certification": {
+        "title": "Certifikace",
+        "description": "LinkedIn odznaky a certifikáty pro každého."
+      },
+      "reporting": {
+        "title": "HR Reporting",
+        "description": "Přehled o dokončení a pokroku."
+      }
+    },
+    "deployment": {
+      "step1": {
+        "title": "Výběr akademií",
+        "description": "Zvolíte akademie podle potřeb týmu."
+      },
+      "step2": {
+        "title": "Nastavení přístupů",
+        "description": "Připravíme přístupy pro váš tým."
+      },
+      "step3": {
+        "title": "Studium a reporting",
+        "description": "Tým studuje, vy sledujete pokrok."
+      }
+    },
+    "pricing": {
+      "features": {
+        "access": "Plný přístup k akademiím",
+        "certificate": "Certifikát + LinkedIn odznak",
+        "hrReporting": "HR reporting"
+      },
+      "extraFeatures": {
+        "onboarding": "Onboarding call"
+      },
+      "enterpriseNote": "Máte 100+ lidí? Napište nám."
+    },
+    "form": {
+      "title": "Nezávazná poptávka",
+      "subtitle": "Ozveme se do 24 hodin.",
+      "selectAcademies": "Preferované akademie",
+      "targetRoles": "Cílové role (volitelné)",
+      "note": "Poznámka (volitelné)",
+      "submit": "Odeslat poptávku",
+      "errors": {
+        "gdprRequired": "Pro odeslání je nutný souhlas se zpracováním osobních údajů."
+      }
+    },
+    "sections": {
+      "academies": {
+        "title": "CO VAŠE TÝMY ZÍSKAJÍ",
+        "subtitle": "Vyberte jednu akademii nebo kompletní program."
+      },
+      "whatTeamsGet": {
+        "title": "CO VAŠE TÝMY ZÍSKAJÍ",
+        "subtitle": "Vyberte jednu akademii nebo kompletní program."
+      },
+      "hrBenefits": {
+        "title": "PROČ HR VOLÍ NAŠE AKADEMIE"
+      },
+      "pricing": {
+        "title": "BALÍČKY LICENCÍ",
+        "subtitle": "Ceny bez DPH."
+      }
+    }
   }
 }
