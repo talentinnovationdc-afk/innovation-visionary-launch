@@ -588,6 +588,116 @@
       "seo": {
         "title": "Savings Map – 14-Day AI Diagnostics for Companies",
         "description": "In 14 days, find out where AI brings the biggest time and cost savings. Process list + ROI estimate."
+      },
+      "hero": {
+        "title": "Savings Map",
+        "subtitle": "Safe Start to AI Transformation",
+        "description": "In 1–2 weeks, you'll find out where AI has the highest impact, how much it brings, and how to start safely with a pilot.",
+        "chips": {
+          "fixed": "Fixed Outputs",
+          "kpi": "Measurable KPIs",
+          "secure": "Secure Access",
+          "roadmap": "30/60/90 Roadmap"
+        },
+        "ctaSecondary": "See what I get"
+      },
+      "deliverables": {
+        "roleMap": {
+          "title": "ROLE AND BOTTLENECK MAP",
+          "description": "Where most extra work happens today and where AI saves the most time."
+        },
+        "opportunities": {
+          "title": "PRIORITIZED OPPORTUNITY LIST",
+          "description": "Specific use cases ranked by impact and complexity."
+        },
+        "pilot": {
+          "title": "RECOMMENDED PILOT (1–2 PROCESSES)",
+          "description": "Processes for a quick start with impact measurement."
+        },
+        "security": {
+          "title": "SECURITY AND RULES FRAMEWORK",
+          "description": "Rules for data, access, and AI usage in your company."
+        }
+      },
+      "process": {
+        "step": "STEP",
+        "workshop": {
+          "title": "WORKSHOP WITH PRACTITIONERS",
+          "description": "We meet with key roles and map daily routines, bottlenecks, and opportunities."
+        },
+        "analysis": {
+          "title": "PROCESS AND DATA ANALYSIS",
+          "description": "We evaluate data, identify quick wins, and estimate ROI."
+        },
+        "pilotSelection": {
+          "title": "PILOT SELECTION (WHAT BRINGS VALUE FIRST)",
+          "description": "We rank opportunities by impact and select 1–2 processes for the first pilot."
+        },
+        "roadmap": {
+          "title": "ROADMAP + KPIs (30/60/90)",
+          "description": "Role map, priority list, ROI estimate, and pilot proposal — all ready for management."
+        }
+      },
+      "audience": {
+        "ceo": {
+          "title": "CEO / COO",
+          "description": "You want to know where AI brings the biggest savings and how to start safely."
+        },
+        "hr": {
+          "title": "HR / PEOPLE DEVELOPMENT",
+          "description": "You need skill standards and a team training plan."
+        },
+        "sales": {
+          "title": "SALES / SUPPORT",
+          "description": "You're looking for ways to speed up responses and free up capacity."
+        }
+      },
+      "adoption": {
+        "involvement": "We involve key people from the start — so the solution isn't 'top-down'.",
+        "benefits": "We show concrete benefits for individual roles, not just technology.",
+        "guides": "We prepare simple guides and rules for everyday work.",
+        "measurement": "We measure how people adopt tools — and respond to feedback."
+      },
+      "sections": {
+        "deliverables": {
+          "title": "WHAT EXACTLY YOU GET",
+          "subtitle": "Concrete outputs you can send to management."
+        },
+        "process": {
+          "title": "HOW IT WORKS",
+          "subtitle": "4 steps to a clear roadmap and measurable KPIs."
+        },
+        "adoption": {
+          "title": "ADOPTION AND WORKING WITH PEOPLE",
+          "subtitle": "AI projects often fail on adoption. That's why we also address working with people, roles, and habit change."
+        }
+      },
+      "faq": {
+        "duration": {
+          "question": "How long does it take?",
+          "answer": "Workshop + analysis + outputs within 14 days of start.",
+          "highlight": "14 days"
+        },
+        "input": {
+          "question": "What do you need from us?",
+          "answer": "Brief description of key roles and processes, access to practitioners for the workshop.",
+          "highlight": "Minimal inputs"
+        },
+        "security": {
+          "question": "How do you protect data?",
+          "answer": "We set up access rules and sensitive data handling from day one. GDPR and your internal policies compliant.",
+          "highlight": "GDPR"
+        },
+        "output": {
+          "question": "What do I get at the end?",
+          "answer": "Role map, quick wins with ROI estimate, pilot proposal, and basic security rules — all ready for management.",
+          "highlight": "Outputs for management"
+        }
+      },
+      "finalCta": {
+        "title": "WANT TO KNOW WHERE AI BRINGS THE BIGGEST IMPACT?",
+        "description": "Start with a 15-minute diagnostic. We'll tell you if the Savings Map is the right step for you.",
+        "cta": "Book 15 min consultation"
       }
     },
 

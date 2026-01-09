@@ -14,140 +14,137 @@ import {
 import { 
   Target, FileBarChart, Route, Shield, Clock,
   Users, Search, BarChart3, FileCheck,
-  ChevronDown, UserCheck, Lightbulb, BookOpen, ArrowRight,
+  ChevronDown, UserCheck, Lightbulb, BookOpen,
   Lock, HelpCircle, Briefcase, Building2
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const deliverables = [
-  {
-    icon: FileBarChart,
-    title: "MAPA ROLÍ A ÚZKÝCH MÍST",
-    description: "Kde dnes vzniká nejvíc práce navíc a kde AI ušetří nejvíc času.",
-    format: "Formát: 3–6 stran + tabulka"
-  },
-  {
-    icon: Target,
-    title: "SEZNAM PŘÍLEŽITOSTÍ (PRIORITIZOVANÝ)",
-    description: "Konkrétní use-casy seřazené podle dopadu a náročnosti.",
-    format: "Formát: 3–6 stran + tabulka"
-  },
-  {
-    icon: Route,
-    title: "DOPORUČENÝ PILOT (1–2 PROCESY)",
-    description: "Procesy pro rychlý start s měřením dopadu.",
-    format: "Formát: 3–6 stran + tabulka"
-  },
-  {
-    icon: Shield,
-    title: "RÁMEC BEZPEČNOSTI A PRAVIDEL",
-    description: "Pravidla pro data, přístupy a používání AI ve firmě.",
-    format: "Formát: 3–6 stran + tabulka"
-  }
-];
-
-const processSteps = [
-  {
-    number: "01",
-    icon: Users,
-    title: "WORKSHOP S LIDMI Z PRAXE",
-    description: "Sejdeme se s klíčovými rolemi a zmapujeme denní rutinu, úzká místa a příležitosti.",
-    output: "Výstup: Mapa rolí a úzkých míst"
-  },
-  {
-    number: "02",
-    icon: Search,
-    title: "ANALÝZA PROCESŮ A DAT",
-    description: "Vyhodnotíme data, identifikujeme rychlé výhry a odhadneme ROI.",
-    output: "Výstup: Seznam rychlých výher s ROI odhadem"
-  },
-  {
-    number: "03",
-    icon: Target,
-    title: "VÝBĚR PILOTU (CO PŘINESE NEJDŘÍV)",
-    description: "Seřadíme příležitosti podle dopadu a vybereme 1–2 procesy pro první pilot.",
-    output: "Výstup: Výběr 1–2 pilotů + odhad ROI"
-  },
-  {
-    number: "04",
-    icon: FileCheck,
-    title: "ROADMAPA + KPI (30/60/90)",
-    description: "Mapa rolí, seznam priorit, ROI odhad a návrh pilotu — vše připraveno pro vedení.",
-    output: "Výstup: Roadmapa 30/60/90 + KPI pro měření"
-  }
-];
-
-const targetAudience = [
-  {
-    icon: Briefcase,
-    title: "CEO / COO",
-    description: "Chcete vědět, kde AI přinese největší úspory a jak začít bezpečně."
-  },
-  {
-    icon: UserCheck,
-    title: "HR / ROZVOJ LIDÍ",
-    description: "Potřebujete standard dovedností a plán zaškolení týmů."
-  },
-  {
-    icon: Building2,
-    title: "OBCHOD / PODPORA",
-    description: "Hledáte způsob, jak zrychlit reakce a uvolnit kapacitu."
-  }
-];
-
-const adoptionPoints = [
-  {
-    icon: Users,
-    text: "Zapojujeme klíčové lidi od začátku — aby řešení nebylo ‚shora'."
-  },
-  {
-    icon: Lightbulb,
-    text: "Ukazujeme konkrétní přínosy pro jednotlivé role, ne jen technologii."
-  },
-  {
-    icon: BookOpen,
-    text: "Připravíme jednoduché návody a pravidla pro každodenní práci."
-  },
-  {
-    icon: UserCheck,
-    text: "Měříme, jak lidé nástroje přijímají — a reagujeme na zpětnou vazbu."
-  }
-];
-
-const faqItems = [
-  {
-    icon: Clock,
-    question: "Jak dlouho to trvá?",
-    answer: "Workshop + analýza + výstupy do 14 dnů od startu.",
-    highlight: "14 dní"
-  },
-  {
-    icon: HelpCircle,
-    question: "Co potřebujete od nás?",
-    answer: "Krátký popis klíčových rolí a procesů, přístup k lidem z praxe na workshop.",
-    highlight: "Minimum vstupů"
-  },
-  {
-    icon: Lock,
-    question: "Jak chráníte data?",
-    answer: "Pravidla přístupů a práce s citlivými daty nastavíme od prvního dne. Soulad s GDPR a vašimi interními politikami.",
-    highlight: "GDPR"
-  },
-  {
-    icon: BarChart3,
-    question: "Co dostanu na konci?",
-    answer: "Mapu rolí, quick wins s ROI odhadem, návrh pilotu a základní pravidla bezpečnosti — vše připraveno pro vedení.",
-    highlight: "Výstupy pro vedení"
-  }
-];
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AiQuickScan = () => {
+  const { t } = useTranslation();
+  const { language, getLocalizedHref } = useLanguage();
+
+  const deliverables = [
+    {
+      icon: FileBarChart,
+      title: t('pages.mapaUspor.deliverables.roleMap.title', 'MAPA ROLÍ A ÚZKÝCH MÍST'),
+      description: t('pages.mapaUspor.deliverables.roleMap.description', 'Kde dnes vzniká nejvíc práce navíc a kde AI ušetří nejvíc času.')
+    },
+    {
+      icon: Target,
+      title: t('pages.mapaUspor.deliverables.opportunities.title', 'SEZNAM PŘÍLEŽITOSTÍ (PRIORITIZOVANÝ)'),
+      description: t('pages.mapaUspor.deliverables.opportunities.description', 'Konkrétní use-casy seřazené podle dopadu a náročnosti.')
+    },
+    {
+      icon: Route,
+      title: t('pages.mapaUspor.deliverables.pilot.title', 'DOPORUČENÝ PILOT (1–2 PROCESY)'),
+      description: t('pages.mapaUspor.deliverables.pilot.description', 'Procesy pro rychlý start s měřením dopadu.')
+    },
+    {
+      icon: Shield,
+      title: t('pages.mapaUspor.deliverables.security.title', 'RÁMEC BEZPEČNOSTI A PRAVIDEL'),
+      description: t('pages.mapaUspor.deliverables.security.description', 'Pravidla pro data, přístupy a používání AI ve firmě.')
+    }
+  ];
+
+  const processSteps = [
+    {
+      number: "01",
+      icon: Users,
+      title: t('pages.mapaUspor.process.workshop.title', 'WORKSHOP S LIDMI Z PRAXE'),
+      description: t('pages.mapaUspor.process.workshop.description', 'Sejdeme se s klíčovými rolemi a zmapujeme denní rutinu, úzká místa a příležitosti.')
+    },
+    {
+      number: "02",
+      icon: Search,
+      title: t('pages.mapaUspor.process.analysis.title', 'ANALÝZA PROCESŮ A DAT'),
+      description: t('pages.mapaUspor.process.analysis.description', 'Vyhodnotíme data, identifikujeme rychlé výhry a odhadneme ROI.')
+    },
+    {
+      number: "03",
+      icon: Target,
+      title: t('pages.mapaUspor.process.pilotSelection.title', 'VÝBĚR PILOTU (CO PŘINESE NEJDŘÍV)'),
+      description: t('pages.mapaUspor.process.pilotSelection.description', 'Seřadíme příležitosti podle dopadu a vybereme 1–2 procesy pro první pilot.')
+    },
+    {
+      number: "04",
+      icon: FileCheck,
+      title: t('pages.mapaUspor.process.roadmap.title', 'ROADMAPA + KPI (30/60/90)'),
+      description: t('pages.mapaUspor.process.roadmap.description', 'Mapa rolí, seznam priorit, ROI odhad a návrh pilotu — vše připraveno pro vedení.')
+    }
+  ];
+
+  const targetAudience = [
+    {
+      icon: Briefcase,
+      title: t('pages.mapaUspor.audience.ceo.title', 'CEO / COO'),
+      description: t('pages.mapaUspor.audience.ceo.description', 'Chcete vědět, kde AI přinese největší úspory a jak začít bezpečně.')
+    },
+    {
+      icon: UserCheck,
+      title: t('pages.mapaUspor.audience.hr.title', 'HR / ROZVOJ LIDÍ'),
+      description: t('pages.mapaUspor.audience.hr.description', 'Potřebujete standard dovedností a plán zaškolení týmů.')
+    },
+    {
+      icon: Building2,
+      title: t('pages.mapaUspor.audience.sales.title', 'OBCHOD / PODPORA'),
+      description: t('pages.mapaUspor.audience.sales.description', 'Hledáte způsob, jak zrychlit reakce a uvolnit kapacitu.')
+    }
+  ];
+
+  const adoptionPoints = [
+    {
+      icon: Users,
+      text: t('pages.mapaUspor.adoption.involvement', 'Zapojujeme klíčové lidi od začátku — aby řešení nebylo shora.')
+    },
+    {
+      icon: Lightbulb,
+      text: t('pages.mapaUspor.adoption.benefits', 'Ukazujeme konkrétní přínosy pro jednotlivé role, ne jen technologii.')
+    },
+    {
+      icon: BookOpen,
+      text: t('pages.mapaUspor.adoption.guides', 'Připravíme jednoduché návody a pravidla pro každodenní práci.')
+    },
+    {
+      icon: UserCheck,
+      text: t('pages.mapaUspor.adoption.measurement', 'Měříme, jak lidé nástroje přijímají — a reagujeme na zpětnou vazbu.')
+    }
+  ];
+
+  const faqItems = [
+    {
+      icon: Clock,
+      question: t('pages.mapaUspor.faq.duration.question', 'Jak dlouho to trvá?'),
+      answer: t('pages.mapaUspor.faq.duration.answer', 'Workshop + analýza + výstupy do 14 dnů od startu.'),
+      highlight: t('pages.mapaUspor.faq.duration.highlight', '14 dní')
+    },
+    {
+      icon: HelpCircle,
+      question: t('pages.mapaUspor.faq.input.question', 'Co potřebujete od nás?'),
+      answer: t('pages.mapaUspor.faq.input.answer', 'Krátký popis klíčových rolí a procesů, přístup k lidem z praxe na workshop.'),
+      highlight: t('pages.mapaUspor.faq.input.highlight', 'Minimum vstupů')
+    },
+    {
+      icon: Lock,
+      question: t('pages.mapaUspor.faq.security.question', 'Jak chráníte data?'),
+      answer: t('pages.mapaUspor.faq.security.answer', 'Pravidla přístupů a práce s citlivými daty nastavíme od prvního dne. Soulad s GDPR a vašimi interními politikami.'),
+      highlight: t('pages.mapaUspor.faq.security.highlight', 'GDPR')
+    },
+    {
+      icon: BarChart3,
+      question: t('pages.mapaUspor.faq.output.question', 'Co dostanu na konci?'),
+      answer: t('pages.mapaUspor.faq.output.answer', 'Mapu rolí, quick wins s ROI odhadem, návrh pilotu a základní pravidla bezpečnosti — vše připraveno pro vedení.'),
+      highlight: t('pages.mapaUspor.faq.output.highlight', 'Výstupy pro vedení')
+    }
+  ];
+
   return (
     <>
       <SEO 
-        title="Mapa úspor – zjistěte, kde AI ušetří nejvíc času"
-        description="14denní diagnostika procesů a rolí. Získáte mapu úzkých míst, quick wins s ROI odhadem a návrh pilotu."
-        path="/profirmy/mapa-uspor"
+        title={t('pages.mapaUspor.seo.title', 'Mapa úspor – zjistěte, kde AI ušetří nejvíc času')}
+        description={t('pages.mapaUspor.seo.description', '14denní diagnostika procesů a rolí. Získáte mapu úzkých míst, quick wins s ROI odhadem a návrh pilotu.')}
+        path={language === 'en' ? '/en/for-business/savings-map' : '/profirmy/mapa-uspor'}
       />
       
       <div className="min-h-screen bg-background/80">
@@ -156,7 +153,6 @@ const AiQuickScan = () => {
         <main className="pb-20">
           {/* Hero Section */}
           <section className="pt-40 md:pt-48 pb-16 md:pb-20 relative min-h-[600px]">
-            {/* Neural Network only in hero with fade-out at bottom */}
             <div className="absolute inset-0 overflow-hidden -z-10">
               <NeuralNetworkBackground />
               <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
@@ -165,45 +161,45 @@ const AiQuickScan = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                   <span className="heading-hero">
-                    Mapa úspor
+                    {t('pages.mapaUspor.hero.title', 'Mapa úspor')}
                   </span>
                   <br />
                   <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6 uppercase" style={{ letterSpacing: '0.15em' }}>
-                    Bezpečný start AI transformace
+                    {t('pages.mapaUspor.hero.subtitle', 'Bezpečný start AI transformace')}
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-20">
-                  Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, kolik to přinese a jak bezpečně začít pilotem.
+                  {t('pages.mapaUspor.hero.description', 'Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, kolik to přinese a jak bezpečně začít pilotem.')}
                 </p>
                 
                 {/* Trust Chips */}
                 <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                    Fixní výstupy
+                    {t('pages.mapaUspor.hero.chips.fixed', 'Fixní výstupy')}
                   </span>
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                    Měřitelné KPI
+                    {t('pages.mapaUspor.hero.chips.kpi', 'Měřitelné KPI')}
                   </span>
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                    Bezpečné přístupy
+                    {t('pages.mapaUspor.hero.chips.secure', 'Bezpečné přístupy')}
                   </span>
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                    Roadmapa 30/60/90
+                    {t('pages.mapaUspor.hero.chips.roadmap', 'Roadmapa 30/60/90')}
                   </span>
                 </div>
                 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
                   <div className="flex flex-col items-center">
-                    <Link to="/poptavka">
+                    <Link to={getLocalizedHref('/poptavka')}>
                       <Button 
                         size="lg"
                         className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       >
-                        Domluvit diagnostiku (15 min)
+                        {t('common.cta.bookDiagnostics')}
                       </Button>
                     </Link>
-                    <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>
+                    <span className="text-xs text-muted-foreground mt-2">{t('common.helper.noCommitmentFull')}</span>
                   </div>
                   <a href="#deliverables">
                     <Button 
@@ -211,7 +207,7 @@ const AiQuickScan = () => {
                       size="lg"
                       className="w-full sm:w-auto px-8 py-6 text-sm font-semibold tracking-[0.15em] uppercase border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
                     >
-                      Zobrazit, co dostanu
+                      {t('pages.mapaUspor.hero.ctaSecondary', 'Zobrazit, co dostanu')}
                     </Button>
                   </a>
                 </div>
@@ -230,10 +226,10 @@ const AiQuickScan = () => {
           <section id="deliverables" className="py-20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                CO PŘESNĚ DOSTANETE
+                {t('pages.mapaUspor.sections.deliverables.title', 'CO PŘESNĚ DOSTANETE')}
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Konkrétní výstupy, které můžete poslat vedení.
+                {t('pages.mapaUspor.sections.deliverables.subtitle', 'Konkrétní výstupy, které můžete poslat vedení.')}
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -269,10 +265,10 @@ const AiQuickScan = () => {
           <section className="py-20 bg-card/20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                JAK TO PROBÍHÁ
+                {t('pages.mapaUspor.sections.process.title', 'JAK TO PROBÍHÁ')}
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                4 kroky k jasné roadmapě a měřitelným KPI.
+                {t('pages.mapaUspor.sections.process.subtitle', '4 kroky k jasné roadmapě a měřitelným KPI.')}
               </p>
               
               <div className="max-w-3xl mx-auto">
@@ -296,7 +292,7 @@ const AiQuickScan = () => {
                               
                               <div className="flex-1 text-left">
                                 <div className="flex items-center gap-3">
-                                  <span className="text-xs font-bold text-primary/60">KROK {step.number}</span>
+                                  <span className="text-xs font-bold text-primary/60">{t('pages.mapaUspor.process.step', 'KROK')} {step.number}</span>
                                   <h3 className="text-base font-semibold text-foreground group-hover:text-white transition-colors">
                                     {step.title}
                                   </h3>
@@ -335,10 +331,10 @@ const AiQuickScan = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="glass-card p-8 md:p-10 rounded-2xl border border-primary/30">
                   <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                    ADOPCE A PRÁCE S LIDMI
+                    {t('pages.mapaUspor.sections.adoption.title', 'ADOPCE A PRÁCE S LIDMI')}
                   </h2>
                   <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-                    AI projekty často selžou na adopci. Proto řešíme i práci s lidmi, rolemi a změnou návyků.
+                    {t('pages.mapaUspor.sections.adoption.subtitle', 'AI projekty často selžou na adopci. Proto řešíme i práci s lidmi, rolemi a změnou návyků.')}
                   </p>
                   
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -376,20 +372,20 @@ const AiQuickScan = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  CHCETE VĚDĚT, KDE AI PŘINESE NEJVĚTŠÍ DOPAD?
+                  {t('pages.mapaUspor.finalCta.title', 'CHCETE VĚDĚT, KDE AI PŘINESE NEJVĚTŠÍ DOPAD?')}
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Začněte 15minutovou diagnostikou. Řekneme vám, jestli je QuickScan pro vás správný krok.
+                  {t('pages.mapaUspor.finalCta.description', 'Začněte 15minutovou diagnostikou. Řekneme vám, jestli je QuickScan pro vás správný krok.')}
                 </p>
-                <Link to="/poptavka">
+                <Link to={getLocalizedHref('/poptavka')}>
                   <Button 
                     size="lg"
                     className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   >
-                    Domluvit 15 min konzultaci
+                    {t('pages.mapaUspor.finalCta.cta', 'Domluvit 15 min konzultaci')}
                   </Button>
                 </Link>
-                <p className="text-xs text-muted-foreground/60 mt-3">Bez závazku • ozveme se do 24 hodin</p>
+                <p className="text-xs text-muted-foreground/60 mt-3">{t('common.helper.noCommitmentFull')}</p>
               </div>
             </div>
           </section>
