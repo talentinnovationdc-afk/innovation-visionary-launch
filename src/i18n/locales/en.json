@@ -704,8 +704,163 @@
     "aiAgentiNaMiru": {
       "_path": "/en/for-business/custom-ai-agents",
       "seo": {
-        "title": "Custom AI Agents – Digital Colleague for Your Processes",
-        "description": "AI agent deployment for specific processes. Sales, support, reporting, orchestration."
+        "title": "Custom AI Agents – Process Automation for Companies",
+        "description": "We design and deploy an AI agent for your process. Integration with your tools, impact measurement, and secure deployment. Pilot within 14 days."
+      },
+      "hero": {
+        "title": "Custom AI Agents",
+        "subtitle": "Digital Colleague for Your Processes",
+        "description": "We design, deploy, and measure impact. Securely, connected to your tools.",
+        "chips": {
+          "integration": "Integration",
+          "impact": "Impact Measurement",
+          "secure": "Secure Access",
+          "pilot": "Pilot in 14 Days"
+        }
+      },
+      "labels": {
+        "result": "Result",
+        "problem": "Problem",
+        "solution": "Solution"
+      },
+      "solutions": {
+        "sales": {
+          "title": "Sales & Support",
+          "description": "Lead qualification, customer responses, follow-ups, and meetings.",
+          "result": "Agent for responses + follow-up + materials preparation"
+        },
+        "reporting": {
+          "title": "Reporting & Data",
+          "description": "Data collection, summaries, alerts, and management overview.",
+          "result": "Data summaries + alerts + regular management report"
+        },
+        "orchestration": {
+          "title": "Process Orchestration",
+          "description": "When an event occurs, it executes steps across tools.",
+          "result": "Automated steps across tools without manual work"
+        }
+      },
+      "process": {
+        "step": "STEP",
+        "diagnostics": {
+          "title": "DIAGNOSTICS",
+          "description": "We select the process with the highest ROI."
+        },
+        "architecture": {
+          "title": "ARCHITECTURE",
+          "description": "Workflow design, rules, integrations."
+        },
+        "pilot": {
+          "title": "PILOT",
+          "description": "Deployment + templates + testing."
+        },
+        "deployment": {
+          "title": "DEPLOYMENT & MEASUREMENT",
+          "description": "Production + impact evaluation."
+        }
+      },
+      "security": {
+        "access": {
+          "title": "ACCESS AND PERMISSIONS",
+          "description": "Who has access to the agent and what they can do."
+        },
+        "data": {
+          "title": "SENSITIVE DATA UNDER CONTROL",
+          "description": "Clear rules for handling company data."
+        },
+        "impact": {
+          "title": "IMPACT MEASUREMENT",
+          "description": "We track time, quality, and error rate."
+        },
+        "standards": {
+          "title": "STANDARDIZATION AND TEMPLATES",
+          "description": "Unified way of working across the team."
+        }
+      },
+      "cases": {
+        "failed": {
+          "title": "WHY AI INITIATIVE FAILED (AND HOW WE RESTARTED IT)",
+          "problem": "No owner, people feared job impact, no rules.",
+          "solution": "Restart: workshop, roadmap, pilot with measurement, adoption + communication.",
+          "result": "−30% time on routine in affected roles + measurable impact."
+        },
+        "sales": {
+          "title": "SALES WITHOUT QUICK RESPONSE: FOLLOW-UP AGENT",
+          "problem": "Inquiries waiting, CRM outdated, follow-up forgotten.",
+          "solution": "Lead qualification + email/proposal drafts + follow-up monitoring + meeting notes.",
+          "result": "40% faster response + higher conversion."
+        },
+        "reporting": {
+          "title": "REPORTING WITHOUT MANUAL WORK",
+          "problem": "Manual summary of weekly reports from multiple sources, errors, time loss.",
+          "solution": "Automated summaries + deviation alerts.",
+          "result": "2–3 hours/week back for managers + fewer errors."
+        }
+      },
+      "whyAnonymized": {
+        "title": "Why anonymized?",
+        "description": "We work with internal processes and sensitive data. Anonymization protects client know-how and enables sharing principles transferable to other companies."
+      },
+      "roiCalc": {
+        "title": "How We Calculate ROI"
+      },
+      "roi": {
+        "time": "Time saved / role × hourly rate",
+        "quality": "Impact on output quality and error rate",
+        "speed": "Impact on response speed (sales / support)"
+      },
+      "sections": {
+        "solutions": {
+          "title": "3 MOST COMMON SOLUTIONS",
+          "subtitle": "Where AI agents bring the biggest savings."
+        },
+        "process": {
+          "title": "HOW IT WORKS",
+          "subtitle": "From diagnostics to measurable results."
+        },
+        "security": {
+          "title": "SAFE AND PROVEN DEPLOYMENT",
+          "subtitle": "Rules and control from day one."
+        },
+        "cases": {
+          "title": "REAL EXAMPLES",
+          "subtitle": "Anonymized case studies from real projects."
+        },
+        "faq": {
+          "title": "FREQUENTLY ASKED QUESTIONS",
+          "subtitle": "Answers to the most common questions about custom AI agents."
+        }
+      },
+      "faq": {
+        "speed": {
+          "question": "How quickly will we see results?",
+          "answer": "Pilot typically runs 2–4 weeks. You have first impact data within a month.",
+          "highlight": "Within a month"
+        },
+        "input": {
+          "question": "What do you need from us?",
+          "answer": "Brief process description, tool access, and contact with a key person.",
+          "highlight": "Minimal inputs"
+        },
+        "security": {
+          "question": "How do you protect data and access?",
+          "answer": "We set up access rules, encryption, and sensitive data handling according to your policies.",
+          "highlight": "GDPR + internal rules"
+        },
+        "integration": {
+          "question": "What can you integrate with?",
+          "answer": "M365, Google Workspace, CRM systems, helpdesks, internal databases, and other tools.",
+          "highlight": "Flexible integration"
+        },
+        "pricing": {
+          "question": "How much does it cost?",
+          "answer": "Price depends on scope. After a 15-min diagnostic, we provide a framework and options (pilot / full deployment).",
+          "highlight": "Price by scope"
+        }
+      },
+      "finalCta": {
+        "title": "WANT A CUSTOM AGENT FOR YOUR PROCESS?",
+        "description": "Book 15 minutes. Tell us where you're losing time, and we'll propose the first use case with impact measurement."
       }
     },
 
