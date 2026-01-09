@@ -151,7 +151,7 @@ const ChatGPTAkademie = () => {
               <p className="text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
                 Praktické workflow s GPT, které zrychlí psaní, analýzu i rozhodování.
               </p>
-              <p className="text-sm text-primary mb-2">
+              <p className="text-sm text-primary mb-8">
                 Ideální pro: Administrativa, HR, obchod, podpora — každý, kdo denně píše.
               </p>
               
