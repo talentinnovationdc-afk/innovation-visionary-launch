@@ -381,12 +381,9 @@ const AkademieProTymy = () => {
           </div>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
-                <Award className="w-4 h-4 text-primary" />
-                <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">
-                  Firemní vzdělávání
-                </span>
-              </div>
+              <span className="text-xs font-semibold tracking-[0.15em] text-muted-foreground uppercase mb-8 block">
+                Firemní vzdělávání
+              </span>
               
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                 <span className="heading-hero">
