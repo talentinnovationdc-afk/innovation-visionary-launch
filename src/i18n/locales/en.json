@@ -1,10 +1,12 @@
 {
   "_meta": {
     "language": "en",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "lastUpdated": "2026-01-09",
-    "notes": "Professional B2B English copy for Talent Innovation"
+    "notes": "Professional B2B English copy for Talent Innovation - fully localized"
   },
+  
+  "_notes_format": "Keys: pages.{page}.{section}.{element} | Max lengths: hero H1=55ch, CTA=22ch, nav=14ch",
   
   "common": {
     "_notes": "Repeated elements across the site",
