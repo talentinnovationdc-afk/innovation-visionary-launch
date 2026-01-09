@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Check, ChevronDown, BookOpen, ArrowRight } from "lucide-react";
 import { LucideIcon } from "lucide-react";
@@ -37,6 +38,7 @@ export const AcademyCard = ({
   allOutputs,
   kdyZvolit
 }: AcademyCardProps) => {
+  const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
   
   const hasDetails = detailDescription || (allOutputs && allOutputs.length > 0) || kdyZvolit;
@@ -53,7 +55,7 @@ export const AcademyCard = ({
       {/* Badges */}
       {isProgram && (
         <div className="absolute -top-3 right-4 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase shadow-[0_0_15px_rgba(189,0,255,0.4)]">
-          Nejlepší hodnota
+          {t('common.academyCard.bestValue')}
         </div>
       )}
       
@@ -82,7 +84,7 @@ export const AcademyCard = ({
             "text-base font-semibold tracking-wide uppercase leading-tight",
             isProgram ? "text-accent" : "text-foreground"
           )}>
-            {isProgram ? <>Kompletní program<br /><span className="text-sm opacity-80">(3 akademie)</span></> : title}
+            {isProgram ? <>{t('common.academyCard.completeProgram')}<br /><span className="text-sm opacity-80">{t('common.academyCard.threeAcademies')}</span></> : title}
           </h3>
         </div>
 
@@ -101,13 +103,13 @@ export const AcademyCard = ({
           "text-xs font-medium py-2 px-3 rounded-lg mb-5",
           isProgram ? "bg-accent/10 text-accent" : "bg-primary/10 text-primary"
         )}>
-          <span className="opacity-70">Po 14 dnech:</span> {po14Dnech}
+          <span className="opacity-70">{t('common.academyCard.after14Days')}</span> {po14Dnech}
         </div>
 
         {/* Top 3 výstupy */}
         <div className="mb-5">
           <p className="text-[10px] uppercase tracking-wider text-muted-foreground/60 mb-2 font-medium">
-            Top výstupy
+            {t('common.academyCard.topOutputs')}
           </p>
           <ul className="space-y-1.5">
             {(Array.isArray(topVystupy) ? topVystupy : []).slice(0, 3).map((output, idx) => (
@@ -130,7 +132,7 @@ export const AcademyCard = ({
               )}
               aria-expanded={isExpanded}
             >
-              <span>Zobrazit detaily</span>
+              <span>{t('common.academyCard.showDetails')}</span>
               <ChevronDown className={cn(
                 "w-3.5 h-3.5 transition-transform duration-200",
                 isExpanded && "rotate-180"
@@ -152,7 +154,7 @@ export const AcademyCard = ({
                   {detailDescription && (
                     <div>
                       <p className="text-[10px] uppercase tracking-wider text-muted-foreground/60 mb-1.5 font-medium">
-                        Popis
+                        {t('common.academyCard.description')}
                       </p>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {detailDescription}
@@ -164,7 +166,7 @@ export const AcademyCard = ({
                   {allOutputs && allOutputs.length > 0 && (
                     <div>
                       <p className="text-[10px] uppercase tracking-wider text-muted-foreground/60 mb-1.5 font-medium">
-                        Všechny výstupy
+                        {t('common.academyCard.allOutputs')}
                       </p>
                       <ul className="space-y-1">
                         {allOutputs.map((output, idx) => (
@@ -181,7 +183,7 @@ export const AcademyCard = ({
                   {kdyZvolit && (
                     <div className="p-3 rounded-lg bg-card/50 border border-border/30">
                       <p className="text-[10px] uppercase tracking-wider text-muted-foreground/60 mb-1 font-medium">
-                        Kdy zvolit
+                        {t('common.academyCard.whenToChoose')}
                       </p>
                       <p className="text-sm text-muted-foreground">
                         {kdyZvolit}
@@ -204,7 +206,7 @@ export const AcademyCard = ({
                 size="sm"
                 className="w-full h-11 bg-primary text-primary-foreground shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)]"
               >
-                Vybrat licenci
+                {t('common.academyCard.selectLicense')}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>
@@ -212,7 +214,7 @@ export const AcademyCard = ({
               to={link}
               className="block text-center text-sm text-primary/70 hover:text-primary underline underline-offset-4 transition-colors py-1"
             >
-              Ukázat obsah
+              {t('common.academyCard.showContent')}
             </Link>
           </div>
         ) : (
@@ -223,7 +225,7 @@ export const AcademyCard = ({
               className="w-full h-11 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary transition-all"
             >
               <BookOpen className="w-4 h-4 mr-2" />
-              Ukázat obsah
+              {t('common.academyCard.showContent')}
             </Button>
           </Link>
         )}
