@@ -45,6 +45,10 @@
       "recommended": "DOPORUČUJEME",
       "mostPopular": "NEJČASTĚJŠÍ VOLBA",
       "bestValue": "Nejlepší hodnota"
+    },
+    "trustStrip": {
+      "title": "Důvěřují nám lídři v průmyslu a technologiích",
+      "disclaimer": "Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně."
     }
   },
 
@@ -349,12 +353,104 @@
         "description": "Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologie přidáváme až když má měřitelný smysl."
       },
       "hero": {
-        "title": "Metodika",
-        "subtitle": "Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologie přidáváme až když má měřitelný smysl."
+        "label": "METODIKA",
+        "title1": "Cesta k digitální autonomii",
+        "title2": "měřitelně, bezpečně, škálovatelně",
+        "description": "Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologie přidáváme až když má měřitelný smysl.",
+        "helper": "Role → Proces → Výhra → Technologie",
+        "cta": "Domluvit diagnostiku",
+        "ctaSecondary": "Vybrat akademii"
+      },
+      "quickWins": {
+        "title": "CO ZÍSKÁTE DO 14 DNŮ",
+        "subtitle": "Hned od začátku měříme dopad. Žádné piloty bez výsledků.",
+        "roleMap": {
+          "title": "MAPA ROLÍ",
+          "description": "Zmapujeme role a identifikujeme, kde vznikají zbytečné ztráty času."
+        },
+        "quickWinsList": {
+          "title": "SEZNAM QUICK WINS",
+          "description": "3–10 konkrétních zlepšení, která lze zavést rychle a bezpečně."
+        },
+        "securityFrame": {
+          "title": "BEZPEČNOSTNÍ RÁMEC",
+          "description": "Jasná pravidla pro data, přístupy a používání AI ve vaší firmě."
+        },
+        "roiRoadmap": {
+          "title": "ROI ROADMAPA",
+          "description": "Prioritizovaný plán s odhadem návratnosti pro jednotlivé procesy."
+        }
+      },
+      "timeline": {
+        "title": "CESTA K DIGITÁLNÍ AUTONOMII",
+        "subtitle": "5 kroků od prvních výher k plné autonomii",
+        "step": "KROK",
+        "steps": {
+          "diagnostics": {
+            "title": "DIAGNOSTIKA",
+            "description": "Zmapujeme role, procesy a quick wins. Zjistíme, kde AI přinese největší úspory."
+          },
+          "plan": {
+            "title": "PLÁN",
+            "description": "Prioritizovaný plán s KPI a návrhem pilotu. Víte, co řešit první.",
+            "note": "Součástí je ROI odhad pro jednotlivé procesy."
+          },
+          "implementation": {
+            "title": "IMPLEMENTACE",
+            "description": "Nasazení AI agenta nebo workflow. Měříme dopad od prvního dne."
+          },
+          "training": {
+            "title": "ZAŠKOLENÍ",
+            "description": "Praktické workshopy a akademie. Tým získá skillset a standardy."
+          },
+          "evolution": {
+            "title": "EVOLUCE",
+            "description": "Škálování na další procesy. Governance a adopce napříč firmou."
+          }
+        }
+      },
+      "choosePath": {
+        "title": "KOMU TO DÁVÁ SMYSL",
+        "subtitle": "Vyberte si cestu podle toho, co potřebujete.",
+        "forBusiness": {
+          "title": "PRO FIRMY",
+          "description": "Rychlé úspory času v rolích a procesech. Bezpečné workflow a měření dopadu. Ideální pro týmy 5+ lidí.",
+          "cta": "Domluvit diagnostiku"
+        },
+        "forProfessionals": {
+          "title": "PRO PROFESIONÁLY",
+          "description": "Certifikace a LinkedIn odznak. Praktické workflow pro vaši profesi. Studium vlastním tempem.",
+          "cta": "Vybrat akademii"
+        }
       },
       "dna": {
         "title": "NA ČEM SI ZAKLÁDÁME",
-        "subtitle": "Principy, které nás odlišují."
+        "subtitle": "Principy, které nás odlišují.",
+        "impact": {
+          "title": "MĚŘITELNÝ DOPAD",
+          "subtitle": "Čas, kvalita, chybovost",
+          "description": "Měříme dopad: ušetřený čas, kvalitu výstupů a chybovost. Víte, co funguje."
+        },
+        "custom": {
+          "title": "NA MÍRU",
+          "subtitle": "Role + proces",
+          "description": "Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami."
+        },
+        "safe": {
+          "title": "BEZPEČNĚ",
+          "subtitle": "Data pod kontrolou",
+          "description": "Jasná pravidla pro data, přístupy a používání AI. GDPR a pravidla firmy respektujeme."
+        },
+        "data": {
+          "title": "ŠKÁLOVATELNĚ",
+          "subtitle": "Od pilotu k firmě",
+          "description": "Od prvních výher ke škálování. Governance a adopce napříč týmy."
+        }
+      },
+      "finalCta": {
+        "title": "ZJISTĚTE, KDE AI PŘINESE NEJVĚTŠÍ ÚSPORY",
+        "description": "Začněte 15minutovou diagnostikou. Řekneme vám, kde má AI smysl.",
+        "helper": "Bez závazku • ozveme se do 24 hodin"
       },
       "logoStrip": {
         "title": "Důvěřují nám lídři v průmyslu a technologiích",
