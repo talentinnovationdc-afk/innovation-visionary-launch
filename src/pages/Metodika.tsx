@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { 
   Shield, 
   Lock, 
-  Award, 
   Search, 
   FileText, 
   Cog, 
@@ -26,108 +25,113 @@ import {
   User
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const quickWinsCards = [
-  {
-    icon: Map,
-    title: "MAPA ROLÍ A ÚZKÝCH MÍST",
-    description: "Kde AI ušetří nejvíc času.",
-    accent: "cyan",
-  },
-  {
-    icon: Zap,
-    title: "SEZNAM QUICK WINS",
-    description: "3–10 konkrétních zlepšení.",
-    accent: "cyan",
-  },
-  {
-    icon: ShieldCheck,
-    title: "BEZPEČNOSTNÍ RÁMEC",
-    description: "Data, přístupy, pravidla použití.",
-    accent: "purple",
-  },
-  {
-    icon: Target,
-    title: "ROI ROADMAP",
-    description: "Co se vyplatí dělat první.",
-    accent: "purple",
-  },
-];
-
-const methodologySteps = [
-  {
-    number: "01",
-    title: "DIAGNOSTIKA (MAPA ÚSPOR)",
-    description: "Najdeme role a procesy s největší úsporou času a nízkým rizikem. Výstup: mapa příležitostí + rychlé výhry.",
-    icon: Search,
-  },
-  {
-    number: "02",
-    title: "PLÁN (ROI + PRAVIDLA)",
-    description: "Navrhneme postup a pravidla: data, nástroje, pravidla použití a odpovědnosti.",
-    note: "Regulace (AI Act/ISO) řešíme jen pokud je to pro váš obor relevantní.",
-    icon: FileText,
-  },
-  {
-    number: "03",
-    title: "IMPLEMENTACE (PILOT)",
-    description: "Nasadíme workflow a automatizace. Dopad měříme (čas, kvalita, chybovost).",
-    icon: Cog,
-  },
-  {
-    number: "04",
-    title: "ZAŠKOLENÍ (ADOPCE)",
-    description: "Tým dostane know-how a přístup do Online akademie. HR má přehled o dokončení.",
-    icon: GraduationCap,
-    accent: "purple",
-  },
-  {
-    number: "05",
-    title: "EVOLUCE (ŠKÁLOVÁNÍ)",
-    description: "Průběžně ladíme a rozšiřujeme podle výsledků a změn ve firmě.",
-    icon: TrendingUp,
-    accent: "purple",
-  },
-];
-
-const dnaCards = [
-  {
-    icon: BarChart3,
-    title: "MĚŘENÍ DOPADU",
-    subtitle: "VÝSLEDKY",
-    description: "Čas, kvalitu a chybovost měříme. Víte, co funguje.",
-    accent: "cyan",
-  },
-  {
-    icon: Settings,
-    title: "ŘEŠENÍ NA MÍRU",
-    subtitle: "PROCESY",
-    description: "Analyzujeme reálné procesy, ne obecné šablony.",
-    accent: "cyan",
-  },
-  {
-    icon: Shield,
-    title: "BEZPEČNÉ POUŽITÍ",
-    subtitle: "PRAVIDLA",
-    description: "Data, přístupy a odpovědnosti nastavíme od začátku.",
-    accent: "purple",
-  },
-  {
-    icon: Lock,
-    title: "OCHRANA DAT",
-    subtitle: "GDPR / DSA",
-    description: "Vaše data zůstávají pod kontrolou.",
-    accent: "purple",
-  },
-];
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Metodika = () => {
+  const { t } = useTranslation();
+  const { language, getLocalizedHref } = useLanguage();
+
+  const quickWinsCards = [
+    {
+      icon: Map,
+      title: t('pages.metodika.quickWins.roleMap.title'),
+      description: t('pages.metodika.quickWins.roleMap.description'),
+      accent: "cyan",
+    },
+    {
+      icon: Zap,
+      title: t('pages.metodika.quickWins.quickWinsList.title'),
+      description: t('pages.metodika.quickWins.quickWinsList.description'),
+      accent: "cyan",
+    },
+    {
+      icon: ShieldCheck,
+      title: t('pages.metodika.quickWins.securityFrame.title'),
+      description: t('pages.metodika.quickWins.securityFrame.description'),
+      accent: "purple",
+    },
+    {
+      icon: Target,
+      title: t('pages.metodika.quickWins.roiRoadmap.title'),
+      description: t('pages.metodika.quickWins.roiRoadmap.description'),
+      accent: "purple",
+    },
+  ];
+
+  const methodologySteps = [
+    {
+      number: "01",
+      title: t('pages.metodika.timeline.steps.diagnostics.title'),
+      description: t('pages.metodika.timeline.steps.diagnostics.description'),
+      icon: Search,
+    },
+    {
+      number: "02",
+      title: t('pages.metodika.timeline.steps.plan.title'),
+      description: t('pages.metodika.timeline.steps.plan.description'),
+      note: t('pages.metodika.timeline.steps.plan.note'),
+      icon: FileText,
+    },
+    {
+      number: "03",
+      title: t('pages.metodika.timeline.steps.implementation.title'),
+      description: t('pages.metodika.timeline.steps.implementation.description'),
+      icon: Cog,
+    },
+    {
+      number: "04",
+      title: t('pages.metodika.timeline.steps.training.title'),
+      description: t('pages.metodika.timeline.steps.training.description'),
+      icon: GraduationCap,
+      accent: "purple",
+    },
+    {
+      number: "05",
+      title: t('pages.metodika.timeline.steps.evolution.title'),
+      description: t('pages.metodika.timeline.steps.evolution.description'),
+      icon: TrendingUp,
+      accent: "purple",
+    },
+  ];
+
+  const dnaCards = [
+    {
+      icon: BarChart3,
+      title: t('pages.metodika.dna.impact.title'),
+      subtitle: t('pages.metodika.dna.impact.subtitle'),
+      description: t('pages.metodika.dna.impact.description'),
+      accent: "cyan",
+    },
+    {
+      icon: Settings,
+      title: t('pages.metodika.dna.custom.title'),
+      subtitle: t('pages.metodika.dna.custom.subtitle'),
+      description: t('pages.metodika.dna.custom.description'),
+      accent: "cyan",
+    },
+    {
+      icon: Shield,
+      title: t('pages.metodika.dna.safe.title'),
+      subtitle: t('pages.metodika.dna.safe.subtitle'),
+      description: t('pages.metodika.dna.safe.description'),
+      accent: "purple",
+    },
+    {
+      icon: Lock,
+      title: t('pages.metodika.dna.data.title'),
+      subtitle: t('pages.metodika.dna.data.subtitle'),
+      description: t('pages.metodika.dna.data.description'),
+      accent: "purple",
+    },
+  ];
+
   return (
     <>
       <SEO 
-        title="Jak pracujeme – bezpečná AI implementace pro firmy"
-        description="5 kroků k měřitelné produktivitě díky AI. Diagnostika, plán, implementace, zaškolení a evoluce. Bez závazku."
-        path="/metodika"
+        title={t('pages.metodika.seo.title')}
+        description={t('pages.metodika.seo.description')}
+        path={language === 'en' ? '/en/methodology' : '/metodika'}
       />
       
       <div className="min-h-screen bg-background/80">
@@ -144,22 +148,22 @@ const Metodika = () => {
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
                 <h2 className="text-sm font-semibold tracking-[0.2em] text-primary mb-6 uppercase">
-                  JAK PRACUJEME
+                  {t('pages.metodika.hero.label')}
                 </h2>
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                   <span className="heading-hero">
-                    Jak z AI uděláme produktivitu
+                    {t('pages.metodika.hero.title1')}
                   </span>
                   <br />
                   <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6 uppercase" style={{ letterSpacing: '0.15em' }}>
-                    ve vašem týmu
+                    {t('pages.metodika.hero.title2')}
                   </span>
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-4">
-                  Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologii přidáváme až když má měřitelný smysl.
+                  {t('pages.metodika.hero.description')}
                 </p>
                 <p className="text-sm text-primary mb-10">
-                  Startujeme 15min diagnostikou. Když dává smysl, navážeme Mapou úspor (14 dní).
+                  {t('pages.metodika.hero.helper')}
                 </p>
                 
                 {/* CTA Buttons */}
@@ -170,8 +174,8 @@ const Metodika = () => {
                     data-event="metodika_diagnostika_click"
                     asChild
                   >
-                    <Link to="/poptavka">
-                      Domluvit diagnostiku (15 min)
+                    <Link to={getLocalizedHref('/poptavka')}>
+                      {t('pages.metodika.hero.cta')}
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Link>
                   </Button>
@@ -182,9 +186,9 @@ const Metodika = () => {
                     data-event="metodika_online_click"
                     asChild
                   >
-                    <Link to="/online">
+                    <Link to={getLocalizedHref('/online')}>
                       <MonitorPlay className="mr-2 w-5 h-5" />
-                      Zobrazit akademie
+                      {t('pages.metodika.hero.ctaSecondary')}
                     </Link>
                   </Button>
                 </div>
@@ -206,10 +210,10 @@ const Metodika = () => {
           <section id="quick-wins" className="py-20 scroll-mt-16">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                CO ZÍSKÁTE BĚHEM PRVNÍCH 14 DNŮ
+                {t('pages.metodika.quickWins.title')}
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Rychlý start s měřitelnými výsledky.
+                {t('pages.metodika.quickWins.subtitle')}
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -252,10 +256,10 @@ const Metodika = () => {
           <section className="py-20 bg-card/20">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                CESTA K DIGITÁLNÍ AUTONOMII
+                {t('pages.metodika.timeline.title')}
               </h2>
               <p className="text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
-                Začínáme rolemi a procesy, kde je nejrychlejší přínos. Technologie přidáváme až tehdy, když dává měřitelný smysl.
+                {t('pages.metodika.timeline.subtitle')}
               </p>
               
               <div className="max-w-3xl mx-auto relative">
@@ -293,7 +297,7 @@ const Metodika = () => {
                                 <span className={`text-xs font-medium ${
                                   isPurple ? "text-accent/60" : "text-primary/60"
                                 }`}>
-                                  KROK {step.number}
+                                  {t('pages.metodika.timeline.step')} {step.number}
                                 </span>
                                 <h3 className="text-lg font-semibold tracking-[0.15em] text-foreground">
                                   {step.title}
@@ -331,10 +335,10 @@ const Metodika = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                VYBERTE SI CESTU
+                {t('pages.metodika.choosePath.title')}
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Firemní implementace nebo individuální rozvoj.
+                {t('pages.metodika.choosePath.subtitle')}
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -345,10 +349,10 @@ const Metodika = () => {
                   </div>
                   
                   <h3 className="text-xl font-semibold tracking-[0.15em] text-foreground mb-3">
-                    PRO FIRMY
+                    {t('pages.metodika.choosePath.forBusiness.title')}
                   </h3>
                   <p className="text-muted-foreground mb-6">
-                    Produktivita rolí + bezpečné workflow. Diagnostika, implementace a měření výsledků.
+                    {t('pages.metodika.choosePath.forBusiness.description')}
                   </p>
                   
                   <Button 
@@ -356,8 +360,8 @@ const Metodika = () => {
                     data-event="metodika_b2b_click"
                     asChild
                   >
-                    <Link to="/poptavka">
-                      Rychlá diagnostika
+                    <Link to={getLocalizedHref('/poptavka')}>
+                      {t('pages.metodika.choosePath.forBusiness.cta')}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </Button>
@@ -370,10 +374,10 @@ const Metodika = () => {
                   </div>
                   
                   <h3 className="text-xl font-semibold tracking-[0.15em] text-foreground mb-3">
-                    PRO PROFESIONÁLY
+                    {t('pages.metodika.choosePath.forProfessionals.title')}
                   </h3>
                   <p className="text-muted-foreground mb-6">
-                    Certifikát + LinkedIn odznak + studium vlastním tempem. 3 akademie nebo kompletní program.
+                    {t('pages.metodika.choosePath.forProfessionals.description')}
                   </p>
                   
                   <Button 
@@ -382,8 +386,8 @@ const Metodika = () => {
                     data-event="metodika_b2c_click"
                     asChild
                   >
-                    <Link to="/online">
-                      Online akademie ze záznamu
+                    <Link to={getLocalizedHref('/online')}>
+                      {t('pages.metodika.choosePath.forProfessionals.cta')}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </Button>
@@ -396,10 +400,10 @@ const Metodika = () => {
           <section className="py-20 bg-card/20">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                NA ČEM SI ZAKLÁDÁME
+                {t('pages.metodika.dna.title')}
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Principy, které nás odlišují.
+                {t('pages.metodika.dna.subtitle')}
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -448,12 +452,12 @@ const Metodika = () => {
           <section className="py-16 bg-card/10">
             <div className="container mx-auto px-4">
               <p className="text-center text-sm md:text-base font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-12">
-                Důvěřují nám lídři v průmyslu a technologiích
+                {t('common.trustStrip.title')}
               </p>
             </div>
             <LogoRibbon />
             <p className="text-center text-xs text-muted-foreground/60 mt-8 max-w-xl mx-auto px-4">
-              Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
+              {t('common.trustStrip.disclaimer')}
             </p>
           </section>
 
@@ -462,20 +466,20 @@ const Metodika = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Chcete zjistit, kde AI ušetří nejvíc času?
+                  {t('pages.metodika.finalCta.title')}
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Začněte 15minutovou diagnostikou – zjistíme, kde má AI smysl právě u vás.
+                  {t('pages.metodika.finalCta.description')}
                 </p>
-                <Link to="/poptavka">
+                <Link to={getLocalizedHref('/poptavka')}>
                   <Button 
                     size="lg"
                     className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   >
-                    Domluvit 15 min diagnostiku
+                    {t('common.cta.bookDiagnostics')}
                   </Button>
                 </Link>
-                <p className="text-xs text-muted-foreground/60 mt-3">bez závazku • ozveme se do 24 hodin</p>
+                <p className="text-xs text-muted-foreground/60 mt-3">{t('pages.metodika.finalCta.helper')}</p>
               </div>
             </div>
           </section>
