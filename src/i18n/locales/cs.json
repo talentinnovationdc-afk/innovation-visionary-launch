@@ -1055,19 +1055,61 @@
         "hrReporting": "HR reporting"
       },
       "extraFeatures": {
-        "onboarding": "Onboarding call"
+        "onboarding": "Onboarding call",
+        "quarterlyReview": "Čtvrtletní review"
       },
+      "recommended": "DOPORUČENO",
+      "licenses": "licencí",
+      "perLicense": "licence",
+      "exclVat": "bez DPH",
+      "vatNote": "Cena bez 21% DPH",
+      "accessNote": "Přístup do 24 hodin",
+      "total": "Celkem",
+      "wantOffer": "Chci {{name}}",
       "enterpriseNote": "Máte 100+ lidí? Napište nám."
     },
+    "enterprise": {
+      "title": "Enterprise (100+ licencí)",
+      "description": "Individuální ceny, dedikovaná podpora a onboarding na míru pro velké týmy.",
+      "cta": "Kontaktujte nás"
+    },
     "form": {
-      "title": "Nezávazná poptávka",
+      "badge": "Nezávazná poptávka",
+      "title": "Získejte nabídku",
       "subtitle": "Ozveme se do 24 hodin.",
-      "selectAcademies": "Preferované akademie",
+      "name": "Jméno a příjmení",
+      "namePlaceholder": "Vaše jméno",
+      "company": "Firma",
+      "companyPlaceholder": "Název firmy",
+      "email": "E-mail",
+      "emailPlaceholder": "vas@email.cz",
+      "licensesLabel": "Počet licencí",
+      "selectPlaceholder": "Vyberte...",
+      "selectedAcademies": "Vybrané akademie",
+      "preferredAcademies": "Preferované akademie",
+      "preferredAcademiesNote": "Vyberte jednu nebo více akademií, o které máte zájem.",
+      "completeProgram": "Kompletní program",
+      "threeAcademies": "3 akademie",
       "targetRoles": "Cílové role (volitelné)",
+      "targetRolesPlaceholder": "Vyberte cílové role...",
+      "roles": {
+        "admin": "Administrativa",
+        "sales": "Obchod",
+        "it": "IT",
+        "management": "Management",
+        "mix": "Mix rolí"
+      },
       "note": "Poznámka (volitelné)",
+      "notePlaceholder": "Jakékoliv další informace...",
+      "gdprConsent": "Souhlasím se zpracováním osobních údajů za účelem domluvy / zpracování poptávky.",
+      "gdprMore": "více",
       "submit": "Odeslat poptávku",
+      "submitting": "Odesílám...",
+      "tryAgain": "Zkusit znovu",
       "errors": {
-        "gdprRequired": "Pro odeslání je nutný souhlas se zpracováním osobních údajů."
+        "gdprRequired": "Pro odeslání je nutný souhlas se zpracováním osobních údajů.",
+        "timeout": "Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.",
+        "generic": "Odeslání se nepovedlo. Zkuste to prosím znovu."
       }
     },
     "sections": {
@@ -1082,9 +1124,14 @@
       "hrBenefits": {
         "title": "PROČ HR VOLÍ NAŠE AKADEMIE"
       },
+      "deployment": {
+        "title": "JAK TO FUNGUJE",
+        "subtitle": "3 jednoduché kroky k AI-zdatným týmům."
+      },
       "pricing": {
         "title": "BALÍČKY LICENCÍ",
-        "subtitle": "Ceny bez DPH."
+        "subtitle": "Ceny bez DPH.",
+        "tip": "💡 Tip: Kompletní program (3 akademie) nabízí nejlepší hodnotu."
       }
     }
   }

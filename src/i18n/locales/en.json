@@ -1466,7 +1466,7 @@
       "description": "Comprehensive AI training for corporate teams. ChatGPT, Copilot, automation. Certificates, LinkedIn badges, HR reporting."
     },
     "hero": {
-      "label": "FOR TEAMS",
+      "label": "FOR CORPORATE TEAMS",
       "title1": "AI Skills",
       "title2": "for Your Entire Team",
       "subtitle": "measurably and safely",
@@ -1478,8 +1478,8 @@
       "chips": {
         "hrReporting": "HR Reporting",
         "certification": "Certification + LinkedIn",
-        "templates": "Practical templates",
-        "ownPace": "Own pace"
+        "templates": "Practical Templates",
+        "ownPace": "Own Pace"
       }
     },
     "academyOptions": {
@@ -1490,7 +1490,8 @@
     },
     "badges": {
       "preview": "Preview",
-      "popular": "MOST POPULAR"
+      "popular": "MOST POPULAR",
+      "bestValue": "Best value"
     },
     "cards": {
       "chatgpt": {
@@ -1573,19 +1574,61 @@
         "hrReporting": "HR reporting"
       },
       "extraFeatures": {
-        "onboarding": "Onboarding call"
+        "onboarding": "Onboarding call",
+        "quarterlyReview": "Quarterly review"
       },
+      "recommended": "RECOMMENDED",
+      "licenses": "licenses",
+      "perLicense": "license",
+      "exclVat": "excl. VAT",
+      "vatNote": "Price excludes 21% VAT",
+      "accessNote": "Access within 24 hours",
+      "total": "Total",
+      "wantOffer": "I want {{name}}",
       "enterpriseNote": "Have 100+ people? Contact us."
     },
+    "enterprise": {
+      "title": "Enterprise (100+ licenses)",
+      "description": "Custom pricing, dedicated support, and tailored onboarding for large teams.",
+      "cta": "Contact us"
+    },
     "form": {
-      "title": "Non-binding Inquiry",
+      "badge": "Non-binding inquiry",
+      "title": "Get a Quote",
       "subtitle": "We'll respond within 24 hours.",
-      "selectAcademies": "Preferred academies",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "licensesLabel": "Number of licenses",
+      "selectPlaceholder": "Select...",
+      "selectedAcademies": "Selected academies",
+      "preferredAcademies": "Preferred academies",
+      "preferredAcademiesNote": "Select one or more academies you're interested in.",
+      "completeProgram": "Complete Program",
+      "threeAcademies": "3 academies",
       "targetRoles": "Target roles (optional)",
+      "targetRolesPlaceholder": "Select target roles...",
+      "roles": {
+        "admin": "Administration",
+        "sales": "Sales",
+        "it": "IT",
+        "management": "Management",
+        "mix": "Mix of roles"
+      },
       "note": "Note (optional)",
+      "notePlaceholder": "Any additional information...",
+      "gdprConsent": "I agree to the processing of personal data for the purpose of arranging / processing the inquiry.",
+      "gdprMore": "more info",
       "submit": "Submit inquiry",
+      "submitting": "Sending...",
+      "tryAgain": "Try again",
       "errors": {
-        "gdprRequired": "Consent to personal data processing is required to submit."
+        "gdprRequired": "Consent to personal data processing is required to submit.",
+        "timeout": "Submission failed (timeout). Please try again.",
+        "generic": "Submission failed. Please try again."
       }
     },
     "sections": {
@@ -1600,9 +1643,14 @@
       "hrBenefits": {
         "title": "WHY HR CHOOSES OUR ACADEMIES"
       },
+      "deployment": {
+        "title": "HOW IT WORKS",
+        "subtitle": "3 simple steps to AI-skilled teams."
+      },
       "pricing": {
         "title": "LICENSE PACKAGES",
-        "subtitle": "Prices excl. VAT."
+        "subtitle": "Prices excl. VAT.",
+        "tip": "💡 Tip: The Complete Program (3 academies) offers the best value."
       }
     }
   }
