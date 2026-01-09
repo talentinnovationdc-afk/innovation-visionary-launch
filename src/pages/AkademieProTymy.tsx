@@ -573,7 +573,7 @@ const AkademieProTymy = () => {
                     {/* Price */}
                     <div className="text-center mb-6 pb-6 border-b border-border/30">
                       <div className="text-3xl font-bold text-foreground mb-1">
-                        {formatPrice(plan.pricePerLicense)} Kč
+                        {formatPrice(plan.pricePerLicense)} {t('academyProTymy.pricing.currency')}
                         <span className="text-sm font-normal text-muted-foreground"> / {t('academyProTymy.pricing.perLicense')}</span>
                       </div>
                       <p className="text-[10px] text-muted-foreground/70 mt-1 flex items-center justify-center gap-1">
@@ -589,7 +589,7 @@ const AkademieProTymy = () => {
                         {t('academyProTymy.pricing.accessNote')}
                       </p>
                       <div className="text-sm text-primary font-medium mt-2">
-                        {t('academyProTymy.pricing.total')}: {formatPrice(totalPrice)} Kč ({t('academyProTymy.pricing.exclVat')})
+                        {t('academyProTymy.pricing.total')}: {formatPrice(totalPrice)} {t('academyProTymy.pricing.currency')} ({t('academyProTymy.pricing.exclVat')})
                       </div>
                     </div>
                     

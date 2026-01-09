@@ -1062,6 +1062,7 @@
       "licenses": "licencí",
       "perLicense": "licence",
       "exclVat": "bez DPH",
+      "currency": "Kč",
       "vatNote": "Cena bez 21% DPH",
       "accessNote": "Přístup do 24 hodin",
       "total": "Celkem",
