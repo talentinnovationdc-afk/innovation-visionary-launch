@@ -1,0 +1,447 @@
+{
+  "_meta": {
+    "language": "cs",
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-09",
+    "notes": "Kompletní český obsah webu Talent Innovation"
+  },
+  
+  "common": {
+    "_notes": "Opakující se prvky napříč webem",
+    "cta": {
+      "bookDiagnostics": "Domluvit diagnostiku (15 min)",
+      "bookDiagnosticsShort": "Domluvit diagnostiku",
+      "learnMore": "Zjistit více",
+      "viewSyllabus": "Zobrazit osnovu (ukázka)",
+      "buyNow": "Koupit teď",
+      "buyProgram": "Koupit program",
+      "contactUs": "Kontaktujte nás",
+      "backHome": "Zpět domů",
+      "viewAcademies": "Zobrazit akademie",
+      "requestAgent": "Poptat agenta",
+      "showExamples": "Ukázat příklady z praxe",
+      "wantSavingsMap": "Chci mapu úspor",
+      "wantROIPlan": "Chci ROI plán",
+      "wantDeployPilot": "Chci nasadit pilot",
+      "wantScaleCompany": "Chci škálovat na firmu",
+      "selectAcademy": "Vybrat akademii",
+      "findOutWhereToStart": "Zjistit, kde začít"
+    },
+    "helper": {
+      "noCommitment": "bez závazku",
+      "responseTime": "ozveme se do 24 hodin",
+      "accessTime": "přístup do 24 hodin",
+      "ownPace": "studium vlastním tempem",
+      "noCommitmentFull": "Bez závazku • Ozveme se do 24 hodin",
+      "forProfessionalsAndTeams": "Pro profesionály i týmy."
+    },
+    "trust": {
+      "graduates": "1250+ absolventů",
+      "rating": "4,9/5 hodnocení",
+      "recommends": "95 % doporučuje",
+      "notTheory": "Nejde o teorii. Učíme workflow, které lidé používají hned druhý den."
+    },
+    "badges": {
+      "recommended": "DOPORUČUJEME",
+      "mostPopular": "NEJČASTĚJŠÍ VOLBA",
+      "bestValue": "Nejlepší hodnota"
+    }
+  },
+
+  "nav": {
+    "_notes": "Navigace - max 15 znaků per položka",
+    "forBusiness": "PRO FIRMY",
+    "academyForTeams": "AKADEMIE PRO TÝMY",
+    "onlineAcademy": "ONLINE AKADEMIE",
+    "methodology": "METODIKA",
+    "aboutUs": "O NÁS",
+    "dropdown": {
+      "savingsMap": "Mapa úspor",
+      "customAgents": "AI agenti na míru"
+    }
+  },
+
+  "footer": {
+    "dataProtection": "Ochrana údajů",
+    "terms": "Obchodní podmínky",
+    "copyright": "© 2025 Talent Innovation s.r.o."
+  },
+
+  "pages": {
+    "home": {
+      "_path": "/",
+      "seo": {
+        "title": "Méně rutiny, více kapacity díky AI",
+        "description": "Pomáháme firmám zrychlit práci díky AI – měřitelně, bezpečně a škálovatelně. Diagnostika, mapa úspor, AI agenti a akademie."
+      },
+      "hero": {
+        "preTitle": "Díky AI",
+        "title": "Méně rutiny · Více kapacity",
+        "subtitle": "Měřitelně · Bezpečně · Škálovatelně"
+      },
+      "journey": {
+        "title": "Vyberte si, kde začít",
+        "subtitle": "Každá firma je jinde. Začněte tam, kde to dává smysl — a posunujte se dál vlastním tempem.",
+        "step1": {
+          "label": "KROK 01",
+          "title": "Mapa úspor (14 dní)",
+          "highlight": "Zjistíte, kde AI přinese největší úspory.",
+          "audience": "Pro koho: CEO / COO / vedení týmu",
+          "output": "Výstup: seznam procesů s nejvyšší návratností + odhad ROI.",
+          "badge": "Quick wins + ROI odhad"
+        },
+        "step2": {
+          "label": "KROK 02",
+          "title": "ROI plán & prioritizace",
+          "highlight": "Seznam procesů seřazených podle dopadu.",
+          "audience": "Pro koho: Projekt / Operations",
+          "output": "Výstup: prioritizovaný plán + KPI + návrh pilotu.",
+          "badge": "Prioritní plán + KPI"
+        },
+        "step3": {
+          "label": "KROK 03",
+          "title": "Nasazení digitálního kolegy",
+          "highlight": "AI agent pro jeden proces — nasazeno a měřeno.",
+          "audience": "Pro koho: Proces s nejvyšší návratností",
+          "output": "Digitální kolega, který šetří čas od prvního dne.",
+          "badge": "Do provozu + měření"
+        },
+        "step4": {
+          "label": "KROK 04",
+          "title": "Škálování na firmu",
+          "highlight": "Standardy, bezpečnost a adopce napříč týmy.",
+          "audience": "Pro koho: Celá firma / více týmů",
+          "output": "Aby se řešení ujalo u lidí a fungovalo dlouhodobě.",
+          "badge": "Governance + adopce"
+        }
+      },
+      "paths": {
+        "title": "Vyberte si, co chcete zlepšit",
+        "forBusiness": {
+          "label": "Pro firmy",
+          "title": "Rychlé úspory času napříč rolemi — bezpečně a měřitelně",
+          "benefits": [
+            "Rychlé úspory času v rolích a procesech",
+            "Bezpečné workflow a pravidla použití",
+            "Dopad měříme (čas, kvalita, chybovost)"
+          ],
+          "hrNote": "HR/L&D ocení: jednotný skillset a přehled o dokončení.",
+          "cta": "Zjistit, kde začít"
+        },
+        "forProfessionals": {
+          "label": "Pro profesionály",
+          "title": "Získejte uznání dovedností v AI, které je vidět",
+          "benefits": [
+            "Certifikát + LinkedIn odznak po dokončení",
+            "Praktické workflow pro vaši profesi",
+            "Dlouhodobý přístup k obsahu a studium vlastním tempem"
+          ],
+          "cta": "Vybrat akademii"
+        }
+      },
+      "agentTeaser": {
+        "title": "Chcete hotový výsledek? Nasadíme digitálního kolegu.",
+        "subtitle": "Nejdřív vybereme proces. Pak teprve stavíme.",
+        "tags": ["Obchod & podpora", "Reporting", "Orchestrace"]
+      },
+      "benefits": {
+        "title": "CO VÁM TO PŘINESE",
+        "items": {
+          "measurableProgress": {
+            "title": "Měřitelný posun",
+            "description": "Úspory času, vyšší kvalita a méně chyb — měřitelné v praxi."
+          },
+          "safeAI": {
+            "title": "Bezpečné použití AI",
+            "description": "Pravidla práce s AI, přístupy k datům a kontrola výstupů."
+          },
+          "recognition": {
+            "title": "Uznání dovedností",
+            "description": "Certifikát + LinkedIn odznak — viditelné potvrzení AI dovedností."
+          },
+          "ownPace": {
+            "title": "Vlastní tempo",
+            "description": "Dlouhodobý přístup k obsahu. Studium vlastním tempem bez tlaku na termín."
+          }
+        }
+      },
+      "finalCta": {
+        "title": "Vyberte si další krok",
+        "subtitle": "Začněte 15minutovou diagnostikou nebo vyberte akademii pro certifikaci.",
+        "primaryCta": "Domluvit 15 min diagnostiku",
+        "secondaryCta": "Vybrat akademii"
+      }
+    },
+
+    "online": {
+      "_path": "/online",
+      "seo": {
+        "title": "Online AI akademie – certifikace a LinkedIn odznak",
+        "description": "Praktické AI workflow pro vaši profesi. Certifikát + LinkedIn odznak po dokončení. Studujte vlastním tempem."
+      },
+      "hero": {
+        "label": "Online vzdělávání",
+        "title": "AI pro vaši profesi",
+        "subtitle": "Praktické workflow a certifikace — vše, co potřebujete k práci s AI."
+      }
+    },
+
+    "chatgptAkademie": {
+      "_path": "/online/chatgptakademie",
+      "seo": {
+        "title": "ChatGPT Akademie – praktické workflow pro psaní a analýzu",
+        "description": "Naučte se efektivně používat ChatGPT pro e-maily, dokumenty a rozhodování. Certifikát + LinkedIn odznak."
+      },
+      "hero": {
+        "label": "Online akademie",
+        "title": "ChatGPT Akademie",
+        "subtitle": "Praktické workflow s GPT, které zrychlí psaní, analýzu i rozhodování.",
+        "idealFor": "Ideální pro: Administrativa, HR, obchod, podpora — každý, kdo denně píše."
+      },
+      "meta": {
+        "modules": "12 modulů (cca 24 h)",
+        "level": "Začátečník → pokročilý",
+        "pace": "Vlastní tempo",
+        "certificate": "Certifikát + LinkedIn odznak"
+      },
+      "stats": {
+        "graduates": "1250+",
+        "graduatesLabel": "absolventů",
+        "rating": "4,9/5",
+        "ratingLabel": "hodnocení",
+        "recommends": "95 %",
+        "recommendsLabel": "doporučuje"
+      },
+      "whatYouGet": {
+        "title": "Co dostanete",
+        "certificate": {
+          "title": "Certifikát",
+          "description": "Po dokončení akademie"
+        },
+        "badge": {
+          "title": "LinkedIn odznak",
+          "description": "Přidáte jedním klikem"
+        },
+        "access": {
+          "title": "Dlouhodobý přístup",
+          "description": "Studujte vlastním tempem"
+        }
+      },
+      "helper": {
+        "accessTime": "Přístup do 24 hodin • studium vlastním tempem",
+        "practicalOutputs": "Součástí jsou šablony, checklisty a ukázky – použitelné hned v praxi."
+      }
+    },
+
+    "copilotAkademie": {
+      "_path": "/online/copilotakademie",
+      "seo": {
+        "title": "Microsoft Copilot Akademie – praktické workflow pro M365",
+        "description": "Naučte se efektivně používat Copilot ve Word, Excel, Outlook a PowerPoint. Certifikát + LinkedIn odznak."
+      },
+      "hero": {
+        "label": "Online akademie",
+        "title": "Microsoft Copilot Akademie",
+        "subtitle": "Praktické workflow s Copilotem pro Word, Excel, Outlook a PowerPoint.",
+        "idealFor": "Ideální pro: Uživatelé M365 — Word, Excel, Outlook, PowerPoint v denní praxi."
+      }
+    },
+
+    "agentiAutomatizace": {
+      "_path": "/online/agentiautomatizace",
+      "seo": {
+        "title": "Agenti & Automatizace – pokročilé AI workflow",
+        "description": "Naučte se stavět AI agenty a automatizovat procesy. Certifikát + LinkedIn odznak."
+      },
+      "hero": {
+        "label": "Online akademie",
+        "title": "Agenti & Automatizace",
+        "subtitle": "Pokročilé workflow a orchestrace nástrojů. Pro ty, kdo chtějí jít dál.",
+        "idealFor": "Ideální pro: Power users, procesní vlastníci, inovace — ti, kdo chtějí automatizovat."
+      }
+    },
+
+    "masterOfAICreativity": {
+      "_path": "/online/master-of-ai-creativity",
+      "seo": {
+        "title": "Master of AI Creativity – kompletní program (3 akademie)",
+        "description": "Kompletní AI program: ChatGPT + Copilot + Agenti & Automatizace. Hlavní certifikát a ověřitelný LinkedIn odznak."
+      },
+      "hero": {
+        "label": "Kompletní program",
+        "title": "Master of AI Creativity",
+        "subtitle": "Kompletní program (3 akademie): ChatGPT + Copilot + Agenti & Automatizace — praktické výstupy, které použijete hned."
+      }
+    },
+
+    "akademieProTymy": {
+      "_path": "/akademie-pro-tymy",
+      "seo": {
+        "title": "Akademie pro týmy – hromadné licence AI kurzů",
+        "description": "Firemní licence AI akademií s onboardingem a reportingem pro HR. Certifikát a LinkedIn odznak pro každého účastníka."
+      },
+      "hero": {
+        "label": "Firemní vzdělávání",
+        "title": "Online akademie pro týmy",
+        "subtitle": "Standard práce s AI napříč firmou",
+        "description": "Zaměstnanci studují vlastním tempem. Vy získáte jednotný skillset, certifikaci a přehled o dokončení napříč rolemi i týmy."
+      },
+      "chips": ["Reporting pro HR", "Certifikace", "Šablony & workflow", "Vlastní tempo"]
+    },
+
+    "proFirmy": {
+      "_path": "/profirmy",
+      "seo": {
+        "title": "AI pro firmy – diagnostika, agenti, akademie",
+        "description": "Zjistěte, kde AI přinese největší úspory. Diagnostika, mapa úspor, AI agenti na míru a firemní akademie."
+      }
+    },
+
+    "mapaUspor": {
+      "_path": "/profirmy/mapa-uspor",
+      "seo": {
+        "title": "Mapa úspor – 14denní AI diagnostika pro firmy",
+        "description": "Za 14 dní zjistíte, kde AI přinese největší úspory času a nákladů. Seznam procesů + ROI odhad."
+      }
+    },
+
+    "aiAgentiNaMiru": {
+      "_path": "/profirmy/ai-agenti-na-miru",
+      "seo": {
+        "title": "AI agenti na míru – digitální kolega pro vaše procesy",
+        "description": "Nasazení AI agenta pro konkrétní proces. Obchod, podpora, reporting, orchestrace."
+      }
+    },
+
+    "metodika": {
+      "_path": "/metodika",
+      "seo": {
+        "title": "Metodika – jak pracujeme s AI ve firmách",
+        "description": "Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologie přidáváme až když má měřitelný smysl."
+      },
+      "hero": {
+        "title": "Metodika",
+        "subtitle": "Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologie přidáváme až když má měřitelný smysl."
+      },
+      "dna": {
+        "title": "NA ČEM SI ZAKLÁDÁME",
+        "subtitle": "Principy, které nás odlišují."
+      },
+      "logoStrip": {
+        "title": "Důvěřují nám lídři v průmyslu a technologiích",
+        "disclaimer": "Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně."
+      }
+    },
+
+    "oNas": {
+      "_path": "/o-nas",
+      "seo": {
+        "title": "O nás – Talent Innovation",
+        "description": "Pomáháme firmám zrychlit práci díky AI. Měřitelně, bezpečně a škálovatelně."
+      }
+    },
+
+    "reference": {
+      "_path": "/reference",
+      "seo": {
+        "title": "Reference – spolupráce s lídry v průmyslu",
+        "description": "Spolupracujeme s předními firmami v oblasti průmyslu a technologií."
+      },
+      "hero": {
+        "title": "Reference",
+        "subtitle": "Spolupracujeme s lídry v průmyslu a technologiích"
+      },
+      "logoStrip": {
+        "title": "Důvěřují nám lídři v průmyslu a technologiích"
+      }
+    },
+
+    "poptavka": {
+      "_path": "/poptavka",
+      "seo": {
+        "title": "Poptávka – domluvte si diagnostiku",
+        "description": "Vyplňte krátký formulář a ozveme se do 24 hodin."
+      }
+    },
+
+    "dekujeme": {
+      "_path": "/dekujeme",
+      "seo": {
+        "title": "Děkujeme za nákup",
+        "noindex": true
+      },
+      "hero": {
+        "badge": "Zaplaceno",
+        "title": "Hotovo. Začněte studovat.",
+        "description": "Přístupy do akademie vám přijdou e-mailem do 24 hodin."
+      }
+    },
+
+    "dekujemeFormular": {
+      "_path": "/dekujeme-formular",
+      "seo": {
+        "title": "Děkujeme za váš zájem",
+        "noindex": true
+      },
+      "hero": {
+        "badge": "Odesláno",
+        "title": "Děkujeme za váš zájem."
+      }
+    },
+
+    "gdprCookies": {
+      "_path": "/gdpr-cookies",
+      "seo": {
+        "title": "Ochrana osobních údajů a cookies",
+        "description": "Informace o zpracování osobních údajů a používání cookies."
+      }
+    },
+
+    "obchodniPodminky": {
+      "_path": "/obchodni-podminky",
+      "seo": {
+        "title": "Obchodní podmínky",
+        "description": "Obchodní podmínky pro nákup online akademií a služeb."
+      }
+    }
+  },
+
+  "components": {
+    "testimonialTicker": {
+      "title": "CO ŘÍKAJÍ ABSOLVENTI",
+      "subtitle": "Krátké highlighty – kliknutím zobrazíte plnou zpětnou vazbu."
+    },
+    "logoRibbon": {
+      "disclaimer": "Loga jsou použita se souhlasem jako reference spolupráce."
+    },
+    "scrollIndicator": {
+      "ariaLabel": "Scrollovat dolů"
+    },
+    "cookieConsent": {
+      "message": "Tento web používá cookies pro zlepšení vašeho zážitku.",
+      "accept": "Přijmout",
+      "decline": "Odmítnout",
+      "learnMore": "Více informací"
+    }
+  },
+
+  "forms": {
+    "gdprConsent": "Souhlasím se zpracováním osobních údajů za účelem domluvy / zpracování poptávky.",
+    "gdprLink": "(více)",
+    "fields": {
+      "name": "Jméno a příjmení",
+      "email": "E-mail",
+      "company": "Firma",
+      "phone": "Telefon",
+      "message": "Zpráva",
+      "licenses": "Počet licencí",
+      "roles": "Cílové role"
+    },
+    "validation": {
+      "required": "Toto pole je povinné",
+      "invalidEmail": "Neplatný e-mail"
+    },
+    "submit": "Odeslat",
+    "submitting": "Odesílám..."
+  }
+}
