@@ -25,7 +25,7 @@ import {
 
 const ProFirmy = () => {
   const { t } = useTranslation();
-  const { language, getLocalizedPath } = useLanguage();
+  const { language, getLocalizedHref } = useLanguage();
 
   const services = [
     {
@@ -46,7 +46,7 @@ const ProFirmy = () => {
       priceNote: t('pages.proFirmy.services.priceNote', 'bez DPH'),
       accent: "cyan",
       highlighted: true,
-      cta: { label: t('common.cta.wantSavingsMap'), link: getLocalizedPath('/poptavka') },
+      cta: { label: t('common.cta.wantSavingsMap'), link: getLocalizedHref('/poptavka') },
     },
     {
       icon: Target,
@@ -66,7 +66,7 @@ const ProFirmy = () => {
       priceNote: t('pages.proFirmy.services.priceNote', 'bez DPH'),
       accent: "cyan",
       highlighted: false,
-      cta: { label: t('common.cta.wantROIPlan'), link: getLocalizedPath('/poptavka') },
+      cta: { label: t('common.cta.wantROIPlan'), link: getLocalizedHref('/poptavka') },
     },
     {
       icon: Rocket,
@@ -86,7 +86,7 @@ const ProFirmy = () => {
       priceNote: t('pages.proFirmy.services.pilot.priceNote', 'typicky 45–120k bez DPH (3–8 MD)'),
       accent: "cyan",
       highlighted: false,
-      cta: { label: t('common.cta.wantDeployPilot'), link: getLocalizedPath('/poptavka') },
+      cta: { label: t('common.cta.wantDeployPilot'), link: getLocalizedHref('/poptavka') },
     },
     {
       icon: TrendingUp,
@@ -106,7 +106,7 @@ const ProFirmy = () => {
       priceNote: t('pages.proFirmy.services.priceNote', 'bez DPH'),
       accent: "cyan",
       highlighted: false,
-      cta: { label: t('common.cta.wantScaleCompany'), link: getLocalizedPath('/poptavka') },
+      cta: { label: t('common.cta.wantScaleCompany'), link: getLocalizedHref('/poptavka') },
     },
   ];
 
@@ -204,7 +204,7 @@ const ProFirmy = () => {
       ],
       highlight: t('pages.proFirmy.faq.time.highlight', '15 min úvod'),
       size: "normal" as const,
-      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedPath('/poptavka') }
+      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedHref('/poptavka') }
     },
     {
       icon: MessageSquare,
@@ -217,7 +217,7 @@ const ProFirmy = () => {
       ],
       highlight: t('pages.proFirmy.faq.input.highlight', 'Minimum vstupů'),
       size: "normal" as const,
-      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedPath('/poptavka') }
+      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedHref('/poptavka') }
     },
     {
       icon: Lock,
@@ -230,7 +230,7 @@ const ProFirmy = () => {
       ],
       highlight: t('pages.proFirmy.faq.security.highlight', 'GDPR + interní pravidla'),
       size: "featured" as const,
-      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedPath('/poptavka') }
+      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedHref('/poptavka') }
     },
     {
       icon: Zap,
@@ -243,7 +243,7 @@ const ProFirmy = () => {
       ],
       highlight: t('pages.proFirmy.faq.copilot.highlight', 'Flexibilní nástroje'),
       size: "normal" as const,
-      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedPath('/poptavka') }
+      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedHref('/poptavka') }
     },
     {
       icon: BookOpen,
@@ -256,7 +256,7 @@ const ProFirmy = () => {
       ],
       highlight: t('pages.proFirmy.faq.licenses.highlight', 'Týmové licence'),
       size: "normal" as const,
-      nextStep: { label: t('pages.proFirmy.faq.licenses.cta', 'Zobrazit akademie pro týmy'), link: getLocalizedPath('/akademie-pro-tymy') }
+      nextStep: { label: t('pages.proFirmy.faq.licenses.cta', 'Zobrazit akademie pro týmy'), link: getLocalizedHref('/akademie-pro-tymy') }
     },
     {
       icon: BarChart3,
@@ -269,7 +269,7 @@ const ProFirmy = () => {
       ],
       highlight: t('pages.proFirmy.faq.impact.highlight', 'Měřitelné KPI'),
       size: "featured" as const,
-      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedPath('/poptavka') }
+      nextStep: { label: t('common.cta.bookDiagnosticsShort'), link: getLocalizedHref('/poptavka') }
     },
   ];
 
@@ -303,7 +303,7 @@ const ProFirmy = () => {
       subtitle: t('pages.proFirmy.journey.diagnostics.subtitle', '15 min konzultace — zjistíte, kde začít'), 
       benefit: t('pages.proFirmy.journey.diagnostics.benefit', 'Jasný směr bez závazku'), 
       cta: t('pages.proFirmy.journey.diagnostics.cta', 'Domluvit 15 min diagnostiku'), 
-      link: getLocalizedPath('/poptavka'), 
+      link: getLocalizedHref('/poptavka'), 
       highlighted: true 
     },
     { 
@@ -312,7 +312,7 @@ const ProFirmy = () => {
       subtitle: t('pages.proFirmy.journey.savingsMap.subtitle', 'Mapa rolí + seznam příležitostí (use-casů) + roadmapa 30/60/90'), 
       benefit: t('pages.proFirmy.journey.savingsMap.benefit', 'Konkrétní výstupy pro vedení'), 
       cta: t('pages.proFirmy.journey.savingsMap.cta', 'Co dostanu v Mapě úspor'), 
-      link: getLocalizedPath('/profirmy/mapa-uspor'), 
+      link: getLocalizedHref('/profirmy/mapa-uspor'), 
       highlighted: false 
     },
     { 
@@ -321,7 +321,7 @@ const ProFirmy = () => {
       subtitle: t('pages.proFirmy.journey.pilot.subtitle', 'AI agent pro 1 proces — nasazeno do 14 dnů'), 
       benefit: t('pages.proFirmy.journey.pilot.benefit', 'Měříme dopad od začátku'), 
       cta: t('common.cta.wantDeployPilot'), 
-      link: getLocalizedPath('/poptavka'), 
+      link: getLocalizedHref('/poptavka'), 
       highlighted: false 
     },
     { 
@@ -330,7 +330,7 @@ const ProFirmy = () => {
       subtitle: t('pages.proFirmy.journey.scale.subtitle', 'Rozvoj, governance, adopce, reporting'), 
       benefit: t('pages.proFirmy.journey.scale.benefit', 'Aby se řešení ujalo u lidí'), 
       cta: t('common.cta.wantScaleCompany'), 
-      link: getLocalizedPath('/poptavka'), 
+      link: getLocalizedHref('/poptavka'), 
       highlighted: false 
     },
   ];
@@ -389,7 +389,7 @@ const ProFirmy = () => {
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
                   <div className="flex flex-col items-center">
                     <Link
-                      to={getLocalizedPath('/poptavka')}
+                      to={getLocalizedHref('/poptavka')}
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       data-event="b2b_primary_cta"
                     >
@@ -617,7 +617,7 @@ const ProFirmy = () => {
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
                   {t('pages.proFirmy.finalCta.description', 'Začněte 15minutovou diagnostikou. Řekneme vám, kde má AI největší smysl.')}
                 </p>
-                <Link to={getLocalizedPath('/poptavka')}>
+                <Link to={getLocalizedHref('/poptavka')}>
                   <Button 
                     size="lg"
                     className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Language, languages, getLocalizedRoute, getLanguageFromPath } from '@/i18n';
@@ -8,6 +8,7 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   switchLanguage: () => void;
   getLocalizedPath: (targetLang: Language) => string;
+  getLocalizedHref: (czPath: string) => string;
   languages: typeof languages;
 }
 
@@ -52,6 +53,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return getLocalizedRoute(location.pathname, targetLang);
   };
 
+  // Helper to get localized href from a Czech path
+  const getLocalizedHref = useCallback((czPath: string) => {
+    return getLocalizedRoute(czPath, language);
+  }, [language]);
+
   return (
     <LanguageContext.Provider 
       value={{ 
@@ -59,6 +65,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         setLanguage, 
         switchLanguage, 
         getLocalizedPath,
+        getLocalizedHref,
         languages 
       }}
     >

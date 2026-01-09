@@ -24,7 +24,7 @@ const WEBHOOK_URL = "https://hook.eu1.make.com/kfd2mio7cxmu78yk58eqlqs4hogx8qru"
 
 const Checkout = () => {
   const { t } = useTranslation();
-  const { language, getLocalizedPath } = useLanguage();
+  const { language, getLocalizedHref } = useLanguage();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -85,7 +85,7 @@ const Checkout = () => {
         throw new Error("Webhook request failed");
       }
 
-      navigate(getLocalizedPath('/dekujeme-formular') + '?form=rychla_diagnostika');
+      navigate(getLocalizedHref('/dekujeme-formular') + '?form=rychla_diagnostika');
     } catch (error) {
       if (error instanceof Error && error.name === "AbortError") {
         setSubmitError(t('pages.poptavka.errors.timeout', 'Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.'));
@@ -318,7 +318,7 @@ const Checkout = () => {
                 />
                 <Label htmlFor="gdpr" className="text-sm text-muted-foreground font-normal cursor-pointer leading-relaxed">
                   {t('forms.gdprConsent')}{" "}
-                  <Link to={getLocalizedPath('/gdpr-cookies')} className="text-primary hover:underline">
+                  <Link to={getLocalizedHref('/gdpr-cookies')} className="text-primary hover:underline">
                     {t('forms.gdprLink')}
                   </Link>
                 </Label>
