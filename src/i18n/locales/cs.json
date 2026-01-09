@@ -48,6 +48,35 @@
     }
   },
 
+  "cookies": {
+    "banner": {
+      "message": "Používáme cookies pro zlepšení vašeho zážitku a analýzu návštěvnosti.",
+      "moreInfo": "Více informací",
+      "settings": "Nastavení",
+      "onlyNecessary": "Pouze nezbytné",
+      "acceptAll": "Přijmout vše"
+    },
+    "dialog": {
+      "title": "Nastavení cookies",
+      "description": "Vyberte, které typy cookies chcete povolit. Nezbytné cookies nelze vypnout.",
+      "cancel": "Zrušit",
+      "save": "Uložit nastavení",
+      "necessary": {
+        "title": "Nezbytné cookies",
+        "description": "Nutné pro základní fungování webu"
+      },
+      "analytics": {
+        "title": "Analytické cookies",
+        "description": "Pomáhají nám zlepšovat web na základě statistik"
+      },
+      "marketing": {
+        "title": "Marketingové cookies",
+        "description": "Umožňují personalizovanou reklamu"
+      }
+    }
+  },
+
+
   "nav": {
     "_notes": "Navigace - max 15 znaků per položka",
     "forBusiness": "PRO FIRMY",
