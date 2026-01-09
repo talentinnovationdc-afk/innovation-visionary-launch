@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -9,51 +10,47 @@ import {
 } from "@/components/ui/accordion";
 import { ChevronRight, HelpCircle } from "lucide-react";
 
-const hrFaqItems = [
-  {
-    question: "Jak rychle uvidíme výsledky?",
-    answer: "Typicky do 1–2 týdnů po onboardingu.",
-    detail:
-      "První zrychlení uvidíte v rutinních úkolech (e-maily, dokumenty, šablony). Sledujeme dopad: čas, kvalita výstupů, chybovost.",
-    badge: "Výsledky",
-    nextStep: { label: "Domluvit nabídku", link: "#form" },
-  },
-  {
-    question: "Můžeme kombinovat akademie v jednom balíčku?",
-    answer: "Ano, balíček poskládáte podle rolí v týmu.",
-    detail:
-      "Například administrativě ChatGPT/Copilot, automatizátorům Agenti. Pro jednotný standard je nejrychlejší Kompletní program.",
-    badge: "Balíčky",
-    nextStep: { label: "Zobrazit balíčky", link: "#licence" },
-  },
-  {
-    question: "Je možné koupit program pro onboarding nováčků?",
-    answer: "Ano, firemní licence jsou ideální pro onboarding.",
-    detail:
-      "Nováčci získají jasnou cestu a standardy; HR má přehled o dokončení a jednotný skillset.",
-    badge: "Onboarding",
-    nextStep: { label: "Domluvit nabídku", link: "#form" },
-  },
-  {
-    question: "Jak se ověřuje dokončení akademie?",
-    answer: "Certifikát + LinkedIn odznak po dokončení.",
-    detail:
-      "Firma/HR má přehled dokončení (kdo prošel, v jakém je stavu, kde jsou mezery).",
-    badge: "Certifikace",
-    nextStep: { label: "Zobrazit akademie", link: "#akademie" },
-  },
-  {
-    question: "Jaké jsou podmínky licencí a přístupu?",
-    answer: "Licence jsou určené pro týmové nasazení a reporting.",
-    detail:
-      "Přístup je dlouhodobý (studium vlastním tempem). Konkrétní délku a podmínky nastavíme podle balíčku.",
-    badge: "Podmínky",
-    nextStep: { label: "Zobrazit balíčky", link: "#licence" },
-  },
-] as const;
-
 export function HrFaqAccordion() {
+  const { t } = useTranslation();
   const [openItem, setOpenItem] = React.useState<string | undefined>(undefined);
+
+  const hrFaqItems = [
+    {
+      question: t('academyProTymy.faq.results.question'),
+      answer: t('academyProTymy.faq.results.answer'),
+      detail: t('academyProTymy.faq.results.detail'),
+      badge: t('academyProTymy.faq.results.badge'),
+      nextStep: { label: t('academyProTymy.faq.results.nextStepLabel'), link: "#form" },
+    },
+    {
+      question: t('academyProTymy.faq.combine.question'),
+      answer: t('academyProTymy.faq.combine.answer'),
+      detail: t('academyProTymy.faq.combine.detail'),
+      badge: t('academyProTymy.faq.combine.badge'),
+      nextStep: { label: t('academyProTymy.faq.combine.nextStepLabel'), link: "#licence" },
+    },
+    {
+      question: t('academyProTymy.faq.onboarding.question'),
+      answer: t('academyProTymy.faq.onboarding.answer'),
+      detail: t('academyProTymy.faq.onboarding.detail'),
+      badge: t('academyProTymy.faq.onboarding.badge'),
+      nextStep: { label: t('academyProTymy.faq.onboarding.nextStepLabel'), link: "#form" },
+    },
+    {
+      question: t('academyProTymy.faq.certification.question'),
+      answer: t('academyProTymy.faq.certification.answer'),
+      detail: t('academyProTymy.faq.certification.detail'),
+      badge: t('academyProTymy.faq.certification.badge'),
+      nextStep: { label: t('academyProTymy.faq.certification.nextStepLabel'), link: "#akademie" },
+    },
+    {
+      question: t('academyProTymy.faq.conditions.question'),
+      answer: t('academyProTymy.faq.conditions.answer'),
+      detail: t('academyProTymy.faq.conditions.detail'),
+      badge: t('academyProTymy.faq.conditions.badge'),
+      nextStep: { label: t('academyProTymy.faq.conditions.nextStepLabel'), link: "#licence" },
+    },
+  ];
 
   return (
     <section className="py-24 bg-card/20 relative overflow-hidden">
@@ -68,10 +65,10 @@ export function HrFaqAccordion() {
             FAQ
           </span>
           <h2 className="text-2xl md:text-4xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-            ČASTÉ DOTAZY
+            {t('academyProTymy.faq.title')}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Odpovědi na nejčastější otázky o firemních licencích
+            {t('academyProTymy.faq.subtitle')}
           </p>
         </div>
 
@@ -127,7 +124,7 @@ export function HrFaqAccordion() {
                             href={item.nextStep.link}
                             className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
                           >
-                            <span className="text-muted-foreground">Další krok:</span>
+                            <span className="text-muted-foreground">{t('academyProTymy.faq.nextStep')}:</span>
                             {item.nextStep.label}
                             <ChevronRight className="w-3 h-3" />
                           </a>
@@ -144,11 +141,11 @@ export function HrFaqAccordion() {
         {/* FAQ CTA */}
         <div className="text-center mt-10">
           <p className="text-muted-foreground mb-4">
-            Nenašli jste odpověď? Napište nám — doporučíme balíček podle rolí.
+            {t('academyProTymy.faq.ctaText')}
           </p>
           <a href="#form">
             <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10">
-              Zeptat se nás
+              {t('academyProTymy.faq.ctaButton')}
             </Button>
           </a>
         </div>

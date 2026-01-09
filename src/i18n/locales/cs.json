@@ -1133,6 +1133,48 @@
         "subtitle": "Ceny bez DPH.",
         "tip": "💡 Tip: Kompletní program (3 akademie) nabízí nejlepší hodnotu."
       }
+    },
+    "faq": {
+      "title": "ČASTÉ DOTAZY",
+      "subtitle": "Odpovědi na nejčastější otázky o firemních licencích",
+      "nextStep": "Další krok",
+      "ctaText": "Nenašli jste odpověď? Napište nám — doporučíme balíček podle rolí.",
+      "ctaButton": "Zeptat se nás",
+      "results": {
+        "question": "Jak rychle uvidíme výsledky?",
+        "answer": "Typicky do 1–2 týdnů po onboardingu.",
+        "detail": "První zrychlení uvidíte v rutinních úkolech (e-maily, dokumenty, šablony). Sledujeme dopad: čas, kvalita výstupů, chybovost.",
+        "badge": "Výsledky",
+        "nextStepLabel": "Domluvit nabídku"
+      },
+      "combine": {
+        "question": "Můžeme kombinovat akademie v jednom balíčku?",
+        "answer": "Ano, balíček poskládáte podle rolí v týmu.",
+        "detail": "Například administrativě ChatGPT/Copilot, automatizátorům Agenti. Pro jednotný standard je nejrychlejší Kompletní program.",
+        "badge": "Balíčky",
+        "nextStepLabel": "Zobrazit balíčky"
+      },
+      "onboarding": {
+        "question": "Je možné koupit program pro onboarding nováčků?",
+        "answer": "Ano, firemní licence jsou ideální pro onboarding.",
+        "detail": "Nováčci získají jasnou cestu a standardy; HR má přehled o dokončení a jednotný skillset.",
+        "badge": "Onboarding",
+        "nextStepLabel": "Domluvit nabídku"
+      },
+      "certification": {
+        "question": "Jak se ověřuje dokončení akademie?",
+        "answer": "Certifikát + LinkedIn odznak po dokončení.",
+        "detail": "Firma/HR má přehled dokončení (kdo prošel, v jakém je stavu, kde jsou mezery).",
+        "badge": "Certifikace",
+        "nextStepLabel": "Zobrazit akademie"
+      },
+      "conditions": {
+        "question": "Jaké jsou podmínky licencí a přístupu?",
+        "answer": "Licence jsou určené pro týmové nasazení a reporting.",
+        "detail": "Přístup je dlouhodobý (studium vlastním tempem). Konkrétní délku a podmínky nastavíme podle balíčku.",
+        "badge": "Podmínky",
+        "nextStepLabel": "Zobrazit balíčky"
+      }
     }
   }
 }
