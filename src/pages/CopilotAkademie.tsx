@@ -207,7 +207,7 @@ const CopilotAkademie = () => {
               
               {/* Trust lines */}
               <p className="text-xs text-muted-foreground mt-4">
-                Okamžitý přístup • studium vlastním tempem
+                Přístup do 24 hodin • studium vlastním tempem
               </p>
               <p className="text-xs text-muted-foreground/70 mt-1">
                 2 min čtení • uvidíte moduly + ukázky
@@ -428,7 +428,7 @@ const CopilotAkademie = () => {
               </h2>
               
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Okamžitý přístup • certifikát + LinkedIn odznak • dlouhodobý přístup
+                Přístup do 24 hodin • certifikát + LinkedIn odznak • dlouhodobý přístup
               </p>
               
               <div className="mb-6">

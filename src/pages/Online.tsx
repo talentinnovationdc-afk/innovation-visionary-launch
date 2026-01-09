@@ -260,7 +260,7 @@ const Online = () => {
                   
                   {/* Helper text */}
                   <p className="text-xs text-muted-foreground/70 mt-4 text-center lg:text-left">
-                    Okamžitý přístup po zaplacení • Vlastní tempo
+                    Přístup do 24 hodin • Vlastní tempo
                   </p>
                 </div>
                 

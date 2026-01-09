@@ -171,7 +171,7 @@ const MasterOfAICreativity = () => {
                   Sleva oproti 3 akademiím: 3 940 Kč
                 </p>
                 <p className="text-xs text-primary mb-8">
-                  Okamžitý přístup • studium vlastním tempem • ověřitelný LinkedIn odznak
+                  Přístup do 24 hodin • studium vlastním tempem • ověřitelný LinkedIn odznak
                 </p>
                 
                 {/* CTAs */}
