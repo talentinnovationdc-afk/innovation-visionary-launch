@@ -27,9 +27,11 @@ const Index = () => {
         <main className="flex-1">
           {/* Hero Section - Fixed height to prevent CLS */}
           <section aria-labelledby="hero-heading" className="relative flex items-center justify-center pt-32 pb-8 md:pt-48 md:pb-16 min-h-[70vh] md:min-h-[75vh]">
-            {/* Neural network only in hero */}
+            {/* Neural network only in hero with fade-out at bottom */}
             <div className="absolute inset-0 overflow-hidden">
               <NeuralNetworkBackground />
+              {/* Gradient mask to fade particles at the bottom edge */}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
             </div>
             <div className="container px-4 text-center relative z-10">
               {/* Same max-w-6xl as "Vyberte si, kde začít" section */}

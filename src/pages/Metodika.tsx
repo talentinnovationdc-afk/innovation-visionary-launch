@@ -130,14 +130,17 @@ const Metodika = () => {
         path="/metodika"
       />
       
-      <NeuralNetworkBackground />
-      
       <div className="min-h-screen bg-background/80">
         <Navbar />
         
         <main className="pb-20">
           {/* Hero Section */}
-          <section className="pt-40 md:pt-48 pb-16 md:pb-20 relative">
+          <section className="pt-40 md:pt-48 pb-16 md:pb-20 relative min-h-[500px]">
+            {/* Neural Network only in hero with fade-out at bottom */}
+            <div className="absolute inset-0 overflow-hidden -z-10">
+              <NeuralNetworkBackground />
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+            </div>
             <div className="container mx-auto px-4">
               <div className="text-center max-w-5xl mx-auto">
                 <h2 className="text-sm font-semibold tracking-[0.2em] text-primary mb-6 uppercase">

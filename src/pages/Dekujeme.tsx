@@ -18,10 +18,14 @@ const Dekujeme = () => {
         path="/dekujeme"
         noindex={true}
       />
-      <NeuralNetworkBackground />
       <Navbar />
       
       <main className="flex-1 flex flex-col items-center justify-center pt-32 pb-16 relative z-10">
+        {/* Neural Network background with fade-out */}
+        <div className="absolute inset-0 overflow-hidden -z-10">
+          <NeuralNetworkBackground />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+        </div>
         <div className="container px-4">
           <div className="max-w-xl mx-auto text-center">
             {/* Badge */}
