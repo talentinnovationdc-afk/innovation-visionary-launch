@@ -16,178 +16,191 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const modules = [
-  { 
-    num: 1, 
-    title: "Jak AI funguje", 
-    description: "Od staré dobré logiky k revoluci modelů, které píší svět znovu. Pochopíte základy fungování jazykových modelů.",
-    output: "Checklist: Klíčové pojmy AI pro non-tech lídry",
-    tags: ["2h", "Framework", "Checklist"]
-  },
-  { 
-    num: 2, 
-    title: "Halucinace a jak jim předejít", 
-    description: "Co se děje, když stroje lžou – a jak tomu zabránit. Naučíte se ověřovat a validovat výstupy.",
-    output: "Framework: 5 kroků k ověření AI výstupu",
-    tags: ["2h", "Framework", "Checklist"]
-  },
-  { 
-    num: 3, 
-    title: "Multimodální AI: hlas a obraz", 
-    description: "Od hlasu a obrazu až po modely, které mění pravidla hry. Praktické ukázky práce s médii.",
-    output: "Šablona: Multimodální prompt pro analýzu obrázků",
-    tags: ["2h", "Šablona", "Ukázka"]
-  },
-  { 
-    num: 4, 
-    title: "Promptování jako profík", 
-    description: "Jak s umělou inteligencí mluvit tak, aby vám rozuměla na první pokus. Techniky pro přesné výstupy.",
-    output: "Šablona: 10 univerzálních prompt vzorů",
-    tags: ["2h", "Šablona", "Workflow"]
-  },
-  { 
-    num: 5, 
-    title: "AI nástroje pro každý den", 
-    description: "Praktické nástroje, které vám ušetří hodiny denně. Přehled a porovnání aktuálních AI řešení.",
-    output: "Checklist: Výběr správného AI nástroje podle úkolu",
-    tags: ["2h", "Checklist", "Ukázka"]
-  },
-  { 
-    num: 6, 
-    title: "Datová analýza s AI", 
-    description: "Očistěte data, odhalte souvislosti a podívejte se do budoucnosti. Práce s tabulkami a reporty.",
-    output: "Šablona: Prompt pro analýzu CSV/Excelu",
-    tags: ["2h", "Šablona", "Workflow"]
-  },
-  { 
-    num: 7, 
-    title: "AI pro projekty a produktivitu", 
-    description: "Plánujte, delegujte a prezentujte jako profesionál. AI jako váš projektový asistent.",
-    output: "Workflow: AI-asistované řízení týdenních priorit",
-    tags: ["2h", "Workflow", "Šablona"]
-  },
-  { 
-    num: 8, 
-    title: "AI asistenti a agenti", 
-    description: "Úkoly, které běží za vás – i když nepracujete. Automatizace opakujících se činností.",
-    output: "Šablona: Nastavení Custom GPT pro váš tým",
-    tags: ["2h", "Šablona", "Ukázka"]
-  },
-  { 
-    num: 9, 
-    title: "Pokročilá analýza dat", 
-    description: "Vyčistěte, pochopte a vysvětlete jakákoliv data během minut. Od surových dat k insights.",
-    output: "Mini-dashboard: Automatický report z dat",
-    tags: ["2h", "Workflow", "Ukázka"]
-  },
-  { 
-    num: 10, 
-    title: "Agenti v praxi: predikce", 
-    description: "Předpovědi, automatizace a asistenti, kteří pracují sami. Pokročilé scénáře využití.",
-    output: "Framework: Nasazení prediktivního agenta",
-    tags: ["2h", "Framework", "Workflow"]
-  },
-  { 
-    num: 11, 
-    title: "Firemní AI agenti", 
-    description: "Od horké linky až po vlastní expertní nástroje. Interní AI řešení pro firmy.",
-    output: "Checklist: Požadavky na firemního AI agenta",
-    tags: ["2h", "Checklist", "Ukázka"]
-  },
-  { 
-    num: 12, 
-    title: "AI bez limitů: vlastní modely", 
-    description: "Vlastní modely, vlastní GPU a hyper-realistická tvorba v profesionální kvalitě.",
-    output: "Roadmapa: Cesta k vlastnímu fine-tuned modelu",
-    tags: ["2h", "Framework", "Ukázka"]
-  }
-];
-
-const learningsOutcome = [
-  "Promptování jako profík: méně pokusů, přesnější výstupy",
-  "Rychlejší psaní a rozhodování (e-maily, dokumenty, shrnutí)",
-  "Méně chyb: kontrola halucinací a ověřování",
-  "Standard pro tým: šablony a doporučené postupy"
-];
-
-const learningsWorkflow = [
-  "Šablony pro e-maily, zápisy, reporty a nabídky",
-  "Shrnutí schůzek + akční kroky během minut",
-  "Analýza dat + komentáře k tabulkám (rychle, srozumitelně)",
-  "Mini-asistenti pro opakované úkoly (bez chaosu)"
-];
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ChatGPTAkademie = () => {
+  const { t } = useTranslation();
+  const { language, getLocalizedHref } = useLanguage();
+
+  const modules = [
+    { 
+      num: 1, 
+      title: language === 'cs' ? "Jak AI funguje" : "How AI Works", 
+      description: language === 'cs' ? "Od staré dobré logiky k revoluci modelů, které píší svět znovu. Pochopíte základy fungování jazykových modelů." : "From old-school logic to the revolution of models that rewrite the world. Understand the basics of language models.",
+      output: language === 'cs' ? "Checklist: Klíčové pojmy AI pro non-tech lídry" : "Checklist: Key AI concepts for non-tech leaders",
+      tags: ["2h", "Framework", "Checklist"]
+    },
+    { 
+      num: 2, 
+      title: language === 'cs' ? "Halucinace a jak jim předejít" : "Hallucinations and How to Prevent Them", 
+      description: language === 'cs' ? "Co se děje, když stroje lžou – a jak tomu zabránit. Naučíte se ověřovat a validovat výstupy." : "What happens when machines lie – and how to prevent it. Learn to verify and validate outputs.",
+      output: language === 'cs' ? "Framework: 5 kroků k ověření AI výstupu" : "Framework: 5 steps to verify AI output",
+      tags: ["2h", "Framework", "Checklist"]
+    },
+    { 
+      num: 3, 
+      title: language === 'cs' ? "Multimodální AI: hlas a obraz" : "Multimodal AI: Voice and Image", 
+      description: language === 'cs' ? "Od hlasu a obrazu až po modely, které mění pravidla hry. Praktické ukázky práce s médii." : "From voice and image to game-changing models. Practical examples of working with media.",
+      output: language === 'cs' ? "Šablona: Multimodální prompt pro analýzu obrázků" : "Template: Multimodal prompt for image analysis",
+      tags: ["2h", language === 'cs' ? "Šablona" : "Template", language === 'cs' ? "Ukázka" : "Example"]
+    },
+    { 
+      num: 4, 
+      title: language === 'cs' ? "Promptování jako profík" : "Professional Prompting", 
+      description: language === 'cs' ? "Jak s umělou inteligencí mluvit tak, aby vám rozuměla na první pokus. Techniky pro přesné výstupy." : "How to talk to AI so it understands you on the first try. Techniques for precise outputs.",
+      output: language === 'cs' ? "Šablona: 10 univerzálních prompt vzorů" : "Template: 10 universal prompt patterns",
+      tags: ["2h", language === 'cs' ? "Šablona" : "Template", "Workflow"]
+    },
+    { 
+      num: 5, 
+      title: language === 'cs' ? "AI nástroje pro každý den" : "Everyday AI Tools", 
+      description: language === 'cs' ? "Praktické nástroje, které vám ušetří hodiny denně. Přehled a porovnání aktuálních AI řešení." : "Practical tools that save you hours daily. Overview and comparison of current AI solutions.",
+      output: language === 'cs' ? "Checklist: Výběr správného AI nástroje podle úkolu" : "Checklist: Choosing the right AI tool by task",
+      tags: ["2h", "Checklist", language === 'cs' ? "Ukázka" : "Example"]
+    },
+    { 
+      num: 6, 
+      title: language === 'cs' ? "Datová analýza s AI" : "Data Analysis with AI", 
+      description: language === 'cs' ? "Očistěte data, odhalte souvislosti a podívejte se do budoucnosti. Práce s tabulkami a reporty." : "Clean data, uncover insights, and look into the future. Working with tables and reports.",
+      output: language === 'cs' ? "Šablona: Prompt pro analýzu CSV/Excelu" : "Template: Prompt for CSV/Excel analysis",
+      tags: ["2h", language === 'cs' ? "Šablona" : "Template", "Workflow"]
+    },
+    { 
+      num: 7, 
+      title: language === 'cs' ? "AI pro projekty a produktivitu" : "AI for Projects and Productivity", 
+      description: language === 'cs' ? "Plánujte, delegujte a prezentujte jako profesionál. AI jako váš projektový asistent." : "Plan, delegate, and present like a pro. AI as your project assistant.",
+      output: language === 'cs' ? "Workflow: AI-asistované řízení týdenních priorit" : "Workflow: AI-assisted weekly priority management",
+      tags: ["2h", "Workflow", language === 'cs' ? "Šablona" : "Template"]
+    },
+    { 
+      num: 8, 
+      title: language === 'cs' ? "AI asistenti a agenti" : "AI Assistants and Agents", 
+      description: language === 'cs' ? "Úkoly, které běží za vás – i když nepracujete. Automatizace opakujících se činností." : "Tasks that run for you – even when you're not working. Automation of repetitive activities.",
+      output: language === 'cs' ? "Šablona: Nastavení Custom GPT pro váš tým" : "Template: Setting up Custom GPT for your team",
+      tags: ["2h", language === 'cs' ? "Šablona" : "Template", language === 'cs' ? "Ukázka" : "Example"]
+    },
+    { 
+      num: 9, 
+      title: language === 'cs' ? "Pokročilá analýza dat" : "Advanced Data Analysis", 
+      description: language === 'cs' ? "Vyčistěte, pochopte a vysvětlete jakákoliv data během minut. Od surových dat k insights." : "Clean, understand, and explain any data in minutes. From raw data to insights.",
+      output: language === 'cs' ? "Mini-dashboard: Automatický report z dat" : "Mini-dashboard: Automatic data report",
+      tags: ["2h", "Workflow", language === 'cs' ? "Ukázka" : "Example"]
+    },
+    { 
+      num: 10, 
+      title: language === 'cs' ? "Agenti v praxi: predikce" : "Agents in Practice: Prediction", 
+      description: language === 'cs' ? "Předpovědi, automatizace a asistenti, kteří pracují sami. Pokročilé scénáře využití." : "Predictions, automation, and assistants that work autonomously. Advanced use cases.",
+      output: language === 'cs' ? "Framework: Nasazení prediktivního agenta" : "Framework: Deploying a predictive agent",
+      tags: ["2h", "Framework", "Workflow"]
+    },
+    { 
+      num: 11, 
+      title: language === 'cs' ? "Firemní AI agenti" : "Corporate AI Agents", 
+      description: language === 'cs' ? "Od horké linky až po vlastní expertní nástroje. Interní AI řešení pro firmy." : "From hotline to custom expert tools. Internal AI solutions for companies.",
+      output: language === 'cs' ? "Checklist: Požadavky na firemního AI agenta" : "Checklist: Requirements for corporate AI agent",
+      tags: ["2h", "Checklist", language === 'cs' ? "Ukázka" : "Example"]
+    },
+    { 
+      num: 12, 
+      title: language === 'cs' ? "AI bez limitů: vlastní modely" : "AI Without Limits: Custom Models", 
+      description: language === 'cs' ? "Vlastní modely, vlastní GPU a hyper-realistická tvorba v profesionální kvalitě." : "Custom models, custom GPU, and hyper-realistic creation in professional quality.",
+      output: language === 'cs' ? "Roadmapa: Cesta k vlastnímu fine-tuned modelu" : "Roadmap: Path to your own fine-tuned model",
+      tags: ["2h", "Framework", language === 'cs' ? "Ukázka" : "Example"]
+    }
+  ];
+
+  const learningsOutcome = language === 'cs' ? [
+    "Promptování jako profík: méně pokusů, přesnější výstupy",
+    "Rychlejší psaní a rozhodování (e-maily, dokumenty, shrnutí)",
+    "Méně chyb: kontrola halucinací a ověřování",
+    "Standard pro tým: šablony a doporučené postupy"
+  ] : [
+    "Professional prompting: fewer tries, more precise outputs",
+    "Faster writing and decision-making (emails, documents, summaries)",
+    "Fewer errors: hallucination checks and verification",
+    "Team standard: templates and best practices"
+  ];
+
+  const learningsWorkflow = language === 'cs' ? [
+    "Šablony pro e-maily, zápisy, reporty a nabídky",
+    "Shrnutí schůzek + akční kroky během minut",
+    "Analýza dat + komentáře k tabulkám (rychle, srozumitelně)",
+    "Mini-asistenti pro opakované úkoly (bez chaosu)"
+  ] : [
+    "Templates for emails, notes, reports, and proposals",
+    "Meeting summaries + action items in minutes",
+    "Data analysis + table comments (fast, clear)",
+    "Mini-assistants for repeated tasks (without chaos)"
+  ];
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="ChatGPT Akademie – online kurz s certifikátem"
-        description="Ovládněte ChatGPT od základů po pokročilé workflow. 12 modulů, certifikát, LinkedIn odznak. Pro administrativu, HR a obchod."
-        path="/online/chatgptakademie"
+        title={t('pages.chatgptAkademie.seo.title')}
+        description={t('pages.chatgptAkademie.seo.description')}
+        path={language === 'en' ? '/en/online/chatgpt-academy' : '/online/chatgptakademie'}
       />
       <Navbar />
       
       <main className="relative z-10 pt-32">
         {/* Hero */}
         <section className="py-16 md:py-20 relative min-h-[600px]">
-          {/* Neural Network only in hero with fade-out at bottom */}
           <div className="absolute inset-0 overflow-hidden -z-10">
             <NeuralNetworkBackground />
-            {/* Gradient mask to fade particles at the bottom edge */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
           </div>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <span className="text-xs font-semibold tracking-[0.15em] text-muted-foreground uppercase mb-6 block">
-                Online akademie
+                {t('pages.chatgptAkademie.hero.label')}
               </span>
               
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 <span className="heading-hero">
-                  ChatGPT Akademie
+                  {t('pages.chatgptAkademie.hero.title')}
                 </span>
               </h1>
               
               <p className="text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
-                Praktické workflow s GPT, které zrychlí psaní, analýzu i rozhodování.
+                {t('pages.chatgptAkademie.hero.subtitle')}
               </p>
               <p className="text-sm text-primary mb-8">
-                Ideální pro: Administrativa, HR, obchod, podpora — každý, kdo denně píše.
+                {t('pages.chatgptAkademie.hero.idealFor')}
               </p>
               
               {/* Meta badges */}
               <div className="flex flex-wrap justify-center gap-3 mb-8">
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-primary" /> 12 modulů (cca 24 h)
+                  <Clock className="w-4 h-4 text-primary" /> {t('pages.chatgptAkademie.meta.modules')}
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-primary" /> Začátečník → pokročilý
+                  <BookOpen className="w-4 h-4 text-primary" /> {t('pages.chatgptAkademie.meta.level')}
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <Timer className="w-4 h-4 text-primary" /> Vlastní tempo
+                  <Timer className="w-4 h-4 text-primary" /> {t('pages.chatgptAkademie.meta.pace')}
                 </span>
                 <span className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground flex items-center gap-2">
-                  <Award className="w-4 h-4 text-primary" /> Certifikát + LinkedIn odznak
+                  <Award className="w-4 h-4 text-primary" /> {t('pages.chatgptAkademie.meta.certificate')}
                 </span>
               </div>
               
               {/* Price */}
               <div className="mb-8">
-                <span className="text-4xl font-bold text-primary">4 470 Kč</span>
-                <span className="text-sm text-muted-foreground ml-2">vč. DPH</span>
+                <span className="text-4xl font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '€179'}</span>
+                <span className="text-sm text-muted-foreground ml-2">{language === 'cs' ? 'vč. DPH' : 'incl. VAT'}</span>
               </div>
               
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="https://t-i.cz/online/chatgptakademie"
+                  href="https://buy.stripe.com/4gM8wQ2GO9Vn2SnfPo6Ri03"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-event="b2c_chatgpt_buy_click"
                 >
                   <Button size="lg" className="w-full sm:w-auto px-10 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
-                    Koupit akademii
+                    {language === 'cs' ? 'Koupit akademii' : 'Buy academy'}
                   </Button>
                 </a>
                 <a href="#roadmap">
@@ -197,14 +210,14 @@ const ChatGPTAkademie = () => {
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary text-primary bg-primary/5 hover:bg-primary/15"
                   >
                     <BookOpen className="w-4 h-4 mr-2" />
-                    Zobrazit osnovu (ukázka)
+                    {t('common.cta.viewSyllabus')}
                   </Button>
                 </a>
               </div>
               
               {/* Trust lines */}
               <p className="text-xs text-muted-foreground mt-4">
-                Přístup do 24 hodin • studium vlastním tempem
+                {t('pages.chatgptAkademie.helper.accessTime')}
               </p>
             </div>
           </div>
@@ -222,22 +235,22 @@ const ChatGPTAkademie = () => {
               <div className="flex items-center gap-3">
                 <Users className="w-6 h-6 text-primary" />
                 <div>
-                  <p className="text-2xl font-bold text-foreground">1250+</p>
-                  <p className="text-xs text-muted-foreground">absolventů</p>
+                  <p className="text-2xl font-bold text-foreground">{t('pages.chatgptAkademie.stats.graduates')}</p>
+                  <p className="text-xs text-muted-foreground">{t('pages.chatgptAkademie.stats.graduatesLabel')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Star className="w-6 h-6 text-primary fill-primary" />
                 <div>
-                  <p className="text-2xl font-bold text-foreground">4,9/5</p>
-                  <p className="text-xs text-muted-foreground">hodnocení</p>
+                  <p className="text-2xl font-bold text-foreground">{t('pages.chatgptAkademie.stats.rating')}</p>
+                  <p className="text-xs text-muted-foreground">{t('pages.chatgptAkademie.stats.ratingLabel')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <BadgeCheck className="w-6 h-6 text-primary" />
                 <div>
-                  <p className="text-2xl font-bold text-foreground">95 %</p>
-                  <p className="text-xs text-muted-foreground">doporučuje</p>
+                  <p className="text-2xl font-bold text-foreground">{t('pages.chatgptAkademie.stats.recommends')}</p>
+                  <p className="text-xs text-muted-foreground">{t('pages.chatgptAkademie.stats.recommendsLabel')}</p>
                 </div>
               </div>
             </div>
@@ -252,7 +265,7 @@ const ChatGPTAkademie = () => {
               <div className="mb-12">
                 <h2 className="text-xl md:text-2xl font-bold tracking-[0.1em] uppercase mb-6 text-center">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    Výsledek pro vás (prakticky)
+                    {language === 'cs' ? 'Výsledek pro vás (prakticky)' : 'Results for you (practically)'}
                   </span>
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -269,7 +282,7 @@ const ChatGPTAkademie = () => {
               <div>
                 <h2 className="text-xl md:text-2xl font-bold tracking-[0.1em] uppercase mb-6 text-center">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    Konkrétní workflow (druhý den v práci)
+                    {language === 'cs' ? 'Konkrétní workflow (druhý den v práci)' : 'Specific workflows (second day at work)'}
                   </span>
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -294,37 +307,36 @@ const ChatGPTAkademie = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
                 <BookOpen className="w-4 h-4 text-primary" />
                 <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">
-                  Osnova kurzu
+                  {language === 'cs' ? 'Osnova kurzu' : 'Course outline'}
                 </span>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Obsah akademie
+                  {language === 'cs' ? 'Obsah akademie' : 'Academy content'}
                 </span>
               </h2>
               <p className="text-muted-foreground flex flex-wrap items-center justify-center gap-3 mb-4">
                 <span className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  12 modulů
+                  {language === 'cs' ? '12 modulů' : '12 modules'}
                 </span>
                 <span className="text-border">•</span>
                 <span className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-primary/60" />
-                  cca 24 hodin obsahu
+                  {language === 'cs' ? 'cca 24 hodin obsahu' : 'approx. 24 hours of content'}
                 </span>
                 <span className="text-border">•</span>
                 <span className="flex items-center gap-2">
                   <FileText className="w-4 h-4 text-primary/60" />
-                  šablony & workflow
+                  {language === 'cs' ? 'šablony & workflow' : 'templates & workflows'}
                 </span>
               </p>
               <p className="text-sm text-muted-foreground/80">
-                Každý modul: příklad + šablona + úkol do praxe. Rozklikněte modul a uvidíte ukázku výstupů.
+                {t('pages.chatgptAkademie.helper.practicalOutputs')}
               </p>
             </div>
             
             <div className="max-w-3xl mx-auto relative">
-              {/* Vertical timeline line */}
               <div className="absolute left-[29px] top-8 bottom-8 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent hidden md:block" />
               
               <Accordion type="single" collapsible className="space-y-4">
@@ -361,7 +373,7 @@ const ChatGPTAkademie = () => {
                             <FileText className="w-4 h-4 text-primary" />
                           </div>
                           <div>
-                            <span className="text-xs font-semibold uppercase tracking-wider text-primary block mb-1">Výstup modulu</span>
+                            <span className="text-xs font-semibold uppercase tracking-wider text-primary block mb-1">{language === 'cs' ? 'Výstup modulu' : 'Module output'}</span>
                             <span className="text-sm text-foreground font-medium">{module.output}</span>
                           </div>
                         </div>
@@ -380,32 +392,36 @@ const ChatGPTAkademie = () => {
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                 <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                  Co dostanete
+                  {t('pages.chatgptAkademie.whatYouGet.title')}
                 </span>
               </h2>
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
-                <Award className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Certifikát</h3>
-                <p className="text-xs text-muted-foreground">Po dokončení akademie</p>
+              <div className="glass-card p-6 rounded-2xl border border-primary/20 text-center">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('pages.chatgptAkademie.whatYouGet.certificate.title')}</h3>
+                <p className="text-sm text-muted-foreground">{t('pages.chatgptAkademie.whatYouGet.certificate.description')}</p>
               </div>
-              <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
-                <BadgeCheck className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">LinkedIn odznak</h3>
-                <p className="text-xs text-muted-foreground">Přidáte jedním klikem</p>
+              
+              <div className="glass-card p-6 rounded-2xl border border-primary/20 text-center">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <BadgeCheck className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('pages.chatgptAkademie.whatYouGet.badge.title')}</h3>
+                <p className="text-sm text-muted-foreground">{t('pages.chatgptAkademie.whatYouGet.badge.description')}</p>
               </div>
-              <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
-                <Timer className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Dlouhodobý přístup</h3>
-                <p className="text-xs text-muted-foreground">Studujte vlastním tempem</p>
+              
+              <div className="glass-card p-6 rounded-2xl border border-primary/20 text-center">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <RefreshCw className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('pages.chatgptAkademie.whatYouGet.access.title')}</h3>
+                <p className="text-sm text-muted-foreground">{t('pages.chatgptAkademie.whatYouGet.access.description')}</p>
               </div>
             </div>
-            
-            <p className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto">
-              Součástí jsou šablony, checklisty a ukázky – použitelné hned v praxi.
-            </p>
           </div>
         </section>
 
@@ -416,68 +432,73 @@ const ChatGPTAkademie = () => {
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center glass-card p-10 md:p-12 rounded-2xl border border-primary/30 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
-              <MessageSquare className="w-12 h-12 text-primary mx-auto mb-6" />
-              <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-foreground uppercase mb-4">
-                Začněte s ChatGPT Akademií ještě dnes
+              <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
+                {language === 'cs' ? 'PŘIPRAVENI ZAČÍT?' : 'READY TO START?'}
               </h2>
-              
-              <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Přístup do 24 hodin • certifikát + LinkedIn odznak • dlouhodobý přístup
+              <p className="text-muted-foreground mb-6">
+                {language === 'cs' 
+                  ? 'Získejte praktické workflow, certifikát a LinkedIn odznak.'
+                  : 'Get practical workflows, certificate and LinkedIn badge.'}
               </p>
               
               <div className="mb-6">
-                <span className="text-4xl font-bold text-primary">4 470 Kč</span>
-                <span className="text-sm text-muted-foreground ml-2">vč. DPH</span>
+                <span className="text-4xl font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '€179'}</span>
+                <span className="text-sm text-muted-foreground ml-2">{language === 'cs' ? 'vč. DPH' : 'incl. VAT'}</span>
               </div>
               
               <a 
-                href="https://t-i.cz/online/chatgptakademie"
+                href="https://buy.stripe.com/4gM8wQ2GO9Vn2SnfPo6Ri03"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-event="b2c_chatgpt_buy_bottom"
               >
-                <Button size="lg" className="px-10 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
-                  Koupit akademii
+                <Button 
+                  size="lg"
+                  className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
+                >
+                  {language === 'cs' ? 'Koupit akademii' : 'Buy academy'}
                 </Button>
               </a>
               
-              {/* Secondary links */}
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-                <a href="#roadmap" className="text-sm text-primary hover:text-primary/80 hover:underline transition-colors flex items-center justify-center gap-1">
-                  <BookOpen className="w-3.5 h-3.5" />
-                  Nejdřív chci vidět osnovu
-                </a>
-                <Link to="/online/master-of-ai-creativity" className="text-sm text-accent hover:text-accent/80 hover:underline transition-colors flex items-center justify-center gap-1">
-                  <Crown className="w-3.5 h-3.5" />
-                  Chci kompletní program (3 akademie)
+              <p className="text-xs text-muted-foreground/60 mt-4">{t('pages.chatgptAkademie.helper.accessTime')}</p>
+              
+              {/* Upsell to program */}
+              <div className="mt-8 pt-6 border-t border-border/30">
+                <p className="text-sm text-muted-foreground mb-3">
+                  {language === 'cs' ? 'Nebo získejte všechny 3 akademie s hlavním odznakem:' : 'Or get all 3 academies with the main badge:'}
+                </p>
+                <Link to={getLocalizedHref("/online/master-of-ai-creativity")}>
+                  <Button variant="outline" className="border-accent text-accent hover:bg-accent/10">
+                    <Crown className="w-4 h-4 mr-2" />
+                    Master of AI Creativity
+                  </Button>
                 </Link>
               </div>
             </div>
           </div>
         </section>
-      </main>
 
-      <Footer />
-
-      {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/95 backdrop-blur-lg border-t border-border/30 z-50 lg:hidden">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-lg font-bold text-foreground">4 470 Kč</p>
-            <p className="text-xs text-muted-foreground">vč. DPH</p>
+        {/* Mobile Sticky CTA */}
+        <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/95 backdrop-blur-lg border-t border-border/30 md:hidden z-50">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="text-lg font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '€179'}</p>
+              <p className="text-xs text-muted-foreground">{language === 'cs' ? 'vč. DPH' : 'incl. VAT'}</p>
+            </div>
+            <a 
+              href="https://buy.stripe.com/4gM8wQ2GO9Vn2SnfPo6Ri03"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+            >
+              <Button className="w-full">
+                {language === 'cs' ? 'Koupit' : 'Buy'}
+              </Button>
+            </a>
           </div>
-          <a 
-            href="https://t-i.cz/online/chatgptakademie"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1"
-          >
-            <Button className="w-full py-3 font-semibold shadow-[0_0_15px_rgba(102,252,241,0.4)]">
-              Koupit akademii
-            </Button>
-          </a>
         </div>
-      </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
