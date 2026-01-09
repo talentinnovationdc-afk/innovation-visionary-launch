@@ -118,12 +118,15 @@ const MasterOfAICreativity = () => {
         description="Kompletní program: ChatGPT + Copilot + Agenti & Automatizace. Hlavní certifikát a LinkedIn odznak. 1250+ absolventů, 4,9/5."
         path="/online/master-of-ai-creativity"
       />
-      <NeuralNetworkBackground />
       <Navbar />
       
       <main className="relative z-10 pt-32">
         {/* Hero Section */}
-        <section className="py-16 md:py-20">
+        <section className="py-16 md:py-20 relative min-h-[600px]">
+          {/* Neural Network only in hero */}
+          <div className="absolute inset-0 overflow-hidden -z-10">
+            <NeuralNetworkBackground />
+          </div>
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
               {/* Left - Content */}
