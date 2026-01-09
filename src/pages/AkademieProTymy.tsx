@@ -18,8 +18,6 @@ import {
   Rocket, 
   BarChart3,
   Award,
-  BadgeCheck,
-  Clock,
   Sparkles,
   MessageSquare,
   Wand2,
@@ -29,243 +27,23 @@ import {
   Headphones,
   Cpu,
   Crown,
-  Calendar,
-  Zap,
-  Lock,
-  PieChart,
-  BookOpen,
   HelpCircle,
   FileText,
   TrendingUp,
-  Shield,
   ClipboardCheck,
   ArrowRight
 } from "lucide-react";
 import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Loader2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WEBHOOK_URL = "https://hook.eu1.make.com/kfd2mio7cxmu78yk58eqlqs4hogx8qru";
 
-const academyOptions = [
-  { id: "master", title: "Kompletní program (3 akademie)", icon: Crown, isProgram: true, note: "Master of AI Creativity" },
-  { id: "chatgpt", title: "ChatGPT Akademie", icon: MessageSquare, isProgram: false },
-  { id: "copilot", title: "Copilot Akademie", icon: Wand2, isProgram: false },
-  { id: "agenti", title: "Agenti & Automatizace", icon: Bot, isProgram: false }
-];
-
-const pricingPlans = [
-  {
-    name: "Starter",
-    licenses: 10,
-    pricePerLicense: 2490,
-    recommended: false,
-    features: [
-      "Přístup k vybraným akademiím",
-      "Certifikát + LinkedIn odznak",
-      "Přehled o dokončení (pro HR)"
-    ],
-    extraFeatures: []
-  },
-  {
-    name: "Team",
-    licenses: 25,
-    pricePerLicense: 1990,
-    recommended: true,
-    features: [
-      "Přístup k vybraným akademiím",
-      "Certifikát + LinkedIn odznak",
-      "Přehled o dokončení (pro HR)"
-    ],
-    extraFeatures: [
-      "Onboarding pro tým (60 min)"
-    ]
-  },
-  {
-    name: "Company",
-    licenses: 50,
-    pricePerLicense: 1490,
-    recommended: false,
-    features: [
-      "Přístup k vybraným akademiím",
-      "Certifikát + LinkedIn odznak",
-      "Přehled o dokončení (pro HR)"
-    ],
-    extraFeatures: [
-      "Onboarding pro tým (60 min)",
-      "Quarterly review (30 min) + optimalizace programu"
-    ]
-  }
-];
-
-const roleRecommendations = [
-  {
-    icon: Users,
-    role: "Administrativa a back-office",
-    recommendation: "Šablony + rutiny pro e-maily a dokumenty"
-  },
-  {
-    icon: Headphones,
-    role: "Obchod a podpora",
-    recommendation: "Odpovědi zákazníkům, nabídky a follow-upy"
-  },
-  {
-    icon: Cpu,
-    role: "Automatizace a IT",
-    recommendation: "Workflow automatizace a interní asistenti"
-  }
-];
-
-const processSteps = [
-  { number: "1", title: "Výběr rolí a akademií", duration: "15–30 min", icon: Target },
-  { number: "2", title: "Zřízení licencí a přístupů", duration: "1–2 dny", icon: Settings },
-  { number: "3", title: "Onboarding a první výsledky", duration: "1–2 týdny", icon: Rocket },
-  { number: "4", title: "Přehled dopadu a rozvoj", duration: "měsíčně", icon: BarChart3 }
-];
-
-
-const academyCards = [
-  {
-    id: "chatgpt",
-    title: "ChatGPT Akademie",
-    icon: MessageSquare,
-    proKoho: "Administrativa, HR, obchod",
-    benefit: "Jednotný styl textů a rychlejší rozhodování. Standard pro celý tým.",
-    po14Dnech: "Šablony e-mailů + workflow pro rutiny",
-    topVystupy: [
-      "E-mailové šablony",
-      "Tone-of-voice prompt pack",
-      "Workflow pro follow-upy"
-    ],
-    link: "/online/chatgptakademie",
-    badge: "Ukázka obsahu",
-    // Details
-    detailDescription: "Základ pro efektivní psaní a rozhodování. Naučíte tým psát e-maily, dokumenty a odpovědi konzistentně a rychle.",
-    allOutputs: [
-      "E-mailové šablony a dokumentové checklisty",
-      "Firemní tone-of-voice prompt pack",
-      "Workflow pro rutiny (odpovědi, follow-upy)",
-      "Rozhodovací prompty pro management"
-    ],
-    kdyZvolit: "Když chcete rychle nastavit standard pro texty a rozhodování napříč týmem."
-  },
-  {
-    id: "copilot",
-    title: "Copilot Akademie",
-    icon: Wand2,
-    proKoho: "Týmy pracující v M365",
-    benefit: "Méně klikání, víc výsledků. Copilot jako asistent přímo v Office.",
-    po14Dnech: "Méně rutiny ve Word/Excel/Outlook",
-    topVystupy: [
-      "Šablony reportů v Excelu",
-      "Workflow pro Outlook/Teams",
-      "PowerPoint outline šablony"
-    ],
-    link: "/online/copilotakademie",
-    badge: "Ukázka obsahu",
-    // Details
-    detailDescription: "Praktické využití Copilota v denní práci s Word, Excel, Outlook a PowerPoint. Žádná teorie navíc.",
-    allOutputs: [
-      "Šablony reportů v Excelu",
-      "Automatizované workflow pro Outlook a Teams",
-      "PowerPoint outline šablony",
-      "Meeting summary workflow"
-    ],
-    kdyZvolit: "Když jedete na M365 a chcete vytěžit maximum z Copilota v Office aplikacích."
-  },
-  {
-    id: "agenti",
-    title: "Agenti & Automatizace",
-    icon: Bot,
-    proKoho: "Power users, inovace, procesy",
-    benefit: "Pokročilé workflow a orchestrace. Pro ty, kdo chtějí jít dál.",
-    po14Dnech: "První automatizace + plán agentů",
-    topVystupy: [
-      "Automatizační blueprinty",
-      "Agentní workflow šablony",
-      "Integrační checklist"
-    ],
-    link: "/online/agentiautomatizace",
-    badge: "Ukázka obsahu",
-    // Details
-    detailDescription: "Pokročilé workflow a orchestrace nástrojů. Pro ty, kdo chtějí jít dál než základní prompting a budovat vlastní řešení.",
-    allOutputs: [
-      "Automatizační blueprinty",
-      "Agentní workflow šablony",
-      "Integrační checklist",
-      "Multi-tool orchestrace setup"
-    ],
-    kdyZvolit: "Když chcete workflow, integrace a pokročilou orchestraci nástrojů napříč procesy."
-  },
-  {
-    id: "master",
-    title: "Kompletní program",
-    icon: Crown,
-    proKoho: "Management a klíčové role",
-    benefit: "Jednotný AI standard napříč firmou. Všechny 3 akademie + certifikace.",
-    po14Dnech: "Měřitelný dopad + společný jazyk",
-    topVystupy: [
-      "Jednotná metodika v týmu",
-      "Certifikace + sdílené šablony",
-      "Rychlejší onboarding kolegů"
-    ],
-    link: "/online/master-of-ai-creativity",
-    isProgram: true,
-    badge: "Nejčastější volba",
-    // Details
-    detailDescription: "Nejrychlejší cesta k jednotnému skillu. Všechny 3 akademie v jednom programu — ChatGPT + Copilot + Agenti.",
-    allOutputs: [
-      "Jednotná metodika a společný jazyk v týmu",
-      "Certifikace + sdílené šablony napříč rolemi",
-      "Rychlejší onboarding nových kolegů",
-      "Kompletní sada workflow pro všechny role"
-    ],
-    kdyZvolit: "Pro jednotný AI standard napříč firmou. Ideální pro management a klíčové role, kteří nastavují směr."
-  }
-];
-
-const hrBenefits = [
-  {
-    icon: Target,
-    title: "Standard dovedností",
-    description: "Jednotná metodika a šablony pro práci s AI napříč rolemi a týmy."
-  },
-  {
-    icon: TrendingUp,
-    title: "Méně rutiny, víc kapacity",
-    description: "Méně rutinních úkonů v rolích. Více času na klíčové úkoly a rozvoj lidí."
-  },
-  {
-    icon: Award,
-    title: "Certifikace + LinkedIn odznak",
-    description: "Certifikát po dokončení + viditelné uznání dovedností. Jasný skill progress."
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Přehled a reporting",
-    description: "HR vidí, kdo dokončil, kde jsou mezery a jaké role doporučit jako další."
-  }
-];
-
-const deploymentSteps = [
-  {
-    num: "1",
-    title: "Vyberete akademii a balíček licencí",
-    description: "Zvolíte akademii podle rolí a velikost balíčku licencí."
-  },
-  {
-    num: "2",
-    title: "Aktivujeme přístupy a onboarding",
-    description: "Instrukce pro onboarding + aktivace účtů."
-  },
-  {
-    num: "3",
-    title: "První report za 14 dní",
-    description: "Přehled dokončení + doporučení dalších rolí."
-  }
-];
-
 const AkademieProTymy = () => {
+  const { t } = useTranslation();
+  const { language, getLocalizedHref } = useLanguage();
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
   const [selectedAcademies, setSelectedAcademies] = useState<string[]>([]);
@@ -281,13 +59,164 @@ const AkademieProTymy = () => {
   const [gdprConsent, setGdprConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  
+
+  const academyOptions = [
+    { id: "master", title: t('academyProTymy.academyOptions.master'), icon: Crown, isProgram: true, note: "Master of AI Creativity" },
+    { id: "chatgpt", title: t('academyProTymy.academyOptions.chatgpt'), icon: MessageSquare, isProgram: false },
+    { id: "copilot", title: t('academyProTymy.academyOptions.copilot'), icon: Wand2, isProgram: false },
+    { id: "agenti", title: t('academyProTymy.academyOptions.agenti'), icon: Bot, isProgram: false }
+  ];
+
+  const pricingPlans = [
+    {
+      name: "Starter",
+      licenses: 10,
+      pricePerLicense: 2490,
+      recommended: false,
+      features: [
+        t('academyProTymy.pricing.features.access'),
+        t('academyProTymy.pricing.features.certificate'),
+        t('academyProTymy.pricing.features.hrReporting')
+      ],
+      extraFeatures: []
+    },
+    {
+      name: "Team",
+      licenses: 25,
+      pricePerLicense: 1990,
+      recommended: true,
+      features: [
+        t('academyProTymy.pricing.features.access'),
+        t('academyProTymy.pricing.features.certificate'),
+        t('academyProTymy.pricing.features.hrReporting')
+      ],
+      extraFeatures: [
+        t('academyProTymy.pricing.extraFeatures.onboarding')
+      ]
+    },
+    {
+      name: "Company",
+      licenses: 50,
+      pricePerLicense: 1490,
+      recommended: false,
+      features: [
+        t('academyProTymy.pricing.features.access'),
+        t('academyProTymy.pricing.features.certificate'),
+        t('academyProTymy.pricing.features.hrReporting')
+      ],
+      extraFeatures: [
+        t('academyProTymy.pricing.extraFeatures.onboarding'),
+        t('academyProTymy.pricing.extraFeatures.quarterlyReview')
+      ]
+    }
+  ];
+
+  const academyCards = [
+    {
+      id: "chatgpt",
+      title: t('academyProTymy.cards.chatgpt.title'),
+      icon: MessageSquare,
+      proKoho: t('academyProTymy.cards.chatgpt.proKoho'),
+      benefit: t('academyProTymy.cards.chatgpt.benefit'),
+      po14Dnech: t('academyProTymy.cards.chatgpt.po14Dnech'),
+      topVystupy: t('academyProTymy.cards.chatgpt.topVystupy', { returnObjects: true }) as string[],
+      link: getLocalizedHref('/online/chatgptakademie'),
+      badge: t('academyProTymy.badges.preview'),
+      detailDescription: t('academyProTymy.cards.chatgpt.detailDescription'),
+      allOutputs: t('academyProTymy.cards.chatgpt.allOutputs', { returnObjects: true }) as string[],
+      kdyZvolit: t('academyProTymy.cards.chatgpt.kdyZvolit')
+    },
+    {
+      id: "copilot",
+      title: t('academyProTymy.cards.copilot.title'),
+      icon: Wand2,
+      proKoho: t('academyProTymy.cards.copilot.proKoho'),
+      benefit: t('academyProTymy.cards.copilot.benefit'),
+      po14Dnech: t('academyProTymy.cards.copilot.po14Dnech'),
+      topVystupy: t('academyProTymy.cards.copilot.topVystupy', { returnObjects: true }) as string[],
+      link: getLocalizedHref('/online/copilotakademie'),
+      badge: t('academyProTymy.badges.preview'),
+      detailDescription: t('academyProTymy.cards.copilot.detailDescription'),
+      allOutputs: t('academyProTymy.cards.copilot.allOutputs', { returnObjects: true }) as string[],
+      kdyZvolit: t('academyProTymy.cards.copilot.kdyZvolit')
+    },
+    {
+      id: "agenti",
+      title: t('academyProTymy.cards.agenti.title'),
+      icon: Bot,
+      proKoho: t('academyProTymy.cards.agenti.proKoho'),
+      benefit: t('academyProTymy.cards.agenti.benefit'),
+      po14Dnech: t('academyProTymy.cards.agenti.po14Dnech'),
+      topVystupy: t('academyProTymy.cards.agenti.topVystupy', { returnObjects: true }) as string[],
+      link: getLocalizedHref('/online/agentiautomatizace'),
+      badge: t('academyProTymy.badges.preview'),
+      detailDescription: t('academyProTymy.cards.agenti.detailDescription'),
+      allOutputs: t('academyProTymy.cards.agenti.allOutputs', { returnObjects: true }) as string[],
+      kdyZvolit: t('academyProTymy.cards.agenti.kdyZvolit')
+    },
+    {
+      id: "master",
+      title: t('academyProTymy.cards.master.title'),
+      icon: Crown,
+      proKoho: t('academyProTymy.cards.master.proKoho'),
+      benefit: t('academyProTymy.cards.master.benefit'),
+      po14Dnech: t('academyProTymy.cards.master.po14Dnech'),
+      topVystupy: t('academyProTymy.cards.master.topVystupy', { returnObjects: true }) as string[],
+      link: getLocalizedHref('/online/master-of-ai-creativity'),
+      isProgram: true,
+      badge: t('academyProTymy.badges.popular'),
+      detailDescription: t('academyProTymy.cards.master.detailDescription'),
+      allOutputs: t('academyProTymy.cards.master.allOutputs', { returnObjects: true }) as string[],
+      kdyZvolit: t('academyProTymy.cards.master.kdyZvolit')
+    }
+  ];
+
+  const hrBenefits = [
+    {
+      icon: Target,
+      title: t('academyProTymy.hrBenefits.standard.title'),
+      description: t('academyProTymy.hrBenefits.standard.description')
+    },
+    {
+      icon: TrendingUp,
+      title: t('academyProTymy.hrBenefits.lessRoutine.title'),
+      description: t('academyProTymy.hrBenefits.lessRoutine.description')
+    },
+    {
+      icon: Award,
+      title: t('academyProTymy.hrBenefits.certification.title'),
+      description: t('academyProTymy.hrBenefits.certification.description')
+    },
+    {
+      icon: ClipboardCheck,
+      title: t('academyProTymy.hrBenefits.reporting.title'),
+      description: t('academyProTymy.hrBenefits.reporting.description')
+    }
+  ];
+
+  const deploymentSteps = [
+    {
+      num: "1",
+      title: t('academyProTymy.deployment.step1.title'),
+      description: t('academyProTymy.deployment.step1.description')
+    },
+    {
+      num: "2",
+      title: t('academyProTymy.deployment.step2.title'),
+      description: t('academyProTymy.deployment.step2.description')
+    },
+    {
+      num: "3",
+      title: t('academyProTymy.deployment.step3.title'),
+      description: t('academyProTymy.deployment.step3.description')
+    }
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!gdprConsent) {
-      setSubmitError("Pro odeslání je nutný souhlas se zpracováním osobních údajů.");
+      setSubmitError(t('academyProTymy.form.errors.gdprRequired'));
       return;
     }
 
@@ -328,12 +257,12 @@ const AkademieProTymy = () => {
         throw new Error("Webhook request failed");
       }
 
-      navigate("/dekujeme-formular?form=nezavazna_poptavka");
+      navigate(getLocalizedHref('/dekujeme-formular') + "?form=nezavazna_poptavka");
     } catch (error) {
       if (error instanceof Error && error.name === "AbortError") {
-        setSubmitError("Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.");
+        setSubmitError(t('academyProTymy.form.errors.timeout'));
       } else {
-        setSubmitError("Odeslání se nepovedlo. Zkuste to prosím znovu.");
+        setSubmitError(t('academyProTymy.form.errors.generic'));
       }
     } finally {
       setIsSubmitting(false);
@@ -365,9 +294,9 @@ const AkademieProTymy = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Akademie pro týmy – hromadné licence AI kurzů"
-        description="Firemní licence AI akademií s onboardingem a reportingem pro HR. Certifikát a LinkedIn odznak pro každého účastníka."
-        path="/akademie-pro-tymy"
+        title={t('academyProTymy.seo.title')}
+        description={t('academyProTymy.seo.description')}
+        path={language === 'en' ? '/en/team-academy' : '/akademie-pro-tymy'}
       />
       <Navbar />
       
@@ -382,54 +311,54 @@ const AkademieProTymy = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <span className="text-xs font-semibold tracking-[0.15em] text-muted-foreground uppercase mb-8 block">
-                Firemní vzdělávání
+                {t('academyProTymy.hero.label')}
               </span>
               
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                 <span className="heading-hero">
-                  Online akademie
+                  {t('academyProTymy.hero.title1')}
                 </span>
                 <br />
                 <span className="heading-hero">
-                  pro týmy
+                  {t('academyProTymy.hero.title2')}
                 </span>
                 <br />
                 <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6 uppercase" style={{ letterSpacing: '0.15em' }}>
-                  Standard práce s AI napříč firmou
+                  {t('academyProTymy.hero.subtitle')}
                 </span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                Zaměstnanci studují vlastním tempem. Vy získáte jednotný skillset, certifikaci a přehled o dokončení napříč rolemi i týmy.
+                {t('academyProTymy.hero.description')}
               </p>
               
               {/* Chip row */}
               <div className="flex flex-wrap justify-center gap-3 mb-10">
                 <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                  Reporting pro HR
+                  {t('academyProTymy.hero.chips.hrReporting')}
                 </span>
                 <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                  Certifikace
+                  {t('academyProTymy.hero.chips.certification')}
                 </span>
                 <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                  Šablony & workflow
+                  {t('academyProTymy.hero.chips.templates')}
                 </span>
                 <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
-                  Vlastní tempo
+                  {t('academyProTymy.hero.chips.ownPace')}
                 </span>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <div className="flex flex-col items-center">
-                  <Link to="/poptavka">
+                  <Link to={getLocalizedHref('/poptavka')}>
                     <Button 
                       size="lg" 
                       className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                     >
-                      Domluvit diagnostiku (15 min)
+                      {t('common.cta.bookDiagnostics')}
                     </Button>
                   </Link>
-                  <span className="text-xs text-muted-foreground/70 mt-2">bez závazku • ozveme se do 24 hodin</span>
+                  <span className="text-xs text-muted-foreground/70 mt-2">{t('common.cta.helper')}</span>
                 </div>
                 <a href="#akademie">
                   <Button 
@@ -438,7 +367,7 @@ const AkademieProTymy = () => {
                     className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary/50 text-primary hover:bg-primary/10"
                   >
                     <FileText className="w-5 h-5 mr-2" />
-                    Zobrazit ukázku
+                    {t('academyProTymy.hero.showPreview')}
                   </Button>
                 </a>
               </div>
@@ -457,10 +386,10 @@ const AkademieProTymy = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-14">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                CO VAŠE TÝMY ZÍSKAJÍ
+                {t('academyProTymy.sections.whatTeamsGet.title')}
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto text-sm">
-                3 akademie. Konkrétní workflow výstupy. Jednotný standard napříč firmou.
+                {t('academyProTymy.sections.whatTeamsGet.subtitle')}
               </p>
             </div>
             
@@ -492,7 +421,7 @@ const AkademieProTymy = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                Co získá HR / L&D
+                {t('academyProTymy.sections.hrBenefits.title')}
               </h2>
             </div>
             
@@ -529,7 +458,7 @@ const AkademieProTymy = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                JAK NASADÍME AKADEMIE DO TÝMU
+                {t('academyProTymy.sections.deployment.title')}
               </h2>
             </div>
             
@@ -552,7 +481,7 @@ const AkademieProTymy = () => {
               
               {/* Subtitle */}
               <p className="text-center text-sm text-muted-foreground mt-8">
-                Bez složitého IT. HR dostane přehled a doporučení dalších kroků.
+                {t('academyProTymy.sections.deployment.subtitle')}
               </p>
             </div>
           </div>
@@ -563,19 +492,19 @@ const AkademieProTymy = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                Balíčky licencí
+                {t('academyProTymy.sections.pricing.title')}
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-3">
-                Zvolte akademii (nebo Kompletní program) a vyberte velikost balíčku.
+                {t('academyProTymy.sections.pricing.subtitle')}
               </p>
               <p className="text-xs text-accent font-medium">
-                Tip: Pro management a klíčové role doporučujeme Kompletní program (3 akademie).
+                {t('academyProTymy.sections.pricing.tip')}
               </p>
             </div>
 
             {/* Academy Selector */}
             <div className="max-w-4xl mx-auto mb-12">
-              <Label className="text-sm font-semibold text-foreground mb-4 block text-center">Vybrané akademie</Label>
+              <Label className="text-sm font-semibold text-foreground mb-4 block text-center">{t('academyProTymy.form.selectedAcademies')}</Label>
               <div className="flex flex-wrap justify-center gap-3 mb-4">
                 {academyOptions.map((academy) => {
                   const isSelected = selectedAcademies.includes(academy.id);
@@ -602,7 +531,7 @@ const AkademieProTymy = () => {
                         <span className={`ml-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${
                           isSelected ? 'bg-background/20 text-background' : 'bg-accent/20 text-accent'
                         }`}>
-                          Nejlepší hodnota
+                          {t('academyProTymy.badges.bestValue')}
                         </span>
                       )}
                     </button>
@@ -630,7 +559,7 @@ const AkademieProTymy = () => {
                   >
                     {plan.recommended && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-background text-xs font-semibold tracking-wider rounded-full uppercase">
-                        Doporučeno
+                        {t('academyProTymy.pricing.recommended')}
                       </div>
                     )}
                     
@@ -638,29 +567,29 @@ const AkademieProTymy = () => {
                       <h3 className="text-xl font-bold tracking-wider text-foreground uppercase mb-1">
                         {plan.name}
                       </h3>
-                      <p className="text-primary font-semibold text-lg">{plan.licenses} licencí</p>
+                      <p className="text-primary font-semibold text-lg">{plan.licenses} {t('academyProTymy.pricing.licenses')}</p>
                     </div>
 
                     {/* Price */}
                     <div className="text-center mb-6 pb-6 border-b border-border/30">
                       <div className="text-3xl font-bold text-foreground mb-1">
                         {formatPrice(plan.pricePerLicense)} Kč
-                        <span className="text-sm font-normal text-muted-foreground"> / licence</span>
+                        <span className="text-sm font-normal text-muted-foreground"> / {t('academyProTymy.pricing.perLicense')}</span>
                       </div>
                       <p className="text-[10px] text-muted-foreground/70 mt-1 flex items-center justify-center gap-1">
-                        bez DPH
+                        {t('academyProTymy.pricing.exclVat')}
                         <span className="group/tooltip relative cursor-help">
                           <HelpCircle className="w-3 h-3" />
                           <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-card border border-border rounded text-[9px] whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none z-50">
-                            Fakturace B2B. DPH bude připočteno dle sazby.
+                            {t('academyProTymy.pricing.vatNote')}
                           </span>
                         </span>
                       </p>
                       <p className="text-[10px] text-primary/70 mt-1">
-                        Dlouhodobý přístup a studium vlastním tempem.
+                        {t('academyProTymy.pricing.accessNote')}
                       </p>
                       <div className="text-sm text-primary font-medium mt-2">
-                        Celkem: {formatPrice(totalPrice)} Kč (bez DPH)
+                        {t('academyProTymy.pricing.total')}: {formatPrice(totalPrice)} Kč ({t('academyProTymy.pricing.exclVat')})
                       </div>
                     </div>
                     
@@ -688,7 +617,7 @@ const AkademieProTymy = () => {
                       }`}
                       variant={plan.recommended ? "default" : "outline"}
                     >
-                      Chci {plan.name} nabídku
+                      {t('academyProTymy.pricing.wantOffer', { name: plan.name })}
                     </Button>
                   </div>
                 );
@@ -704,10 +633,10 @@ const AkademieProTymy = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase mb-1">
-                      Potřebujete 100+ licencí?
+                      {t('academyProTymy.enterprise.title')}
                     </h3>
                     <p className="text-muted-foreground">
-                      Připravíme nabídku na míru.
+                      {t('academyProTymy.enterprise.description')}
                     </p>
                   </div>
                   <Button 
@@ -715,7 +644,7 @@ const AkademieProTymy = () => {
                     variant="outline"
                     className="border-accent/50 text-accent hover:bg-accent/10"
                   >
-                    Domluvit firemní nabídku
+                    {t('academyProTymy.enterprise.cta')}
                   </Button>
                 </div>
               </div>
@@ -735,47 +664,47 @@ const AkademieProTymy = () => {
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
                   <Sparkles className="w-4 h-4 text-primary" />
                   <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">
-                    Nezávazná poptávka
+                    {t('academyProTymy.form.badge')}
                   </span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase mb-4">
                   <span className="bg-gradient-to-r from-[#00FFFF] via-[#00D4FF] to-[#0080FF] bg-clip-text text-transparent">
-                    Získat nabídku
+                    {t('academyProTymy.form.title')}
                   </span>
                 </h2>
                 <p className="text-muted-foreground">
-                  Vyplňte formulář a my vám do 24 hodin pošleme nabídku na míru
+                  {t('academyProTymy.form.subtitle')}
                 </p>
               </div>
               
               <form ref={formRef} onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl border border-primary/20 space-y-6" data-event="b2b_lead_submit">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Jméno *</Label>
+                    <Label htmlFor="name">{t('academyProTymy.form.name')} *</Label>
                     <Input 
                       id="name" 
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="input-glow"
-                      placeholder="Jan Novák"
+                      placeholder={t('academyProTymy.form.namePlaceholder')}
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="company">Firma *</Label>
+                    <Label htmlFor="company">{t('academyProTymy.form.company')} *</Label>
                     <Input 
                       id="company" 
                       required
                       value={formData.company}
                       onChange={(e) => setFormData({...formData, company: e.target.value})}
                       className="input-glow"
-                      placeholder="Název společnosti"
+                      placeholder={t('academyProTymy.form.companyPlaceholder')}
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="email">E-mail *</Label>
+                  <Label htmlFor="email">{t('academyProTymy.form.email')} *</Label>
                   <Input 
                     id="email" 
                     type="email"
@@ -783,29 +712,29 @@ const AkademieProTymy = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="input-glow"
-                    placeholder="jan.novak@firma.cz"
+                    placeholder={t('academyProTymy.form.emailPlaceholder')}
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="licenses">Počet licencí</Label>
+                  <Label htmlFor="licenses">{t('academyProTymy.form.licensesLabel')}</Label>
                   <Select value={formData.licenses} onValueChange={(value) => setFormData({...formData, licenses: value})}>
                     <SelectTrigger className="input-glow">
-                      <SelectValue placeholder="Vyberte" />
+                      <SelectValue placeholder={t('academyProTymy.form.selectPlaceholder')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="10">10 licencí (Starter)</SelectItem>
-                      <SelectItem value="25">25 licencí (Team)</SelectItem>
-                      <SelectItem value="50">50 licencí (Company)</SelectItem>
-                      <SelectItem value="100+">100+ licencí (Enterprise)</SelectItem>
+                      <SelectItem value="10">10 {t('academyProTymy.pricing.licenses')} (Starter)</SelectItem>
+                      <SelectItem value="25">25 {t('academyProTymy.pricing.licenses')} (Team)</SelectItem>
+                      <SelectItem value="50">50 {t('academyProTymy.pricing.licenses')} (Company)</SelectItem>
+                      <SelectItem value="100+">100+ {t('academyProTymy.pricing.licenses')} (Enterprise)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-3">
-                  <Label>Preferované akademie</Label>
+                  <Label>{t('academyProTymy.form.preferredAcademies')}</Label>
                   <p className="text-xs text-muted-foreground mb-2">
-                    Pro týmy můžete licencovat jednu akademii, nebo kompletní program Master of AI Creativity (3 akademie).
+                    {t('academyProTymy.form.preferredAcademiesNote')}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {academyOptions.map((academy) => {
@@ -848,16 +777,16 @@ const AkademieProTymy = () => {
                           <span className="text-sm text-muted-foreground">
                             {academy.isProgram ? (
                               <>
-                                Kompletní program
+                                {t('academyProTymy.form.completeProgram')}
                                 <br />
-                                <span className="text-xs">(3 akademie)</span>
+                                <span className="text-xs">({t('academyProTymy.form.threeAcademies')})</span>
                               </>
                             ) : (
                               academy.title
                             )}
                           </span>
                           {academy.isProgram && (
-                            <span className="text-[10px] text-accent font-medium">(kompletní program)</span>
+                            <span className="text-[10px] text-accent font-medium">({t('academyProTymy.form.completeProgram').toLowerCase()})</span>
                           )}
                         </button>
                       );
@@ -866,29 +795,29 @@ const AkademieProTymy = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="roles">Cílové role</Label>
+                  <Label htmlFor="roles">{t('academyProTymy.form.targetRoles')}</Label>
                   <Select value={formData.roles} onValueChange={(value) => setFormData({...formData, roles: value})}>
                     <SelectTrigger className="input-glow">
-                      <SelectValue placeholder="Vyberte cílovou skupinu" />
+                      <SelectValue placeholder={t('academyProTymy.form.targetRolesPlaceholder')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="administrativa">Administrativa & Backoffice</SelectItem>
-                      <SelectItem value="obchod">Obchod & Podpora</SelectItem>
-                      <SelectItem value="it">IT & Automatizace</SelectItem>
-                      <SelectItem value="management">Management</SelectItem>
-                      <SelectItem value="mix">Mix rolí</SelectItem>
+                      <SelectItem value="administrativa">{t('academyProTymy.form.roles.admin')}</SelectItem>
+                      <SelectItem value="obchod">{t('academyProTymy.form.roles.sales')}</SelectItem>
+                      <SelectItem value="it">{t('academyProTymy.form.roles.it')}</SelectItem>
+                      <SelectItem value="management">{t('academyProTymy.form.roles.management')}</SelectItem>
+                      <SelectItem value="mix">{t('academyProTymy.form.roles.mix')}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="note">Poznámka</Label>
+                  <Label htmlFor="note">{t('academyProTymy.form.note')}</Label>
                   <Textarea 
                     id="note"
                     value={formData.note}
                     onChange={(e) => setFormData({...formData, note: e.target.value})}
                     className="input-glow min-h-[100px]"
-                    placeholder="Máte specifické požadavky nebo otázky?"
+                    placeholder={t('academyProTymy.form.notePlaceholder')}
                   />
                 </div>
 
@@ -901,9 +830,9 @@ const AkademieProTymy = () => {
                     className="mt-0.5"
                   />
                   <Label htmlFor="gdpr-akademie" className="text-sm text-muted-foreground font-normal cursor-pointer leading-relaxed">
-                    Souhlasím se zpracováním osobních údajů za účelem domluvy / zpracování poptávky.{" "}
-                    <Link to="/gdpr-cookies" className="text-primary hover:underline">
-                      (více)
+                    {t('academyProTymy.form.gdprConsent')}{" "}
+                    <Link to={getLocalizedHref('/gdpr-cookies')} className="text-primary hover:underline">
+                      ({t('academyProTymy.form.gdprMore')})
                     </Link>
                   </Label>
                 </div>
@@ -919,7 +848,7 @@ const AkademieProTymy = () => {
                       onClick={() => setSubmitError(null)}
                       className="border-destructive/50 text-destructive hover:bg-destructive/10"
                     >
-                      Zkusit znovu
+                      {t('academyProTymy.form.tryAgain')}
                     </Button>
                   </div>
                 )}
@@ -934,10 +863,10 @@ const AkademieProTymy = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                      Odesílám...
+                      {t('academyProTymy.form.submitting')}
                     </>
                   ) : (
-                    "Získat nabídku"
+                    t('academyProTymy.form.submit')
                   )}
                 </Button>
               </form>
