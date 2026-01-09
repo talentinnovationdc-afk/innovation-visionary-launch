@@ -380,7 +380,7 @@ const AgentiAutomatizace = () => {
               </h2>
             </div>
             
-            <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
               <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                 <Award className="w-10 h-10 text-primary mx-auto mb-4" />
                 <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Certifikát</h3>
