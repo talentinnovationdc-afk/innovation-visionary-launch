@@ -395,11 +395,6 @@ const ChatGPTAkademie = () => {
                 <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Dlouhodobý přístup</h3>
                 <p className="text-xs text-muted-foreground">Studujte vlastním tempem</p>
               </div>
-              <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
-                <RefreshCw className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Aktualizovaný obsah</h3>
-                <p className="text-xs text-muted-foreground">Průběžně udržovaný</p>
-              </div>
             </div>
             
             <p className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto">
