@@ -2,15 +2,22 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
-import { CheckCircle, FileText, ShieldCheck } from "lucide-react";
+import { CheckCircle, FileText } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ObchodniPodminky = () => {
+  const { t } = useTranslation();
+  const { language, getLocalizedHref } = useLanguage();
+
+  const summaryItems = t('pages.obchodniPodminky.summary.items', { returnObjects: true }) as string[];
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Obchodní podmínky | Talent Innovation" 
-        description="Obchodní podmínky pro využívání online akademií, digitálních služeb, diagnostik a AI implementací Talent Innovation."
-        path="/obchodni-podminky"
+        title={t('pages.obchodniPodminky.seo.title')} 
+        description={t('pages.obchodniPodminky.seo.description')}
+        path={language === 'en' ? '/en/terms-and-conditions' : '/obchodni-podminky'}
       />
       <Navbar />
       
@@ -20,20 +27,19 @@ const ObchodniPodminky = () => {
             {/* Hero */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4">
               <span className="heading-hero uppercase">
-                Obchodní podmínky Talent Innovation
+                {t('pages.obchodniPodminky.hero.title')}
               </span>
             </h1>
 
             <div className="glass-card p-6 md:p-8 mb-8">
               <p className="text-muted-foreground mb-4">
-                Tyto obchodní podmínky upravují pravidla pro využívání našich online akademií, 
-                digitálních služeb, diagnostik a AI implementací.
+                {t('pages.obchodniPodminky.hero.intro')}
               </p>
               <p className="text-muted-foreground mb-4">
-                Chceme, aby byly srozumitelné, férové a odpovídaly způsobu, jakým s klienty skutečně spolupracujeme.
+                {t('pages.obchodniPodminky.hero.fair')}
               </p>
               <p className="text-sm text-muted-foreground/80">
-                <strong>Platné od:</strong> 1. 1. 2026
+                <strong>{t('pages.obchodniPodminky.hero.validFrom')}</strong> 1. 1. 2026
               </p>
             </div>
 
@@ -44,19 +50,12 @@ const ObchodniPodminky = () => {
                   <FileText className="h-5 w-5 text-primary" />
                 </div>
                 <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                  Stručně a srozumitelně
+                  {t('pages.obchodniPodminky.summary.title')}
                 </h2>
               </div>
               
               <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  "Online obsah je zpřístupněn do 24 hodin po zaplacení",
-                  "Kurzy a akademie studujete vlastním tempem",
-                  "U digitálního obsahu není zákonné 14denní odstoupení",
-                  
-                  "Obsah je chráněn autorským právem",
-                  "Data zpracováváme v souladu s GDPR",
-                ].map((item, index) => (
+                {summaryItems.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground text-sm">{item}</span>
@@ -68,230 +67,80 @@ const ObchodniPodminky = () => {
             {/* 1. Úvodní ustanovení */}
             <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
               <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                1. Úvodní ustanovení
+                {language === 'cs' ? '1. Úvodní ustanovení' : '1. Introduction'}
               </h2>
               
               <p>
-                <strong className="text-foreground">1.1</strong> Tyto obchodní podmínky (dále jen „Podmínky") upravují práva a povinnosti mezi společností:
+                <strong className="text-foreground">1.1</strong> {language === 'cs' 
+                  ? 'Tyto obchodní podmínky (dále jen „Podmínky") upravují práva a povinnosti mezi společností:'
+                  : 'These terms and conditions (hereinafter "Terms") govern the rights and obligations between:'}
               </p>
               
               <div className="bg-card/50 p-4 rounded-lg space-y-1">
                 <p className="text-foreground font-medium">Talent Innovation s.r.o.</p>
-                <p>IČO: 28380070</p>
-                <p>Sídlo: Husinecká 903/10, 130 00 Praha 3</p>
-                <p>Zapsaná v OR vedeném Městským soudem v Praze, oddíl C, vložka 137574</p>
-                <p className="text-sm mt-2">(dále jen „Poskytovatel")</p>
+                <p>{language === 'cs' ? 'IČO: 28380070' : 'Company ID: 28380070'}</p>
+                <p>{language === 'cs' ? 'Sídlo: Husinecká 903/10, 130 00 Praha 3' : 'Address: Husinecká 903/10, 130 00 Prague 3, Czech Republic'}</p>
+                <p>{language === 'cs' 
+                  ? 'Zapsaná v OR vedeném Městským soudem v Praze, oddíl C, vložka 137574'
+                  : 'Registered in the Commercial Register at the Municipal Court in Prague, Section C, Insert 137574'}</p>
+                <p className="text-sm mt-2">{language === 'cs' ? '(dále jen „Poskytovatel")' : '(hereinafter "Provider")'}</p>
               </div>
               
               <p>
-                a fyzickou nebo právnickou osobou (dále jen „Zákazník"), která využívá služby Poskytovatele.
+                {language === 'cs' 
+                  ? 'a fyzickou nebo právnickou osobou (dále jen „Zákazník"), která využívá služby Poskytovatele.'
+                  : 'and a natural or legal person (hereinafter "Customer") who uses the Provider\'s services.'}
               </p>
 
               <p>
-                <strong className="text-foreground">1.2</strong> Kontaktní údaje:
+                <strong className="text-foreground">1.2</strong> {language === 'cs' ? 'Kontaktní údaje:' : 'Contact details:'}
               </p>
               <ul className="list-none space-y-1 ml-4">
-                <li>E-mail: <a href="mailto:daniel.cerveny@t-i.cz" className="text-primary hover:underline">daniel.cerveny@t-i.cz</a></li>
-                <li>Telefon: <a href="tel:+420733611425" className="text-primary hover:underline">+420 733 611 425</a></li>
+                <li>{language === 'cs' ? 'E-mail' : 'Email'}: <a href="mailto:daniel.cerveny@t-i.cz" className="text-primary hover:underline">daniel.cerveny@t-i.cz</a></li>
+                <li>{language === 'cs' ? 'Telefon' : 'Phone'}: <a href="tel:+420733611425" className="text-primary hover:underline">+420 733 611 425</a></li>
               </ul>
             </div>
 
             {/* 2. Předmět smlouvy */}
             <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
               <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                2. Předmět smlouvy
+                {language === 'cs' ? '2. Předmět smlouvy' : '2. Subject of Agreement'}
               </h2>
               
               <p>
-                <strong className="text-foreground">2.1</strong> Předmětem smlouvy je poskytnutí digitálních služeb, zejména:
+                <strong className="text-foreground">2.1</strong> {language === 'cs' 
+                  ? 'Předmětem smlouvy je poskytnutí digitálních služeb, zejména:'
+                  : 'The subject of the agreement is the provision of digital services, including:'}
               </p>
               <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>online vzdělávacích akademií</li>
-                <li>digitálních kurzů a studijních materiálů</li>
-                <li>AI QuickScan a diagnostik</li>
-                <li>návrhu a implementace AI workflow, agentů a automatizací</li>
-              </ul>
-
-              <p>
-                <strong className="text-foreground">2.2</strong> Služby mohou být poskytovány:
-              </p>
-              <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>on-demand (předem nahraný obsah)</li>
-                <li>asynchronně (bez pevného času)</li>
-                <li>projektově (u firemních zakázek)</li>
+                <li>{language === 'cs' ? 'online vzdělávacích akademií' : 'online educational academies'}</li>
+                <li>{language === 'cs' ? 'digitálních kurzů a studijních materiálů' : 'digital courses and study materials'}</li>
+                <li>{language === 'cs' ? 'AI QuickScan a diagnostik' : 'AI QuickScan and diagnostics'}</li>
+                <li>{language === 'cs' ? 'návrhu a implementace AI workflow, agentů a automatizací' : 'design and implementation of AI workflows, agents, and automation'}</li>
               </ul>
             </div>
 
-            {/* 3. Objednávka a uzavření smlouvy */}
+            {/* 6. Odstoupení od smlouvy */}
             <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
               <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                3. Objednávka a uzavření smlouvy
+                {language === 'cs' ? '6. Odstoupení od smlouvy' : '6. Withdrawal from Agreement'}
               </h2>
               
               <p>
-                <strong className="text-foreground">3.1</strong> Prezentace služeb na webu má informativní charakter.
-              </p>
-
-              <p>
-                <strong className="text-foreground">3.2</strong> Smlouva vzniká:
-              </p>
-              <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>u online produktů: dokončením objednávky a zaplacením</li>
-                <li>u firemních služeb: potvrzením nabídky nebo objednávky</li>
-              </ul>
-
-              <p>
-                <strong className="text-foreground">3.3</strong> Odesláním objednávky Zákazník potvrzuje souhlas s těmito Podmínkami.
-              </p>
-            </div>
-
-            {/* 4. Cena a platební podmínky */}
-            <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
-              <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                4. Cena a platební podmínky
-              </h2>
-              
-              <p>
-                <strong className="text-foreground">4.1</strong> Ceny jsou uvedeny na webu:
-              </p>
-              <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>u online akademií jako konečné</li>
-                <li>u firemních služeb dle individuální nabídky</li>
-              </ul>
-
-              <p>
-                <strong className="text-foreground">4.2</strong> Platba probíhá:
-              </p>
-              <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>online kartou (Stripe)</li>
-                <li>nebo na základě faktury (B2B)</li>
-              </ul>
-
-              <p>
-                <strong className="text-foreground">4.3</strong> Po zaplacení je vystaven daňový doklad.
-              </p>
-            </div>
-
-            {/* 5. Zpřístupnění služeb */}
-            <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
-              <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                5. Zpřístupnění služeb
-              </h2>
-              
-              <p>
-                <strong className="text-foreground">5.1</strong> Online akademie jsou zpřístupněny do 24 hodin po úhradě.
-              </p>
-
-              <p>
-                <strong className="text-foreground">5.2</strong> Přístup je časově omezen dle popisu produktu (standardně dlouhodobý přístup).
-              </p>
-
-              <p>
-                <strong className="text-foreground">5.3</strong> Zákazník odpovídá za své technické vybavení.
-              </p>
-            </div>
-
-            {/* 6. Odstoupení od smlouvy a garance */}
-            <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
-              <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                6. Odstoupení od smlouvy a garance
-              </h2>
-              
-              <p>
-                <strong className="text-foreground">6.1</strong> U digitálního obsahu není možné odstoupit od smlouvy do 14 dnů 
-                dle § 1837 občanského zákoníku, jelikož je plnění zahájeno okamžitě.
-              </p>
-
-            </div>
-
-            {/* 7. Autorská práva a licence */}
-            <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
-              <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                7. Autorská práva a licence
-              </h2>
-              
-              <p>
-                <strong className="text-foreground">7.1</strong> Veškerý obsah je chráněn autorským právem.
-              </p>
-
-              <p>
-                <strong className="text-foreground">7.2</strong> Zakoupením služby vzniká nevýhradní licence k osobnímu nebo internímu firemnímu užití.
-              </p>
-
-              <p>
-                <strong className="text-foreground">7.3</strong> Je zakázáno:
-              </p>
-              <ul className="list-disc list-inside space-y-1 ml-4">
-                <li>sdílení přístupů</li>
-                <li>další šíření obsahu</li>
-                <li>komerční využití bez souhlasu</li>
-              </ul>
-            </div>
-
-            {/* 8. Ochrana osobních údajů */}
-            <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
-              <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                8. Ochrana osobních údajů
-              </h2>
-              
-              <p>
-                <strong className="text-foreground">8.1</strong> Osobní údaje jsou zpracovávány v souladu s GDPR.
-              </p>
-
-              <p>
-                <strong className="text-foreground">8.2</strong> Podrobnosti jsou uvedeny v samostatném dokumentu{" "}
-                <Link to="/gdpr-cookies" className="text-primary hover:underline">
-                  „Zásady ochrany osobních údajů"
-                </Link>.
-              </p>
-            </div>
-
-            {/* 9. Odpovědnost a reklamace */}
-            <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
-              <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                9. Odpovědnost a reklamace
-              </h2>
-              
-              <p>
-                <strong className="text-foreground">9.1</strong> Poskytovatel odpovídá za funkčnost služeb.
-              </p>
-
-              <p>
-                <strong className="text-foreground">9.2</strong> Neodpovídá za konkrétní obchodní či finanční výsledky dosažené aplikací znalostí.
-              </p>
-
-              <p>
-                <strong className="text-foreground">9.3</strong> Reklamace lze uplatnit e-mailem.
-              </p>
-            </div>
-
-            {/* 10. Závěrečná ustanovení */}
-            <div className="glass-card p-6 md:p-8 space-y-4 text-muted-foreground mb-8">
-              <h2 className="text-lg font-semibold text-foreground tracking-[0.1em] uppercase">
-                10. Závěrečná ustanovení
-              </h2>
-              
-              <p>
-                <strong className="text-foreground">10.1</strong> Právní vztahy se řídí právem ČR.
-              </p>
-
-              <p>
-                <strong className="text-foreground">10.2</strong> Spotřebitel má právo na mimosoudní řešení sporu u České obchodní inspekce.
-              </p>
-
-              <p>
-                <strong className="text-foreground">10.3</strong> Poskytovatel si vyhrazuje právo podmínky aktualizovat.
+                <strong className="text-foreground">6.1</strong> {language === 'cs' 
+                  ? 'U digitálního obsahu není možné odstoupit od smlouvy do 14 dnů dle § 1837 občanského zákoníku, jelikož je plnění zahájeno okamžitě.'
+                  : 'For digital content, it is not possible to withdraw from the agreement within 14 days pursuant to § 1837 of the Civil Code, as fulfillment begins immediately.'}
               </p>
             </div>
 
             {/* Footer note */}
             <div className="glass-card p-6 md:p-8 text-center">
               <p className="text-muted-foreground mb-4">
-                Tyto podmínky chrání obě strany a umožňují nám poskytovat služby bezpečně, transparentně a profesionálně.
+                {t('pages.obchodniPodminky.footer.note')}
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <Link to="/gdpr-cookies" className="text-primary hover:underline">
-                  Zásady ochrany osobních údajů a Cookies
+                <Link to={getLocalizedHref('/gdpr-cookies')} className="text-primary hover:underline">
+                  {t('pages.obchodniPodminky.footer.gdprLink')}
                 </Link>
               </div>
             </div>

@@ -338,6 +338,69 @@
       "seo": {
         "title": "O nás – Talent Innovation",
         "description": "Pomáháme firmám zrychlit práci díky AI. Měřitelně, bezpečně a škálovatelně."
+      },
+      "hero": {
+        "title1": "Architekti digitální",
+        "title2": "autonomie",
+        "description": "Strategie, workflow a školení, díky kterým týmy pracují rychleji – bezpečně a měřitelně."
+      },
+      "team": {
+        "title": "EXPERTNÍ TÝM",
+        "subtitle": "Kombinace strategického vedení a technické excelence pro vaši digitální transformaci."
+      },
+      "whyItWorks": {
+        "title": "PROČ TO FUNGUJE",
+        "outputs": "Výstupy do 14 dnů",
+        "outputsDesc": "Rychlé výhry a měřitelné výsledky.",
+        "impact": "Měření dopadu",
+        "impactDesc": "Čas, kvalita, chybovost — víte, co funguje.",
+        "adoption": "Práce s adopcí",
+        "adoptionDesc": "Lidé + pravidla — aby se řešení ujalo."
+      },
+      "dna": {
+        "title": "NA ČEM SI ZAKLÁDÁME",
+        "subtitle": "Principy, které nás odlišují."
+      },
+      "finalCta": {
+        "title": "Chcete zjistit, kde AI ušetří nejvíc času?",
+        "description": "Začněte 15minutovou diagnostikou – zjistíme, kde má AI smysl právě u vás.",
+        "helper": "bez závazku • ozveme se do 24 hodin"
+      },
+      "experts": {
+        "daniel": {
+          "role": "STRATEGIE & PRODUKTY",
+          "description": "Navrhuje strategii a roadmapu, identifikuje quick wins v rolích a procesech a převádí je do měřitelných výsledků.",
+          "clientValue": "Co přináším klientovi: Jasný plán, kde AI ušetří čas a peníze – s měřitelným dopadem.",
+          "focus": ["Bezpečné workflow", "Governance a pravidla", "Měření dopadu"]
+        },
+        "jan": {
+          "role": "AI ARCHITEKTURA & AUTOMATIZACE",
+          "description": "Navrhuje spolehlivé AI workflow, integrace a automatizace tak, aby fungovaly v běžném provozu – bezpečně a měřitelně.",
+          "clientValue": "Co přináším klientovi: Workflow a automatizace, které fungují každý den – bez komplikací.",
+          "focus": ["Automatizace procesů", "Standardy a šablony", "Bezpečné workflow"]
+        }
+      },
+      "dnaCards": {
+        "regulation": {
+          "title": "REGULACE (POKUD RELEVANTNÍ)",
+          "subtitle": "PRAVIDLA",
+          "description": "Pravidla pro AI nastavíme tak, aby seděla vašemu oboru. Regulace řešíme jen když je relevantní."
+        },
+        "precision": {
+          "title": "PROVOZNÍ PRECIZNOST",
+          "subtitle": "WORKFLOW",
+          "description": "Workflow navrhujeme tak, aby šly používat každý den – i bez AI nadšenců v týmu."
+        },
+        "data": {
+          "title": "OCHRANA DAT",
+          "subtitle": "GDPR",
+          "description": "Jasně určíte, co smí do AI, kdo má přístup a jak pracovat s citlivými daty."
+        },
+        "automation": {
+          "title": "AUTOMATIZACE NA MÍRU",
+          "subtitle": "MĚŘENÍ DOPADU",
+          "description": "Z opakovaných úkolů uděláme automatizaci – s měřením dopadu."
+        }
       }
     },
 
@@ -348,19 +411,124 @@
         "description": "Spolupracujeme s předními firmami v oblasti průmyslu a technologií."
       },
       "hero": {
-        "title": "Reference",
-        "subtitle": "Spolupracujeme s lídry v průmyslu a technologiích"
+        "title": "Reference a spolupráce",
+        "description": "Pomáháme týmům proměnit AI v reálnou úsporu času: od prvních rychlých výher až po škálovatelné workflow.",
+        "descriptionHighlight": "Zavádíme nástroje, školíme praxi a navrhujeme automatizace na míru.",
+        "cta": "Domluvit diagnostiku (15 min)",
+        "ctaSecondary": "Zobrazit služby pro firmy",
+        "helper": "Bez závazku • ozveme se do 24 hodin"
       },
       "logoStrip": {
-        "title": "Důvěřují nám lídři v průmyslu a technologiích"
+        "title": "Důvěřují nám lídři v průmyslu a technologiích",
+        "disclaimer": "Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně."
+      },
+      "cooperation": {
+        "title": "Co spolupráce obvykle zahrnuje",
+        "subtitle": "Každý projekt je jedinečný, ale typicky pomáháme v těchto oblastech.",
+        "training": {
+          "title": "AI školení a akademie",
+          "description": "Praktické workshopy a kurzy pro týmy, které chtějí efektivně využívat AI nástroje v každodenní práci."
+        },
+        "workflow": {
+          "title": "Návrh AI workflow",
+          "description": "Analýza procesů a návrh optimálních postupů pro integraci AI do existujících firemních procesů."
+        },
+        "automation": {
+          "title": "Automatizace činností",
+          "description": "Identifikace a automatizace rutinních úkolů, které zabírají čas a odvádějí pozornost od klíčové práce."
+        },
+        "agents": {
+          "title": "AI agenti na míru",
+          "description": "Vývoj digitálních kolegů na míru, kteří převezmou konkrétní opakující se úkoly ve vašem týmu."
+        }
+      },
+      "safe": {
+        "title": "BEZPEČNÉ A OVĚŘENÉ NASAZENÍ",
+        "subtitle": "Proč nám důvěřují desítky firem v citlivých odvětvích.",
+        "safeStart": {
+          "title": "BEZPEČNÝ START",
+          "subtitle": "1250+ absolventů",
+          "description": "Začneme na rolích a rychlých výhrách. Jasná pravidla pro data, přístupy a používání AI."
+        },
+        "dataControl": {
+          "title": "DATA POD KONTROLOU",
+          "subtitle": "GDPR & firemní pravidla",
+          "description": "Nastavíme, co smí do AI, kdo má přístup a jak pracovat s citlivými daty. GDPR a pravidla firmy respektujeme."
+        },
+        "measurable": {
+          "title": "MĚŘITELNÉ VÝSLEDKY",
+          "subtitle": "Čas, kvalita, chybovost",
+          "description": "Měříme dopad: ušetřený čas, kvalitu výstupů a chybovost. Víte, co funguje."
+        },
+        "knowhow": {
+          "title": "KNOW-HOW ZŮSTÁVÁ VE FIRMĚ",
+          "subtitle": "Skillset & standardy",
+          "description": "Tým získá skillset a standardy. HR má přehled o dokončení a jednotný způsob práce."
+        }
+      },
+      "finalCta": {
+        "title": "ZJISTĚTE, KDE AI PŘINESE NEJVĚTŠÍ ÚSPORY",
+        "description": "Začněte 15minutovou diagnostikou. Řekneme vám, kde má AI smysl.",
+        "helper": "Bez závazku • ozveme se do 24 hodin"
       }
     },
 
     "poptavka": {
       "_path": "/poptavka",
       "seo": {
-        "title": "Poptávka – domluvte si diagnostiku",
-        "description": "Vyplňte krátký formulář a ozveme se do 24 hodin."
+        "title": "Rychlá diagnostika: kde vám AI ušetří čas | Talent Innovation",
+        "description": "Za 15 minut zjistíte, kde ve vašich rolích a procesech vzniká zbytečná zátěž. Bezpečně. Prakticky. S měřitelným dopadem."
+      },
+      "hero": {
+        "title": "Rychlá diagnostika: kde vám AI ušetří čas",
+        "duration": "(15 minut)",
+        "description": "Zjistíme, kde ve vašich rolích a procesech vzniká zbytečná zátěž.",
+        "benefits": "Bezpečně. Prakticky. S měřitelným dopadem.",
+        "nextSteps": "Do 24 hodin navrhneme termín krátkého hovoru a pošleme stručný checklist.",
+        "noSales": "Bez závazků. Bez prodeje."
+      },
+      "whatYouGet": "Co dostanete",
+      "deliverables": {
+        "roleMap": {
+          "title": "Mapa rolí a procesů",
+          "description": "Kde vznikají zbytečné ztráty času (PDF + komentář)."
+        },
+        "quickWins": {
+          "title": "3–10 quick wins",
+          "description": "Konkrétní zlepšení, která lze zavést rychle a bezpečně."
+        },
+        "procedure": {
+          "title": "Doporučený postup",
+          "description": "Co řešit první — podle času, kvality a chybovosti."
+        },
+        "security": {
+          "title": "Bezpečnostní rámec",
+          "description": "Data, přístupy a pravidla používání AI."
+        }
+      },
+      "teamSize": "Velikost týmu",
+      "whatToImprove": "Co chcete zlepšit",
+      "selectPlaceholder": "Vyberte...",
+      "improvements": {
+        "admin": "Administrativa",
+        "sales": "Obchod",
+        "hr": "HR",
+        "backOffice": "Back-office",
+        "operations": "Operace",
+        "management": "Management",
+        "other": "Jiné"
+      },
+      "painPoint": "Co vás dnes nejvíc brzdí?",
+      "oneSentenceOptional": "1 věta, volitelné",
+      "painPointPlaceholder": "Např. reporting, e-maily, nabídky, onboarding…",
+      "optional": "volitelné",
+      "submitCta": "Získat rychlou diagnostiku",
+      "responseNote": "Odpověď do 24 hodin. Bez spamu.",
+      "tryAgain": "Zkusit znovu",
+      "errors": {
+        "gdprRequired": "Pro odeslání je nutný souhlas se zpracováním osobních údajů.",
+        "timeout": "Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.",
+        "generic": "Odeslání se nepovedlo. Zkuste to prosím znovu."
       }
     },
 
@@ -394,6 +562,53 @@
       "seo": {
         "title": "Ochrana osobních údajů a cookies",
         "description": "Informace o zpracování osobních údajů a používání cookies."
+      },
+      "hero": {
+        "title": "Ochrana osobních údajů a cookies",
+        "validFrom": "Platnost od:"
+      },
+      "admin": {
+        "title": "Správce osobních údajů:",
+        "company": "Talent Innovation s.r.o.",
+        "ico": "IČO: 28380070",
+        "country": "Sídlo: Česká republika",
+        "emailLabel": "E-mail:",
+        "note": "(dále jen 'Talent Innovation')"
+      },
+      "sections": {
+        "intro": {
+          "title": "1. Úvod",
+          "p1": "V Talent Innovation pomáháme firmám i jednotlivcům pracovat efektivněji pomocí umělé inteligence, automatizace a digitálních workflow.",
+          "p2strong1": "bezpečné a smysluplné využívání AI",
+          "p2strong2": "ochranu osobních údajů a transparentní nakládání s daty",
+          "thisDocExplains": "Tento dokument vysvětluje:",
+          "bullets": [
+            "jaké údaje zpracováváme,",
+            "proč je zpracováváme,",
+            "jak dlouho je uchováváme,",
+            "jaká máte práva."
+          ]
+        },
+        "services": {
+          "title": "2. Jakých služeb se zpracování údajů týká",
+          "intro": "Osobní údaje zpracováváme výhradně v souvislosti s reálnými službami na webu www.t-i.cz, zejména:",
+          "forBusiness": "Pro firmy",
+          "forBusinessItems": [
+            "Rychlá diagnostika (15 minut)",
+            "AI QuickScan (mapa rolí, procesů a quick wins)",
+            "AI agenti a automatizace na míru",
+            "Akademie pro týmy (firemní licence, onboarding, reporting)"
+          ],
+          "forProfessionals": "Pro profesionály",
+          "forProfessionalsItems": [
+            "Online akademie",
+            "ChatGPT Akademie",
+            "Microsoft Copilot Akademie",
+            "Agenti & Automatizace Akademie",
+            "Master of AI Creativity",
+            "Certifikáty a LinkedIn odznaky"
+          ]
+        }
       }
     },
 
@@ -402,6 +617,134 @@
       "seo": {
         "title": "Obchodní podmínky",
         "description": "Obchodní podmínky pro nákup online akademií a služeb."
+      },
+      "hero": {
+        "title": "Obchodní podmínky Talent Innovation",
+        "intro": "Tyto obchodní podmínky upravují pravidla pro využívání našich online akademií, digitálních služeb, diagnostik a AI implementací.",
+        "fair": "Chceme, aby byly srozumitelné, férové a odpovídaly způsobu, jakým s klienty skutečně spolupracujeme.",
+        "validFrom": "Platné od:"
+      },
+      "summary": {
+        "title": "Stručně a srozumitelně",
+        "items": [
+          "Online obsah je zpřístupněn do 24 hodin po zaplacení",
+          "Kurzy a akademie studujete vlastním tempem",
+          "U digitálního obsahu není zákonné 14denní odstoupení",
+          "Obsah je chráněn autorským právem",
+          "Data zpracováváme v souladu s GDPR"
+        ]
+      },
+      "footer": {
+        "note": "Tyto podmínky chrání obě strany a umožňují nám poskytovat služby bezpečně, transparentně a profesionálně.",
+        "gdprLink": "Zásady ochrany osobních údajů a Cookies"
+      }
+    },
+
+    "metodika": {
+      "_path": "/metodika",
+      "seo": {
+        "title": "Jak pracujeme – bezpečná AI implementace pro firmy",
+        "description": "5 kroků k měřitelné produktivitě díky AI. Diagnostika, plán, implementace, zaškolení a evoluce. Bez závazku."
+      },
+      "hero": {
+        "label": "JAK PRACUJEME",
+        "title1": "Jak z AI uděláme produktivitu",
+        "title2": "ve vašem týmu",
+        "description": "Nezačínáme nástrojem. Začínáme rolí, procesem a rychlými výhrami. Technologii přidáváme až když má měřitelný smysl.",
+        "helper": "Startujeme 15min diagnostikou. Když dává smysl, navážeme Mapou úspor (14 dní).",
+        "cta": "Domluvit diagnostiku (15 min)",
+        "ctaSecondary": "Zobrazit akademie"
+      },
+      "quickWins": {
+        "title": "CO ZÍSKÁTE BĚHEM PRVNÍCH 14 DNŮ",
+        "subtitle": "Rychlý start s měřitelnými výsledky.",
+        "roleMap": {
+          "title": "MAPA ROLÍ A ÚZKÝCH MÍST",
+          "description": "Kde AI ušetří nejvíc času."
+        },
+        "quickWinsList": {
+          "title": "SEZNAM QUICK WINS",
+          "description": "3–10 konkrétních zlepšení."
+        },
+        "securityFrame": {
+          "title": "BEZPEČNOSTNÍ RÁMEC",
+          "description": "Data, přístupy, pravidla použití."
+        },
+        "roiRoadmap": {
+          "title": "ROI ROADMAP",
+          "description": "Co se vyplatí dělat první."
+        }
+      },
+      "timeline": {
+        "title": "CESTA K DIGITÁLNÍ AUTONOMII",
+        "subtitle": "Začínáme rolemi a procesy, kde je nejrychlejší přínos. Technologie přidáváme až tehdy, když dává měřitelný smysl.",
+        "step": "KROK",
+        "steps": {
+          "diagnostics": {
+            "title": "DIAGNOSTIKA (MAPA ÚSPOR)",
+            "description": "Najdeme role a procesy s největší úsporou času a nízkým rizikem. Výstup: mapa příležitostí + rychlé výhry."
+          },
+          "plan": {
+            "title": "PLÁN (ROI + PRAVIDLA)",
+            "description": "Navrhneme postup a pravidla: data, nástroje, pravidla použití a odpovědnosti.",
+            "note": "Regulace (AI Act/ISO) řešíme jen pokud je to pro váš obor relevantní."
+          },
+          "implementation": {
+            "title": "IMPLEMENTACE (PILOT)",
+            "description": "Nasadíme workflow a automatizace. Dopad měříme (čas, kvalita, chybovost)."
+          },
+          "training": {
+            "title": "ZAŠKOLENÍ (ADOPCE)",
+            "description": "Tým dostane know-how a přístup do Online akademie. HR má přehled o dokončení."
+          },
+          "evolution": {
+            "title": "EVOLUCE (ŠKÁLOVÁNÍ)",
+            "description": "Průběžně ladíme a rozšiřujeme podle výsledků a změn ve firmě."
+          }
+        }
+      },
+      "choosePath": {
+        "title": "VYBERTE SI CESTU",
+        "subtitle": "Firemní implementace nebo individuální rozvoj.",
+        "forBusiness": {
+          "title": "PRO FIRMY",
+          "description": "Produktivita rolí + bezpečné workflow. Diagnostika, implementace a měření výsledků.",
+          "cta": "Rychlá diagnostika"
+        },
+        "forProfessionals": {
+          "title": "PRO PROFESIONÁLY",
+          "description": "Certifikát + LinkedIn odznak + studium vlastním tempem. 3 akademie nebo kompletní program.",
+          "cta": "Online akademie ze záznamu"
+        }
+      },
+      "dna": {
+        "title": "NA ČEM SI ZAKLÁDÁME",
+        "subtitle": "Principy, které nás odlišují.",
+        "impact": {
+          "title": "MĚŘENÍ DOPADU",
+          "subtitle": "VÝSLEDKY",
+          "description": "Čas, kvalitu a chybovost měříme. Víte, co funguje."
+        },
+        "custom": {
+          "title": "ŘEŠENÍ NA MÍRU",
+          "subtitle": "PROCESY",
+          "description": "Analyzujeme reálné procesy, ne obecné šablony."
+        },
+        "safe": {
+          "title": "BEZPEČNÉ POUŽITÍ",
+          "subtitle": "PRAVIDLA",
+          "description": "Data, přístupy a odpovědnosti nastavíme od začátku."
+        },
+        "data": {
+          "title": "OCHRANA DAT",
+          "subtitle": "GDPR / DSA",
+          "description": "Vaše data zůstávají pod kontrolou."
+        }
+      },
+      "finalCta": {
+        "title": "PŘIPRAVENI ZAČÍT?",
+        "description": "Začněte 15minutovou diagnostikou. Řekneme vám, kde má AI největší smysl.",
+        "helper": "bez závazku • ozveme se do 24 hodin"
       }
     }
   },
