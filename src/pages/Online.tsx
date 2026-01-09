@@ -31,6 +31,8 @@ const Online = () => {
   const { language, getLocalizedHref } = useLanguage();
   const [certModalOpen, setCertModalOpen] = useState(false);
 
+  const currency = language === 'cs' ? 'Kč' : 'CZK';
+
   const courses = [
     {
       id: 0,
@@ -46,9 +48,10 @@ const Online = () => {
       topOutputs: language === 'cs'
         ? ["Metodika napříč firmou", "Kompletní šablony", "Hlavní LinkedIn odznak"]
         : ["Company-wide methodology", "Complete templates", "Main LinkedIn badge"],
-      price: language === 'cs' ? "9 970 Kč" : "€399",
+      price: `9 970 ${currency}`,
       icon: Crown,
-      link: "https://buy.stripe.com/aFadRaftA8Rj0Kf9r06Ri09",
+      buyLink: "https://buy.stripe.com/aFadRaftA8Rj0Kf9r06Ri09",
+      syllabusLink: getLocalizedHref("/online/master-of-ai-creativity"),
       isProgram: true
     },
     {
@@ -65,9 +68,10 @@ const Online = () => {
       topOutputs: language === 'cs'
         ? ["Šablony e-mailů", "Prompt pack", "Certifikát + odznak"]
         : ["Email templates", "Prompt pack", "Certificate + badge"],
-      price: language === 'cs' ? "4 470 Kč" : "€179",
+      price: `4 470 ${currency}`,
       icon: MessageSquare,
-      link: "https://buy.stripe.com/4gM8wQ2GO9Vn2SnfPo6Ri03",
+      buyLink: "https://buy.stripe.com/4gM8wQ2GO9Vn2SnfPo6Ri03",
+      syllabusLink: getLocalizedHref("/online/chatgptakademie"),
       isProgram: false
     },
     {
@@ -84,9 +88,10 @@ const Online = () => {
       topOutputs: language === 'cs'
         ? ["Šablony v Excelu", "Outlook/Teams workflow", "Certifikát + odznak"]
         : ["Excel templates", "Outlook/Teams workflow", "Certificate + badge"],
-      price: language === 'cs' ? "4 470 Kč" : "€179",
+      price: `4 470 ${currency}`,
       icon: Wand2,
-      link: "https://buy.stripe.com/eVq8wQepw9Vn3Wr8mW6Ri02",
+      buyLink: "https://buy.stripe.com/eVq8wQepw9Vn3Wr8mW6Ri02",
+      syllabusLink: getLocalizedHref("/online/copilotakademie"),
       isProgram: false
     },
     {
@@ -103,9 +108,10 @@ const Online = () => {
       topOutputs: language === 'cs'
         ? ["Automatizační blueprint", "Agentní šablony", "Certifikát + odznak"]
         : ["Automation blueprint", "Agent templates", "Certificate + badge"],
-      price: language === 'cs' ? "4 970 Kč" : "€199",
+      price: `4 970 ${currency}`,
       icon: Bot,
-      link: "https://buy.stripe.com/14A00k2GOffHfF946G6Ri01",
+      buyLink: "https://buy.stripe.com/14A00k2GOffHfF946G6Ri01",
+      syllabusLink: getLocalizedHref("/online/agentiautomatizace"),
       isProgram: false
     }
   ];
@@ -513,11 +519,17 @@ const Online = () => {
                       
                       <div className="mt-auto">
                         <p className={`text-2xl font-bold ${isProgram ? 'text-accent' : 'text-primary'} mb-3`}>{course.price}</p>
-                        <a href={course.link} target="_blank" rel="noopener noreferrer">
+                        <a href={course.buyLink} target="_blank" rel="noopener noreferrer">
                           <Button className={`w-full ${isProgram ? 'bg-accent hover:bg-accent/90' : ''}`}>
                             {language === 'cs' ? 'Koupit' : 'Buy'}
                           </Button>
                         </a>
+                        <Link 
+                          to={course.syllabusLink}
+                          className={`block text-center text-sm ${isProgram ? 'text-accent/70 hover:text-accent' : 'text-primary/70 hover:text-primary'} underline underline-offset-4 transition-colors py-2 mt-2`}
+                        >
+                          {language === 'cs' ? 'Ukázat obsah' : 'Preview syllabus'}
+                        </Link>
                       </div>
                     </div>
                   );
