@@ -374,9 +374,10 @@ const AkademieProTymy = () => {
       <main className="relative z-10 pt-40 md:pt-48">
         {/* Hero Section for HR */}
         <section className="pb-16 md:pb-20 relative min-h-[600px]">
-          {/* Neural Network only in hero */}
-          <div className="absolute inset-0 overflow-hidden">
+          {/* Neural Network only in hero with fade-out at bottom */}
+          <div className="absolute inset-0 overflow-hidden -z-10">
             <NeuralNetworkBackground />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
           </div>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">

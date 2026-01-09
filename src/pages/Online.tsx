@@ -198,9 +198,11 @@ const Online = () => {
         <main className="flex-1">
           {/* Hero Section */}
           <section className="pt-40 pb-16 md:pt-48 md:pb-20 relative min-h-[600px]">
-            {/* Neural Network only in hero */}
+            {/* Neural Network only in hero with fade-out at bottom */}
             <div className="absolute inset-0 overflow-hidden -z-10">
               <NeuralNetworkBackground />
+              {/* Gradient mask to fade particles at the bottom edge */}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
             </div>
             <div className="container px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
