@@ -7,68 +7,73 @@ import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/ui/button";
 import { Shield, Cog, Database, Zap, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 import danielCerveny from "@/assets/team/daniel-cerveny.png";
 import janBouda from "@/assets/team/jan-bouda.png";
 
-const experts = [
-  {
-    name: "Daniel Červený",
-    role: "STRATEGIE & PRODUKTY",
-    description: "Navrhuje strategii a roadmapu, identifikuje quick wins v rolích a procesech a převádí je do měřitelných výsledků.",
-    clientValue: "Co přináším klientovi: Jasný plán, kde AI ušetří čas a peníze – s měřitelným dopadem.",
-    focus: ["Bezpečné workflow", "Governance a pravidla", "Měření dopadu"],
-    linkedin: "https://www.linkedin.com/in/daniel-%C4%8Derven%C3%BD-a8479629/",
-    image: danielCerveny,
-  },
-  {
-    name: "Jan Bouda",
-    role: "AI ARCHITEKTURA & AUTOMATIZACE",
-    description: "Navrhuje spolehlivé AI workflow, integrace a automatizace tak, aby fungovaly v běžném provozu – bezpečně a měřitelně.",
-    clientValue: "Co přináším klientovi: Workflow a automatizace, které fungují každý den – bez komplikací.",
-    focus: ["Automatizace procesů", "Standardy a šablony", "Bezpečné workflow"],
-    linkedin: "https://www.linkedin.com/in/jan-bouda-7151b7167/",
-    image: janBouda,
-  },
-];
-
-const dnaCards = [
-  {
-    icon: Shield,
-    title: "REGULACE (POKUD RELEVANTNÍ)",
-    subtitle: "PRAVIDLA",
-    description: "Pravidla pro AI nastavíme tak, aby seděla vašemu oboru. Regulace řešíme jen když je relevantní.",
-    accent: "cyan",
-  },
-  {
-    icon: Cog,
-    title: "PROVOZNÍ PRECIZNOST",
-    subtitle: "WORKFLOW",
-    description: "Workflow navrhujeme tak, aby šly používat každý den – i bez AI nadšenců v týmu.",
-    accent: "cyan",
-  },
-  {
-    icon: Database,
-    title: "OCHRANA DAT",
-    subtitle: "GDPR",
-    description: "Jasně určíte, co smí do AI, kdo má přístup a jak pracovat s citlivými daty.",
-    accent: "purple",
-  },
-  {
-    icon: Zap,
-    title: "AUTOMATIZACE NA MÍRU",
-    subtitle: "MĚŘENÍ DOPADU",
-    description: "Z opakovaných úkolů uděláme automatizaci – s měřením dopadu.",
-    accent: "purple",
-  },
-];
-
 const ONas = () => {
+  const { t } = useTranslation();
+  const { language, getLocalizedHref } = useLanguage();
+
+  const experts = [
+    {
+      name: "Daniel Červený",
+      role: t('pages.oNas.experts.daniel.role'),
+      description: t('pages.oNas.experts.daniel.description'),
+      clientValue: t('pages.oNas.experts.daniel.clientValue'),
+      focus: t('pages.oNas.experts.daniel.focus', { returnObjects: true }) as string[],
+      linkedin: "https://www.linkedin.com/in/daniel-%C4%8Derven%C3%BD-a8479629/",
+      image: danielCerveny,
+    },
+    {
+      name: "Jan Bouda",
+      role: t('pages.oNas.experts.jan.role'),
+      description: t('pages.oNas.experts.jan.description'),
+      clientValue: t('pages.oNas.experts.jan.clientValue'),
+      focus: t('pages.oNas.experts.jan.focus', { returnObjects: true }) as string[],
+      linkedin: "https://www.linkedin.com/in/jan-bouda-7151b7167/",
+      image: janBouda,
+    },
+  ];
+
+  const dnaCards = [
+    {
+      icon: Shield,
+      title: t('pages.oNas.dnaCards.regulation.title'),
+      subtitle: t('pages.oNas.dnaCards.regulation.subtitle'),
+      description: t('pages.oNas.dnaCards.regulation.description'),
+      accent: "cyan",
+    },
+    {
+      icon: Cog,
+      title: t('pages.oNas.dnaCards.precision.title'),
+      subtitle: t('pages.oNas.dnaCards.precision.subtitle'),
+      description: t('pages.oNas.dnaCards.precision.description'),
+      accent: "cyan",
+    },
+    {
+      icon: Database,
+      title: t('pages.oNas.dnaCards.data.title'),
+      subtitle: t('pages.oNas.dnaCards.data.subtitle'),
+      description: t('pages.oNas.dnaCards.data.description'),
+      accent: "purple",
+    },
+    {
+      icon: Zap,
+      title: t('pages.oNas.dnaCards.automation.title'),
+      subtitle: t('pages.oNas.dnaCards.automation.subtitle'),
+      description: t('pages.oNas.dnaCards.automation.description'),
+      accent: "purple",
+    },
+  ];
+
   return (
     <>
       <SEO 
-        title="O nás | Architekti digitální autonomie | Talent Innovation"
-        description="Strategické vedení a technická preciznost pro průmyslové lídry i ambiciózní střední firmy."
-        path="/o-nas"
+        title={t('pages.oNas.seo.title')}
+        description={t('pages.oNas.seo.description')}
+        path={language === 'en' ? '/en/about' : '/o-nas'}
       />
       
       <div className="min-h-screen bg-background/80">
@@ -77,7 +82,6 @@ const ONas = () => {
         <main className="pb-20">
           {/* Hero Section */}
           <section className="pt-40 md:pt-48 pb-16 md:pb-20 relative min-h-[500px]">
-            {/* Neural Network only in hero with fade-out at bottom */}
             <div className="absolute inset-0 overflow-hidden -z-10">
               <NeuralNetworkBackground />
               <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
@@ -86,23 +90,21 @@ const ONas = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                   <span className="heading-hero">
-                    Architekti digitální
+                    {t('pages.oNas.hero.title1')}
                   </span>
                   <br />
                   <span className="block text-xl md:text-3xl lg:text-4xl font-semibold text-accent mt-4 md:mt-6 uppercase" style={{ letterSpacing: '0.15em' }}>
-                    autonomie
+                    {t('pages.oNas.hero.title2')}
                   </span>
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-[900px] mx-auto leading-[1.8]">
-                  Strategie, workflow a školení, díky kterým týmy pracují rychleji – bezpečně a měřitelně.
+                  {t('pages.oNas.hero.description')}
                 </p>
               </div>
             </div>
             
-            {/* Subtle divider gradient */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             
-            {/* Scroll Indicator */}
             <div className="flex justify-center mt-16 pb-8">
               <ScrollIndicator targetId="team" />
             </div>
@@ -112,10 +114,10 @@ const ONas = () => {
           <section id="team" className="py-20 bg-card/30 relative scroll-mt-16">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                EXPERTNÍ TÝM
+                {t('pages.oNas.team.title')}
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Kombinace strategického vedení a technické excelence pro vaši digitální transformaci.
+                {t('pages.oNas.team.subtitle')}
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
@@ -140,7 +142,6 @@ const ONas = () => {
                       <p className="text-muted-foreground text-sm mb-3 leading-relaxed">{expert.description}</p>
                       <p className="text-primary text-sm font-medium mb-5 italic">{expert.clientValue}</p>
                       
-                      {/* Focus areas */}
                       <div className="flex flex-wrap justify-center gap-2 mb-6">
                         {expert.focus.map((item) => (
                           <span 
@@ -169,26 +170,25 @@ const ONas = () => {
               {/* Why It Works Block */}
               <div className="max-w-3xl mx-auto glass-card p-6 rounded-2xl border border-primary/30">
                 <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-4 text-center">
-                  PROČ TO FUNGUJE
+                  {t('pages.oNas.whyItWorks.title')}
                 </h3>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="text-center">
-                    <p className="text-primary font-semibold text-sm mb-1">Výstupy do 14 dnů</p>
-                    <p className="text-xs text-muted-foreground">Rychlé výhry a měřitelné výsledky.</p>
+                    <p className="text-primary font-semibold text-sm mb-1">{t('pages.oNas.whyItWorks.outputs')}</p>
+                    <p className="text-xs text-muted-foreground">{t('pages.oNas.whyItWorks.outputsDesc')}</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-primary font-semibold text-sm mb-1">Měření dopadu</p>
-                    <p className="text-xs text-muted-foreground">Čas, kvalita, chybovost — víte, co funguje.</p>
+                    <p className="text-primary font-semibold text-sm mb-1">{t('pages.oNas.whyItWorks.impact')}</p>
+                    <p className="text-xs text-muted-foreground">{t('pages.oNas.whyItWorks.impactDesc')}</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-primary font-semibold text-sm mb-1">Práce s adopcí</p>
-                    <p className="text-xs text-muted-foreground">Lidé + pravidla — aby se řešení ujalo.</p>
+                    <p className="text-primary font-semibold text-sm mb-1">{t('pages.oNas.whyItWorks.adoption')}</p>
+                    <p className="text-xs text-muted-foreground">{t('pages.oNas.whyItWorks.adoptionDesc')}</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Bottom divider */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           </section>
 
@@ -196,10 +196,10 @@ const ONas = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                NA ČEM SI ZAKLÁDÁME
+                {t('pages.oNas.dna.title')}
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Principy, které nás odlišují.
+                {t('pages.oNas.dna.subtitle')}
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -249,20 +249,20 @@ const ONas = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Chcete zjistit, kde AI ušetří nejvíc času?
+                  {t('pages.oNas.finalCta.title')}
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Začněte 15minutovou diagnostikou – zjistíme, kde má AI smysl právě u vás.
+                  {t('pages.oNas.finalCta.description')}
                 </p>
-                <Link to="/poptavka">
+                <Link to={getLocalizedHref('/poptavka')}>
                   <Button 
                     size="lg"
                     className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   >
-                    Domluvit 15 min diagnostiku
+                    {t('common.cta.bookDiagnostics')}
                   </Button>
                 </Link>
-                <p className="text-xs text-muted-foreground/60 mt-3">bez závazku • ozveme se do 24 hodin</p>
+                <p className="text-xs text-muted-foreground/60 mt-3">{t('pages.oNas.finalCta.helper')}</p>
               </div>
             </div>
           </section>

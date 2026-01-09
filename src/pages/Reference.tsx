@@ -7,6 +7,8 @@ import { GraduationCap, Workflow, Zap, Bot, Shield, Scale, ClipboardCheck, FileC
 import { useRef, useEffect, useMemo, useState } from "react";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Client logos with URLs
 import bircher from "@/assets/clients/bircher.png";
@@ -91,33 +93,62 @@ function keyOutNearWhiteToTransparent(src: string): Promise<string> {
   });
 }
 
-const cooperationCards = [
-  {
-    icon: GraduationCap,
-    title: "AI školení a akademie",
-    description: "Praktické workshopy a kurzy pro týmy, které chtějí efektivně využívat AI nástroje v každodenní práci."
-  },
-  {
-    icon: Workflow,
-    title: "Návrh AI workflow",
-    description: "Analýza procesů a návrh optimálních postupů pro integraci AI do existujících firemních procesů."
-  },
-  {
-    icon: Zap,
-    title: "Automatizace činností",
-    description: "Identifikace a automatizace rutinních úkolů, které zabírají čas a odvádějí pozornost od klíčové práce."
-  },
-  {
-    icon: Bot,
-    title: "AI agenti na míru",
-    description: "Vývoj digitálních kolegů na míru, kteří převezmou konkrétní opakující se úkoly ve vašem týmu."
-  }
-];
-
 const Reference = () => {
+  const { t } = useTranslation();
+  const { language, getLocalizedHref } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [processedLogos, setProcessedLogos] = useState<Record<string, string>>({});
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  const cooperationCards = [
+    {
+      icon: GraduationCap,
+      title: t('pages.reference.cooperation.training.title'),
+      description: t('pages.reference.cooperation.training.description')
+    },
+    {
+      icon: Workflow,
+      title: t('pages.reference.cooperation.workflow.title'),
+      description: t('pages.reference.cooperation.workflow.description')
+    },
+    {
+      icon: Zap,
+      title: t('pages.reference.cooperation.automation.title'),
+      description: t('pages.reference.cooperation.automation.description')
+    },
+    {
+      icon: Bot,
+      title: t('pages.reference.cooperation.agents.title'),
+      description: t('pages.reference.cooperation.agents.description')
+    }
+  ];
+
+  const safeDeploymentCards = [
+    {
+      icon: Shield,
+      title: t('pages.reference.safe.safeStart.title'),
+      subtitle: t('pages.reference.safe.safeStart.subtitle'),
+      description: t('pages.reference.safe.safeStart.description'),
+    },
+    {
+      icon: Scale,
+      title: t('pages.reference.safe.dataControl.title'),
+      subtitle: t('pages.reference.safe.dataControl.subtitle'),
+      description: t('pages.reference.safe.dataControl.description'),
+    },
+    {
+      icon: ClipboardCheck,
+      title: t('pages.reference.safe.measurable.title'),
+      subtitle: t('pages.reference.safe.measurable.subtitle'),
+      description: t('pages.reference.safe.measurable.description'),
+    },
+    {
+      icon: FileCode,
+      title: t('pages.reference.safe.knowhow.title'),
+      subtitle: t('pages.reference.safe.knowhow.subtitle'),
+      description: t('pages.reference.safe.knowhow.description'),
+    },
+  ];
 
   // Check for reduced motion preference
   useEffect(() => {
@@ -138,7 +169,7 @@ const Reference = () => {
 
     let animationId: number;
     let scrollPos = 0;
-    const speed = 0.2; // Slower, more elegant
+    const speed = 0.2;
 
     const scroll = () => {
       scrollPos += speed;
@@ -199,9 +230,9 @@ const Reference = () => {
   return (
     <>
       <SEO 
-        title="Reference a spolupráce"
-        description="Firmy a týmy, kterým pomáháme zrychlovat práci díky AI. Školení, automatizace a AI agenti na míru."
-        path="/reference"
+        title={t('pages.reference.seo.title')}
+        description={t('pages.reference.seo.description')}
+        path={language === 'en' ? '/en/references' : '/reference'}
       />
       
       <div className="min-h-screen bg-background/80">
@@ -210,7 +241,6 @@ const Reference = () => {
         <main className="pb-20">
           {/* Hero Section */}
           <section className="pt-40 md:pt-48 pb-16 md:pb-20 relative min-h-[500px]">
-            {/* Neural Network only in hero with fade-out at bottom */}
             <div className="absolute inset-0 overflow-hidden -z-10">
               <NeuralNetworkBackground />
               <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
@@ -219,33 +249,32 @@ const Reference = () => {
               <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                   <span className="heading-hero">
-                    Reference a spolupráce
+                    {t('pages.reference.hero.title')}
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-12">
-                  Pomáháme týmům proměnit AI v reálnou úsporu času: od prvních rychlých výher až po škálovatelné workflow.
-                  <span className="text-foreground font-medium"> Zavádíme nástroje, školíme praxi a navrhujeme automatizace na míru.</span>
+                  {t('pages.reference.hero.description')}
+                  <span className="text-foreground font-medium"> {t('pages.reference.hero.descriptionHighlight')}</span>
                 </p>
-                
                 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-3">
                   <div className="flex flex-col items-center">
                     <Link
-                      to="/poptavka"
+                      to={getLocalizedHref('/poptavka')}
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg bg-primary text-primary-foreground shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                       data-event="reference_primary_cta"
                     >
-                      Domluvit diagnostiku (15 min)
+                      {t('pages.reference.hero.cta')}
                     </Link>
-                    <span className="text-xs text-muted-foreground mt-2">Bez závazku • ozveme se do 24 hodin</span>
+                    <span className="text-xs text-muted-foreground mt-2">{t('pages.reference.hero.helper')}</span>
                   </div>
                   <a
                     href="#services"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary/50 text-primary bg-primary/5 hover:bg-primary/10 hover:border-primary transition-all duration-300"
                     data-event="reference_secondary_cta"
                   >
-                    Zobrazit služby pro firmy
+                    {t('pages.reference.hero.ctaSecondary')}
                   </a>
                 </div>
               </div>
@@ -258,16 +287,15 @@ const Reference = () => {
               <ScrollIndicator targetId="content" />
             </div>
             
-            {/* Logo Trust Strip - below scroll indicator */}
+            {/* Logo Trust Strip */}
             <div className="mt-12 py-12 md:py-16">
               <div className="container px-4">
                 <p className="text-center text-sm md:text-base font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-12">
-                  Důvěřují nám lídři v průmyslu a technologiích
+                  {t('pages.reference.logoStrip.title')}
                 </p>
               </div>
 
               {prefersReducedMotion ? (
-                // Static grid for reduced motion
                 <div className="container px-4">
                   <div className="flex flex-wrap justify-center gap-10 md:gap-14">
                     {clients.map((client) => (
@@ -295,7 +323,6 @@ const Reference = () => {
                   </div>
                 </div>
               ) : (
-                // Animated slideshow
                 <div
                   ref={scrollRef}
                   className="flex gap-14 md:gap-18 overflow-x-hidden cursor-default"
@@ -328,21 +355,20 @@ const Reference = () => {
 
               <div className="container px-4">
                 <p className="text-center text-xs md:text-sm text-muted-foreground/60 mt-10 max-w-xl mx-auto">
-                  Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
+                  {t('pages.reference.logoStrip.disclaimer')}
                 </p>
               </div>
             </div>
           </section>
 
-
           {/* What Cooperation Includes Section */}
           <section id="content" className="py-16 md:py-24 relative scroll-mt-16">
             <div className="container px-4">
               <h2 className="text-center text-xl md:text-2xl font-semibold tracking-[0.1em] text-foreground uppercase mb-4">
-                Co spolupráce obvykle zahrnuje
+                {t('pages.reference.cooperation.title')}
               </h2>
               <p className="text-center text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-12">
-                Každý projekt je jedinečný, ale typicky pomáháme v těchto oblastech.
+                {t('pages.reference.cooperation.subtitle')}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -368,99 +394,71 @@ const Reference = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
           </section>
 
-
-          {/* Bezpečné a ověřené nasazení */}
+          {/* Safe Deployment Section */}
           <section className="py-20 relative">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase text-center mb-4">
-                BEZPEČNÉ A OVĚŘENÉ NASAZENÍ
+                {t('pages.reference.safe.title')}
               </h2>
               <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                Proč nám důvěřují desítky firem v citlivých odvětvích.
+                {t('pages.reference.safe.subtitle')}
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                {[
-                  {
-                    icon: Shield,
-                    title: "BEZPEČNÝ START",
-                    subtitle: "1250+ absolventů",
-                    description: "Začneme na rolích a rychlých výhrách. Jasná pravidla pro data, přístupy a používání AI.",
-                  },
-                  {
-                    icon: Scale,
-                    title: "DATA POD KONTROLOU",
-                    subtitle: "GDPR & firemní pravidla",
-                    description: "Nastavíme, co smí do AI, kdo má přístup a jak pracovat s citlivými daty. GDPR a pravidla firmy respektujeme.",
-                  },
-                  {
-                    icon: ClipboardCheck,
-                    title: "MĚŘITELNÉ VÝSLEDKY",
-                    subtitle: "Čas, kvalita, chybovost",
-                    description: "Měříme dopad: ušetřený čas, kvalitu výstupů a chybovost. Víte, co funguje.",
-                  },
-                  {
-                    icon: FileCode,
-                    title: "KNOW-HOW ZŮSTÁVÁ VE FIRMĚ",
-                    subtitle: "Skillset & standardy",
-                    description: "Tým získá skillset a standardy. HR má přehled o dokončení a jednotný způsob práce.",
-                  },
-                ].map((point) => {
-                  const Icon = point.icon;
-                  
+                {safeDeploymentCards.map((card) => {
+                  const Icon = card.icon;
                   return (
                     <div
-                      key={point.title}
-                      className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(102,252,241,0.15)]"
+                      key={card.title}
+                      className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/20 rounded-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_0_40px_rgba(102,252,241,0.2)]"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                        <Icon className="w-6 h-6 text-primary" />
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                        <Icon className="w-7 h-7 text-primary" />
                       </div>
                       
-                      <h3 className="text-sm font-semibold tracking-[0.15em] text-foreground mb-1">
-                        {point.title}
-                      </h3>
-                      
-                      <p className="text-xs text-primary/60 mb-3">
-                        {point.subtitle}
+                      <p className="text-xs font-medium text-primary/60 mb-2">
+                        {card.subtitle}
                       </p>
                       
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {point.description}
+                      <h3 className="text-sm font-semibold tracking-[0.12em] text-foreground mb-3">
+                        {card.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-sm">
+                        {card.description}
                       </p>
                     </div>
                   );
                 })}
               </div>
             </div>
-            
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
           </section>
 
-          {/* CTA Section */}
-          <section className="py-20 relative">
+          {/* Final CTA */}
+          <section className="py-20 bg-card/20 relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Chcete podobný výsledek i pro váš tým?
+                  {t('pages.reference.finalCta.title')}
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Začněte 15minutovou diagnostikou – zjistíme, kde má AI smysl právě u vás.
+                  {t('pages.reference.finalCta.description')}
                 </p>
-                <Link to="/poptavka">
+                <Link to={getLocalizedHref('/poptavka')}>
                   <Button 
                     size="lg"
                     className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
                   >
-                    Domluvit 15 min diagnostiku
+                    {t('common.cta.bookDiagnostics')}
                   </Button>
                 </Link>
-                <p className="text-xs text-muted-foreground/60 mt-3">bez závazku • ozveme se do 24 hodin</p>
+                <p className="text-xs text-muted-foreground/60 mt-3">{t('pages.reference.finalCta.helper')}</p>
               </div>
             </div>
           </section>
         </main>
-
+        
         <Footer />
       </div>
     </>

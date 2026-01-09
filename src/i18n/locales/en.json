@@ -350,6 +350,69 @@
       "seo": {
         "title": "About Us – Talent Innovation",
         "description": "We help companies accelerate work with AI. Measurably, safely, and scalably."
+      },
+      "hero": {
+        "title1": "Architects of Digital",
+        "title2": "Autonomy",
+        "description": "Strategy, workflows, and training that help teams work faster — safely and measurably."
+      },
+      "team": {
+        "title": "EXPERT TEAM",
+        "subtitle": "Combination of strategic leadership and technical excellence for your digital transformation."
+      },
+      "whyItWorks": {
+        "title": "WHY IT WORKS",
+        "outputs": "Outputs in 14 Days",
+        "outputsDesc": "Quick wins and measurable results.",
+        "impact": "Impact Measurement",
+        "impactDesc": "Time, quality, error rate — you know what works.",
+        "adoption": "Adoption Focus",
+        "adoptionDesc": "People + rules — so the solution sticks."
+      },
+      "dna": {
+        "title": "WHAT WE STAND FOR",
+        "subtitle": "Principles that set us apart."
+      },
+      "finalCta": {
+        "title": "Want to find out where AI saves the most time?",
+        "description": "Start with a 15-minute diagnostic — we'll find where AI makes sense for you.",
+        "helper": "no commitment • we'll respond within 24 hours"
+      },
+      "experts": {
+        "daniel": {
+          "role": "STRATEGY & PRODUCTS",
+          "description": "Designs strategy and roadmap, identifies quick wins in roles and processes, and translates them into measurable results.",
+          "clientValue": "What I bring to clients: Clear plan where AI saves time and money — with measurable impact.",
+          "focus": ["Safe workflows", "Governance and rules", "Impact measurement"]
+        },
+        "jan": {
+          "role": "AI ARCHITECTURE & AUTOMATION",
+          "description": "Designs reliable AI workflows, integrations, and automation to work in daily operations — safely and measurably.",
+          "clientValue": "What I bring to clients: Workflows and automation that work every day — without complications.",
+          "focus": ["Process automation", "Standards and templates", "Safe workflows"]
+        }
+      },
+      "dnaCards": {
+        "regulation": {
+          "title": "REGULATION (IF RELEVANT)",
+          "subtitle": "RULES",
+          "description": "We set AI rules to fit your industry. We only address regulation when it's relevant."
+        },
+        "precision": {
+          "title": "OPERATIONAL PRECISION",
+          "subtitle": "WORKFLOW",
+          "description": "We design workflows that can be used every day — even without AI enthusiasts on the team."
+        },
+        "data": {
+          "title": "DATA PROTECTION",
+          "subtitle": "GDPR",
+          "description": "You clearly define what goes into AI, who has access, and how to handle sensitive data."
+        },
+        "automation": {
+          "title": "CUSTOM AUTOMATION",
+          "subtitle": "IMPACT MEASUREMENT",
+          "description": "We turn repetitive tasks into automation — with impact measurement."
+        }
       }
     },
 
@@ -360,19 +423,124 @@
         "description": "We collaborate with leading companies in industry and technology."
       },
       "hero": {
-        "title": "References",
-        "subtitle": "We collaborate with leaders in industry and technology"
+        "title": "References and Collaboration",
+        "description": "We help teams turn AI into real time savings: from first quick wins to scalable workflows.",
+        "descriptionHighlight": "We deploy tools, train practice, and design custom automation.",
+        "cta": "Book a 15-min diagnostic",
+        "ctaSecondary": "View services for business",
+        "helper": "No commitment • we'll respond within 24 hours"
       },
       "logoStrip": {
-        "title": "Trusted by Leaders in Industry and Technology"
+        "title": "Trusted by Leaders in Industry and Technology",
+        "disclaimer": "Logos used with permission as collaboration references. Specific use cases are shared only anonymously."
+      },
+      "cooperation": {
+        "title": "What Collaboration Usually Includes",
+        "subtitle": "Every project is unique, but we typically help in these areas.",
+        "training": {
+          "title": "AI Training and Academies",
+          "description": "Practical workshops and courses for teams that want to effectively use AI tools in everyday work."
+        },
+        "workflow": {
+          "title": "AI Workflow Design",
+          "description": "Process analysis and design of optimal procedures for integrating AI into existing business processes."
+        },
+        "automation": {
+          "title": "Activity Automation",
+          "description": "Identification and automation of routine tasks that take time and distract from key work."
+        },
+        "agents": {
+          "title": "Custom AI Agents",
+          "description": "Development of custom digital colleagues who take over specific repetitive tasks in your team."
+        }
+      },
+      "safe": {
+        "title": "SAFE AND PROVEN DEPLOYMENT",
+        "subtitle": "Why dozens of companies in sensitive industries trust us.",
+        "safeStart": {
+          "title": "SAFE START",
+          "subtitle": "1,250+ graduates",
+          "description": "We start with roles and quick wins. Clear rules for data, access, and AI usage."
+        },
+        "dataControl": {
+          "title": "DATA UNDER CONTROL",
+          "subtitle": "GDPR & company rules",
+          "description": "We set what goes into AI, who has access, and how to work with sensitive data. We respect GDPR and company rules."
+        },
+        "measurable": {
+          "title": "MEASURABLE RESULTS",
+          "subtitle": "Time, quality, error rate",
+          "description": "We measure impact: saved time, output quality, and error rate. You know what works."
+        },
+        "knowhow": {
+          "title": "KNOW-HOW STAYS IN THE COMPANY",
+          "subtitle": "Skillset & standards",
+          "description": "The team gains skillset and standards. HR has completion tracking and unified work approach."
+        }
+      },
+      "finalCta": {
+        "title": "FIND OUT WHERE AI BRINGS THE BIGGEST SAVINGS",
+        "description": "Start with a 15-minute diagnostic. We'll tell you where AI makes sense.",
+        "helper": "No commitment • we'll respond within 24 hours"
       }
     },
 
     "poptavka": {
       "_path": "/en/contact",
       "seo": {
-        "title": "Contact – Schedule a Diagnostic",
-        "description": "Fill out a short form and we'll respond within 24 hours."
+        "title": "Quick Diagnostic: Where AI Saves You Time | Talent Innovation",
+        "description": "In 15 minutes, find out where unnecessary workload arises in your roles and processes. Safely. Practically. With measurable impact."
+      },
+      "hero": {
+        "title": "Quick Diagnostic: Where AI Saves You Time",
+        "duration": "(15 minutes)",
+        "description": "We'll find where unnecessary workload arises in your roles and processes.",
+        "benefits": "Safely. Practically. With measurable impact.",
+        "nextSteps": "Within 24 hours, we'll propose a short call time and send a brief checklist.",
+        "noSales": "No commitment. No sales pitch."
+      },
+      "whatYouGet": "What You Get",
+      "deliverables": {
+        "roleMap": {
+          "title": "Role and Process Map",
+          "description": "Where unnecessary time losses occur (PDF + commentary)."
+        },
+        "quickWins": {
+          "title": "3–10 Quick Wins",
+          "description": "Specific improvements that can be implemented quickly and safely."
+        },
+        "procedure": {
+          "title": "Recommended Procedure",
+          "description": "What to address first — by time, quality, and error rate."
+        },
+        "security": {
+          "title": "Security Framework",
+          "description": "Data, access, and AI usage rules."
+        }
+      },
+      "teamSize": "Team Size",
+      "whatToImprove": "What do you want to improve",
+      "selectPlaceholder": "Select...",
+      "improvements": {
+        "admin": "Administration",
+        "sales": "Sales",
+        "hr": "HR",
+        "backOffice": "Back-office",
+        "operations": "Operations",
+        "management": "Management",
+        "other": "Other"
+      },
+      "painPoint": "What slows you down the most today?",
+      "oneSentenceOptional": "1 sentence, optional",
+      "painPointPlaceholder": "E.g. reporting, emails, proposals, onboarding…",
+      "optional": "optional",
+      "submitCta": "Get Quick Diagnostic",
+      "responseNote": "Response within 24 hours. No spam.",
+      "tryAgain": "Try again",
+      "errors": {
+        "gdprRequired": "Consent to personal data processing is required to submit.",
+        "timeout": "Submission failed (timeout). Please try again.",
+        "generic": "Submission failed. Please try again."
       }
     },
 
@@ -406,6 +574,53 @@
       "seo": {
         "title": "Data Protection and Cookies",
         "description": "Information about personal data processing and cookie usage."
+      },
+      "hero": {
+        "title": "Data Protection and Cookies",
+        "validFrom": "Valid from:"
+      },
+      "admin": {
+        "title": "Data Controller:",
+        "company": "Talent Innovation s.r.o.",
+        "ico": "Company ID: 28380070",
+        "country": "Registered in: Czech Republic",
+        "emailLabel": "Email:",
+        "note": "(hereinafter \"Talent Innovation\")"
+      },
+      "sections": {
+        "intro": {
+          "title": "1. Introduction",
+          "p1": "At Talent Innovation, we help companies and individuals work more efficiently using artificial intelligence, automation, and digital workflows.",
+          "p2strong1": "safe and meaningful use of AI",
+          "p2strong2": "personal data protection and transparent data handling",
+          "thisDocExplains": "This document explains:",
+          "bullets": [
+            "what data we process,",
+            "why we process it,",
+            "how long we keep it,",
+            "what rights you have."
+          ]
+        },
+        "services": {
+          "title": "2. What Services Data Processing Applies To",
+          "intro": "We process personal data exclusively in connection with real services on www.t-i.cz, including:",
+          "forBusiness": "For Business",
+          "forBusinessItems": [
+            "Quick Diagnostic (15 minutes)",
+            "AI QuickScan (role map, processes, and quick wins)",
+            "Custom AI agents and automation",
+            "Team Academy (corporate licenses, onboarding, reporting)"
+          ],
+          "forProfessionals": "For Professionals",
+          "forProfessionalsItems": [
+            "Online Academy",
+            "ChatGPT Academy",
+            "Microsoft Copilot Academy",
+            "Agents & Automation Academy",
+            "Master of AI Creativity",
+            "Certificates and LinkedIn badges"
+          ]
+        }
       }
     },
 
@@ -414,6 +629,134 @@
       "seo": {
         "title": "Terms and Conditions",
         "description": "Terms and conditions for purchasing online academies and services."
+      },
+      "hero": {
+        "title": "Talent Innovation Terms and Conditions",
+        "intro": "These terms and conditions govern the rules for using our online academies, digital services, diagnostics, and AI implementations.",
+        "fair": "We want them to be understandable, fair, and reflect how we actually work with clients.",
+        "validFrom": "Valid from:"
+      },
+      "summary": {
+        "title": "Clear and Simple",
+        "items": [
+          "Online content is accessible within 24 hours of payment",
+          "You study courses and academies at your own pace",
+          "No statutory 14-day withdrawal for digital content",
+          "Content is protected by copyright",
+          "We process data in accordance with GDPR"
+        ]
+      },
+      "footer": {
+        "note": "These terms protect both parties and allow us to provide services safely, transparently, and professionally.",
+        "gdprLink": "Privacy Policy and Cookies"
+      }
+    },
+
+    "metodika": {
+      "_path": "/en/methodology",
+      "seo": {
+        "title": "Methodology – How We Work with AI in Companies",
+        "description": "5 steps to measurable productivity with AI. Diagnostics, plan, implementation, training, and evolution. No commitment."
+      },
+      "hero": {
+        "label": "HOW WE WORK",
+        "title1": "How We Turn AI into Productivity",
+        "title2": "in Your Team",
+        "description": "We don't start with tools. We start with roles, processes, and quick wins. We add technology only when it makes measurable sense.",
+        "helper": "We start with a 15-min diagnostic. If it makes sense, we continue with the Savings Map (14 days).",
+        "cta": "Book a 15-min diagnostic",
+        "ctaSecondary": "View academies"
+      },
+      "quickWins": {
+        "title": "WHAT YOU GET IN THE FIRST 14 DAYS",
+        "subtitle": "Quick start with measurable results.",
+        "roleMap": {
+          "title": "ROLE AND BOTTLENECK MAP",
+          "description": "Where AI saves the most time."
+        },
+        "quickWinsList": {
+          "title": "QUICK WINS LIST",
+          "description": "3–10 specific improvements."
+        },
+        "securityFrame": {
+          "title": "SECURITY FRAMEWORK",
+          "description": "Data, access, usage rules."
+        },
+        "roiRoadmap": {
+          "title": "ROI ROADMAP",
+          "description": "What's worth doing first."
+        }
+      },
+      "timeline": {
+        "title": "PATH TO DIGITAL AUTONOMY",
+        "subtitle": "We start with roles and processes where the benefit is fastest. We add technology only when it makes measurable sense.",
+        "step": "STEP",
+        "steps": {
+          "diagnostics": {
+            "title": "DIAGNOSTICS (SAVINGS MAP)",
+            "description": "We find roles and processes with the biggest time savings and low risk. Output: opportunity map + quick wins."
+          },
+          "plan": {
+            "title": "PLAN (ROI + RULES)",
+            "description": "We design the approach and rules: data, tools, usage rules, and responsibilities.",
+            "note": "We address regulation (AI Act/ISO) only if relevant to your industry."
+          },
+          "implementation": {
+            "title": "IMPLEMENTATION (PILOT)",
+            "description": "We deploy workflows and automation. We measure impact (time, quality, error rate)."
+          },
+          "training": {
+            "title": "TRAINING (ADOPTION)",
+            "description": "The team gets know-how and access to the Online Academy. HR has completion tracking."
+          },
+          "evolution": {
+            "title": "EVOLUTION (SCALING)",
+            "description": "We continuously refine and expand based on results and changes in the company."
+          }
+        }
+      },
+      "choosePath": {
+        "title": "CHOOSE YOUR PATH",
+        "subtitle": "Corporate implementation or individual development.",
+        "forBusiness": {
+          "title": "FOR BUSINESS",
+          "description": "Role productivity + safe workflows. Diagnostics, implementation, and result measurement.",
+          "cta": "Quick Diagnostic"
+        },
+        "forProfessionals": {
+          "title": "FOR PROFESSIONALS",
+          "description": "Certificate + LinkedIn badge + study at your own pace. 3 academies or complete program.",
+          "cta": "On-demand Online Academy"
+        }
+      },
+      "dna": {
+        "title": "WHAT WE STAND FOR",
+        "subtitle": "Principles that set us apart.",
+        "impact": {
+          "title": "IMPACT MEASUREMENT",
+          "subtitle": "RESULTS",
+          "description": "We measure time, quality, and error rate. You know what works."
+        },
+        "custom": {
+          "title": "CUSTOM SOLUTIONS",
+          "subtitle": "PROCESSES",
+          "description": "We analyze real processes, not generic templates."
+        },
+        "safe": {
+          "title": "SAFE USAGE",
+          "subtitle": "RULES",
+          "description": "We set data, access, and responsibilities from the start."
+        },
+        "data": {
+          "title": "DATA PROTECTION",
+          "subtitle": "GDPR / DSA",
+          "description": "Your data stays under control."
+        }
+      },
+      "finalCta": {
+        "title": "READY TO START?",
+        "description": "Start with a 15-minute diagnostic. We'll tell you where AI makes the most sense.",
+        "helper": "no commitment • we'll respond within 24 hours"
       }
     }
   },
