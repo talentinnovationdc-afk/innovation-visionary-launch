@@ -1652,6 +1652,48 @@
         "subtitle": "Prices excl. VAT.",
         "tip": "💡 Tip: The Complete Program (3 academies) offers the best value."
       }
+    },
+    "faq": {
+      "title": "FREQUENTLY ASKED QUESTIONS",
+      "subtitle": "Answers to the most common questions about corporate licenses",
+      "nextStep": "Next step",
+      "ctaText": "Didn't find your answer? Contact us — we'll recommend a package based on your roles.",
+      "ctaButton": "Ask us",
+      "results": {
+        "question": "How quickly will we see results?",
+        "answer": "Typically within 1–2 weeks after onboarding.",
+        "detail": "You'll see the first improvements in routine tasks (emails, documents, templates). We track impact: time, output quality, error rate.",
+        "badge": "Results",
+        "nextStepLabel": "Get a quote"
+      },
+      "combine": {
+        "question": "Can we combine academies in one package?",
+        "answer": "Yes, you can build a package based on team roles.",
+        "detail": "For example, ChatGPT/Copilot for admin, Agents for automation roles. For a unified standard, the Complete Program is fastest.",
+        "badge": "Packages",
+        "nextStepLabel": "View packages"
+      },
+      "onboarding": {
+        "question": "Can we buy the program for onboarding new hires?",
+        "answer": "Yes, corporate licenses are ideal for onboarding.",
+        "detail": "New hires get a clear path and standards; HR has completion tracking and a unified skillset.",
+        "badge": "Onboarding",
+        "nextStepLabel": "Get a quote"
+      },
+      "certification": {
+        "question": "How is academy completion verified?",
+        "answer": "Certificate + LinkedIn badge upon completion.",
+        "detail": "Company/HR has completion overview (who passed, current status, gaps).",
+        "badge": "Certification",
+        "nextStepLabel": "View academies"
+      },
+      "conditions": {
+        "question": "What are the license and access conditions?",
+        "answer": "Licenses are designed for team deployment and reporting.",
+        "detail": "Access is long-term (self-paced study). Specific duration and conditions are set per package.",
+        "badge": "Conditions",
+        "nextStepLabel": "View packages"
+      }
     }
   }
 }
