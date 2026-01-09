@@ -155,9 +155,11 @@ const AgentiAutomatizace = () => {
       <main className="relative z-10 pt-32">
         {/* Hero */}
         <section className="py-16 md:py-20 relative min-h-[600px]">
-          {/* Neural Network only in hero */}
+          {/* Neural Network only in hero with fade-out at bottom */}
           <div className="absolute inset-0 overflow-hidden -z-10">
             <NeuralNetworkBackground />
+            {/* Gradient mask to fade particles at the bottom edge */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
           </div>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
