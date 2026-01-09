@@ -12,14 +12,23 @@ import {
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useTranslation();
+  const { language } = useLanguage();
+  
+  // Language-aware routes
+  const getRoute = (csPath: string, enPath: string) => 
+    language === 'en' ? enPath : csPath;
+
   return (
     <>
       <SEO 
-        title="Méně rutiny, více kapacity díky AI"
-        description="Pomáháme firmám zrychlit práci díky AI – měřitelně, bezpečně a škálovatelně. Diagnostika, mapa úspor, AI agenti a akademie."
-        path="/" 
+        title={t('pages.home.seo.title')}
+        description={t('pages.home.seo.description')}
+        path={getRoute('/', '/en')}
       />
       <div className="min-h-screen flex flex-col relative z-10">
         <Navbar />
@@ -41,7 +50,7 @@ const Index = () => {
                   
                   {/* Hero content - Synchronized sequence with 9s total cycle */}
                   <div className="relative flex flex-col items-center">
-                    {/* Step 1: "DÍKY AI" glow - delay 1s, duration 1.2s, repeatDelay 7.8s = 9s cycle */}
+                    {/* Step 1: Pre-title glow - delay 1s, duration 1.2s, repeatDelay 7.8s = 9s cycle */}
                     <motion.span 
                       initial={{ opacity: 1, textShadow: '0 0 0px hsl(176 96% 69% / 0)' }}
                       animate={{ 
@@ -64,7 +73,7 @@ const Index = () => {
                       }}
                       className="text-xs md:text-sm font-medium text-primary uppercase tracking-[0.4em] mb-3"
                     >
-                      Díky AI
+                      {t('pages.home.hero.preTitle')}
                     </motion.span>
                     
                     {/* Step 2: Vertical pulse - delay 2.2s, duration 1.3s, repeatDelay 7.7s = 9s cycle */}
@@ -128,7 +137,7 @@ const Index = () => {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                          Méně rutiny · Více kapacity
+                          {t('pages.home.hero.title')}
                         </motion.span>
                         
                         {/* Line 2: Properties */}
@@ -138,7 +147,7 @@ const Index = () => {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                          Měřitelně · Bezpečně · Škálovatelně
+                          {t('pages.home.hero.subtitle')}
                         </motion.span>
                       </h1>
                     </div>
@@ -151,7 +160,7 @@ const Index = () => {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
                   {/* Primary CTA */}
                   <div className="flex flex-col items-center">
-                    <Link to="/poptavka">
+                    <Link to={getRoute('/poptavka', '/en/contact')}>
                       <Button 
                         size="lg" 
                         className="w-full sm:w-auto min-h-[52px] px-8 py-4 text-sm font-semibold tracking-wider rounded-xl
@@ -164,11 +173,11 @@ const Index = () => {
                           transition-all duration-200 ease-out"
                       >
                         <Building className="w-5 h-5 mr-2" />
-                        Domluvit diagnostiku (15 min)
+                        {t('common.cta.bookDiagnostics')}
                       </Button>
                     </Link>
                     <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
-                      Bez závazku • Ozveme se do 24 hodin
+                      {t('common.helper.noCommitmentFull')}
                     </p>
                   </div>
                   
@@ -189,11 +198,11 @@ const Index = () => {
                           transition-all duration-200 ease-out"
                       >
                         <GraduationCap className="w-5 h-5 mr-2" />
-                        Zobrazit cestu (kroky)
+                        {t('pages.home.hero.secondaryCta', 'Zobrazit cestu (kroky)')}
                       </Button>
                     </a>
                     <p className="text-xs text-muted-foreground/70 mt-2 max-w-[260px] text-center">
-                      Pro profesionály i týmy.
+                      {t('common.helper.forProfessionalsAndTeams')}
                     </p>
                   </div>
                 </div>
@@ -202,19 +211,19 @@ const Index = () => {
                 <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-2">
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-primary" />
-                    <span className="text-sm font-medium text-foreground">1250+ absolventů</span>
+                    <span className="text-sm font-medium text-foreground">{t('common.trust.graduates')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Star className="w-5 h-5 text-primary fill-primary" />
-                    <span className="text-sm font-medium text-foreground">4,9/5 hodnocení</span>
+                    <span className="text-sm font-medium text-foreground">{t('common.trust.rating')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <ThumbsUp className="w-5 h-5 text-primary" />
-                    <span className="text-sm font-medium text-foreground">95 % doporučuje</span>
+                    <span className="text-sm font-medium text-foreground">{t('common.trust.recommends')}</span>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground/70 max-w-md mx-auto mb-12 md:mb-16">
-                  Nejde o teorii. Učíme workflow, které lidé používají hned druhý den.
+                  {t('common.trust.notTheory')}
                 </p>
                 
                 {/* Scroll indicator - Neon mouse with glowing scroll wheel */}
@@ -299,10 +308,10 @@ const Index = () => {
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Vyberte si, kde začít
+                  {t('pages.home.journey.title')}
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Každá firma je jinde. Začněte tam, kde to dává smysl — a posunujte se dál vlastním tempem.
+                  {t('pages.home.journey.subtitle')}
                 </p>
               </div>
               
@@ -315,31 +324,31 @@ const Index = () => {
                 >
                   <div className="absolute -top-3 left-4 z-10">
                     <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full shadow-[0_0_15px_rgba(102,252,241,0.5)]">
-                      DOPORUČUJEME
+                      {t('common.badges.recommended')}
                     </span>
                   </div>
                   <div className="glass-card p-6 rounded-2xl border-2 border-primary/60 h-full flex flex-col shadow-[0_0_30px_rgba(102,252,241,0.15)] hover:shadow-[0_0_40px_rgba(102,252,241,0.25)] transition-all duration-300">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="text-xs font-bold tracking-[0.15em] text-primary">KROK 01</span>
+                      <span className="text-xs font-bold tracking-[0.15em] text-primary">{t('pages.home.journey.step1.label')}</span>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Mapa úspor (14 dní)</h3>
-                    <p className="text-sm text-primary font-medium mb-2">Zjistíte, kde AI přinese největší úspory.</p>
-                    <p className="text-[10px] text-muted-foreground/70 mb-2">Pro koho: CEO / COO / vedení týmu</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{t('pages.home.journey.step1.title')}</h3>
+                    <p className="text-sm text-primary font-medium mb-2">{t('pages.home.journey.step1.highlight')}</p>
+                    <p className="text-[10px] text-muted-foreground/70 mb-2">{t('pages.home.journey.step1.audience')}</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Výstup: seznam procesů s nejvyšší návratností + odhad ROI.
+                      {t('pages.home.journey.step1.output')}
                     </p>
                     <div className="px-3 py-2 bg-primary/10 border border-primary/20 rounded-lg mb-4">
                       <p className="text-xs font-medium text-primary">
                         <Check className="w-3 h-3 inline mr-1" />
-                        Quick wins + ROI odhad
+                        {t('pages.home.journey.step1.badge')}
                       </p>
                     </div>
-                    <Link to="/poptavka" className="mt-auto">
+                    <Link to={getRoute('/poptavka', '/en/contact')} className="mt-auto">
                       <Button className="w-full shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
-                        Chci mapu úspor
+                        {t('common.cta.wantSavingsMap')}
                       </Button>
                     </Link>
                   </div>
@@ -352,26 +361,26 @@ const Index = () => {
                 >
                   <div className="glass-card p-6 rounded-2xl border border-border/40 h-full flex flex-col hover:border-primary/40 transition-all duration-300">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">KROK 02</span>
+                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">{t('pages.home.journey.step2.label')}</span>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Target className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">ROI plán & prioritizace</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-2">Seznam procesů seřazených podle dopadu.</p>
-                    <p className="text-[10px] text-muted-foreground/70 mb-2">Pro koho: Projekt / Operations</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{t('pages.home.journey.step2.title')}</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">{t('pages.home.journey.step2.highlight')}</p>
+                    <p className="text-[10px] text-muted-foreground/70 mb-2">{t('pages.home.journey.step2.audience')}</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Výstup: prioritizovaný plán + KPI + návrh pilotu.
+                      {t('pages.home.journey.step2.output')}
                     </p>
                     <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
                       <p className="text-xs font-medium text-foreground">
                         <Check className="w-3 h-3 inline mr-1" />
-                        Prioritní plán + KPI
+                        {t('pages.home.journey.step2.badge')}
                       </p>
                     </div>
-                    <Link to="/ai-quickscan" className="mt-auto">
+                    <Link to={getRoute('/poptavka', '/en/contact')} className="mt-auto">
                       <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
-                        Chci ROI plán
+                        {t('common.cta.wantROIPlan')}
                       </Button>
                     </Link>
                   </div>
@@ -384,26 +393,26 @@ const Index = () => {
                 >
                   <div className="glass-card p-6 rounded-2xl border border-border/40 h-full flex flex-col hover:border-primary/40 transition-all duration-300">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">KROK 03</span>
+                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">{t('pages.home.journey.step3.label')}</span>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Rocket className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Nasazení digitálního kolegy</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-2">AI agent pro jeden proces — nasazeno a měřeno.</p>
-                    <p className="text-[10px] text-muted-foreground/70 mb-2">Pro koho: Proces s nejvyšší návratností</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{t('pages.home.journey.step3.title')}</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">{t('pages.home.journey.step3.highlight')}</p>
+                    <p className="text-[10px] text-muted-foreground/70 mb-2">{t('pages.home.journey.step3.audience')}</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Digitální kolega, který šetří čas od prvního dne.
+                      {t('pages.home.journey.step3.output')}
                     </p>
                     <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
                       <p className="text-xs font-medium text-foreground">
                         <Check className="w-3 h-3 inline mr-1" />
-                        Do provozu + měření
+                        {t('pages.home.journey.step3.badge')}
                       </p>
                     </div>
-                    <Link to="/ai-agenti-na-miru" className="mt-auto">
+                    <Link to={getRoute('/profirmy/ai-agenti-na-miru', '/en/for-business/custom-ai-agents')} className="mt-auto">
                       <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
-                        Chci nasadit pilot
+                        {t('common.cta.wantDeployPilot')}
                       </Button>
                     </Link>
                   </div>
@@ -416,26 +425,26 @@ const Index = () => {
                 >
                   <div className="glass-card p-6 rounded-2xl border border-border/40 h-full flex flex-col hover:border-primary/40 transition-all duration-300">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">KROK 04</span>
+                      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">{t('pages.home.journey.step4.label')}</span>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center mb-4">
                       <Scale className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Škálování na firmu</h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-2">Standardy, bezpečnost a adopce napříč týmy.</p>
-                    <p className="text-[10px] text-muted-foreground/70 mb-2">Pro koho: Celá firma / více týmů</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{t('pages.home.journey.step4.title')}</h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">{t('pages.home.journey.step4.highlight')}</p>
+                    <p className="text-[10px] text-muted-foreground/70 mb-2">{t('pages.home.journey.step4.audience')}</p>
                     <p className="text-xs text-muted-foreground mb-4 flex-grow">
-                      Aby se řešení ujalo u lidí a fungovalo dlouhodobě.
+                      {t('pages.home.journey.step4.output')}
                     </p>
                     <div className="px-3 py-2 bg-card border border-border/30 rounded-lg mb-4">
                       <p className="text-xs font-medium text-foreground">
                         <Check className="w-3 h-3 inline mr-1" />
-                        Governance + adopce
+                        {t('pages.home.journey.step4.badge')}
                       </p>
                     </div>
-                    <Link to="/profirmy" className="mt-auto">
+                    <Link to={getRoute('/profirmy', '/en/for-business')} className="mt-auto">
                       <Button variant="outline" className="w-full border-border/50 text-foreground hover:border-primary/50 hover:text-primary">
-                        Chci škálovat na firmu
+                        {t('common.cta.wantScaleCompany')}
                       </Button>
                     </Link>
                   </div>
@@ -450,7 +459,7 @@ const Index = () => {
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Vyberte si, co chcete zlepšit
+                  {t('pages.home.paths.title')}
                 </h2>
               </div>
               
@@ -461,7 +470,7 @@ const Index = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <Link 
-                    to="/profirmy"
+                    to={getRoute('/profirmy', '/en/for-business')}
                     className="glass-card p-8 rounded-2xl border border-primary/30 hover:border-primary/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(102,252,241,0.2)] block h-full"
                   >
                     <div className="flex items-center gap-4 mb-6">
@@ -469,34 +478,34 @@ const Index = () => {
                         <Building className="w-7 h-7 text-primary" />
                       </div>
                       <div>
-                        <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">Pro firmy</span>
+                        <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">{t('pages.home.paths.forBusiness.label')}</span>
                       </div>
                     </div>
                     
                     <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
-                      Rychlé úspory času napříč rolemi — bezpečně a měřitelně
+                      {t('pages.home.paths.forBusiness.title')}
                     </h3>
                     
                     <ul className="space-y-3 mb-6">
                       <li className="text-muted-foreground">
                         <div className="flex items-center gap-3">
                           <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span>Rychlé úspory času v rolích a procesech</span>
+                          <span>{t('pages.home.paths.forBusiness.benefits.0')}</span>
                         </div>
-                        <p className="text-xs text-muted-foreground/70 ml-8 mt-1">HR/L&D ocení: jednotný skillset a přehled o dokončení.</p>
+                        <p className="text-xs text-muted-foreground/70 ml-8 mt-1">{t('pages.home.paths.forBusiness.hrNote')}</p>
                       </li>
                       <li className="flex items-center gap-3 text-muted-foreground">
                         <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span>Bezpečné workflow a pravidla použití</span>
+                        <span>{t('pages.home.paths.forBusiness.benefits.1')}</span>
                       </li>
                       <li className="flex items-center gap-3 text-muted-foreground">
                         <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span>Dopad měříme (čas, kvalita, chybovost)</span>
+                        <span>{t('pages.home.paths.forBusiness.benefits.2')}</span>
                       </li>
                     </ul>
                     
                     <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-200">
-                      Zjistit, kde začít <ArrowRight className="w-5 h-5" />
+                      {t('pages.home.paths.forBusiness.cta')} <ArrowRight className="w-5 h-5" />
                     </div>
                   </Link>
                 </motion.div>
@@ -507,7 +516,7 @@ const Index = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <Link 
-                    to="/online"
+                    to={getRoute('/online', '/en/online')}
                     className="glass-card p-8 rounded-2xl border border-accent/30 hover:border-accent/60 transition-all duration-300 group cursor-pointer hover:shadow-[0_0_40px_rgba(189,0,255,0.2)] block h-full"
                   >
                     <div className="flex items-center gap-4 mb-6">
@@ -515,31 +524,31 @@ const Index = () => {
                         <BadgeCheck className="w-7 h-7 text-accent" />
                       </div>
                       <div>
-                        <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">Pro profesionály</span>
+                        <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">{t('pages.home.paths.forProfessionals.label')}</span>
                       </div>
                     </div>
                     
                     <h3 className="text-xl md:text-2xl font-semibold tracking-wider text-foreground uppercase mb-4">
-                      Získejte uznání dovedností v AI, které je vidět
+                      {t('pages.home.paths.forProfessionals.title')}
                     </h3>
                     
                     <ul className="space-y-3 mb-6">
                       <li className="flex items-center gap-3 text-muted-foreground">
                         <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                        <span>Certifikát + LinkedIn odznak po dokončení</span>
+                        <span>{t('pages.home.paths.forProfessionals.benefits.0')}</span>
                       </li>
                       <li className="flex items-center gap-3 text-muted-foreground">
                         <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                        <span>Praktické workflow pro vaši profesi</span>
+                        <span>{t('pages.home.paths.forProfessionals.benefits.1')}</span>
                       </li>
                       <li className="flex items-center gap-3 text-muted-foreground">
                         <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                        <span>Dlouhodobý přístup k obsahu a studium vlastním tempem</span>
+                        <span>{t('pages.home.paths.forProfessionals.benefits.2')}</span>
                       </li>
                     </ul>
                     
                     <div className="flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all duration-200">
-                      Vybrat akademii <ArrowRight className="w-5 h-5" />
+                      {t('pages.home.paths.forProfessionals.cta')} <ArrowRight className="w-5 h-5" />
                     </div>
                   </Link>
                 </motion.div>
@@ -555,30 +564,30 @@ const Index = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
                   <div className="flex-1 text-center md:text-left">
                     <h3 className="text-lg md:text-xl font-semibold tracking-wider text-foreground uppercase mb-2">
-                      Chcete hotový výsledek? Nasadíme digitálního kolegu.
+                      {t('pages.home.agentTeaser.title')}
                     </h3>
                     <p className="text-muted-foreground text-sm mb-4">
-                      Nejdřív vybereme proces. Pak teprve stavíme.
+                      {t('pages.home.agentTeaser.subtitle')}
                     </p>
                     <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Obchod & podpora</span>
-                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Reporting</span>
-                      <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">Orchestrace</span>
+                      {(t('pages.home.agentTeaser.tags', { returnObjects: true }) as string[]).map((tag, idx) => (
+                        <span key={idx} className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary">{tag}</span>
+                      ))}
                     </div>
                   </div>
                   <div className="flex flex-col gap-3 items-center">
-                    <Link to="/poptavka">
+                    <Link to={getRoute('/poptavka', '/en/contact')}>
                       <Button className="w-full px-6 py-3 shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_25px_rgba(102,252,241,0.5)]">
-                      Poptat agenta
+                        {t('common.cta.requestAgent')}
                       </Button>
                     </Link>
-                    <Link to="/profirmy/ai-agenti-na-miru">
+                    <Link to={getRoute('/profirmy/ai-agenti-na-miru', '/en/for-business/custom-ai-agents')}>
                       <Button variant="outline" className="w-full px-6 py-3 border-primary/50 text-primary hover:bg-primary/10">
-                        Ukázat příklady z praxe
+                        {t('common.cta.showExamples')}
                       </Button>
                     </Link>
                     <p className="text-xs text-muted-foreground/70 mt-1 text-center max-w-[280px]">
-                      bez závazku • ozveme se do 24 hodin
+                      {t('common.helper.noCommitmentFull')}
                     </p>
                   </div>
                 </div>
@@ -592,30 +601,30 @@ const Index = () => {
             <div className="container px-4">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  CO VÁM TO PŘINESE
+                  {t('pages.home.benefits.title')}
                 </h2>
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <TrendingUp className="w-10 h-10 text-primary mx-auto mb-4" />
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Měřitelný posun</h3>
-                  <p className="text-xs text-muted-foreground">Úspory času, vyšší kvalita a méně chyb — měřitelné v praxi.</p>
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">{t('pages.home.benefits.items.measurableProgress.title')}</h3>
+                  <p className="text-xs text-muted-foreground">{t('pages.home.benefits.items.measurableProgress.description')}</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Bezpečné použití AI</h3>
-                  <p className="text-xs text-muted-foreground">Pravidla práce s AI, přístupy k datům a kontrola výstupů.</p>
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">{t('pages.home.benefits.items.safeAI.title')}</h3>
+                  <p className="text-xs text-muted-foreground">{t('pages.home.benefits.items.safeAI.description')}</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Award className="w-10 h-10 text-accent mx-auto mb-4" />
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Uznání dovedností</h3>
-                  <p className="text-xs text-muted-foreground">Certifikát + LinkedIn odznak — viditelné potvrzení AI dovedností.</p>
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">{t('pages.home.benefits.items.recognition.title')}</h3>
+                  <p className="text-xs text-muted-foreground">{t('pages.home.benefits.items.recognition.description')}</p>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-border/30 text-center">
                   <Clock className="w-10 h-10 text-accent mx-auto mb-4" />
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">Vlastní tempo</h3>
-                  <p className="text-xs text-muted-foreground">Dlouhodobý přístup k obsahu. Studium vlastním tempem bez tlaku na termín.</p>
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2">{t('pages.home.benefits.items.ownPace.title')}</h3>
+                  <p className="text-xs text-muted-foreground">{t('pages.home.benefits.items.ownPace.description')}</p>
                 </div>
               </div>
             </div>
@@ -636,31 +645,23 @@ const Index = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-primary/30 rounded-2xl p-10 md:p-12 shadow-[0_0_40px_rgba(102,252,241,0.1)]">
                 <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                  Vyberte si další krok
+                  {t('pages.home.finalCta.title')}
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Začněte 15minutovou diagnostikou nebo vyberte akademii pro certifikaci.
+                  {t('pages.home.finalCta.subtitle')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/poptavka">
-                    <Button 
-                      size="lg"
-                      className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(102,252,241,0.4)] hover:shadow-[0_0_50px_rgba(102,252,241,0.6)] hover:scale-105 transition-all duration-300"
-                    >
-                      Domluvit 15 min diagnostiku
+                  <Link to={getRoute('/poptavka', '/en/contact')}>
+                    <Button size="lg" className="w-full sm:w-auto px-8 py-6 text-base shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]">
+                      {t('pages.home.finalCta.primaryCta')}
                     </Button>
                   </Link>
-                  <Link to="/online">
-                    <Button 
-                      variant="outline"
-                      size="lg"
-                      className="px-10 py-6 text-sm font-semibold tracking-[0.2em] uppercase border-accent/50 text-accent hover:bg-accent/10 hover:border-accent transition-all duration-300"
-                    >
-                      Vybrat akademii
+                  <Link to={getRoute('/online', '/en/online')}>
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto px-8 py-6 text-base border-accent/50 text-accent hover:bg-accent/10">
+                      {t('pages.home.finalCta.secondaryCta')}
                     </Button>
                   </Link>
                 </div>
-                <p className="text-xs text-muted-foreground/60 mt-4">bez závazku • ozveme se do 24 hodin</p>
               </div>
             </div>
           </section>

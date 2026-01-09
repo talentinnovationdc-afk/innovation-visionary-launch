@@ -1,9 +1,16 @@
 import { Linkedin, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logoIcon from "@/assets/logo-icon.png";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+  const { language } = useLanguage();
   const currentYear = new Date().getFullYear();
+
+  const getRoute = (csPath: string, enPath: string) => 
+    language === 'en' ? enPath : csPath;
 
   return (
     <footer className="border-t border-border bg-card/50">
@@ -11,39 +18,39 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="flex flex-col items-center md:items-start gap-4">
-            <Link to="/" className="flex items-center gap-4">
+            <Link to={getRoute('/', '/en')} className="flex items-center gap-4">
               <img src={logoIcon} alt="Talent Innovation logo" className="h-8 w-8 object-contain" />
               <span className="text-base font-semibold tracking-[0.2em] text-foreground uppercase">
                 TALENT INNOVATION
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Talent Innovation. Všechna práva vyhrazena.
+              {t('footer.copyright')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <Link to="/profirmy" className="text-muted-foreground hover:text-primary transition-colors">
-              Pro firmy
+            <Link to={getRoute('/profirmy', '/en/for-business')} className="text-muted-foreground hover:text-primary transition-colors">
+              {language === 'en' ? 'For Business' : 'Pro firmy'}
             </Link>
-            <Link to="/akademie-pro-tymy" className="text-muted-foreground hover:text-primary transition-colors">
-              Akademie pro týmy
+            <Link to={getRoute('/akademie-pro-tymy', '/en/team-academy')} className="text-muted-foreground hover:text-primary transition-colors">
+              {language === 'en' ? 'Team Academy' : 'Akademie pro týmy'}
             </Link>
-            <Link to="/online" className="text-muted-foreground hover:text-primary transition-colors">
-              Online akademie
+            <Link to={getRoute('/online', '/en/online')} className="text-muted-foreground hover:text-primary transition-colors">
+              {language === 'en' ? 'Online Academy' : 'Online akademie'}
             </Link>
-            <Link to="/metodika" className="text-muted-foreground hover:text-primary transition-colors">
-              Metodika
+            <Link to={getRoute('/metodika', '/en/methodology')} className="text-muted-foreground hover:text-primary transition-colors">
+              {language === 'en' ? 'Methodology' : 'Metodika'}
             </Link>
-            <Link to="/o-nas" className="text-muted-foreground hover:text-primary transition-colors">
-              O nás
+            <Link to={getRoute('/o-nas', '/en/about')} className="text-muted-foreground hover:text-primary transition-colors">
+              {language === 'en' ? 'About' : 'O nás'}
             </Link>
-            <Link to="/gdpr-cookies" className="text-muted-foreground hover:text-primary transition-colors">
-              Ochrana údajů
+            <Link to={getRoute('/gdpr-cookies', '/en/gdpr-cookies')} className="text-muted-foreground hover:text-primary transition-colors">
+              {t('footer.dataProtection')}
             </Link>
-            <Link to="/obchodni-podminky" className="text-muted-foreground hover:text-primary transition-colors">
-              Obchodní podmínky
+            <Link to={getRoute('/obchodni-podminky', '/en/terms-and-conditions')} className="text-muted-foreground hover:text-primary transition-colors">
+              {t('footer.terms')}
             </Link>
           </div>
 
@@ -68,7 +75,7 @@ export const Footer = () => {
             <a
               href="tel:+420733611425"
               className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:glow-cyan"
-              aria-label="Telefon"
+              aria-label={language === 'en' ? 'Phone' : 'Telefon'}
             >
               <Phone className="h-5 w-5" />
             </a>

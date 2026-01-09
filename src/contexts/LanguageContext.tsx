@@ -27,6 +27,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const urlLang = getLanguageFromPath(location.pathname);
     if (urlLang !== language) {
       setLanguageState(urlLang);
+    }
+    // Always sync i18n with current language state
+    if (i18n.language !== urlLang) {
       i18n.changeLanguage(urlLang);
     }
   }, [location.pathname, language, i18n]);
