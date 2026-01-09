@@ -723,11 +723,6 @@ const AkademieProTymy = () => {
               </div>
             </div>
 
-            {/* Microtext */}
-            <div className="text-xs text-muted-foreground/70 text-center max-w-2xl mx-auto space-y-1">
-              <p>Firemní licence: onboarding, přehled o dokončení a jednotný standard práce.</p>
-              <p>Individuální licence: vlastní tempo + potvrzení dovedností (certifikát + LinkedIn odznak).</p>
-            </div>
           </div>
         </section>
         {/* FAQ Section */}
