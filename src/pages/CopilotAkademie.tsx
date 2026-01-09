@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/ui/button";
 import { TestimonialTicker } from "@/components/TestimonialTicker";
 import { 
@@ -209,8 +210,13 @@ const CopilotAkademie = () => {
           </div>
         </section>
 
+        {/* Scroll Indicator */}
+        <div className="flex justify-center pt-16 pb-8">
+          <ScrollIndicator targetId="stats" />
+        </div>
+
         {/* Stats Strip */}
-        <section className="py-8 bg-card/30 border-y border-border/20">
+        <section id="stats" className="py-8 bg-card/30 border-y border-border/20 scroll-mt-16">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center gap-8 md:gap-16">
               <div className="flex items-center gap-3">

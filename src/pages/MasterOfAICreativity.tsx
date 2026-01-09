@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
@@ -245,6 +246,11 @@ const MasterOfAICreativity = () => {
             </div>
           </div>
         </section>
+
+        {/* Scroll Indicator */}
+        <div className="flex justify-center pt-16 pb-8">
+          <ScrollIndicator targetId="obsah" />
+        </div>
 
         {/* What Program Contains */}
         <section id="obsah" className="py-20 bg-card/20 relative">
