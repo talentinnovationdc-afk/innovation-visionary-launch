@@ -365,20 +365,6 @@ const Reference = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
           </section>
 
-          {/* Note about Case Studies */}
-          <section className="py-12 md:py-16 relative">
-            <div className="container px-4">
-              <div className="max-w-2xl mx-auto text-center">
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed italic">
-              „Konkrétní use-cases a měřitelné dopady sdílíme výhradně anonymizovaně 
-              s ohledem na interní know-how našich klientů. Detaily rádi probereme 
-              při osobní konzultaci."
-            </p>
-              </div>
-            </div>
-            
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-          </section>
 
           {/* Bezpečné a ověřené nasazení */}
           <section className="py-20 relative">
