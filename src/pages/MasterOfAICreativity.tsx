@@ -133,12 +133,9 @@ const MasterOfAICreativity = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
               {/* Left - Content */}
               <div className="text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
-                  <Crown className="w-4 h-4 text-accent" />
-                  <span className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">
-                    Kompletní program
-                  </span>
-                </div>
+                <span className="text-xs font-semibold tracking-[0.15em] text-muted-foreground uppercase mb-6 block">
+                  Kompletní program
+                </span>
                 
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
                   <span className="text-accent">
