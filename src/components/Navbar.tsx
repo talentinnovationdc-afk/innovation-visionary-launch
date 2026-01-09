@@ -1,36 +1,76 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logoIcon from "@/assets/logo-icon.png";
 import { ThemeToggle } from "./ThemeToggle";
-
-const navLinks = [
-  { 
-    label: "PRO FIRMY", 
-    href: "/profirmy", 
-    isRoute: true,
-    hasDropdown: true,
-    subItems: [
-      { label: "Služby pro firmy", href: "/profirmy" },
-      { label: "Mapa úspor", href: "/profirmy/mapa-uspor", subtitle: "Diagnostika do 14 dnů" },
-      { label: "AI agenti na míru", href: "/profirmy/ai-agenti-na-miru", subtitle: "Digitální kolega do procesu" },
-      { label: "Reference", href: "/reference", subtitle: "Firmy, které nám důvěřují" },
-    ]
-  },
-  { label: "AKADEMIE PRO TÝMY", href: "/akademie-pro-tymy", isRoute: true },
-  { label: "ONLINE AKADEMIE", href: "/online", isRoute: true },
-  { label: "METODIKA", href: "/metodika", isRoute: true },
-  { label: "O NÁS", href: "/o-nas", isRoute: true },
-];
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
+  const { language } = useLanguage();
+
+  // Language-aware routes
+  const getRoute = (csPath: string, enPath: string) => 
+    language === 'en' ? enPath : csPath;
+
+  const navLinks = [
+    { 
+      label: t('nav.forBusiness'),
+      href: getRoute('/profirmy', '/en/for-business'),
+      isRoute: true,
+      hasDropdown: true,
+      subItems: [
+        { 
+          label: t('nav.dropdown.servicesForBusiness', 'Služby pro firmy'), 
+          href: getRoute('/profirmy', '/en/for-business') 
+        },
+        { 
+          label: t('nav.dropdown.savingsMap'), 
+          href: getRoute('/profirmy/mapa-uspor', '/en/for-business/savings-map'),
+          subtitle: t('nav.dropdown.savingsMapSubtitle', 'Diagnostika do 14 dnů')
+        },
+        { 
+          label: t('nav.dropdown.customAgents'), 
+          href: getRoute('/profirmy/ai-agenti-na-miru', '/en/for-business/custom-ai-agents'),
+          subtitle: t('nav.dropdown.customAgentsSubtitle', 'Digitální kolega do procesu')
+        },
+        { 
+          label: t('nav.dropdown.references', 'Reference'), 
+          href: getRoute('/reference', '/en/references'),
+          subtitle: t('nav.dropdown.referencesSubtitle', 'Firmy, které nám důvěřují')
+        },
+      ]
+    },
+    { 
+      label: t('nav.academyForTeams'), 
+      href: getRoute('/akademie-pro-tymy', '/en/team-academy'), 
+      isRoute: true 
+    },
+    { 
+      label: t('nav.onlineAcademy'), 
+      href: getRoute('/online', '/en/online'), 
+      isRoute: true 
+    },
+    { 
+      label: t('nav.methodology'), 
+      href: getRoute('/metodika', '/en/methodology'), 
+      isRoute: true 
+    },
+    { 
+      label: t('nav.aboutUs'), 
+      href: getRoute('/o-nas', '/en/about'), 
+      isRoute: true 
+    },
+  ];
 
   const isActive = (href: string) => {
-    if (href === "/") return location.pathname === "/";
+    if (href === "/" || href === "/en") return location.pathname === "/" || location.pathname === "/en";
     return location.pathname.startsWith(href);
   };
 
@@ -53,12 +93,17 @@ export const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const homeRoute = getRoute('/', '/en');
+  const contactRoute = getRoute('/poptavka', '/en/contact');
+  const ctaLabel = language === 'en' ? 'Book a diagnostic' : 'Rychlá diagnostika';
+  const homeLabel = language === 'en' ? 'HOME' : 'DOMŮ';
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="glass mx-4 mt-4 rounded-2xl md:mx-8">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to={homeRoute} className="flex items-center gap-3 group">
             <div className="relative flex-shrink-0">
               <img 
                 src={logoIcon} 
@@ -116,7 +161,7 @@ export const Navbar = () => {
                   className={`text-xs font-semibold tracking-[0.15em] transition-colors hover:text-primary ${
                     isActive(link.href) ? "text-primary" : "text-muted-foreground"
                   }`}
-                  data-event={link.label === "AKADEMIE PRO TÝMY" ? "nav_academy_teams" : undefined}
+                  data-event={link.label === t('nav.academyForTeams') ? "nav_academy_teams" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -132,18 +177,20 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button + Theme Toggle */}
+          {/* CTA Button + Language Switch + Theme Toggle */}
           <div className="hidden lg:flex items-center gap-2">
+            <LanguageSwitcher />
             <ThemeToggle />
-            <Link to="/poptavka" aria-label="Rychlá diagnostika">
+            <Link to={contactRoute} aria-label={ctaLabel}>
               <button className="px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[var(--shadow-glow-cyan)] hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)] hover:bg-primary/10 transition-all duration-300">
-                Rychlá diagnostika
+                {ctaLabel}
               </button>
             </Link>
           </div>
 
           {/* Mobile Menu Button + Theme Toggle */}
           <div className="lg:hidden flex items-center gap-1">
+            <LanguageSwitcher />
             <ThemeToggle />
             <button
               className="p-2 text-foreground"
@@ -161,13 +208,13 @@ export const Navbar = () => {
             <div className="flex flex-col gap-2">
               {/* Home link - mobile only */}
               <Link
-                to="/"
+                to={homeRoute}
                 className={`text-xs font-semibold tracking-[0.15em] transition-colors hover:text-primary py-2 ${
-                  isActive("/") ? "text-primary" : "text-muted-foreground"
+                  isActive(homeRoute) ? "text-primary" : "text-muted-foreground"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
-                DOMŮ
+                {homeLabel}
               </Link>
               {navLinks.map((link) => (
                 link.hasDropdown ? (
@@ -202,7 +249,7 @@ export const Navbar = () => {
                       isActive(link.href) ? "text-primary" : "text-muted-foreground"
                     }`}
                     onClick={() => setIsOpen(false)}
-                    data-event={link.label === "AKADEMIE PRO TÝMY" ? "nav_academy_teams" : undefined}
+                    data-event={link.label === t('nav.academyForTeams') ? "nav_academy_teams" : undefined}
                   >
                     {link.label}
                   </Link>
@@ -217,9 +264,9 @@ export const Navbar = () => {
                   </a>
                 )
               ))}
-              <Link to="/poptavka" onClick={() => setIsOpen(false)} aria-label="Rychlá diagnostika">
+              <Link to={contactRoute} onClick={() => setIsOpen(false)} aria-label={ctaLabel}>
                 <button className="mt-2 w-full px-5 py-2 text-xs font-semibold tracking-[0.15em] uppercase rounded-lg border border-primary text-primary bg-transparent shadow-[0_0_12px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)] hover:bg-primary/10 transition-all duration-300">
-                  Rychlá diagnostika
+                  {ctaLabel}
                 </button>
               </Link>
             </div>

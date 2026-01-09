@@ -2,29 +2,29 @@
   "_meta": {
     "language": "en",
     "version": "1.0.0",
-    "lastUpdated": "",
-    "notes": "English translations - TO BE COMPLETED by professional translator. Structure mirrors cs.json exactly."
+    "lastUpdated": "2026-01-09",
+    "notes": "Professional B2B English copy for Talent Innovation"
   },
   
   "common": {
     "_notes": "Repeated elements across the site",
     "cta": {
-      "bookDiagnostics": "Book 15-min diagnostics",
-      "bookDiagnosticsShort": "Book diagnostics",
+      "bookDiagnostics": "Book a 15-min diagnostic",
+      "bookDiagnosticsShort": "Book a diagnostic",
       "learnMore": "Learn more",
-      "viewSyllabus": "View syllabus (preview)",
+      "viewSyllabus": "Preview syllabus",
       "buyNow": "Buy now",
-      "buyProgram": "Buy program",
+      "buyProgram": "Buy the program",
       "contactUs": "Contact us",
-      "backHome": "Back home",
-      "viewAcademies": "View academies",
-      "requestAgent": "Request agent",
-      "showExamples": "Show real examples",
-      "wantSavingsMap": "I want savings map",
-      "wantROIPlan": "I want ROI plan",
-      "wantDeployPilot": "I want to deploy pilot",
-      "wantScaleCompany": "I want to scale company-wide",
-      "selectAcademy": "Select academy",
+      "backHome": "Back to home",
+      "viewAcademies": "Choose an academy",
+      "requestAgent": "Request an agent",
+      "showExamples": "See real examples",
+      "wantSavingsMap": "Get the Savings Map",
+      "wantROIPlan": "Get ROI plan",
+      "wantDeployPilot": "Deploy a pilot",
+      "wantScaleCompany": "Scale company-wide",
+      "selectAcademy": "Choose an academy",
       "findOutWhereToStart": "Find out where to start"
     },
     "helper": {
@@ -36,7 +36,7 @@
       "forProfessionalsAndTeams": "For professionals and teams."
     },
     "trust": {
-      "graduates": "1250+ graduates",
+      "graduates": "1,250+ graduates",
       "rating": "4.9/5 rating",
       "recommends": "95% recommend",
       "notTheory": "It's not theory. We teach workflows that people use the very next day."
@@ -49,15 +49,23 @@
   },
 
   "nav": {
-    "_notes": "Navigation - max 15 characters per item",
+    "_notes": "Navigation - max 14 characters per item",
+    "home": "HOME",
     "forBusiness": "FOR BUSINESS",
-    "academyForTeams": "ACADEMY FOR TEAMS",
+    "academyForTeams": "TEAM ACADEMY",
     "onlineAcademy": "ONLINE ACADEMY",
     "methodology": "METHODOLOGY",
-    "aboutUs": "ABOUT US",
+    "aboutUs": "ABOUT",
+    "references": "REFERENCES",
+    "contact": "CONTACT",
     "dropdown": {
+      "servicesForBusiness": "Services for Business",
       "savingsMap": "Savings Map",
-      "customAgents": "Custom AI Agents"
+      "savingsMapSubtitle": "14-day diagnostics",
+      "customAgents": "Custom AI Agents",
+      "customAgentsSubtitle": "Digital colleague for your processes",
+      "references": "References",
+      "referencesSubtitle": "Companies that trust us"
     }
   },
 
@@ -72,12 +80,13 @@
       "_path": "/en",
       "seo": {
         "title": "Less Routine, More Capacity with AI",
-        "description": "We help companies accelerate work with AI – measurably, safely, and scalably. Diagnostics, savings map, AI agents, and academies."
+        "description": "We help teams turn AI into everyday advantage. From practical training to workflows and automation that actually work."
       },
       "hero": {
-        "preTitle": "With AI",
-        "title": "Less Routine · More Capacity",
-        "subtitle": "Measurably · Safely · Scalably"
+        "preTitle": "POWERED BY AI",
+        "title": "LESS ROUTINE · MORE CAPACITY",
+        "subtitle": "MEASURABLE · SECURE · SCALABLE",
+        "description": "We help teams turn AI into everyday advantage. From practical training to workflows and automation that actually work."
       },
       "journey": {
         "title": "Choose where to start",
@@ -136,7 +145,7 @@
             "Practical workflows for your profession",
             "Long-term access to content and study at your own pace"
           ],
-          "cta": "Select academy"
+          "cta": "Choose an academy"
         }
       },
       "agentTeaser": {
@@ -168,8 +177,8 @@
       "finalCta": {
         "title": "Choose your next step",
         "subtitle": "Start with a 15-minute diagnostic or choose an academy for certification.",
-        "primaryCta": "Book 15-min diagnostics",
-        "secondaryCta": "Select academy"
+        "primaryCta": "Book a 15-min diagnostic",
+        "secondaryCta": "Choose an academy"
       }
     },
 
@@ -180,7 +189,7 @@
         "description": "Practical AI workflows for your profession. Certificate + LinkedIn badge upon completion. Study at your own pace."
       },
       "hero": {
-        "label": "Online Education",
+        "label": "ONLINE EDUCATION",
         "title": "AI for Your Profession",
         "subtitle": "Practical workflows and certification — everything you need to work with AI."
       }
@@ -193,7 +202,7 @@
         "description": "Learn to effectively use ChatGPT for emails, documents, and decision-making. Certificate + LinkedIn badge."
       },
       "hero": {
-        "label": "Online Academy",
+        "label": "ONLINE ACADEMY",
         "title": "ChatGPT Academy",
         "subtitle": "Practical GPT workflows that speed up writing, analysis, and decision-making.",
         "idealFor": "Ideal for: Admin, HR, sales, support — anyone who writes daily."
@@ -205,7 +214,7 @@
         "certificate": "Certificate + LinkedIn badge"
       },
       "stats": {
-        "graduates": "1250+",
+        "graduates": "1,250+",
         "graduatesLabel": "graduates",
         "rating": "4.9/5",
         "ratingLabel": "rating",
@@ -229,7 +238,7 @@
       },
       "helper": {
         "accessTime": "Access within 24 hours • study at your own pace",
-        "practicalOutputs": "Includes templates, checklists, and examples – ready to use in practice."
+        "practicalOutputs": "Includes templates, checklists, and examples — ready to use in practice."
       }
     },
 
@@ -240,7 +249,7 @@
         "description": "Learn to effectively use Copilot in Word, Excel, Outlook, and PowerPoint. Certificate + LinkedIn badge."
       },
       "hero": {
-        "label": "Online Academy",
+        "label": "ONLINE ACADEMY",
         "title": "Microsoft Copilot Academy",
         "subtitle": "Practical Copilot workflows for Word, Excel, Outlook, and PowerPoint.",
         "idealFor": "Ideal for: M365 users — Word, Excel, Outlook, PowerPoint in daily practice."
@@ -248,13 +257,13 @@
     },
 
     "agentiAutomatizace": {
-      "_path": "/en/online/agents-automation",
+      "_path": "/en/online/agents-and-automation",
       "seo": {
         "title": "Agents & Automation – Advanced AI Workflows",
         "description": "Learn to build AI agents and automate processes. Certificate + LinkedIn badge."
       },
       "hero": {
-        "label": "Online Academy",
+        "label": "ONLINE ACADEMY",
         "title": "Agents & Automation",
         "subtitle": "Advanced workflows and tool orchestration. For those who want to go further.",
         "idealFor": "Ideal for: Power users, process owners, innovation — those who want to automate."
@@ -268,20 +277,20 @@
         "description": "Complete AI program: ChatGPT + Copilot + Agents & Automation. Main certificate and verifiable LinkedIn badge."
       },
       "hero": {
-        "label": "Complete Program",
+        "label": "COMPLETE PROGRAM",
         "title": "Master of AI Creativity",
         "subtitle": "Complete program (3 academies): ChatGPT + Copilot + Agents & Automation — practical outputs you can use immediately."
       }
     },
 
     "akademieProTymy": {
-      "_path": "/en/academy-for-teams",
+      "_path": "/en/team-academy",
       "seo": {
-        "title": "Academy for Teams – Bulk AI Course Licenses",
+        "title": "Team Academy – Bulk AI Course Licenses",
         "description": "Corporate AI academy licenses with onboarding and reporting for HR. Certificate and LinkedIn badge for every participant."
       },
       "hero": {
-        "label": "Corporate Education",
+        "label": "CORPORATE EDUCATION",
         "title": "Online Academy for Teams",
         "subtitle": "AI Work Standard Across the Company",
         "description": "Employees study at their own pace. You get a unified skillset, certification, and completion tracking across roles and teams."
@@ -357,9 +366,9 @@
     },
 
     "poptavka": {
-      "_path": "/en/inquiry",
+      "_path": "/en/contact",
       "seo": {
-        "title": "Inquiry – Schedule a Diagnostic",
+        "title": "Contact – Schedule a Diagnostic",
         "description": "Fill out a short form and we'll respond within 24 hours."
       }
     },
@@ -398,7 +407,7 @@
     },
 
     "obchodniPodminky": {
-      "_path": "/en/terms",
+      "_path": "/en/terms-and-conditions",
       "seo": {
         "title": "Terms and Conditions",
         "description": "Terms and conditions for purchasing online academies and services."
@@ -426,7 +435,7 @@
   },
 
   "forms": {
-    "gdprConsent": "I agree to the processing of personal data for the purpose of consultation / inquiry processing.",
+    "gdprConsent": "I agree to the processing of personal data for scheduling a call or handling my inquiry.",
     "gdprLink": "(more)",
     "fields": {
       "name": "Full name",
@@ -439,9 +448,9 @@
     },
     "validation": {
       "required": "This field is required",
-      "invalidEmail": "Invalid email"
+      "invalidEmail": "Please enter a valid email"
     },
-    "submit": "Submit",
-    "submitting": "Submitting..."
+    "submit": "Send",
+    "submitting": "Sending..."
   }
 }
