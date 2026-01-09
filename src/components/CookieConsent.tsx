@@ -12,7 +12,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useTranslation } from "react-i18next";
-import { useLanguage } from "@/contexts/LanguageContext";
+import i18n from "i18next";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -29,9 +29,14 @@ const defaultPreferences: CookiePreferences = {
   marketing: false,
 };
 
+// Simple helper to get localized GDPR link without context dependency
+const getGdprLink = () => {
+  const lang = i18n.language;
+  return lang === 'en' ? '/en/gdpr-cookies' : '/gdpr-cookies';
+};
+
 export const CookieConsent = () => {
   const { t } = useTranslation();
-  const { getLocalizedHref } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
@@ -90,7 +95,7 @@ export const CookieConsent = () => {
             <div className="text-sm text-muted-foreground">
               <p>
                 {t('cookies.banner.message')}{" "}
-                <Link to={getLocalizedHref('/gdpr-cookies')} className="text-primary hover:underline">
+                <Link to={getGdprLink()} className="text-primary hover:underline">
                   {t('cookies.banner.moreInfo')}
                 </Link>
               </p>
