@@ -1,4 +1,5 @@
 import { useRef, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // Client logos with URLs
 import bircher from "@/assets/clients/bircher.png";
@@ -88,6 +89,7 @@ function keyOutNearWhiteToTransparent(src: string): Promise<string> {
 }
 
 export const LogoRibbon = () => {
+  const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [processedLogos, setProcessedLogos] = useState<Record<string, string>>({});
 
@@ -158,7 +160,7 @@ export const LogoRibbon = () => {
     <section className="py-8 md:py-16 overflow-hidden min-h-[120px] md:min-h-[160px]">
       <div className="container px-4">
         <p className="text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-10">
-          Důvěřují nám lídři v průmyslu a technologiích
+          {t('common.trustStrip.title')}
         </p>
       </div>
 
@@ -201,7 +203,7 @@ export const LogoRibbon = () => {
 
       <div className="container px-4">
         <p className="text-center text-[10px] text-muted-foreground/60 mt-8 max-w-xl mx-auto">
-          Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně.
+          {t('common.trustStrip.disclaimer')}
         </p>
       </div>
     </section>
