@@ -9,25 +9,25 @@
   "_notes_format": "Keys: pages.{page}.{section}.{element} | Max lengths: hero H1=55ch, CTA=22ch, nav=14ch",
   
   "common": {
-    "_notes": "Repeated elements across the site",
+    "_notes": "Repeated elements across the site. CTA max ~22 chars.",
     "cta": {
-      "bookDiagnostics": "Book a 15-min diagnostic",
-      "bookDiagnosticsShort": "Book a diagnostic",
+      "bookDiagnostics": "Book 15-min call",
+      "bookDiagnosticsShort": "Book a call",
       "learnMore": "Learn more",
       "viewSyllabus": "Preview syllabus",
       "buyNow": "Buy now",
       "buyProgram": "Buy the program",
       "contactUs": "Contact us",
       "backHome": "Back to home",
-      "viewAcademies": "Choose an academy",
-      "requestAgent": "Request an agent",
-      "showExamples": "See real examples",
-      "wantSavingsMap": "Get the Savings Map",
+      "viewAcademies": "Choose academy",
+      "requestAgent": "Request agent",
+      "showExamples": "See examples",
+      "wantSavingsMap": "Get Savings Map",
       "wantROIPlan": "Get ROI plan",
-      "wantDeployPilot": "Deploy a pilot",
-      "wantScaleCompany": "Scale company-wide",
-      "selectAcademy": "Choose an academy",
-      "findOutWhereToStart": "Find out where to start"
+      "wantDeployPilot": "Deploy pilot",
+      "wantScaleCompany": "Scale company",
+      "selectAcademy": "Choose academy",
+      "findOutWhereToStart": "Find your start"
     },
     "helper": {
       "noCommitment": "no commitment",
@@ -436,13 +436,13 @@
           "title": "DIAGNOSTICS",
           "subtitle": "15 min consultation — find out where to start",
           "benefit": "Clear direction without commitment",
-          "cta": "Book 15 min diagnostic"
+          "cta": "Book 15-min call"
         },
         "savingsMap": {
           "title": "SAVINGS MAP",
           "subtitle": "Role map + opportunity list (use cases) + 30/60/90 roadmap",
           "benefit": "Concrete outputs for management",
-          "cta": "What I get in Savings Map"
+          "cta": "See what I get"
         },
         "pilot": {
           "title": "PILOT",
