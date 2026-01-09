@@ -448,19 +448,6 @@ const Metodika = () => {
             </div>
           </section>
 
-          {/* Logo Trust Strip */}
-          <section className="py-16 bg-card/10">
-            <div className="container mx-auto px-4">
-              <p className="text-center text-sm md:text-base font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-12">
-                {t('common.trustStrip.title')}
-              </p>
-            </div>
-            <LogoRibbon />
-            <p className="text-center text-xs text-muted-foreground/60 mt-8 max-w-xl mx-auto px-4">
-              {t('common.trustStrip.disclaimer')}
-            </p>
-          </section>
-
           {/* Final CTA */}
           <section className="py-20 relative">
             <div className="container mx-auto px-4">
