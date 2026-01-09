@@ -199,7 +199,7 @@ const MasterOfAICreativity = () => {
                   </a>
                 </div>
                 <p className="text-xs text-muted-foreground mt-4">
-                  Bez registrace navíc. Přístup aktivní hned po nákupu.
+                  Bez registrace navíc.
                 </p>
               </div>
               
