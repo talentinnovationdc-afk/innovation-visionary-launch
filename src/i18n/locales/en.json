@@ -886,6 +886,35 @@
   },
 
   "components": {
+    "methodologySection": {
+      "label": "Our Process",
+      "title": "THE PATH TO DIGITAL AUTONOMY",
+      "subtitle": "We start with roles and processes where the benefit is fastest. We add technology only when it makes measurable sense.",
+      "step": "STEP",
+      "steps": [
+        {
+          "title": "DIAGNOSTICS",
+          "description": "We find roles and processes with the biggest time savings and lowest risk. Output: opportunity map + quick wins."
+        },
+        {
+          "title": "PLAN",
+          "description": "We design the approach and rules: data, tools, usage rules, and responsibilities.",
+          "note": "We only address regulation (AI Act/ISO) if it's relevant to your industry."
+        },
+        {
+          "title": "IMPLEMENTATION",
+          "description": "We deploy workflows and automation. We measure impact (time, quality, error rate)."
+        },
+        {
+          "title": "TRAINING",
+          "description": "The team gets know-how and access to the Online Academy. HR has completion tracking."
+        },
+        {
+          "title": "EVOLUTION",
+          "description": "We continuously tune and expand based on results and company changes."
+        }
+      ]
+    },
     "testimonialTicker": {
       "title": "WHAT GRADUATES SAY",
       "subtitle": "Short highlights – click to see full feedback."

@@ -875,6 +875,35 @@
   },
 
   "components": {
+    "methodologySection": {
+      "label": "Náš proces",
+      "title": "CESTA K DIGITÁLNÍ AUTONOMII",
+      "subtitle": "Začínáme rolemi a procesy, kde je nejrychlejší přínos. Technologie přidáváme až tehdy, když dává měřitelný smysl.",
+      "step": "KROK",
+      "steps": [
+        {
+          "title": "DIAGNOSTIKA",
+          "description": "Najdeme role a procesy s největší úsporou času a nízkým rizikem. Výstup: mapa příležitostí + quick wins."
+        },
+        {
+          "title": "PLÁN",
+          "description": "Navrhneme postup a pravidla: data, nástroje, pravidla použití a odpovědnosti.",
+          "note": "Regulace (AI Act/ISO) řešíme jen pokud je to pro váš obor relevantní."
+        },
+        {
+          "title": "IMPLEMENTACE",
+          "description": "Nasadíme workflow a automatizace. Dopad měříme (čas, kvalita, chybovost)."
+        },
+        {
+          "title": "ZAŠKOLENÍ",
+          "description": "Tým dostane know-how a přístup do Online akademie. HR má přehled o dokončení."
+        },
+        {
+          "title": "EVOLUCE",
+          "description": "Průběžně ladíme a rozšiřujeme podle výsledků a změn ve firmě."
+        }
+      ]
+    },
     "testimonialTicker": {
       "title": "CO ŘÍKAJÍ ABSOLVENTI",
       "subtitle": "Krátké highlighty – kliknutím zobrazíte plnou zpětnou vazbu."

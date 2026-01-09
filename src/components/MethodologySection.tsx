@@ -1,51 +1,33 @@
 import { Search, FileText, Cog, GraduationCap, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface Step {
   number: string;
   icon: React.ElementType;
-  title: string;
-  description: string;
-  note?: string;
+  titleKey: string;
+  descriptionKey: string;
+  noteKey?: string;
   accent?: "purple";
 }
 
-const steps: Step[] = [
-  {
-    number: "01",
-    title: "DIAGNOSTIKA",
-    description: "Najdeme role a procesy s největší úsporou času a nízkým rizikem. Výstup: mapa příležitostí + quick wins.",
-    icon: Search,
-  },
-  {
-    number: "02",
-    title: "PLÁN",
-    description: "Navrhneme postup a pravidla: data, nástroje, pravidla použití a odpovědnosti.",
-    note: "Regulace (AI Act/ISO) řešíme jen pokud je to pro váš obor relevantní.",
-    icon: FileText,
-  },
-  {
-    number: "03",
-    title: "IMPLEMENTACE",
-    description: "Nasadíme workflow a automatizace. Dopad měříme (čas, kvalita, chybovost).",
-    icon: Cog,
-  },
-  {
-    number: "04",
-    title: "ZAŠKOLENÍ",
-    description: "Tým dostane know-how a přístup do Online akademie. HR má přehled o dokončení.",
-    icon: GraduationCap,
-    accent: "purple",
-  },
-  {
-    number: "05",
-    title: "EVOLUCE",
-    description: "Průběžně ladíme a rozšiřujeme podle výsledků a změn ve firmě.",
-    icon: TrendingUp,
-    accent: "purple",
-  },
+const stepsConfig: Omit<Step, 'titleKey' | 'descriptionKey' | 'noteKey'>[] = [
+  { number: "01", icon: Search },
+  { number: "02", icon: FileText },
+  { number: "03", icon: Cog },
+  { number: "04", icon: GraduationCap, accent: "purple" },
+  { number: "05", icon: TrendingUp, accent: "purple" },
 ];
 
 export const MethodologySection = () => {
+  const { t } = useTranslation();
+
+  const steps = stepsConfig.map((step, index) => ({
+    ...step,
+    title: t(`components.methodologySection.steps.${index}.title`),
+    description: t(`components.methodologySection.steps.${index}.description`),
+    note: index === 1 ? t(`components.methodologySection.steps.${index}.note`) : undefined,
+  }));
+
   return (
     <section id="metodika" aria-labelledby="methodology-heading" className="py-20 md:py-28 relative overflow-hidden">
       {/* Subtle gradient background */}
@@ -54,13 +36,13 @@ export const MethodologySection = () => {
       <div className="container px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
-            Náš proces
+            {t('components.methodologySection.label')}
           </span>
           <h2 id="methodology-heading" className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-6">
-            CESTA K DIGITÁLNÍ AUTONOMII
+            {t('components.methodologySection.title')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto normal-case tracking-normal leading-relaxed">
-            Začínáme rolemi a procesy, kde je nejrychlejší přínos. Technologie přidáváme až tehdy, když dává měřitelný smysl.
+            {t('components.methodologySection.subtitle')}
           </p>
         </div>
 
@@ -109,7 +91,7 @@ export const MethodologySection = () => {
                           <span className={`text-xs font-medium ${
                             isPurple ? "text-accent/60" : "text-primary/60"
                           }`}>
-                            KROK {step.number}
+                            {t('components.methodologySection.step')} {step.number}
                           </span>
                           <h3 className="text-lg font-semibold tracking-[0.15em] text-foreground">
                             {step.title}
