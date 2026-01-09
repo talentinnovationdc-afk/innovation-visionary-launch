@@ -1,0 +1,447 @@
+{
+  "_meta": {
+    "language": "en",
+    "version": "1.0.0",
+    "lastUpdated": "",
+    "notes": "English translations - TO BE COMPLETED by professional translator. Structure mirrors cs.json exactly."
+  },
+  
+  "common": {
+    "_notes": "Repeated elements across the site",
+    "cta": {
+      "bookDiagnostics": "Book 15-min diagnostics",
+      "bookDiagnosticsShort": "Book diagnostics",
+      "learnMore": "Learn more",
+      "viewSyllabus": "View syllabus (preview)",
+      "buyNow": "Buy now",
+      "buyProgram": "Buy program",
+      "contactUs": "Contact us",
+      "backHome": "Back home",
+      "viewAcademies": "View academies",
+      "requestAgent": "Request agent",
+      "showExamples": "Show real examples",
+      "wantSavingsMap": "I want savings map",
+      "wantROIPlan": "I want ROI plan",
+      "wantDeployPilot": "I want to deploy pilot",
+      "wantScaleCompany": "I want to scale company-wide",
+      "selectAcademy": "Select academy",
+      "findOutWhereToStart": "Find out where to start"
+    },
+    "helper": {
+      "noCommitment": "no commitment",
+      "responseTime": "we'll respond within 24 hours",
+      "accessTime": "access within 24 hours",
+      "ownPace": "study at your own pace",
+      "noCommitmentFull": "No commitment • We'll respond within 24 hours",
+      "forProfessionalsAndTeams": "For professionals and teams."
+    },
+    "trust": {
+      "graduates": "1250+ graduates",
+      "rating": "4.9/5 rating",
+      "recommends": "95% recommend",
+      "notTheory": "It's not theory. We teach workflows that people use the very next day."
+    },
+    "badges": {
+      "recommended": "RECOMMENDED",
+      "mostPopular": "MOST POPULAR",
+      "bestValue": "Best value"
+    }
+  },
+
+  "nav": {
+    "_notes": "Navigation - max 15 characters per item",
+    "forBusiness": "FOR BUSINESS",
+    "academyForTeams": "ACADEMY FOR TEAMS",
+    "onlineAcademy": "ONLINE ACADEMY",
+    "methodology": "METHODOLOGY",
+    "aboutUs": "ABOUT US",
+    "dropdown": {
+      "savingsMap": "Savings Map",
+      "customAgents": "Custom AI Agents"
+    }
+  },
+
+  "footer": {
+    "dataProtection": "Data Protection",
+    "terms": "Terms & Conditions",
+    "copyright": "© 2025 Talent Innovation s.r.o."
+  },
+
+  "pages": {
+    "home": {
+      "_path": "/en",
+      "seo": {
+        "title": "Less Routine, More Capacity with AI",
+        "description": "We help companies accelerate work with AI – measurably, safely, and scalably. Diagnostics, savings map, AI agents, and academies."
+      },
+      "hero": {
+        "preTitle": "With AI",
+        "title": "Less Routine · More Capacity",
+        "subtitle": "Measurably · Safely · Scalably"
+      },
+      "journey": {
+        "title": "Choose where to start",
+        "subtitle": "Every company is different. Start where it makes sense — and move forward at your own pace.",
+        "step1": {
+          "label": "STEP 01",
+          "title": "Savings Map (14 days)",
+          "highlight": "Find out where AI brings the biggest savings.",
+          "audience": "For: CEO / COO / team leadership",
+          "output": "Output: list of processes with highest ROI + estimate.",
+          "badge": "Quick wins + ROI estimate"
+        },
+        "step2": {
+          "label": "STEP 02",
+          "title": "ROI Plan & Prioritization",
+          "highlight": "List of processes ranked by impact.",
+          "audience": "For: Project / Operations",
+          "output": "Output: prioritized plan + KPIs + pilot proposal.",
+          "badge": "Priority plan + KPIs"
+        },
+        "step3": {
+          "label": "STEP 03",
+          "title": "Deploy Digital Colleague",
+          "highlight": "AI agent for one process — deployed and measured.",
+          "audience": "For: Process with highest ROI",
+          "output": "Digital colleague that saves time from day one.",
+          "badge": "To production + measurement"
+        },
+        "step4": {
+          "label": "STEP 04",
+          "title": "Scale Company-Wide",
+          "highlight": "Standards, security, and adoption across teams.",
+          "audience": "For: Entire company / multiple teams",
+          "output": "So the solution sticks with people and works long-term.",
+          "badge": "Governance + adoption"
+        }
+      },
+      "paths": {
+        "title": "Choose what you want to improve",
+        "forBusiness": {
+          "label": "For Business",
+          "title": "Quick time savings across roles — safely and measurably",
+          "benefits": [
+            "Quick time savings in roles and processes",
+            "Safe workflows and usage rules",
+            "We measure impact (time, quality, error rate)"
+          ],
+          "hrNote": "HR/L&D will appreciate: unified skillset and completion tracking.",
+          "cta": "Find out where to start"
+        },
+        "forProfessionals": {
+          "label": "For Professionals",
+          "title": "Get visible recognition of your AI skills",
+          "benefits": [
+            "Certificate + LinkedIn badge upon completion",
+            "Practical workflows for your profession",
+            "Long-term access to content and study at your own pace"
+          ],
+          "cta": "Select academy"
+        }
+      },
+      "agentTeaser": {
+        "title": "Want a ready result? We'll deploy a digital colleague.",
+        "subtitle": "First we select the process. Then we build.",
+        "tags": ["Sales & support", "Reporting", "Orchestration"]
+      },
+      "benefits": {
+        "title": "WHAT YOU GET",
+        "items": {
+          "measurableProgress": {
+            "title": "Measurable Progress",
+            "description": "Time savings, higher quality, fewer errors — measurable in practice."
+          },
+          "safeAI": {
+            "title": "Safe AI Usage",
+            "description": "AI usage rules, data access, and output control."
+          },
+          "recognition": {
+            "title": "Skill Recognition",
+            "description": "Certificate + LinkedIn badge — visible proof of AI skills."
+          },
+          "ownPace": {
+            "title": "Your Own Pace",
+            "description": "Long-term access to content. Study at your own pace without deadline pressure."
+          }
+        }
+      },
+      "finalCta": {
+        "title": "Choose your next step",
+        "subtitle": "Start with a 15-minute diagnostic or choose an academy for certification.",
+        "primaryCta": "Book 15-min diagnostics",
+        "secondaryCta": "Select academy"
+      }
+    },
+
+    "online": {
+      "_path": "/en/online",
+      "seo": {
+        "title": "Online AI Academy – Certification and LinkedIn Badge",
+        "description": "Practical AI workflows for your profession. Certificate + LinkedIn badge upon completion. Study at your own pace."
+      },
+      "hero": {
+        "label": "Online Education",
+        "title": "AI for Your Profession",
+        "subtitle": "Practical workflows and certification — everything you need to work with AI."
+      }
+    },
+
+    "chatgptAkademie": {
+      "_path": "/en/online/chatgpt-academy",
+      "seo": {
+        "title": "ChatGPT Academy – Practical Workflows for Writing and Analysis",
+        "description": "Learn to effectively use ChatGPT for emails, documents, and decision-making. Certificate + LinkedIn badge."
+      },
+      "hero": {
+        "label": "Online Academy",
+        "title": "ChatGPT Academy",
+        "subtitle": "Practical GPT workflows that speed up writing, analysis, and decision-making.",
+        "idealFor": "Ideal for: Admin, HR, sales, support — anyone who writes daily."
+      },
+      "meta": {
+        "modules": "12 modules (approx. 24 h)",
+        "level": "Beginner → advanced",
+        "pace": "Own pace",
+        "certificate": "Certificate + LinkedIn badge"
+      },
+      "stats": {
+        "graduates": "1250+",
+        "graduatesLabel": "graduates",
+        "rating": "4.9/5",
+        "ratingLabel": "rating",
+        "recommends": "95%",
+        "recommendsLabel": "recommend"
+      },
+      "whatYouGet": {
+        "title": "What You Get",
+        "certificate": {
+          "title": "Certificate",
+          "description": "Upon academy completion"
+        },
+        "badge": {
+          "title": "LinkedIn Badge",
+          "description": "Add with one click"
+        },
+        "access": {
+          "title": "Long-term Access",
+          "description": "Study at your own pace"
+        }
+      },
+      "helper": {
+        "accessTime": "Access within 24 hours • study at your own pace",
+        "practicalOutputs": "Includes templates, checklists, and examples – ready to use in practice."
+      }
+    },
+
+    "copilotAkademie": {
+      "_path": "/en/online/copilot-academy",
+      "seo": {
+        "title": "Microsoft Copilot Academy – Practical Workflows for M365",
+        "description": "Learn to effectively use Copilot in Word, Excel, Outlook, and PowerPoint. Certificate + LinkedIn badge."
+      },
+      "hero": {
+        "label": "Online Academy",
+        "title": "Microsoft Copilot Academy",
+        "subtitle": "Practical Copilot workflows for Word, Excel, Outlook, and PowerPoint.",
+        "idealFor": "Ideal for: M365 users — Word, Excel, Outlook, PowerPoint in daily practice."
+      }
+    },
+
+    "agentiAutomatizace": {
+      "_path": "/en/online/agents-automation",
+      "seo": {
+        "title": "Agents & Automation – Advanced AI Workflows",
+        "description": "Learn to build AI agents and automate processes. Certificate + LinkedIn badge."
+      },
+      "hero": {
+        "label": "Online Academy",
+        "title": "Agents & Automation",
+        "subtitle": "Advanced workflows and tool orchestration. For those who want to go further.",
+        "idealFor": "Ideal for: Power users, process owners, innovation — those who want to automate."
+      }
+    },
+
+    "masterOfAICreativity": {
+      "_path": "/en/online/master-of-ai-creativity",
+      "seo": {
+        "title": "Master of AI Creativity – Complete Program (3 Academies)",
+        "description": "Complete AI program: ChatGPT + Copilot + Agents & Automation. Main certificate and verifiable LinkedIn badge."
+      },
+      "hero": {
+        "label": "Complete Program",
+        "title": "Master of AI Creativity",
+        "subtitle": "Complete program (3 academies): ChatGPT + Copilot + Agents & Automation — practical outputs you can use immediately."
+      }
+    },
+
+    "akademieProTymy": {
+      "_path": "/en/academy-for-teams",
+      "seo": {
+        "title": "Academy for Teams – Bulk AI Course Licenses",
+        "description": "Corporate AI academy licenses with onboarding and reporting for HR. Certificate and LinkedIn badge for every participant."
+      },
+      "hero": {
+        "label": "Corporate Education",
+        "title": "Online Academy for Teams",
+        "subtitle": "AI Work Standard Across the Company",
+        "description": "Employees study at their own pace. You get a unified skillset, certification, and completion tracking across roles and teams."
+      },
+      "chips": ["HR Reporting", "Certification", "Templates & Workflows", "Own Pace"]
+    },
+
+    "proFirmy": {
+      "_path": "/en/for-business",
+      "seo": {
+        "title": "AI for Business – Diagnostics, Agents, Academy",
+        "description": "Find out where AI brings the biggest savings. Diagnostics, savings map, custom AI agents, and corporate academy."
+      }
+    },
+
+    "mapaUspor": {
+      "_path": "/en/for-business/savings-map",
+      "seo": {
+        "title": "Savings Map – 14-Day AI Diagnostics for Companies",
+        "description": "In 14 days, find out where AI brings the biggest time and cost savings. Process list + ROI estimate."
+      }
+    },
+
+    "aiAgentiNaMiru": {
+      "_path": "/en/for-business/custom-ai-agents",
+      "seo": {
+        "title": "Custom AI Agents – Digital Colleague for Your Processes",
+        "description": "AI agent deployment for specific processes. Sales, support, reporting, orchestration."
+      }
+    },
+
+    "metodika": {
+      "_path": "/en/methodology",
+      "seo": {
+        "title": "Methodology – How We Work with AI in Companies",
+        "description": "We don't start with tools. We start with roles, processes, and quick wins. Technology comes when it makes measurable sense."
+      },
+      "hero": {
+        "title": "Methodology",
+        "subtitle": "We don't start with tools. We start with roles, processes, and quick wins. Technology comes when it makes measurable sense."
+      },
+      "dna": {
+        "title": "WHAT WE STAND FOR",
+        "subtitle": "Principles that set us apart."
+      },
+      "logoStrip": {
+        "title": "Trusted by Leaders in Industry and Technology",
+        "disclaimer": "Logos used with permission as collaboration references. Specific use cases are shared only anonymously."
+      }
+    },
+
+    "oNas": {
+      "_path": "/en/about",
+      "seo": {
+        "title": "About Us – Talent Innovation",
+        "description": "We help companies accelerate work with AI. Measurably, safely, and scalably."
+      }
+    },
+
+    "reference": {
+      "_path": "/en/references",
+      "seo": {
+        "title": "References – Collaboration with Industry Leaders",
+        "description": "We collaborate with leading companies in industry and technology."
+      },
+      "hero": {
+        "title": "References",
+        "subtitle": "We collaborate with leaders in industry and technology"
+      },
+      "logoStrip": {
+        "title": "Trusted by Leaders in Industry and Technology"
+      }
+    },
+
+    "poptavka": {
+      "_path": "/en/inquiry",
+      "seo": {
+        "title": "Inquiry – Schedule a Diagnostic",
+        "description": "Fill out a short form and we'll respond within 24 hours."
+      }
+    },
+
+    "dekujeme": {
+      "_path": "/en/thank-you",
+      "seo": {
+        "title": "Thank You for Your Purchase",
+        "noindex": true
+      },
+      "hero": {
+        "badge": "Paid",
+        "title": "Done. Start studying.",
+        "description": "Academy access will be sent to your email within 24 hours."
+      }
+    },
+
+    "dekujemeFormular": {
+      "_path": "/en/thank-you-form",
+      "seo": {
+        "title": "Thank You for Your Interest",
+        "noindex": true
+      },
+      "hero": {
+        "badge": "Sent",
+        "title": "Thank you for your interest."
+      }
+    },
+
+    "gdprCookies": {
+      "_path": "/en/gdpr-cookies",
+      "seo": {
+        "title": "Data Protection and Cookies",
+        "description": "Information about personal data processing and cookie usage."
+      }
+    },
+
+    "obchodniPodminky": {
+      "_path": "/en/terms",
+      "seo": {
+        "title": "Terms and Conditions",
+        "description": "Terms and conditions for purchasing online academies and services."
+      }
+    }
+  },
+
+  "components": {
+    "testimonialTicker": {
+      "title": "WHAT GRADUATES SAY",
+      "subtitle": "Short highlights – click to see full feedback."
+    },
+    "logoRibbon": {
+      "disclaimer": "Logos used with permission as collaboration references."
+    },
+    "scrollIndicator": {
+      "ariaLabel": "Scroll down"
+    },
+    "cookieConsent": {
+      "message": "This website uses cookies to improve your experience.",
+      "accept": "Accept",
+      "decline": "Decline",
+      "learnMore": "Learn more"
+    }
+  },
+
+  "forms": {
+    "gdprConsent": "I agree to the processing of personal data for the purpose of consultation / inquiry processing.",
+    "gdprLink": "(more)",
+    "fields": {
+      "name": "Full name",
+      "email": "Email",
+      "company": "Company",
+      "phone": "Phone",
+      "message": "Message",
+      "licenses": "Number of licenses",
+      "roles": "Target roles"
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Invalid email"
+    },
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  }
+}
