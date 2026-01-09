@@ -208,9 +208,6 @@ const CopilotAkademie = () => {
               <p className="text-xs text-muted-foreground mt-4">
                 Přístup do 24 hodin • studium vlastním tempem
               </p>
-              <p className="text-xs text-muted-foreground/70 mt-1">
-                2 min čtení • uvidíte moduly + ukázky
-              </p>
             </div>
           </div>
         </section>
