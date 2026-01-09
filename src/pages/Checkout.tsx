@@ -17,10 +17,14 @@ import { ArrowRight, MapPin, Zap, ListChecks, ShieldCheck, Loader2 } from "lucid
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { LogoRibbon } from "@/components/LogoRibbon";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WEBHOOK_URL = "https://hook.eu1.make.com/kfd2mio7cxmu78yk58eqlqs4hogx8qru";
 
 const Checkout = () => {
+  const { t } = useTranslation();
+  const { language, getLocalizedPath } = useLanguage();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -39,7 +43,7 @@ const Checkout = () => {
     e.preventDefault();
     
     if (!gdprConsent) {
-      setSubmitError("Pro odeslání je nutný souhlas se zpracováním osobních údajů.");
+      setSubmitError(t('pages.poptavka.errors.gdprRequired', 'Pro odeslání je nutný souhlas se zpracováním osobních údajů.'));
       return;
     }
 
@@ -58,7 +62,8 @@ const Checkout = () => {
       gdpr_consent: true,
       url: window.location.href,
       timestamp: new Date().toISOString(),
-      source: "t-i.cz"
+      source: "t-i.cz",
+      language: language
     };
 
     try {
@@ -80,12 +85,12 @@ const Checkout = () => {
         throw new Error("Webhook request failed");
       }
 
-      navigate("/dekujeme-formular?form=rychla_diagnostika");
+      navigate(getLocalizedPath('/dekujeme-formular') + '?form=rychla_diagnostika');
     } catch (error) {
       if (error instanceof Error && error.name === "AbortError") {
-        setSubmitError("Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.");
+        setSubmitError(t('pages.poptavka.errors.timeout', 'Odeslání se nepovedlo (timeout). Zkuste to prosím znovu.'));
       } else {
-        setSubmitError("Odeslání se nepovedlo. Zkuste to prosím znovu.");
+        setSubmitError(t('pages.poptavka.errors.generic', 'Odeslání se nepovedlo. Zkuste to prosím znovu.'));
       }
     } finally {
       setIsSubmitting(false);
@@ -103,32 +108,49 @@ const Checkout = () => {
   const deliverables = [
     {
       icon: MapPin,
-      title: "Mapa rolí a procesů",
-      description: "Kde vznikají zbytečné ztráty času (PDF + komentář).",
+      title: t('pages.poptavka.deliverables.roleMap.title', 'Mapa rolí a procesů'),
+      description: t('pages.poptavka.deliverables.roleMap.description', 'Kde vznikají zbytečné ztráty času (PDF + komentář).'),
     },
     {
       icon: Zap,
-      title: "3–10 quick wins",
-      description: "Konkrétní zlepšení, která lze zavést rychle a bezpečně.",
+      title: t('pages.poptavka.deliverables.quickWins.title', '3–10 quick wins'),
+      description: t('pages.poptavka.deliverables.quickWins.description', 'Konkrétní zlepšení, která lze zavést rychle a bezpečně.'),
     },
     {
       icon: ListChecks,
-      title: "Doporučený postup",
-      description: "Co řešit první — podle času, kvality a chybovosti.",
+      title: t('pages.poptavka.deliverables.procedure.title', 'Doporučený postup'),
+      description: t('pages.poptavka.deliverables.procedure.description', 'Co řešit první — podle času, kvality a chybovosti.'),
     },
     {
       icon: ShieldCheck,
-      title: "Bezpečnostní rámec",
-      description: "Data, přístupy a pravidla používání AI.",
+      title: t('pages.poptavka.deliverables.security.title', 'Bezpečnostní rámec'),
+      description: t('pages.poptavka.deliverables.security.description', 'Data, přístupy a pravidla používání AI.'),
     },
+  ];
+
+  const teamSizeOptions = [
+    { value: "1-10", label: "1–10" },
+    { value: "11-50", label: "11–50" },
+    { value: "51-200", label: "51–200" },
+    { value: "200+", label: "200+" },
+  ];
+
+  const improvementOptions = [
+    { value: "administrativa", label: t('pages.poptavka.improvements.admin', 'Administrativa') },
+    { value: "obchod", label: t('pages.poptavka.improvements.sales', 'Obchod') },
+    { value: "hr", label: t('pages.poptavka.improvements.hr', 'HR') },
+    { value: "back-office", label: t('pages.poptavka.improvements.backOffice', 'Back-office') },
+    { value: "operace", label: t('pages.poptavka.improvements.operations', 'Operace') },
+    { value: "management", label: t('pages.poptavka.improvements.management', 'Management') },
+    { value: "jine", label: t('pages.poptavka.improvements.other', 'Jiné') },
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Rychlá diagnostika: kde vám AI ušetří čas | Talent Innovation" 
-        description="Za 15 minut zjistíte, kde ve vašich rolích a procesech vzniká zbytečná zátěž. Bezpečně. Prakticky. S měřitelným dopadem."
-        path="/poptavka"
+        title={t('pages.poptavka.seo.title', 'Rychlá diagnostika: kde vám AI ušetří čas | Talent Innovation')}
+        description={t('pages.poptavka.seo.description', 'Za 15 minut zjistíte, kde ve vašich rolích a procesech vzniká zbytečná zátěž. Bezpečně. Prakticky. S měřitelným dopadem.')}
+        path={language === 'en' ? '/en/contact' : '/poptavka'}
       />
       <Navbar />
       
@@ -139,29 +161,29 @@ const Checkout = () => {
             <div className="text-center mb-10">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4 leading-[1.3]">
                 <span className="heading-hero uppercase">
-                  Rychlá diagnostika: kde vám AI ušetří čas
+                  {t('pages.poptavka.hero.title', 'Rychlá diagnostika: kde vám AI ušetří čas')}
                 </span>
                 <br />
                 <span className="text-foreground text-lg md:text-xl lg:text-2xl">
-                  (15 minut)
+                  {t('pages.poptavka.hero.duration', '(15 minut)')}
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-foreground font-medium mb-3 max-w-xl mx-auto">
-                Zjistíme, kde ve vašich rolích a procesech vzniká zbytečná zátěž.
+                {t('pages.poptavka.hero.description', 'Zjistíme, kde ve vašich rolích a procesech vzniká zbytečná zátěž.')}
                 <br />
-                <span className="text-primary">Bezpečně. Prakticky. S měřitelným dopadem.</span>
+                <span className="text-primary">{t('pages.poptavka.hero.benefits', 'Bezpečně. Prakticky. S měřitelným dopadem.')}</span>
               </p>
               <p className="text-muted-foreground text-sm max-w-lg mx-auto">
-                Do 24 hodin navrhneme termín krátkého hovoru a pošleme stručný checklist.
+                {t('pages.poptavka.hero.nextSteps', 'Do 24 hodin navrhneme termín krátkého hovoru a pošleme stručný checklist.')}
                 <br />
-                Bez závazků. Bez prodeje.
+                {t('pages.poptavka.hero.noSales', 'Bez závazků. Bez prodeje.')}
               </p>
             </div>
 
             {/* "Co dostanete" Section */}
             <div className="mb-10">
               <h2 className="text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-6 text-center">
-                Co dostanete
+                {t('pages.poptavka.whatYouGet', 'Co dostanete')}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {deliverables.map((item, index) => (
@@ -185,11 +207,11 @@ const Checkout = () => {
             <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 space-y-5">
               {/* Name */}
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-foreground">Celé jméno</Label>
+                <Label htmlFor="name" className="text-foreground">{t('forms.fields.name')}</Label>
                 <Input
                   id="name"
                   name="name"
-                  placeholder="Jan Novák"
+                  placeholder={language === 'en' ? 'John Smith' : 'Jan Novák'}
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -198,12 +220,12 @@ const Checkout = () => {
 
               {/* Email */}
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-foreground">E-mail</Label>
+                <Label htmlFor="email" className="text-foreground">{t('forms.fields.email')}</Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="jan@firma.cz"
+                  placeholder={language === 'en' ? 'john@company.com' : 'jan@firma.cz'}
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -212,11 +234,11 @@ const Checkout = () => {
 
               {/* Company */}
               <div className="space-y-2">
-                <Label htmlFor="company" className="text-foreground">Název společnosti</Label>
+                <Label htmlFor="company" className="text-foreground">{t('forms.fields.company')}</Label>
                 <Input
                   id="company"
                   name="company"
-                  placeholder="Moje firma s.r.o."
+                  placeholder={language === 'en' ? 'My Company Ltd.' : 'Moje firma s.r.o.'}
                   value={formData.company}
                   onChange={handleChange}
                   required
@@ -226,7 +248,7 @@ const Checkout = () => {
               {/* Phone (optional) */}
               <div className="space-y-2">
                 <Label htmlFor="phone" className="text-foreground">
-                  Telefon <span className="text-muted-foreground font-normal">(volitelné)</span>
+                  {t('forms.fields.phone')} <span className="text-muted-foreground font-normal">({t('pages.poptavka.optional', 'volitelné')})</span>
                 </Label>
                 <Input
                   id="phone"
@@ -242,35 +264,30 @@ const Checkout = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Team Size */}
                 <div className="space-y-2">
-                  <Label className="text-foreground">Velikost týmu</Label>
+                  <Label className="text-foreground">{t('pages.poptavka.teamSize', 'Velikost týmu')}</Label>
                   <Select onValueChange={(value) => handleSelectChange("teamSize", value)}>
                     <SelectTrigger className="bg-card border-input">
-                      <SelectValue placeholder="Vyberte..." />
+                      <SelectValue placeholder={t('pages.poptavka.selectPlaceholder', 'Vyberte...')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="1-10">1–10</SelectItem>
-                      <SelectItem value="11-50">11–50</SelectItem>
-                      <SelectItem value="51-200">51–200</SelectItem>
-                      <SelectItem value="200+">200+</SelectItem>
+                      {teamSizeOptions.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
 
                 {/* Improvement Area */}
                 <div className="space-y-2">
-                  <Label className="text-foreground">Co chcete zlepšit</Label>
+                  <Label className="text-foreground">{t('pages.poptavka.whatToImprove', 'Co chcete zlepšit')}</Label>
                   <Select onValueChange={(value) => handleSelectChange("improvement", value)}>
                     <SelectTrigger className="bg-card border-input">
-                      <SelectValue placeholder="Vyberte..." />
+                      <SelectValue placeholder={t('pages.poptavka.selectPlaceholder', 'Vyberte...')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="administrativa">Administrativa</SelectItem>
-                      <SelectItem value="obchod">Obchod</SelectItem>
-                      <SelectItem value="hr">HR</SelectItem>
-                      <SelectItem value="back-office">Back-office</SelectItem>
-                      <SelectItem value="operace">Operace</SelectItem>
-                      <SelectItem value="management">Management</SelectItem>
-                      <SelectItem value="jine">Jiné</SelectItem>
+                      {improvementOptions.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -279,12 +296,12 @@ const Checkout = () => {
               {/* Pain Point Textarea */}
               <div className="space-y-2">
                 <Label htmlFor="painPoint" className="text-foreground">
-                  Co vás dnes nejvíc brzdí? <span className="text-muted-foreground font-normal">(1 věta, volitelné)</span>
+                  {t('pages.poptavka.painPoint', 'Co vás dnes nejvíc brzdí?')} <span className="text-muted-foreground font-normal">({t('pages.poptavka.oneSentenceOptional', '1 věta, volitelné')})</span>
                 </Label>
                 <Textarea
                   id="painPoint"
                   name="painPoint"
-                  placeholder="Např. reporting, e-maily, nabídky, onboarding…"
+                  placeholder={t('pages.poptavka.painPointPlaceholder', 'Např. reporting, e-maily, nabídky, onboarding…')}
                   value={formData.painPoint}
                   onChange={handleChange}
                   className="min-h-[80px] resize-none"
@@ -300,9 +317,9 @@ const Checkout = () => {
                   className="mt-0.5"
                 />
                 <Label htmlFor="gdpr" className="text-sm text-muted-foreground font-normal cursor-pointer leading-relaxed">
-                  Souhlasím se zpracováním osobních údajů za účelem domluvy / zpracování poptávky.{" "}
-                  <Link to="/gdpr-cookies" className="text-primary hover:underline">
-                    (více)
+                  {t('forms.gdprConsent')}{" "}
+                  <Link to={getLocalizedPath('/gdpr-cookies')} className="text-primary hover:underline">
+                    {t('forms.gdprLink')}
                   </Link>
                 </Label>
               </div>
@@ -318,7 +335,7 @@ const Checkout = () => {
                     onClick={() => setSubmitError(null)}
                     className="border-destructive/50 text-destructive hover:bg-destructive/10"
                   >
-                    Zkusit znovu
+                    {t('pages.poptavka.tryAgain', 'Zkusit znovu')}
                   </Button>
                 </div>
               )}
@@ -334,17 +351,17 @@ const Checkout = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                      Odesílám...
+                      {t('forms.submitting')}
                     </>
                   ) : (
                     <>
-                      Získat rychlou diagnostiku
+                      {t('pages.poptavka.submitCta', 'Získat rychlou diagnostiku')}
                       <ArrowRight className="h-5 w-5" />
                     </>
                   )}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center mt-3">
-                  Odpověď do 24 hodin. Bez spamu.
+                  {t('pages.poptavka.responseNote', 'Odpověď do 24 hodin. Bez spamu.')}
                 </p>
               </div>
             </form>
