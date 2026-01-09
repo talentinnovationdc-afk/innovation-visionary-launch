@@ -340,12 +340,15 @@ const AkademieProTymy = () => {
         description="Firemní licence AI akademií s onboardingem a reportingem pro HR. Certifikát a LinkedIn odznak pro každého účastníka."
         path="/akademie-pro-tymy"
       />
-      <NeuralNetworkBackground />
       <Navbar />
       
       <main className="relative z-10 pt-40 md:pt-48">
         {/* Hero Section for HR */}
-        <section className="pb-16 md:pb-20">
+        <section className="pb-16 md:pb-20 relative min-h-[600px]">
+          {/* Neural Network only in hero */}
+          <div className="absolute inset-0 overflow-hidden">
+            <NeuralNetworkBackground />
+          </div>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
