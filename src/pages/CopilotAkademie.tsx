@@ -187,7 +187,7 @@ const CopilotAkademie = () => {
               
               {/* Price */}
               <div className="mb-8">
-                <span className="text-4xl font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '€179'}</span>
+                <span className="text-4xl font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '4 470 CZK'}</span>
                 <span className="text-sm text-muted-foreground ml-2">{language === 'cs' ? 'vč. DPH' : 'incl. VAT'}</span>
               </div>
               
@@ -437,7 +437,7 @@ const CopilotAkademie = () => {
               </p>
               
               <div className="mb-6">
-                <span className="text-4xl font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '€179'}</span>
+                <span className="text-4xl font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '4 470 CZK'}</span>
                 <span className="text-sm text-muted-foreground ml-2">{language === 'cs' ? 'vč. DPH' : 'incl. VAT'}</span>
               </div>
               
@@ -476,7 +476,7 @@ const CopilotAkademie = () => {
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/95 backdrop-blur-lg border-t border-border/30 md:hidden z-50">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-lg font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '€179'}</p>
+              <p className="text-lg font-bold text-primary">{language === 'cs' ? '4 470 Kč' : '4 470 CZK'}</p>
               <p className="text-xs text-muted-foreground">{language === 'cs' ? 'vč. DPH' : 'incl. VAT'}</p>
             </div>
             <a 

@@ -369,7 +369,7 @@
           "proKoho": "CEO / COO / HR",
           "doba": "1–2 weeks",
           "vystup": "Role Map + priority list + ROI estimate",
-          "price": "€750 – €1,000"
+          "price": "18 000 – 25 000 CZK"
         },
         "plan": {
           "title": "PLAN",
@@ -379,7 +379,7 @@
           "proKoho": "Project Team / Operations",
           "doba": "1–2 weeks",
           "vystup": "Prioritized list + pilot proposal",
-          "price": "€600 – €800"
+          "price": "15 000 – 19 000 CZK"
         },
         "pilot": {
           "title": "PILOT",
@@ -389,8 +389,8 @@
           "proKoho": "Process with highest ROI",
           "doba": "2–4 weeks (typically 3–8 MD)",
           "vystup": "Running agent + KPIs + training",
-          "price": "from €1,800",
-          "priceNote": "typically €1,800–4,800 excl. VAT (3–8 MD)"
+          "price": "from 45 000 CZK",
+          "priceNote": "typically 45 000–120 000 CZK excl. VAT (3–8 MD)"
         },
         "scale": {
           "title": "SCALING",
@@ -400,7 +400,7 @@
           "proKoho": "Entire company / multiple teams",
           "doba": "Ongoing",
           "vystup": "Governance + templates + reporting",
-          "price": "from €1,000 / month"
+          "price": "from 25 000 CZK / month"
         }
       },
       "painPoints": {
