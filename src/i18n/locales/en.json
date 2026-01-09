@@ -1581,6 +1581,7 @@
       "licenses": "licenses",
       "perLicense": "license",
       "exclVat": "excl. VAT",
+      "currency": "CZK",
       "vatNote": "Price excludes 21% VAT",
       "accessNote": "Access within 24 hours",
       "total": "Total",
