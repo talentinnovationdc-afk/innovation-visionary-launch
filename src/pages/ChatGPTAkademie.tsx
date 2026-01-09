@@ -154,9 +154,6 @@ const ChatGPTAkademie = () => {
               <p className="text-sm text-primary mb-2">
                 Ideální pro: Administrativa, HR, obchod, podpora — každý, kdo denně píše.
               </p>
-              <p className="text-sm text-muted-foreground mb-6">
-                Typický výsledek: 2–3× rychlejší e-maily a dokumenty, konzistentní tón.
-              </p>
               
               {/* Meta badges */}
               <div className="flex flex-wrap justify-center gap-3 mb-8">
