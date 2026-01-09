@@ -29,74 +29,69 @@ const courses = [
     id: 0,
     slug: "master-of-ai-creativity",
     title: "MASTER OF AI CREATIVITY",
-    subtitle: "Kompletní program\n(3 akademie)",
-    forWhom: "Pro ty, kdo chtějí kompletní standard práce s AI.",
-    benefit: "Nejrychlejší cesta ke konzistentním výstupům napříč agendou.",
-    outputs: [
-      "Šablony pro e-maily, dokumenty, rozhodování",
-      "Workflow v M365 + pokročilé automatizace",
-      "Certifikát + hlavní LinkedIn odznak"
+    subtitle: "Kompletní program (3 akademie)",
+    forWhomChips: ["Standard firmy", "Management", "Napříč rolemi"],
+    benefit: "Nejrychlejší cesta ke konzistentnímu AI standardu.",
+    topOutputs: [
+      "Metodika napříč firmou",
+      "Kompletní šablony",
+      "Hlavní LinkedIn odznak"
     ],
     price: "9 970 Kč",
     icon: Crown,
     link: "https://buy.stripe.com/aFadRaftA8Rj0Kf9r06Ri09",
-    isProgram: true,
-    tags: ["3 akademie", "Hlavní certifikát", "Hlavní LinkedIn odznak"]
+    isProgram: true
   },
   {
     id: 1,
     slug: "chatgptakademie",
     title: "CHATGPT AKADEMIE",
     subtitle: "Samostatná akademie",
-    forWhom: "Administrativa, HR, obchod, podpora.",
-    benefit: "Rychlé psaní, analýza, šablony a jistota tónu.",
-    outputs: [
-      "E-mailové a dokumentové šablony",
-      "Prompty pro každodenní agendu",
-      "Certifikát + LinkedIn odznak"
+    forWhomChips: ["HR & admin", "Obchod", "Podpora"],
+    benefit: "Rychlé psaní a jistota tónu v e-mailech.",
+    topOutputs: [
+      "Šablony e-mailů",
+      "Prompt pack",
+      "Certifikát + odznak"
     ],
     price: "4 470 Kč",
     icon: MessageSquare,
     link: "https://buy.stripe.com/4gM8wQ2GO9Vn2SnfPo6Ri03",
-    isProgram: false,
-    tags: ["Šablony", "Prompty", "Certifikace"]
+    isProgram: false
   },
   {
     id: 2,
     slug: "copilotakademie",
-    title: "MICROSOFT COPILOT AKADEMIE",
+    title: "COPILOT AKADEMIE",
     subtitle: "Samostatná akademie",
-    forWhom: "Týmy v Microsoft 365.",
-    benefit: "Méně rutiny v Outlook/Word/Excel/PowerPoint.",
-    outputs: [
-      "Šablony v M365 pro opakované výstupy",
-      "Zrychlení reportingu a prezentací",
-      "Certifikát + LinkedIn odznak"
+    forWhomChips: ["Microsoft 365", "Office týmy", "Reporting"],
+    benefit: "Méně rutiny v Outlook, Word a Excel.",
+    topOutputs: [
+      "Šablony v Excelu",
+      "Outlook/Teams workflow",
+      "Certifikát + odznak"
     ],
     price: "4 470 Kč",
     icon: Wand2,
     link: "https://buy.stripe.com/eVq8wQepw9Vn3Wr8mW6Ri02",
-    isProgram: false,
-    tags: ["M365", "Šablony", "Certifikace"],
-    note: "Copilot licence není podmínkou — řekneme varianty."
+    isProgram: false
   },
   {
     id: 3,
     slug: "agentiautomatizace",
     title: "AGENTI & AUTOMATIZACE",
     subtitle: "Samostatná akademie",
-    forWhom: "Power users, inovace, provoz.",
+    forWhomChips: ["Power users", "Procesy", "Automatizace"],
     benefit: "Automatizace workflow a integrace nástrojů.",
-    outputs: [
-      "Návrh workflow: problém → automatizace",
-      "Bezpečné nasazení a měření dopadu",
-      "Základy agentů + šablony"
+    topOutputs: [
+      "Automatizační blueprint",
+      "Agentní šablony",
+      "Certifikát + odznak"
     ],
     price: "4 970 Kč",
     icon: Bot,
     link: "https://buy.stripe.com/14A00k2GOffHfF946G6Ri01",
-    isProgram: false,
-    tags: ["Workflow", "Agenti", "Certifikace"]
+    isProgram: false
   }
 ];
 
@@ -564,110 +559,102 @@ const Online = () => {
                   return (
                     <div 
                       key={course.id}
-                      className={`glass-card p-6 group transition-all duration-300 hover:-translate-y-2 flex flex-col relative cursor-pointer ${
+                      className={`glass-card p-7 group transition-all duration-300 hover:-translate-y-1 flex flex-col relative ${
                         course.isProgram 
-                          ? 'border-primary/50 shadow-[0_0_25px_hsla(176,96%,69%,0.15)] hover:shadow-[0_0_35px_hsla(176,96%,69%,0.25)]' 
-                          : 'hover:border-primary/40 hover:shadow-[0_0_20px_rgba(102,252,241,0.12)]'
+                          ? 'border-primary/40 shadow-[0_0_20px_hsla(176,96%,69%,0.12)] hover:shadow-[0_0_30px_hsla(176,96%,69%,0.2)]' 
+                          : 'hover:border-primary/30 hover:shadow-[0_0_15px_rgba(102,252,241,0.1)]'
                       }`}
-                      onClick={(e) => {
-                        // Don't navigate if clicking on buttons
-                        if ((e.target as HTMLElement).closest('button') || (e.target as HTMLElement).closest('a')) return;
-                        window.location.href = `/online/${course.slug}`;
-                      }}
                     >
-                      {/* Hover hint */}
-                      <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="px-2 py-1 text-[9px] bg-card/90 border border-border/50 rounded-full text-muted-foreground">
-                          Klikni pro detail
-                        </span>
-                      </div>
-                      
+                      {/* Badge for program - smaller, subtle */}
                       {course.isProgram && (
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase shadow-[0_0_10px_hsla(284,100%,50%,0.4)]">
+                        <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 bg-accent/90 text-background text-[9px] font-semibold tracking-wider rounded-full uppercase">
                           Nejlepší hodnota
                         </div>
                       )}
                       
-                      <div className={`w-12 h-12 rounded-lg border flex items-center justify-center mb-5 transition-colors duration-300 ${
+                      {/* Icon + Title */}
+                      <div className={`w-11 h-11 rounded-lg border flex items-center justify-center mb-4 ${
                         course.isProgram 
-                          ? 'bg-primary/15 border-primary/40 group-hover:bg-primary/20' 
-                          : 'bg-primary/10 border-primary/20 group-hover:bg-primary/15'
+                          ? 'bg-primary/15 border-primary/30' 
+                          : 'bg-primary/10 border-primary/20'
                       }`}>
-                        <Icon className="h-6 w-6 text-primary" />
+                        <Icon className="h-5 w-5 text-primary" />
                       </div>
                       
-                      <h3 className="text-sm font-semibold tracking-[0.1em] text-foreground mb-1 uppercase">
+                      <h3 className="text-sm font-semibold tracking-wide text-foreground mb-1 uppercase leading-tight">
                         {course.title}
                       </h3>
                       
-                      <p className={`text-[11px] mb-3 whitespace-pre-line ${course.isProgram ? 'text-primary font-medium' : 'text-muted-foreground/70'}`}>
+                      <p className={`text-[11px] mb-4 ${course.isProgram ? 'text-primary font-medium' : 'text-muted-foreground/60'}`}>
                         {course.subtitle}
                       </p>
                       
-                      {/* Pro koho */}
-                      <p className="text-xs text-muted-foreground mb-2">
-                        <span className="font-medium text-foreground">Pro koho:</span> {course.forWhom}
-                      </p>
+                      {/* Pro koho - chips */}
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {course.forWhomChips.map((chip, idx) => (
+                          <span 
+                            key={idx}
+                            className="px-2 py-0.5 text-[9px] font-medium bg-primary/5 border border-primary/15 rounded-full text-muted-foreground"
+                          >
+                            {chip}
+                          </span>
+                        ))}
+                      </div>
                       
-                      {/* Největší přínos */}
-                      <p className="text-xs text-primary/80 mb-3 italic">
+                      {/* Benefit - 1 line */}
+                      <p className="text-xs text-foreground/80 mb-5 leading-relaxed">
                         {course.benefit}
                       </p>
                       
-                      {/* Outputs */}
-                      <ul className="space-y-1 mb-4">
-                        {course.outputs.map((output, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-[11px] text-muted-foreground">
-                            <Check className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
-                            {output}
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Divider */}
+                      <div className="h-px bg-border/30 mb-4" />
                       
-                      {/* Note for Copilot */}
-                      {course.note && (
-                        <p className="text-[10px] text-muted-foreground/60 mb-3 italic">
-                          {course.note}
+                      {/* Top 3 outputs */}
+                      <div className="mb-5">
+                        <p className="text-[9px] uppercase tracking-wider text-muted-foreground/50 mb-2 font-medium">
+                          Top výstupy
                         </p>
-                      )}
+                        <ul className="space-y-1.5">
+                          {course.topOutputs.map((output, idx) => (
+                            <li key={idx} className="flex items-center gap-2 text-xs text-foreground/70">
+                              <Check className="w-3 h-3 text-primary flex-shrink-0" />
+                              {output}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                       
-                      <div className="mt-auto">
-                        <div className="text-xl font-bold mb-1 text-foreground">
+                      {/* Price + CTAs - fixed at bottom */}
+                      <div className="mt-auto pt-2">
+                        <div className="text-xl font-bold text-foreground">
                           {course.price}
                         </div>
-                        <p className="text-[10px] text-muted-foreground/70 mb-4">vč. DPH</p>
+                        <p className="text-[10px] text-muted-foreground/60 mb-4">vč. DPH</p>
                         
                         <div className="space-y-2">
-                          {/* Primary CTA: Koupit - cyan solid */}
+                          {/* Primary CTA: Koupit */}
                           <a 
                             href={course.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
                           >
                             <Button 
                               size="sm" 
-                              className="w-full text-xs tracking-[0.1em] uppercase py-3"
+                              className="w-full h-10 text-xs tracking-wider uppercase shadow-[0_0_12px_rgba(102,252,241,0.25)] hover:shadow-[0_0_18px_rgba(102,252,241,0.4)]"
                               data-event={course.isProgram ? "b2c_program_buy_click" : "b2c_buy_click"}
                             >
                               Koupit
                             </Button>
                           </a>
                           
-                          {/* Secondary CTA: Osnova a ukázky - outline cyan */}
+                          {/* Secondary CTA: text link style */}
                           <Link 
                             to={`/online/${course.slug}`}
                             data-event={course.isProgram ? "b2c_program_view" : "b2c_academy_view"}
-                            onClick={(e) => e.stopPropagation()}
+                            className="flex items-center justify-center gap-1 py-2 text-xs text-primary/70 hover:text-primary transition-colors font-medium"
                           >
-                            <Button 
-                              variant="outline" 
-                              size="sm" 
-                              className="w-full text-xs tracking-[0.1em] uppercase py-3 group/btn"
-                            >
-                              Osnova a ukázky
-                              <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                            </Button>
+                            Osnova a ukázky
+                            <ChevronRight className="w-3.5 h-3.5" />
                           </Link>
                         </div>
                       </div>
