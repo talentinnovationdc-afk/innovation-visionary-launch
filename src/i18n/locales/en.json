@@ -47,6 +47,10 @@
       "recommended": "RECOMMENDED",
       "mostPopular": "MOST POPULAR",
       "bestValue": "Best value"
+    },
+    "trustStrip": {
+      "title": "Trusted by Leaders in Industry and Technology",
+      "disclaimer": "Logos used with permission as collaboration references. Specific use cases are shared only anonymously."
     }
   },
 
@@ -360,12 +364,104 @@
         "description": "We don't start with tools. We start with roles, processes, and quick wins. Technology comes when it makes measurable sense."
       },
       "hero": {
-        "title": "Methodology",
-        "subtitle": "We don't start with tools. We start with roles, processes, and quick wins. Technology comes when it makes measurable sense."
+        "label": "METHODOLOGY",
+        "title1": "The Path to Digital Autonomy",
+        "title2": "measurably, safely, scalably",
+        "description": "We don't start with tools. We start with roles, processes, and quick wins. Technology comes when it makes measurable sense.",
+        "helper": "Role → Process → Win → Technology",
+        "cta": "Book a diagnostic",
+        "ctaSecondary": "Choose an academy"
+      },
+      "quickWins": {
+        "title": "WHAT YOU GET IN 14 DAYS",
+        "subtitle": "From day one, we measure impact. No pilots without results.",
+        "roleMap": {
+          "title": "ROLE MAP",
+          "description": "We map roles and identify where unnecessary time losses occur."
+        },
+        "quickWinsList": {
+          "title": "QUICK WINS LIST",
+          "description": "3–10 specific improvements that can be implemented quickly and safely."
+        },
+        "securityFrame": {
+          "title": "SECURITY FRAMEWORK",
+          "description": "Clear rules for data, access, and AI usage in your company."
+        },
+        "roiRoadmap": {
+          "title": "ROI ROADMAP",
+          "description": "Prioritized plan with ROI estimate for individual processes."
+        }
+      },
+      "timeline": {
+        "title": "THE PATH TO DIGITAL AUTONOMY",
+        "subtitle": "5 steps from first wins to full autonomy",
+        "step": "STEP",
+        "steps": {
+          "diagnostics": {
+            "title": "DIAGNOSTICS",
+            "description": "We map roles, processes, and quick wins. We find where AI brings the biggest savings."
+          },
+          "plan": {
+            "title": "PLAN",
+            "description": "Prioritized plan with KPIs and pilot proposal. You know what to address first.",
+            "note": "Includes ROI estimate for individual processes."
+          },
+          "implementation": {
+            "title": "IMPLEMENTATION",
+            "description": "AI agent or workflow deployment. We measure impact from day one."
+          },
+          "training": {
+            "title": "TRAINING",
+            "description": "Practical workshops and academies. The team gains skillset and standards."
+          },
+          "evolution": {
+            "title": "EVOLUTION",
+            "description": "Scaling to more processes. Governance and adoption across the company."
+          }
+        }
+      },
+      "choosePath": {
+        "title": "WHO IT MAKES SENSE FOR",
+        "subtitle": "Choose your path based on what you need.",
+        "forBusiness": {
+          "title": "FOR BUSINESS",
+          "description": "Quick time savings in roles and processes. Safe workflows and impact measurement. Ideal for teams of 5+ people.",
+          "cta": "Book a diagnostic"
+        },
+        "forProfessionals": {
+          "title": "FOR PROFESSIONALS",
+          "description": "Certification and LinkedIn badge. Practical workflows for your profession. Study at your own pace.",
+          "cta": "Choose an academy"
+        }
       },
       "dna": {
         "title": "WHAT WE STAND FOR",
-        "subtitle": "Principles that set us apart."
+        "subtitle": "Principles that set us apart.",
+        "impact": {
+          "title": "MEASURABLE IMPACT",
+          "subtitle": "Time, quality, error rate",
+          "description": "We measure impact: saved time, output quality, and error rate. You know what works."
+        },
+        "custom": {
+          "title": "CUSTOM FIT",
+          "subtitle": "Role + process",
+          "description": "We don't start with tools. We start with roles, processes, and quick wins."
+        },
+        "safe": {
+          "title": "SAFELY",
+          "subtitle": "Data under control",
+          "description": "Clear rules for data, access, and AI usage. We respect GDPR and company rules."
+        },
+        "data": {
+          "title": "SCALABLY",
+          "subtitle": "From pilot to company",
+          "description": "From first wins to scaling. Governance and adoption across teams."
+        }
+      },
+      "finalCta": {
+        "title": "FIND OUT WHERE AI BRINGS THE BIGGEST SAVINGS",
+        "description": "Start with a 15-minute diagnostic. We'll tell you where AI makes sense.",
+        "helper": "No commitment • we'll respond within 24 hours"
       },
       "logoStrip": {
         "title": "Trusted by Leaders in Industry and Technology",
