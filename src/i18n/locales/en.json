@@ -338,6 +338,248 @@
       "seo": {
         "title": "AI for Business – Diagnostics, Agents, Academy",
         "description": "Find out where AI brings the biggest savings. Diagnostics, savings map, custom AI agents, and corporate academy."
+      },
+      "hero": {
+        "title1": "Accelerate Team Work",
+        "title2": "with AI Workflows",
+        "subtitle": "and Corporate Academy",
+        "description": "In 15 minutes, you'll find out where roles lose the most time.",
+        "descriptionHighlight": "We'll suggest quick wins and safe deployment rules."
+      },
+      "services": {
+        "priceNote": "excl. VAT",
+        "start": {
+          "title": "START",
+          "subtitle": "Savings Map (AI QuickScan) — within 14 days",
+          "description": "We find roles and processes with the fastest impact. You get a bottleneck map, list of quick wins, and ROI estimate.",
+          "features": ["Role Map", "Quick Wins", "ROI Estimate", "Safe Rules"],
+          "proKoho": "CEO / COO / HR",
+          "doba": "1–2 weeks",
+          "vystup": "Role Map + priority list + ROI estimate",
+          "price": "€750 – €1,000"
+        },
+        "plan": {
+          "title": "PLAN",
+          "subtitle": "ROI Plan & Prioritization",
+          "description": "List of 10–20 opportunities (use cases) ranked by impact and complexity. Pilot proposal with KPIs.",
+          "features": ["Opportunity List", "KPIs", "Pilot Proposal", "Governance"],
+          "proKoho": "Project Team / Operations",
+          "doba": "1–2 weeks",
+          "vystup": "Prioritized list + pilot proposal",
+          "price": "€600 – €800"
+        },
+        "pilot": {
+          "title": "PILOT",
+          "subtitle": "Digital Colleague Deployment (live within 14 days)",
+          "description": "AI agent or automation for one specific process — deployed and measured.",
+          "features": ["Agent in Production", "Integration", "Impact Measurement", "Training"],
+          "proKoho": "Process with highest ROI",
+          "doba": "2–4 weeks (typically 3–8 MD)",
+          "vystup": "Running agent + KPIs + training",
+          "price": "from €1,800",
+          "priceNote": "typically €1,800–4,800 excl. VAT (3–8 MD)"
+        },
+        "scale": {
+          "title": "SCALING",
+          "subtitle": "Standards & Adoption",
+          "description": "Standards, security, adoption, and long-term development. So the solution actually sticks with people.",
+          "features": ["Governance", "Templates", "Reporting", "Adoption"],
+          "proKoho": "Entire company / multiple teams",
+          "doba": "Ongoing",
+          "vystup": "Governance + templates + reporting",
+          "price": "from €1,000 / month"
+        }
+      },
+      "painPoints": {
+        "title": "WHAT SLOWS YOU DOWN MOST?",
+        "subtitle": "Typical problems we solve with our clients.",
+        "noRules": {
+          "title": "AI without rules",
+          "desc": "Access, data, output control.",
+          "result": "Clear rules for what AI can do and what to verify."
+        },
+        "routine": {
+          "title": "Routine eats capacity",
+          "desc": "Emails, reports, transcripts.",
+          "result": "We free up 2–10 hours/week per role (typically)."
+        },
+        "noResponse": {
+          "title": "Inquiries without response",
+          "desc": "Sales/support can't keep up.",
+          "result": "Faster response + follow-up without forgetting."
+        },
+        "fragmentedData": {
+          "title": "Fragmented data",
+          "desc": "CRM, Excel, email.",
+          "result": "One overview for management."
+        }
+      },
+      "journey": {
+        "title": "CHOOSE YOUR PATH",
+        "subtitle": "Diagnostics → Pilot → Scaling — productized AI transformation.",
+        "step": "STEP",
+        "startHere": "Start here",
+        "diagnostics": {
+          "title": "DIAGNOSTICS",
+          "subtitle": "15 min consultation — find out where to start",
+          "benefit": "Clear direction without commitment",
+          "cta": "Book 15 min diagnostic"
+        },
+        "savingsMap": {
+          "title": "SAVINGS MAP",
+          "subtitle": "Role map + opportunity list (use cases) + 30/60/90 roadmap",
+          "benefit": "Concrete outputs for management",
+          "cta": "What I get in Savings Map"
+        },
+        "pilot": {
+          "title": "PILOT",
+          "subtitle": "AI agent for 1 process — deployed within 14 days",
+          "benefit": "We measure impact from day one",
+          "cta": "Deploy a pilot"
+        },
+        "scale": {
+          "title": "SCALING",
+          "subtitle": "Development, governance, adoption, reporting",
+          "benefit": "So the solution sticks with people",
+          "cta": "Scale company-wide"
+        }
+      },
+      "targetAudience": {
+        "title": "FOR WHICH ROLES?",
+        "subtitle": "Where AI brings quick wins.",
+        "hr": {
+          "title": "HR / PEOPLE DEVELOPMENT",
+          "description": "Onboarding, internal know-how, and skill standards across the company.",
+          "bullets": [
+            "Faster onboarding and unified skillset",
+            "Templates for communication, documents, and HR processes",
+            "Completion tracking (useful for HR)"
+          ]
+        },
+        "backoffice": {
+          "title": "BACKOFFICE & ADMIN",
+          "description": "Emails, meeting notes, document management, reporting.",
+          "bullets": [
+            "Less manual work on routine tasks",
+            "Automatic summaries, follow-ups, and quality checks",
+            "Standardized workflows for the team"
+          ]
+        },
+        "sales": {
+          "title": "SALES & CUSTOMER SUPPORT",
+          "description": "Proposals, CRM, customer responses, and personalization.",
+          "bullets": [
+            "Faster responses and consistent answers",
+            "Assistant for proposal and email drafts",
+            "Fewer errors in communication and better overview"
+          ]
+        }
+      },
+      "expertise": {
+        "title": "WHY US?",
+        "subtitle": "Safely, measurably, and with adoption in mind.",
+        "safeStart": {
+          "title": "SAFE START",
+          "description": "We start with roles and quick wins. Clear rules for data, access, and AI usage."
+        },
+        "dataControl": {
+          "title": "DATA UNDER CONTROL",
+          "subtitle": "GDPR & company rules",
+          "description": "We set up what can go into AI, who has access, and how to handle sensitive data. We respect GDPR and your company rules."
+        },
+        "measurable": {
+          "title": "MEASURABLE RESULTS",
+          "subtitle": "Time, quality, error rate",
+          "description": "We measure impact: saved time, output quality, and error rate. You know what works."
+        },
+        "knowhow": {
+          "title": "KNOW-HOW STAYS IN-HOUSE",
+          "subtitle": "Skillset & standards",
+          "description": "The team gains skillset and standards. HR gets completion tracking and unified way of working."
+        }
+      },
+      "deliverables": {
+        "roleMap": {
+          "title": "ROLE AND BOTTLENECK MAP",
+          "description": "Where most extra work happens today and where AI saves the most time."
+        },
+        "quickWins": {
+          "title": "QUICK WINS & PRIORITIES",
+          "description": "3–10 specific improvements ranked by impact and complexity."
+        },
+        "rules": {
+          "title": "SAFE USAGE RULES",
+          "description": "What can go into AI, who has access, and how to protect sensitive data."
+        },
+        "training": {
+          "title": "TEAM TRAINING PLAN",
+          "description": "Recommended academies + licenses + completion tracking for HR."
+        }
+      },
+      "faq": {
+        "title": "FREQUENTLY ASKED QUESTIONS",
+        "subtitle": "Answers to what clients ask us most often.",
+        "time": {
+          "question": "How much time does it take?",
+          "answer": "We start with a 15-minute intro call.",
+          "bullets": ["1–2 weeks: role map + quick wins", "Then: implementation and training as agreed"],
+          "highlight": "15 min intro"
+        },
+        "input": {
+          "question": "What do you need from us?",
+          "answer": "Just brief info about the team and processes.",
+          "bullets": [
+            "Who are the target roles (e.g., HR, sales, back office)",
+            "2–3 typical tasks they handle daily",
+            "What tools you use (M365/Google/CRM etc.)"
+          ],
+          "highlight": "Minimal inputs"
+        },
+        "security": {
+          "question": "How do you protect data?",
+          "answer": "We set up usage rules and data access.",
+          "bullets": [
+            "Data handling rules + roles and permissions",
+            "Tool selection based on sensitivity",
+            "Compliance with your internal policies and GDPR"
+          ],
+          "highlight": "GDPR + internal rules"
+        },
+        "copilot": {
+          "question": "What if we don't have Copilot?",
+          "answer": "We're not tied to one platform.",
+          "bullets": [
+            "M365 is not required",
+            "We recommend suitable tools for your roles",
+            "We start where it makes the most sense"
+          ],
+          "highlight": "Flexible tools"
+        },
+        "licenses": {
+          "question": "How do corporate licenses work?",
+          "answer": "You choose the number of licenses and academies, HR gets tracking.",
+          "bullets": [
+            "Packages by team size",
+            "Long-term access and self-paced study",
+            "Completion tracking for HR (reporting)"
+          ],
+          "highlight": "Team licenses",
+          "cta": "View team academies"
+        },
+        "impact": {
+          "question": "How do you measure impact?",
+          "answer": "Simple metrics that make sense to management.",
+          "bullets": [
+            "Time saved, output quality, error rate",
+            "Before/after comparison on selected processes",
+            "Ongoing evaluation and next step recommendations"
+          ],
+          "highlight": "Measurable KPIs"
+        }
+      },
+      "finalCta": {
+        "title": "READY TO START?",
+        "description": "Start with a 15-minute diagnostic. We'll tell you where AI makes the most sense."
       }
     },
 
