@@ -774,35 +774,6 @@ const AkademieProTymy = () => {
               </div>
             </div>
 
-            {/* Role Recommendations */}
-            <div className="max-w-4xl mx-auto mb-8">
-              <h3 className="text-lg font-semibold tracking-wider text-foreground uppercase text-center mb-6">
-                Doporučení podle rolí
-              </h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                {roleRecommendations.map((item, index) => {
-                  const Icon = item.icon;
-                  return (
-                    <div 
-                      key={index}
-                      className="glass-card p-5 rounded-xl border border-border/30 hover:border-primary/30 transition-all duration-300"
-                    >
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-semibold text-foreground">{item.role}</span>
-                      </div>
-                      <p className="text-sm text-primary font-medium">→ {item.recommendation}</p>
-                    </div>
-                  );
-                })}
-              </div>
-              <p className="text-xs text-muted-foreground text-center mt-4">
-                Pro management doporučujeme Kompletní program (3 akademie).
-              </p>
-            </div>
-
             {/* Microtext */}
             <div className="text-xs text-muted-foreground/70 text-center max-w-2xl mx-auto space-y-1">
               <p>Firemní licence: onboarding, přehled o dokončení a jednotný standard práce.</p>
