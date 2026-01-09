@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
+import { AcademyCard } from "@/components/AcademyCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -128,70 +129,98 @@ const academyCards = [
     id: "chatgpt",
     title: "ChatGPT Akademie",
     icon: MessageSquare,
-    idealFor: "Ideální pro: Administrativa, HR, obchod — každý, kdo denně píše e-maily a dokumenty.",
-    afterTwoWeeks: "Po 14 dnech: Jednotný styl e-mailů + šablony pro rutiny.",
-    kdyZvolit: "Kdy zvolit: Když chcete rychle standard pro text a rozhodování.",
-    description: "Základ pro efektivní psaní a rozhodování. Jeden jasný standard pro celý tým.",
-    outputs: [
-      "E-mailové šablony a dokumentové checklisty",
-      "Firemní tone-of-voice prompt pack",
-      "Workflow pro rutiny (odpovědi, follow-upy)"
+    proKoho: "Administrativa, HR, obchod",
+    benefit: "Jednotný styl textů a rychlejší rozhodování. Standard pro celý tým.",
+    po14Dnech: "Šablony e-mailů + workflow pro rutiny",
+    topVystupy: [
+      "E-mailové šablony",
+      "Tone-of-voice prompt pack",
+      "Workflow pro follow-upy"
     ],
     link: "/online/chatgptakademie",
-    color: "primary",
-    badge: "UKÁZKA OBSAHU"
+    badge: "Ukázka obsahu",
+    // Details
+    detailDescription: "Základ pro efektivní psaní a rozhodování. Naučíte tým psát e-maily, dokumenty a odpovědi konzistentně a rychle.",
+    allOutputs: [
+      "E-mailové šablony a dokumentové checklisty",
+      "Firemní tone-of-voice prompt pack",
+      "Workflow pro rutiny (odpovědi, follow-upy)",
+      "Rozhodovací prompty pro management"
+    ],
+    kdyZvolit: "Když chcete rychle nastavit standard pro texty a rozhodování napříč týmem."
   },
   {
     id: "copilot",
     title: "Copilot Akademie",
     icon: Wand2,
-    idealFor: "Ideální pro: Týmy v M365 — Word, Excel, Outlook, PowerPoint v denní praxi.",
-    afterTwoWeeks: "Po 14 dnech: Méně rutiny ve Word/Excel/Outlook + sdílené workflow.",
-    kdyZvolit: "Kdy zvolit: Když jedete na M365 a chcete automatizace v Office.",
-    description: "Méně klikání, víc výsledků. Copilot jako asistent přímo v nástrojích, které už používáte.",
-    outputs: [
+    proKoho: "Týmy pracující v M365",
+    benefit: "Méně klikání, víc výsledků. Copilot jako asistent přímo v Office.",
+    po14Dnech: "Méně rutiny ve Word/Excel/Outlook",
+    topVystupy: [
       "Šablony reportů v Excelu",
       "Workflow pro Outlook/Teams",
       "PowerPoint outline šablony"
     ],
     link: "/online/copilotakademie",
-    color: "primary",
-    badge: "UKÁZKA OBSAHU"
+    badge: "Ukázka obsahu",
+    // Details
+    detailDescription: "Praktické využití Copilota v denní práci s Word, Excel, Outlook a PowerPoint. Žádná teorie navíc.",
+    allOutputs: [
+      "Šablony reportů v Excelu",
+      "Automatizované workflow pro Outlook a Teams",
+      "PowerPoint outline šablony",
+      "Meeting summary workflow"
+    ],
+    kdyZvolit: "Když jedete na M365 a chcete vytěžit maximum z Copilota v Office aplikacích."
   },
   {
     id: "agenti",
     title: "Agenti & Automatizace",
     icon: Bot,
-    idealFor: "Ideální pro: Power users, inovace, procesní zlepšování.",
-    afterTwoWeeks: "Po 14 dnech: První automatizace + plán agentů do procesů.",
-    kdyZvolit: "Kdy zvolit: Když chcete workflow, integrace a pokročilou orchestraci.",
-    description: "Pokročilé workflow a orchestrace nástrojů. Pro ty, kdo chtějí jít dál než základní prompting.",
-    outputs: [
+    proKoho: "Power users, inovace, procesy",
+    benefit: "Pokročilé workflow a orchestrace. Pro ty, kdo chtějí jít dál.",
+    po14Dnech: "První automatizace + plán agentů",
+    topVystupy: [
       "Automatizační blueprinty",
       "Agentní workflow šablony",
       "Integrační checklist"
     ],
     link: "/online/agentiautomatizace",
-    color: "primary",
-    badge: "UKÁZKA OBSAHU"
+    badge: "Ukázka obsahu",
+    // Details
+    detailDescription: "Pokročilé workflow a orchestrace nástrojů. Pro ty, kdo chtějí jít dál než základní prompting a budovat vlastní řešení.",
+    allOutputs: [
+      "Automatizační blueprinty",
+      "Agentní workflow šablony",
+      "Integrační checklist",
+      "Multi-tool orchestrace setup"
+    ],
+    kdyZvolit: "Když chcete workflow, integrace a pokročilou orchestraci nástrojů napříč procesy."
   },
   {
     id: "master",
-    title: "Kompletní program (3 akademie)",
+    title: "Kompletní program",
     icon: Crown,
-    idealFor: "Ideální pro: Management a klíčové role — ti, kdo potřebují rozumět všemu a nastavit standard.",
-    afterTwoWeeks: "Nejrychlejší cesta k jednotnému skillu a měřitelnému dopadu.",
-    kdyZvolit: "Kdy zvolit: Pro jednotný AI standard napříč firmou.",
-    description: "Jednotný AI standard napříč firmou. Všechny 3 akademie + certifikace pro celý tým.",
-    outputs: [
-      "Jednotná metodika a společný jazyk v týmu",
-      "Certifikace + sdílené šablony napříč rolemi",
-      "Rychlejší onboarding nových kolegů"
+    proKoho: "Management a klíčové role",
+    benefit: "Jednotný AI standard napříč firmou. Všechny 3 akademie + certifikace.",
+    po14Dnech: "Měřitelný dopad + společný jazyk",
+    topVystupy: [
+      "Jednotná metodika v týmu",
+      "Certifikace + sdílené šablony",
+      "Rychlejší onboarding kolegů"
     ],
     link: "/online/master-of-ai-creativity",
-    color: "accent",
     isProgram: true,
-    badge: "NEJČASTĚJŠÍ VOLBA"
+    badge: "Nejčastější volba",
+    // Details
+    detailDescription: "Nejrychlejší cesta k jednotnému skillu. Všechny 3 akademie v jednom programu — ChatGPT + Copilot + Agenti.",
+    allOutputs: [
+      "Jednotná metodika a společný jazyk v týmu",
+      "Certifikace + sdílené šablony napříč rolemi",
+      "Rychlejší onboarding nových kolegů",
+      "Kompletní sada workflow pro všechny role"
+    ],
+    kdyZvolit: "Pro jednotný AI standard napříč firmou. Ideální pro management a klíčové role, kteří nastavují směr."
   }
 ];
 
@@ -428,114 +457,34 @@ const AkademieProTymy = () => {
         <section id="akademie" className="py-20 bg-card/20 relative scroll-mt-16">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-14">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
                 CO VAŠE TÝMY ZÍSKAJÍ
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                3 akademie. Konkrétní workflow výstupy. Jednotný standard napříč firmou — včetně certifikace a sdílených šablon.
+              <p className="text-muted-foreground max-w-xl mx-auto text-sm">
+                3 akademie. Konkrétní workflow výstupy. Jednotný standard napříč firmou.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {academyCards.map((academy) => {
-                const Icon = academy.icon;
-                const isProgram = academy.isProgram;
-                // For program: use cyan for content, keep purple only for border and badges
-                return (
-                  <div 
-                    key={academy.id}
-                    className={`glass-card p-6 rounded-2xl border ${
-                      isProgram 
-                        ? 'border-accent/30 hover:border-accent/60 hover:shadow-[0_0_40px_rgba(189,0,255,0.25)]' 
-                        : 'border-primary/30 hover:border-primary/60 hover:shadow-[0_0_40px_rgba(102,252,241,0.25)]'
-                    } transition-all duration-300 group relative`}
-                  >
-                    {/* Badge for program - Nejlepší hodnota (purple) */}
-                    {isProgram && (
-                      <div className="absolute -top-3 right-4 px-3 py-1 bg-accent text-background text-[10px] font-bold tracking-wider rounded-full uppercase shadow-[0_0_15px_rgba(189,0,255,0.4)]">
-                        Nejlepší hodnota
-                      </div>
-                    )}
-                    
-                    {/* Main badge (UKÁZKA OBSAHU or NEJČASTĚJŠÍ VOLBA) - purple for program */}
-                    <div className={`absolute -top-3 left-4 px-3 py-1 ${
-                      isProgram ? 'bg-accent/20 border-accent/40 text-accent' : 'bg-primary/20 border-primary/40 text-primary'
-                    } border text-[10px] font-bold tracking-wider rounded-full uppercase`}>
-                      {academy.badge}
-                    </div>
-                    
-                    <div className="flex items-start gap-4 mb-4 mt-2">
-                      <div className={`w-14 h-14 rounded-xl ${isProgram ? 'bg-accent/10 border-accent/20' : 'bg-primary/10 border-primary/20'} border flex items-center justify-center flex-shrink-0`}>
-                        <Icon className={`w-7 h-7 ${isProgram ? 'text-accent' : 'text-primary'}`} />
-                      </div>
-                      <div>
-                        <h3 className={`text-lg font-semibold tracking-wider uppercase mb-1 ${isProgram ? 'text-accent' : 'text-foreground'}`}>
-                          {isProgram ? (
-                            <>Kompletní program<br />(3 akademie)</>
-                          ) : academy.title}
-                        </h3>
-                        <p className="text-xs text-primary/80 font-medium mb-1">{academy.idealFor}</p>
-                        <p className="text-sm text-muted-foreground">{academy.description}</p>
-                        <p className="text-sm mt-2 font-medium text-primary/90">
-                          {academy.afterTwoWeeks}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    {/* Outputs */}
-                    <div className="mb-4">
-                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2 font-semibold">Výstupy pro tým:</p>
-                      <ul className="space-y-1.5">
-                        {academy.outputs.map((output, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-primary">
-                            <Check className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                            <span>{output}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    {/* Kdy zvolit */}
-                    <div className="mb-4 p-3 rounded-lg bg-primary/5 border-primary/20 border">
-                      <p className="text-xs text-muted-foreground">{academy.kdyZvolit}</p>
-                    </div>
-                    
-                    {/* CTA Buttons */}
-                    {isProgram ? (
-                      <div className="space-y-2">
-                        <a href="#licence">
-                          <Button 
-                            size="sm"
-                            className="w-full bg-primary text-primary-foreground shadow-[0_0_15px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)]"
-                          >
-                            Vybrat licenci
-                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </a>
-                        <Link 
-                          to={academy.link}
-                          className="block text-center text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors mt-2"
-                        >
-                          Ukázat obsah
-                        </Link>
-                      </div>
-                    ) : (
-                      <Link to={academy.link}>
-                        <Button 
-                          variant="outline"
-                          size="sm"
-                          className="w-full border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all"
-                        >
-                          <BookOpen className="w-4 h-4 mr-2" />
-                          Ukázat obsah
-                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </Link>
-                    )}
-                  </div>
-                );
-              })}
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {academyCards.map((academy) => (
+                <AcademyCard
+                  key={academy.id}
+                  id={academy.id}
+                  title={academy.title}
+                  icon={academy.icon}
+                  proKoho={academy.proKoho}
+                  benefit={academy.benefit}
+                  po14Dnech={academy.po14Dnech}
+                  topVystupy={academy.topVystupy}
+                  link={academy.link}
+                  isProgram={academy.isProgram}
+                  badge={academy.badge}
+                  detailDescription={academy.detailDescription}
+                  allOutputs={academy.allOutputs}
+                  kdyZvolit={academy.kdyZvolit}
+                />
+              ))}
             </div>
           </div>
         </section>
