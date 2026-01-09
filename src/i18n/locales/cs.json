@@ -340,6 +340,248 @@
       "seo": {
         "title": "AI pro firmy – diagnostika, agenti, akademie",
         "description": "Zjistěte, kde AI přinese největší úspory. Diagnostika, mapa úspor, AI agenti na míru a firemní akademie."
+      },
+      "hero": {
+        "title1": "Zrychlete práci týmu",
+        "title2": "díky AI workflow",
+        "subtitle": "a firemní akademii",
+        "description": "Za 15 minut zjistíte, kde role ztrácí nejvíc času.",
+        "descriptionHighlight": "Navrhneme rychlé výhry a bezpečná pravidla nasazení."
+      },
+      "services": {
+        "priceNote": "bez DPH",
+        "start": {
+          "title": "START",
+          "subtitle": "Mapa úspor (AI QuickScan) — do 14 dnů",
+          "description": "Najdeme role a procesy s nejrychlejším dopadem. Dostanete mapu úzkých míst, seznam rychlých výher a odhad ROI.",
+          "features": ["Mapa rolí", "Rychlé výhry", "ROI odhad", "Bezpečná pravidla"],
+          "proKoho": "CEO / COO / HR",
+          "doba": "1–2 týdny",
+          "vystup": "Mapa rolí + seznam priorit + ROI odhad",
+          "price": "18 000 – 25 000 Kč"
+        },
+        "plan": {
+          "title": "PLÁN",
+          "subtitle": "ROI plán & prioritizace",
+          "description": "Seznam 10–20 příležitostí (use-casů) seřazených podle dopadu a náročnosti. Návrh pilotu s KPI.",
+          "features": ["Seznam příležitostí", "KPI", "Návrh pilotu", "Governance"],
+          "proKoho": "Projektový tým / Operations",
+          "doba": "1–2 týdny",
+          "vystup": "Prioritizovaný seznam + návrh pilotu",
+          "price": "15 000 – 19 000 Kč"
+        },
+        "pilot": {
+          "title": "PILOT",
+          "subtitle": "Nasazení digitálního kolegy (do 14 dnů v provozu)",
+          "description": "AI agent nebo automatizace pro jeden konkrétní proces — nasazeno a měřeno.",
+          "features": ["Agent v provozu", "Integrace", "Měření dopadu", "Zaškolení"],
+          "proKoho": "Proces s nejvyšší návratností",
+          "doba": "2–4 týdny (typicky 3–8 MD)",
+          "vystup": "Běžící agent + KPI + zaškolení",
+          "price": "od 45 000 Kč",
+          "priceNote": "typicky 45–120k bez DPH (3–8 MD)"
+        },
+        "scale": {
+          "title": "ŠKÁLOVÁNÍ",
+          "subtitle": "Standardy & adopce",
+          "description": "Standardy, bezpečnost, adopce a dlouhodobý rozvoj. Aby se řešení skutečně ujalo u lidí.",
+          "features": ["Governance", "Šablony", "Reporting", "Adopce"],
+          "proKoho": "Celá firma / více týmů",
+          "doba": "Průběžně",
+          "vystup": "Governance + šablony + reporting",
+          "price": "od 25 000 Kč / měsíc"
+        }
+      },
+      "painPoints": {
+        "title": "CO VÁS NEJVÍC BRZDÍ?",
+        "subtitle": "Typické problémy, které řešíme s klienty.",
+        "noRules": {
+          "title": "AI bez pravidel",
+          "desc": "Přístupy, data, kontrola výstupů.",
+          "result": "Jasná pravidla, co smí AI a co kontrolovat."
+        },
+        "routine": {
+          "title": "Rutina požírá kapacitu",
+          "desc": "E-maily, reporty, přepisy.",
+          "result": "Uvolníme 2–10 h týdně / roli (typicky)."
+        },
+        "noResponse": {
+          "title": "Poptávky bez reakce",
+          "desc": "Obchod/podpora nestíhá.",
+          "result": "Rychlejší odpověď + follow-up bez zapomínání."
+        },
+        "fragmentedData": {
+          "title": "Data rozstříštěná",
+          "desc": "CRM, Excel, e-mail.",
+          "result": "Jeden přehled pro vedení."
+        }
+      },
+      "journey": {
+        "title": "VYBERTE SI CESTU",
+        "subtitle": "Diagnostika → Pilot → Škálování — produktizovaná AI transformace.",
+        "step": "KROK",
+        "startHere": "Začněte zde",
+        "diagnostics": {
+          "title": "DIAGNOSTIKA",
+          "subtitle": "15 min konzultace — zjistíte, kde začít",
+          "benefit": "Jasný směr bez závazku",
+          "cta": "Domluvit 15 min"
+        },
+        "savingsMap": {
+          "title": "MAPA ÚSPOR",
+          "subtitle": "Mapa rolí + seznam příležitostí (use-casů) + roadmapa 30/60/90",
+          "benefit": "Konkrétní výstupy pro vedení",
+          "cta": "Co dostanu"
+        },
+        "pilot": {
+          "title": "PILOT",
+          "subtitle": "AI agent pro 1 proces — nasazeno do 14 dnů",
+          "benefit": "Měříme dopad od začátku",
+          "cta": "Nasadit pilot"
+        },
+        "scale": {
+          "title": "ŠKÁLOVÁNÍ",
+          "subtitle": "Rozvoj, governance, adopce, reporting",
+          "benefit": "Aby se řešení ujalo u lidí",
+          "cta": "Škálovat na firmu"
+        }
+      },
+      "targetAudience": {
+        "title": "PRO KTERÉ ROLE?",
+        "subtitle": "Kde AI přináší rychlé výhry.",
+        "hr": {
+          "title": "HR / ROZVOJ LIDÍ",
+          "description": "Onboarding, interní know-how a standard dovedností napříč firmou.",
+          "bullets": [
+            "Rychlejší zaškolení a jednotný skillset",
+            "Šablony pro komunikaci, dokumenty a HR procesy",
+            "Přehled o dokončení (užitečné pro HR)"
+          ]
+        },
+        "backoffice": {
+          "title": "BACKOFFICE & ADMINISTRATIVA",
+          "description": "E-maily, zápisy z porad, správa dokumentů, reporting.",
+          "bullets": [
+            "Méně ruční práce v rutinních úkolech",
+            "Automatické shrnutí, follow-upy a kontrola kvality",
+            "Standardizované workflow pro tým"
+          ]
+        },
+        "sales": {
+          "title": "OBCHOD & ZÁKAZNICKÁ PODPORA",
+          "description": "Nabídky, CRM, odpovědi zákazníkům a personalizace.",
+          "bullets": [
+            "Rychlejší reakce a konzistentní odpovědi",
+            "Asistent pro návrhy nabídek a e-mailů",
+            "Méně chyb v komunikaci a lepší přehled"
+          ]
+        }
+      },
+      "expertise": {
+        "title": "PROČ MY?",
+        "subtitle": "Bezpečně, měřitelně a s důrazem na adopci.",
+        "safeStart": {
+          "title": "BEZPEČNÝ START",
+          "description": "Začneme na rolích a rychlých výhrách. Jasná pravidla pro data, přístupy a používání AI."
+        },
+        "dataControl": {
+          "title": "DATA POD KONTROLOU",
+          "subtitle": "GDPR & firemní pravidla",
+          "description": "Nastavíme, co smí do AI, kdo má přístup a jak pracovat s citlivými daty. GDPR a pravidla firmy respektujeme."
+        },
+        "measurable": {
+          "title": "MĚŘITELNÉ VÝSLEDKY",
+          "subtitle": "Čas, kvalita, chybovost",
+          "description": "Měříme dopad: ušetřený čas, kvalitu výstupů a chybovost. Víte, co funguje."
+        },
+        "knowhow": {
+          "title": "KNOW-HOW ZŮSTÁVÁ VE FIRMĚ",
+          "subtitle": "Skillset & standardy",
+          "description": "Tým získá skillset a standardy. HR má přehled o dokončení a jednotný způsob práce."
+        }
+      },
+      "deliverables": {
+        "roleMap": {
+          "title": "MAPA ROLÍ A ÚZKÝCH MÍST",
+          "description": "Kde dnes vzniká nejvíc práce navíc a kde AI ušetří nejvíc času."
+        },
+        "quickWins": {
+          "title": "RYCHLÉ VÝHRY & PRIORITY",
+          "description": "3–10 konkrétních zlepšení seřazených podle dopadu a náročnosti."
+        },
+        "rules": {
+          "title": "PRAVIDLA BEZPEČNÉHO POUŽITÍ",
+          "description": "Co smí do AI, kdo má přístup a jak chránit citlivá data."
+        },
+        "training": {
+          "title": "PLÁN ZAŠKOLENÍ TÝMU",
+          "description": "Doporučené akademie + licence + přehled pro HR o dokončení."
+        }
+      },
+      "faq": {
+        "title": "ČASTÉ DOTAZY",
+        "subtitle": "Odpovědi na to, co se nás klienti ptají nejčastěji.",
+        "time": {
+          "question": "Kolik času to zabere?",
+          "answer": "Začínáme 15minutovým úvodním callem.",
+          "bullets": ["1–2 týdny: mapa rolí + quick wins", "Poté: implementace a zaškolení podle domluvy"],
+          "highlight": "15 min úvod"
+        },
+        "input": {
+          "question": "Co potřebujete od nás?",
+          "answer": "Stačí krátké informace o týmu a procesech.",
+          "bullets": [
+            "Kdo jsou cílové role (např. HR, obchod, back office)",
+            "2–3 typické úkoly, které řeší denně",
+            "Jaké nástroje používáte (M365/Google/CRM ap.)"
+          ],
+          "highlight": "Minimum vstupů"
+        },
+        "security": {
+          "question": "Jak chráníte data?",
+          "answer": "Nastavíme pravidla použití a přístupy k datům.",
+          "bullets": [
+            "Pravidla práce s daty + role a oprávnění",
+            "Volba nástrojů podle citlivosti",
+            "Soulad s vašimi interními politikami a GDPR"
+          ],
+          "highlight": "GDPR + interní pravidla"
+        },
+        "copilot": {
+          "question": "Co když nemáme Copilot?",
+          "answer": "Nejsme vázaní na jednu platformu.",
+          "bullets": [
+            "M365 není podmínka",
+            "Doporučíme vhodné nástroje pro vaše role",
+            "Začneme tam, kde to dává nejrychlejší smysl"
+          ],
+          "highlight": "Flexibilní nástroje"
+        },
+        "licenses": {
+          "question": "Jak fungují firemní licence?",
+          "answer": "Vybíráte počet licencí a akademie, HR má přehled.",
+          "bullets": [
+            "Balíčky podle velikosti týmu",
+            "Dlouhodobý přístup a studium vlastním tempem",
+            "Přehled dokončení pro HR (reporting)"
+          ],
+          "highlight": "Týmové licence",
+          "cta": "Zobrazit akademie pro týmy"
+        },
+        "impact": {
+          "question": "Jak měříte dopad?",
+          "answer": "Jednoduché metriky, které dávají smysl vedení.",
+          "bullets": [
+            "Časová úspora, kvalita výstupů, chybovost",
+            "Před/po srovnání u vybraných procesů",
+            "Průběžné vyhodnocení a doporučení dalších kroků"
+          ],
+          "highlight": "Měřitelné KPI"
+        }
+      },
+      "finalCta": {
+        "title": "PŘIPRAVENI ZAČÍT?",
+        "description": "Začněte 15minutovou diagnostikou. Řekneme vám, kde má AI největší smysl."
       }
     },
 
@@ -348,14 +590,279 @@
       "seo": {
         "title": "Mapa úspor – 14denní AI diagnostika pro firmy",
         "description": "Za 14 dní zjistíte, kde AI přinese největší úspory času a nákladů. Seznam procesů + ROI odhad."
+      },
+      "hero": {
+        "title": "Mapa úspor",
+        "subtitle": "Bezpečný start AI transformace",
+        "description": "Za 1–2 týdny zjistíte, kde má AI nejvyšší dopad, kolik to přinese a jak bezpečně začít pilotem.",
+        "chips": {
+          "fixed": "Fixní výstupy",
+          "kpi": "Měřitelné KPI",
+          "secure": "Bezpečné přístupy",
+          "roadmap": "Roadmapa 30/60/90"
+        },
+        "ctaSecondary": "Zobrazit, co dostanu"
+      },
+      "deliverables": {
+        "roleMap": {
+          "title": "MAPA ROLÍ A ÚZKÝCH MÍST",
+          "description": "Kde dnes vzniká nejvíc práce navíc a kde AI ušetří nejvíc času."
+        },
+        "opportunities": {
+          "title": "SEZNAM PŘÍLEŽITOSTÍ (PRIORITIZOVANÝ)",
+          "description": "Konkrétní use-casy seřazené podle dopadu a náročnosti."
+        },
+        "pilot": {
+          "title": "DOPORUČENÝ PILOT (1–2 PROCESY)",
+          "description": "Procesy pro rychlý start s měřením dopadu."
+        },
+        "security": {
+          "title": "RÁMEC BEZPEČNOSTI A PRAVIDEL",
+          "description": "Pravidla pro data, přístupy a používání AI ve firmě."
+        }
+      },
+      "process": {
+        "step": "KROK",
+        "workshop": {
+          "title": "WORKSHOP S LIDMI Z PRAXE",
+          "description": "Sejdeme se s klíčovými rolemi a zmapujeme denní rutinu, úzká místa a příležitosti."
+        },
+        "analysis": {
+          "title": "ANALÝZA PROCESŮ A DAT",
+          "description": "Vyhodnotíme data, identifikujeme rychlé výhry a odhadneme ROI."
+        },
+        "pilotSelection": {
+          "title": "VÝBĚR PILOTU (CO PŘINESE NEJDŘÍV)",
+          "description": "Seřadíme příležitosti podle dopadu a vybereme 1–2 procesy pro první pilot."
+        },
+        "roadmap": {
+          "title": "ROADMAPA + KPI (30/60/90)",
+          "description": "Mapa rolí, seznam priorit, ROI odhad a návrh pilotu — vše připraveno pro vedení."
+        }
+      },
+      "audience": {
+        "ceo": {
+          "title": "CEO / COO",
+          "description": "Chcete vědět, kde AI přinese největší úspory a jak začít bezpečně."
+        },
+        "hr": {
+          "title": "HR / ROZVOJ LIDÍ",
+          "description": "Potřebujete standard dovedností a plán zaškolení týmů."
+        },
+        "sales": {
+          "title": "OBCHOD / PODPORA",
+          "description": "Hledáte způsob, jak zrychlit reakce a uvolnit kapacitu."
+        }
+      },
+      "adoption": {
+        "involvement": "Zapojujeme klíčové lidi od začátku — aby řešení nebylo shora.",
+        "benefits": "Ukazujeme konkrétní přínosy pro jednotlivé role, ne jen technologii.",
+        "guides": "Připravíme jednoduché návody a pravidla pro každodenní práci.",
+        "measurement": "Měříme, jak lidé nástroje přijímají — a reagujeme na zpětnou vazbu."
+      },
+      "sections": {
+        "deliverables": {
+          "title": "CO PŘESNĚ DOSTANETE",
+          "subtitle": "Konkrétní výstupy, které můžete poslat vedení."
+        },
+        "process": {
+          "title": "JAK TO PROBÍHÁ",
+          "subtitle": "4 kroky k jasné roadmapě a měřitelným KPI."
+        },
+        "adoption": {
+          "title": "ADOPCE A PRÁCE S LIDMI",
+          "subtitle": "AI projekty často selžou na adopci. Proto řešíme i práci s lidmi, rolemi a změnou návyků."
+        }
+      },
+      "faq": {
+        "duration": {
+          "question": "Jak dlouho to trvá?",
+          "answer": "Workshop + analýza + výstupy do 14 dnů od startu.",
+          "highlight": "14 dní"
+        },
+        "input": {
+          "question": "Co potřebujete od nás?",
+          "answer": "Krátký popis klíčových rolí a procesů, přístup k lidem z praxe na workshop.",
+          "highlight": "Minimum vstupů"
+        },
+        "security": {
+          "question": "Jak chráníte data?",
+          "answer": "Pravidla přístupů a práce s citlivými daty nastavíme od prvního dne. Soulad s GDPR a vašimi interními politikami.",
+          "highlight": "GDPR"
+        },
+        "output": {
+          "question": "Co dostanu na konci?",
+          "answer": "Mapu rolí, quick wins s ROI odhadem, návrh pilotu a základní pravidla bezpečnosti — vše připraveno pro vedení.",
+          "highlight": "Výstupy pro vedení"
+        }
+      },
+      "finalCta": {
+        "title": "CHCETE VĚDĚT, KDE AI PŘINESE NEJVĚTŠÍ DOPAD?",
+        "description": "Začněte 15minutovou diagnostikou. Řekneme vám, jestli je Mapa úspor správný krok.",
+        "cta": "Domluvit 15 min konzultaci"
       }
     },
 
     "aiAgentiNaMiru": {
       "_path": "/profirmy/ai-agenti-na-miru",
       "seo": {
-        "title": "AI agenti na míru – digitální kolega pro vaše procesy",
-        "description": "Nasazení AI agenta pro konkrétní proces. Obchod, podpora, reporting, orchestrace."
+        "title": "AI agenti na míru – automatizace procesů pro firmy",
+        "description": "Navrhneme a nasadíme AI agenta pro váš proces. Integrace na vaše nástroje, měření dopadu a bezpečné nasazení. Pilot do 14 dnů."
+      },
+      "hero": {
+        "title": "AI agenti na míru",
+        "subtitle": "Digitální kolega pro vaše procesy",
+        "description": "Navrhneme, nasadíme a změříme dopad. Bezpečně, s napojením na vaše nástroje.",
+        "chips": {
+          "integration": "Integrace",
+          "impact": "Měření dopadu",
+          "secure": "Bezpečné přístupy",
+          "pilot": "Pilot do 14 dnů"
+        }
+      },
+      "labels": {
+        "result": "Výsledek",
+        "problem": "Problém",
+        "solution": "Řešení"
+      },
+      "solutions": {
+        "sales": {
+          "title": "Obchod & podpora",
+          "description": "Kvalifikace leadů, odpovědi zákazníkům, follow-up a schůzky.",
+          "result": "Agent na odpovědi + follow-up + přípravu podkladů"
+        },
+        "reporting": {
+          "title": "Reporting & data",
+          "description": "Sběr dat, shrnutí, alerty a přehled pro management.",
+          "result": "Shrnutí dat + alerty + pravidelný management report"
+        },
+        "orchestration": {
+          "title": "Procesní orchestrace",
+          "description": "Když nastane událost, provede kroky napříč nástroji.",
+          "result": "Automatické kroky napříč nástroji bez ruční práce"
+        }
+      },
+      "process": {
+        "step": "KROK",
+        "diagnostics": {
+          "title": "DIAGNOSTIKA",
+          "description": "Vybereme proces s nejvyšší návratností."
+        },
+        "architecture": {
+          "title": "ARCHITEKTURA",
+          "description": "Návrh workflow, pravidla, integrace."
+        },
+        "pilot": {
+          "title": "PILOT",
+          "description": "Nasazení + šablony + testování."
+        },
+        "deployment": {
+          "title": "NASAZENÍ & MĚŘENÍ",
+          "description": "Provoz + vyhodnocení dopadu."
+        }
+      },
+      "security": {
+        "access": {
+          "title": "PŘÍSTUPY A OPRÁVNĚNÍ",
+          "description": "Kdo má přístup k agentovi a co smí dělat."
+        },
+        "data": {
+          "title": "CITLIVÁ DATA POD KONTROLOU",
+          "description": "Jasná pravidla pro práci s firemními daty."
+        },
+        "impact": {
+          "title": "MĚŘENÍ DOPADU",
+          "description": "Sledujeme čas, kvalitu a chybovost."
+        },
+        "standards": {
+          "title": "STANDARDIZACE A ŠABLONY",
+          "description": "Jednotný způsob práce napříč týmem."
+        }
+      },
+      "cases": {
+        "failed": {
+          "title": "PROČ AI INICIATIVA SELHALA (A JAK JSME JI ROZJELI)",
+          "problem": "Chyběl owner, lidé se báli dopadu na práci, nebyla pravidla.",
+          "solution": "Restart: workshop, roadmapa, pilot s měřením, adopce + komunikace.",
+          "result": "−30 % času na rutinu v dotčených rolích + měřitelný dopad."
+        },
+        "sales": {
+          "title": "OBCHOD BEZ RYCHLÉ REAKCE: FOLLOW-UP AGENT",
+          "problem": "Poptávky čekaly, CRM neaktuální, follow-up zapomenutý.",
+          "solution": "Kvalifikace leadů + návrh e-mailů/nabídek + hlídání follow-upu + zápisy ze schůzek.",
+          "result": "O 40 % rychlejší reakce + vyšší konverze."
+        },
+        "reporting": {
+          "title": "REPORTING BEZ RUČNÍ PRÁCE",
+          "problem": "Manuální shrnutí týdenních reportů z více zdrojů, chyby, ztráta času.",
+          "solution": "Automatizované shrnutí + upozornění na odchylky.",
+          "result": "2–3 h týdně zpět pro manažery + méně chyb."
+        }
+      },
+      "whyAnonymized": {
+        "title": "Proč anonymizovaně?",
+        "description": "Pracujeme s interními procesy a citlivými daty. Anonymizace chrání know-how klientů a umožňuje sdílet principy přenositelné na další firmy."
+      },
+      "roiCalc": {
+        "title": "Jak počítáme ROI"
+      },
+      "roi": {
+        "time": "Čas ušetřený / role × hodinová sazba",
+        "quality": "Dopad na kvalitu a chybovost výstupů",
+        "speed": "Dopad na rychlost reakce (obchod / podpora)"
+      },
+      "sections": {
+        "solutions": {
+          "title": "3 NEJČASTĚJŠÍ ŘEŠENÍ",
+          "subtitle": "Kde AI agenti přináší největší úspory."
+        },
+        "process": {
+          "title": "JAK TO PROBÍHÁ",
+          "subtitle": "Od diagnostiky k měřitelným výsledkům."
+        },
+        "security": {
+          "title": "BEZPEČNÉ A OVĚŘENÉ NASAZENÍ",
+          "subtitle": "Pravidla a kontrola od prvního dne."
+        },
+        "cases": {
+          "title": "PŘÍKLADY Z PRAXE",
+          "subtitle": "Anonymizované case studies z reálných projektů."
+        },
+        "faq": {
+          "title": "ČASTÉ DOTAZY",
+          "subtitle": "Odpovědi na nejčastější otázky o AI agentech na míru."
+        }
+      },
+      "faq": {
+        "speed": {
+          "question": "Jak rychle uvidíme výsledky?",
+          "answer": "Pilot běží typicky 2–4 týdny. První data o dopadu máte do měsíce.",
+          "highlight": "Do měsíce"
+        },
+        "input": {
+          "question": "Co potřebujete od nás?",
+          "answer": "Krátký popis procesu, přístup k nástrojům a kontakt na klíčovou osobu.",
+          "highlight": "Minimum vstupů"
+        },
+        "security": {
+          "question": "Jak chráníte data a přístupy?",
+          "answer": "Nastavíme pravidla přístupů, šifrování a práci s citlivými daty podle vašich politik.",
+          "highlight": "GDPR + interní pravidla"
+        },
+        "integration": {
+          "question": "S čím to umíte integrovat?",
+          "answer": "M365, Google Workspace, CRM systémy, helpdesky, interní databáze a další nástroje.",
+          "highlight": "Flexibilní integrace"
+        },
+        "pricing": {
+          "question": "Kolik to stojí?",
+          "answer": "Cena závisí na rozsahu. Po 15min diagnostice dáme rámec a varianty (pilot / plné nasazení).",
+          "highlight": "Cena dle rozsahu"
+        }
+      },
+      "finalCta": {
+        "title": "CHCETE AGENTA NA MÍRU PRO VÁŠ PROCES?",
+        "description": "Rezervujte si 15 minut. Řeknete, kde ztrácíte čas, a navrhneme první use-case s měřením dopadu."
       }
     },
 
