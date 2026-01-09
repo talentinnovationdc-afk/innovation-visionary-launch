@@ -182,12 +182,12 @@ const AiAgentiNaMiru = () => {
                     Digitální kolega pro vaše procesy
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-12">
+                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-20">
                   Navrhneme, nasadíme a změříme dopad. Bezpečně, s napojením na vaše nástroje.
                 </p>
                 
                 {/* Trust Chips */}
-                <div className="flex flex-wrap justify-center gap-3 mb-10">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
                   <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary">
                     Integrace
                   </span>
