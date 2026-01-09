@@ -251,7 +251,7 @@ const Reference = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             
             {/* Scroll Indicator */}
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-20">
               <ScrollIndicator targetId="content" />
             </div>
             
