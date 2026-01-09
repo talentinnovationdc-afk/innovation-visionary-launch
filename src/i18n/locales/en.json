@@ -51,6 +51,19 @@
     "trustStrip": {
       "title": "Trusted by Leaders in Industry and Technology",
       "disclaimer": "Logos used with permission as collaboration references. Specific use cases are shared only anonymously."
+    },
+    "academyCard": {
+      "bestValue": "Best value",
+      "after14Days": "After 14 days:",
+      "topOutputs": "Top outputs",
+      "showDetails": "Show details",
+      "description": "Description",
+      "allOutputs": "All outputs",
+      "whenToChoose": "When to choose",
+      "selectLicense": "Select license",
+      "showContent": "Preview syllabus",
+      "completeProgram": "Complete program",
+      "threeAcademies": "(3 academies)"
     }
   },
 

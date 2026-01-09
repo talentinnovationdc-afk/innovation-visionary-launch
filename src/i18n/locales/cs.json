@@ -49,6 +49,19 @@
     "trustStrip": {
       "title": "Důvěřují nám lídři v průmyslu a technologiích",
       "disclaimer": "Loga jsou použita se souhlasem jako reference spolupráce. Konkrétní use-cases sdílíme pouze anonymizovaně."
+    },
+    "academyCard": {
+      "bestValue": "Nejlepší hodnota",
+      "after14Days": "Po 14 dnech:",
+      "topOutputs": "Top výstupy",
+      "showDetails": "Zobrazit detaily",
+      "description": "Popis",
+      "allOutputs": "Všechny výstupy",
+      "whenToChoose": "Kdy zvolit",
+      "selectLicense": "Vybrat licenci",
+      "showContent": "Ukázat obsah",
+      "completeProgram": "Kompletní program",
+      "threeAcademies": "(3 akademie)"
     }
   },
 
