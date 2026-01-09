@@ -96,14 +96,22 @@
 
   "nav": {
     "_notes": "Navigace - max 15 znaků per položka",
+    "home": "DOMŮ",
     "forBusiness": "PRO FIRMY",
     "academyForTeams": "AKADEMIE PRO TÝMY",
     "onlineAcademy": "ONLINE AKADEMIE",
     "methodology": "METODIKA",
     "aboutUs": "O NÁS",
+    "references": "REFERENCE",
+    "contact": "KONTAKT",
     "dropdown": {
+      "servicesForBusiness": "Služby pro firmy",
       "savingsMap": "Mapa úspor",
-      "customAgents": "AI agenti na míru"
+      "savingsMapSubtitle": "14denní diagnostika",
+      "customAgents": "AI agenti na míru",
+      "customAgentsSubtitle": "Digitální kolega do procesu",
+      "references": "Reference",
+      "referencesSubtitle": "Firmy, které nám důvěřují"
     }
   },
 
