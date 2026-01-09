@@ -197,13 +197,16 @@ const Online = () => {
         title="Online AI akademie s certifikátem a LinkedIn odznakem"
         description="Ovládněte AI a získejte ověřitelný odznak na LinkedIn. ChatGPT, Copilot, Agenti & Automatizace. 1250+ absolventů, 4,9/5 hodnocení."
       />
-      <NeuralNetworkBackground />
       <div className="min-h-screen flex flex-col relative z-10">
         <Navbar />
         
         <main className="flex-1">
           {/* Hero Section */}
-          <section className="pt-40 pb-16 md:pt-48 md:pb-20">
+          <section className="pt-40 pb-16 md:pt-48 md:pb-20 relative min-h-[600px]">
+            {/* Neural Network only in hero */}
+            <div className="absolute inset-0 overflow-hidden -z-10">
+              <NeuralNetworkBackground />
+            </div>
             <div className="container px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                 {/* Left - Content */}
