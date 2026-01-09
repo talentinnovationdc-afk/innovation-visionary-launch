@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -28,6 +30,8 @@ const defaultPreferences: CookiePreferences = {
 };
 
 export const CookieConsent = () => {
+  const { t } = useTranslation();
+  const { getLocalizedHref } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
@@ -85,9 +89,9 @@ export const CookieConsent = () => {
             <Cookie className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div className="text-sm text-muted-foreground">
               <p>
-                Používáme cookies pro zlepšení vašeho zážitku a analýzu návštěvnosti.{" "}
-                <Link to="/gdpr-cookies" className="text-primary hover:underline">
-                  Více informací
+                {t('cookies.banner.message')}{" "}
+                <Link to={getLocalizedHref('/gdpr-cookies')} className="text-primary hover:underline">
+                  {t('cookies.banner.moreInfo')}
                 </Link>
               </p>
             </div>
@@ -101,7 +105,7 @@ export const CookieConsent = () => {
               className="text-muted-foreground hover:text-foreground"
             >
               <Settings className="w-4 h-4 mr-1" />
-              Nastavení
+              {t('cookies.banner.settings')}
             </Button>
             <Button
               variant="outline"
@@ -109,14 +113,14 @@ export const CookieConsent = () => {
               onClick={acceptNecessary}
               className="border-primary/30 hover:border-primary"
             >
-              Pouze nezbytné
+              {t('cookies.banner.onlyNecessary')}
             </Button>
             <Button
               size="sm"
               onClick={acceptAll}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
-              Přijmout vše
+              {t('cookies.banner.acceptAll')}
             </Button>
           </div>
         </div>
@@ -128,10 +132,10 @@ export const CookieConsent = () => {
           <DialogHeader>
             <DialogTitle className="text-foreground flex items-center gap-2">
               <Cookie className="w-5 h-5 text-primary" />
-              Nastavení cookies
+              {t('cookies.dialog.title')}
             </DialogTitle>
             <DialogDescription>
-              Vyberte, které typy cookies chcete povolit. Nezbytné cookies nelze vypnout.
+              {t('cookies.dialog.description')}
             </DialogDescription>
           </DialogHeader>
           
@@ -139,9 +143,9 @@ export const CookieConsent = () => {
             {/* Necessary */}
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <Label className="text-foreground font-medium">Nezbytné cookies</Label>
+                <Label className="text-foreground font-medium">{t('cookies.dialog.necessary.title')}</Label>
                 <p className="text-xs text-muted-foreground">
-                  Nutné pro základní fungování webu
+                  {t('cookies.dialog.necessary.description')}
                 </p>
               </div>
               <Switch checked disabled className="data-[state=checked]:bg-primary" />
@@ -150,9 +154,9 @@ export const CookieConsent = () => {
             {/* Analytics */}
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <Label className="text-foreground font-medium">Analytické cookies</Label>
+                <Label className="text-foreground font-medium">{t('cookies.dialog.analytics.title')}</Label>
                 <p className="text-xs text-muted-foreground">
-                  Pomáhají nám zlepšovat web na základě statistik
+                  {t('cookies.dialog.analytics.description')}
                 </p>
               </div>
               <Switch
@@ -167,9 +171,9 @@ export const CookieConsent = () => {
             {/* Marketing */}
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <Label className="text-foreground font-medium">Marketingové cookies</Label>
+                <Label className="text-foreground font-medium">{t('cookies.dialog.marketing.title')}</Label>
                 <p className="text-xs text-muted-foreground">
-                  Umožňují personalizovanou reklamu
+                  {t('cookies.dialog.marketing.description')}
                 </p>
               </div>
               <Switch
@@ -188,7 +192,7 @@ export const CookieConsent = () => {
               onClick={() => setShowSettings(false)}
               className="text-muted-foreground"
             >
-              Zrušit
+              {t('cookies.dialog.cancel')}
             </Button>
             <div className="flex gap-2">
               <Button
@@ -196,13 +200,13 @@ export const CookieConsent = () => {
                 onClick={acceptNecessary}
                 className="border-primary/30"
               >
-                Pouze nezbytné
+                {t('cookies.banner.onlyNecessary')}
               </Button>
               <Button
                 onClick={saveCustomPreferences}
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
-                Uložit nastavení
+                {t('cookies.dialog.save')}
               </Button>
             </div>
           </div>

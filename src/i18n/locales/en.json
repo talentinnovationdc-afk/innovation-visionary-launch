@@ -50,6 +50,34 @@
     }
   },
 
+  "cookies": {
+    "banner": {
+      "message": "We use cookies to improve your experience and analyze traffic.",
+      "moreInfo": "More info",
+      "settings": "Settings",
+      "onlyNecessary": "Essential only",
+      "acceptAll": "Accept all"
+    },
+    "dialog": {
+      "title": "Cookie settings",
+      "description": "Choose which types of cookies you want to allow. Essential cookies cannot be disabled.",
+      "cancel": "Cancel",
+      "save": "Save settings",
+      "necessary": {
+        "title": "Essential cookies",
+        "description": "Required for basic site functionality"
+      },
+      "analytics": {
+        "title": "Analytics cookies",
+        "description": "Help us improve the site based on statistics"
+      },
+      "marketing": {
+        "title": "Marketing cookies",
+        "description": "Enable personalized advertising"
+      }
+    }
+  },
+
   "nav": {
     "_notes": "Navigation - max 14 characters per item",
     "home": "HOME",
