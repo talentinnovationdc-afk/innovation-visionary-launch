@@ -1,83 +1,293 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
   <url>
     <loc>https://t-i.cz/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://t-i.cz/en</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Pro firmy / For Business -->
+  <url>
     <loc>https://t-i.cz/profirmy</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/profirmy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/for-business"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/profirmy"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://t-i.cz/en/for-business</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/profirmy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/for-business"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/profirmy"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Mapa úspor / Savings Map -->
   <url>
     <loc>https://t-i.cz/profirmy/mapa-uspor</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/profirmy/mapa-uspor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/for-business/savings-map"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/profirmy/mapa-uspor"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://t-i.cz/en/for-business/savings-map</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/profirmy/mapa-uspor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/for-business/savings-map"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/profirmy/mapa-uspor"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AI agenti na míru / Custom AI Agents -->
   <url>
     <loc>https://t-i.cz/profirmy/ai-agenti-na-miru</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/profirmy/ai-agenti-na-miru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/for-business/custom-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/profirmy/ai-agenti-na-miru"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://t-i.cz/poptavka</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://t-i.cz/en/for-business/custom-ai-agents</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/profirmy/ai-agenti-na-miru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/for-business/custom-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/profirmy/ai-agenti-na-miru"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+
+  <!-- Akademie pro týmy / Team Academy -->
   <url>
     <loc>https://t-i.cz/akademie-pro-tymy</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/akademie-pro-tymy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/team-academy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/akademie-pro-tymy"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://t-i.cz/en/team-academy</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/akademie-pro-tymy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/team-academy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/akademie-pro-tymy"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Online hub -->
+  <url>
     <loc>https://t-i.cz/online</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://t-i.cz/en/online</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Master of AI Creativity -->
+  <url>
     <loc>https://t-i.cz/online/master-of-ai-creativity</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online/master-of-ai-creativity"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online/master-of-ai-creativity"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online/master-of-ai-creativity"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://t-i.cz/en/online/master-of-ai-creativity</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online/master-of-ai-creativity"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online/master-of-ai-creativity"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online/master-of-ai-creativity"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ChatGPT Academy -->
   <url>
     <loc>https://t-i.cz/online/chatgptakademie</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online/chatgptakademie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online/chatgpt-academy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online/chatgptakademie"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://t-i.cz/en/online/chatgpt-academy</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online/chatgptakademie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online/chatgpt-academy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online/chatgptakademie"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Copilot Academy -->
   <url>
     <loc>https://t-i.cz/online/copilotakademie</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online/copilotakademie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online/copilot-academy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online/copilotakademie"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://t-i.cz/en/online/copilot-academy</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online/copilotakademie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online/copilot-academy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online/copilotakademie"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Agents & Automation -->
   <url>
     <loc>https://t-i.cz/online/agentiautomatizace</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online/agentiautomatizace"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online/agents-and-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online/agentiautomatizace"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://t-i.cz/en/online/agents-and-automation</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/online/agentiautomatizace"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/online/agents-and-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/online/agentiautomatizace"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Metodika / Methodology -->
+  <url>
     <loc>https://t-i.cz/metodika</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/metodika"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/methodology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/metodika"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://t-i.cz/en/methodology</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/metodika"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/methodology"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/metodika"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Reference / References -->
+  <url>
     <loc>https://t-i.cz/reference</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/reference"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/references"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/reference"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://t-i.cz/en/references</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/reference"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/references"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/reference"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- O nás / About -->
+  <url>
     <loc>https://t-i.cz/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/o-nas"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://t-i.cz/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/o-nas"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Poptávka / Contact -->
+  <url>
+    <loc>https://t-i.cz/poptavka</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/poptavka"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/poptavka"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://t-i.cz/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/poptavka"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/poptavka"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- GDPR / Cookies -->
+  <url>
     <loc>https://t-i.cz/gdpr-cookies</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/gdpr-cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/gdpr-cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/gdpr-cookies"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://t-i.cz/obchodni-podminky</loc>
+    <loc>https://t-i.cz/en/gdpr-cookies</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/gdpr-cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/gdpr-cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/gdpr-cookies"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <!-- Obchodní podmínky / Terms -->
+  <url>
+    <loc>https://t-i.cz/obchodni-podminky</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/obchodni-podminky"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/obchodni-podminky"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://t-i.cz/en/terms-and-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://t-i.cz/obchodni-podminky"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://t-i.cz/en/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t-i.cz/obchodni-podminky"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
