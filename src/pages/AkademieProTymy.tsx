@@ -730,40 +730,6 @@ const AkademieProTymy = () => {
             </div>
           </div>
         </section>
-
-        {/* Process Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                JAK TO PROBÍHÁ
-              </h2>
-            </div>
-            
-            <div className="max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-                <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50" />
-                
-                {processSteps.map((step, index) => (
-                  <div key={index} className="text-center relative">
-                    <div className="w-20 h-20 mx-auto rounded-2xl bg-card/80 border border-primary/30 flex items-center justify-center mb-4 relative z-10 shadow-[0_0_20px_rgba(102,252,241,0.15)]">
-                      <step.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <div className="text-xs font-bold text-primary mb-2">Krok {step.number}</div>
-                    <h3 className="text-sm font-semibold tracking-wider text-foreground uppercase mb-2">
-                      {step.title}
-                    </h3>
-                    <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-                      <Clock className="w-3 h-3 text-primary" />
-                      <span className="text-xs text-primary">{step.duration}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* FAQ Section */}
         <HrFaqAccordion />
 
