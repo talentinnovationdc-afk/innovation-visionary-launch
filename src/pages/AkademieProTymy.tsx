@@ -358,7 +358,7 @@ const AkademieProTymy = () => {
                       {t('common.cta.bookDiagnostics')}
                     </Button>
                   </Link>
-                  <span className="text-xs text-muted-foreground/70 mt-2">{t('common.cta.helper')}</span>
+                  <span className="text-xs text-muted-foreground/70 mt-2">{t('common.helper.noCommitmentFull')}</span>
                 </div>
                 <a href="#akademie">
                   <Button 

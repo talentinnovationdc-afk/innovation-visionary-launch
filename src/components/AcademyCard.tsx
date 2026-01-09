@@ -110,7 +110,7 @@ export const AcademyCard = ({
             Top výstupy
           </p>
           <ul className="space-y-1.5">
-            {topVystupy.slice(0, 3).map((output, idx) => (
+            {(Array.isArray(topVystupy) ? topVystupy : []).slice(0, 3).map((output, idx) => (
               <li key={idx} className="flex items-center gap-2 text-sm text-foreground/80">
                 <Check className={cn("w-3.5 h-3.5 flex-shrink-0", isProgram ? "text-accent" : "text-primary")} />
                 <span>{output}</span>
