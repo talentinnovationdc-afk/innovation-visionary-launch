@@ -675,54 +675,6 @@ const Online = () => {
                   );
                 })}
               </div>
-              
-              {/* Recommendation helper */}
-              <div className="text-center mt-8">
-                <p className="text-sm text-muted-foreground mb-2">
-                  Nejste si jistý výběrem?
-                </p>
-                <a href="#doporuceni" className="text-sm text-primary hover:text-primary/80 font-medium transition-colors">
-                  Doporučit akademii podle role →
-                </a>
-              </div>
-            </div>
-          </section>
-
-          {/* Role Recommendation Section */}
-          <section id="doporuceni" className="py-16 bg-card/20 relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-            <div className="container px-4">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-10">
-                  <h2 className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-foreground uppercase mb-4">
-                    DOPORUČENÍ PODLE ROLE
-                  </h2>
-                  <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Najděte akademii, která odpovídá vaší práci.
-                  </p>
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-6">
-                  {roleCards.map((card, index) => {
-                    const Icon = card.icon;
-                    return (
-                      <Link 
-                        key={index} 
-                        to={card.link}
-                        className="glass-card p-6 rounded-2xl border border-border/30 hover:border-primary/40 transition-all duration-300 group"
-                      >
-                        <Icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                        <h3 className="text-base font-semibold text-foreground mb-2">{card.role}</h3>
-                        <p className="text-xs text-muted-foreground mb-4">{card.description}</p>
-                        <div className="pt-3 border-t border-border/30">
-                          <p className="text-xs text-muted-foreground mb-1">Doporučujeme:</p>
-                          <p className="text-sm text-primary font-medium">{card.recommended}</p>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
             </div>
           </section>
 
