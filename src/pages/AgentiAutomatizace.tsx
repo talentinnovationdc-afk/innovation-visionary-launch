@@ -176,11 +176,8 @@ const AgentiAutomatizace = () => {
               <p className="text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
                 Pokročilé agentické workflow a orchestrace. Naučte se stavět vlastní AI agenty.
               </p>
-              <p className="text-sm text-primary mb-2">
+              <p className="text-sm text-primary mb-8">
                 Ideální pro: Power users, procesní vlastníci, inovace — ti, kdo chtějí automatizovat.
-              </p>
-              <p className="text-sm text-muted-foreground mb-6">
-                Typický výsledek: 1–2 hodiny denně zpět díky automatizaci opakujících se úkolů.
               </p>
               
               {/* Meta badges */}

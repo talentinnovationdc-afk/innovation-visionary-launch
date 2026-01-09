@@ -151,11 +151,8 @@ const CopilotAkademie = () => {
               <p className="text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
                 Praktické workflow v M365, které zrychlí dokumenty, e-maily i prezentace.
               </p>
-              <p className="text-sm text-primary mb-2">
+              <p className="text-sm text-primary mb-8">
                 Ideální pro: Uživatelé M365 — Word, Excel, Outlook, PowerPoint v denní praxi.
-              </p>
-              <p className="text-sm text-muted-foreground mb-6">
-                Typický výsledek: 30–50 % času zpět na úkolech v Excelu, Wordu a Outlooku.
               </p>
               
               {/* Meta badges */}
