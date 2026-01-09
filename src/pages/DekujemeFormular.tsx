@@ -5,34 +5,93 @@ import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 import { CheckCircle, ArrowLeft, BookOpen, RefreshCw, Mail } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PRODUCTION_DOMAIN = "t-i.cz";
 
-const formContextContent = {
-  rychla_diagnostika: {
-    title: "Rychlá diagnostika (15 min)",
-    text: "Připravte si 1–2 příklady rutiny, kde dnes ztrácíte čas (reporting, e-maily, onboarding...).",
-    fallbackUrl: "/poptavka"
-  },
-  nezavazna_poptavka: {
-    title: "Nezávazná poptávka (Akademie pro týmy)",
-    text: "V odpovědi pošleme doporučený balíček licencí + varianty pro role a onboarding.",
-    fallbackUrl: "/akademie-pro-tymy"
-  },
-  default: {
-    title: "Děkujeme",
-    text: "Ozveme se do 24 hodin.",
-    fallbackUrl: "/profirmy"
-  }
-};
-
 const DekujemeFormular = () => {
+  const { language, getLocalizedHref } = useLanguage();
   const [searchParams] = useSearchParams();
-  const formType = searchParams.get("form") as keyof typeof formContextContent | null;
+  const formType = searchParams.get("form");
+
+  const content = {
+    cs: {
+      seoTitle: "Děkujeme | Talent Innovation",
+      seoDescription: "Potvrzení odeslání formuláře. Ozveme se do 24 hodin.",
+      badge: "Odesláno",
+      heading: "Hotovo. Ozveme se do 24 hodin.",
+      subtext: "Zpracovali jsme váš požadavek. Do 24 hodin pošleme další kroky.",
+      steps: [
+        "Navrhneme termín krátkého hovoru.",
+        "Pošleme krátký checklist a doporučený postup.",
+        "Bez závazku. Bez prodeje."
+      ],
+      formContextContent: {
+        rychla_diagnostika: {
+          title: "Rychlá diagnostika (15 min)",
+          text: "Připravte si 1–2 příklady rutiny, kde dnes ztrácíte čas (reporting, e-maily, onboarding...).",
+          fallbackUrl: "/poptavka"
+        },
+        nezavazna_poptavka: {
+          title: "Nezávazná poptávka (Akademie pro týmy)",
+          text: "V odpovědi pošleme doporučený balíček licencí + varianty pro role a onboarding.",
+          fallbackUrl: "/akademie-pro-tymy"
+        },
+        default: {
+          title: "Děkujeme",
+          text: "Ozveme se do 24 hodin.",
+          fallbackUrl: "/profirmy"
+        }
+      },
+      backHome: "Zpět domů",
+      viewAcademies: "Zobrazit akademie",
+      noEmail: "Nedorazil e-mail?",
+      checkSpam: "Zkontrolujte Spam/Hromadné a vyhledejte \"Talent Innovation\".",
+      noEmailContact: "Pokud nic nedorazí, odešlete formulář znovu nebo nás kontaktujte.",
+      backToForm: "Zpět na formulář"
+    },
+    en: {
+      seoTitle: "Thank you | Talent Innovation",
+      seoDescription: "Form submission confirmed. We'll get back to you within 24 hours.",
+      badge: "Sent",
+      heading: "Done. We'll get back within 24 hours.",
+      subtext: "We've processed your request. Next steps will be sent within 24 hours.",
+      steps: [
+        "We'll propose a short call.",
+        "We'll send a brief checklist and recommended approach.",
+        "No commitment. No sales pitch."
+      ],
+      formContextContent: {
+        rychla_diagnostika: {
+          title: "Quick diagnostics (15 min)",
+          text: "Prepare 1-2 examples of routines where you're losing time today (reporting, emails, onboarding...).",
+          fallbackUrl: "/en/contact"
+        },
+        nezavazna_poptavka: {
+          title: "Non-binding inquiry (Team Academy)",
+          text: "We'll send a recommended license package + variants for roles and onboarding.",
+          fallbackUrl: "/en/team-academy"
+        },
+        default: {
+          title: "Thank you",
+          text: "We'll get back to you within 24 hours.",
+          fallbackUrl: "/en/for-business"
+        }
+      },
+      backHome: "Back home",
+      viewAcademies: "View academies",
+      noEmail: "Didn't receive an email?",
+      checkSpam: "Check Spam/Bulk folder and search for \"Talent Innovation\".",
+      noEmailContact: "If nothing arrives, resubmit the form or contact us.",
+      backToForm: "Back to form"
+    }
+  };
+
+  const t = content[language];
   
-  const contextContent = formType && formContextContent[formType] 
-    ? formContextContent[formType] 
-    : formContextContent.default;
+  const contextContent = formType && t.formContextContent[formType as keyof typeof t.formContextContent] 
+    ? t.formContextContent[formType as keyof typeof t.formContextContent] 
+    : t.formContextContent.default;
 
   const handleBackToForm = () => {
     // Check if referrer is from t-i.cz
@@ -51,18 +110,12 @@ const DekujemeFormular = () => {
     window.location.href = contextContent.fallbackUrl;
   };
 
-  const steps = [
-    "Navrhneme termín krátkého hovoru.",
-    "Pošleme krátký checklist a doporučený postup.",
-    "Bez závazku. Bez prodeje."
-  ];
-
   return (
     <div className="min-h-screen bg-background relative overflow-hidden flex flex-col">
       <SEO 
-        title="Děkujeme | Talent Innovation"
-        description="Potvrzení odeslání formuláře. Ozveme se do 24 hodin."
-        path="/dekujeme-formular"
+        title={t.seoTitle}
+        description={t.seoDescription}
+        path={language === 'en' ? '/en/thank-you-form' : '/dekujeme-formular'}
         noindex={true}
       />
       <Navbar />
@@ -79,20 +132,20 @@ const DekujemeFormular = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
               <CheckCircle className="w-4 h-4 text-primary" />
               <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">
-                Odesláno
+                {t.badge}
               </span>
             </div>
 
             {/* H1 */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.1em] mb-4 leading-[1.3] uppercase">
               <span className="heading-hero">
-                Hotovo. Ozveme se do 24 hodin.
+                {t.heading}
               </span>
             </h1>
             
             {/* Subtext */}
             <p className="text-lg text-muted-foreground mb-10 max-w-lg mx-auto">
-              Zpracovali jsme váš požadavek. Do 24 hodin pošleme další kroky.
+              {t.subtext}
             </p>
 
             {/* Main glass card with check icon and steps */}
@@ -106,7 +159,7 @@ const DekujemeFormular = () => {
 
               {/* 3 steps */}
               <div className="space-y-4 text-left max-w-sm mx-auto">
-                {steps.map((step, index) => (
+                {t.steps.map((step, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm font-semibold">
                       {index + 1}
@@ -129,23 +182,23 @@ const DekujemeFormular = () => {
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link to="/">
+              <Link to={getLocalizedHref('/')}>
                 <Button 
                   size="lg" 
                   className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)]"
                 >
                   <ArrowLeft className="h-5 w-5 mr-2" />
-                  Zpět domů
+                  {t.backHome}
                 </Button>
               </Link>
-              <Link to="/online">
+              <Link to={getLocalizedHref('/online')}>
                 <Button 
                   variant="outline" 
                   size="lg" 
                   className="w-full sm:w-auto px-8 py-6 text-base font-semibold tracking-wider border-primary/50 text-primary hover:bg-primary/10"
                 >
                   <BookOpen className="h-5 w-5 mr-2" />
-                  Zobrazit akademie
+                  {t.viewAcademies}
                 </Button>
               </Link>
             </div>
@@ -155,15 +208,15 @@ const DekujemeFormular = () => {
               <div className="flex items-center gap-2 mb-3">
                 <Mail className="w-5 h-5 text-muted-foreground" />
                 <h4 className="text-sm font-semibold text-foreground">
-                  Nedorazil e-mail?
+                  {t.noEmail}
                 </h4>
               </div>
               <div className="text-sm text-muted-foreground space-y-2 text-left">
                 <p>
-                  Zkontrolujte Spam/Hromadné a vyhledejte "Talent Innovation".
+                  {t.checkSpam}
                 </p>
                 <p>
-                  Pokud nic nedorazí, odešlete formulář znovu nebo nás kontaktujte.
+                  {t.noEmailContact}
                 </p>
               </div>
               <div className="mt-4">
@@ -174,7 +227,7 @@ const DekujemeFormular = () => {
                   className="text-primary hover:text-primary/80 hover:bg-primary/10"
                 >
                   <RefreshCw className="w-4 h-4 mr-2" />
-                  Zpět na formulář
+                  {t.backToForm}
                 </Button>
               </div>
             </div>
