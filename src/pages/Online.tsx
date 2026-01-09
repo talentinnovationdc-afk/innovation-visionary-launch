@@ -211,9 +211,11 @@ const Online = () => {
               <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                 {/* Left - Content */}
                 <div className="text-center lg:text-left">
-                  <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-6">
-                    Online vzdělávání
-                  </span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                    <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">
+                      Online vzdělávání
+                    </span>
+                  </div>
                   
                   <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-4 uppercase" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
                     <span className="heading-hero">
