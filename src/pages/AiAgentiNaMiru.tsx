@@ -182,11 +182,8 @@ const AiAgentiNaMiru = () => {
                     Digitální kolega pro vaše procesy
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-4">
+                <p className="text-base md:text-lg text-muted-foreground max-w-[800px] mx-auto leading-[1.8] mb-12">
                   Navrhneme, nasadíme a změříme dopad. Bezpečně, s napojením na vaše nástroje.
-                </p>
-                <p className="text-sm text-primary font-medium mb-8">
-                  Typicky pilot do 14 dnů.
                 </p>
                 
                 {/* Trust Chips */}
